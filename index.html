@@ -74,6 +74,442 @@
             </ul>
         </div>
     </header>
+    <!-- 메인 -->
+    <main class="main">
+        <div class="container">
+            <!-- 비주얼 -->
+            <section class="visual video_wrap">
+                <div class="dim"></div>
+                <iframe class="video" src="https://player.vimeo.com/video/744069451?background=1"  frameborder="0" title="조용하고 프라이빗한 호텔" allow="autoplay; fullscreen" allowfullscreen="" data-ready="true"></iframe>
+                <div class="quick_menu">
+                    <ul>
+                        <li>
+                            <span>CHECK IN</span>
+                            <div class="date in">
+                                <p>2024. 02. 07 <span>(수)</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>CHECK OUT</span>
+                            <div class="date out">
+                                <p>2024. 05. 05 <span>(일)</span></p>
+                            </div>
+                        </li>
+                        <li class="select">
+                            <div class="select_wrap">
+                                <label for="room">ROOM</label>
+                                <select name="room_select" id="room" defaultValue="1">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="select">
+                            <div class="select_wrap">
+                                <label for="adult">ADULT</label>
+                                <select name="adult_select" id="adult" defaultValue="1">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="select">
+                            <div class="select_wrap">
+                                <label for="child">CHILD</label>
+                                <select name="child_select" id="child" defaultValue="1">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="search">
+                        <button type="button" class="search_btn"  onclick="location.href='./sub6_reservation.html'"></button>
+                    </div>
+                </div>
+            </section>
+            <!-- 객실안내 -->
+            <section class="section room">
+                <div class="inner">
+                    <h2 class="title">
+                        <span>ROOM</span>
+                        객실안내
+                    </h2>
+                    <div class="more_btn"><a href="#">VIEW MORE</a></div>
+                    <div class="contents">
+                        <div class="swiper room_list">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./img/img_room_love_101.jpg" alt="love you 101호">
+                                    <a href="#" class="room_info">
+                                        <div class="txt">
+                                            <p>LOVE YOU #101</p>
+                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/img_room_love_102.jpg" alt="love you 102호">
+                                    <a href="#" class="room_info">
+                                        <div class="txt">
+                                            <p>LOVE YOU #102</p>
+                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/img_room_love_203.jpg" alt="love you 203호">
+                                    <a href="#" class="room_info">
+                                        <div class="txt">
+                                            <p>LOVE YOU #203</p>
+                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/img_room_love_203.jpg" alt="love you 203호">
+                                    <a href="#" class="room_info">
+                                        <div class="dim"></div>
+                                        <div class="txt">
+                                            <p>LOVE YOU #203</p>
+                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper_btn_wrap">
+                                <div class="swiper-button-next room_next"></div>
+                                <div class="swiper-button-prev room_prev"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 시설안내 -->
+            <section class="section facilities">
+                <div class="inner">
+                    <h2 class="title">
+                        <span>FACILITIES</span>
+                        시설안내
+                    </h2>
+                    <div class="more_btn"><a href="#">VIEW MORE</a></div>
+                    <div class="contents">
+                        <ul class="facilities_list">
+                            <li class="pool on">
+                                <a href="#">
+                                    <div class="dim"></div>
+                                    <div class="box">
+                                        <p>SWIMMING POOL</p>
+                                        <div class="bar">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="rooftop">
+                                <a href="#">
+                                    <div class="dim"></div>
+                                    <div class="box">
+                                        <p>ROOF TOP</p>
+                                        <div class="bar">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="bbq">
+                                <a href="#">
+                                    <div class="dim"></div>
+                                    <div class="box">
+                                        <p>BARBECUE</p>
+                                        <div class="bar">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- 주변안내 -->
+            <section class="section around_spot">
+                <div class="inner">
+                    <h2 class="title">
+                        <span>AROUND SPOT</span>
+                        주변안내
+                    </h2>
+                    <div class="more_btn"><a href="#">VIEW MORE</a></div>
+                    <p class="desc">
+                        다온펜션 주변에는 남이섬, 아침고요수목원, 쁘띠프랑스 등<br/>다양한 볼거리와 힐링 스팟이 위치하고있습니다.<br/>다온에서의 즐거운 추억을 만들어보세요!
+                    </p>
+                    <div class="contents">
+                        <ul class="spot_list">
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_around_01.jpg" alt="남이섬">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_around_02.jpg" alt="아침고요수목원">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_around_03.jpg" alt="쁘띠프랑스">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- 이벤트 -->
+            <section class="section event">
+                <div class="inner">
+                    <h2 class="title">
+                        <span>EVENT</span>
+                        이벤트
+                    </h2>
+                    <div class="more_btn"><a href="#">VIEW MORE</a></div>
+                    <div class="contents">
+                        <div class="swiper event_list">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="./img/img_event_01.jpg" alt="성수기 할인이벤트">
+                                        <div class="txt_box">
+                                            <p class="event_title">성수기 할인이벤트</p>
+                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="./img/img_event_02.jpg" alt="성수기 할인이벤트">
+                                        <div class="txt_box">
+                                            <p class="event_title">인플루언서에게 제공되는 호캉스&힐링 패키지</p>
+                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="./img/img_event_03.jpg" alt="성수기 할인이벤트">
+                                        <div class="txt_box">
+                                            <p class="event_title">리뷰 이벤트! 추첨을 통해 총 50분께 스타벅스...</p>
+                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="./img/img_event_01.jpg" alt="성수기 할인이벤트">
+                                        <div class="txt_box">
+                                            <p class="event_title">리뷰 이벤트! 추첨을 통해 총 50분께 스타벅스...</p>
+                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper_btn_wrap">
+                                <div class="swiper-button-next event_next"></div>
+                                <div class="swiper-button-prev event_prev"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 오시는 길 -->
+            <section class="section contact">
+                <div class="inner">
+                    <h2 class="title">
+                        <span>CONTACT</span>
+                        오시는 길
+                    </h2>
+                    <div class="more_btn"><a href="#">VIEW MORE</a></div>
+                    <div class="contents">
+                        <div class="map">
+                            <img src="./img/img_map.jpg" alt="지도">
+                        </div>
+                        <div class="box_wrap">
+                            <div class="tab_wrap">
+                                <ul class="tab_box">
+                                    <li class="on">
+                                        위치안내
+                                    </li>
+                                    <li>대중교통</li>
+                                </ul>
+                                <div class="tab_cont">
+                                    <ul class="location on">
+                                        <li>경기도 가평군 가평읍 경반안로 357-187</li>
+                                        <li>031-581-0662</li>
+                                        <li>daonpension@daon.com</li>
+                                    </ul>
+                                    <ul class="transport">
+                                        <li><span>255-7</span>첫차 06:50 막차 18:45 배차간격 매일 8회</li>
+                                        <li><span>가평역</span>1번 출구, 경반리윗말역 하차 후 도보 20분</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pick_wrap">
+                                <p>픽업서비스</p>
+                                <ul>
+                                    <li>조은마트에서 3만원 이상 결제 후 영수증 지참 시,&nbsp;&nbsp;<span>무료 픽업서비스 제공</span></li>
+                                    <li>010-3923-0662</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 이용후기 -->
+            <section class="section review">
+                <div class="inner">
+                    <div class="contents">
+                        <ul class="review_list">
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_01.jpg" alt="수영하고있는 남자">
+                                    <div class="name_box">
+                                        <p class="name">@just_drink_v</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_02.jpg" alt="핸드폰을 보고 있는 여자">
+                                    <div class="name_box">
+                                        <p class="name influencer">@star_jay</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_03.jpg" alt="수영장에 다이빙하는 아이들">
+                                    <div class="name_box">
+                                        <p class="name">@dongfamily5</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_04.jpg" alt="해먹에 누워있는 남자">
+                                    <div class="name_box">
+                                        <p class="name">@cis0207</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_05.jpg" alt="뒤돌아보는 여자">
+                                    <div class="name_box">
+                                        <p class="name influencer">@jam.sera</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="review_list">
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_01.jpg" alt="수영하고있는 남자">
+                                    <div class="name_box">
+                                        <p class="name">@just_drink_v</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_02.jpg" alt="핸드폰을 보고 있는 여자">
+                                    <div class="name_box">
+                                        <p class="name influencer">@star_jay</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_03.jpg" alt="수영장에 다이빙하는 아이들">
+                                    <div class="name_box">
+                                        <p class="name">@dongfamily5</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_04.jpg" alt="해먹에 누워있는 남자">
+                                    <div class="name_box">
+                                        <p class="name">@cis0207</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/img_review_05.jpg" alt="뒤돌아보는 여자">
+                                    <div class="name_box">
+                                        <p class="name influencer">@jam.sera</p>
+                                        <div class="rating">
+                                            <img src="/img/icon/icon_star.svg" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
     <div class="fixed_menu">
         <ul>
             <li class="weather_btn">
