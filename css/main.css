@@ -77,7 +77,7 @@
   bottom: -8px;
   width: 50px;
   height: 50px;
-  background: url("/img/icon/icon_select.svg") no-repeat center;
+  background: url("../img/icon/icon_select.svg") no-repeat center;
   cursor: pointer;
   z-index: 1;
 }
@@ -91,11 +91,11 @@
   height: 80px;
   padding: 24px;
   display: block;
-  background: url("/img/icon/icon_search.svg") no-repeat center;
+  background: url("../img/icon/icon_search.svg") no-repeat center;
   transition: all 0.3s;
 }
 .quick_menu .search .search_btn:hover {
-  background: #fff url("/img/icon/icon_search_black.svg") no-repeat center;
+  background: #fff url("../img/icon/icon_search_black.svg") no-repeat center;
 }
 
 .main .container .section .inner {
@@ -135,7 +135,7 @@
   width: 32px;
   height: 32px;
   margin-left: 8px;
-  background: url("/img/icon/icon_arrow_more.svg") no-repeat center;
+  background: url("../img/icon/icon_arrow_more.svg") no-repeat center;
 }
 .main .container .section .inner .more_btn a:hover::after {
   animation: more 0.5s infinite linear;
@@ -160,14 +160,14 @@
   display: block;
   width: 32px;
   height: 32px;
-  background: url("/img/icon/icon_arrow.svg") no-repeat center;
+  background: url("../img/icon/icon_arrow.svg") no-repeat center;
   transition: all 0.3s;
 }
 .main .container .swiper .swiper_btn_wrap > *:hover {
   border-color: #2f2f2f;
 }
 .main .container .swiper .swiper_btn_wrap > *:hover::after {
-  background-image: url("/img/icon/icon_arrow_on.svg");
+  background-image: url("../img/icon/icon_arrow_on.svg");
 }
 .main .container .swiper .swiper_btn_wrap .swiper-button-prev {
   left: auto;
@@ -306,19 +306,19 @@
   margin-bottom: 24px;
 }
 .main .container .section.facilities .contents .facilities_list li.pool a {
-  background: url("/img/img_facilities_pool.jpg") no-repeat left top;
+  background: url("../img/img_facilities_pool.jpg") no-repeat left top;
 }
 .main .container .section.facilities .contents .facilities_list li.rooftop {
   z-index: 13;
 }
 .main .container .section.facilities .contents .facilities_list li.rooftop a {
-  background: url("/img/img_facilities_rooftop.jpg") no-repeat right top;
+  background: url("../img/img_facilities_rooftop.jpg") no-repeat right top;
 }
 .main .container .section.facilities .contents .facilities_list li.bbq {
   z-index: 12;
 }
 .main .container .section.facilities .contents .facilities_list li.bbq a {
-  background: url("/img/img_facilities_bbq.jpg") no-repeat right top;
+  background: url("../img/img_facilities_bbq.jpg") no-repeat right top;
 }
 .main .container .section.facilities .contents .facilities_list li.on {
   z-index: 14;
@@ -451,7 +451,7 @@
   height: 32px;
   display: inline-block;
   margin-right: 8px;
-  background: url("/img/icon/icon_check.svg") no-repeat center;
+  background: url("../img/icon/icon_check.svg") no-repeat center;
 }
 .main .container .section.contact .contents .box_wrap ul:not(.tab_box) li span {
   font: inherit;
@@ -468,10 +468,10 @@
   position: relative;
 }
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.location li:first-of-type::before {
-  background-image: url("/img/icon/icon_location.svg");
+  background-image: url("../img/icon/icon_location.svg");
 }
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.location li:nth-of-type(2)::before {
-  background-image: url("/img/icon/icon_tel.svg");
+  background-image: url("../img/icon/icon_tel.svg");
 }
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.location li:last-of-type {
   position: absolute;
@@ -479,7 +479,7 @@
   bottom: 0;
 }
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.location li:last-of-type::before {
-  background-image: url("/img/icon/icon_mail.svg");
+  background-image: url("../img/icon/icon_mail.svg");
 }
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.on {
   display: block;
@@ -504,10 +504,10 @@
   width: 24px;
   height: 24px;
   margin: 2px 4px 0 0;
-  background: url("/img/icon/icon_car.svg") no-repeat center;
+  background: url("../img/icon/icon_car.svg") no-repeat center;
 }
 .main .container .section.contact .contents .box_wrap .pick_wrap ul li:last-of-type::before {
-  background-image: url("/img/icon/icon_tel.svg");
+  background-image: url("../img/icon/icon_tel.svg");
 }
 .main .container .section.review .inner {
   max-width: 100%;
@@ -569,7 +569,7 @@
   width: 24px;
   height: 24px;
   margin: 2px 0 0 8px;
-  background: url("/img/icon/icon_influencer.svg") no-repeat center;
+  background: url("../img/icon/icon_influencer.svg") no-repeat center;
 }
 @keyframes bar {
   0% {

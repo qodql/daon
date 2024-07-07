@@ -73,7 +73,7 @@
                     bottom: -8px;
                     width: 50px;
                     height: 50px;
-                    background: url("/img/icon/icon_select.svg") no-repeat center;
+                    background: url("../img/icon/icon_select.svg") no-repeat center;
                     cursor: pointer;
                     z-index: 1;
                 }
@@ -89,10 +89,10 @@
             height: 80px;
             padding: 24px;
             display: block;
-            background: url("/img/icon/icon_search.svg") no-repeat center;
+            background: url("../img/icon/icon_search.svg") no-repeat center;
             transition: all 0.3s;
             &:hover {
-                background: #fff url("/img/icon/icon_search_black.svg") no-repeat center;
+                background: #fff url("../img/icon/icon_search_black.svg") no-repeat center;
             }
         }
     }
@@ -138,7 +138,7 @@
                             width: 32px;
                             height: 32px;
                             margin-left: 8px;
-                            background: url("/img/icon/icon_arrow_more.svg") no-repeat center;
+                            background: url("../img/icon/icon_arrow_more.svg") no-repeat center;
                         }
                         &:hover {
                             &::after {
@@ -166,13 +166,13 @@
                         display: block;
                         width: 32px;
                         height: 32px;
-                        background: url("/img/icon/icon_arrow.svg") no-repeat center;
+                        background: url("../img/icon/icon_arrow.svg") no-repeat center;
                         transition: all 0.3s;
                     }
                     &:hover {
                         border-color: #2f2f2f;
                         &::after {
-                            background-image: url("/img/icon/icon_arrow_on.svg");
+                            background-image: url("../img/icon/icon_arrow_on.svg");
                         }
                     }
                 }
@@ -324,19 +324,19 @@
                             }
                             &.pool {
                                 a {
-                                    background: url("/img/img_facilities_pool.jpg") no-repeat left top;
+                                    background: url("../img/img_facilities_pool.jpg") no-repeat left top;
                                 }
                             }
                             &.rooftop {
                                 z-index: 13;
                                 a {
-                                    background: url("/img/img_facilities_rooftop.jpg") no-repeat right top;
+                                    background: url("../img/img_facilities_rooftop.jpg") no-repeat right top;
                                 }
                             }
                             &.bbq {
                                 z-index: 12;
                                 a {
-                                    background: url("/img/img_facilities_bbq.jpg") no-repeat right top;
+                                    background: url("../img/img_facilities_bbq.jpg") no-repeat right top;
                                 }
                             }
                             &.on {
@@ -492,7 +492,7 @@
                                         height: 32px;
                                         display: inline-block;
                                         margin-right: 8px;
-                                        background: url("/img/icon/icon_check.svg") no-repeat center;
+                                        background: url("../img/icon/icon_check.svg") no-repeat center;
                                     }
                                     span {
                                         font: inherit;
@@ -515,12 +515,12 @@
                                         li {
                                             &:first-of-type {
                                                 &::before {
-                                                    background-image: url("/img/icon/icon_location.svg");
+                                                    background-image: url("../img/icon/icon_location.svg");
                                                 }
                                             }
                                             &:nth-of-type(2) {
                                                 &::before {
-                                                    background-image: url("/img/icon/icon_tel.svg");
+                                                    background-image: url("../img/icon/icon_tel.svg");
                                                 }
                                             }
                                             &:last-of-type {
@@ -528,7 +528,7 @@
                                                 left: 232px;
                                                 bottom: 0;
                                                 &::before {
-                                                    background-image: url("/img/icon/icon_mail.svg");
+                                                    background-image: url("../img/icon/icon_mail.svg");
                                                 }
                                             }
                                         }
@@ -560,14 +560,14 @@
                                     width: 24px;
                                     height: 24px;
                                     margin: 2px 4px 0 0;
-                                    background: url("/img/icon/icon_car.svg") no-repeat center;
+                                    background: url("../img/icon/icon_car.svg") no-repeat center;
                                 }
                             }
                             ul {
                                 li {
                                     &:last-of-type {
                                         &::before {
-                                            background-image: url("/img/icon/icon_tel.svg");
+                                            background-image: url("../img/icon/icon_tel.svg");
                                         }
                                     }
                                 }
@@ -632,7 +632,7 @@
                                                     width: 24px;
                                                     height: 24px;
                                                     margin: 2px 0 0 8px;
-                                                    background: url("/img/icon/icon_influencer.svg") no-repeat center;
+                                                    background: url("../img/icon/icon_influencer.svg") no-repeat center;
                                                 }
                                             }
                                         }
