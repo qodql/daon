@@ -1,8 +1,37 @@
-.sub {
+// reservation 공통
+.reservation_common {
     .sub_container {
         .contents {
-            height: 500px;
-            background-color: #efefef;
+        }
+    }
+}
+
+// step1
+.step1 {
+    .sub_container {
+        .contents {
+        }
+    }
+}
+// step2
+.step2 {
+    .sub_container {
+        .contents {
+        }
+    }
+}
+// step3
+.step3 {
+    .sub_container {
+        .contents {
+        }
+    }
+}
+
+// look
+.look {
+    .sub_container {
+        .contents {
         }
     }
 }
