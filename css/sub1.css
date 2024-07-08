@@ -33,11 +33,19 @@
     opacity: 1;
   }
 }
-.intro .sub_container2 .contents .fadein {
+@keyframes expand {
+  0% {
+    transform: scaleX(0.5);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.intro .sub_container2 .contents .intro-fadein {
   animation: fadeIn 2000ms;
 }
-.intro .sub_container2 .contents .fadeout {
-  animation: fadeIn 0ms;
+.intro .sub_container2 .contents .intro-expand {
+  animation: expand 2500ms ease-in-out;
 }
 .intro .sub_container2 .contents .intro-grid-wrapper {
   width: 1400px;
@@ -119,4 +127,4 @@
   font-weight: 500;
   line-height: 40px;
   text-align: center;
-}
+}/*# sourceMappingURL=sub1.css.map */

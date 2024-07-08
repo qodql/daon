@@ -34,17 +34,25 @@
                     transform: translateY(0px);
                     opacity: 1;
                 }
-                
             }
-        
-            .fadein{
+
+            @keyframes expand {
+                0%{
+                    transform: scaleX(0.5);
+                }
+                100%{
+                    transform: scaleX(1.0);
+                }
+            } 
+
+            .intro-fadein{
                 animation: fadeIn 2000ms;
             }
-        
-            .fadeout{
-                animation: fadeIn 0ms;
+
+            .intro-expand{
+                animation: expand 2500ms ease-in-out;
             }
-            
+        
             .intro-grid-wrapper{
                 width: 1400px;
                 margin: 0 auto;
@@ -139,6 +147,9 @@
         }
     }
 }
+
+
+
 
 // 오시는길
 .contact {
