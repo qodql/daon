@@ -1,7 +1,61 @@
 // 다온소개
 .intro {
+    .sub_top{
+        background-image: url("../img/img_sub_intro.jpg");
+        .dim{
+            background-color: rgba(0,0,0,0.35);
+        }
+    }
     .sub_container {
         .contents {
+            width: 100%;
+            .intro-grid-wrapper{
+                width: 100%;
+                
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: repeat(1,1fr);
+                grid-template-areas: 
+                    "a b c"
+                    "a d d"
+                    ;
+                grid-gap: 20px;
+                p{
+                    &:nth-child(1){height: 640px; grid-area: a;}
+                    &:nth-child(2){
+                        height: 250px;
+                        grid-area: b;
+                        img{
+                            object-position: 0px -360px;
+                        }
+                    }
+                    &:nth-child(3){height: 250px; grid-area: c;}
+                    &:nth-child(4){
+                        height: 370px;
+                        grid-area: d;
+                        img{
+                            object-position: 0px -190px;
+                        }
+                    }
+                    position: relative;
+                    img{
+                        position: absolute;
+                        object-fit: cover;
+                        border-radius: 20px;
+                    }
+                }
+            }
+            .intro-grid-wrapper-txt{
+                width: 780px;
+                margin: 80px auto;
+                h5{
+                    font-size: 24px;
+                    text-align: center;
+                    font-weight: 500;
+                }   
+            }
+
+            
         }
     }
 }

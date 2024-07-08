@@ -1,1 +1,56 @@
-/*# sourceMappingURL=sub1.css.map */
+.intro .sub_top {
+  background-image: url("../img/img_sub_intro.jpg");
+}
+.intro .sub_top .dim {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.intro .sub_container .contents {
+  width: 100%;
+}
+.intro .sub_container .contents .intro-grid-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-areas: "a b c" "a d d";
+  grid-gap: 20px;
+}
+.intro .sub_container .contents .intro-grid-wrapper p {
+  position: relative;
+}
+.intro .sub_container .contents .intro-grid-wrapper p:nth-child(1) {
+  height: 640px;
+  grid-area: a;
+}
+.intro .sub_container .contents .intro-grid-wrapper p:nth-child(2) {
+  height: 250px;
+  grid-area: b;
+}
+.intro .sub_container .contents .intro-grid-wrapper p:nth-child(2) img {
+  object-position: 0px -360px;
+}
+.intro .sub_container .contents .intro-grid-wrapper p:nth-child(3) {
+  height: 250px;
+  grid-area: c;
+}
+.intro .sub_container .contents .intro-grid-wrapper p:nth-child(4) {
+  height: 370px;
+  grid-area: d;
+}
+.intro .sub_container .contents .intro-grid-wrapper p:nth-child(4) img {
+  object-position: 0px -190px;
+}
+.intro .sub_container .contents .intro-grid-wrapper p img {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.intro .sub_container .contents .intro-grid-wrapper-txt {
+  width: 780px;
+  margin: 80px auto;
+}
+.intro .sub_container .contents .intro-grid-wrapper-txt h5 {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 500;
+}
