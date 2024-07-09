@@ -35,14 +35,23 @@
 }
 @keyframes expand {
   0% {
-    transform: scaleX(0.5);
+    width: 65%;
   }
   100% {
-    transform: scaleX(1);
+    width: 100%;
   }
 }
-.intro .sub_container2 .contents .intro-fadein {
-  animation: fadeIn 2000ms;
+.intro .sub_container2 .contents .intro-fadein p:nth-child(1) {
+  animation: fadeIn 1300ms;
+}
+.intro .sub_container2 .contents .intro-fadein p:nth-child(2) {
+  animation: fadeIn 1500ms;
+}
+.intro .sub_container2 .contents .intro-fadein p:nth-child(3) {
+  animation: fadeIn 1700ms;
+}
+.intro .sub_container2 .contents .intro-fadein p:nth-child(4) {
+  animation: fadeIn 1900ms;
 }
 .intro .sub_container2 .contents .intro-expand {
   animation: expand 2500ms ease-in-out;
@@ -99,10 +108,12 @@
 .intro .sub_container2 .contents .intro-full-bg {
   width: 100%;
   height: 777px;
+  margin: 0 auto;
   margin-top: 160px;
   background-image: url("../img/img_intro_full.jpg");
   background-repeat: no-repeat;
   background-position: 60% 75%;
+  background-size: auto;
   position: relative;
 }
 .intro .sub_container2 .contents .intro-full-bg .intro-full-bg-dim {
@@ -127,4 +138,4 @@
   font-weight: 500;
   line-height: 40px;
   text-align: center;
-}/*# sourceMappingURL=sub1.css.map */
+}
