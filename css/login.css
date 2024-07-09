@@ -2,33 +2,158 @@
   width: 100%;
   height: 100vh;
 }
-.login_common .top h2 {
+.login_common .logoNtxt {
+  margin-top: 160px;
+  margin-bottom: 56px;
+}
+.login_common .logoNtxt h2 {
   padding-top: 40px;
   font-size: 32px;
   font-weight: 700;
   text-align: center;
 }
-.login_common .login_btn {
-  width: 100%;
-  height: 52px;
+
+.login .box-shadow {
+  width: 480px;
+  height: 570px;
+  padding: auto 40px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login .box-shadow .login_daon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login .box-shadow .login_daon .emailbox {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.login .box-shadow .login_daon .emailbox label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_mail_afafaf.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.login .box-shadow .login_daon .emailbox input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.login .box-shadow .login_daon .emailbox .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.login .box-shadow .login_daon .emailbox .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.login .box-shadow .login_daon .emailbox input:focus ~ .x {
+  opacity: 1;
+}
+.login .box-shadow .login_daon .pwbox {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.login .box-shadow .login_daon .pwbox label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_lock.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.login .box-shadow .login_daon .pwbox input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.login .box-shadow .login_daon .pwbox .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.login .box-shadow .login_daon .pwbox .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.login .box-shadow .login_daon .pwbox input:focus ~ .x {
+  opacity: 1;
+}
+.login .box-shadow .login_daon .login_btn {
+  width: 400px;
   padding: 16px 32px;
   text-align: center;
+  font-weight: 700;
   background-color: #357EF1;
   border-radius: 8px;
-}
-.login_common .login_btn p {
   color: #ffffff;
-  font-weight: 700;
+  margin-bottom: 60px;
 }
-.login_common .login_white_btn {
-  width: 100%;
-  height: 52px;
+.login .box-shadow .login_daon .login_white_btn {
+  width: 400px;
   padding: 16px 32px;
   text-align: center;
+  font-weight: 700;
   border: 1px solid #357EF1;
   border-radius: 8px;
-}
-.login_common .login_white_btn p {
   color: #357EF1;
-  font-weight: 700;
+  margin-bottom: 40px;
+}
+.login .box-shadow .login_sns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.login .box-shadow .login_sns .login_sns_btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login .box-shadow .login_sns .kakao {
+  background-color: #fff500;
+  background-image: url(../img/icon/icon_kakao.svg);
+}
+.login .box-shadow .login_sns .naver {
+  background-color: #06CC80;
+  background-image: url(../img/icon/icon_naver.svg);
+}
+.login .box-shadow .login_sns .google {
+  background-color: #ffffff;
+  border: 1px solid #afafaf;
+  background-image: url(../img/icon/icon_google.svg);
 }
