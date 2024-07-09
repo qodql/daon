@@ -24,16 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const element2 = document.getElementsByClassName(elementClass)[0]; 
         const rect2 = element2.getBoundingClientRect(); 
         
-        const isVisible2 = rect2.top <= window.innerHeight && rect2.bottom >= 1600; 
-      
+        const isVisible2 = rect2.top <= window.innerHeight && rect2.top <= 350; 
+
         if (isVisible2) {
           element2.classList.add(slideInClass);
-        } 
+        }
       }
       
       window.addEventListener("scroll", function () {
-        animateElement2("intro-full-animation", "intro-expand");
+        animateElement2("intro-full-bg", "intro-expand");
       });
+     
+     
+
+
     
 
 

@@ -1,6 +1,5 @@
 .intro .sub_top {
-  background-image: url("../img/img_sub_intro.jpg");
-  background-repeat: no-repeat;
+  background: url("../img/img_sub_intro.jpg") no-repeat;
 }
 .intro .sub_top .dim {
   background-color: rgba(0, 0, 0, 0.38);
@@ -34,27 +33,22 @@
   }
 }
 @keyframes expand {
-  0% {
-    width: 65%;
-  }
   100% {
     width: 100%;
+    left: 0%;
   }
 }
 .intro .sub_container2 .contents .intro-fadein p:nth-child(1) {
   animation: fadeIn 1300ms;
 }
 .intro .sub_container2 .contents .intro-fadein p:nth-child(2) {
-  animation: fadeIn 1500ms;
+  animation: fadeIn 1600ms;
 }
 .intro .sub_container2 .contents .intro-fadein p:nth-child(3) {
-  animation: fadeIn 1700ms;
-}
-.intro .sub_container2 .contents .intro-fadein p:nth-child(4) {
   animation: fadeIn 1900ms;
 }
-.intro .sub_container2 .contents .intro-expand {
-  animation: expand 2500ms ease-in-out;
+.intro .sub_container2 .contents .intro-fadein p:nth-child(4) {
+  animation: fadeIn 2100ms;
 }
 .intro .sub_container2 .contents .intro-grid-wrapper {
   width: 1400px;
@@ -110,16 +104,34 @@
   height: 777px;
   margin: 0 auto;
   margin-top: 160px;
-  background-image: url("../img/img_intro_full.jpg");
-  background-repeat: no-repeat;
-  background-position: 60% 75%;
-  background-size: auto;
   position: relative;
+  z-index: 2;
 }
-.intro .sub_container2 .contents .intro-full-bg .intro-full-bg-dim {
-  width: 100%;
+.intro .sub_container2 .contents .intro-full-bg::after {
+  width: 65%;
   height: 100%;
+  content: "";
+  position: absolute;
+  left: 17.5%;
+  top: 0;
+  background: url("../img/img_intro_full.jpg") 60% 75% no-repeat;
+  z-index: -2;
+}
+.intro .sub_container2 .contents .intro-full-bg::before {
+  width: 65%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  left: 17.5%;
+  top: 0;
   background-color: rgba(0, 0, 0, 0.44);
+  z-index: -1;
+}
+.intro .sub_container2 .contents .intro-full-bg.intro-expand::after {
+  animation: expand 2000ms ease-out forwards;
+}
+.intro .sub_container2 .contents .intro-full-bg.intro-expand::before {
+  animation: expand 2000ms ease-out forwards;
 }
 .intro .sub_container2 .contents .intro-full-bg .intro-full-bg-inner {
   width: 720px;
@@ -127,6 +139,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
 }
 .intro .sub_container2 .contents .intro-full-bg .intro-full-bg-inner .intro-full-bg-inner-txt {
@@ -138,4 +151,40 @@
   font-weight: 500;
   line-height: 40px;
   text-align: center;
+}
+
+.contact .sub_top {
+  background: url("../img/img_sub_contact.jpg") no-repeat;
+}
+.contact .sub_top .dim {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+.contact .sub_container .contents {
+  width: 100%;
+}
+.contact .sub_container .contents .contact-map {
+  width: 100%;
+  position: relative;
+}
+.contact .sub_container .contents .contact-map p img {
+  border-radius: 20px;
+}
+.contact .sub_container .contents .contact-map .contact-map-btn {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  background-color: #2F2F2F;
+  padding-right: 12px;
+  border-radius: 8px;
+}
+.contact .sub_container .contents .contact-map .contact-map-btn button a {
+  color: #fff;
+}
+.contact .sub_container .contents .contact-map .contact-map-btn .contact-map-naver-btn {
+  width: 144px;
+  height: 42px;
+}
+.contact .sub_container .contents .contact-map .contact-map-btn .contact-map-google-btn {
+  width: 129px;
+  height: 42px;
 }
