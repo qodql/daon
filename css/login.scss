@@ -179,7 +179,21 @@ $box-height: 570px;
 }
 
 // 회원가입
-.join {}
+.join {
+    .inputboxs{
+        @include box-shadow;
+        p{
+            border-bottom: 12px;
+        }
+        
+        .emailbox{@include inputbox($icn: url(../img/icon/icon_mail_afafaf.svg));}
+        .pwbox{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
+        .pwcheckbox{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
+        .name{@include inputbox($icn: url(../img/icon/icon_person.svg));}
+        .phone{@include inputbox($icn: url(../img/icon/icon_phone.svg));}
+        .verify{@include inputbox($icn: url(../img/icon/icon_phone.svg));}
+    }
+}
 
 // 회원가입 완료
 .join_complete {}

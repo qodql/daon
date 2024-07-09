@@ -157,3 +157,255 @@
   border: 1px solid #afafaf;
   background-image: url(../img/icon/icon_google.svg);
 }
+
+.join .inputboxs {
+  width: 480px;
+  height: 570px;
+  padding: auto 40px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+.join .inputboxs p {
+  border-bottom: 12px;
+}
+.join .inputboxs .emailbox {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.join .inputboxs .emailbox label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_mail_afafaf.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.join .inputboxs .emailbox input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.join .inputboxs .emailbox .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.join .inputboxs .emailbox .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.join .inputboxs .emailbox input:focus ~ .x {
+  opacity: 1;
+}
+.join .inputboxs .pwbox {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.join .inputboxs .pwbox label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_lock.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.join .inputboxs .pwbox input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.join .inputboxs .pwbox .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.join .inputboxs .pwbox .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.join .inputboxs .pwbox input:focus ~ .x {
+  opacity: 1;
+}
+.join .inputboxs .pwcheckbox {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.join .inputboxs .pwcheckbox label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_lock.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.join .inputboxs .pwcheckbox input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.join .inputboxs .pwcheckbox .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.join .inputboxs .pwcheckbox .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.join .inputboxs .pwcheckbox input:focus ~ .x {
+  opacity: 1;
+}
+.join .inputboxs .name {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.join .inputboxs .name label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_person.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.join .inputboxs .name input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.join .inputboxs .name .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.join .inputboxs .name .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.join .inputboxs .name input:focus ~ .x {
+  opacity: 1;
+}
+.join .inputboxs .phone {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.join .inputboxs .phone label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_phone.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.join .inputboxs .phone input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.join .inputboxs .phone .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.join .inputboxs .phone .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.join .inputboxs .phone input:focus ~ .x {
+  opacity: 1;
+}
+.join .inputboxs .verify {
+  width: 400px;
+  padding: 0 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.join .inputboxs .verify label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_phone.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.join .inputboxs .verify input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.join .inputboxs .verify .x {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  background-image: url(../img/icon/icon_x-circle.svg);
+}
+.join .inputboxs .verify .eye {
+  width: 20px;
+  height: 20px;
+  right: 36px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.join .inputboxs .verify input:focus ~ .x {
+  opacity: 1;
+}/*# sourceMappingURL=login.css.map */
