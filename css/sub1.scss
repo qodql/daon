@@ -144,8 +144,7 @@ $pc:1200px;
                     z-index: -1;
                 }
                 &.intro-expand{
-                    &::after{ animation: expand 2000ms ease-out forwards;}
-                    &::before{ animation: expand 2000ms ease-out forwards;}
+                    &::after,::before{ animation: expand 2000ms ease-out forwards;}
                 }
                 
                 .intro-full-bg-inner{
@@ -199,21 +198,38 @@ $pc:1200px;
                 .contact-map-btn{
                     position: absolute;
                     right: 24px; bottom: 24px;
-                    background-color: #2F2F2F;
-                    padding-right: 12px;
-                    border-radius: 8px;
+                    display: flex;
+                    gap: 12px;
                     button{
+                        height: 42px;
+                        background-color: #2F2F2F;
+                        border-radius: 8px;
+                        position: relative;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        i{
+                            position: absolute;
+                            left: 8px;
+                            top: 8px;
+                            img{
+                                width: 19px;
+                                
+                                
+                            }
+                        }
                         a{
                             color: #fff;
+                            font-size: 16px;
+                            padding: 11px 5px;
+                            margin-left: 20px;
                         }
                     }
                     .contact-map-naver-btn{
-                        width: 144px;
-                        height: 42px;
+                        width: 155px;
                     }
                     .contact-map-google-btn{
-                        width: 129px;
-                        height: 42px;
+                        width: 138px;
                     }
                 }
             }    

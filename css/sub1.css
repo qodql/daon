@@ -127,10 +127,7 @@
   background-color: rgba(0, 0, 0, 0.44);
   z-index: -1;
 }
-.intro .sub_container2 .contents .intro-full-bg.intro-expand::after {
-  animation: expand 2000ms ease-out forwards;
-}
-.intro .sub_container2 .contents .intro-full-bg.intro-expand::before {
+.intro .sub_container2 .contents .intro-full-bg.intro-expand::after, .intro .sub_container2 .contents .intro-full-bg.intro-expand ::before {
   animation: expand 2000ms ease-out forwards;
 }
 .intro .sub_container2 .contents .intro-full-bg .intro-full-bg-inner {
@@ -173,18 +170,35 @@
   position: absolute;
   right: 24px;
   bottom: 24px;
+  display: flex;
+  gap: 12px;
+}
+.contact .sub_container .contents .contact-map .contact-map-btn button {
+  height: 42px;
   background-color: #2F2F2F;
-  padding-right: 12px;
   border-radius: 8px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact .sub_container .contents .contact-map .contact-map-btn button i {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+.contact .sub_container .contents .contact-map .contact-map-btn button i img {
+  width: 19px;
 }
 .contact .sub_container .contents .contact-map .contact-map-btn button a {
   color: #fff;
+  font-size: 16px;
+  padding: 11px 5px;
+  margin-left: 20px;
 }
 .contact .sub_container .contents .contact-map .contact-map-btn .contact-map-naver-btn {
-  width: 144px;
-  height: 42px;
+  width: 155px;
 }
 .contact .sub_container .contents .contact-map .contact-map-btn .contact-map-google-btn {
-  width: 129px;
-  height: 42px;
-}
+  width: 138px;
+}/*# sourceMappingURL=sub1.css.map */
