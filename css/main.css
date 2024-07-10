@@ -441,15 +441,15 @@
   display: flex;
   padding: 0 40px;
 }
-.main .container .section.contact .contents .box_wrap ul:not(.tab_box) li {
+.main .container .section.contact .contents .box_wrap ul:not(.tab.box) li {
   font-size: 20px;
   line-height: 32px;
   display: flex;
 }
-.main .container .section.contact .contents .box_wrap ul:not(.tab_box) li:not(:first-of-type) {
+.main .container .section.contact .contents .box_wrap ul:not(.tab.box) li:not(:first-of-type) {
   margin-top: 24px;
 }
-.main .container .section.contact .contents .box_wrap ul:not(.tab_box) li::before {
+.main .container .section.contact .contents .box_wrap ul:not(.tab.box) li::before {
   content: "";
   width: 32px;
   height: 32px;
@@ -457,14 +457,14 @@
   margin-right: 8px;
   background: url("../img/icon/icon_check.svg") no-repeat center;
 }
-.main .container .section.contact .contents .box_wrap ul:not(.tab_box) li span {
+.main .container .section.contact .contents .box_wrap ul:not(.tab.box) li span {
   font: inherit;
   font-weight: 700;
 }
 .main .container .section.contact .contents .box_wrap .tab_wrap {
   flex: 0.5;
 }
-.main .container .section.contact .contents .box_wrap .tab_wrap .tab_box {
+.main .container .section.contact .contents .box_wrap .tab_wrap .tab.box {
   margin-bottom: 40px;
 }
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul {
