@@ -136,13 +136,62 @@
   }
 }
 
-// 이벤트
-.event {
+// faq
+// faq는 별도로 inner로 빼지 않고, 일괄 작업 진행함. 
+.faq{
   .sub_container {
     .contents {
+      .sub5_community_faq{
+        ul{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          list-style: none;
+          padding: 0;
+        li:nth-of-type(1),
+        li:nth-of-type(2),
+        li:nth-of-type(3),
+        li:nth-of-type(4){
+          width: 200px;
+          height: auto;
+          margin: 0 16px; // 여기서 margin을 조절하여 간격을 조절할 수 있습니다.
+          padding: 12px 32px;
+          border-radius: 50px;
+          font-size: 28px;
+          font-weight: 700;
+          display: flex;
+          justify-content: space-between;
+          
+        }
+        li:nth-of-type(1){
+          border: solid 2px #357EF1;
+          color: #357EF1;
+        }
+        li:nth-of-type(2){
+          border: solid 2px #00C400;
+          color: #00C400;
+        }
+        li:nth-of-type(3){
+          border: solid 2px #8E40B7;
+          color: #8E40B7;
+        }
+        li:nth-of-type(4){
+          border: solid 2px #FFB140;
+          color: #FFB140;
+        }
+        p {
+          span {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+          }
+        }
     }
   }
 }
+}
+}
+
 
 // 이용후기
 .review {
