@@ -108,6 +108,14 @@
   animation: contentsbox 2s cubic-bezier(0, 0.92, 0.275, 0.98) normal;
   position: relative;
 }
+.sub .sub_container .contents .abcd {
+  max-width: 860px;
+}
+.sub .sub_container .contents .abcd li:not(:last-of-type) {
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
 .sub .sub_container .contents .main_box {
   width: 100%;
   display: flex;
@@ -164,7 +172,6 @@
 .sub .sub_container .contents .contour3 {
   width: 1400px;
   height: 2px;
-  float: left;
   background-color: #efefef;
   margin-top: 40px;
 }
@@ -393,4 +400,4 @@
 }
 .sub .sub_container .contents .caution .text_flexbox .white-space p:nth-child(2) {
   margin-top: 12px;
-}/*# sourceMappingURL=sub2.css.map */
+}

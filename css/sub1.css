@@ -71,8 +71,7 @@
   grid-area: b;
 }
 .intro .sub_container2 .contents .intro-grid-wrapper p:nth-child(2) img {
-  -o-object-position: 0px -360px;
-     object-position: 0px -360px;
+  object-position: 0px -360px;
 }
 .intro .sub_container2 .contents .intro-grid-wrapper p:nth-child(3) {
   height: 250px;
@@ -83,13 +82,11 @@
   grid-area: d;
 }
 .intro .sub_container2 .contents .intro-grid-wrapper p:nth-child(4) img {
-  -o-object-position: 0px -190px;
-     object-position: 0px -190px;
+  object-position: 0px -190px;
 }
 .intro .sub_container2 .contents .intro-grid-wrapper p img {
   position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
 }
 .intro .sub_container2 .contents .intro-txt {
@@ -204,4 +201,4 @@
 }
 .contact .sub_container .contents .contact-map .contact-map-btn .contact-map-google-btn {
   width: 138px;
-}/*# sourceMappingURL=sub1.css.map */
+}
