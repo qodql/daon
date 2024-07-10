@@ -1,78 +1,66 @@
 $input-width: 400px;
 $box-width: 480px;
-$box-height: 570px;
 
 @mixin inputbox($w:$input-width, $icn)
 {   width: $w;
-    padding: 0 20px;
+    padding-left: 20px;
     position: relative;
-
     border: 1px solid #afafaf;
     border-radius: 8px;
-
+    overflow: hidden;
     label{
         width: 20px;
         height: 20px;
         margin-right: 8px;
         display: inline-block;
-
         background-image: $icn;
         background-repeat: no-repeat;
         vertical-align: middle;
     }
-
     input{
         width: calc(100% - 40px);
         padding: 16px 0;
         color: #afafaf;    
-        vertical-align: middle;   
+        vertical-align: middle; 
     }
-
-    // 우측아이콘
-    .x{
+    // 인풋박스 내부 우측 [x, 눈] 아이콘
+    .input_reset_btn{
         width: 16px;
         height: 16px;
-        
+        opacity: 1;
+        // visibility: hidden;
         position: absolute;
-        opacity: 0;
-        transform: translate(-50%, -50%);
-
         top: 50%;
-        background-image: url(../img/icon/icon_x-circle.svg);
+        //right도 쓰기
+        right: 8px;
+        transform: translate(-50%, -50%);
+        background-image: url(../img/icon/icon_x_circle.svg);
     }
     .eye{
         width: 20px;
         height: 20px;
-
-        right: 36px;
+        right: 32px;
         background-image: url(../img/icon/icon_eye.svg);
     }
-
-    input:focus ~ .x{
+    input:focus ~ .input_reset_btn{
         opacity: 1;
+        visibility: visible;
     }
-
     @content
 }
-
-@mixin box-shadow($w:$box-width, $h:$box-height){
+@mixin box_shadow($w:$box-width){
     width: $w;
-    height: $h;
-    padding: auto 40px;
+    padding: 72px 40px 48px;
     margin: 0 auto;
-
     box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     @content
 }
-
 @mixin btn($w:$input-width){
     width: $w;
     padding: 16px 32px;
-    
     text-align: center;
     font-weight: 700;
-    
     background-color: #357EF1;
     border-radius: 8px;
     color: #ffffff;
@@ -81,24 +69,21 @@ $box-height: 570px;
 @mixin btn_reverse($w:$input-width){
     width: $w;
     padding: 16px 32px;
-    
     text-align: center;
     font-weight: 700;
-    
     border: 1px solid #357EF1;
     border-radius: 8px;
     color: #357EF1;
-
     @content
 }
 // ---------------------------------------------------------
-
 // 로그인+회원가입 공통
 .login_common {
     width: 100%;
     height: 100vh;
 
-    .logoNtxt{
+    .logo_txt{
+        //클릭영역줄이기
         margin-top: 160px;
         margin-bottom: 56px;
 
@@ -113,66 +98,66 @@ $box-height: 570px;
 
 // 로그인
 .login {
-    .box-shadow{
-        @include box-shadow;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-            .login_daon{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                .emailbox{
-                    @include inputbox($icn: url(../img/icon/icon_mail_afafaf.svg));
-                    margin-bottom: 12px;
-                }
-                .pwbox{
-                    @include inputbox($icn: url(../img/icon/icon_lock.svg));
-                    margin-bottom: 24px;
-                }
-            
-                .login_btn{
-                    @include btn;
+    .login_wrap{
+        @include box_shadow;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+            .daon{
+                .login_daon{
                     margin-bottom: 60px;
+                    .login_input_box{
+                        margin-bottom: 24px;
+                        //gap: 12px;
+                        .email_box{
+                            @include inputbox($icn: url(../img/icon/icon_mail_grey.svg));
+                        }
+                        .pw_box{
+                            @include inputbox($icn: url(../img/icon/icon_lock.svg));
+                        }
+                    }
+                    .login_btn{
+                        @include btn;
+                    }
                 }
-                .login_white_btn{
-                    @include btn_reverse;
+
+                .join_daon{
                     margin-bottom: 40px;
+                    .login_white_btn{
+                        @include btn_reverse;
+                    }
                 }
-                
             }
-        
-        
-        .login_sns{
-            display: flex;
-            justify-content: center;
-            gap: 16px;
 
-            .login_sns_btn{
-                width: 60px;
-                height: 60px;
+           .sns{
+               .login_sns{
+                display: flex;
+                gap: 16px;
 
-                border-radius: 60px;
-                background-repeat: no-repeat;
-                background-position: center;
+                li{
+                    width: 60px;
+                    height: 60px;
+                    
+                    border-radius: 60px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                .kakao{
+                    background-color: #fff500;
+                    background-image: url(../img/icon/icon_kakao.svg);
+                }
+                .naver{
+                    background-color: #06CC80;
+                    background-image: url(../img/icon/icon_naver.svg);
+                }
+                .google{
+                    background-color: #ffffff;
+                    border: 1px solid #afafaf;
+                    background-image: url(../img/icon/icon_google.svg);
+                }
+              }
             }
-            .kakao{
-                background-color: #fff500;
-                background-image: url(../img/icon/icon_kakao.svg);
-            }
-            .naver{
-                background-color: #06CC80;
-                background-image: url(../img/icon/icon_naver.svg);
-            }
-            .google{
-                background-color: #ffffff;
-                border: 1px solid #afafaf;
-                background-image: url(../img/icon/icon_google.svg);
-            }
-        }
     
     }
 }
@@ -180,7 +165,7 @@ $box-height: 570px;
 // 회원가입
 .join {
     .inputboxs{
-        @include box-shadow;
+        @include box_shadow;
         
         .emailbox{@include inputbox($icn: url(../img/icon/icon_mail_afafaf.svg));}
         .pwbox{@include inputbox($icn: url(../img/icon/icon_lock.svg));}

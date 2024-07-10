@@ -57,7 +57,7 @@
   background-size: contain;
 }
 .around_spot .sub_container .contents .sub4_card .card_txt .txt_short li:nth-of-type(1)::before {
-  background-image: url("../img/icon/icon_car_2f2f2f.svg");
+  background-image: url("../img/icon/icon_car_black.svg");
 }
 .around_spot .sub_container .contents .sub4_card .card_txt .txt_short li:nth-of-type(2)::before {
   background-image: url("../img/icon/icon_location.svg");
