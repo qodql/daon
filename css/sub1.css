@@ -85,6 +85,7 @@
 .intro .sub_container .contents .intro_txt {
   width: 847px;
   margin: 80px auto;
+  color: #2F2F2F;
 }
 .intro .sub_container .contents .intro_txt h5 {
   font-size: 24px;
@@ -132,6 +133,9 @@
   text-align: center;
   transform: translate(-50%, -50%);
 }
+.intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo {
+  margin: 0 auto;
+}
 .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
   margin: 40px auto;
 }
@@ -152,21 +156,21 @@
 .contact .sub_container .contents {
   width: 100%;
 }
-.contact .sub_container .contents .contact-map {
+.contact .sub_container .contents .contact_map {
   width: 100%;
   position: relative;
 }
-.contact .sub_container .contents .contact-map p img {
+.contact .sub_container .contents .contact_map p img {
   border-radius: 20px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn {
+.contact .sub_container .contents .contact_map .contact_map_btn {
   position: absolute;
   right: 24px;
   bottom: 24px;
   display: flex;
   gap: 12px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn button {
+.contact .sub_container .contents .contact_map .contact_map_btn button {
   height: 42px;
   background-color: #2F2F2F;
   border-radius: 8px;
@@ -175,23 +179,83 @@
   justify-content: space-around;
   align-items: center;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn button i {
+.contact .sub_container .contents .contact_map .contact_map_btn button i {
   position: absolute;
   left: 8px;
   top: 8px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn button i img {
+.contact .sub_container .contents .contact_map .contact_map_btn button i img {
   width: 19px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn button a {
+.contact .sub_container .contents .contact_map .contact_map_btn button a {
   color: #fff;
   font-size: 16px;
   padding: 11px 5px;
   margin-left: 20px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn .contact-map-naver-btn {
+.contact .sub_container .contents .contact_map .contact_map_btn .contact_map_naver_btn {
   width: 155px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn .contact-map-google-btn {
+.contact .sub_container .contents .contact_map .contact_map_btn .contact_map_google_btn {
   width: 138px;
 }
+.contact .sub_container .contents .contact_infomation {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact .sub_container .contents .contact_infomation .contact_info {
+  width: 50%;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(1)::before {
+  background: url("../img/icon/icon_location.svg") no-repeat center;
+  content: "";
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin-right: 8px;
+  /* left: -8px;
+  top: 21px; */
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li::after {
+  width: 200%;
+}
+.contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit {
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  color: #2F2F2F;
+  padding-left: 8px;
+  margin-top: 40px;
+}
+.contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit::before {
+  width: 4px;
+  height: 18px;
+  background-color: #357EF1;
+  border-radius: 8px;
+  position: absolute;
+  top: 7px;
+  left: -3px;
+  content: "";
+}
+.contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt {
+  margin-top: 32px;
+}
+.contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li {
+  font-size: 16px;
+  color: #2F2F2F;
+  position: relative;
+  padding: 28px;
+  display: flex;
+  line-height: 35px;
+}
+.contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::after {
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+  background-color: #efefef;
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: -12px;
+}/*# sourceMappingURL=sub1.css.map */
