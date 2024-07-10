@@ -1,1 +1,101 @@
-/*# sourceMappingURL=sub5.css.map */
+.notice .sub_container {
+  width: 1400px;
+  margin: 0 auto;
+}
+.notice .sub_container .contents table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #2f2f2f;
+}
+.notice .sub_container .contents table tr {
+  width: auto;
+}
+.notice .sub_container .contents table th {
+  background-color: rgba(154, 190, 248, 0.22);
+  font-size: 22px;
+  font-weight: 700;
+  padding: 16px 54px;
+}
+.notice .sub_container .contents table th:nth-of-type(1) {
+  width: 150px;
+}
+.notice .sub_container .contents table th:nth-of-type(3) {
+  width: 200px;
+}
+.notice .sub_container .contents table td {
+  padding: 20px;
+  margin: 0 auto;
+  font-size: 24px;
+  border-top: solid 1px #d9d9d9;
+  border-bottom: solid 1px #d9d9d9;
+}
+.notice .sub_container .contents table td:nth-of-type(1) {
+  text-align: center;
+}
+.notice .sub_container .contents table td:nth-of-type(2) {
+  text-align: left;
+}
+.notice .sub_container .contents table td:nth-of-type(3) {
+  text-align: center;
+}
+.notice .sub_container .contents .pagination {
+  width: 416px;
+  height: 32px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 120px;
+}
+.notice .sub_container .contents .pagination a:nth-of-type(3),
+.notice .sub_container .contents .pagination a:nth-of-type(4),
+.notice .sub_container .contents .pagination a:nth-of-type(5),
+.notice .sub_container .contents .pagination a:nth-of-type(6),
+.notice .sub_container .contents .pagination a:nth-of-type(7) {
+  padding: 0 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.contents_notice {
+  justify-items: end;
+}
+.contents_notice .notice_inner_1 {
+  text-align: center;
+  padding-bottom: 64px;
+}
+.contents_notice .notice_inner_1 h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.contents_notice .notice_inner_1 h2 p {
+  font-size: 24px;
+  font-weight: bold;
+}
+.contents_notice .notice_inner_2 {
+  background-color: rgba(226, 226, 226, 0.26);
+  padding-top: 64px;
+  padding: 32px 44px 44px;
+  justify-items: center;
+}
+.contents_notice .notice_inner_2 .p {
+  font-size: 20px;
+}
+.contents_notice .notice_inner_3 {
+  width: auto;
+  height: auto;
+  padding-left: 64px;
+  border: solid 1px #AFAFAF;
+}
+.contents_notice .notice_inner_3 td {
+  padding: 24px;
+}
+.contents_notice .notice_list {
+  width: 180px;
+  height: 60px;
+  margin: 0 auto;
+  border: #357EF1;
+  background-color: #357EF1;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
