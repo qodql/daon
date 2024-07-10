@@ -81,6 +81,7 @@ hr {
 
 a {
   color: inherit;
+  font-size: inherit;
 }
 
 a:link, a:visited, a:hover, a:active {
