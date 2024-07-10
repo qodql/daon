@@ -287,6 +287,12 @@
                 font-weight: 700;
             }
         }
+        &.double_prev, &.prev, &.double_next, &.next {
+            opacity: 0.3; 
+            &.active {
+            opacity: 1;
+            }
+        }
         a {
             width: 32px;
             height: 32px;
@@ -294,7 +300,7 @@
             text-align: center;
             line-height: 32px;
             font-size: 20px;
-            color: #afafaf;
+            color: #2f2f2f;
         }
         &:nth-last-child(2) {
             margin-left: 32px;
