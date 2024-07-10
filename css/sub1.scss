@@ -1,5 +1,3 @@
-// 다온소개
-
 $mobile:767px;
 $tablet:768px;
 $pc:1200px;
@@ -16,29 +14,26 @@ $pc:1200px;
 }
 
 
-.intro {
+
+// 다온소개
+.intro_footer{
+    margin-top: 0;
+}
+
+.intro{
     .sub_top{
         background: url("../img/img_sub_intro.jpg") no-repeat;
         .dim{
             background-color: rgba(0,0,0,0.38);
         }
     }
-    //.sub_container2 (확인 필요)
-    .sub_container2{
-        padding-top: 140px;
-        margin: 0 auto;
-        .title{
-            text-align: center;
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 80px;
-            .desc{
-                display: block;
-                margin-top: 16px;
-                font-size: 24px;
-            }
+    
+    .sub_container{
+        &.sub_container_full{
+            width: 100%;
+            padding: 140px 0 0;
         }
-
+        
         .contents {
             width: 100%;
             @keyframes fadeIn{
@@ -56,7 +51,7 @@ $pc:1200px;
                 100%{width: 100%; left:0%;}
             } 
 
-            .intro-fadein{
+            .intro_fadein{
                 p{
                     &:nth-child(1){animation: fadeIn 1300ms;}
                     &:nth-child(2){animation: fadeIn 1600ms;}
@@ -65,7 +60,7 @@ $pc:1200px;
                 }
             }
             
-            .intro-grid-wrapper{
+            .intro_grid_wrapper{
                 width: 1400px;
                 margin: 0 auto;
                 display: grid;
@@ -109,7 +104,7 @@ $pc:1200px;
                 }
             }
 
-            .intro-txt{
+            .intro_txt{
                 width: 847px;
                 margin: 80px auto;
                 h5{
@@ -120,7 +115,7 @@ $pc:1200px;
                 }   
             }
 
-            .intro-full-bg{
+            .intro_full_bg{
                 width: 100%;
                 height: 777px;
                 margin: 0 auto;
@@ -143,10 +138,10 @@ $pc:1200px;
                     background-color: rgba(0,0,0,0.44);
                     z-index: -1;
                 }
-                &.intro-expand{
+                &.intro_expand{
                     &::after,&::before{ animation: expand 2000ms ease-out forwards;}
                 }
-                .intro-full-bg-inner{
+                .intro_full_bg_inner{
                     width:720px;
                     margin: 0 auto;
                     position: absolute;
@@ -154,7 +149,7 @@ $pc:1200px;
                     left: 50%;
                     text-align: center;
                     transform:translate(-50%,-50%);
-                    .intro-full-bg-inner-txt{
+                    .intro_full_bg_inner_txt{
                         margin: 40px auto;
                         h5{
                             color: #fff;
