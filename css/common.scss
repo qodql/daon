@@ -124,8 +124,8 @@
 }
 
 .logo {
+    width: fit-content;
     height: 46px;
-
     a {
         display: block;
         width: 100%;
@@ -213,26 +213,108 @@
     }
 }
 
-// tab
-.tab_box {
-    padding: 8px;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 8px;
-    background-color: #efefef;
-
-    li {
-        padding: 8px 16px;
-        font-size: 20px;
-        line-height: 32px;
-        color: #afafaf;
+// tab - box
+.tab{
+    &.box {
+        padding: 8px;
+        display: inline-flex;
+        align-items: center;
         border-radius: 8px;
-        cursor: pointer;
+        background-color: #efefef;
 
+        li {
+            padding: 8px 16px;
+            font-size: 20px;
+            line-height: 32px;
+            color: #afafaf;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &.on {
+                color: #2f2f2f;
+                background-color: #fff;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
+    &.line {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #afafaf;
+        li {
+            padding-bottom: 15px;
+            color: #afafaf;
+            font-size: 20px;
+            position: relative;
+            cursor: pointer;
+            &:not(:first-of-type) {
+                margin-left: 40px;
+            }
+            &.on {
+                color: #2f2f2f;
+                font-weight: 700;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 4px;
+                    background-color: #2f2f2f;
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                }
+            }
+        }
+    }
+}
+
+// pagination
+.pagination {
+    margin-top: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+        &:not(:first-of-type) {
+            margin-left: 8px;
+        }
         &.on {
-            color: #2f2f2f;
-            background-color: #fff;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+            a {
+                background-color: #357EF1;
+                border-radius: 50%;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+        a {
+            width: 32px;
+            height: 32px;
+            display: block;
+            text-align: center;
+            line-height: 32px;
+            font-size: 20px;
+            color: #afafaf;
+        }
+        &:nth-last-child(2) {
+            margin-left: 32px;
+        }
+        &:nth-child(2) {
+            margin-right: 32px;
+        }
+        &.double_prev {
+            background: url("../img/icon/icon_double_arrow_on.svg");
+            transform: rotate(180deg);
+        }
+        &.prev {
+            background: url("../img/icon/icon_arrow_on.svg");
+            transform: rotate(180deg);
+        }
+        &.double_next {
+            background: url("../img/icon/icon_double_arrow_on.svg");
+        }
+        &.next {
+            background: url("../img/icon/icon_arrow_on.svg");
         }
     }
 }
