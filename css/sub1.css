@@ -127,7 +127,8 @@
   background-color: rgba(0, 0, 0, 0.44);
   z-index: -1;
 }
-.intro .sub_container2 .contents .intro-full-bg.intro-expand::after, .intro .sub_container2 .contents .intro-full-bg.intro-expand::before {
+.intro .sub_container2 .contents .intro-full-bg.intro-expand::after,
+.intro .sub_container2 .contents .intro-full-bg.intro-expand::before {
   animation: expand 2000ms ease-out forwards;
 }
 .intro .sub_container2 .contents .intro-full-bg .intro-full-bg-inner {
@@ -139,10 +140,21 @@
   text-align: center;
   transform: translate(-50%, -50%);
 }
-.intro .sub_container2 .contents .intro-full-bg .intro-full-bg-inner .intro-full-bg-inner-txt {
+.intro
+  .sub_container2
+  .contents
+  .intro-full-bg
+  .intro-full-bg-inner
+  .intro-full-bg-inner-txt {
   margin: 40px auto;
 }
-.intro .sub_container2 .contents .intro-full-bg .intro-full-bg-inner .intro-full-bg-inner-txt h5 {
+.intro
+  .sub_container2
+  .contents
+  .intro-full-bg
+  .intro-full-bg-inner
+  .intro-full-bg-inner-txt
+  h5 {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
@@ -175,7 +187,7 @@
 }
 .contact .sub_container .contents .contact-map .contact-map-btn button {
   height: 42px;
-  background-color: #2F2F2F;
+  background-color: #2f2f2f;
   border-radius: 8px;
   position: relative;
   display: flex;
@@ -196,9 +208,19 @@
   padding: 11px 5px;
   margin-left: 20px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn .contact-map-naver-btn {
+.contact
+  .sub_container
+  .contents
+  .contact-map
+  .contact-map-btn
+  .contact-map-naver-btn {
   width: 155px;
 }
-.contact .sub_container .contents .contact-map .contact-map-btn .contact-map-google-btn {
+.contact
+  .sub_container
+  .contents
+  .contact-map
+  .contact-map-btn
+  .contact-map-google-btn {
   width: 138px;
 }
