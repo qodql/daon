@@ -18,7 +18,7 @@
 <body>
     <!-- 컨텐츠 -->
     <div class="login_common login">
-        <div class="logoNtxt">
+        <div class="logo_txt">
             <h1 class="logo">
                 <a href="./index.html"><img src="./img/logo.svg" alt=""></a>
             </h1>
@@ -26,34 +26,36 @@
                 다온펜션에 오신 것을 환영합니다.
             </h2>
         </div>
-
-        <div class="box-shadow">
-            <div class="align">
-                <div class="login_daon">
-                    <p class="emailbox">
-                        <label for="check"></label>
-                        <input id="check" type="email" placeholder="이메일">
-                        <!-- <span class="x eye"></span> -->
-                        <span class="x"></span>
-                    </p>
-                    <p class="pwbox">
-                        <label for="check"></label>
-                        <input id="check" type="password" placeholder="비밀번호 (영문/숫자/특수문자 조합 8~15자)">
-                        <span class="x eye"></span>
-                        <span class="x"></span>
-                    </p>
-                
-                    <p class="login_btn">로그인</p>
-                    <p class="login_white_btn">회원가입</p>
+        <div class="login_wrap">
+                <div class="daon">
+                    <div class="login_daon">
+                        <ul class="login_input_box">
+                            <li class="email_box">
+                                <label for="email"></label>
+                                <input id="email" type="email" placeholder="이메일">
+                                <button type="button" class="input_reset_btn"></button>
+                            </li>
+                            <li class="pw_box">
+                                <label for="password"></label>
+                                <input id="password" type="password" placeholder="비밀번호 (영문/숫자/특수문자 조합 8~15자)">
+                                <button type="button" class="input_reset_btn eye"></button>
+                                <button type="button" class="input_reset_btn"></button>
+                            </li>
+                        </ul>
+                        <button type="button" class="login_btn">로그인</button>
+                    </div>
+                    <div class="join_daon">
+                        <button type="button" class="login_white_btn">회원가입</button>
+                    </div>
                 </div>
-                <div class="login_sns">
-                    <div class="login_sns_btn kakao"></div>
-                    <div class="login_sns_btn naver"></div>
-                    <div class="login_sns_btn google"></div>
+                <div class="sns">
+                    <ul class="login_sns">
+                        <li class="kakao"><button type="button"></button></li>
+                        <li class="naver"><button type="button"></button></li>
+                        <li class="google"><button type="button"></button></li>
+                    </ul>
                 </div>
-            </div>
         </div>
-
     </div>
     <!-- 푸터 -->
     <footer class="footer">

@@ -256,7 +256,6 @@
 }
 
 .main + .footer {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
@@ -432,4 +431,4 @@
   display: block;
   margin-top: 16px;
   font-size: 24px;
-}/*# sourceMappingURL=common.css.map */
+}

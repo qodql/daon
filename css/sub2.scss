@@ -162,7 +162,15 @@
             animation: contentsbox 2s cubic-bezier(0.000, 0.920, 0.275, 0.980) normal;
             position: relative;
 
-
+            .abcd {max-width: 860px;
+                li {
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid #efefef;
+                        margin-bottom: 40px;
+                        padding-bottom: 40px;
+                    }
+                }
+            }
             .main_box {
                 @include slidebox(68px);
 
@@ -229,7 +237,6 @@
             .contour3 {
                 width: 1400px;
                 height: 2px;
-                float: left;
                 background-color: #efefef;
                 margin-top: 40px;
             }
