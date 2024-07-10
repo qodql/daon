@@ -271,8 +271,10 @@
 
 // pagination
 .pagination {
+    margin-top: 72px;
     display: flex;
     align-items: center;
+    justify-content: center;
     li {
         &:not(:first-of-type) {
             margin-left: 8px;
@@ -293,6 +295,12 @@
             line-height: 32px;
             font-size: 20px;
             color: #afafaf;
+        }
+        &:nth-last-child(2) {
+            margin-left: 32px;
+        }
+        &:nth-child(2) {
+            margin-right: 32px;
         }
         &.double_prev {
             width: 32px;
