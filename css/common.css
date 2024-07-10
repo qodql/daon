@@ -197,6 +197,7 @@
   background-color: #2f2f2f;
   overflow: hidden;
   position: relative;
+  margin-top: 240px;
 }
 .footer .box_wrap {
   width: 100%;
@@ -206,7 +207,9 @@
   top: 0;
   z-index: 11;
 }
-.footer .box_wrap a, .footer .box_wrap p, .footer .box_wrap span {
+.footer .box_wrap a,
+.footer .box_wrap p,
+.footer .box_wrap span {
   font-size: 20px;
   color: #fff;
 }
