@@ -2,84 +2,82 @@
   width: 100%;
   height: 100vh;
 }
-.login_common .logoNtxt {
+.login_common .logo_txt {
   margin-top: 160px;
   margin-bottom: 56px;
 }
-.login_common .logoNtxt h2 {
+.login_common .logo_txt h2 {
   padding-top: 40px;
   font-size: 32px;
   font-weight: 700;
   text-align: center;
 }
 
-.login .box-shadow {
+.login .login_wrap {
   width: 480px;
-  height: 570px;
-  padding: auto 40px;
+  padding: 72px 40px 48px;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.login .box-shadow .login_daon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.login .login_wrap .daon .login_daon {
+  margin-bottom: 60px;
 }
-.login .box-shadow .login_daon .emailbox {
+.login .login_wrap .daon .login_daon .login_input_box {
+  margin-bottom: 24px;
+}
+.login .login_wrap .daon .login_daon .login_input_box .email_box {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
-  margin-bottom: 12px;
+  overflow: hidden;
 }
-.login .box-shadow .login_daon .emailbox label {
+.login .login_wrap .daon .login_daon .login_input_box .email_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_mail_afafaf.svg);
+  background-image: url(../img/icon/icon_mail_grey.svg);
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .emailbox input {
+.login .login_wrap .daon .login_daon .login_input_box .email_box input {
   width: calc(100% - 40px);
   padding: 16px 0;
   color: #afafaf;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .emailbox .x {
+.login .login_wrap .daon .login_daon .login_input_box .email_box .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.login .box-shadow .login_daon .emailbox .eye {
+.login .login_wrap .daon .login_daon .login_input_box .email_box .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.login .box-shadow .login_daon .emailbox input:focus ~ .x {
+.login .login_wrap .daon .login_daon .login_input_box .email_box input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
-.login .box-shadow .login_daon .pwbox {
+.login .login_wrap .daon .login_daon .login_input_box .pw_box {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
-  margin-bottom: 24px;
+  overflow: hidden;
 }
-.login .box-shadow .login_daon .pwbox label {
+.login .login_wrap .daon .login_daon .login_input_box .pw_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -88,31 +86,33 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .pwbox input {
+.login .login_wrap .daon .login_daon .login_input_box .pw_box input {
   width: calc(100% - 40px);
   padding: 16px 0;
   color: #afafaf;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .pwbox .x {
+.login .login_wrap .daon .login_daon .login_input_box .pw_box .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.login .box-shadow .login_daon .pwbox .eye {
+.login .login_wrap .daon .login_daon .login_input_box .pw_box .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.login .box-shadow .login_daon .pwbox input:focus ~ .x {
+.login .login_wrap .daon .login_daon .login_input_box .pw_box input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
-.login .box-shadow .login_daon .login_btn {
+.login .login_wrap .daon .login_daon .login_btn {
   width: 400px;
   padding: 16px 32px;
   text-align: center;
@@ -120,9 +120,11 @@
   background-color: #357EF1;
   border-radius: 8px;
   color: #ffffff;
-  margin-bottom: 60px;
 }
-.login .box-shadow .login_daon .login_white_btn {
+.login .login_wrap .daon .join_daon {
+  margin-bottom: 40px;
+}
+.login .login_wrap .daon .join_daon .login_white_btn {
   width: 400px;
   padding: 16px 32px;
   text-align: center;
@@ -130,29 +132,27 @@
   border: 1px solid #357EF1;
   border-radius: 8px;
   color: #357EF1;
-  margin-bottom: 40px;
 }
-.login .box-shadow .login_sns {
+.login .login_wrap .sns .login_sns {
   display: flex;
-  justify-content: center;
   gap: 16px;
 }
-.login .box-shadow .login_sns .login_sns_btn {
+.login .login_wrap .sns .login_sns li {
   width: 60px;
   height: 60px;
   border-radius: 60px;
   background-repeat: no-repeat;
   background-position: center;
 }
-.login .box-shadow .login_sns .kakao {
+.login .login_wrap .sns .login_sns .kakao {
   background-color: #fff500;
   background-image: url(../img/icon/icon_kakao.svg);
 }
-.login .box-shadow .login_sns .naver {
+.login .login_wrap .sns .login_sns .naver {
   background-color: #06CC80;
   background-image: url(../img/icon/icon_naver.svg);
 }
-.login .box-shadow .login_sns .google {
+.login .login_wrap .sns .login_sns .google {
   background-color: #ffffff;
   border: 1px solid #afafaf;
   background-image: url(../img/icon/icon_google.svg);
@@ -160,18 +160,18 @@
 
 .join .inputboxs {
   width: 480px;
-  height: 570px;
-  padding: auto 40px;
+  padding: 72px 40px 48px;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
 }
 .join .inputboxs .emailbox {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
 .join .inputboxs .emailbox label {
   width: 20px;
@@ -188,30 +188,33 @@
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .emailbox .x {
+.join .inputboxs .emailbox .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
 .join .inputboxs .emailbox .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .emailbox input:focus ~ .x {
+.join .inputboxs .emailbox input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
 .join .inputboxs .pwbox {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
 .join .inputboxs .pwbox label {
   width: 20px;
@@ -228,30 +231,33 @@
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .pwbox .x {
+.join .inputboxs .pwbox .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
 .join .inputboxs .pwbox .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .pwbox input:focus ~ .x {
+.join .inputboxs .pwbox input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
 .join .inputboxs .pwcheckbox {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
 .join .inputboxs .pwcheckbox label {
   width: 20px;
@@ -268,30 +274,33 @@
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .pwcheckbox .x {
+.join .inputboxs .pwcheckbox .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
 .join .inputboxs .pwcheckbox .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .pwcheckbox input:focus ~ .x {
+.join .inputboxs .pwcheckbox input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
 .join .inputboxs .name {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
 .join .inputboxs .name label {
   width: 20px;
@@ -308,23 +317,25 @@
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .name .x {
+.join .inputboxs .name .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
 .join .inputboxs .name .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .name input:focus ~ .x {
+.join .inputboxs .name input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
 .join .inputboxs .pv {
   width: 400px;
@@ -335,10 +346,11 @@
 }
 .join .inputboxs .pv .phone {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
 .join .inputboxs .pv .phone label {
   width: 20px;
@@ -355,23 +367,25 @@
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .pv .phone .x {
+.join .inputboxs .pv .phone .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
 .join .inputboxs .pv .phone .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .pv .phone input:focus ~ .x {
+.join .inputboxs .pv .phone input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
 .join .inputboxs .pv .phone_btn {
   width: 180px;
@@ -384,10 +398,11 @@
 }
 .join .inputboxs .verify {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
 .join .inputboxs .verify label {
   width: 20px;
@@ -404,21 +419,23 @@
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .verify .x {
+.join .inputboxs .verify .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
 .join .inputboxs .verify .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .verify input:focus ~ .x {
+.join .inputboxs .verify input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
