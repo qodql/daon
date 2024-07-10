@@ -1,39 +1,149 @@
 // community 공통
 .community_common {
-    .sub_container {
-        .contents {
-        }
+  .sub_container {
+    .contents {
     }
+  }
 }
-
+@mixin abc {
+  padding: 0 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
 // 공지사항
 .notice {
-    .sub_container {
-        .contents {
+  .sub_container {
+    width: 1400px;
+    margin: 0 auto;
+    .contents {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #2f2f2f;
+
+        tr {
+          width: auto;
         }
+
+        th {
+          &:nth-of-type(1) {
+            width: 150px;
+          }
+
+          &:nth-of-type(3) {
+            width: 200px;
+          }
+          background-color: rgba(154, 190, 248, 0.22);
+          font-size: 22px;
+          font-weight: 700;
+          padding: 16px 54px;
+        }
+
+        td {
+          padding: 20px;
+          margin: 0 auto;
+          font-size: 24px;
+          border-top: solid 1px #d9d9d9;
+          border-bottom: solid 1px #d9d9d9;
+
+          &:nth-of-type(1) {
+            text-align: center;
+          }
+
+          &:nth-of-type(2) {
+            text-align: left;
+          }
+          &:nth-of-type(3) {
+            text-align: center;
+          }
+        }
+      }
+
+      .pagination {
+        width: 416px;
+        height: 32px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 120px;
+        // 폰트조절
+        a:nth-of-type(3),
+        a:nth-of-type(4),
+        a:nth-of-type(5),
+        a:nth-of-type(6),
+        a:nth-of-type(7) {
+          @include abc();
+        }
+      }
     }
+  }
+}
+// 공지사항 내용
+.contents_notice {
+  justify-items: end;
+  .notice_inner_1 {
+    text-align: center;
+    padding-bottom: 64px;
+    h2 {
+      font-size: 40px;
+      font-weight: bold;
+      p {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+  .notice_inner_2 {
+    background-color: rgba(226, 226, 226, 0.26);;
+    padding-top: 64px;
+   
+    padding: 32px 44px 44px;
+    justify-items: center;
+    .p {
+      font-size: 20px;
+    }
+  }
+  .notice_inner_3 {
+    width: auto;
+    height: auto;
+    padding-left: 64px;
+    border: solid 1px #AFAFAF;
+    td{
+      padding: 24px;
+    }
+  }
+  .notice_list{
+    width: 180px;
+    height: 60px;
+    margin: 0 auto;
+    border: #357EF1;
+    background-color: #357EF1;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+  }
 }
 
 // 이벤트
 .event {
-    .sub_container {
-        .contents {
-        }
+  .sub_container {
+    .contents {
     }
+  }
 }
 
 // 이용후기
 .review {
-    .sub_container {
-        .contents {
-        }
+  .sub_container {
+    .contents {
     }
+  }
 }
 
 // 상세 공통
 .inner_common {
-    .sub_container {
-        .contents {
-        }
+  .sub_container {
+    .contents {
     }
+  }
 }
