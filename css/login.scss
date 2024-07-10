@@ -76,7 +76,6 @@ $box-height: 570px;
     background-color: #357EF1;
     border-radius: 8px;
     color: #ffffff;
-
     @content
 }
 @mixin btn_reverse($w:$input-width){
@@ -182,15 +181,21 @@ $box-height: 570px;
 .join {
     .inputboxs{
         @include box-shadow;
-        p{
-            border-bottom: 12px;
-        }
         
         .emailbox{@include inputbox($icn: url(../img/icon/icon_mail_afafaf.svg));}
         .pwbox{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
         .pwcheckbox{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
         .name{@include inputbox($icn: url(../img/icon/icon_person.svg));}
-        .phone{@include inputbox($icn: url(../img/icon/icon_phone.svg));}
+        .pv{
+            width: $input-width;
+            height: 52px;
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+
+            .phone{@include inputbox($icn: url(../img/icon/icon_phone.svg));}
+            .phone_btn{@include btn($w:180px);}
+        }
         .verify{@include inputbox($icn: url(../img/icon/icon_phone.svg));}
     }
 }

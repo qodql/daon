@@ -166,9 +166,6 @@
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
 }
-.join .inputboxs p {
-  border-bottom: 12px;
-}
 .join .inputboxs .emailbox {
   width: 400px;
   padding: 0 20px;
@@ -329,14 +326,21 @@
 .join .inputboxs .name input:focus ~ .x {
   opacity: 1;
 }
-.join .inputboxs .phone {
+.join .inputboxs .pv {
+  width: 400px;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.join .inputboxs .pv .phone {
   width: 400px;
   padding: 0 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
 }
-.join .inputboxs .phone label {
+.join .inputboxs .pv .phone label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -345,13 +349,13 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.join .inputboxs .phone input {
+.join .inputboxs .pv .phone input {
   width: calc(100% - 40px);
   padding: 16px 0;
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .phone .x {
+.join .inputboxs .pv .phone .x {
   width: 16px;
   height: 16px;
   position: absolute;
@@ -360,14 +364,23 @@
   top: 50%;
   background-image: url(../img/icon/icon_x-circle.svg);
 }
-.join .inputboxs .phone .eye {
+.join .inputboxs .pv .phone .eye {
   width: 20px;
   height: 20px;
   right: 36px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .phone input:focus ~ .x {
+.join .inputboxs .pv .phone input:focus ~ .x {
   opacity: 1;
+}
+.join .inputboxs .pv .phone_btn {
+  width: 180px;
+  padding: 16px 32px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #357EF1;
+  border-radius: 8px;
+  color: #ffffff;
 }
 .join .inputboxs .verify {
   width: 400px;
@@ -408,4 +421,4 @@
 }
 .join .inputboxs .verify input:focus ~ .x {
   opacity: 1;
-}/*# sourceMappingURL=login.css.map */
+}
