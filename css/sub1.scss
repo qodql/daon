@@ -144,9 +144,8 @@ $pc:1200px;
                     z-index: -1;
                 }
                 &.intro-expand{
-                    &::after,::before{ animation: expand 2000ms ease-out forwards;}
+                    &::after,&::before{ animation: expand 2000ms ease-out forwards;}
                 }
-                
                 .intro-full-bg-inner{
                     width:720px;
                     margin: 0 auto;
@@ -155,8 +154,6 @@ $pc:1200px;
                     left: 50%;
                     text-align: center;
                     transform:translate(-50%,-50%);
-                    .logo{
-                    }
                     .intro-full-bg-inner-txt{
                         margin: 40px auto;
                         h5{
@@ -214,8 +211,6 @@ $pc:1200px;
                             top: 8px;
                             img{
                                 width: 19px;
-                                
-                                
                             }
                         }
                         a{

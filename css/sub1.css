@@ -127,7 +127,7 @@
   background-color: rgba(0, 0, 0, 0.44);
   z-index: -1;
 }
-.intro .sub_container2 .contents .intro-full-bg.intro-expand::after, .intro .sub_container2 .contents .intro-full-bg.intro-expand ::before {
+.intro .sub_container2 .contents .intro-full-bg.intro-expand::after, .intro .sub_container2 .contents .intro-full-bg.intro-expand::before {
   animation: expand 2000ms ease-out forwards;
 }
 .intro .sub_container2 .contents .intro-full-bg .intro-full-bg-inner {
@@ -201,4 +201,4 @@
 }
 .contact .sub_container .contents .contact-map .contact-map-btn .contact-map-google-btn {
   width: 138px;
-}/*# sourceMappingURL=sub1.css.map */
+}
