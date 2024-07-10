@@ -241,25 +241,17 @@
   margin-right: 32px;
 }
 .pagination li.double_prev {
-  width: 32px;
-  height: 32px;
   background: url("../img/icon/icon_double_arrow_on.svg");
   transform: rotate(180deg);
 }
 .pagination li.prev {
-  width: 32px;
-  height: 32px;
   background: url("../img/icon/icon_arrow_on.svg");
   transform: rotate(180deg);
 }
 .pagination li.double_next {
-  width: 32px;
-  height: 32px;
   background: url("../img/icon/icon_double_arrow_on.svg");
 }
 .pagination li.next {
-  width: 32px;
-  height: 32px;
   background: url("../img/icon/icon_arrow_on.svg");
 }
 

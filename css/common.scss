@@ -303,25 +303,17 @@
             margin-right: 32px;
         }
         &.double_prev {
-            width: 32px;
-            height: 32px;
             background: url("../img/icon/icon_double_arrow_on.svg");
             transform: rotate(180deg);
         }
         &.prev {
-            width: 32px;
-            height: 32px;
             background: url("../img/icon/icon_arrow_on.svg");
             transform: rotate(180deg);
         }
         &.double_next {
-            width: 32px;
-            height: 32px;
             background: url("../img/icon/icon_double_arrow_on.svg");
         }
         &.next {
-            width: 32px;
-            height: 32px;
             background: url("../img/icon/icon_arrow_on.svg");
         }
     }
