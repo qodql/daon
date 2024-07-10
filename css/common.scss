@@ -350,7 +350,7 @@
 
                     &:last-of-type {
                         a {
-                            background-image: url("/img/icon/icon_sns_facebook.svg");
+                            background-image: url("../img/icon/icon_sns_facebook.svg");
                         }
                     }
 
@@ -359,7 +359,7 @@
                         height: 40px;
                         display: block;
                         border-radius: 8px;
-                        background: #fff url("/img/icon/icon_sns_instagram.svg") no-repeat center;
+                        background: #fff url("../img/icon/icon_sns_instagram.svg") no-repeat center;
                     }
                 }
             }
