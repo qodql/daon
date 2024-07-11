@@ -49,6 +49,10 @@
 
 .align_box {
   width: 100%;
+  height: 1121px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
 }
 .align_box li {
   width: 440px;

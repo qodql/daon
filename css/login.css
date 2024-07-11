@@ -7,7 +7,6 @@
   margin-bottom: 56px;
 }
 .login_common .logo_txt h1 {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -419,75 +418,10 @@
 .join .join_wrap .join_agree .agree_checkbox .view_all {
   color: #afafaf;
 }
-.join .inputboxs .pv .phone .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
+.join .join_wrap .join_agree .join_optional_info {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: right;
+  color: #efefef;
 }
-.join .inputboxs .pv .phone .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.join .inputboxs .pv .phone input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
-}
-.join .inputboxs .pv .phone_btn {
-  width: 180px;
-  padding: 16px 32px;
-  text-align: center;
-  font-weight: 700;
-  background-color: #357EF1;
-  border-radius: 8px;
-  color: #ffffff;
-}
-.join .inputboxs .verify {
-  width: 400px;
-  padding-left: 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.join .inputboxs .verify label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
-  background-image: url(../img/icon/icon_phone.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.join .inputboxs .verify input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.join .inputboxs .verify .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.join .inputboxs .verify .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.join .inputboxs .verify input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
-}/*# sourceMappingURL=login.css.map */
