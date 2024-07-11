@@ -1,8 +1,8 @@
 $input-width: 400px;
 $box-width: 480px;
 
-@mixin inputbox($w:$input-width, $icn)
-{   width: $w;
+@mixin inputbox($w:$input-width, $icn){   
+    width: $w;
     padding-left: 20px;
     position: relative;
     border: 1px solid #afafaf;
@@ -22,16 +22,18 @@ $box-width: 480px;
         padding: 16px 0;
         color: #afafaf;    
         vertical-align: middle; 
+        &:focus{
+            width: calc(100% - 100px);
+        }
     }
     // 인풋박스 내부 우측 [x, 눈] 아이콘
     .input_reset_btn{
         width: 16px;
         height: 16px;
         opacity: 1;
-        // visibility: hidden;
+        visibility: hidden;
         position: absolute;
         top: 50%;
-        //right도 쓰기
         right: 8px;
         transform: translate(-50%, -50%);
         background-image: url(../img/icon/icon_x_circle.svg);
@@ -48,9 +50,9 @@ $box-width: 480px;
     }
     @content
 }
-@mixin box_shadow($w:$box-width){
+@mixin box_shadow($w:$box-width, $p_t:72px, $p_b:48px){
     width: $w;
-    padding: 72px 40px 48px;
+    padding: $p_t 40px $p_b;
     margin: 0 auto;
     box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -76,17 +78,19 @@ $box-width: 480px;
     color: #357EF1;
     @content
 }
+
 // ---------------------------------------------------------
 // 로그인+회원가입 공통
 .login_common {
     width: 100%;
     height: 100vh;
-
+    margin: 160px auto 0;
     .logo_txt{
-        //클릭영역줄이기
-        margin-top: 160px;
         margin-bottom: 56px;
-
+        h1{
+            width: fit-content;
+            margin: 0 auto;
+        }
         h2{
             padding-top: 40px;
             font-size: 32px;
@@ -94,96 +98,153 @@ $box-width: 480px;
             text-align: center;
         }
     }
-}
+    .email_box{@include inputbox($icn: url(../img/icon/icon_mail_grey.svg));}
+    .pw_box{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
+    .pw_check_box{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
+    .name_box{@include inputbox($icn: url(../img/icon/icon_person.svg));}
+    .phone_box{@include inputbox($icn: url(../img/icon/icon_phone.svg))}
+    .verify_box{@include inputbox($icn: url(../img/icon/icon_phone.svg))}
+    
 
+    .blue_btn{
+        @include btn;
+    }
+
+
+}
 // 로그인
 .login {
     .login_wrap{
         @include box_shadow;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
-            .daon{
-                .login_daon{
+            .login_daon{
+                .login_login_daon{
                     margin-bottom: 60px;
                     .login_input_box{
                         margin-bottom: 24px;
-                        //gap: 12px;
                         .email_box{
-                            @include inputbox($icn: url(../img/icon/icon_mail_grey.svg));
+                            margin-bottom: 12px;
                         }
-                        .pw_box{
-                            @include inputbox($icn: url(../img/icon/icon_lock.svg));
-                        }
-                    }
-                    .login_btn{
-                        @include btn;
                     }
                 }
-
-                .join_daon{
+                .login_join_daon{
                     margin-bottom: 40px;
-                    .login_white_btn{
+                    .white_btn{
                         @include btn_reverse;
                     }
                 }
             }
-
-           .sns{
-               .login_sns{
+           .login_sns{
+               .login_login_sns{
                 display: flex;
+                justify-content: center;
                 gap: 16px;
-
                 li{
-                    width: 60px;
-                    height: 60px;
-                    
-                    border-radius: 60px;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                }
-                .kakao{
-                    background-color: #fff500;
-                    background-image: url(../img/icon/icon_kakao.svg);
-                }
-                .naver{
-                    background-color: #06CC80;
-                    background-image: url(../img/icon/icon_naver.svg);
-                }
-                .google{
-                    background-color: #ffffff;
-                    border: 1px solid #afafaf;
-                    background-image: url(../img/icon/icon_google.svg);
+                    button{
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 60px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    .kakao{
+                        background-color: #fff500;
+                        background-image: url(../img/icon/icon_kakao.svg);
+                    }
+                    .naver{
+                        background-color: #06CC80;
+                        background-image: url(../img/icon/icon_naver.svg);
+                    }
+                    .google{
+                        background-color: #ffffff;
+                        border: 1px solid #afafaf;
+                        background-image: url(../img/icon/icon_google.svg);
+                    }
                 }
               }
             }
-    
     }
 }
 
 // 회원가입
-.join {
-    .inputboxs{
-        @include box_shadow;
-        
-        .emailbox{@include inputbox($icn: url(../img/icon/icon_mail_afafaf.svg));}
-        .pwbox{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
-        .pwcheckbox{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
-        .name{@include inputbox($icn: url(../img/icon/icon_person.svg));}
-        .pv{
-            width: $input-width;
-            height: 52px;
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
+.join{
+    .join_wrap{
+        width: $box-width;
+        .join_personal_info{
+            @include box_shadow($p_t:72px, $p_b:72px);
+            .join_input_box{
+                li{
+                    margin-bottom: 12px;
+                }
+                .verify_box
+                {
+                    margin-bottom: 0;
+                }
+            }
+            .phone_verify_btn{
+                // width: $input-width;
+                display: flex;
+                justify-content: space-between;
+                gap: 8px;
+                .phone_box{width: 70%;}
+                .join_btn{
+                    width: 30%;
+                    .blue_btn{
+                        width: 100%;
+                    }
+                }
 
-            .phone{@include inputbox($icn: url(../img/icon/icon_phone.svg));}
-            .phone_btn{@include btn($w:180px);}
+            }
+            
         }
-        .verify{@include inputbox($icn: url(../img/icon/icon_phone.svg));}
+        .join_agree{
+            .agree_checkbox{
+                @include box_shadow($p_t:0, $p_b:0)
+                {
+                    padding:0;
+                };
+                li{
+                    padding: 8px 24px;
+                }
+                .agree_all{
+                    padding: 24px 0px 24px 24px;
+                    background-color: #efefef;
+                    .arrow_btn{
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                            fill: #ffffff;
+                            path{
+                                fill: #afafaf;
+                            }
+                        }   
+                    }
+                }
+                .agree_essential{
+                    label{
+                        //(필수)after로 넣기
+                    }
+                }
+                .agree_optional{
+                    label{
+                        //(선택)after로 넣기
+                    }
+                }  
+                .view_all{
+                    color: #afafaf;
+                }
+            }
+            .join_optional_info{
+                width: 100%;
+                margin-top: 16px;
+                font-size: 14px;
+                text-align: right;
+                color: #efefef;
+            }
+        }
+        .join_join_btn{
+            // @include btn($w:$box-width);       
+        }
     }
 }
-
 // 회원가입 완료
 .join_complete {}
