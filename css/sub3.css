@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.pool .sub_top {
+  background-image: url("../img/img_facilities_pool_0.jpg");
+}
 .pool .sub_container .contents .sub3_pool_contents {
   display: flex;
   justify-content: space-between;
@@ -84,6 +87,9 @@
   display: inline-block;
 }
 
+.rooftop .sub_top {
+  background-image: url("../img/img_facilities_rooftop_0.jpg");
+}
 .rooftop .sub_container .contents .sub3_rooftop_contents {
   display: flex;
   justify-content: space-between;
@@ -167,6 +173,10 @@
 }
 .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-bt a.active::after {
   display: inline-block;
+}
+
+.bbq .sub_top {
+  background-image: url("../img/img_facilities_bbq_0.jpg");
 }
 
 .sub3_bbq_contents {

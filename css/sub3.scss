@@ -6,8 +6,12 @@
   }
 }
 
+
 // pool
 .pool {
+  .sub_top {
+    background-image: url("../img/img_facilities_pool_0.jpg");
+  }
   .sub_container {
     .contents {
       .sub3_pool_contents {
@@ -105,8 +109,11 @@
   }
 }
 
-// rooftop
+
 .rooftop {
+  .sub_top {
+    background-image: url("../img/img_facilities_rooftop_0.jpg");
+  }
   .sub_container {
     .contents {
       .sub3_rooftop_contents {
@@ -205,12 +212,18 @@
 }
 
 // bbq
-.sub_container {
-  .title {
-    .dscs {
-    }
+.bbq{
+  .sub_top {
+    background-image: url("../img/img_facilities_bbq_0.jpg");
   }
 }
+  .sub_container {
+   
+    .title {
+      .dscs {
+      }
+    }
+  }
 // bbq
 .sub3_bbq_contents {
   display: flex;
