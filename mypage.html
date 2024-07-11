@@ -13,7 +13,7 @@
     <script src="./js/common.js"></script>
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/mypage.css">
-    <script src="./js/sub.js"></script>
+    <script src="./js/sub1.js"></script>
 </head>
 <body>
     <!-- 헤더 -->
@@ -88,9 +88,69 @@
             </div>
         </div>
         <div class="sub_container">
+            <h2 class="title">
+                마이페이지
+                <span class="desc">회원정보 및 예약내역을 조회합니다.</span>
+            </h2>
             <!-- 페이지 컨텐츠 내용 -->
             <div class="contents">
-                마이페이지(회원정보)
+                <div class="mypage_wrap">
+                    <div class="mypage_tap_wrap">
+                        <ul class="tab">
+                            <li class="on">회원정보</li>
+                            <li>예약내역</li>
+                        </ul>
+
+                        <div class="tab_cont">
+                            <div class="mypage_info">
+                                <ul class="mypage_info_input">
+                                    <li class="email_box">
+                                        <label for="email">이메일</label>
+                                        <input type="email" placeholder="bengby@naver.com">
+                                    </li>
+                                    
+                                    <li class="pw_box">
+                                        <label for="password">비밀번호</label>
+                                        <input type="password">
+                                    </li>
+
+                                    <li class="pw_confirm_box">
+                                        <label for="password_confirm">비밀번호 확인</label>
+                                        <input type="password">
+                                    </li>
+
+                                    <li class="name_box">
+                                        <label for="name">이름</label>
+                                        <input type="name">
+                                    </li>
+
+                                    <li class="phone_box">
+                                        <label for="phone">휴대폰번호</label>
+                                        <input type="phone">
+                                    </li>
+
+                                    <li class="birth_box">
+                                        <label for="birth">생년월일</label>
+                                        <input type="text">
+                                    </li>
+
+                                    <li class="coupon_box">
+                                        <label for="coupon">쿠폰</label>
+                                        <input type="email">
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
