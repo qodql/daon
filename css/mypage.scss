@@ -49,33 +49,89 @@
                                 display: flex;
                                 align-items: center;
                                 &.email_box{
-                                    input{
-                                        background-color: #EFEFEF;
+                                    div{
+                                        input{
+                                            background-color: #EFEFEF;
+                                        }
+                                        &::before{
+                                            background: url('../img/icon/icon_mail_grey.svg') no-repeat center;
+                                        }
+                                    }
+                                }
+                                &.pw_box{
+                                    div{
+                                        &::before{
+                                            background: url('../img/icon/icon_lock.svg') no-repeat center;
+                                        }
+                                    }
+                                }
+                                &.pw_confirm_box{
+                                    div{
+                                        &::before{
+                                            background: url('../img/icon/icon_lock.svg') no-repeat center;
+                                        }
+                                    }
+                                }
+                                &.name_box{
+                                    div{
+                                        &::before{
+                                            background: url('../img/icon/icon_mail_grey.svg') no-repeat center;
+                                        }
                                     }
                                 }
                                 &.phone_box{
                                     border-bottom: 2px solid #efefef;
                                     padding-bottom: 24px;
+                                    div{
+                                        &::before{
+                                            background: url('../img/icon/icon_mail_grey.svg') no-repeat center;
+                                        }
+                                    }
                                 }
                                 &.birth_box{
                                     border-bottom: 2px solid #efefef;
                                     padding-bottom: 24px;
+                                    div{
+                                        &::before{
+                                            background: url('../img/icon/icon_mail_grey.svg') no-repeat center;
+                                        }
+                                    }
                                 }
                                 &.coupon_box{
                                     border-bottom: 2px solid #efefef;
                                     padding-bottom: 24px;
+                                    div{
+
+                                    }
                                 }
                                 label{
                                     width: 170px;
                                     font-size: 20px;
                                     color: #2f2f2f;
                                 }
-                                input{
-                                    width: 480px;
-                                    height: 52px;
-                                    border: 1px solid #afafaf;
-                                    border-radius: 8px;
+                                div{
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    input{
+                                        width: 480px;
+                                        height: 52px;
+                                        border: 1px solid #afafaf;
+                                        border-radius: 8px;
+                                        &::placeholder{
+                                            padding-left: 48px;
+                                        }
+                                    }
+                                    &::before{
+                                        width: 20px;
+                                        height: 20px;
+                                        content: '';
+                                        position: absolute;
+                                        left: 20px;
+                                    }
                                 }
+                                
+                                
                             }
                         }
                     }

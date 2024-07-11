@@ -38,16 +38,34 @@
   display: flex;
   align-items: center;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box input {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div input {
   background-color: #EFEFEF;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div::before {
+  background: url("../img/icon/icon_mail_grey.svg") no-repeat center;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_box div::before {
+  background: url("../img/icon/icon_lock.svg") no-repeat center;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_confirm_box div::before {
+  background: url("../img/icon/icon_lock.svg") no-repeat center;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.name_box div::before {
+  background: url("../img/icon/icon_mail_grey.svg") no-repeat center;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box {
   border-bottom: 2px solid #efefef;
   padding-bottom: 24px;
 }
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box div::before {
+  background: url("../img/icon/icon_mail_grey.svg") no-repeat center;
+}
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box {
   border-bottom: 2px solid #efefef;
   padding-bottom: 24px;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box div::before {
+  background: url("../img/icon/icon_mail_grey.svg") no-repeat center;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box {
   border-bottom: 2px solid #efefef;
@@ -58,9 +76,24 @@
   font-size: 20px;
   color: #2f2f2f;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li input {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li div {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li div input {
   width: 480px;
   height: 52px;
   border: 1px solid #afafaf;
   border-radius: 8px;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li div input::placeholder {
+  padding-left: 48px;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li div::before {
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  left: 20px;
 }
