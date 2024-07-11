@@ -169,8 +169,10 @@ $box-width: 480px;
 .join{
     .join_wrap{
         width: $box-width;
+        margin: 0 auto;
         .join_personal_info{
             @include box_shadow($p_t:72px, $p_b:72px);
+            margin-bottom: 16px;
             .join_input_box{
                 li{
                     margin-bottom: 12px;
@@ -198,12 +200,19 @@ $box-width: 480px;
         }
         .join_agree{
             .agree_checkbox{
-                @include box_shadow($p_t:0, $p_b:0)
-                {
-                    padding:0;
-                };
+                @include box_shadow($p_t:0, $p_b:0){padding:0;};
+                overflow: hidden;
                 li{
                     padding: 8px 24px;
+                    //어떻게 해야 할까..................
+                    // display: flex;
+                    // justify-content: space-between;
+                    // input{
+                    //     display: block;
+                    // }
+                    .view_all{
+                        color: #afafaf;
+                    }
                 }
                 .agree_all{
                     padding: 24px 0px 24px 24px;
@@ -221,17 +230,22 @@ $box-width: 480px;
                 }
                 .agree_essential{
                     label{
-                        //(필수)after로 넣기
+                        &::after{
+                            content: ' (필수)';
+                            color: #ff0f0f;
+                        }
                     }
                 }
                 .agree_optional{
                     label{
-                        //(선택)after로 넣기
+                        color: #afafaf;
+                        &::after{
+                            content: ' (선택)';
+                            color: #afafaf;
+                        }
                     }
                 }  
-                .view_all{
-                    color: #afafaf;
-                }
+                
             }
             .join_optional_info{
                 width: 100%;
@@ -242,9 +256,57 @@ $box-width: 480px;
             }
         }
         .join_join_btn{
-            // @include btn($w:$box-width);       
+            margin-top: 40px;
+            button{
+                width: 100%;
+                @include btn($w:width);       
+            }
         }
     }
 }
 // 회원가입 완료
-.join_complete {}
+.join_complete{
+    .logo_txt{
+        /*방법1. 체크아이콘 svg로 넣고 크기랑 색상 직접 수정*/
+        .check_icon{
+            margin-top: 68px;
+            margin-bottom: 36px;
+            text-align: center;
+            svg{
+                width: 80px;
+                height: 80px;
+                path{
+                    fill: #357EF1;
+                }
+            }
+        }
+        /* 방법2. 체크아이콘 before로 넣기 (아이콘 추출해야함)
+        h2{
+            &::before{
+                content: '';
+                width: 80px;
+                height: 80px;
+                display: block;
+
+                background-image: url(../img/icon/icon_check.svg);
+                background-repeat: no-repeat;
+            }
+        }
+        */
+    }
+    .join_complete_wrap{
+        .greeting{
+            margin-bottom: 100px;
+            p{
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+        .join_complete_btn{
+            button{
+                margin: 0 auto;
+                display: block;
+            }
+        }
+    }
+}
