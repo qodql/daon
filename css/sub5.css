@@ -1,5 +1,5 @@
 .notice .sub_top {
-  background-image: url("../img/img_community_noti_0.jpg");
+  background-image: url("../img/img_community_notice_0.jpg");
 }
 .notice .sub_container {
   width: 1400px;
@@ -221,7 +221,7 @@
 }
 
 .review .sub_top {
-  background-image: url("../img/img_community_re_0.jpg");
+  background-image: url("../img/img_community_review_0.jpg");
 }
 .review .sub_container .title {
   padding-bottom: 70px;
