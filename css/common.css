@@ -234,12 +234,6 @@
   color: #fff;
   font-weight: 700;
 }
-.pagination li.double_prev, .pagination li.prev, .pagination li.double_next, .pagination li.next {
-  opacity: 0.3;
-}
-.pagination li.double_prev.active, .pagination li.prev.active, .pagination li.double_next.active, .pagination li.next.active {
-  opacity: 1;
-}
 .pagination li a {
   width: 32px;
   height: 32px;
@@ -247,7 +241,7 @@
   text-align: center;
   line-height: 32px;
   font-size: 20px;
-  color: #2f2f2f;
+  color: #afafaf;
 }
 .pagination li:nth-last-child(2) {
   margin-left: 32px;
@@ -271,7 +265,6 @@
 }
 
 .main + .footer {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
@@ -447,4 +440,4 @@
   display: block;
   margin-top: 16px;
   font-size: 24px;
-}/*# sourceMappingURL=common.css.map */
+}
