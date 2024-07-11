@@ -209,16 +209,64 @@
 }
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(1)::before {
   background: url("../img/icon/icon_location.svg") no-repeat center;
-  content: "";
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  margin-right: 8px;
-  /* left: -8px;
-  top: 21px; */
 }
-.contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li::after {
-  width: 200%;
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(2)::before {
+  background: url("../img/icon/icon_tel.svg") no-repeat center;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(3)::before {
+  background: url("../img/icon/icon_mail.svg") no-repeat center;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(1)::before {
+  background: url("../img/icon/icon_metro.svg") no-repeat center;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2)::before {
+  background: url("../img/icon/icon_bus.svg") no-repeat center;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2) p::after {
+  border-color: #94CD1E;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li::after {
+  width: 0;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
+  width: 40px;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 12px;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
+  width: 18px;
+  height: 18px;
+  content: "";
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #30B141;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
+  width: 40px;
+  height: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
+  width: 4px;
+  height: 4px;
+  content: "";
+  background-color: #afafaf;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(1)::before {
+  background: url("../img/icon/icon_location.svg") no-repeat center;
+}
+.contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(2)::before {
+  background: url("../img/icon/icon_check.svg") no-repeat center;
 }
 .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit {
   font-size: 24px;
@@ -247,10 +295,15 @@
   position: relative;
   padding: 28px;
   display: flex;
-  line-height: 35px;
+  gap: 8px;
+  align-items: center;
+  line-height: 40px;
+}
+.contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li b {
+  font-weight: 700;
 }
 .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::after {
-  width: 100%;
+  width: 200%;
   height: 2px;
   margin: 0 auto;
   background-color: #efefef;
@@ -258,4 +311,11 @@
   position: absolute;
   bottom: 2px;
   left: -12px;
-}/*# sourceMappingURL=sub1.css.map */
+}
+.contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::before {
+  width: 32px;
+  height: 32px;
+  content: "";
+  display: inline-block;
+  margin-right: 8px;
+}
