@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"sub6.css"}
+{"version":3,"sources":["sub6.scss","sub6.css"],"names":[],"mappings":"AAKgB;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;ACJpB;ADO4B;EACI,yBAAA;ACLhC;ADS4B;EACI,eAAA;EACA,yBAAA;ACPhC;ADQgC;EACI,UAAA;EACA,kBAAA;ACNpC;ADUwB;EACI,WAAA;EACA,YAAA;EACA,cAAA;EACA,0CAAA;EACA,yBAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;ACR5B;ADS4B;EACI,gBAAA;EACA,WAAA;EACA,iBAAA;ACPhC","file":"sub6.css"}

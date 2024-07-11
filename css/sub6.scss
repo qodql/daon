@@ -2,6 +2,46 @@
 .reservation_common {
     .sub_container {
         .contents {
+            .step_wrap {
+                .step {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    li {
+                        &.actvie {
+                            .circle {
+                                background-color: #2f2f2f;
+                            }
+                        }
+                        &.complete {
+                            .circle {
+                                cursor: pointer;
+                                background-color: #357EF1;
+                                & + p {
+                                    opacity: 0;
+                                    visibility: hidden;
+                                }
+                            }
+                        }
+                        .circle {
+                            width: 64px;
+                            height: 64px;
+                            display: block;
+                            border: 8px solid rgba(255, 255, 255, 0.5);
+                            background-color: #efefef;
+                            text-align: center;
+                            border-radius: 50%;
+                            cursor: default;
+                            span {
+                                font-weight: 700;
+                                color: #fff;
+                                line-height: 48px;
+                            }
+                        }
+                        p {}
+                    }
+                }
+            }
         }
     }
 }
