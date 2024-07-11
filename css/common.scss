@@ -1,5 +1,16 @@
+// template
+.template {
+    > div {
+        width: 1400px;
+        margin: 0 auto 120px;
+        h2 {
+            text-align: left;
+            font-size: 40px;
+            margin: 40px;
+        }
+    }
+}
 // header
-
 .header {
     width: 100%;
     position: absolute;
@@ -106,8 +117,6 @@
 
                         .depth_2 {
                             display: block;
-
-                            a {}
                         }
                     }
 
@@ -213,7 +222,7 @@
     }
 }
 
-// tab - box
+// tab
 .tab{
     &.box {
         padding: 8px;
@@ -287,6 +296,12 @@
                 font-weight: 700;
             }
         }
+        &.double_prev, &.prev, &.double_next, &.next {
+            opacity: 0.3; 
+            &.active {
+            opacity: 1;
+            }
+        }
         a {
             width: 32px;
             height: 32px;
@@ -294,7 +309,7 @@
             text-align: center;
             line-height: 32px;
             font-size: 20px;
-            color: #afafaf;
+            color: #2f2f2f;
         }
         &:nth-last-child(2) {
             margin-left: 32px;
@@ -475,7 +490,7 @@
     .sub_top {
         width: 100%;
         height: 500px;
-        background: url("../img/room_img/Header/room_preview_swim.jpg") no-repeat center / cover;
+        background: url("../img/img_sub_reservation.jpg") no-repeat center / cover;
         position: relative;
     }
 
