@@ -7,12 +7,12 @@
 .login_common .logo_txt {
   margin: 160px 0 56px;
 }
-.login_common .logo_txt h1 {
+.login_common .logo_txt .logo {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
-.login_common .logo_txt h2 {
+.login_common .logo_txt .txt {
   margin-top: 40px;
   font-size: 32px;
   font-weight: 700;
@@ -467,10 +467,10 @@
   color: #ffffff;
 }
 
-.join_complete .logo_txt h2 {
+.join_complete .logo_txt .txt {
   margin-top: 68px;
 }
-.join_complete .logo_txt h2::before {
+.join_complete .logo_txt .txt::before {
   content: "";
   width: 80px;
   height: 80px;
@@ -492,3 +492,10 @@
   margin: 0 auto;
   display: block;
 }
+
+/** 분기점 
+360~767: 모바일
+768~1023: 중간
+1024~1399: 태블릿
+1400~: pc
+*/

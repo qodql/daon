@@ -80,17 +80,17 @@ $box-width: 480px;
 }
 // ---------------------------------------------------------
 // 로그인+회원가입 공통
-.login_common {
+.login_common{
     width: 100%;
     height: 100vh;
     margin: 0 auto;
     .logo_txt{
         margin: 160px 0 56px;
-        h1{
+        .logo{      //h1태그
             width: fit-content;
             margin: 0 auto;
         }
-        h2{
+        .txt{       //h2태그
             margin-top: 40px;
             font-size: 32px;
             font-weight: 700;
@@ -263,7 +263,7 @@ $box-width: 480px;
 // 회원가입 완료
 .join_complete{
     .logo_txt{
-        h2{
+        .txt{
             margin-top: 68px;
             &::before{
                 content: '';
@@ -294,4 +294,33 @@ $box-width: 480px;
             }
         }
     }
+}
+// 반응형==========================================================
+/** 분기점 
+360~767: 모바일
+768~1023: 중간
+1024~1399: 태블릿
+1400~: pc
+*/
+
+$mobile: 360px;
+$middle: 768px;
+$tablet: 1024px;
+$pc: 1400px;
+
+@mixin responsive($device){
+    @media(max-width:$device){@content;}
+}
+body{
+    @include responsive($mobile){
+    };
+    @include responsive($middle){
+
+    };
+    @include responsive($tablet){
+
+    };
+    @include responsive($pc){
+
+    };
 }
