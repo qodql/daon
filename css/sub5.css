@@ -294,9 +294,19 @@
 .review .sub_container .contents .images ul li a img {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   object-fit: cover;
 }
 
 .hidden {
   display: none;
 }
+=======
+  -o-object-fit: cover;
+     object-fit: cover;
+<<<<<<< HEAD
+}
+=======
+}/*# sourceMappingURL=sub5.css.map */
+>>>>>>> dev
+>>>>>>> 6b20b7129a2f578a76b2b8b487b34990589b4070
