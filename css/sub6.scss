@@ -11,21 +11,6 @@
                         display: flex;
                         align-items: center;
                         flex-direction: column;
-                        &.actvie {
-                            .circle {
-                                background-color: #2f2f2f;
-                            }
-                        }
-                        &.complete {
-                            .circle {
-                                cursor: pointer;
-                                background-color: #357EF1;
-                                & + p {
-                                    opacity: 0;
-                                    visibility: hidden;
-                                }
-                            }
-                        }
                         &:not(:last-of-type) {
                             margin-right: 120px;
                             position: relative;
@@ -39,6 +24,24 @@
                                     left: 64px;
                                     top: 32px;
                                     z-index: 1;
+                                }
+                            }
+                        }
+                        &.actvie {
+                            .circle {
+                                background-color: #2f2f2f;
+                            }
+                        }
+                        &.complete {
+                            .circle {
+                                cursor: pointer;
+                                background-color: #357EF1;
+                                &::after {
+                                    border-color: #357EF1;
+                                }
+                                & + p {
+                                    opacity: 0;
+                                    visibility: hidden;
                                 }
                             }
                         }
