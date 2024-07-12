@@ -166,71 +166,97 @@
   color: #afafaf;
   font-size: 16px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation {
+
+.reservation_state .sub_top {
+  background: url("../img/img_sub_mypage.jpg") no-repeat;
+}
+.reservation_state .sub_top .dim {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.reservation_state .sub_container .contents ul.tab {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  border-bottom: 1px solid #afafaf;
+}
+.reservation_state .sub_container .contents ul.tab li {
+  width: 140px;
+  font-size: 24px;
+  color: #afafaf;
+  padding: 8px 16px;
+  text-align: center;
+  cursor: pointer;
+}
+.reservation_state .sub_container .contents ul.tab li.on {
+  color: #2f2f2f;
+  font-weight: 700;
+  border-bottom: 4px solid #2f2f2f;
+}
+.reservation_state .sub_container .contents .mypage_reservation {
   width: 100%;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list {
   width: 100%;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li {
   width: 100%;
   display: flex;
   padding: 24px 0;
   border-bottom: 2px solid #EFEFEF;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li:nth-child(4) p {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li:nth-child(4) p {
   color: #AFAFAF;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5 {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5 {
   font-weight: 700;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5, .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p {
   font-size: 20px;
   color: #2f2f2f;
   text-align: center;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(1) {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(1), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(1) {
   width: 320px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(2) {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(2), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(2) {
   width: 180px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(3) {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(3), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(3) {
   width: 180px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(4) {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(4), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(4) {
   width: 340px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(5) {
+.reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(5), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(5) {
   width: 330px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel {
+.reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel {
   width: 100%;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel h3 {
+.reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel h3 {
   margin: 60px 0;
   font-size: 24px;
   font-weight: 700;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table {
+.reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table {
   width: 100%;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td {
+.reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td {
   font-size: 20px;
   border: 1px solid #AFAFAF;
   padding: 30px 0 30px 80px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td:first-child {
+.reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td:first-child {
   width: 420px;
   height: 80px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td ul li {
+.reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td ul li {
   font-size: 16px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel span {
+.reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel span {
   font-size: 16px;
   color: #AFAFAF;
   font-weight: 300;
   margin: 16px 8px;
   display: block;
-}/*# sourceMappingURL=mypage.css.map */
+}
