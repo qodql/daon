@@ -7,12 +7,8 @@
 .login_common .logo_txt {
   margin: 160px 0 56px;
 }
-<<<<<<< HEAD
-.login_common .logo_txt h1 {
-=======
 .login_common .logo_txt .logo {
   width: -moz-fit-content;
->>>>>>> 804de142e9029370dd682ca0180c0ea07a5bdfa2
   width: fit-content;
   margin: 0 auto;
 }
@@ -455,7 +451,6 @@
   margin-top: 16px;
   font-size: 14px;
   text-align: right;
-<<<<<<< HEAD
   color: #afafaf;
 }
 .join .join_wrap .join_join_btn {
@@ -504,7 +499,3 @@
 1024~1399: 태블릿
 1400~: pc
 */
-=======
-  color: #efefef;
-}/*# sourceMappingURL=login.css.map */
->>>>>>> dev
