@@ -77,3 +77,23 @@
 .align_box li .event_text_box span {
   padding-top: 8px;
 }
+
+.event_next_button {
+  width: 416px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.event_next_button .arrow_box {
+  width: 72px;
+  height: 32px;
+}
+.event_next_button .arrow_box img {
+  width: 32px;
+  height: 32px;
+}
+.event_next_button a:nth-of-type(1) {
+  font-size: 20px;
+  font-weight: bold;
+}
