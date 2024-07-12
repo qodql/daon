@@ -119,6 +119,53 @@
 .faq .sub_top {
   background-image: url(../img/img_community_faq_0.jpg);
 }
+.faq .sub_container .title {
+  display: flex;
+  justify-content: center;
+}
+.faq .sub_container .title .icon {
+  position: relative;
+}
+.faq .sub_container .title .icon .img1 {
+  padding: 10px;
+}
+.faq .sub_container .title:hover span {
+  display: block !important;
+}
+.faq .sub_container .title .icon span {
+  white-space: nowrap;
+  position: absolute;
+  justify-items: center;
+  width: auto;
+  height: auto;
+  background: #484848;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 12px;
+  top: -40px;
+  left: 0%;
+  display: none;
+}
+.faq .sub_container .title .icon span:after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  transform: translateX(-50%);
+  border-top: 20px solid #484848;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+.faq .sub_container .desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
 .faq .sub_container .contents .sub5_community_faq ul {
   display: flex;
   justify-content: center;
