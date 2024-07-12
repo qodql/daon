@@ -1,3 +1,4 @@
 {
-    "liveSassCompile.settings.forceBaseDirectory": ""
+    "liveSassCompile.settings.forceBaseDirectory": "",
+    "liveServer.settings.port": 5501
 }
