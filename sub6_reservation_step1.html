@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <script src="./js/common.js"></script>
+    <!-- [↓] 달력 -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+    <!-- [↓] 데이트피커 -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/sub6.css">
-    <script src="./js/sub.js"></script>
-    <!-- [↓] 달력 -->
-    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
-    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+    <script src="./js/sub6.js"></script>
 </head>
 <body>
     <!-- 헤더 -->
@@ -105,7 +108,7 @@
                             </a>
                             <p>객실 선택</p>
                         </li>
-                        <li class="complete">
+                        <li>
                             <a href="#" class="circle">
                                 <span>2</span>
                             </a>
@@ -119,12 +122,29 @@
                         </li>
                     </ul>
                 </div>
-                <div id="calendar" style="height: 600px;"></div>
+                <div class="calendar_wrap">
+                    <div class="calendar_container">
+                        <p class="title left">2024년 7월</p>
+                        <div id="calendar" class="left"></div>
+                        <p class="title right">2024년 8월</p>
+                        <div id="calendar" class="right"></div>
+                    </div>
+                    <div class="calendar_btn_wrap">
+                        <span id="calendar_prev" class="nav_button prev">prev</span>
+                        <span id="calendar_next" class="nav_button next">next</span>
+                    </div>
+                </div>
                 <div class="data_area">
                     <ul class="date_person">
                         <li class="data">
                             <p class="label">투숙기간</p>
-                            <div></div>
+                            <div>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input type="text" id="tui-date-picker-target" aria-label="Date-Time" />
+                                    <span class="tui-ico-date"></span>
+                                </div>
+                                <div id="tui-date-picker-container" style="margin-top: -1px;"></div>
+                            </div>
                         </li>
                         <li class="room">
                             <p class="label">객실</p>
@@ -265,6 +285,71 @@
                 </ul>
             </div>
         </div>
-    </footer>
+    </footer>    
+    <script>
+        // calendar
+        document.addEventListener("DOMContentLoaded", function () {
+            var Calendar = tui.Calendar;
+
+            var today = new Date();
+            var firstMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            var secondMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+
+            var calendarLeft = new Calendar('#calendar.left', {
+                defaultView: 'month',
+                taskView: true,
+                scheduleView: true,
+                useCreationPopup: true,
+                useDetailPopup: true,
+                month: {
+                    visibleWeeksCount: 6
+                },
+                renderStartDate: firstMonth
+            });
+
+            var calendarRight = new Calendar('#calendar.right', {
+                defaultView: 'month',
+                taskView: true,
+                scheduleView: true,
+                useCreationPopup: true,
+                useDetailPopup: true,
+                month: {
+                    visibleWeeksCount: 6
+                },
+                renderStartDate: secondMonth
+            });
+
+            function moveCalendar(monthDiff) {
+                firstMonth.setMonth(firstMonth.getMonth() + monthDiff);
+                secondMonth.setMonth(secondMonth.getMonth() + monthDiff);
+
+                calendarLeft.setDate(firstMonth);
+                calendarRight.setDate(secondMonth);
+            }
+
+            document.getElementById('calendar_prev').addEventListener('click', function () {
+                moveCalendar(-1);
+                console.log("prev")
+            });
+
+            document.getElementById('calendar_next').addEventListener('click', function () {
+                moveCalendar(1);
+                console.log("next")
+            });
+
+            // datepicker
+            const DatePicker = tui.DatePicker;
+            const container = document.getElementById('tui-date-picker-container');
+            const target = document.getElementById('tui-date-picker-target');
+
+            const instance = new DatePicker(container, {
+                input: {
+                    element: target
+                },
+            });
+
+            instance.getDate();
+        });
+    </script>
 </body>
 </html>

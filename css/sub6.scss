@@ -66,6 +66,66 @@
                         }
                     }
                 }
+                
+            }
+            .calendar_wrap {
+                width: 100%;
+                height: 100%;
+                margin-top: 56px;
+                padding: 140px 60px 100px;
+                border: 1px solid #efefef;
+                position: relative;
+                .calendar_container {
+                    padding: 0 160px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    #calendar {
+                        width: calc(50% - 60px);
+                        height: 410px;
+                    }
+                    .title {
+                        font-size: 24px;
+                        position: absolute;
+                        left: 27.5%;
+                        top: 80px;
+                        &.left {
+                        }
+                        &.right {
+                            left: auto;
+                            right: 27.5%;
+                        }
+                    }
+                }
+                .calendar_btn_wrap {
+                    .nav_button {
+                        width: 100px;
+                        height: 100px;
+                        position: absolute;
+                        left: 60px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border: 1px solid #000;
+                        cursor: pointer;
+                        &.prev {}
+                        &.next {
+                            left: auto;
+                            right: 60px;
+                        }
+                    }
+                }
+            }
+            .data_area {
+                .date_person {
+                    display: flex;
+                    align-items: center;
+                    li {
+                        .label {
+                            font-size: 24px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
             }
         }
     }
