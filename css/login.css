@@ -455,6 +455,7 @@
   margin-top: 16px;
   font-size: 14px;
   text-align: right;
+<<<<<<< HEAD
   color: #afafaf;
 }
 .join .join_wrap .join_join_btn {
@@ -503,3 +504,7 @@
 1024~1399: 태블릿
 1400~: pc
 */
+=======
+  color: #efefef;
+}/*# sourceMappingURL=login.css.map */
+>>>>>>> dev
