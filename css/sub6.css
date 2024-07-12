@@ -3,6 +3,11 @@
   align-items: center;
   justify-content: center;
 }
+.reservation_common .sub_container .contents .step_wrap .step li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .reservation_common .sub_container .contents .step_wrap .step li.actvie .circle {
   background-color: #2f2f2f;
 }
@@ -14,6 +19,20 @@
   opacity: 0;
   visibility: hidden;
 }
+.reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) {
+  margin-right: 120px;
+  position: relative;
+}
+.reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle::after {
+  content: "";
+  width: 120px;
+  display: inline-block;
+  border: dashed 1px #afafaf;
+  position: absolute;
+  left: 64px;
+  top: 32px;
+  z-index: 1;
+}
 .reservation_common .sub_container .contents .step_wrap .step li .circle {
   width: 64px;
   height: 64px;
@@ -23,9 +42,13 @@
   text-align: center;
   border-radius: 50%;
   cursor: default;
+  z-index: 2;
 }
 .reservation_common .sub_container .contents .step_wrap .step li .circle span {
   font-weight: 700;
   color: #fff;
   line-height: 48px;
+}
+.reservation_common .sub_container .contents .step_wrap .step li p {
+  margin-top: 8px;
 }/*# sourceMappingURL=sub6.css.map */

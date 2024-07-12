@@ -8,6 +8,9 @@
                     align-items: center;
                     justify-content: center;
                     li {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
                         &.actvie {
                             .circle {
                                 background-color: #2f2f2f;
@@ -23,6 +26,22 @@
                                 }
                             }
                         }
+                        &:not(:last-of-type) {
+                            margin-right: 120px;
+                            position: relative;
+                            .circle {
+                                &::after{
+                                    content: '';
+                                    width: 120px;
+                                    display: inline-block;
+                                    border: dashed 1px #afafaf;
+                                    position: absolute;
+                                    left: 64px;
+                                    top: 32px;
+                                    z-index: 1;
+                                }
+                            }
+                        }
                         .circle {
                             width: 64px;
                             height: 64px;
@@ -32,13 +51,16 @@
                             text-align: center;
                             border-radius: 50%;
                             cursor: default;
+                            z-index: 2;
                             span {
                                 font-weight: 700;
                                 color: #fff;
                                 line-height: 48px;
                             }
                         }
-                        p {}
+                        p {
+                            margin-top: 8px;
+                        }
                     }
                 }
             }
