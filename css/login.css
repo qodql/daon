@@ -2,10 +2,11 @@
 .login_common {
   width: 100%;
   height: 100vh;
+  padding-top: 160px;
   margin: 0 auto;
 }
 .login_common .logo_txt {
-  margin: 160px 0 56px;
+  margin-bottom: 56px;
 }
 .login_common .logo_txt .logo {
   width: -moz-fit-content;
@@ -367,6 +368,9 @@
   background-image: url(../img/icon/icon_google.svg);
 }
 
+.join {
+  margin-bottom: 480px;
+}
 .join .join_wrap {
   width: 480px;
   margin: 0 auto;
@@ -435,8 +439,6 @@
 .join .join_wrap .join_agree .agree_checkbox .agree_list li .view_all {
   color: #afafaf;
 }
-<<<<<<< HEAD
-=======
 .join .join_wrap .join_agree .agree_checkbox .agree_list .agree_essential label::after {
   content: " (필수)";
   color: #ff0f0f;
@@ -448,16 +450,11 @@
   content: " (선택)";
   color: #afafaf;
 }
->>>>>>> dev
 .join .join_wrap .join_agree .join_optional_info {
   width: 100%;
   margin-top: 16px;
   font-size: 14px;
   text-align: right;
-<<<<<<< HEAD
-  color: #efefef;
-}
-=======
   color: #afafaf;
 }
 .join .join_wrap .join_join_btn {
@@ -505,5 +502,4 @@
 768~1023: 중간
 1024~1399: 태블릿
 1400~: pc
-*/
->>>>>>> dev
+*//*# sourceMappingURL=login.css.map */
