@@ -130,26 +130,25 @@
                         <div id="calendar" class="right"></div>
                     </div>
                     <div class="calendar_btn_wrap">
-                        <span id="calendar_prev" class="nav_button prev">prev</span>
-                        <span id="calendar_next" class="nav_button next">next</span>
+                        <span id="calendar_prev" class="nav_button prev"></span>
+                        <span id="calendar_next" class="nav_button next"></span>
                     </div>
                 </div>
                 <div class="data_area">
                     <ul class="date_person">
                         <li class="data">
                             <p class="label">투숙기간</p>
-                            <div>
+                            <div class="input_wrap">
                                 <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
                                     <input type="text" id="tui-date-picker-target" aria-label="Date-Time" />
-                                    <span class="tui-ico-date"></span>
                                 </div>
                                 <div id="tui-date-picker-container" style="margin-top: -1px;"></div>
                             </div>
                         </li>
                         <li class="room">
                             <p class="label">객실</p>
-                            <div>
-                                <input type="text" />
+                            <div class="input_wrap">
+                                <input type="text" value="1"/>
                                 <div class="btn_wrap">
                                     <button type="button" class="minus"></button>
                                     <button type="button" class="plus"></button>
@@ -158,8 +157,8 @@
                         </li>
                         <li class="adult">
                             <p class="label">성인</p>
-                            <div>
-                                <input type="text" />
+                            <div class="input_wrap">
+                                <input type="text" value="2"/>
                                 <div class="btn_wrap">
                                     <button type="button" class="minus"></button>
                                     <button type="button" class="plus"></button>
@@ -168,8 +167,8 @@
                         </li>
                         <li class="child">
                             <p class="label">어린이</p>
-                            <div>
-                                <input type="text" />
+                            <div class="input_wrap">
+                                <input type="text" value="0"/>
                                 <div class="btn_wrap">
                                     <button type="button" class="minus"></button>
                                     <button type="button" class="plus"></button>
@@ -301,9 +300,6 @@
                 scheduleView: true,
                 useCreationPopup: true,
                 useDetailPopup: true,
-                month: {
-                    visibleWeeksCount: 6
-                },
                 renderStartDate: firstMonth
             });
 
@@ -313,9 +309,6 @@
                 scheduleView: true,
                 useCreationPopup: true,
                 useDetailPopup: true,
-                month: {
-                    visibleWeeksCount: 6
-                },
                 renderStartDate: secondMonth
             });
 
@@ -329,12 +322,10 @@
 
             document.getElementById('calendar_prev').addEventListener('click', function () {
                 moveCalendar(-1);
-                console.log("prev")
             });
 
             document.getElementById('calendar_next').addEventListener('click', function () {
                 moveCalendar(1);
-                console.log("next")
             });
 
             // datepicker
