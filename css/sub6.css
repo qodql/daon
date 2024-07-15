@@ -8,11 +8,22 @@
   align-items: center;
   flex-direction: column;
 }
-.reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li:not(:last-of-type) {
   margin-right: 120px;
   position: relative;
 }
-.reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle::after {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li:not(:last-of-type)
+  .circle::after {
   content: "";
   width: 120px;
   display: inline-block;
@@ -22,17 +33,42 @@
   top: 32px;
   z-index: 1;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.actvie .circle {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.actvie
+  .circle {
   background-color: #2f2f2f;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.complete .circle {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.complete
+  .circle {
   cursor: pointer;
-  background-color: #357EF1;
+  background-color: #357ef1;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.complete .circle::after {
-  border-color: #357EF1;
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.complete
+  .circle::after {
+  border-color: #357ef1;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.complete .circle + p {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.complete
+  .circle
+  + p {
   opacity: 0;
   visibility: hidden;
 }
@@ -63,13 +99,22 @@
   border: 1px solid #efefef;
   position: relative;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container {
   padding: 0 160px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar {
   width: calc(50% - 60px);
   height: 410px;
 }
@@ -123,11 +168,21 @@
   left: 27.5%;
   top: 80px;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container .title.right {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  .title.right {
   left: auto;
   right: 27.5%;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_btn_wrap
+  .nav_button {
   width: 100px;
   height: 100px;
   position: absolute;
