@@ -9,6 +9,7 @@
   margin-bottom: 56px;
 }
 .login_common .logo_txt .logo {
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -310,9 +311,6 @@
   color: #ffffff;
 }
 
-.login {
-  margin: 0 auto;
-}
 .login .login_wrap {
   width: 480px;
   padding: 72px 40px 48px;
@@ -337,6 +335,7 @@
   padding: 16px 32px;
   text-align: center;
   font-weight: 700;
+  background-color: #ffffff;
   border: 1px solid #357EF1;
   border-radius: 8px;
   color: #357EF1;
@@ -497,12 +496,323 @@
 }
 
 /** 분기점 
-360~767: 모바일
-768~1023: 중간
-1024~1399: 태블릿
-1400~: pc
-<<<<<<< Updated upstream
+~480: 모바일
+481~768: 태블릿
+769~1279: 중간
+1280~: pc
+좌우패딩 16px
 */
-=======
-*/
->>>>>>> Stashed changes
+@media screen and (max-width: 480px) {
+  body {
+    background-color: rgb(204, 245, 252);
+  }
+  body .login_common {
+    text-align: center;
+  }
+  body .login_common .logo_txt {
+    margin-bottom: 56px;
+  }
+  body .login_common .email_box {
+    width: 400px;
+    padding-left: 20px;
+    position: relative;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  body .login_common .email_box label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-image: url(../img/icon/icon_mail_grey.svg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  body .login_common .email_box input {
+    width: calc(100% - 40px);
+    padding: 16px 0;
+    color: #afafaf;
+    vertical-align: middle;
+  }
+  body .login_common .email_box input:focus {
+    width: calc(100% - 100px);
+  }
+  body .login_common .email_box .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  body .login_common .email_box .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  body .login_common .email_box input:focus ~ .input_reset_btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  body .login_common .pw_box {
+    width: 400px;
+    padding-left: 20px;
+    position: relative;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  body .login_common .pw_box label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-image: url(../img/icon/icon_lock.svg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  body .login_common .pw_box input {
+    width: calc(100% - 40px);
+    padding: 16px 0;
+    color: #afafaf;
+    vertical-align: middle;
+  }
+  body .login_common .pw_box input:focus {
+    width: calc(100% - 100px);
+  }
+  body .login_common .pw_box .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  body .login_common .pw_box .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  body .login_common .pw_box input:focus ~ .input_reset_btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  body .login_common .pw_check_box {
+    width: 400px;
+    padding-left: 20px;
+    position: relative;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  body .login_common .pw_check_box label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-image: url(../img/icon/icon_lock.svg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  body .login_common .pw_check_box input {
+    width: calc(100% - 40px);
+    padding: 16px 0;
+    color: #afafaf;
+    vertical-align: middle;
+  }
+  body .login_common .pw_check_box input:focus {
+    width: calc(100% - 100px);
+  }
+  body .login_common .pw_check_box .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  body .login_common .pw_check_box .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  body .login_common .pw_check_box input:focus ~ .input_reset_btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  body .login_common .name_box {
+    width: 400px;
+    padding-left: 20px;
+    position: relative;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  body .login_common .name_box label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-image: url(../img/icon/icon_person.svg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  body .login_common .name_box input {
+    width: calc(100% - 40px);
+    padding: 16px 0;
+    color: #afafaf;
+    vertical-align: middle;
+  }
+  body .login_common .name_box input:focus {
+    width: calc(100% - 100px);
+  }
+  body .login_common .name_box .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  body .login_common .name_box .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  body .login_common .name_box input:focus ~ .input_reset_btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  body .login_common .phone_box {
+    width: 400px;
+    padding-left: 20px;
+    position: relative;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  body .login_common .phone_box label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-image: url(../img/icon/icon_phone.svg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  body .login_common .phone_box input {
+    width: calc(100% - 40px);
+    padding: 16px 0;
+    color: #afafaf;
+    vertical-align: middle;
+  }
+  body .login_common .phone_box input:focus {
+    width: calc(100% - 100px);
+  }
+  body .login_common .phone_box .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  body .login_common .phone_box .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  body .login_common .phone_box input:focus ~ .input_reset_btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  body .login_common .verify_box {
+    width: 400px;
+    padding-left: 20px;
+    position: relative;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  body .login_common .verify_box label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-image: url(../img/icon/icon_phone.svg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  body .login_common .verify_box input {
+    width: calc(100% - 40px);
+    padding: 16px 0;
+    color: #afafaf;
+    vertical-align: middle;
+  }
+  body .login_common .verify_box input:focus {
+    width: calc(100% - 100px);
+  }
+  body .login_common .verify_box .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  body .login_common .verify_box .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  body .login_common .verify_box input:focus ~ .input_reset_btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  body .login_common .blue_btn {
+    width: 400px;
+    padding: 16px 32px;
+    text-align: center;
+    font-weight: 700;
+    background-color: #357EF1;
+    border-radius: 8px;
+    color: #ffffff;
+  }
+  body .login .login_wrap .login_daon .login_login_daon {
+    margin-bottom: 60px;
+  }
+  body .login .login_wrap .login_daon .login_login_daon .login_input_box {
+    margin-bottom: 24px;
+  }
+  body .login .login_wrap .login_daon .login_login_daon .login_input_box .email_box {
+    margin-bottom: 12px;
+  }
+  body .login .login_wrap .login_daon .login_join_daon {
+    margin-bottom: 40px;
+  }
+}

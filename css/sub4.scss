@@ -1,67 +1,57 @@
-.around_spot {
-
+.around_spot{
+    img{
+        vertical-align: middle;
+    }
     .sub_top{
         background-image: url("../img/img_sub4_tops.jpg");
     }
 
-    .sub_container {
-        max-width: 100%;
-        .contents {
+    .sub_container{
+        .contents{
             .sub4_card{
                 margin-bottom: 72px;
-
                 .card_name{
                     display: flex;
-                    font-size: 24px;
-                    .card_name_eng{
-                        display: flex;
-                    }
-                    
                     strong{
-                        font-weight: 700;
                         margin-right: 4px;
+                        font-weight: 700;
                         font-size: 24px;
                     }
+                    .card_name_eng{
+                        display: flex;
+                        align-items: center;
+                    }                    
                     p{
                         margin-right: 8px;
                         font-size: 24px;
                     }
-                    a{ 
-                        img{width: 100%;}
-                    }
                 }
-
                 .card_img{
+                    // width: 100%;
+                    // height: 100%;
                     margin: 20px 0;
                     display: flex;
                     justify-content: space-between;
-                    gap:20px;
+                    gap: 20px;
                     .imgbox{
                         width: 50%;
+                        // height: 100%;
                         border-radius: 20px;
                         overflow: hidden;
-                        
-
-
-                        img{width: 100%;}
-
                     }
                 }
 
                 .card_txt{
                     border: 1px solid #efefef;
                     border-radius: 20px;
-
                     .txt_short{
                         padding: 24px 32px;
                         display: flex;
-
                         li{
                             margin-right: 32px;
                             text-align: center;
                             display: flex;
-                            align-items: center;
-                                            
+                            align-items: center;              
                             &::before{
                                 content: '';
                                 width: 24px;
@@ -89,18 +79,15 @@
                             }
                             
                         }
-                    }
-                        
+                    }            
                     .txt_long{
                         p{
-                            padding: 40px 32px;
+                            padding: 40px 160px 40px 32px;
                             border-top: 1px solid #efefef;
                             line-height: 24px;
                         }
-    
                     }
                 }
-
             }
             .sub4_card:nth-of-type(6){
                 margin-bottom: 0;
@@ -108,83 +95,94 @@
         }
     }
 }
-// 반응형==========================================================
+// @media 반응형==========================================================
 /** 분기점 
-360~767: 모바일
-768~1023: 중간
-1024~1399: 태블릿
-1400~: pc
+~480: 모바일, 좌우패딩 16px
+768~1024: 태블릿
+1025~1279: 중간(태블릿_라지)
+1280~: pc
 */
 
 $mobile: 480px;
-$middle: 768px;
-$tablet: 1024px;
-$pc: 1400px;
+$tablet: 768px;
+$tablet_large: 1024px;
+$pc: 1280px;
 
-@mixin responsive($device:0){
-    @media screen and  (max-width: $device){@content;}
+@mixin responsive($device:'mobile'){
+    @if($device == 'mobile'){
+        @media screen and (max-width: $mobile){@content;}
+    }
+    @else if($device == 'tablet'){
+        @media screen and (min-width: $tablet){@content;}
+    }
+    @else if($device == 'tablet_large'){
+        @media screen and (min-width: $tablet_large){@content;}
+    }
+    @else{
+        @media screen and (min-width: $pc){@content;}
+    }
 }
 
+$mobile_padding: 16px;
+$mobile_padding_2: 24px;
+$mobile_padding_3: 48px;
+$mobile_font: 16px;
+$mobile_font_title: 20px;
+
 body{
-    @include responsive($pc){
+    @include responsive('pc'){};
+    @include responsive('tablet_large'){};
+    @include responsive('tablet'){};
 
-    };
-    @include responsive($tablet){
-    };
-    @include responsive($middle){
-    };
+    @include responsive('mobile'){
+        background-color: rgb(167, 173, 154);
+        .around_spot{
+            .sub_top{}
+            .sub_container{ 
+                margin: 0 $mobile_padding;
+                .contents{
+                    .sub4_card{ 
+                        .card_name{
+                            flex-direction: column;
+                            strong{
+                                font-size: $mobile_font_title;
+                            }
+                            .card_name_eng{}
+                            p{
+                                font-size: $mobile_font_title;
+                            }
+                        }
+                        .card_img{
+                            margin: $mobile_padding 0;
+                            gap: $mobile_padding;
+                            // gap: 8px;
+                            flex-direction: column;
+                            .imgbox{
+                                width: 100%;
+                                // height: 100%;
+                                // box-sizing: border-box;
+                            }
+                        }
 
-    @include responsive($mobile){
-        background-color: aqua;
-        .around_spot {         
-            .card_name{
-                flex-direction: column;
-                .card_name_eng{
-                    display: flex;
-                }
-            }
-            
-            
-            .card_img{
-                width: 100%;
-                margin: 20px 0;
-                justify-content: center;
-                flex-direction: column;
-                .imgbox{
-                    width: 100%;
-                }
-            }
-
-            .card_txt{        
-                border: 0px;
-                .txt_short{
-                    padding: 12px 16px;
-                    display: flex;
-                    flex-direction: column;
-
-                    li{
-                        margin: 8px;           
-                        &::before{
-                            content: '';
-                            width: 12px;
-                            height: 12px;
-                            margin-right: 8px;
-                        }  
+                        .card_txt{        
+                            // border-style: none;
+                            .txt_short{
+                                padding: 12px 16px;
+                                display: flex;
+                                flex-direction: column;
+                                li{
+                                    margin: 8px;
+                                }
+                            }
+                            .txt_long{
+                                p{
+                                    padding: $mobile_padding_3 $mobile_padding_2;
+                                }
+                            }
+                        }
                     }
                 }
-                    
-                .txt_long{
-                    p{
-                        padding: 20px 16px;
-                        border-top: 1px solid #efefef;
-                    }
-
-                }
             }
-
-        }
-        .sub4_card:nth-of-type(6){
-            margin-bottom: 0;
         }
     }
 }
