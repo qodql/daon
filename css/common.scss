@@ -133,7 +133,21 @@
     }
   }
 }
-
+// alert
+.alert {
+  font-size: 14px;
+  color: #afafaf;
+  font-weight: 500;
+  line-height: 20px;
+  span {
+    display: block;
+    font: inherit;
+    color: inherit;
+  }
+}
+* + .alert {
+  margin-top: 20px;
+}
 .logo {
   width: fit-content;
   height: 46px;

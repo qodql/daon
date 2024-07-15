@@ -81,6 +81,48 @@
                 }
                 
             }
+            .next_wrap {
+                margin-top: 48px;
+                border-top: 1px solid #efefef;
+                position: relative;
+                .next_btn {
+                    width: 200px;
+                    height: 60px;
+                    padding-left: 12px;
+                    font-size: 20px;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #2f2f2f;
+                    color: #fff;
+                    border-radius: 0 0 8px 8px;
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transform: translateX(-50%);
+                    &.info {
+                        display: none;
+                    }
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        margin-top: -6px;
+                        background: url("../img/icon/icon_arrow.svg") no-repeat center;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// step1
+.step1 {
+    .sub_container {
+        .contents {
             .calendar_wrap {
                 width: 100%;
                 height: 100%;
@@ -331,49 +373,6 @@
                     }
                 }
             }
-
-            .next_wrap {
-                margin-top: 48px;
-                border-top: 1px solid #efefef;
-                position: relative;
-                .next_btn {
-                    width: 200px;
-                    height: 60px;
-                    padding-left: 12px;
-                    font-size: 20px;
-                    font-weight: 700;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: #2f2f2f;
-                    color: #fff;
-                    border-radius: 0 0 8px 8px;
-                    position: absolute;
-                    left: 50%;
-                    top: 0;
-                    transform: translateX(-50%);
-                    &.info {
-                        display: none;
-                    }
-                    &::after {
-                        content: '';
-                        display: inline-block;
-                        width: 40px;
-                        height: 40px;
-                        margin-top: -6px;
-                        background: url("../img/icon/icon_arrow.svg") no-repeat center;
-                        transform: rotate(90deg);
-                    }
-                }
-            }
-        }
-    }
-}
-
-// step1
-.step1 {
-    .sub_container {
-        .contents {
         }
     }
 }
@@ -381,6 +380,185 @@
 .step2 {
     .sub_container {
         .contents {
+            .info_wrap {
+                display: flex;
+                position: relative;
+                .left {
+                    width: calc(100% - 41%);
+                    display: block;
+                    margin: 56px 80px 0 0;
+                    padding-top: 40px;
+                    border-top: 1px solid #efefef;
+                    .user_info {
+                        margin-bottom: 56px;
+                        padding-bottom: 40px;
+                        border-bottom: 1px solid #efefef;
+                        .input_list {
+                            li {
+                                width: calc(50% - 20px);
+                                &:not(:first-of-type) {
+                                    margin-top: 24px;
+                                }
+                                &.half {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    > div {
+                                        width: calc(50% - 20px);
+                                    }
+                                }
+                                &.tel_wrap {
+                                    > div {
+                                        display: flex;
+                                        margin-bottom: 8px;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        input {
+                                            width: calc(100% - 128px);
+                                        }
+                                        button {
+                                            padding: 16px 32px;
+                                            background-color: #357EF1;
+                                            border-radius: 8px;
+                                            color: #fff;
+                                            font-weight: 700;
+                                        }
+                                    }
+                                }
+                                &.textarea_wrap {
+                                    width: 100%;
+                                }
+                                .label {
+                                    font-weight: 500;
+                                    margin-bottom: 8px;
+                                }
+                                input {
+                                    width: 100%;
+                                    padding: 16px 20px;
+                                    border: 1px solid #afafaf;
+                                    border-radius: 8px;
+                                }
+                            }
+                        }
+                    }
+                    .card_wrap {
+                        width: 100%;
+                        margin-top: 40px;
+                        padding-top: 40px;
+                        border-top: 1px solid #efefef;
+                        .card_box {
+                            width: 100%;
+                            height: 368px;
+                            margin-bottom: 40px;
+                            background-color: #efefef;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 20px;
+                            .card {
+                                width: 400px;
+                                height: 240px;
+                                padding: 40px;
+                                background-color: #2f2f2f;
+                                border-radius: 16px;
+                                border: 4px solid #D6B46C;
+                                box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+                                > p {
+                                    color: #fff;
+                                }
+                                .card_data {
+                                    p {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .right {
+                    width: calc(100% - 59%);
+                    margin-top: 56px;
+                    .sticky_menu {
+                        position: sticky;
+                        right: 0;
+                        top: 96px;
+                        .data_list {
+                            padding: 40px;
+                            margin-bottom: 40px;
+                            border-radius: 20px;
+                            border: 1px solid #efefef;
+                            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
+                            li {
+                                .label {
+                                    font-weight: 500;
+                                    margin-bottom: 8px;
+                                }
+                                .data {
+                                    font-size: 20px;
+                                    font-weight: 700;
+                                    .tag {
+                                        font-size: 12px;
+                                        font-weight: 700;
+                                    }
+                                }
+                                &:not(:first-of-type) {
+                                    margin-top: 32px;
+                                }
+                            }
+                        }
+                        .price_wrap {
+                            margin-bottom: 24px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            > p {
+                                font-size: 20px;
+                                font-weight: 700;
+                            }
+                            .price {
+                                text-align: right;
+                                .sale {
+                                    font-size: 20px;
+                                    color: #afafaf;
+                                    text-decoration: line-through;
+                                }
+                                p {
+                                    font-size: 32px;
+                                    font-weight: 700;
+                                    display: flex;
+                                    align-items: center;
+                                    &::before {
+                                        content: '';
+                                        display: inline-block;
+                                        width: 32px;
+                                        height: 32px;
+                                        margin-right: 4px;
+                                        background: url("../img/icon/icon_krw.svg") no-repeat center;
+                                    }
+                                }
+                            }
+                        }
+                        .payment_btn_wrap {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 1px solid #2f2f2f;
+                            border-radius: 8px;
+                            .payment_btn {
+                                width: 50%;
+                                padding: 20px 0;
+                                font-size: 20px;
+                                font-weight: 700;
+                                &.member {
+                                    background-color: #2f2f2f;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
