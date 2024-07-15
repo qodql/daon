@@ -4,6 +4,27 @@
 .policy_service .sub_top .dim {
   background-color: rgba(0, 0, 0, 0.4);
 }
+.policy_service .sub_container .contents {
+  width: 100%;
+}
+.policy_service .sub_container .contents .service_wrap {
+  width: 100%;
+}
+.policy_service .sub_container .contents .service_wrap .service_article h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2f2f2f;
+}
+.policy_service .sub_container .contents .service_wrap .service_article_txt ul {
+  margin: 16px 36px 32px;
+  padding: 16px;
+  border: 1px solid #AFAFAF;
+}
+.policy_service .sub_container .contents .service_wrap .service_article_txt ul li {
+  font-size: 16px;
+  color: #2f2f2f;
+}
+
 .policy_privacy .sub_top {
   background: url("../img/img_sub_policy.jpg") no-repeat;
 }

@@ -8,7 +8,6 @@
   margin: 160px 0 56px;
 }
 .login_common .logo_txt .logo {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -435,8 +434,6 @@
 .join .join_wrap .join_agree .agree_checkbox .agree_list li .view_all {
   color: #afafaf;
 }
-<<<<<<< HEAD
-=======
 .join .join_wrap .join_agree .agree_checkbox .agree_list .agree_essential label::after {
   content: " (필수)";
   color: #ff0f0f;
@@ -448,16 +445,11 @@
   content: " (선택)";
   color: #afafaf;
 }
->>>>>>> dev
 .join .join_wrap .join_agree .join_optional_info {
   width: 100%;
   margin-top: 16px;
   font-size: 14px;
   text-align: right;
-<<<<<<< HEAD
-  color: #efefef;
-}
-=======
   color: #afafaf;
 }
 .join .join_wrap .join_join_btn {
@@ -506,4 +498,3 @@
 1024~1399: 태블릿
 1400~: pc
 */
->>>>>>> dev
