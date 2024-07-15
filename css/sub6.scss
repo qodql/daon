@@ -27,9 +27,16 @@
                                 }
                             }
                         }
-                        &.actvie {
+                        &.active {
                             .circle {
                                 background-color: #2f2f2f;
+                            }
+                            & ~ li {
+                                .circle {
+                                    & + p {
+                                        color: #efefef;
+                                    }
+                                }
                             }
                         }
                         &.complete {
@@ -40,8 +47,14 @@
                                     border-color: #357EF1;
                                 }
                                 & + p {
-                                    opacity: 0;
-                                    visibility: hidden;
+                                    color: #357EF1;
+                                    opacity: 0.5;
+                                    // visibility: hidden;
+                                }
+                                span {
+                                    display: block;
+                                    color: transparent;
+                                    background: url("../img/icon/icon_check_white.svg") no-repeat center;
                                 }
                             }
                         }
@@ -182,6 +195,13 @@
                         &:not(:first-of-type) {
                             margin-left: 100px;
                         }
+                        &.data {
+                            .input_wrap {
+                                input {
+                                    width:calc(100% + 20px);
+                                }
+                            }
+                        }
                         &.room {
                             margin-left: auto;
                         }
@@ -191,11 +211,11 @@
                         }
                         .input_wrap {
                             position: relative;
-                            .tui-datepicker-input {
-                                font-size: 24px;
-                                font-weight: 700;
-                                border: none;
-                            }
+                            // .tui-datepicker-input {
+                            //     font-size: 24px;
+                            //     font-weight: 700;
+                            //     border: none;
+                            // }
                             input {
                                 width: 126px;
                                 height: 30px;
@@ -256,6 +276,7 @@
                                 font-size: 24px;
                                 font-weight: 700;
                                 margin-bottom: 20px;
+
                                 .tag {
                                     padding: 12px 24px;
                                     display: inline-block;

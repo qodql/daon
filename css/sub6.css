@@ -22,8 +22,11 @@
   top: 32px;
   z-index: 1;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.actvie .circle {
+.reservation_common .sub_container .contents .step_wrap .step li.active .circle {
   background-color: #2f2f2f;
+}
+.reservation_common .sub_container .contents .step_wrap .step li.active ~ li .circle + p {
+  color: #efefef;
 }
 .reservation_common .sub_container .contents .step_wrap .step li.complete .circle {
   cursor: pointer;
@@ -33,8 +36,13 @@
   border-color: #357EF1;
 }
 .reservation_common .sub_container .contents .step_wrap .step li.complete .circle + p {
-  opacity: 0;
-  visibility: hidden;
+  color: #357EF1;
+  opacity: 0.5;
+}
+.reservation_common .sub_container .contents .step_wrap .step li.complete .circle span {
+  display: block;
+  color: transparent;
+  background: url("../img/icon/icon_check_white.svg") no-repeat center;
 }
 .reservation_common .sub_container .contents .step_wrap .step li .circle {
   width: 64px;
@@ -73,7 +81,6 @@
   width: calc(50% - 60px);
   height: 410px;
 }
-<<<<<<< Updated upstream
 .reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar:first-of-type .toastui-calendar-grid-cell-date .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
   width: 40px;
   height: 40px;
@@ -118,8 +125,6 @@
 .reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-weekday-grid, .reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-daygrid-cell {
   border: none !important;
 }
-=======
->>>>>>> Stashed changes
 .reservation_common .sub_container .contents .calendar_wrap .calendar_container .title {
   font-size: 24px;
   position: absolute;
@@ -140,12 +145,9 @@
   transform: translateY(-50%);
   cursor: pointer;
 }
-<<<<<<< Updated upstream
 .reservation_common .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.prev {
   transform: translateY(-50%) rotate(180deg);
 }
-=======
->>>>>>> Stashed changes
 .reservation_common .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
   left: auto;
   right: 60px;
@@ -157,21 +159,18 @@
 .reservation_common .sub_container .contents .data_area .date_person li:not(:first-of-type) {
   margin-left: 100px;
 }
+.reservation_common .sub_container .contents .data_area .date_person li.data .input_wrap input {
+  width: calc(100% + 20px);
+}
 .reservation_common .sub_container .contents .data_area .date_person li.room {
   margin-left: auto;
 }
 .reservation_common .sub_container .contents .data_area .date_person li .label {
   font-size: 24px;
   margin-bottom: 20px;
-<<<<<<< Updated upstream
 }
 .reservation_common .sub_container .contents .data_area .date_person li .input_wrap {
   position: relative;
-}
-.reservation_common .sub_container .contents .data_area .date_person li .input_wrap .tui-datepicker-input {
-  font-size: 24px;
-  font-weight: 700;
-  border: none;
 }
 .reservation_common .sub_container .contents .data_area .date_person li .input_wrap input {
   width: 126px;
@@ -309,7 +308,4 @@
   margin-top: -6px;
   background: url("../img/icon/icon_arrow.svg") no-repeat center;
   transform: rotate(90deg);
-}/*# sourceMappingURL=sub6.css.map */
-=======
 }
->>>>>>> Stashed changes
