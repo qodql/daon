@@ -13,7 +13,8 @@
     }
 }
 .quick_menu {
-    width: 1400px;
+    max-width: 1400px;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 0 16px;
