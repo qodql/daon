@@ -5,7 +5,7 @@
 .pool .sub_container .contents .sub3_pool_contents {
   display: flex;
   justify-content: space-between;
-  width: 1400px;
+  width: 100%;
   height: auto;
   margin: 64px 0;
 }
@@ -93,7 +93,7 @@
 .rooftop .sub_container .contents .sub3_rooftop_contents {
   display: flex;
   justify-content: space-between;
-  width: 1400px;
+  width: 100%;
   height: auto;
   margin: 64px 0;
 }
@@ -182,7 +182,7 @@
 .sub3_bbq_contents {
   display: flex;
   justify-content: space-between;
-  width: 1400px;
+  width: 100%;
   height: auto;
   margin: 64px 0;
 }
