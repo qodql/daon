@@ -102,9 +102,6 @@
   border: 1px solid #afafaf;
   border-radius: 8px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::-moz-placeholder {
-  padding-left: 48px;
-}
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
   padding-left: 48px;
 }
@@ -262,5 +259,4 @@
   font-weight: 300;
   margin: 16px 8px;
   display: block;
-
-}/*# sourceMappingURL=mypage.css.map */
+}
