@@ -195,19 +195,86 @@
   background-image: url("../img/icon/icon_plus.svg");
 }
 .reservation_common .sub_container .contents .data_area .room_list_wrap {
-  max-height: 0;
-  visibility: hidden;
-  opacity: 0;
+  margin-top: 64px;
+  border-top: 1px solid #efefef;
+  padding-top: 80px;
 }
 .reservation_common .sub_container .contents .data_area .room_list_wrap li {
-  display: none;
+  display: flex;
+  align-items: center;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li:not(:first-of-type) {
+  margin-top: 64px;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_img {
+  width: 480px;
+  height: 320px;
+  margin-right: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info {
+  width: calc(100% - 480px);
+  position: relative;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag {
+  padding: 12px 24px;
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: 700;
+  border: 2px solid #BE004F;
+  border-radius: 8px;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag.love {
+  color: #BE004F;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag.only {
+  border-color: #3226C1;
+  color: #3226C1;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul {
+  padding: 38px 40px;
+  background-color: rgba(242, 242, 242, 0.5);
+  border-radius: 20px;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul li:not(:first-of-type) {
+  margin-top: 20px;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul li p {
+  display: flex;
+  align-items: center;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul li p span {
+  display: block;
+  margin-right: 20px;
+  font-weight: 700;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap {
+  position: absolute;
+  right: 40px;
+  bottom: 28px;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap .room_select_btn {
+  padding: 12px 24px;
+  background-color: #afafaf;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+}
+.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap .room_select_btn.selected {
+  background-color: #2f2f2f;
 }
 .reservation_common .sub_container .contents .next_wrap {
   margin-top: 48px;
   border-top: 1px solid #efefef;
   position: relative;
 }
-.reservation_common .sub_container .contents .next_wrap button {
+.reservation_common .sub_container .contents .next_wrap .next_btn {
   width: 200px;
   height: 60px;
   padding-left: 12px;
@@ -224,7 +291,10 @@
   top: 0;
   transform: translateX(-50%);
 }
-.reservation_common .sub_container .contents .next_wrap button::after {
+.reservation_common .sub_container .contents .next_wrap .next_btn.info {
+  display: none;
+}
+.reservation_common .sub_container .contents .next_wrap .next_btn::after {
   content: "";
   display: inline-block;
   width: 40px;

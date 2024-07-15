@@ -229,19 +229,93 @@
                     }
                 }
                 .room_list_wrap {
-                    max-height: 0;
-                    visibility: hidden;
-                    opacity: 0;
+                    // max-height: 0;
+                    // visibility: hidden;
+                    // opacity: 0;
+                    margin-top: 64px;
+                    border-top: 1px solid #efefef;
+                    padding-top: 80px;
                     li {
-                        display: none;
+                        // display: none;
+                        display: flex;
+                        align-items: center;
+                        &:not(:first-of-type) {
+                            margin-top: 64px;
+                        }
+                        .room_img {
+                            width: 480px;
+                            height: 320px;
+                            margin-right: 20px;
+                            border-radius: 20px;
+                            overflow: hidden;
+                        }
+                        .room_info {
+                            width: calc(100% - 480px);
+                            position: relative;
+                            .room_name {
+                                font-size: 24px;
+                                font-weight: 700;
+                                margin-bottom: 20px;
+                                .tag {
+                                    padding: 12px 24px;
+                                    display: inline-block;
+                                    margin-right: 20px;
+                                    font-weight: 700;
+                                    border: 2px solid #BE004F;
+                                    border-radius: 8px;
+                                    &.love {
+                                        color: #BE004F;
+                                    }
+                                    &.only {
+                                        border-color: #3226C1;
+                                        color: #3226C1;
+                                    }
+                                }
+                            }
+                            ul {
+                                padding: 38px 40px;
+                                background-color: rgba(242, 242, 242, 0.5);
+                                border-radius: 20px;
+                                li {
+                                    &:not(:first-of-type) {
+                                        margin-top: 20px;
+                                    }
+                                    p {
+                                        display: flex;
+                                        align-items: center;
+                                        span {
+                                            display: block;
+                                            margin-right: 20px;
+                                            font-weight: 700;
+                                        }
+                                    }
+                                }
+                            }
+                            .room_btn_wrap {
+                                position: absolute;
+                                right: 40px;
+                                bottom: 28px;
+                                .room_select_btn {
+                                    padding: 12px 24px;
+                                    background-color: #afafaf;
+                                    color: #fff;
+                                    font-weight: 700;
+                                    border-radius: 8px;
+                                    &.selected {
+                                        background-color: #2f2f2f;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
+
             .next_wrap {
                 margin-top: 48px;
                 border-top: 1px solid #efefef;
                 position: relative;
-                button {
+                .next_btn {
                     width: 200px;
                     height: 60px;
                     padding-left: 12px;
@@ -257,6 +331,9 @@
                     left: 50%;
                     top: 0;
                     transform: translateX(-50%);
+                    &.info {
+                        display: none;
+                    }
                     &::after {
                         content: '';
                         display: inline-block;
