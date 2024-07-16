@@ -7,25 +7,6 @@
 @include res('tab'){
   .header {
     background-color: brown;
-    .inner {
-      .logo {
-        a {
-          height: 50%;
-        }
-      }
-      .nav {
-        display: none;
-      }
-      .nav_menu {
-        display: none;
-      }
-    }
-    .mb_menu {
-      width: 24px;
-      height: 24px;
-      display: block;
-      border: 1px solid #000;
-    }
   }
 }
 

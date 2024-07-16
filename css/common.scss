@@ -21,28 +21,6 @@ common 수정 금지
     }
 }
 
-// responsive
-.pc_only {
-  display: block;
-}
-.pc_flex {
-  display: flex;
-}
-.mb_only, .mb_flex {
-  display: none;
-}
-@media screen and (max-width:1279px) {
-  .pc_only, .pc_flex {
-    display: none !important;
-  }
-  .mb_only {
-    display: block !important;
-  }
-  .mb_flex {
-    display: flex !important;
-  }
-}
-
 // header
 .header {
   width: 100%;
@@ -669,6 +647,28 @@ common 수정 금지
         font-size: 24px;
       }
     }
+  }
+}
+
+// responsive
+.pc_only {
+  display: block;
+}
+.pc_flex {
+  display: flex;
+}
+.mb_only, .mb_flex {
+  display: none;
+}
+@media screen and (max-width:1279px) {
+  .pc_only, .pc_flex {
+    display: none !important;
+  }
+  .mb_only {
+    display: block !important;
+  }
+  .mb_flex {
+    display: flex !important;
   }
 }
 
