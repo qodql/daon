@@ -8,11 +8,22 @@
   align-items: center;
   flex-direction: column;
 }
-.reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li:not(:last-of-type) {
   margin-right: 120px;
   position: relative;
 }
-.reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle::after {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li:not(:last-of-type)
+  .circle::after {
   content: "";
   width: 120px;
   display: inline-block;
@@ -22,19 +33,67 @@
   top: 32px;
   z-index: 1;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.actvie .circle {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.active
+  .circle {
   background-color: #2f2f2f;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.complete .circle {
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.active
+  ~ li
+  .circle
+  + p {
+  color: #efefef;
+}
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.complete
+  .circle {
   cursor: pointer;
-  background-color: #357EF1;
+  background-color: #357ef1;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.complete .circle::after {
-  border-color: #357EF1;
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.complete
+  .circle::after {
+  border-color: #357ef1;
 }
-.reservation_common .sub_container .contents .step_wrap .step li.complete .circle + p {
-  opacity: 0;
-  visibility: hidden;
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.complete
+  .circle
+  + p {
+  color: #357ef1;
+  opacity: 0.5;
+}
+.reservation_common
+  .sub_container
+  .contents
+  .step_wrap
+  .step
+  li.complete
+  .circle
+  span {
+  display: block;
+  color: transparent;
+  background: url("../img/icon/icon_check_white.svg") no-repeat center;
 }
 .reservation_common .sub_container .contents .step_wrap .step li .circle {
   width: 64px;
@@ -63,71 +122,181 @@
   border: 1px solid #efefef;
   position: relative;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container {
   padding: 0 160px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar {
   width: calc(50% - 60px);
   height: 410px;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar:first-of-type .toastui-calendar-grid-cell-date .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar:first-of-type
+  .toastui-calendar-grid-cell-date
+  .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
   width: 40px;
   height: 40px;
   color: #fff;
   margin: -4px 0 0 -6px;
   line-height: 40px;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar:nth-of-type(2) .toastui-calendar-grid-cell-date .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar:nth-of-type(2)
+  .toastui-calendar-grid-cell-date
+  .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
   background-color: transparent;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-day-names.toastui-calendar-month {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-names.toastui-calendar-month {
   padding: 0;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-day-name-item {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item {
   text-align: center;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-day-name-item:first-of-type .toastui-calendar-template-monthDayName {
-  color: #FF0F0F;
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item:first-of-type
+  .toastui-calendar-template-monthDayName {
+  color: #ff0f0f;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-day-name-item:last-of-type .toastui-calendar-template-monthDayName {
-  color: #357EF1;
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item:last-of-type
+  .toastui-calendar-template-monthDayName {
+  color: #357ef1;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-day-name-item .toastui-calendar-template-monthDayName {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item
+  .toastui-calendar-template-monthDayName {
   font-weight: 600;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-daygrid-cell {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-daygrid-cell:first-of-type .toastui-calendar-weekday-grid-date {
-  color: #FF0F0F;
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell:first-of-type
+  .toastui-calendar-weekday-grid-date {
+  color: #ff0f0f;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-daygrid-cell:last-of-type .toastui-calendar-weekday-grid-date {
-  color: #357EF1;
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell:last-of-type
+  .toastui-calendar-weekday-grid-date {
+  color: #357ef1;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-weekday-grid-date {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-weekday-grid-date {
   font-size: 20px;
   font-weight: 300;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-weekday-grid, .reservation_common .sub_container .contents .calendar_wrap .calendar_container #calendar .toastui-calendar-daygrid-cell {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-weekday-grid,
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell {
   border: none !important;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container .title {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  .title {
   font-size: 24px;
   position: absolute;
   left: 27.5%;
   top: 80px;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_container .title.right {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  .title.right {
   left: auto;
   right: 27.5%;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_btn_wrap
+  .nav_button {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -137,10 +306,20 @@
   transform: translateY(-50%);
   cursor: pointer;
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.prev {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_btn_wrap
+  .nav_button.prev {
   transform: translateY(-50%) rotate(180deg);
 }
-.reservation_common .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
+.reservation_common
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_btn_wrap
+  .nav_button.next {
   left: auto;
   right: 60px;
 }
@@ -148,7 +327,12 @@
   display: flex;
   align-items: center;
 }
-.reservation_common .sub_container .contents .data_area .date_person li:not(:first-of-type) {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li:not(:first-of-type) {
   margin-left: 100px;
 }
 .reservation_common .sub_container .contents .data_area .date_person li.room {
@@ -158,15 +342,35 @@
   font-size: 24px;
   margin-bottom: 20px;
 }
-.reservation_common .sub_container .contents .data_area .date_person li .input_wrap {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap {
   position: relative;
 }
-.reservation_common .sub_container .contents .data_area .date_person li .input_wrap .tui-datepicker-input {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  .tui-datepicker-input {
   font-size: 24px;
   font-weight: 700;
   border: none;
 }
-.reservation_common .sub_container .contents .data_area .date_person li .input_wrap input {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  input {
   width: 126px;
   height: 30px;
   text-align: center;
@@ -174,14 +378,29 @@
   font-weight: 700;
   line-height: 30px;
 }
-.reservation_common .sub_container .contents .data_area .date_person li .input_wrap .btn_wrap {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  .btn_wrap {
   width: 126px;
   height: 30px;
   position: absolute;
   left: 0;
   top: 0;
 }
-.reservation_common .sub_container .contents .data_area .date_person li .input_wrap .btn_wrap button {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  .btn_wrap
+  button {
   width: 24px;
   height: 24px;
   background: url("../img/icon/icon_minus.svg") no-repeat center;
@@ -189,7 +408,15 @@
   left: 0;
   top: 3px;
 }
-.reservation_common .sub_container .contents .data_area .date_person li .input_wrap .btn_wrap button.plus {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  .btn_wrap
+  button.plus {
   left: auto;
   right: 0;
   background-image: url("../img/icon/icon_plus.svg");
@@ -203,70 +430,175 @@
   display: flex;
   align-items: center;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li:not(:first-of-type) {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li:not(:first-of-type) {
   margin-top: 64px;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_img {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_img {
   width: 480px;
   height: 320px;
   margin-right: 20px;
   border-radius: 20px;
   overflow: hidden;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info {
   width: calc(100% - 480px);
   position: relative;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name
+  .tag {
   padding: 12px 24px;
   display: inline-block;
   margin-right: 20px;
   font-weight: 700;
-  border: 2px solid #BE004F;
+  border: 2px solid #be004f;
   border-radius: 8px;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag.love {
-  color: #BE004F;
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name
+  .tag.love {
+  color: #be004f;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag.only {
-  border-color: #3226C1;
-  color: #3226C1;
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name
+  .tag.only {
+  border-color: #3226c1;
+  color: #3226c1;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  ul {
   padding: 38px 40px;
   background-color: rgba(242, 242, 242, 0.5);
   border-radius: 20px;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul li:not(:first-of-type) {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  ul
+  li:not(:first-of-type) {
   margin-top: 20px;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul li p {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  ul
+  li
+  p {
   display: flex;
   align-items: center;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info ul li p span {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  ul
+  li
+  p
+  span {
   display: block;
   margin-right: 20px;
   font-weight: 700;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_btn_wrap {
   position: absolute;
   right: 40px;
   bottom: 28px;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap .room_select_btn {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_btn_wrap
+  .room_select_btn {
   padding: 12px 24px;
   background-color: #afafaf;
   color: #fff;
   font-weight: 700;
   border-radius: 8px;
 }
-.reservation_common .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap .room_select_btn.selected {
+.reservation_common
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_btn_wrap
+  .room_select_btn.selected {
   background-color: #2f2f2f;
 }
 .reservation_common .sub_container .contents .next_wrap {
@@ -291,15 +623,910 @@
   top: 0;
   transform: translateX(-50%);
 }
-.reservation_common .sub_container .contents .next_wrap .next_btn.info {
-  display: none;
-}
 .reservation_common .sub_container .contents .next_wrap .next_btn::after {
   content: "";
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin-top: -6px;
-  background: url("../img/icon/icon_arrow.svg") no-repeat center;
-  transform: rotate(90deg);
+  margin-top: -4px;
+  background: url("../img/icon/icon_arrow.svg") no-repeat center/24px;
+}
+
+.step1 .sub_container .contents .calendar_wrap {
+  width: 100%;
+  height: 100%;
+  margin: 56px 0 64px;
+  padding: 140px 60px 100px;
+  border: 1px solid #efefef;
+  position: relative;
+}
+.step1 .sub_container .contents .calendar_wrap .calendar_container {
+  padding: 0 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
+  width: calc(50% - 60px);
+  height: 410px;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar:first-of-type
+  .toastui-calendar-grid-cell-date
+  .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  margin: -4px 0 0 -6px;
+  line-height: 40px;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar:nth-of-type(2)
+  .toastui-calendar-grid-cell-date
+  .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
+  background-color: transparent;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-names.toastui-calendar-month {
+  padding: 0;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item {
+  text-align: center;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item:first-of-type
+  .toastui-calendar-template-monthDayName {
+  color: #ff0f0f;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item:last-of-type
+  .toastui-calendar-template-monthDayName {
+  color: #357ef1;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-day-name-item
+  .toastui-calendar-template-monthDayName {
+  font-weight: 600;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell:first-of-type
+  .toastui-calendar-weekday-grid-date {
+  color: #ff0f0f;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell:last-of-type
+  .toastui-calendar-weekday-grid-date {
+  color: #357ef1;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-weekday-grid-date {
+  font-size: 20px;
+  font-weight: 300;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-weekday-grid,
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  #calendar
+  .toastui-calendar-daygrid-cell {
+  border: none !important;
+}
+.step1 .sub_container .contents .calendar_wrap .calendar_container .title {
+  font-size: 24px;
+  position: absolute;
+  left: 27.5%;
+  top: 80px;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_container
+  .title.right {
+  left: auto;
+  right: 27.5%;
+}
+.step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  background: url("../img/icon/icon_arrow.svg") no-repeat center/100px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_btn_wrap
+  .nav_button.prev {
+  transform: translateY(-50%) rotate(180deg);
+}
+.step1
+  .sub_container
+  .contents
+  .calendar_wrap
+  .calendar_btn_wrap
+  .nav_button.next {
+  left: auto;
+  right: 60px;
+}
+.step1 .sub_container .contents .data_area .date_person {
+  display: flex;
+  align-items: center;
+}
+.step1 .sub_container .contents .data_area .date_person li:not(:first-of-type) {
+  margin-left: 100px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li.data
+  .input_wrap
+  input {
+  width: calc(100% + 20px);
+}
+.step1 .sub_container .contents .data_area .date_person li.room {
+  margin-left: auto;
+}
+.step1 .sub_container .contents .data_area .date_person li .label {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.step1 .sub_container .contents .data_area .date_person li .input_wrap {
+  position: relative;
+}
+.step1 .sub_container .contents .data_area .date_person li .input_wrap input {
+  width: 126px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  .btn_wrap {
+  width: 126px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  .btn_wrap
+  button {
+  width: 24px;
+  height: 24px;
+  background: url("../img/icon/icon_minus.svg") no-repeat center;
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .date_person
+  li
+  .input_wrap
+  .btn_wrap
+  button.plus {
+  left: auto;
+  right: 0;
+  background-image: url("../img/icon/icon_plus.svg");
+}
+.step1 .sub_container .contents .data_area .room_list_wrap {
+  margin-top: 64px;
+  border-top: 1px solid #efefef;
+  padding-top: 80px;
+}
+.step1 .sub_container .contents .data_area .room_list_wrap li {
+  display: flex;
+  align-items: center;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li:not(:first-of-type) {
+  margin-top: 64px;
+}
+.step1 .sub_container .contents .data_area .room_list_wrap li .room_img {
+  width: 480px;
+  height: 320px;
+  margin-right: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.step1 .sub_container .contents .data_area .room_list_wrap li .room_info {
+  width: calc(100% - 480px);
+  position: relative;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name
+  .tag {
+  padding: 12px 24px;
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: 700;
+  border: 2px solid #be004f;
+  border-radius: 8px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name
+  .tag.love {
+  color: #be004f;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_name
+  .tag.only {
+  border-color: #3226c1;
+  color: #3226c1;
+}
+.step1 .sub_container .contents .data_area .room_list_wrap li .room_info ul {
+  padding: 38px 40px;
+  background-color: rgba(242, 242, 242, 0.5);
+  border-radius: 20px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  ul
+  li:not(:first-of-type) {
+  margin-top: 20px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  ul
+  li
+  p {
+  display: flex;
+  align-items: center;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  ul
+  li
+  p
+  span {
+  display: block;
+  margin-right: 20px;
+  font-weight: 700;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_btn_wrap {
+  position: absolute;
+  right: 40px;
+  bottom: 28px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_btn_wrap
+  .room_select_btn {
+  padding: 12px 24px;
+  background-color: #afafaf;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+}
+.step1
+  .sub_container
+  .contents
+  .data_area
+  .room_list_wrap
+  li
+  .room_info
+  .room_btn_wrap
+  .room_select_btn.selected {
+  background-color: #2f2f2f;
+}
+
+.step2 .sub_container .contents .info_wrap {
+  display: flex;
+  position: relative;
+}
+.step2 .sub_container .contents .info_wrap .left {
+  width: 59%;
+  display: block;
+  margin: 56px 80px 0 0;
+  padding-top: 40px;
+  border-top: 1px solid #efefef;
+}
+.step2 .sub_container .contents .info_wrap .left .user_info {
+  margin-bottom: 56px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #efefef;
+}
+.step2 .sub_container .contents .info_wrap .left .user_info .input_list li {
+  width: calc(50% - 20px);
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li:not(:first-of-type) {
+  margin-top: 24px;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li.half {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li.half
+  > div {
+  width: calc(50% - 20px);
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li.tel_wrap
+  > div {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li.tel_wrap
+  > div
+  input {
+  width: calc(100% - 128px);
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li.tel_wrap
+  > div
+  button {
+  padding: 16px 32px;
+  background-color: #357ef1;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li.textarea_wrap {
+  width: 100%;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li
+  .label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .user_info
+  .input_list
+  li
+  input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap {
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #efefef;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box {
+  width: 100%;
+  height: 368px;
+  margin-bottom: 40px;
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card {
+  width: 400px;
+  height: 240px;
+  padding: 40px;
+  background-color: #2f2f2f;
+  border-radius: 16px;
+  border: 4px solid #d6b46c;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .card_wrap
+  .card_box
+  .card
+  > p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .card_wrap
+  .card_box
+  .card
+  .card_data::before {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 40px;
+  background: url("../img/icon/icon_sim.svg") no-repeat center;
+  position: absolute;
+  left: 40px;
+  top: 64px;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .card_wrap
+  .card_box
+  .card
+  .card_data
+  p {
+  color: #fff;
+  letter-spacing: 0;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .card_wrap
+  .card_box
+  .card
+  .card_data
+  p.num {
+  margin-top: 84px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .card_wrap
+  .card_box
+  .card
+  .card_data
+  p.name,
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .card_wrap
+  .card_box
+  .card
+  .card_data
+  p.date {
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .left
+  .card_wrap
+  .card_box
+  .card
+  .card_data
+  p.date {
+  left: auto;
+  right: 40px;
+}
+.step2 .sub_container .contents .info_wrap .right {
+  width: 41%;
+  margin-top: 56px;
+}
+.step2 .sub_container .contents .info_wrap .right .sticky_menu {
+  position: sticky;
+  right: 0;
+  top: 56px;
+}
+.step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list {
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  border: 1px solid #efefef;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .data_list
+  li
+  .label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .data_list
+  li
+  .data {
+  font-size: 20px;
+  font-weight: 700;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .data_list
+  li
+  .data
+  .tag {
+  padding: 8px 12px;
+  margin-right: 8px;
+  background-color: #3226c1;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  vertical-align: middle;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .data_list
+  li:not(:first-of-type) {
+  margin-top: 32px;
+}
+.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap > p {
+  font-size: 20px;
+  font-weight: 700;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .price_wrap
+  .price {
+  text-align: right;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .price_wrap
+  .price
+  .sale {
+  font-size: 20px;
+  color: #afafaf;
+  text-decoration: line-through;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .price_wrap
+  .price
+  p {
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .price_wrap
+  .price
+  p::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+  background: url("../img/icon/icon_krw.svg") no-repeat center;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .payment_btn_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .payment_btn_wrap
+  .payment_btn {
+  width: 50%;
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.step2
+  .sub_container
+  .contents
+  .info_wrap
+  .right
+  .sticky_menu
+  .payment_btn_wrap
+  .payment_btn.member {
+  background-color: #2f2f2f;
+  color: #fff;
+}
+
+.step3 .sub_container .contents .complete {
+  text-align: center;
+}
+.step3 .sub_container .contents .complete .img_wrap {
+  width: 80px;
+  height: 80px;
+  margin: 82px auto 64px;
+}
+.step3 .sub_container .contents .complete .txt_wrap {
+  margin-bottom: 80px;
+}
+.step3 .sub_container .contents .complete .txt_wrap p strong {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.step3 .sub_container .contents .complete .txt_wrap p span {
+  font-size: 24px;
+  line-height: 36px;
+}
+.step3 .sub_container .contents .complete .btn_wrap button {
+  width: 240px;
+  padding: 16px 0;
+  text-align: center;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.step3 .sub_container .contents .complete .btn_wrap button:not(:first-of-type) {
+  margin-left: 12px;
+}
+.step3 .sub_container .contents .complete .btn_wrap button.main {
+  color: #afafaf;
+}
+.step3 .sub_container .contents .complete .btn_wrap button.reservation {
+  border-color: #357ef1;
+  background-color: #357ef1;
+  color: #fff;
 }

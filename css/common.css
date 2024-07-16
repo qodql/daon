@@ -1,3 +1,11 @@
+@charset "UTF-8";
+/*
+
+=====================================
+common 수정 금지
+=====================================
+
+*/
 .template > div {
   max-width: 1400px;
   margin: 0 auto 120px;
@@ -93,6 +101,77 @@
 }
 .header.on .inner .nav_menu li {
   color: #2f2f2f;
+}
+
+.checkbox_wrap {
+  width: 500px;
+  padding: 16px 24px 24px;
+  border: 1px solid #efefef;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.checkbox_wrap .all {
+  width: calc(100% + 48px);
+  padding: 16px 24px;
+  margin: -16px 0 24px -24px;
+  background-color: #efefef;
+  position: relative;
+}
+.checkbox_wrap .all .toggle_btn {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/icon/icon_arrow_on.svg") no-repeat center/24px;
+  position: absolute;
+  right: 24px;
+  top: 16px;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+.checkbox_wrap .checkbox:not(:first-of-type) + label {
+  margin-top: 16px;
+}
+.checkbox_wrap .checkbox#all_chk + label {
+  color: #2f2f2f;
+}
+.checkbox_wrap .checkbox + label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #afafaf;
+  cursor: pointer;
+}
+.checkbox_wrap .checkbox + label i {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  display: block;
+  border: 2px solid #afafaf;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.checkbox_wrap .checkbox:checked + label {
+  color: #2f2f2f;
+}
+.checkbox_wrap .checkbox:checked + label i {
+  border: 2px solid #2f2f2f;
+  background: #fff url("../img/icon/icon_check_single.svg") no-repeat center;
+}
+
+.alert {
+  font-size: 14px;
+  color: #afafaf;
+  font-weight: 500;
+  line-height: 20px;
+}
+.alert span {
+  display: block;
+  font: inherit;
+  color: inherit;
+}
+
+* + .alert {
+  margin-top: 20px;
 }
 
 .logo {
@@ -284,7 +363,6 @@
   background-color: #2f2f2f;
   overflow: hidden;
   position: relative;
-  margin-top: 240px;
 }
 .footer .box_wrap {
   width: 100%;
@@ -444,4 +522,34 @@
   display: block;
   margin-top: 16px;
   font-size: 24px;
+}
+
+@media (max-width: 1500px) {
+  .header {
+    background-color: orange;
+  }
+}
+@media (max-width: 1279px) {
+  .header {
+    background-color: brown;
+  }
+  .header .inner .logo a {
+    height: 50%;
+  }
+  .header .inner .nav {
+    display: none;
+  }
+  .header .inner .nav_menu {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    background-color: green;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    background-color: skyblue;
+  }
 }
