@@ -1,31 +1,28 @@
 @charset "UTF-8";
+.around_spot img {
+  vertical-align: middle;
+}
 .around_spot .sub_top {
   background-image: url("../img/img_sub4_tops.jpg");
-}
-.around_spot .sub_container {
-  max-width: 100%;
 }
 .around_spot .sub_container .contents .sub4_card {
   margin-bottom: 72px;
 }
 .around_spot .sub_container .contents .sub4_card .card_name {
   display: flex;
+}
+.around_spot .sub_container .contents .sub4_card .card_name strong {
+  margin-right: 4px;
+  font-weight: 700;
   font-size: 24px;
 }
 .around_spot .sub_container .contents .sub4_card .card_name .card_name_eng {
   display: flex;
-}
-.around_spot .sub_container .contents .sub4_card .card_name strong {
-  font-weight: 700;
-  margin-right: 4px;
-  font-size: 24px;
+  align-items: center;
 }
 .around_spot .sub_container .contents .sub4_card .card_name p {
   margin-right: 8px;
   font-size: 24px;
-}
-.around_spot .sub_container .contents .sub4_card .card_name a img {
-  width: 100%;
 }
 .around_spot .sub_container .contents .sub4_card .card_img {
   margin: 20px 0;
@@ -37,9 +34,6 @@
   width: 50%;
   border-radius: 20px;
   overflow: hidden;
-}
-.around_spot .sub_container .contents .sub4_card .card_img .imgbox img {
-  width: 100%;
 }
 .around_spot .sub_container .contents .sub4_card .card_txt {
   border: 1px solid #efefef;
@@ -75,7 +69,7 @@
   background-image: url("../img/icon/icon_tel.svg");
 }
 .around_spot .sub_container .contents .sub4_card .card_txt .txt_long p {
-  padding: 40px 32px;
+  padding: 40px 160px 40px 32px;
   border-top: 1px solid #efefef;
   line-height: 24px;
 }
@@ -84,52 +78,44 @@
 }
 
 /** 분기점 
-360~767: 모바일
-768~1023: 중간
-1024~1399: 태블릿
-1400~: pc
+~480: 모바일, 좌우패딩 16px
+768~1024: 태블릿
+1025~1279: 중간(태블릿_라지)
+1280~: pc
 */
 @media screen and (max-width: 480px) {
   body {
-    background-color: aqua;
+    background-color: rgb(205, 228, 250);
   }
-  body .around_spot .card_name {
+  body .around_spot .sub_container {
+    margin: 0 16px;
+  }
+  body .around_spot .sub_container .contents .sub4_card .card_name {
     flex-direction: column;
   }
-  body .around_spot .card_name .card_name_eng {
-    display: flex;
+  body .around_spot .sub_container .contents .sub4_card .card_name strong {
+    font-size: 20px;
   }
-  body .around_spot .card_img {
-    width: 100%;
-    margin: 20px 0;
-    justify-content: center;
+  body .around_spot .sub_container .contents .sub4_card .card_name p {
+    font-size: 20px;
+  }
+  body .around_spot .sub_container .contents .sub4_card .card_img {
+    margin: 16px 0;
+    gap: 16px;
     flex-direction: column;
   }
-  body .around_spot .card_img .imgbox {
+  body .around_spot .sub_container .contents .sub4_card .card_img .imgbox {
     width: 100%;
   }
-  body .around_spot .card_txt {
-    border: 0px;
-  }
-  body .around_spot .card_txt .txt_short {
+  body .around_spot .sub_container .contents .sub4_card .card_txt .txt_short {
     padding: 12px 16px;
     display: flex;
     flex-direction: column;
   }
-  body .around_spot .card_txt .txt_short li {
+  body .around_spot .sub_container .contents .sub4_card .card_txt .txt_short li {
     margin: 8px;
   }
-  body .around_spot .card_txt .txt_short li::before {
-    content: "";
-    width: 12px;
-    height: 12px;
-    margin-right: 8px;
-  }
-  body .around_spot .card_txt .txt_long p {
-    padding: 20px 16px;
-    border-top: 1px solid #efefef;
-  }
-  body .sub4_card:nth-of-type(6) {
-    margin-bottom: 0;
+  body .around_spot .sub_container .contents .sub4_card .card_txt .txt_long p {
+    padding: 48px 24px;
   }
 }
