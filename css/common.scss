@@ -1,3 +1,13 @@
+/*
+
+=====================================
+common 수정 금지
+=====================================
+
+*/
+
+@import "./_res";
+
 // template
 .template {
     > div {
@@ -433,8 +443,7 @@
   background-color: #2f2f2f;
   overflow: hidden;
   position: relative;
-  margin-top: 240px;
-
+  // margin-top: 240px;
   .box_wrap {
     width: 100%;
     padding: 120px 13.5% 140px;
@@ -639,3 +648,5 @@
     }
   }
 }
+
+@import "./_res-common";

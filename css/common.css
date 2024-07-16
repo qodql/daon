@@ -1,3 +1,11 @@
+@charset "UTF-8";
+/*
+
+=====================================
+common 수정 금지
+=====================================
+
+*/
 .template > div {
   max-width: 1400px;
   margin: 0 auto 120px;
@@ -353,7 +361,6 @@
   background-color: #2f2f2f;
   overflow: hidden;
   position: relative;
-  margin-top: 240px;
 }
 .footer .box_wrap {
   width: 100%;
@@ -513,4 +520,34 @@
   display: block;
   margin-top: 16px;
   font-size: 24px;
+}
+
+@media (max-width: 1500px) {
+  .header {
+    background-color: orange;
+  }
+}
+@media (max-width: 1279px) {
+  .header {
+    background-color: brown;
+  }
+  .header .inner .logo a {
+    height: 50%;
+  }
+  .header .inner .nav {
+    display: none;
+  }
+  .header .inner .nav_menu {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    background-color: green;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    background-color: skyblue;
+  }
 }
