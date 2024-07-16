@@ -231,16 +231,16 @@
   color: #357ef1;
 }
 .faq .sub_container .contents .faq_wrap .faq li .green {
-  border: solid 1px #00c400;
-  color: #00c400;
+  border: solid 1px #00C400;
+  color: #00C400;
 }
 .faq .sub_container .contents .faq_wrap .faq li .purple {
-  border: solid 1px #8e40b7;
-  color: #8e40b7;
+  border: solid 1px #8E40B7;
+  color: #8E40B7;
 }
 .faq .sub_container .contents .faq_wrap .faq li .yell {
-  border: solid 1px #ffb140;
-  color: #ffb140;
+  border: solid 1px #FFB140;
+  color: #FFB140;
 }
 .faq .sub_container .contents .faq_wrap .faq li .question {
   display: flex;
@@ -294,7 +294,8 @@
 .review .sub_container .contents .images ul li a img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .hidden {

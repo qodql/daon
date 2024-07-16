@@ -1,4 +1,218 @@
 @charset "UTF-8";
+/* 분기점 
+~480: 모바일    mo-s
+481~767: 모바일라지     mo-l
+768~1279: 태블릿    tab
+1280~1500: pc   pc-s
+*/
+/*모든 로그인 페이지는 기본 디자인을 모바일 기준으로 잡았기 때문에 디자인적 변동사항이 매우 적습니다.
+아래 세부사항은 mo-s와 mo-l, 두 경우에서만 변동사항이 있습니다.
+    - 기본 컨텐츠 좌우 패딩 16px (padding: 0 $mobile_padding_16;)
+    - .login과.join 의 @include box_shadow 값을 없애기(그림자 박스 제거)
+    - .join 의 .join_join_btn width 변경
+    - .join_complete의 .greeting의 <p> 폰트 사이즈 줄이기(24px → 20($mobile_font_title)
+
+*/
+@media (max-width: 767px) {
+  body {
+    background-color: rgb(124, 163, 121);
+  }
+  body .login_common {
+    padding: 0 16px;
+    padding-top: 160px;
+  }
+  body .login_common .logo_txt {
+    margin-bottom: 0;
+  }
+  body .login .login_wrap {
+    max-width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+  }
+  body .join .join_wrap .join_personal_info {
+    max-width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+    margin-bottom: 16px;
+  }
+  body .join .join_wrap .join_agree .agree_checkbox {
+    max-width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+    border-radius: 0;
+  }
+  body .join_complete .join_complete_wrap .greeting p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    background-color: rgb(182, 196, 236);
+  }
+  body .login_common {
+    padding: 0 16px;
+    padding-top: 160px;
+  }
+  body .login_common .logo_txt {
+    margin-bottom: 0;
+  }
+  body .login .login_wrap {
+    max-width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+  }
+  body .join .join_wrap .join_personal_info {
+    max-width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+    margin-bottom: 16px;
+  }
+  body .join .join_wrap .join_agree .agree_checkbox {
+    max-width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+  }
+  body .join .join_wrap .join_join_btn button {
+    width: 400px;
+    padding: 16px 16px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 700;
+    background-color: #357EF1;
+    border-radius: 8px;
+    color: #ffffff;
+  }
+  body .join_complete .join_complete_wrap .greeting p {
+    font-size: 20px;
+  }
+}
+
+/*로그인+회원가입 공통 태그전부(내용x)------------
+.login_common{
+            .logo_txt{
+                .logo{      //h1태그
+                }
+                .txt{       //h2태그
+                }
+            }
+        }
+*/
+/*login 태그전부(내용x)------------
+.login{
+    .login_wrap{          
+        .login_daon{
+            .login_login_daon{
+                .login_input_box{
+                    .email_box{
+                    }
+                }
+            }
+            .login_join_daon{
+                .white_btn{}
+            }
+        }
+        .login_sns{
+        .login_login_sns{
+            li{
+                button{}
+                .kakao{}
+                .naver{}
+                .google{}
+            }
+        }
+        }
+    }
+}
+*/
+/*join 태그전부(내용x)------------
+.join{
+    .join_wrap{
+        .join_personal_info{
+            .join_input_box{
+                li{}
+                .verify_box
+                {}
+            }
+            .phone_verify_btn{                
+                .phone_box{}
+                .join_btn{
+                    .blue_btn{}
+                }
+            } 
+        }
+        .join_agree{
+            .agree_checkbox{
+                input{}
+                .agree_all{                
+                    .arrow_btn{
+                        svg{                            
+                            path{}
+                        }   
+                    }
+                }
+                .agree_list{
+                    li{                   
+                        .view_all{}
+                    }
+                    .agree_essential{
+                        label{
+                            &::after{}
+                        }
+                    }
+                    .agree_optional{
+                        label{                           
+                            &::after{}
+                        }
+                    }      
+                }
+            }
+            .join_optional_info{
+
+            }
+        }
+        .join_join_btn{            
+            button{}
+        }
+    }
+}
+*/
+/*join_complete 태그전부(내용x)------------
+.join_complete{
+            .logo_txt{
+                .txt{
+                    &::before{}
+                }
+            }
+            .join_complete_wrap{
+                .greeting{
+                    p{
+                        font-size: $mobile_font_title;
+                    }
+                }
+                .join_complete_btn{
+                    button{}
+                }
+            }
+        }
+*/
 .login_common {
   width: 100%;
   height: 100vh;
@@ -303,16 +517,17 @@
 }
 .login_common .blue_btn {
   width: 400px;
-  padding: 16px 32px;
+  padding: 16px 16px;
+  margin: 0 auto;
   text-align: center;
   font-weight: 700;
-  background-color: #357ef1;
+  background-color: #357EF1;
   border-radius: 8px;
   color: #ffffff;
 }
 
 .login .login_wrap {
-  width: 480px;
+  max-width: 480px;
   padding: 72px 40px 48px;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
@@ -336,9 +551,9 @@
   text-align: center;
   font-weight: 700;
   background-color: #ffffff;
-  border: 1px solid #357ef1;
+  border: 1px solid #357EF1;
   border-radius: 8px;
-  color: #357ef1;
+  color: #357EF1;
 }
 .login .login_wrap .login_sns .login_login_sns {
   display: flex;
@@ -357,7 +572,7 @@
   background-image: url(../img/icon/icon_kakao.svg);
 }
 .login .login_wrap .login_sns .login_login_sns li .naver {
-  background-color: #06cc80;
+  background-color: #06CC80;
   background-image: url(../img/icon/icon_naver.svg);
 }
 .login .login_wrap .login_sns .login_login_sns li .google {
@@ -374,7 +589,7 @@
   margin: 0 auto;
 }
 .join .join_wrap .join_personal_info {
-  width: 480px;
+  max-width: 480px;
   padding: 72px 40px 72px;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
@@ -402,7 +617,7 @@
   width: 100%;
 }
 .join .join_wrap .join_agree .agree_checkbox {
-  width: 480px;
+  max-width: 480px;
   padding: 0 0 0;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
@@ -437,26 +652,14 @@
 .join .join_wrap .join_agree .agree_checkbox .agree_list li .view_all {
   color: #afafaf;
 }
-.join
-  .join_wrap
-  .join_agree
-  .agree_checkbox
-  .agree_list
-  .agree_essential
-  label::after {
+.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_essential label::after {
   content: " (필수)";
   color: #ff0f0f;
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label {
   color: #afafaf;
 }
-.join
-  .join_wrap
-  .join_agree
-  .agree_checkbox
-  .agree_list
-  .agree_optional
-  label::after {
+.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label::after {
   content: " (선택)";
   color: #afafaf;
 }
@@ -470,13 +673,17 @@
 .join .join_wrap .join_join_btn {
   margin-top: 40px;
 }
-.join .join_wrap .join_join_btn button {
+.join .join_wrap .join_join_btn a {
+  text-align: center;
+}
+.join .join_wrap .join_join_btn a button {
   width: 100%;
   width: width;
-  padding: 16px 32px;
+  padding: 16px 16px;
+  margin: 0 auto;
   text-align: center;
   font-weight: 700;
-  background-color: #357ef1;
+  background-color: #357EF1;
   border-radius: 8px;
   color: #ffffff;
 }
@@ -505,46 +712,4 @@
   width: 212px;
   margin: 0 auto;
   display: block;
-}
-
-/** 분기점 
-~480: 모바일
-481~768: 태블릿
-769~1279: 중간
-1280~: pc
-좌우패딩 16px
-*/
-@media screen and (max-width: 480px) {
-  body {
-    background-color: rgb(183, 219, 201);
-  }
-  body .login_common .logo_txt {
-    margin-bottom: 56px;
-  }
-  body .login .login_wrap {
-    width: 480px;
-    padding: 72px 40px 48px;
-    margin: 0 auto;
-    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 0 0 0;
-  }
-  body .login .login_wrap .login_daon .login_login_daon {
-    margin-bottom: 60px;
-  }
-  body .login .login_wrap .login_daon .login_login_daon .login_input_box {
-    margin-bottom: 24px;
-  }
-  body
-    .login
-    .login_wrap
-    .login_daon
-    .login_login_daon
-    .login_input_box
-    .email_box {
-    margin-bottom: 12px;
-  }
-  body .login .login_wrap .login_daon .login_join_daon {
-    margin-bottom: 40px;
-  }
 }

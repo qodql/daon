@@ -1,0 +1,67 @@
+// _res-sub4.scss
+/* 분기점 
+~480: 모바일    mo-s
+481~767: 모바일라지     mo-l
+768~1279: 태블릿    tab
+1280~1500: pc   pc-s
+*/
+@import "./_res";
+$mobile_padding_16: 16px;
+$mobile_padding_24: 24px;
+$mobile_padding_48: 48px;
+$mobile_font: 16px;
+$mobile_font_title: 20px;
+
+body{
+    @include res('pc-s'){};
+    @include res('tab'){};
+    @include res('mo-l'){};
+    @include res('mo-s'){
+        background-color: rgb(248, 248, 111);
+        // 배경색 나중에 완전히 끝나면 삭제하기
+        .around_spot{
+            .sub_top{}
+            .sub_container{ 
+                margin: 0 $mobile_padding_16;
+                .contents{
+                    .sub4_card{ 
+                        .card_name{
+                            flex-direction: column;
+                            strong{
+                                font-size: $mobile_font_title;
+                            }
+                            .card_name_eng{}
+                            p{
+                                font-size: $mobile_font_title;
+                            }
+                        }
+                        .card_img{
+                            margin: $mobile_padding_16 0;
+                            gap: $mobile_padding_16;
+                            flex-direction: column;
+                            .imgbox{
+                                width: 100%;
+                            }
+                        }
+
+                        .card_txt{        
+                            .txt_short{
+                                padding: 12px 16px;
+                                display: flex;
+                                flex-direction: column;
+                                li{
+                                    margin: 8px;
+                                }
+                            }
+                            .txt_long{
+                                p{
+                                    padding: $mobile_padding_48 $mobile_padding_24;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

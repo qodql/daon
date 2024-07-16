@@ -1,90 +1,6 @@
-$input-width: 400px;
-$box-width: 480px;
-// ---------------------------------------------------------
-//로그인 관련 키보드 입력 들어가는 모든 인풋박스
-@mixin inputbox($w:$input-width, $icn){   
-    width: $w;
-    padding-left: 20px;
-    position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
-    // label: 인풋박스 내부 : 좌측 아이콘
-    label{
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        display: inline-block;
-        background-image: $icn;
-        background-repeat: no-repeat;
-        vertical-align: middle;
-    }
-    input{
-        width: calc(100% - 40px);
-        padding: 16px 0;
-        color: #afafaf;    
-        vertical-align: middle; 
-        &:focus{
-            width: calc(100% - 100px);
-        }
-    }
-    // 인풋박스 내부 : 우측 [x, 눈] 아이콘
-    .input_reset_btn{
-        width: 16px;
-        height: 16px;
-        opacity: 1;
-        visibility: hidden;
-        position: absolute;
-        top: 50%;
-        right: 8px;
-        transform: translate(-50%, -50%);
-        background-image: url(../img/icon/icon_x_circle.svg);
-    }
-    .eye{
-        width: 20px;
-        height: 20px;
-        right: 32px;
-        background-image: url(../img/icon/icon_eye.svg);
-    }
-    input:focus ~ .input_reset_btn{
-        opacity: 1;
-        visibility: visible;
-    }
-    @content
-}
-//컨텐츠 묶는 그림자 박스
-@mixin box_shadow($w:$box-width, $p_t:72px, $p_lr:40px, $p_b:48px){
-    width: $w;
-    padding: $p_t $p_lr $p_b;
-    margin: 0 auto;
-    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    @content
-}
-//기본 파란 버튼
-@mixin btn($w:$input-width){
-    width: $w;
-    padding: 16px 32px;
-    text-align: center;
-    font-weight: 700;
-    background-color: #357EF1;
-    border-radius: 8px;
-    color: #ffffff;
-    @content
-}
-//테두리 있는 색반전 버튼
-@mixin btn_reverse($w:$input-width){
-    width: $w;
-    padding: 16px 32px;
-    text-align: center;
-    font-weight: 700;
-    background-color: #ffffff;
-    border: 1px solid #357EF1;
-    border-radius: 8px;
-    color: #357EF1;
-    @content
-}
-// ---------------------------------------------------------
+@import "./_res-login";
+// @mixin은 _res-login.scss에 있습니다.
+//-------------------------------------------
 // 로그인+회원가입 공통
 .login_common{
     width: 100%;
@@ -248,8 +164,7 @@ $box-width: 480px;
                                 color: #afafaf;
                             }
                         }
-                    }  
-                    
+                    }   
                 }
             }
             .join_optional_info{
@@ -262,9 +177,12 @@ $box-width: 480px;
         }
         .join_join_btn{
             margin-top: 40px;
-            button{
-                width: 100%;
-                @include btn($w:width);       
+            a{
+                text-align: center;
+                button{
+                    width: 100%;
+                    @include btn($w:width);       
+                }
             }
         }
     }
@@ -280,7 +198,6 @@ $box-width: 480px;
                 height: 80px;
                 margin: 0 auto 24px;
                 display: block;
-
                 background-image: url(../img/icon/icon_check_big.svg);
                 background-position: center;
                 background-repeat: no-repeat;
@@ -303,93 +220,4 @@ $box-width: 480px;
             }
         }
     }
-}
-// @media 반응형==========================================================
-/** 분기점 
-~480: 모바일
-481~768: 태블릿
-769~1279: 중간
-1280~: pc
-좌우패딩 16px
-*/
-
-
-$mobile: 480px;
-$tablet: 768px;
-//$tablet_large: 1024px;
-$pc: 1280px;
-
-@mixin responsive($device:'mobile'){
-    @if($device == 'mobile'){
-        @media screen and (max-width: $mobile){@content;}
-    }
-    @else if($device == 'tablet'){
-        @media screen and (min-width: $tablet){@content;}
-    }
-    /*@else if($device == 'tablet_large'){
-        @media screen and (min-width: $tablet_large){@content;}
-    }*/
-    @else{
-        @media screen and (min-width: $pc){@content;}
-    }
-}
-$mobile_padding: 16px;
-$mobile_padding_2: 24px;
-$mobile_padding_3: 48px;
-$mobile_font: 16px;
-$mobile_font_title: 20px;
-
-body{
-    @include responsive('pc'){};
-    // @include responsive('tablet_large'){};
-    @include responsive('tablet'){};
-    @include responsive('mobile'){
-        // css없는 괄호들 완전히 끝나면 삭제하기
-        background-color: rgb(183, 219, 201);
-        // 배경색 나중에 완전히 끝나면 삭제하기
-
-        // 로그인+회원가입 공통
-        .login_common{
-            .logo_txt{
-                margin-bottom: 56px;
-                .logo{      //h1태그
-                }
-                .txt{       //h2태그
-                }
-            }
-        }
-        // 로그인
-        .login{
-            .login_wrap{
-                @include box_shadow{   
-                    box-shadow: 0 0 0 0;
-                };                
-                    .login_daon{
-                        .login_login_daon{
-                            margin-bottom: 60px;
-                            .login_input_box{
-                                margin-bottom: 24px;
-                                .email_box{
-                                    margin-bottom: 12px;
-                                }
-                            }
-                        }
-                        .login_join_daon{
-                            margin-bottom: 40px;
-                            .white_btn{}
-                        }
-                    }
-                    .login_sns{
-                    .login_login_sns{
-                        li{
-                            button{}
-                            .kakao{}
-                            .naver{}
-                            .google{}
-                        }
-                    }
-                    }
-            }
-        }
-    };
 }
