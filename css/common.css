@@ -175,7 +175,6 @@ common 수정 금지
 }
 
 .logo {
-  width: -moz-fit-content;
   width: fit-content;
   height: 46px;
 }
@@ -345,7 +344,6 @@ common 수정 금지
 }
 
 .main + .footer {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {

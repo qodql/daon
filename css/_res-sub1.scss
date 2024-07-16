@@ -1,0 +1,427 @@
+@import "./_res";
+
+@include res('pc-s'){
+    
+}
+
+@include res('tab'){
+    .contact{
+        .sub_container{
+            .contents{
+                .contact_map{
+                    width: calc(100% - 20%);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    p{
+                        img{border-radius: 8px;}
+                    }
+                    .contact_map_btn{
+                        right: 16px;
+                        bottom: 16px;
+                        gap: 8px;
+                        button{
+                            height: 38px;
+                            i{
+                                top: 9px;
+                                left: 6px;
+                                img{width: 15px;}
+                            }
+                            a{
+                                font-size: 14px;
+                                padding: 7px 4px;
+                            }
+                        }
+                        .contact_map_naver_btn{
+                            width: 130px;
+                        }
+                        .contact_map_google_btn{
+                            width: 118px;
+                        }
+                    }
+                }
+                .contact_infomation{
+                    width: 80%;
+                    margin: 0 auto;
+                    .contact_info{
+                        &.contact_info1{}
+                        &.contact_info2{
+                            .contact_info_txt{
+                                li{
+                                    p{
+                                        font-size: 14px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 14px;
+                                            height: 14px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                        line-height: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            .contact_info_txt{
+                                li{width: 200%;}
+                            }
+                        }
+                        .contact_info_tit{
+                            margin-top: 24px;
+                            padding-left: 6px;
+                            h3{
+                                font-size: 20px;
+                            }
+                            &::before{
+                                height: 16px;
+                                top: 6px;
+                            }
+                        }
+                        .contact_info_txt{
+                            margin-top: 16px;
+                            li{
+                                font-size: 14px;
+                                padding: 16px;
+                                gap: 4px;
+                                &::before{
+                                    width: 30px;
+                                    height: 30px;
+                                    margin-right: 4px;
+                                }
+                                &::after{
+                                    width: 195%;
+                                    left: 5px;
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   } 
+}
+
+@media screen and (max-width: 975px){
+    .contact{
+        .sub_container{
+            .contents{
+                width: 100%;
+                .contact_map{
+                    p{
+                        img{}
+                    }
+                    .contact_map_btn{
+                        button{
+                            i{
+                                img{}
+                            }
+                            a{
+                            }
+                        }
+                        .contact_map_naver_btn{
+                        }
+                        .contact_map_google_btn{
+                        }
+                    }
+                }
+                .contact_infomation{
+                    .contact_info{
+                        &.contact_info1{}
+                        &.contact_info2{
+                            .contact_info_txt{
+                                li{
+                                    p{
+                                        font-size: 12px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 14px;
+                                            height: 14px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                        line-height: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            .contact_info_txt{
+                                li{
+                                    &:nth-child(2){
+                                        &::after{
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .contact_info_tit{
+                            &::before{
+                            }
+                        }
+                        .contact_info_txt{
+                            li{
+                                font-size: 14px;
+                                padding: 0;
+                                gap: 0;
+                                &::before{
+                                    width: 30px;
+                                    height: 30px;
+                                    margin-right: 4px;
+                                }
+                                &::after{
+                                    width: 195%;
+                                    left: 5px;
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   } 
+}
+
+
+@include res('mo-l'){
+    .contact{
+        .sub_container{
+            .contents{
+                .contact_map{
+                    p{
+                        img{}
+                    }
+                    .contact_map_btn{
+                        right: 16px;
+                        bottom: 16px;
+                        gap: 8px;
+                        button{
+                            height: 38px;
+                            i{
+                                top: 9px;
+                                left: 6px;
+                                img{width: 15px;}
+                            }
+                            a{
+                                font-size: 14px;
+                                padding: 7px 4px;
+                            }
+                        }
+                        .contact_map_naver_btn{
+                            width: 130px;
+                        }
+                        .contact_map_google_btn{
+                            width: 118px;
+                        }
+                    }
+                }
+                .contact_infomation{
+                    width: 80%;
+                    margin: 0 auto;
+                    flex-direction: column;
+                    .contact_info{
+                        width: 100%;
+                        &.contact_info1{}
+                        &.contact_info2{
+                            .contact_info_txt{
+                                margin-top: 8px;
+                                li{
+                                    p{
+                                        font-size: 14px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 14px;
+                                            height: 14px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                        line-height: 0;
+                                    }
+                                    &:nth-child(3){
+                                        width: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            margin-top: -80px;
+                            .contact_info_txt{
+                                li{width: 100%;}
+                            }
+                        }
+                        .contact_info_tit{
+                            margin-top: 24px;
+                            padding-left: 6px;
+                            h3{font-size: 24px;}
+                            &::before{
+                                height: 16px;
+                                top: 9px;
+                            }
+                        }
+                        .contact_info_txt{
+                            margin-top: 16px;
+                            li{
+                                height: 80px;
+                                font-size: 14px;
+                                padding: 16px;
+                                gap: 4px;
+                                padding: 0;
+                                padding-left: 8px;
+                                border-bottom: 1px solid #efefef;
+                                b{font-size: 14px;}
+                                &::before{
+                                    width: 30px;
+                                    height: 30px;
+                                    margin-right: 4px;
+                                }
+                                &::after{
+                                    width: 195%;
+                                    left: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   } 
+}
+
+@include res('mo-s'){
+    .contact{
+        .sub_container{
+            .contents{
+                padding: 16px;
+                .contact_map{
+                    width: 100%;
+                    p{
+                        img{}
+                    }
+                    .contact_map_btn{
+                        right: 16px;
+                        bottom: 16px;
+                        gap: 8px;
+                        button{
+                            height: 38px;
+                            i{
+                                top: 9px;
+                                left: 6px;
+                                img{width: 15px;}
+                            }
+                            a{
+                                font-size: 14px;
+                                padding: 7px 4px;
+                            }
+                        }
+                        .contact_map_naver_btn{
+                            width: 130px;
+                        }
+                        .contact_map_google_btn{
+                            width: 118px;
+                        }
+                    }
+                }
+                .contact_infomation{
+                    width: 100%;
+                    .contact_info{
+                        width: 100%;
+                        &.contact_info1{
+                            .contact_info_txt{
+                                li{
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 16px;}
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info2{
+                            .contact_info_txt{
+                                margin-top: 8px;
+                                li{
+                                    p{
+                                        font-size: 12px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 12px;
+                                            height: 12px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                    }
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 16px;}
+                                    }
+                                    &:nth-child(3){
+                                        width: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            margin-top: -56px;
+                            .contact_info_txt{
+                                li{
+                                    width: 100%;
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 16px;}
+                                    }
+                                }
+                            }
+                        }
+                        .contact_info_tit{
+                            margin-top: 16px;
+                            h3{font-size: 20px;}
+                            &::before{
+                                height: 16px;
+                                top: 6px;
+                            }
+                        }
+                        .contact_info_txt{
+                            margin-top: 16px;
+                            li{
+                                height: 56px;
+                                font-size: 12px;
+                                padding: 12px;
+                                gap: 0;
+                                padding-left: 4px;
+                                &::before{
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   }
+}
