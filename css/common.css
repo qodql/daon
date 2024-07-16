@@ -16,6 +16,29 @@ common 수정 금지
   margin: 40px;
 }
 
+.pc_only {
+  display: block;
+}
+
+.pc_flex {
+  display: flex;
+}
+
+.mb_only, .mb_flex {
+  display: none;
+}
+
+@media screen and (max-width: 1279px) {
+  .pc_only, .pc_flex {
+    display: none !important;
+  }
+  .mb_only {
+    display: block !important;
+  }
+  .mb_flex {
+    display: flex !important;
+  }
+}
 .header {
   width: 100%;
   position: absolute;
@@ -175,7 +198,6 @@ common 수정 금지
 }
 
 .logo {
-  width: -moz-fit-content;
   width: fit-content;
   height: 46px;
 }
@@ -345,7 +367,6 @@ common 수정 금지
 }
 
 .main + .footer {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
@@ -524,7 +545,7 @@ common 수정 금지
   font-size: 24px;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
   .header {
     background-color: orange;
   }
@@ -542,13 +563,19 @@ common 수정 금지
   .header .inner .nav_menu {
     display: none;
   }
+  .header .mb_menu {
+    width: 24px;
+    height: 24px;
+    display: block;
+    border: 1px solid #000;
+  }
 }
 @media (max-width: 767px) {
   .header {
     background-color: green;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .header {
     background-color: skyblue;
   }

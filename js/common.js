@@ -19,20 +19,19 @@ common 수정 금지
     const header = document.querySelector(".header")
     const navBg = document.querySelector(".nav_bg")
     const logo = document.querySelector(".logo a img")
-
-    header.addEventListener("mouseover", (e) => {
-        e.preventDefault()
-        header.classList.add("on");
-        logo.setAttribute("src", "./img/logo.svg")
-    })
-    navBg.addEventListener("mouseover", (e) => {
-        e.preventDefault()
-        header.classList.add("on");
-        logo.setAttribute("src", "./img/logo.svg")
-    })
-    navBg.addEventListener("mouseleave", (e) => {
-        e.preventDefault()
-        header.classList.remove("on");
-        logo.setAttribute("src", "./img/logo_white.svg")
-    })
+        header.addEventListener("mouseover", (e) => {
+            e.preventDefault()
+            header.classList.add("on");
+            logo.setAttribute("src", "./img/logo.svg")
+        })
+        navBg.addEventListener("mouseover", (e) => {
+            e.preventDefault()
+            header.classList.add("on");
+            logo.setAttribute("src", "./img/logo.svg")
+        })
+        navBg.addEventListener("mouseleave", (e) => {
+            e.preventDefault()
+            header.classList.remove("on");
+            logo.setAttribute("src", "./img/logo_white.svg")
+        })
 })
