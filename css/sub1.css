@@ -17,12 +17,12 @@
 }
 @keyframes fadeIn {
   0% {
-    transform: translateY(200px);
     opacity: 0;
+    transform: translateY(200px);
   }
   100% {
-    transform: translateY(0px);
     opacity: 1;
+    transform: translateY(0px);
   }
 }
 @keyframes expand {
@@ -49,8 +49,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  grid-template-areas: "a b c" "a d d";
   grid-gap: 20px;
+  grid-template-areas: "a b c" "a d d";
 }
 .intro .sub_container .contents .intro_grid_wrapper p {
   position: relative;
@@ -64,8 +64,7 @@
   grid-area: b;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-  -o-object-position: 0px -360px;
-     object-position: 0px -360px;
+  object-position: 0px -360px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
   height: 250px;
@@ -76,13 +75,11 @@
   grid-area: d;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-  -o-object-position: 0px -190px;
-     object-position: 0px -190px;
+  object-position: 0px -190px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p img {
   position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
 }
 .intro .sub_container .contents .intro_txt {
@@ -233,6 +230,7 @@
 }
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
   width: 40px;
+  line-height: 0;
 }
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
   display: flex;
@@ -240,6 +238,7 @@
   flex-direction: column;
   align-items: center;
   padding-right: 12px;
+  line-height: 20px;
 }
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
   width: 18px;
@@ -251,7 +250,7 @@
 }
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
   width: 40px;
-  height: 8px;
+  height: 24px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -321,4 +320,97 @@
   content: "";
   display: inline-block;
   margin-right: 8px;
+}
+
+@media screen and (max-width: 1280px) {
+  .contact .sub_container .contents {
+    width: 100%;
+  }
+  .contact .sub_container .contents .contact_map {
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .contact .sub_container .contents .contact_map p img {
+    border-radius: 8px;
+  }
+  .contact .sub_container .contents .contact_map .contact_map_btn {
+    right: 16px;
+    bottom: 16px;
+    gap: 8px;
+  }
+  .contact .sub_container .contents .contact_map .contact_map_btn button {
+    height: 38px;
+  }
+  .contact .sub_container .contents .contact_map .contact_map_btn button i {
+    top: 9px;
+    left: 6px;
+  }
+  .contact .sub_container .contents .contact_map .contact_map_btn button i img {
+    width: 15px;
+  }
+  .contact .sub_container .contents .contact_map .contact_map_btn button a {
+    font-size: 14px;
+    padding: 7px 4px;
+  }
+  .contact .sub_container .contents .contact_map .contact_map_btn .contact_map_naver_btn {
+    width: 130px;
+  }
+  .contact .sub_container .contents .contact_map .contact_map_btn .contact_map_google_btn {
+    width: 118px;
+  }
+  .contact .sub_container .contents .contact_infomation {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
+    font-size: 14px;
+    padding-right: 2px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
+    width: 14px;
+    height: 14px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
+    height: 26px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
+    margin-right: 6px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
+    width: 34px;
+    line-height: 0;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(2) {
+    width: 128%;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(2)::after {
+    width: 153%;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit {
+    font-size: 20px;
+    margin-top: 24px;
+    padding-left: 6px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit::before {
+    height: 16px;
+    top: 6px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt {
+    margin-top: 16px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li {
+    font-size: 14px;
+    padding: 16px;
+    gap: 4px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::before {
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+  }
+  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::after {
+    width: 195%;
+    left: 5px;
+  }
 }

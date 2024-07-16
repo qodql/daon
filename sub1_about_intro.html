@@ -100,20 +100,16 @@
                     <p><img src="./img/img_intro_grid_03.jpg" alt="gird3"></p>
                     <p><img src="./img/img_intro_grid_04.jpg" alt="gird4"></p>
                 </div>
-
-                
                 <div class="intro_txt">
                     <h5>다온 펜션은
                         객실 개별 바베큐존을 제공하여 프라이빗 한 시간을 보내실 수 있습니다.
                         펜션에서 직접 관리하고 있는 수영장과 주변에 다양한 놀 거리를 같이 즐겨보세요.</h5>
                 </div>
-
                 <div class="intro_full_bg">
                     <div class="intro_full_bg_inner">
                         <h1 class="logo">
                             <img src="./img/logo_white.svg" alt="logo">
                         </h1>
-                        
                         <div class="intro_full_bg_inner_txt">
                             <h5> 가평에 위치한 ‘다시 온다’ 라는 의미의 다온펜션은 하루를 머물더라도
                                 고객 여러분의 편안한 휴식처가 되어주며 자연과 조화를 이루는 안락한 공간과 함께
@@ -121,10 +117,7 @@
                             </h5>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -204,43 +197,41 @@
     </footer>
     
     <script>
-         //intro grid image scroll event
-    const ee = document.getElementsByClassName('intro')[0];
+        //intro grid image scroll event
+        const ee = document.getElementsByClassName('intro')[0];
 
-function animateElement(elementClass, slideInClass) {
-    const element = document.getElementsByClassName(elementClass)[0]; // id로 해당 요소 찾기
-    const rect = element.getBoundingClientRect(); // 요소 위치 구하기
-    
-// 요소가 화면 안쪽으로 들어왔을 경우 isVisible로 인식
-const isVisible = rect.top <= window.innerHeight && rect.bottom >= 1200; 
-    if(isVisible) {
-        element.classList.add(slideInClass);
-    }
-};
-  
-  document.addEventListener("scroll", function() {
-    animateElement("intro_grid_wrapper", "intro_fadein");
-  });
-
-  //intro full bg scroll event
-
-
-  function animateElement2(elementClass, slideInClass) {
-    const element2 = document.getElementsByClassName(elementClass)[0]; 
-    const rect2 = element2.getBoundingClientRect(); 
-    
-    const isVisible2 = rect2.top <= window.innerHeight && rect2.top <= 350; 
-
-    if (isVisible2) {
-      element2.classList.add(slideInClass);
-    }
-  }
-  
-  document.addEventListener("scroll", function() {
-    animateElement2("intro_full_bg", "intro_expand");
-  });
-
+        function animateElement(elementClass, slideInClass){
         
+        const element = document.getElementsByClassName(elementClass)[0]; // id로 해당 요소 찾기
+        const rect = element.getBoundingClientRect(); // 요소 위치 구하기
+    
+        // 요소가 화면 안쪽으로 들어왔을 경우 isVisible로 인식
+        const isVisible = rect.top <= window.innerHeight && rect.bottom >= 1200; 
+            if(isVisible) {
+                element.classList.add(slideInClass);
+            }
+        };
+  
+        document.addEventListener("scroll", function() {
+            animateElement("intro_grid_wrapper", "intro_fadein");
+        });
+
+        //intro full bg scroll event
+        function animateElement2(elementClass, slideInClass) {
+        
+        const element2 = document.getElementsByClassName(elementClass)[0]; 
+        const rect2 = element2.getBoundingClientRect(); 
+    
+        const isVisible2 = rect2.top <= window.innerHeight && rect2.top <= 350; 
+
+            if (isVisible2) {
+                element2.classList.add(slideInClass);
+            }
+        }
+  
+        document.addEventListener("scroll", function() {
+            animateElement2("intro_full_bg", "intro_expand");
+        });
     </script>
 
 
