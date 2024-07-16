@@ -11,9 +11,15 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <script src="./js/common.js"></script>
+    <!-- [↓] 달력 -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+    <!-- [↓] 데이트피커 -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/sub6.css">
-    <script src="./js/sub.js"></script>
+    <script src="./js/sub6.js"></script>
 </head>
 <body>
     <!-- 헤더 -->
@@ -94,7 +100,174 @@
             </h2>
             <!-- 페이지 컨텐츠 내용 -->
             <div class="contents">
-                컨텐츠 내용
+                <div class="step_wrap">
+                    <ul class="step">
+                        <li class="active">
+                            <a href="#" class="circle">
+                                <span>1</span>
+                            </a>
+                            <p>객실 선택</p>
+                        </li>
+                        <li>
+                            <a href="#" class="circle">
+                                <span>2</span>
+                            </a>
+                            <p>정보 입력</p>
+                        </li>
+                        <li>
+                            <a href="#" class="circle">
+                                <span>3</span>
+                            </a>
+                            <p>예약 완료</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="calendar_wrap">
+                    <div class="calendar_container">
+                        <p class="title left">2024년 7월</p>
+                        <div id="calendar" class="left"></div>
+                        <p class="title right">2024년 8월</p>
+                        <div id="calendar" class="right"></div>
+                    </div>
+                    <div class="calendar_btn_wrap">
+                        <span id="calendar_prev" class="nav_button prev"></span>
+                        <span id="calendar_next" class="nav_button next"></span>
+                    </div>
+                </div>
+                <div class="data_area">
+                    <ul class="date_person">
+                        <li class="data">
+                            <p class="label">투숙기간</p>
+                            <div class="input_wrap">
+                                <input type="text" value="2024. 07. 15 ~ 2024. 07. 15">
+                                <!-- <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input type="text" id="tui-date-picker-target" aria-label="Date-Time" />
+                                </div>
+                                <div id="tui-date-picker-container" style="margin-top: -1px;"></div> -->
+                            </div>
+                        </li>
+                        <li class="room">
+                            <p class="label">객실</p>
+                            <div class="input_wrap">
+                                <input type="text" value="1"/>
+                                <div class="btn_wrap">
+                                    <button type="button" class="minus"></button>
+                                    <button type="button" class="plus"></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="adult">
+                            <p class="label">성인</p>
+                            <div class="input_wrap">
+                                <input type="text" value="2"/>
+                                <div class="btn_wrap">
+                                    <button type="button" class="minus"></button>
+                                    <button type="button" class="plus"></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="child">
+                            <p class="label">어린이</p>
+                            <div class="input_wrap">
+                                <input type="text" value="0"/>
+                                <div class="btn_wrap">
+                                    <button type="button" class="minus"></button>
+                                    <button type="button" class="plus"></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="room_list_wrap">
+                        <li>
+                            <div class="room_img">
+                                <img src="./img/img_sub6_love_103.jpg" alt="">
+                            </div>
+                            <div class="room_info">
+                                <p class="room_name">
+                                    <span class="tag love">LOVE YOU</span>
+                                    101호
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p><span>객실크기</span>16평(약53㎡)</p>
+                                    </li>
+                                    <li>
+                                        <p><span>객실구성</span>기본 2인 / 최대 6인</p>
+                                    </li>
+                                    <li>
+                                        <p><span>최대인원</span>침대룸A(더블1), 주방, 화장실1</p>
+                                    </li>
+                                    <li>
+                                        <p><span>추가요금</span>2인 초과 및 침구 추가 시 인당 1만원</p>
+                                    </li>
+                                </ul>
+                                <div class="room_btn_wrap">
+                                    <button type="button" class="room_select_btn">선택</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="room_img">
+                                <img src="./img/img_sub6_only_202.jpg" alt="">
+                            </div>
+                            <div class="room_info">
+                                <p class="room_name">
+                                    <span class="tag only">ONLY YOU</span>
+                                    103호
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p><span>객실크기</span>16평(약53㎡)</p>
+                                    </li>
+                                    <li>
+                                        <p><span>객실구성</span>기본 2인 / 최대 6인</p>
+                                    </li>
+                                    <li>
+                                        <p><span>최대인원</span>침대룸A(더블1), 주방, 화장실1</p>
+                                    </li>
+                                    <li>
+                                        <p><span>추가요금</span>2인 초과 및 침구 추가 시 인당 1만원</p>
+                                    </li>
+                                </ul>
+                                <div class="room_btn_wrap">
+                                    <button type="button" class="room_select_btn selected">선택</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="room_img">
+                                <img src="./img/img_sub6_only_203.jpg" alt="">
+                            </div>
+                            <div class="room_info">
+                                <p class="room_name">
+                                    <span class="tag only">ONLY YOU</span>
+                                    103호
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p><span>객실크기</span>16평(약53㎡)</p>
+                                    </li>
+                                    <li>
+                                        <p><span>객실구성</span>기본 2인 / 최대 6인</p>
+                                    </li>
+                                    <li>
+                                        <p><span>최대인원</span>침대룸A(더블1), 주방, 화장실1</p>
+                                    </li>
+                                    <li>
+                                        <p><span>추가요금</span>2인 초과 및 침구 추가 시 인당 1만원</p>
+                                    </li>
+                                </ul>
+                                <div class="room_btn_wrap">
+                                    <button type="button" class="room_select_btn selected">선택</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="next_wrap">
+                    <!-- <button type="button" class="next_btn room">객실 선택</button> -->
+                    <button type="button" class="next_btn info" onclick="window.location.href='./sub6_reservation_step2.html'">정보 입력</button>
+                </div>
             </div>
         </div>
     </div>
@@ -170,6 +343,63 @@
                 </ul>
             </div>
         </div>
-    </footer>
+    </footer>    
+    <script>
+        // calendar
+        document.addEventListener("DOMContentLoaded", function () {
+            var Calendar = tui.Calendar;
+
+            var today = new Date();
+            var firstMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            var secondMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+
+            var calendarLeft = new Calendar('#calendar.left', {
+                defaultView: 'month',
+                taskView: true,
+                scheduleView: true,
+                useCreationPopup: true,
+                useDetailPopup: true,
+                renderStartDate: firstMonth
+            });
+
+            var calendarRight = new Calendar('#calendar.right', {
+                defaultView: 'month',
+                taskView: true,
+                scheduleView: true,
+                useCreationPopup: true,
+                useDetailPopup: true,
+                renderStartDate: secondMonth
+            });
+
+            function moveCalendar(monthDiff) {
+                firstMonth.setMonth(firstMonth.getMonth() + monthDiff);
+                secondMonth.setMonth(secondMonth.getMonth() + monthDiff);
+
+                calendarLeft.setDate(firstMonth);
+                calendarRight.setDate(secondMonth);
+            }
+
+            document.getElementById('calendar_prev').addEventListener('click', function () {
+                moveCalendar(-1);
+            });
+
+            document.getElementById('calendar_next').addEventListener('click', function () {
+                moveCalendar(1);
+            });
+
+            // datepicker
+            const DatePicker = tui.DatePicker;
+            const container = document.getElementById('tui-date-picker-container');
+            const target = document.getElementById('tui-date-picker-target');
+
+            const instance = new DatePicker(container, {
+                input: {
+                    element: target
+                },
+            });
+
+            instance.getDate();
+        });
+    </script>
 </body>
 </html>

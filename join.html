@@ -18,57 +18,100 @@
 <body>
     <!-- 컨텐츠 -->
     <div class="login_common join">
-        <div class="logoNtxt">
+        <div class="logo_txt">
             <h1 class="logo">
                 <a href="./index.html"><img src="./img/logo.svg" alt=""></a>
             </h1>
-            <h2>
+            <h2 class="txt">
                 회원가입
             </h2>
         </div>
-
-        <div class="inputboxs">
-            <p class="emailbox">
-                <label for="check"></label>
-                <input id="check" type="email" placeholder="이메일">
-                <span class="x"></span>
-            </p>
-            <p class="pwbox">
-                <label for="check"></label>
-                <input id="check" type="password" placeholder="비밀번호 (영문/숫자/특수문자 조합 8~15자)">
-                <span class="x eye"></span>
-                <span class="x"></span>
-            </p>
-            <p class="pwcheckbox">
-                <label for="check"></label>
-                <input id="check" type="password" placeholder="비밀번호 확인">
-                <span class="x eye"></span>
-                <span class="x"></span>
-            </p>
-            <p class="name">
-                <label for="check"></label>
-                <input id="check" type="text" placeholder="이름">
-                <span class="x"></span>
-            </p>
-
-            <div class="pv">
-                <p class="phone">
-                    <label for="check"></label>
-                    <input id="check" type="tel" placeholder="휴대폰 번호 (- 없이 입력)">
-                    <span class="x"></span>
-                </p>
-                <p class="phone_btn">인증번호</p>
+        <div class="join_wrap">
+            <div class="join_personal_info">
+                <ul class="join_input_box">
+                    <li class="email_box">
+                        <label for="email"></label>
+                        <input id="email" type="email" placeholder="이메일">
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <li class="pw_box">
+                        <label for="password"></label>
+                        <input id="password" type="password" placeholder="비밀번호 (영문/숫자/특수문자 조합 8~15자)">
+                        <button type="button" class="input_reset_btn eye"></button>
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <li class="pw_check_box">
+                        <label for="pw_check"></label>
+                        <input id="pw_check" type="password" placeholder="비밀번호 확인">
+                        <button type="button" class="input_reset_btn eye"></button>
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <li class="name_box">
+                        <label for="name"></label>
+                        <input id="name" type="text" placeholder="이름">
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <div class="phone_verify_btn">
+                        <li class="phone_box">
+                            <label for="phone"></label>
+                            <input id="phone" type="tel" placeholder="휴대폰 번호 (- 없이 입력)">
+                            <button type="button" class="input_reset_btn"></button>
+                        </li>
+                        <li class="join_btn">
+                            <button type="button" class="blue_btn">인증번호</button>
+                        </li>
+                    </div>
+                    <li class="verify_box">
+                        <label for="verify"></label>
+                        <input id="verify" type="email" placeholder="인증번호">
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                </ul>
             </div>
-
-            <p class="verify">
-                <label for="check"></label>
-                <input id="check" type="email" placeholder="인증번호">
-                <span class="x"></span>
-            </p>
+            <div class="join_agree">
+                <div class="agree_checkbox">
+                    <div class="agree_all">    <!--전체동의-->
+                        <input type="checkbox" id="agree_all">
+                        <label for="agree_all">전체 동의</label>
+                        <button type="button" class="arrow_btn">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26 18.8827C26.0008 19.0289 25.9728 19.1738 25.9175 19.3092C25.8622 19.4445 25.7808 19.5676 25.6778 19.6714C25.5746 19.7755 25.4517 19.8582 25.3163 19.9146C25.181 19.971 25.0358 20 24.8891 20C24.7425 20 24.5973 19.971 24.4619 19.9146C24.3265 19.8582 24.2037 19.7755 24.1004 19.6714L16.0023 11.5621L7.90411 19.6714C7.69493 19.8806 7.41123 19.9981 7.1154 19.9981C6.96893 19.9981 6.82388 19.9693 6.68856 19.9132C6.55323 19.8571 6.43027 19.775 6.32669 19.6714C6.22312 19.5678 6.14096 19.4449 6.08491 19.3095C6.02885 19.1742 6 19.0292 6 18.8827C6 18.5869 6.11752 18.3032 6.32669 18.094L15.2136 9.20713C15.3168 9.10301 15.4397 9.02037 15.5751 8.96397C15.7104 8.90758 15.8556 8.87854 16.0023 8.87854C16.1489 8.87854 16.2941 8.90758 16.4295 8.96397C16.5648 9.02037 16.6877 9.10301 16.791 9.20713L25.6778 18.094C25.7808 18.1978 25.8622 18.3209 25.9175 18.4562C25.9728 18.5916 26.0008 18.7365 26 18.8827Z" fill="#2F2F2F"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="agree_list">     <!--체크리스트-->
+                        <li class="agree_essential">
+                            <input type="checkbox" id="agree_age">
+                            <label for="agree_age">만 19세 이상</label>
+                        </li>
+                        <li class="agree_essential">
+                            <input type="checkbox" id="agree_terms">
+                            <label for="agree_terms">이용약관에 대한 동의</label>
+                            <a href="#" class="view_all">전체보기</a>
+                        </li>
+                        <li class="agree_essential">
+                            <input type="checkbox" id="agree_personal">
+                            <label for="agree_personal">개인정보 수집, 이용에 대한 동의</label>
+                            <a href="#" class="view_all">전체보기</a>
+                        </li>
+                        <li class="agree_optional">
+                            <input type="checkbox" id="agree_marketing">
+                            <label for="agree_marketing">개인정보 마케팅 활용 동의</label>
+                        </li>
+                        <li class="agree_optional">
+                            <input type="checkbox" id="agree_email">
+                            <label for="agree_email_marketing">이메일 마케팅 수신 동의</label>
+                        </li>
+                    </ul>
+                </div>
+                <p class="join_optional_info">* 선택항목은 동의 없이 가입 가능합니다.</p>
+            </div>
+            <div class="join_join_btn">
+                <a href="./join_complete.html">
+                    <button type="button">가입완료</button>
+                </a>
+            </div>
         </div>
-        
-
-
     </div>
     <!-- 푸터 -->
     <footer class="footer">

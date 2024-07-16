@@ -63,6 +63,25 @@ input, select, button, textarea {
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  font-size: 16px;
+}
+
+input[type=checkbox], input[type=radio] {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #efefef;
+  font-family: "Montserrat", sans-serif;
+  resize: none;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 16px;
+}
+
+textarea::placeholder {
+  color: #afafaf;
 }
 
 button:focus {
@@ -73,6 +92,15 @@ input {
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+input:read-only {
+  background-color: #efefef;
+}
+
+input::placeholder {
+  color: #afafaf;
 }
 
 hr {

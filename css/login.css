@@ -1,85 +1,80 @@
+@charset "UTF-8";
 .login_common {
   width: 100%;
   height: 100vh;
+  padding-top: 160px;
+  margin: 0 auto;
 }
-.login_common .logoNtxt {
-  margin-top: 160px;
+.login_common .logo_txt {
   margin-bottom: 56px;
 }
-.login_common .logoNtxt h2 {
-  padding-top: 40px;
+.login_common .logo_txt .logo {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.login_common .logo_txt .txt {
+  margin-top: 40px;
   font-size: 32px;
   font-weight: 700;
   text-align: center;
 }
-
-.login .box-shadow {
-  width: 480px;
-  height: 570px;
-  padding: auto 40px;
-  margin: 0 auto;
-  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.login .box-shadow .login_daon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.login .box-shadow .login_daon .emailbox {
+.login_common .email_box {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
-  margin-bottom: 12px;
+  overflow: hidden;
 }
-.login .box-shadow .login_daon .emailbox label {
+.login_common .email_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_mail_afafaf.svg);
+  background-image: url(../img/icon/icon_mail_grey.svg);
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .emailbox input {
+.login_common .email_box input {
   width: calc(100% - 40px);
   padding: 16px 0;
   color: #afafaf;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .emailbox .x {
+.login_common .email_box input:focus {
+  width: calc(100% - 100px);
+}
+.login_common .email_box .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
+  visibility: hidden;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.login .box-shadow .login_daon .emailbox .eye {
+.login_common .email_box .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.login .box-shadow .login_daon .emailbox input:focus ~ .x {
+.login_common .email_box input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
-.login .box-shadow .login_daon .pwbox {
+.login_common .pw_box {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
-  margin-bottom: 24px;
+  overflow: hidden;
 }
-.login .box-shadow .login_daon .pwbox label {
+.login_common .pw_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -88,132 +83,45 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .pwbox input {
+.login_common .pw_box input {
   width: calc(100% - 40px);
   padding: 16px 0;
   color: #afafaf;
   vertical-align: middle;
 }
-.login .box-shadow .login_daon .pwbox .x {
+.login_common .pw_box input:focus {
+  width: calc(100% - 100px);
+}
+.login_common .pw_box .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
+  visibility: hidden;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.login .box-shadow .login_daon .pwbox .eye {
+.login_common .pw_box .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.login .box-shadow .login_daon .pwbox input:focus ~ .x {
+.login_common .pw_box input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
-.login .box-shadow .login_daon .login_btn {
+.login_common .pw_check_box {
   width: 400px;
-  padding: 16px 32px;
-  text-align: center;
-  font-weight: 700;
-  background-color: #357EF1;
-  border-radius: 8px;
-  color: #ffffff;
-  margin-bottom: 60px;
-}
-.login .box-shadow .login_daon .login_white_btn {
-  width: 400px;
-  padding: 16px 32px;
-  text-align: center;
-  font-weight: 700;
-  border: 1px solid #357EF1;
-  border-radius: 8px;
-  color: #357EF1;
-  margin-bottom: 40px;
-}
-.login .box-shadow .login_sns {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-.login .box-shadow .login_sns .login_sns_btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.login .box-shadow .login_sns .kakao {
-  background-color: #fff500;
-  background-image: url(../img/icon/icon_kakao.svg);
-}
-.login .box-shadow .login_sns .naver {
-  background-color: #06CC80;
-  background-image: url(../img/icon/icon_naver.svg);
-}
-.login .box-shadow .login_sns .google {
-  background-color: #ffffff;
-  border: 1px solid #afafaf;
-  background-image: url(../img/icon/icon_google.svg);
-}
-
-.join .inputboxs {
-  width: 480px;
-  height: 570px;
-  padding: auto 40px;
-  margin: 0 auto;
-  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-}
-.join .inputboxs .emailbox {
-  width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
-.join .inputboxs .emailbox label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
-  background-image: url(../img/icon/icon_mail_afafaf.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.join .inputboxs .emailbox input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.join .inputboxs .emailbox .x {
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
-}
-.join .inputboxs .emailbox .eye {
-  width: 20px;
-  height: 20px;
-  right: 36px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.join .inputboxs .emailbox input:focus ~ .x {
-  opacity: 1;
-}
-.join .inputboxs .pwbox {
-  width: 400px;
-  padding: 0 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-}
-.join .inputboxs .pwbox label {
+.login_common .pw_check_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -222,78 +130,45 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.join .inputboxs .pwbox input {
+.login_common .pw_check_box input {
   width: calc(100% - 40px);
   padding: 16px 0;
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .pwbox .x {
+.login_common .pw_check_box input:focus {
+  width: calc(100% - 100px);
+}
+.login_common .pw_check_box .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
+  visibility: hidden;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.join .inputboxs .pwbox .eye {
+.login_common .pw_check_box .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .pwbox input:focus ~ .x {
+.login_common .pw_check_box input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
-.join .inputboxs .pwcheckbox {
+.login_common .name_box {
   width: 400px;
-  padding: 0 20px;
+  padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
-.join .inputboxs .pwcheckbox label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
-  background-image: url(../img/icon/icon_lock.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.join .inputboxs .pwcheckbox input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.join .inputboxs .pwcheckbox .x {
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
-}
-.join .inputboxs .pwcheckbox .eye {
-  width: 20px;
-  height: 20px;
-  right: 36px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.join .inputboxs .pwcheckbox input:focus ~ .x {
-  opacity: 1;
-}
-.join .inputboxs .name {
-  width: 400px;
-  padding: 0 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-}
-.join .inputboxs .name label {
+.login_common .name_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -302,123 +177,374 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.join .inputboxs .name input {
+.login_common .name_box input {
   width: calc(100% - 40px);
   padding: 16px 0;
   color: #afafaf;
   vertical-align: middle;
 }
-.join .inputboxs .name .x {
+.login_common .name_box input:focus {
+  width: calc(100% - 100px);
+}
+.login_common .name_box .input_reset_btn {
   width: 16px;
   height: 16px;
+  opacity: 1;
+  visibility: hidden;
   position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.join .inputboxs .name .eye {
+.login_common .name_box .eye {
   width: 20px;
   height: 20px;
-  right: 36px;
+  right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
-.join .inputboxs .name input:focus ~ .x {
+.login_common .name_box input:focus ~ .input_reset_btn {
   opacity: 1;
+  visibility: visible;
 }
-.join .inputboxs .pv {
+.login_common .phone_box {
   width: 400px;
-  height: 52px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.login_common .phone_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_phone.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.login_common .phone_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.login_common .phone_box input:focus {
+  width: calc(100% - 100px);
+}
+.login_common .phone_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.login_common .phone_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.login_common .phone_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
+}
+.login_common .verify_box {
+  width: 400px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.login_common .verify_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_phone.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.login_common .verify_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.login_common .verify_box input:focus {
+  width: calc(100% - 100px);
+}
+.login_common .verify_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.login_common .verify_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.login_common .verify_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
+}
+.login_common .blue_btn {
+  width: 400px;
+  padding: 16px 32px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #357ef1;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.login .login_wrap {
+  width: 480px;
+  padding: 72px 40px 48px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+.login .login_wrap .login_daon .login_login_daon {
+  margin-bottom: 60px;
+}
+.login .login_wrap .login_daon .login_login_daon .login_input_box {
+  margin-bottom: 24px;
+}
+.login .login_wrap .login_daon .login_login_daon .login_input_box .email_box {
+  margin-bottom: 12px;
+}
+.login .login_wrap .login_daon .login_join_daon {
+  margin-bottom: 40px;
+}
+.login .login_wrap .login_daon .login_join_daon .white_btn {
+  width: 400px;
+  padding: 16px 32px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #ffffff;
+  border: 1px solid #357ef1;
+  border-radius: 8px;
+  color: #357ef1;
+}
+.login .login_wrap .login_sns .login_login_sns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.login .login_wrap .login_sns .login_login_sns li button {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login .login_wrap .login_sns .login_login_sns li .kakao {
+  background-color: #fff500;
+  background-image: url(../img/icon/icon_kakao.svg);
+}
+.login .login_wrap .login_sns .login_login_sns li .naver {
+  background-color: #06cc80;
+  background-image: url(../img/icon/icon_naver.svg);
+}
+.login .login_wrap .login_sns .login_login_sns li .google {
+  background-color: #ffffff;
+  border: 1px solid #afafaf;
+  background-image: url(../img/icon/icon_google.svg);
+}
+
+.join {
+  margin-bottom: 480px;
+}
+.join .join_wrap {
+  width: 480px;
+  margin: 0 auto;
+}
+.join .join_wrap .join_personal_info {
+  width: 480px;
+  padding: 72px 40px 72px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.join .join_wrap .join_personal_info .join_input_box li {
+  margin-bottom: 12px;
+}
+.join .join_wrap .join_personal_info .join_input_box .verify_box {
+  margin-bottom: 0;
+}
+.join .join_wrap .join_personal_info .phone_verify_btn {
   display: flex;
   justify-content: space-between;
   gap: 8px;
 }
-.join .inputboxs .pv .phone {
-  width: 400px;
-  padding: 0 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
+.join .join_wrap .join_personal_info .phone_verify_btn .phone_box {
+  width: 70%;
 }
-.join .inputboxs .pv .phone label {
+.join .join_wrap .join_personal_info .phone_verify_btn .join_btn {
+  width: 30%;
+}
+.join .join_wrap .join_personal_info .phone_verify_btn .join_btn .blue_btn {
+  width: 100%;
+}
+.join .join_wrap .join_agree .agree_checkbox {
+  width: 480px;
+  padding: 0 0 0;
+  margin: 0 auto;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.join .join_wrap .join_agree .agree_checkbox input {
+  display: none;
+}
+.join .join_wrap .join_agree .agree_checkbox .agree_all {
+  padding: 24px;
+  background-color: #efefef;
+  display: flex;
+  justify-content: space-between;
+}
+.join .join_wrap .join_agree .agree_checkbox .agree_all .arrow_btn svg {
   width: 20px;
   height: 20px;
-  margin-right: 8px;
-  display: inline-block;
-  background-image: url(../img/icon/icon_phone.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
+  fill: #ffffff;
 }
-.join .inputboxs .pv .phone input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
+.join .join_wrap .join_agree .agree_checkbox .agree_all .arrow_btn svg path {
+  fill: #afafaf;
+}
+.join .join_wrap .join_agree .agree_checkbox .agree_list {
+  padding: 12px 24px;
+}
+.join .join_wrap .join_agree .agree_checkbox .agree_list li {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.join .join_wrap .join_agree .agree_checkbox .agree_list li .view_all {
   color: #afafaf;
-  vertical-align: middle;
 }
-.join .inputboxs .pv .phone .x {
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+.join
+  .join_wrap
+  .join_agree
+  .agree_checkbox
+  .agree_list
+  .agree_essential
+  label::after {
+  content: " (필수)";
+  color: #ff0f0f;
 }
-.join .inputboxs .pv .phone .eye {
-  width: 20px;
-  height: 20px;
-  right: 36px;
-  background-image: url(../img/icon/icon_eye.svg);
+.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label {
+  color: #afafaf;
 }
-.join .inputboxs .pv .phone input:focus ~ .x {
-  opacity: 1;
+.join
+  .join_wrap
+  .join_agree
+  .agree_checkbox
+  .agree_list
+  .agree_optional
+  label::after {
+  content: " (선택)";
+  color: #afafaf;
 }
-.join .inputboxs .pv .phone_btn {
-  width: 180px;
+.join .join_wrap .join_agree .join_optional_info {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: right;
+  color: #afafaf;
+}
+.join .join_wrap .join_join_btn {
+  margin-top: 40px;
+}
+.join .join_wrap .join_join_btn button {
+  width: 100%;
+  width: width;
   padding: 16px 32px;
   text-align: center;
   font-weight: 700;
-  background-color: #357EF1;
+  background-color: #357ef1;
   border-radius: 8px;
   color: #ffffff;
 }
-.join .inputboxs .verify {
-  width: 400px;
-  padding: 0 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
+
+.join_complete .logo_txt .txt {
+  margin-top: 68px;
 }
-.join .inputboxs .verify label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
-  background-image: url(../img/icon/icon_phone.svg);
+.join_complete .logo_txt .txt::before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: block;
+  background-image: url(../img/icon/icon_check_big.svg);
+  background-position: center;
   background-repeat: no-repeat;
-  vertical-align: middle;
 }
-.join .inputboxs .verify input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
+.join_complete .join_complete_wrap .greeting {
+  margin-bottom: 100px;
 }
-.join .inputboxs .verify .x {
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  background-image: url(../img/icon/icon_x-circle.svg);
+.join_complete .join_complete_wrap .greeting p {
+  font-size: 24px;
+  text-align: center;
 }
-.join .inputboxs .verify .eye {
-  width: 20px;
-  height: 20px;
-  right: 36px;
-  background-image: url(../img/icon/icon_eye.svg);
+.join_complete .join_complete_wrap .join_complete_btn button {
+  width: 212px;
+  margin: 0 auto;
+  display: block;
 }
-.join .inputboxs .verify input:focus ~ .x {
-  opacity: 1;
+
+/** 분기점 
+~480: 모바일
+481~768: 태블릿
+769~1279: 중간
+1280~: pc
+좌우패딩 16px
+*/
+@media screen and (max-width: 480px) {
+  body {
+    background-color: rgb(183, 219, 201);
+  }
+  body .login_common .logo_txt {
+    margin-bottom: 56px;
+  }
+  body .login .login_wrap {
+    width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+  }
+  body .login .login_wrap .login_daon .login_login_daon {
+    margin-bottom: 60px;
+  }
+  body .login .login_wrap .login_daon .login_login_daon .login_input_box {
+    margin-bottom: 24px;
+  }
+  body
+    .login
+    .login_wrap
+    .login_daon
+    .login_login_daon
+    .login_input_box
+    .email_box {
+    margin-bottom: 12px;
+  }
+  body .login .login_wrap .login_daon .login_join_daon {
+    margin-bottom: 40px;
+  }
 }

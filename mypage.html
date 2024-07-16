@@ -13,7 +13,7 @@
     <script src="./js/common.js"></script>
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/mypage.css">
-    <script src="./js/sub.js"></script>
+    <script src="./js/sub1.js"></script>
 </head>
 <body>
     <!-- 헤더 -->
@@ -88,9 +88,71 @@
             </div>
         </div>
         <div class="sub_container">
+            <h2 class="title">
+                마이페이지
+                <span class="desc">회원정보 및 예약내역을 조회합니다.</span>
+            </h2>
             <!-- 페이지 컨텐츠 내용 -->
             <div class="contents">
-                마이페이지(회원정보)
+                <div class="mypage_wrap">
+                    <div class="mypage_tap_wrap">
+                        <ul class="tab">
+                            <li class="on">회원정보</li>
+                            <li><a href="mypage_reservation.html">예약내역</a></li>
+                        </ul>
+                        <div class="tab_cont">
+                            <div class="mypage_info">
+                                <ul class="mypage_info_input">
+                                    <li class="email_box">
+                                        <label for="email">이메일</label>
+                                        <div class="mypage_info_input_box">
+                                            <input type="email" onfocus="this.blur()" placeholder="bengby@naver.com">
+                                        </div>
+                                        <div class="mypage_info_input_agree_box">
+                                            <input type="checkbox">
+                                            <label>이메일 마케팅 수신 동의 (선택)</label>
+                                        </div>
+                                    </li>
+                                    <li class="pw_box">
+                                        <label for="password">비밀번호</label>
+                                        <div class="mypage_info_input_box"><input type="password"></div>
+                                    </li>
+                                    <li class="pw_confirm_box">
+                                        <label for="password_confirm">비밀번호 확인</label>
+                                        <div class="mypage_info_input_box"><input type="password"></div>
+                                    </li>
+                                    <li class="name_box">
+                                        <label for="name">이름</label>
+                                        <div class="mypage_info_input_box"><input type="name"></div>
+                                        <div class="mypage_info_input_agree_box">
+                                            <input type="checkbox">
+                                            <label>개인정보 마케팅 활용 동의 (선택)</label>
+                                        </div>
+                                    </li>
+                                    <li class="phone_box">
+                                        <label for="phone">휴대폰번호</label>
+                                        <div class="mypage_info_input_box"><input type="phone"></div>
+                                    </li>
+                                    <li class="birth_box">
+                                        <label for="birth">생년월일</label>
+                                        <div class="mypage_info_input_box"><input type="text"></div>
+                                    </li>
+                                    <li class="coupon_box">
+                                        <label for="coupon">쿠폰</label>
+                                        <div><input type="button" value="쿠폰확인"></div>
+                                    </li>
+                                </ul>
+                                <div class="mypage_info_member_delete">
+                                    <button class="mypage_info_member_delete_btn"><a href="#">회원탈퇴</a></button>
+                                </div>
+                                <div class="mypage_info_btn">
+                                    <button class="mypage_info_fix_btn"><a href="#">수정</a></button>
+                                    <button class="mypage_info_cancel_btn"><a href="#">취소</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

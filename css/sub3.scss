@@ -8,17 +8,22 @@
 
 // pool
 .pool {
+  .sub_top {
+    background-image: url("../img/img_facilities_pool_0.jpg");
+  }
   .sub_container {
     .contents {
       .sub3_pool_contents {
         display: flex;
         justify-content: space-between;
-        width: 1400px;
-        height: auto;
+        width: 100%;
+        // height: auto;
         margin: 64px 0;
         .pool-img {
           width: 900px;
           height: 790px;
+          // width: calc(100% - 394px);
+          // height: 100%;
           overflow: hidden;
           .img:nth-last-of-type(1) {
             position: absolute;
@@ -36,6 +41,7 @@
           }
         }
         .pool-title {
+          margin: 64px 0px;
           .pool-t {
             p:nth-of-type(1) {
               width: 62px;
@@ -43,7 +49,7 @@
               padding: 8px 12px;
               font-size: 12px;
               font-weight: 600;
-              background-color: #ddef73;
+              background-color: #a0fad9;
               border-radius: 8px;
             }
             p:nth-of-type(2) {
@@ -85,7 +91,7 @@
               border-radius: 40px;
               display: inline-block;
               &::after {
-                content: url(../img/icon/ic-back_97586\ 1.svg);
+                content: url(../img/icon/icon_facilities_arrow.svg);
                 display: none;
                 vertical-align: middle;
                 padding-left: 8px;
@@ -105,14 +111,16 @@
   }
 }
 
-// rooftop
 .rooftop {
+  .sub_top {
+    background-image: url("../img/img_facilities_rooftop_0.jpg");
+  }
   .sub_container {
     .contents {
       .sub3_rooftop_contents {
         display: flex;
         justify-content: space-between;
-        width: 1400px;
+        width: 100%;
         height: auto;
         margin: 64px 0;
         .rooftop-img {
@@ -137,11 +145,12 @@
         .rooftop-title {
           .rooftop-t {
             p:nth-of-type(1) {
-              width: 64px;
+              width: 80px;
               height: 32px;
               padding: 8px 12px;
               font-size: 12px;
               font-weight: 600;
+              white-space: nowrap;
               background-color: #ddef73;
               border-radius: 8px;
             }
@@ -184,7 +193,7 @@
               border-radius: 40px;
               display: inline-block;
               &::after {
-                content: url(../img/icon/ic-back_97586\ 1.svg);
+                content: url(../img/icon/icon_facilities_arrow.svg);
                 display: none;
                 vertical-align: middle;
                 padding-left: 8px;
@@ -205,6 +214,11 @@
 }
 
 // bbq
+.bbq {
+  .sub_top {
+    background-image: url("../img/img_facilities_bbq_0.jpg");
+  }
+}
 .sub_container {
   .title {
     .dscs {
@@ -215,7 +229,7 @@
 .sub3_bbq_contents {
   display: flex;
   justify-content: space-between;
-  width: 1400px;
+  width: 100%;
   height: auto;
   margin: 64px 0;
   .bbq-img {
@@ -245,7 +259,7 @@
         padding: 8px 12px;
         font-size: 12px;
         font-weight: 600;
-        background-color: #ddef73;
+        background-color: #efaf73;
         border-radius: 8px;
       }
       p:nth-of-type(2) {
@@ -287,7 +301,7 @@
         border-radius: 40px;
         display: inline-block;
         &::after {
-          content: url(../img/icon/ic-back_97586\ 1.svg);
+          content: url(../img/icon/icon_facilities_arrow.svg);
           display: none;
           vertical-align: middle;
           padding-left: 8px;
@@ -303,3 +317,51 @@
     }
   }
 }
+
+// 미디어 쿼리
+
+@media screen and (max-width: 1280px) {
+  .pool {
+    .sub_container {
+      .contents {
+        .sub3_pool_contents {
+          .pool-img {
+            width: calc(100% - 414px);
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .pool {
+    .sub_container {
+      .contents {
+        .sub3_pool_contents {
+          flex-direction: column;
+          .pool-img {
+            width: calc(100% - 32px);
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .pool {
+    .sub_container {
+      .contents {
+        .sub3_pool_contents {
+          flex-direction: column;
+          .pool-img {
+            width: calc(100% - 32px);
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -7,14 +7,277 @@
 
 // 회원정보
 .mypage {
+    .sub_top{
+        background: url("../img/img_sub_mypage.jpg") no-repeat;
+        .dim{
+            background-color: rgba(0,0,0,0.3);
+        }
+    }
     .sub_container {
-        .contents {}
+        .contents {
+            width: 100%;
+            .mypage_wrap{
+                .mypage_tap_wrap{
+                    width: 100%;
+                    ul.tab{
+                        width: 100%;
+                        height: 60px;
+                        display: flex;
+                        border-bottom: 1px solid #afafaf;
+                        li{
+                            width: 140px;
+                            font-size: 24px;
+                            color: #afafaf;
+                            padding: 8px 16px;
+                            text-align: center;
+                            cursor: pointer;
+                            &.on{
+                                color: #2f2f2f;
+                                font-weight: 700;
+                                border-bottom: 4px solid #2f2f2f;
+                            }
+                        }
+                    }
+                }
+                .tab_cont{
+                    width: 100%;
+                    .mypage_info{
+                        width: 100%;
+                        margin: 40px 24px;
+                        position: relative;
+                        .mypage_info_input{
+                            li{
+                                width: 100%;
+                                margin-bottom: 16px;
+                                display: flex;
+                                align-items: center;
+                                &.email_box{
+                                    div{
+                                        input:not(.mypage_info_input_agree_box>input){
+                                            background-color: #EFEFEF;
+                                        }
+                                        &::before{background: url('../img/icon/icon_mail_grey.svg') no-repeat center;}
+                                    }
+                                }
+                                &.pw_box{
+                                    div{
+                                        &::before{background: url('../img/icon/icon_lock.svg') no-repeat center;}
+                                    }
+                                }
+                                &.pw_confirm_box{
+                                    div{
+                                        &::before{background: url('../img/icon/icon_lock.svg') no-repeat center;}
+                                    }
+                                }
+                                &.name_box{
+                                    div{
+                                        &::before{background: url('../img/icon/icon_person.svg') no-repeat center;}
+                                    }
+                                }
+                                &.phone_box{
+                                    border-bottom: 2px solid #efefef;
+                                    padding-bottom: 16px;
+                                    div{
+                                        &::before{background: url('../img/icon/icon_phone.svg') no-repeat center;}
+                                    }
+                                }
+                                &.birth_box{
+                                    border-bottom: 2px solid #efefef;
+                                    padding-bottom: 16px;
+                                    div{
+                                        &::before{background: url('../img/icon/icon_calendar.svg') no-repeat center;}
+                                    }
+                                }
+                                &.coupon_box{
+                                    border-bottom: 2px solid #efefef;
+                                    padding-bottom: 16px;
+                                    div{
+                                        input{
+                                            width: 116px;
+                                            height: 36px;
+                                            font-size: 16px;
+                                            background-color: #357EF1;
+                                            border: none;
+                                            border-radius: 8px;
+                                            color: #fff;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                                label{
+                                    width: 170px;
+                                    font-size: 20px;
+                                    color: #2f2f2f;
+                                }
+                                .mypage_info_input_box{
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    input{
+                                        width: 480px;
+                                        height: 52px;
+                                        border: 1px solid #afafaf;
+                                        border-radius: 8px;
+                                        &::placeholder{
+                                            padding-left: 48px;
+                                        }
+                                    }
+                                    &::before{
+                                        width: 20px;
+                                        height: 20px;
+                                        content: '';
+                                        position: absolute;
+                                        left: 20px;
+                                    }
+                                }
+                                .mypage_info_input_agree_box{
+                                    margin-left: 40px;
+                                    padding: 16px 0;
+                                    input{
+                                        width: 16px;
+                                        height: 16px;
+                                        border: 1px solid #AFAFAF;
+                                        background-color: #fff;
+                                        border-radius: 4px;
+                                    }
+                                    label{
+                                        font-size: 16px;
+                                        color: #afafaf;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        .mypage_info_btn{
+                            width: 100%;
+                            display: block;
+                            text-align: center;
+                            margin-top: 104px;
+                            button{
+                                width: 249px;
+                                height: 46px;
+                                border-radius: 8px;
+                            }
+                            .mypage_info_fix_btn{
+                                background-color: #357EF1;
+                                border: none;
+                                margin-right: 12px;
+                                a{color: #fff; font-size: 18px;}
+                            }
+                            .mypage_info_cancel_btn{
+                                border: 1px solid #AFAFAF;
+                                a{color: #2f2f2f; font-size: 18px;}
+                            }
+                        }
+                        .mypage_info_member_delete{
+                            width: 60px;
+                            height: 20px;
+                            right: 8px;
+                            border-bottom: 1px solid #afafaf;
+                            position: absolute;
+                            right: 24px;
+                            .mypage_info_member_delete_btn{
+                                a{
+                                    color: #afafaf;
+                                    font-size: 16px;
+                                }
+                            }           
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 // 예약내역
 .reservation_state {
+    .sub_top{
+        background: url("../img/img_sub_mypage.jpg") no-repeat;
+        .dim{
+            background-color: rgba(0,0,0,0.3);
+        }
+    }
     .sub_container {
-        .contents {}
+        .contents {
+            ul.tab{
+                width: 100%;
+                height: 60px;
+                display: flex;
+                border-bottom: 1px solid #afafaf;
+                li{
+                    width: 140px;
+                    font-size: 24px;
+                    color: #afafaf;
+                    padding: 8px 16px;
+                    text-align: center;
+                    cursor: pointer;
+                    &.on{
+                        color: #2f2f2f;
+                        font-weight: 700;
+                        border-bottom: 4px solid #2f2f2f;
+                    }
+                }
+            }
+            .mypage_reservation{
+                width: 100%;
+                ul.mypage_reservation_list{
+                    width: 100%;
+                    li{
+                        width: 100%;
+                        display: flex;
+                        padding: 24px 0;
+                        border-bottom: 2px solid #EFEFEF;
+                        &:nth-child(4){
+                            p{color: #AFAFAF;}
+                        }
+                        h5{font-weight: 700;}
+                        p{}
+                        h5,p{
+                            font-size: 20px;
+                            color: #2f2f2f;
+                            text-align: center;
+                            &:nth-child(1){width: 320px;}
+                            &:nth-child(2){width: 180px;}
+                            &:nth-child(3){width: 180px;}
+                            &:nth-child(4){width: 340px;}
+                            &:nth-child(5){width: 330px;}
+                        }
+                    }
+                }
+                .mypage_reservation_cancel{
+                    width: 100%;
+                    h3{
+                        margin: 60px 0;
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+                    table{
+                        width: 100%;
+                        tr{
+                            td{
+                                font-size: 20px;
+                                border: 1px solid #AFAFAF;
+                                padding: 30px 0 30px 80px;
+                                &:first-child{
+                                    width: 420px;
+                                    height: 80px;
+                                }
+                                ul{
+                                    li{font-size: 16px;}
+                                }
+                            }
+                        }
+                    }
+                    span{
+                        font-size: 16px;
+                        color: #AFAFAF;
+                        font-weight: 300;
+                        margin: 16px 8px;
+                        display: block;
+                    }
+                }
+            }
+        }
     }
 }

@@ -13,7 +13,8 @@
     }
 }
 .quick_menu {
-    width: 1400px;
+    max-width: 1400px;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 0 16px;
@@ -478,7 +479,7 @@
                         padding: 0 40px;
                         // common
                         ul{
-                            &:not(.tab_box) {
+                            &:not(.tab.box) {
                                 li {
                                     font-size: 20px;
                                     line-height: 32px;
@@ -504,8 +505,10 @@
                         // left
                         .tab_wrap {
                             flex: 0.5;
-                            .tab_box {
-                                margin-bottom: 40px;
+                            .tab {
+                                &.box {
+                                    margin-bottom: 40px;
+                                }
                             }
                             .tab_cont {
                                 ul {
