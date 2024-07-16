@@ -85,7 +85,7 @@
 */
 @media screen and (max-width: 480px) {
   body {
-    background-color: rgb(167, 173, 154);
+    background-color: rgb(205, 228, 250);
   }
   body .around_spot .sub_container {
     margin: 0 16px;
