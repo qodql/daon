@@ -185,8 +185,11 @@
                             </div>
                         </div>
                         <div class="checkbox_wrap">
-                            <input type="checkbox" class="checkbox" id="all_chk">
-                            <label for="all_chk"><i></i>전체동의</label>
+                            <div class="all">
+                                <input type="checkbox" class="checkbox" id="all_chk">
+                                <label for="all_chk"><i></i>전체동의</label>
+                                <button type="button" class="toggle_btn"></button>
+                            </div>
                             <input type="checkbox" class="checkbox" id="chk1" name="chk">
                             <label for="chk1"><i></i>이용약관 및 취소규정 동의 (필수)</label>
                             <input type="checkbox" class="checkbox" id="chk2" name="chk">
@@ -226,10 +229,10 @@
                                 </div>
                             </div>
                             <div class="payment_btn_wrap">
-                                <button type="button" class="payment_btn">
+                                <button type="button" class="payment_btn" onclick="window.location.href='./sub6_reservation_step3.html'">
                                     비회원 예약
                                 </button>
-                                <button type="button" class="payment_btn member">
+                                <button type="button" class="payment_btn member" onclick="window.location.href='./sub6_reservation_step3.html'">
                                     회원 예약
                                 </button>
                             </div>

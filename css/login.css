@@ -9,7 +9,6 @@
   margin-bottom: 56px;
 }
 .login_common .logo_txt .logo {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -502,4 +501,4 @@
 768~1023: 중간
 1024~1399: 태블릿
 1400~: pc
-*//*# sourceMappingURL=login.css.map */
+*/

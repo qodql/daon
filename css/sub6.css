@@ -85,17 +85,13 @@
   top: 0;
   transform: translateX(-50%);
 }
-.reservation_common .sub_container .contents .next_wrap .next_btn.info {
-  display: none;
-}
 .reservation_common .sub_container .contents .next_wrap .next_btn::after {
   content: "";
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin-top: -6px;
-  background: url("../img/icon/icon_arrow.svg") no-repeat center;
-  transform: rotate(90deg);
+  margin-top: -4px;
+  background: url("../img/icon/icon_arrow.svg") no-repeat center/24px;
 }
 
 .step1 .sub_container .contents .calendar_wrap {
@@ -395,12 +391,45 @@
   border-radius: 16px;
   border: 4px solid #D6B46C;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > p {
+  font-size: 20px;
   color: #fff;
+  font-weight: 700;
+  letter-spacing: 0;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data::before {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 40px;
+  background: url("../img/icon/icon_sim.svg") no-repeat center;
+  position: absolute;
+  left: 40px;
+  top: 64px;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p {
   color: #fff;
+  letter-spacing: 0;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.num {
+  margin-top: 84px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.name, .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.date {
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.date {
+  left: auto;
+  right: 40px;
 }
 .step2 .sub_container .contents .info_wrap .right {
   width: 41%;
@@ -409,7 +438,7 @@
 .step2 .sub_container .contents .info_wrap .right .sticky_menu {
   position: sticky;
   right: 0;
-  top: 96px;
+  top: 56px;
 }
 .step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list {
   padding: 40px;
@@ -427,8 +456,14 @@
   font-weight: 700;
 }
 .step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list li .data .tag {
+  padding: 8px 12px;
+  margin-right: 8px;
+  background-color: #3226C1;
+  border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
+  color: #fff;
+  vertical-align: middle;
 }
 .step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list li:not(:first-of-type) {
   margin-top: 32px;
@@ -471,6 +506,7 @@
   justify-content: center;
   border: 1px solid #2f2f2f;
   border-radius: 8px;
+  overflow: hidden;
 }
 .step2 .sub_container .contents .info_wrap .right .sticky_menu .payment_btn_wrap .payment_btn {
   width: 50%;
