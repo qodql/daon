@@ -7,6 +7,50 @@
 @include res('tab'){
   .header {
     background-color: brown;
+    padding: 16px;
+    &.on {
+      .inner {
+        .logo_wrap {
+          .mb_menu {
+            background-image: url("../img/icon/icon_mb_menu.svg");
+          }
+        }
+      }
+    }
+    .inner {
+      flex-direction: column;
+      align-items: flex-start;
+      .logo_wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 64px;
+        .logo {
+          height: 32px;
+        }
+        .mb_menu {
+          width: 40px;
+          height: 40px;
+          display: block;
+          background: url("../img/icon/icon_mb_menu_white.svg") no-repeat center;
+        }
+      }
+      .nav {
+        .sub {
+          flex-direction: column;
+          li {
+            .depth_1 { 
+              padding: 12px 0;
+            }
+            .depth_2 {
+              // display: none !important;
+              left: 26px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

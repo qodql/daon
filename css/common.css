@@ -553,6 +553,39 @@ common 수정 금지
 @media (max-width: 1279px) {
   .header {
     background-color: brown;
+    padding: 16px;
+  }
+  .header.on .inner .logo_wrap .mb_menu {
+    background-image: url("../img/icon/icon_mb_menu.svg");
+  }
+  .header .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header .inner .logo_wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+  }
+  .header .inner .logo_wrap .logo {
+    height: 32px;
+  }
+  .header .inner .logo_wrap .mb_menu {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: url("../img/icon/icon_mb_menu_white.svg") no-repeat center;
+  }
+  .header .inner .nav .sub {
+    flex-direction: column;
+  }
+  .header .inner .nav .sub li .depth_1 {
+    padding: 12px 0;
+  }
+  .header .inner .nav .sub li .depth_2 {
+    left: 26px;
   }
 }
 @media (max-width: 767px) {
