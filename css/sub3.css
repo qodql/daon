@@ -6,11 +6,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 64px 0;
+  padding: 20px;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-img {
-  width: 900px;
-  height: 790px;
+  width: 66%;
+  height: 100%;
   overflow: hidden;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-img .img:nth-last-of-type(1) {
@@ -28,7 +28,10 @@
   justify-content: space-between;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-title {
-  margin: 64px 0px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(1) {
   width: 62px;
@@ -50,7 +53,7 @@
   font-weight: 600;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s {
-  padding: 214px 0 34px;
+  margin-top: auto;
   font-size: 20px;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s .pool-s1 {
@@ -267,27 +270,36 @@
   display: inline-block;
 }
 
-@media screen and (max-width: 1280px) {
+@media (max-width: 1500px) {
+  .pool .sub_container .contents .sub3_pool_contents {
+    padding: 20px 40px;
+  }
   .pool .sub_container .contents .sub3_pool_contents .pool-img {
-    width: calc(100% - 414px);
-    margin-right: 20px;
+    width: 60%;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title {
+    width: 36%;
   }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 1279px) {
+  .pool .sub_top {
+    background-image: url("../img/img_facilities_pool_0.jpg");
+  }
   .pool .sub_container .contents .sub3_pool_contents {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 20px;
   }
   .pool .sub_container .contents .sub3_pool_contents .pool-img {
-    width: calc(100% - 32px);
-    margin-right: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
   }
-}
-@media screen and (max-width: 480px) {
-  .pool .sub_container .contents .sub3_pool_contents {
-    flex-direction: column;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-img {
-    width: calc(100% - 32px);
-    margin-right: 0;
+  .pool .sub_container .contents .sub3_pool_contents .pool-title {
+    width: 40%;
+    height: 100%;
+    margin-top: auto;
   }
 }
