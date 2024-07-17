@@ -1,0 +1,150 @@
+// _res-sub4.scss
+/* 분기점 
+1280~1500: pc   pc-s
+768~1279: 태블릿    tab
+481~767: 모바일라지     mo-l
+~480: 모바일    mo-s
+*/
+/* 변동사항(확인 후 삭제하셔도 됩니다!)--------------------------------------
+pc-s: 없음
+tab(노랑): 
+ - pc-s에서 .txt_long p 의 우측패딩값 120->80px으로 변경, 나머지는 pc-s와 동일
+mo-l(초록):
+ - 기본 컨텐츠 좌우 패딩 16px
+ - .card_name(제목): 세로정렬, 폰트 크기 24->20px
+ - .card_img(사진): 세로정렬, width 50->100%, 간격 20->16px
+ - .card_txt(글): 
+        ㄴ.txt_short(아이콘+텍스트) : 세로정렬, 패딩 절반으로, 마진 변경
+        ㄴ.txt_long(설명 텍스트) : 세로정렬, 패딩 변경
+mo-s(파랑): mo-l와 동일
+*/
+/*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
+
+@import "./_res";
+$mobile_padding_16: 16px;
+$mobile_padding_24: 24px;
+$mobile_padding_48: 48px;
+$mobile_font: 16px;
+$mobile_font_title: 20px;
+
+
+@include res('pc-s'){}; //변동사항 없음
+@include res('tab'){
+    body{
+        background-color: rgb(234, 248, 111);
+        // 배경색 나중에 완전히 끝나면 삭제하기
+        .around_spot{
+            .sub_top{}
+            .sub_container{
+                .contents{
+                    .sub4_card{
+                        .card_txt{
+                            .txt_long{
+                                p{
+                                    padding: 40px 80px 40px 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
+@include res('mo-l'){
+    body{
+        background-color: rgb(123, 248, 111);
+        // 배경색 나중에 완전히 끝나면 삭제하기
+        .around_spot{
+            .sub_top{}
+            .sub_container{ 
+                margin: 0 $mobile_padding_16;
+                .contents{
+                    .sub4_card{ 
+                        .card_name{
+                            flex-direction: column;
+                            strong{
+                                font-size: $mobile_font_title;
+                            }
+                            .card_name_eng{}
+                            p{
+                                font-size: $mobile_font_title;
+                            }
+                        }
+                        .card_img{
+                            margin: $mobile_padding_16 0;
+                            gap: $mobile_padding_16;
+                            flex-direction: column;
+                            .imgbox{
+                                width: 100%;
+                            }
+                        }
+
+                        .card_txt{        
+                            .txt_short{
+                                padding: 12px 16px;
+                                display: flex;
+                                flex-direction: column;
+                                li{
+                                    margin: 8px;
+                                }
+                            }
+                            .txt_long{
+                                p{
+                                    padding: $mobile_padding_48 $mobile_padding_24;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include res('mo-s'){   //mo-l, mo-s동일
+    body{
+        background-color: rgb(111, 209, 248);
+        // 배경색 나중에 완전히 끝나면 삭제하기
+    }
+}; 
+
+
+/*↓↓↓↓↓↓↓↓하단 나중에 작업 완료 후 삭제↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+/* 
+body{
+    background-color: rgb(248, 248, 111);
+    // 배경색 나중에 완전히 끝나면 삭제하기
+    .around_spot{
+        .sub_top{}
+        .sub_container{
+            .contents{
+                .sub4_card{ 
+                    .card_name{
+                        strong{
+                        }
+                        .card_name_eng{}
+                        p{
+                        }
+                    }
+                    .card_img{
+                        .imgbox{
+                        }
+                    }
+
+                    .card_txt{        
+                        .txt_short{
+                            li{
+                            }
+                        }
+                        .txt_long{
+                            p{
+                                padding: 40px 80px 40px 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+*/
