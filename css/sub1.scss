@@ -10,7 +10,7 @@
     }
     .sub_container{
         &.sub_container_full{
-            width: 100%;
+            max-width: 100%;
             padding: 140px 0 0;
         }
         .contents {
@@ -295,7 +295,10 @@
                             gap: 8px;
                             align-items: center;
                             border-bottom: 2px solid #efefef;
-                            b{font-weight: 700;}
+                            b{
+                                font-weight: 700;
+                                display: inline-block;
+                            }
                             &::before{
                                 width: 32px;
                                 height: 32px;
@@ -310,7 +313,7 @@
         }
     }
 }
-
+// 오시는길 끝
 
 @import "./res-sub1";
 
