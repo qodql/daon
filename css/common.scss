@@ -20,6 +20,13 @@ common 수정 금지
         }
     }
 }
+// body scroll 방지
+body {
+  &.prevent_scroll {
+    height: 100%;
+    overflow: hidden;
+  }
+}
 // header
 .header {
   width: 100%;
@@ -112,7 +119,11 @@ common 수정 금지
       top: 0;
       opacity: 1;
     }
-
+    .logo {
+      a {
+        background-image: url("../img/logo.svg");
+      }
+    }
     .inner {
       .nav {
         .sub {
@@ -223,12 +234,13 @@ common 수정 금지
   margin-top: 20px;
 }
 .logo {
-  width: fit-content;
+  width: 114px;
   height: 46px;
   a {
     display: block;
     width: 100%;
     height: 100%;
+    background: url("../img/logo_white.svg") no-repeat center;
   }
 }
 
@@ -646,6 +658,28 @@ common 수정 금지
         font-size: 24px;
       }
     }
+  }
+}
+
+// responsive
+.pc_only {
+  display: block;
+}
+.pc_flex {
+  display: flex;
+}
+.mb_only, .mb_flex {
+  display: none;
+}
+@media screen and (max-width:1279px) {
+  .pc_only, .pc_flex {
+    display: none !important;
+  }
+  .mb_only {
+    display: block !important;
+  }
+  .mb_flex {
+    display: flex !important;
   }
 }
 
