@@ -287,7 +287,7 @@
   display: inline-block;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
   .pool .sub_container .contents .sub3_pool_contents {
     padding: 20px 40px;
   }
@@ -355,7 +355,7 @@
     margin-bottom: 20px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .bbq .sub_container .contents .sub3_bbq_contents {
     padding: 20px 40px;
   }
@@ -366,7 +366,7 @@
     width: 36%;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
   .bbq .sub_container .sub3_bbq_contents {
     padding: 20px 40px;
   }
@@ -434,7 +434,7 @@
     margin-bottom: 20px;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
   .rooftop .sub_container .sub3_rooftop_contents {
     padding: 20px 40px;
   }

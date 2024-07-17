@@ -226,6 +226,7 @@
                             padding-bottom: 84px;
                             .swiper-slide {
                                 transform: scaleY(0.95);
+                                overflow: hidden;
                                 > img {
                                     border-radius: 20px;
                                 }

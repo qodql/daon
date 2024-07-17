@@ -64,8 +64,7 @@
   grid-area: b;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-  -o-object-position: 0px -360px;
-     object-position: 0px -360px;
+  object-position: 0px -360px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
   height: 250px;
@@ -76,13 +75,11 @@
   grid-area: d;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-  -o-object-position: 0px -190px;
-     object-position: 0px -190px;
+  object-position: 0px -190px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p img {
   position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
 }
 .intro .sub_container .contents .intro_txt {
@@ -320,7 +317,7 @@
   margin-right: 8px;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
   @keyframes fadeIn {}
   @keyframes expand {}
   .intro .sub_container .contents .intro_grid_wrapper {
@@ -835,7 +832,7 @@
     left: 5px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .contact .sub_container .contents .contact_map .contact_map_btn {
     right: 8px;
     bottom: 12px;

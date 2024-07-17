@@ -30,6 +30,33 @@
             }
         }
     }
+    .main {
+        .container {
+            //swiper
+            .swiper {
+                .swiper-pagination {
+                    left: 5.7%;
+                }
+                .swiper_btn_wrap {
+                    right: 5.7%;
+                }
+            }
+            // section1 - room
+            .section {
+                &.room {
+                    .inner {
+                        padding: 120px 0;
+                        .title {
+                            padding-left: 5.7%;
+                        }
+                        .more_btn {
+                            right: 5.7%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include res('tab'){
@@ -39,8 +66,6 @@
         ul {
             li {
                 padding: 16px 12px;
-                &:nth-of-type(2) {
-                }
             }
         }
         .search {

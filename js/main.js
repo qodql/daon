@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // [↓] swiper
     var swiper = new Swiper(".room_list", {
-        slidesPerView: 1.36,
+        slidesPerView: 1.13,
         spaceBetween: 40,
         centeredSlides: true,
         loop: true,
@@ -18,6 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
             nextEl: ".swiper-button-next.room_next",
             prevEl: ".swiper-button-prev.room_prev",
         },
+        breakpoints: {
+        
+          1401: {
+            slidesPerView: 1.36,  //브라우저가 1401보다 클 때
+            spaceBetween: 40,
+          },
+        },
     });
     var swiper = new Swiper(".event_list", {
         slidesPerView: "auto",
@@ -31,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             prevEl: ".swiper-button-prev.event_prev",
         },
     });
+    
 
     // [↓] facilities on class 제어
     let facilitiesLi = document.querySelectorAll(".facilities_list li");
