@@ -9,7 +9,6 @@
   margin-bottom: 56px;
 }
 .login_common .logo_txt .logo {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -306,7 +305,7 @@
   padding: 16px 32px;
   text-align: center;
   font-weight: 700;
-  background-color: #357ef1;
+  background-color: #357EF1;
   border-radius: 8px;
   color: #ffffff;
 }
@@ -336,9 +335,9 @@
   text-align: center;
   font-weight: 700;
   background-color: #ffffff;
-  border: 1px solid #357ef1;
+  border: 1px solid #357EF1;
   border-radius: 8px;
-  color: #357ef1;
+  color: #357EF1;
 }
 .login .login_wrap .login_sns .login_login_sns {
   display: flex;
@@ -357,7 +356,7 @@
   background-image: url(../img/icon/icon_kakao.svg);
 }
 .login .login_wrap .login_sns .login_login_sns li .naver {
-  background-color: #06cc80;
+  background-color: #06CC80;
   background-image: url(../img/icon/icon_naver.svg);
 }
 .login .login_wrap .login_sns .login_login_sns li .google {
@@ -437,26 +436,14 @@
 .join .join_wrap .join_agree .agree_checkbox .agree_list li .view_all {
   color: #afafaf;
 }
-.join
-  .join_wrap
-  .join_agree
-  .agree_checkbox
-  .agree_list
-  .agree_essential
-  label::after {
+.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_essential label::after {
   content: " (필수)";
   color: #ff0f0f;
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label {
   color: #afafaf;
 }
-.join
-  .join_wrap
-  .join_agree
-  .agree_checkbox
-  .agree_list
-  .agree_optional
-  label::after {
+.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label::after {
   content: " (선택)";
   color: #afafaf;
 }
@@ -476,7 +463,7 @@
   padding: 16px 32px;
   text-align: center;
   font-weight: 700;
-  background-color: #357ef1;
+  background-color: #357EF1;
   border-radius: 8px;
   color: #ffffff;
 }
@@ -535,13 +522,7 @@
   body .login .login_wrap .login_daon .login_login_daon .login_input_box {
     margin-bottom: 24px;
   }
-  body
-    .login
-    .login_wrap
-    .login_daon
-    .login_login_daon
-    .login_input_box
-    .email_box {
+  body .login .login_wrap .login_daon .login_login_daon .login_input_box .email_box {
     margin-bottom: 12px;
   }
   body .login .login_wrap .login_daon .login_join_daon {
