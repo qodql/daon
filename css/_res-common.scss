@@ -3,6 +3,12 @@
 @include res('pc-s'){
 }
 
+@media screen and (max-width:1400px) {
+  .header {
+    padding: 0 80px;
+  }
+}
+
 @include res('tab'){
   // header
   .header {

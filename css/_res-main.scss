@@ -3,18 +3,57 @@
 @include res('pc-s'){
 }
 
-@include res('tab'){
+@media screen and (max-width:1400px) {
     .quick_menu {
-        max-width: 100%;
-        bottom: 0;
+        width: 1060px;
+        justify-content: center;
         ul {
             li {
-                padding: 0;
+                &:first-of-type {
+                    padding-left: 0;
+                }
+                p {
+                    font-size: 24px;
+                }
+                .select_wrap {
+                    &::after {
+                        width: 32px;
+                        height: 32px;
+                        background-size: 40px;
+                        bottom: -4px;
+                    }
+                    select {
+                        width: 72px;
+                        font-size: 24px;
+                    }
+                }
             }
         }
     }
 }
 
+@include res('tab'){
+    .quick_menu {
+        width: 768px;
+        bottom: 80px;
+        ul {
+            margin-right: auto;
+            li {
+                padding: 16px 12px;
+                &:nth-of-type(2) {
+                    margin-right: 12px;
+                }
+            }
+        }
+        .search {
+            margin-left: 12px;
+            .search_btn {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    }
+}
 @include res('mo-l'){
 }
 
