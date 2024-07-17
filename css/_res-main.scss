@@ -1,0 +1,22 @@
+@import "./_res";
+
+@include res('pc-s'){
+}
+
+@include res('tab'){
+    .quick_menu {
+        max-width: 100%;
+        bottom: 0;
+        ul {
+            li {
+                padding: 0;
+            }
+        }
+    }
+}
+
+@include res('mo-l'){
+}
+
+@include res('mo-s'){
+}

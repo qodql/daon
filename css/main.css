@@ -596,3 +596,12 @@
     transform: translateX(0px);
   }
 }
+@media (max-width: 1279px) {
+  .quick_menu {
+    max-width: 100%;
+    bottom: 0;
+  }
+  .quick_menu ul li {
+    padding: 0;
+  }
+}
