@@ -75,7 +75,7 @@
         </div>
     </header>
     <!-- 컨텐츠 -->
-    <div class="sub reservation_common step1">
+    <div class="sub reservation_common step2">
         <!-- 서브페이지 상단 고정 영역 -->
         <div class="sub_top">
             <div class="dim"></div>
@@ -100,7 +100,7 @@
                             <a href="./sub6_reservation_step1.html" class="circle">
                                 <span>1</span>
                             </a>
-                            <p>기간, 객실 선택</p>
+                            <p>객실 선택</p>
                         </li>
                         <li class="active">
                             <a href="#" class="circle">
@@ -134,7 +134,7 @@
                                         <input type="text" placeholder="생년월일을 입력해주세요."/>
                                     </div>
                                 </li>
-                                <li class="tel">
+                                <li class="tel_wrap">
                                     <p class="label">휴대폰번호</p>
                                     <div>
                                         <input type="text" placeholder="휴대폰 번호를 입력해주세요."/>
@@ -142,9 +142,9 @@
                                     </div>
                                     <input type="text" placeholder="인증번호 6자리를 입력해주세요." readonly/>
                                 </li>
-                                <li>
+                                <li class="textarea_wrap">
                                     <p class="label">요청사항</p>
-                                    <textarea name="comment" id="comment" placeholder="요청사항을 입력해주세요."></textarea>
+                                    <textarea name="comment" id="comment" placeholder="요청사항을 입력해주세요." rows="8"></textarea>
                                 </li>
                             </ul>
                             <div class="card_wrap">
@@ -185,8 +185,11 @@
                             </div>
                         </div>
                         <div class="checkbox_wrap">
-                            <input type="checkbox" class="checkbox" id="all_chk">
-                            <label for="all_chk"><i></i>전체동의</label>
+                            <div class="all">
+                                <input type="checkbox" class="checkbox" id="all_chk">
+                                <label for="all_chk"><i></i>전체동의</label>
+                                <button type="button" class="toggle_btn"></button>
+                            </div>
                             <input type="checkbox" class="checkbox" id="chk1" name="chk">
                             <label for="chk1"><i></i>이용약관 및 취소규정 동의 (필수)</label>
                             <input type="checkbox" class="checkbox" id="chk2" name="chk">
@@ -220,16 +223,16 @@
                             </ul>
                             <div class="price_wrap">
                                 <p>총 결제금액</p>
-                                <p class="price">
+                                <div class="price">
                                     <em class="sale">126,000</em>
-                                    <b>190,000</b>
-                                </p>
+                                    <p>190,000</p>
+                                </div>
                             </div>
                             <div class="payment_btn_wrap">
-                                <button type="button" class="payment_btn">
+                                <button type="button" class="payment_btn" onclick="window.location.href='./sub6_reservation_step3.html'">
                                     비회원 예약
                                 </button>
-                                <button type="button" class="payment_btn member">
+                                <button type="button" class="payment_btn member" onclick="window.location.href='./sub6_reservation_step3.html'">
                                     회원 예약
                                 </button>
                             </div>

@@ -1,3 +1,13 @@
+/*
+
+=====================================
+common 수정 금지
+=====================================
+
+*/
+
+@import "./_res";
+
 // template
 .template {
     > div {
@@ -133,7 +143,85 @@
     }
   }
 }
+// checkbox
+.checkbox_wrap {
+  width: 500px;
+  padding: 16px 24px 24px;
+  border: 1px solid #efefef;
+  border-radius: 20px;
+  overflow: hidden;
+  .all {
+    width: calc(100% + 48px);
+    padding: 16px 24px;
+    margin: -16px 0 24px -24px;
+    background-color: #efefef;
+    position: relative;
+    .toggle_btn {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url("../img/icon/icon_arrow_on.svg") no-repeat center / 24px;
+      position: absolute;
+      right: 24px;
+      top: 16px;
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+  }
+  .checkbox {
+    &:not(:first-of-type) {
+      & + label {
+        margin-top: 16px;
+      }
+    }
+    &#all_chk {
+      & + label {
+        color: #2f2f2f;
+      }
+    }
+    & + label {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      color: #afafaf;
+      cursor: pointer;
+      i {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        display: block;
+        border: 2px solid #afafaf;
+        border-radius: 8px;
+        background-color: #fff;
+      }
+    }
+    &:checked {
+      & + label {
+        color: #2f2f2f;
+        i {
+          border: 2px solid #2f2f2f;
+          background: #fff url("../img/icon/icon_check_single.svg") no-repeat center;
+        }
+      }
+    }
+  }
 
+}
+// alert
+.alert {
+  font-size: 14px;
+  color: #afafaf;
+  font-weight: 500;
+  line-height: 20px;
+  span {
+    display: block;
+    font: inherit;
+    color: inherit;
+  }
+}
+* + .alert {
+  margin-top: 20px;
+}
 .logo {
   width: fit-content;
   height: 46px;
@@ -355,8 +443,7 @@
   background-color: #2f2f2f;
   overflow: hidden;
   position: relative;
-  margin-top: 240px;
-
+  // margin-top: 240px;
   .box_wrap {
     width: 100%;
     padding: 120px 13.5% 140px;
@@ -561,3 +648,5 @@
     }
   }
 }
+
+@import "./_res-common";

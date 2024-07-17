@@ -9,6 +9,7 @@
   margin-bottom: 56px;
 }
 .login_common .logo_txt .logo {
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -305,14 +306,11 @@
   padding: 16px 32px;
   text-align: center;
   font-weight: 700;
-  background-color: #357EF1;
+  background-color: #357ef1;
   border-radius: 8px;
   color: #ffffff;
 }
 
-.login {
-  margin: 0 auto;
-}
 .login .login_wrap {
   width: 480px;
   padding: 72px 40px 48px;
@@ -337,9 +335,10 @@
   padding: 16px 32px;
   text-align: center;
   font-weight: 700;
-  border: 1px solid #357EF1;
+  background-color: #ffffff;
+  border: 1px solid #357ef1;
   border-radius: 8px;
-  color: #357EF1;
+  color: #357ef1;
 }
 .login .login_wrap .login_sns .login_login_sns {
   display: flex;
@@ -358,7 +357,7 @@
   background-image: url(../img/icon/icon_kakao.svg);
 }
 .login .login_wrap .login_sns .login_login_sns li .naver {
-  background-color: #06CC80;
+  background-color: #06cc80;
   background-image: url(../img/icon/icon_naver.svg);
 }
 .login .login_wrap .login_sns .login_login_sns li .google {
@@ -438,14 +437,26 @@
 .join .join_wrap .join_agree .agree_checkbox .agree_list li .view_all {
   color: #afafaf;
 }
-.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_essential label::after {
+.join
+  .join_wrap
+  .join_agree
+  .agree_checkbox
+  .agree_list
+  .agree_essential
+  label::after {
   content: " (필수)";
   color: #ff0f0f;
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label {
   color: #afafaf;
 }
-.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label::after {
+.join
+  .join_wrap
+  .join_agree
+  .agree_checkbox
+  .agree_list
+  .agree_optional
+  label::after {
   content: " (선택)";
   color: #afafaf;
 }
@@ -465,7 +476,7 @@
   padding: 16px 32px;
   text-align: center;
   font-weight: 700;
-  background-color: #357EF1;
+  background-color: #357ef1;
   border-radius: 8px;
   color: #ffffff;
 }
@@ -497,8 +508,43 @@
 }
 
 /** 분기점 
-360~767: 모바일
-768~1023: 중간
-1024~1399: 태블릿
-1400~: pc
+~480: 모바일
+481~768: 태블릿
+769~1279: 중간
+1280~: pc
+좌우패딩 16px
 */
+@media screen and (max-width: 480px) {
+  body {
+    background-color: rgb(183, 219, 201);
+  }
+  body .login_common .logo_txt {
+    margin-bottom: 56px;
+  }
+  body .login .login_wrap {
+    width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+  }
+  body .login .login_wrap .login_daon .login_login_daon {
+    margin-bottom: 60px;
+  }
+  body .login .login_wrap .login_daon .login_login_daon .login_input_box {
+    margin-bottom: 24px;
+  }
+  body
+    .login
+    .login_wrap
+    .login_daon
+    .login_login_daon
+    .login_input_box
+    .email_box {
+    margin-bottom: 12px;
+  }
+  body .login .login_wrap .login_daon .login_join_daon {
+    margin-bottom: 40px;
+  }
+}

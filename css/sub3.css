@@ -6,7 +6,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: auto;
   margin: 64px 0;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-img {
@@ -28,13 +27,16 @@
   display: flex;
   justify-content: space-between;
 }
+.pool .sub_container .contents .sub3_pool_contents .pool-title {
+  margin: 64px 0px;
+}
 .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(1) {
   width: 62px;
   height: 32px;
   padding: 8px 12px;
   font-size: 12px;
   font-weight: 600;
-  background-color: #ddef73;
+  background-color: #a0fad9;
   border-radius: 8px;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(2) {
@@ -74,7 +76,7 @@
   display: inline-block;
 }
 .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-bt a::after {
-  content: url(../img/icon/ic-back_97586\ 1.svg);
+  content: url(../img/icon/icon_facilities_arrow.svg);
   display: none;
   vertical-align: middle;
   padding-left: 8px;
@@ -117,11 +119,12 @@
   justify-content: space-between;
 }
 .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-t p:nth-of-type(1) {
-  width: 64px;
+  width: 80px;
   height: 32px;
   padding: 8px 12px;
   font-size: 12px;
   font-weight: 600;
+  white-space: nowrap;
   background-color: #ddef73;
   border-radius: 8px;
 }
@@ -162,7 +165,7 @@
   display: inline-block;
 }
 .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-bt a::after {
-  content: url(../img/icon/ic-back_97586\ 1.svg);
+  content: url(../img/icon/icon_facilities_arrow.svg);
   display: none;
   vertical-align: middle;
   padding-left: 8px;
@@ -211,7 +214,7 @@
   padding: 8px 12px;
   font-size: 12px;
   font-weight: 600;
-  background-color: #ddef73;
+  background-color: #efaf73;
   border-radius: 8px;
 }
 .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(2) {
@@ -251,7 +254,7 @@
   display: inline-block;
 }
 .sub3_bbq_contents .bbq-title .bbq-bt a::after {
-  content: url(../img/icon/ic-back_97586\ 1.svg);
+  content: url(../img/icon/icon_facilities_arrow.svg);
   display: none;
   vertical-align: middle;
   padding-left: 8px;
@@ -262,4 +265,29 @@
 }
 .sub3_bbq_contents .bbq-title .bbq-bt a.active::after {
   display: inline-block;
+}
+
+@media screen and (max-width: 1280px) {
+  .pool .sub_container .contents .sub3_pool_contents .pool-img {
+    width: calc(100% - 414px);
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pool .sub_container .contents .sub3_pool_contents {
+    flex-direction: column;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-img {
+    width: calc(100% - 32px);
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pool .sub_container .contents .sub3_pool_contents {
+    flex-direction: column;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-img {
+    width: calc(100% - 32px);
+    margin-right: 0;
+  }
 }
