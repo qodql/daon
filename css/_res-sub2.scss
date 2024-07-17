@@ -1,0 +1,38 @@
+@import "./_res";
+
+@include res('pc-s'){
+  .header {
+    background-color: orange;
+  }
+}
+
+@include res('tab'){
+.header {
+  background-color: brown;
+  .inner {
+    .logo {
+      a {
+        height: 50%;
+      }
+    }
+    .nav {
+      display: none;
+    }
+    .nav_menu {
+      display: none;
+    }
+  }
+}
+}
+
+@include res('mo-l'){
+.header {
+  background-color: green;
+}
+}
+
+@include res('mo-s'){
+.header {
+  background-color: skyblue;
+}
+}

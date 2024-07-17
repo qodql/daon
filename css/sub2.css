@@ -350,14 +350,29 @@
   .sub {
     padding: 0 16px;
   }
-  .sub .contents .main_box .all_text {
+  .sub .contents .main_box .room_content .main_box2 .love_you_list {
     width: 100%;
+  }
+  .sub .contents .main_box .all_text {
+    width: calc(100% - 600px);
   }
   .sub .contents .caution {
     height: 300px;
   }
   .sub .contents .caution .text_flexbox {
     display: block;
+  }
+  .sub .contents .caution {
+    height: 320px;
+  }
+  .sub .contents .caution .text_flexbox p {
+    margin-top: 8px;
+  }
+  .sub .contents .caution .text_flexbox .white-space {
+    margin-top: 8px;
+  }
+  .sub .contents .caution .text_flexbox .white-space p {
+    margin-top: 8px;
   }
 }
 @media (max-width: 768px) {

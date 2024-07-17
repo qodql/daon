@@ -1,3 +1,4 @@
+// @import "./_res.scss";
 @mixin slidebox($d) {
   width: 100%;
   display: flex;
@@ -320,7 +321,7 @@
 
 //반응형 미디어쿼리
 
-//pc
+//pc ~ 테블릿 사이
 @media (min-width:1200px) and (max-width:1375px) {
   .sub{
     padding: 0 16px;
@@ -328,10 +329,10 @@
       .main_box{
         .room_content{
           .main_box2{
-            .love_you_list{}
+            .love_you_list{width: 100%;}
           }
         }
-        .all_text{width: 100%;}
+        .all_text{width: calc(100% - 600px)}
       }
     .caution{
       height: 300px;
@@ -339,6 +340,17 @@
       display: block;
     }
      }
+    .caution{
+        height: 320px;
+        .text_flexbox{
+          p{margin-top: 8px;}
+          .white-space{margin-top:8px;
+            p{
+              margin-top: 8px;
+            }
+          }
+        }
+      }
     }
   }
 }
