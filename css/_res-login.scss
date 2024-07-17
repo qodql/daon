@@ -12,19 +12,19 @@ mo-l(초록):
     - .login_common : 
         ㄴ  기본 좌우 패딩 16px
         ㄴ .logo_txt : 컨텐츠와의 간격 줄임 56->40px
-        ㄴ @include inputbox : width기본(400px)->모바일사이즈로 변경(360px, $input-mo-width)
+        ㄴ 인풋박스 width 400->360px
+        ㄴ 버튼 width 400->360px 
     - .login : 
-        ㄴ .login_login_daon : 로그인-회원가입버튼 간격 60->40px
-        ㄴ .white_btn : 
-    - .login과.join :
-        ㄴ @include box_shadow 값을 없애기(그림자 박스 제거)
-
-    - .join 
-        ㄴ .join_join_btn : width 변경
+        ㄴ 그림자 박스 제거
+        ㄴ 버튼 width 400->360px 
+        ㄴ 로그인-회원가입버튼 간격 60->40px
+    - .join : 
+        ㄴ 그림자 박스 제거
+        ㄴ 버튼 width 480->400px 
+        ㄴ 전체동의 배경색 제거, border로 변경
+        ㄴ margin-bottom 480->320px
     - .join_complete
         ㄴ.greeting p (환영합~) : 폰트 사이즈 축소(24px → 20($mobile_font_title)
-
-
 mo-s(파랑):  mo-l와 동일   
 */
 /*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
@@ -126,10 +126,15 @@ $mobile_font: 16px;
 $mobile_font_title: 20px;
 
 @include res('pc-s'){}; //변동사항 없음
-@include res('tab'){};  //변동사항 없음
+@include res('tab'){    //변동사항 없음
+    body{
+        background-color: rgb(234, 248, 111);
+        // 배경색 나중에 완전히 끝나면 삭제하기
+    }
+};  
 @include res('mo-l'){
     body{
-        // background-color: rgb(123, 248, 111);
+        background-color: rgb(123, 248, 111);
         // 배경색 나중에 완전히 끝나면 삭제하기
 
         // 로그인+회원가입 공통
@@ -138,9 +143,9 @@ $mobile_font_title: 20px;
             padding-top: 160px;
             .logo_txt{
                 margin-bottom: 48px;
-                .logo{      //h1태그
+                .logo{ 
                 }
-                .txt{       //h2태그
+                .txt{ 
                 }
             }
         //인풋박스들
@@ -176,7 +181,7 @@ $mobile_font_title: 20px;
         }
         // 회원가입
         .join{
-            margin-bottom: 120px;
+            margin-bottom: 320px;
             .join_wrap{
                 width: $input-width;
                 .join_personal_info{

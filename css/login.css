@@ -12,23 +12,31 @@ mo-l(초록):
     - .login_common : 
         ㄴ  기본 좌우 패딩 16px
         ㄴ .logo_txt : 컨텐츠와의 간격 줄임 56->40px
-        ㄴ @include inputbox : width기본(400px)->모바일사이즈로 변경(360px, $input-mo-width)
+        ㄴ 인풋박스 width 400->360px
+        ㄴ 버튼 width 400->360px 
     - .login : 
-        ㄴ .login_login_daon : 로그인-회원가입버튼 간격 60->40px
-        ㄴ .white_btn : 
-    - .login과.join :
-        ㄴ @include box_shadow 값을 없애기(그림자 박스 제거)
-
-    - .join 
-        ㄴ .join_join_btn : width 변경
+        ㄴ 그림자 박스 제거
+        ㄴ 버튼 width 400->360px 
+        ㄴ 로그인-회원가입버튼 간격 60->40px
+    - .join : 
+        ㄴ 그림자 박스 제거
+        ㄴ 버튼 width 480->400px 
+        ㄴ 전체동의 배경색 제거, border로 변경
+        ㄴ margin-bottom 480->320px
     - .join_complete
         ㄴ.greeting p (환영합~) : 폰트 사이즈 축소(24px → 20($mobile_font_title)
-
-
 mo-s(파랑):  mo-l와 동일   
 */
 /*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
+@media (max-width: 1279px) {
+  body {
+    background-color: rgb(234, 248, 111);
+  }
+}
 @media (max-width: 767px) {
+  body {
+    background-color: rgb(123, 248, 111);
+  }
   body .login_common {
     padding: 0 16px;
     padding-top: 160px;
@@ -351,7 +359,7 @@ mo-s(파랑):  mo-l와 동일
     color: #357EF1;
   }
   body .join {
-    margin-bottom: 120px;
+    margin-bottom: 320px;
   }
   body .join .join_wrap {
     width: 400px;
@@ -391,7 +399,7 @@ mo-s(파랑):  mo-l와 동일
     font-size: 20px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   body {
     background-color: rgb(111, 209, 248);
   }
@@ -515,6 +523,7 @@ mo-s(파랑):  mo-l와 동일
   margin-bottom: 56px;
 }
 .login_common .logo_txt .logo {
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -875,7 +884,7 @@ mo-s(파랑):  mo-l와 동일
 }
 
 .join {
-  margin-bottom: 240px;
+  margin-bottom: 480px;
 }
 .join .join_wrap {
   width: 480px;
@@ -1014,40 +1023,4 @@ mo-s(파랑):  mo-l와 동일
   width: 212px;
   margin: 0 auto;
   display: block;
-}
-
-/** 분기점 
-~480: 모바일
-481~768: 태블릿
-769~1279: 중간
-1280~: pc
-좌우패딩 16px
-*/
-@media screen and (max-width: 480px) {
-  body {
-    background-color: rgb(183, 219, 201);
-  }
-  body .login_common .logo_txt {
-    margin-bottom: 56px;
-  }
-  body .login .login_wrap {
-    width: 480px;
-    padding: 72px 40px 48px;
-    margin: 0 auto;
-    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 0 0 0;
-  }
-  body .login .login_wrap .login_daon .login_login_daon {
-    margin-bottom: 60px;
-  }
-  body .login .login_wrap .login_daon .login_login_daon .login_input_box {
-    margin-bottom: 24px;
-  }
-  body .login .login_wrap .login_daon .login_login_daon .login_input_box .email_box {
-    margin-bottom: 12px;
-  }
-  body .login .login_wrap .login_daon .login_join_daon {
-    margin-bottom: 40px;
-  }
 }
