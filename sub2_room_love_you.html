@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAON 리뉴얼</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="./img/favicon.ico">
     <!-- [↓] swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -14,7 +15,7 @@
     <script src="./js/common.js"></script>
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/sub2.css">
-    <script src="./js/sub.js"></script>
+    <script src="./js/sub2.js"></script>
 </head>
 
 <body>
@@ -85,7 +86,7 @@
                 <ul>
                     <li><a href="./index.html">HOME</a></li>
                     <li><a href="./sub2_room_love_you.html">ROOM</a></li>
-                    <li><a href="./sub2_room_only_you.html">ONLY YOU</a></li>
+                    <li><a href="./sub2_room_love_you.html">LOVE YOU</a></li>
                 </ul>
             </div>
         </div>
@@ -94,17 +95,14 @@
                 객실안내
                 <span class="desc">세계적인 관광지 산토리니 스타일의 공간에 특별한 순간을 멋지고 우아하게 기억하세요.</span>
             </h2>
-            <div class="click_room">
-                <a href="#" class="only_a">LOVE YOU</a>
-                <a href="#" class="only_b">ONLY YOU</a>
-            </div>
-            <div class="contour" id="love"></div>
-            <div class="contour2" id="only"></div>
+            <ul class="tab line">
+                <li class="on"><a href="" class="love_you_a">LOVE YOU</a></li>
+                <li><a href="./sub2_room_only_you.html">ONLY YOU</a></li>
+            </ul>
             <!-- 페이지 컨텐츠 내용 -->
             <div class="contents">
                 <div class="main_box">
-
-                    <ul class="abcd">
+                    <ul class="room_content">
                         <li class="main_box2">
                             <div class="swiper love_you_list">
                                 <div class="swiper-wrapper">
@@ -126,22 +124,22 @@
                                     <div class="swiper-button-prev love_you_prev"></div>
                                 </div>
                             </div>
-                            <div class="all_text">
-                                <h2>LOVE YOU 101호</h2>
-                                <div class="text_box">
+                            <ul class="all_text">
+                                <h3>LOVE YOU 101호</h3>
+                                <li>
                                     <p>객실크기</p>
                                     <p>16평</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>객실구성</p>
                                     <p>침대룸A(더블1),주방, 화장실</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>최대인원</p>
                                     <p>기본2인/최대6인</p>
-                                </div>
-                                <button href="#" id="reservation" class="">예약하기</button>
-                            </div>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
                         </li>
                         <li class="main_box2">
                             <div class="swiper love_you_list">
@@ -166,22 +164,22 @@
                                     <div class="swiper-button-prev love_you_prev"></div>
                                 </div>
                             </div>
-                            <div class="all_text">
-                                <h2>LOVE YOU 102호</h2>
-                                <div class="text_box">
+                            <ul class="all_text">
+                                <h3>LOVE YOU 102호</h3>
+                                <li>
                                     <p>객실크기</p>
                                     <p>16평</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>객실구성</p>
                                     <p>침대룸A(더블1),주방, 화장실</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>최대인원</p>
                                     <p>기본2인/최대6인</p>
-                                </div>
-                                <button href="#" id="reservation" class="">예약하기</button>
-                            </div>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
                         </li>
                         <li class="main_box2">
                             <div class="swiper love_you_list">
@@ -206,22 +204,22 @@
                                     <div class="swiper-button-prev love_you_prev"></div>
                                 </div>
                             </div>
-                            <div class="all_text">
-                                <h2>LOVE YOU 201호</h2>
-                                <div class="text_box">
+                            <ul class="all_text">
+                                <h3>LOVE YOU 201호</h3>
+                                <li>
                                     <p>객실크기</p>
                                     <p>16평</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>객실구성</p>
                                     <p>침대룸A(더블1),주방, 화장실</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>최대인원</p>
                                     <p>기본2인/최대6인</p>
-                                </div>
-                                <button href="#" id="reservation" class="">예약하기</button>
-                            </div>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
                         </li>
                         <li class="main_box2">
                             <div class="swiper love_you_list">
@@ -246,22 +244,22 @@
                                     <div class="swiper-button-prev love_you_prev"></div>
                                 </div>
                             </div>
-                            <div class="all_text">
-                                <h2>LOVE YOU 202호</h2>
-                                <div class="text_box">
+                            <ul class="all_text">
+                                <h3>LOVE YOU 202호</h3>
+                                <li>
                                     <p>객실크기</p>
                                     <p>16평</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>객실구성</p>
                                     <p>침대룸A(더블1),주방, 화장실</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>최대인원</p>
                                     <p>기본2인/최대6인</p>
-                                </div>
-                                <button href="#" id="reservation" class="">예약하기</button>
-                            </div>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
                         </li>
                         <li class="main_box2">
                             <div class="swiper love_you_list">
@@ -286,24 +284,24 @@
                                     <div class="swiper-button-prev love_you_prev"></div>
                                 </div>
                             </div>
-                            <div class="all_text">
-                                <h2>LOVE YOU 203호</h2>
-                                <div class="text_box">
+                            <ul class="all_text">
+                                <h3>LOVE YOU 203호</h3>
+                                <li>
                                     <p>객실크기</p>
                                     <p>16평</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>객실구성</p>
                                     <p>침대룸A(더블1),주방, 화장실</p>
-                                </div>
-                                <div class="text_box">
+                                </li>
+                                <li>
                                     <p>최대인원</p>
                                     <p>기본2인/최대6인</p>
-                                </div>
-                                <button href="#" id="reservation" class="">예약하기</button>
-                            </div>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
                         </li>
-                        
+
 
                     </ul>
                 </div>

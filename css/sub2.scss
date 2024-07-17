@@ -99,280 +99,349 @@
     }
   }
 
-  .sub_container {
-    width: 1400px;
-    padding: 140px 0 240px;
-    margin: 0 auto;
-
-    .title {
-      text-align: center;
-      font-size: 40px;
+  .on {
+    .love_you_a {
+      color: #2f2f2f;
       font-weight: 700;
-      margin-bottom: 80px;
-
-      .desc {
-        display: block;
-        margin-top: 16px;
-        font-size: 24px;
-      }
     }
+  }
 
-    .click_room {
-      display: flex;
-      width: 100%;
+  .contents {
+    width: 100%;
+    opacity: 1;
+    animation: contentsbox 2s cubic-bezier(0.000, 0.920, 0.275, 0.980) normal;
+    position: relative;
 
-      a:nth-of-type(1) {
-        font-weight: bold;
-        font-size: 24px;
-      }
-
-      a:nth-of-type(2) {
-        font-weight: lighter;
-        font-size: 24px;
-        margin-left: 74px;
-        height: 100%;
-      }
-    }
-    .contour {
-      width: 142px;
-      height: 4px;
-      background-color: #2f2f2f;
-      transition: 0.5s cubic-bezier(0, 0.830, 0.725, 0.955);
-
-    }
-
-    .contour2 {
-      width: 1400px;
-      height: 2px;
-      float: left;
-      background-color: #efefef;
-    }
-
-    .contents {
-      width: 100%;
-      opacity: 1;
-      animation: contentsbox 2s cubic-bezier(0.000, 0.920, 0.275, 0.980) normal;
-      position: relative;
-
-      .main_box {
-        @include slidebox(68px);
+    .main_box {
+      @include slidebox(68px);
 
 
-        .abcd {
-          width: 1400px;
-
-          li {
-            &:not(:last-of-type) {
-              border-bottom: 1px solid #efefef;
-              margin-bottom: 40px;
-              padding-bottom: 40px;
-            }
-          }
-          .main_box2{
-            @include slidebox('');
-            .love_you_list{
-              width: 830px;
-              height: 450px;
-              margin: 0;
-            }
-          }
-
-
-        }
-
-        .all_text {
-          width: 33%;
-          position: absolute;
-          left: 902px;
-          top: 131px;
-
-          h2 {
-            font-size: 24px;
-            font-weight: bold;
-          }
-
-          .text_box {
-            display: flex;
-
-            p:nth-of-type(1) {
-              font-weight: bold;
-              margin-top: 8px;
-            }
-
-            p:nth-of-type(2) {
-              margin-left: 32px;
-              margin-top: 8px;
-            }
-          }
-        }
-
-        button {
-          margin-top: 48px;
-          border: 1px solid #2f2f2f;
-          padding: 17.5px 46.5px;
-          border-radius: 12px;
-          transition: 0.5s;
-        }
-
-        button:hover {
-          background-color: #9ABEF8;
-        }
-
-        .contour3 {
-          width: 1400px;
-          height: 2px;
-          background-color: #efefef;
-          margin-top: 40px;
-        }
-
-        // .main_box:nth-child(3),
-        // .main_box:nth-child(5),
-        // .main_box:nth-child(7) {
-        //   @include slidebox(80px);
-        // }
-      }
-
-
-      .room_info_amenities {
+      .room_content {
         width: 100%;
-        padding: 60px;
-        background-color: #efefef;
-        border-radius: 20px;
 
-        margin-top: 80px;
+        .main_box2 {
+          @include slidebox('');
 
-        h2 {
+          &:not(:last-of-type) {
+            border-bottom: 1px solid #efefef;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+          }
+
+          .love_you_list {
+            width: calc(100% - 570px);
+            height: calc(100% - 6px);
+            margin: 0;
+          }
+        }
+      }
+
+      .all_text {
+        width: calc(100% - 1102px);
+        margin-top: 114px;
+        margin-left: 72px;
+
+        h3 {
           font-size: 24px;
           font-weight: bold;
-
         }
 
-        .bar1 {
-          width: 1256px;
-          height: 2px;
-          background-color: #afafaf;
-          border-radius: 1px;
-          margin-top: 32px;
-        }
-
-        .icon_box {
-          width: 1000px;
+        li {
           display: flex;
-          justify-content: space-between;
-          padding-top: 48px;
+        }
 
-          .vector_icon {
+        p:nth-of-type(1) {
+          font-weight: bold;
+          margin-top: 8px;
+        }
+
+        p:nth-of-type(2) {
+          margin-left: 32px;
+          margin-top: 8px;
+        }
+      }
+
+      button {
+        margin-top: 48px;
+        border: 1px solid #2f2f2f;
+        padding: 17.5px 46.5px;
+        border-radius: 12px;
+        transition: 0.5s;
+      }
+
+      button:hover {
+        background-color: #9ABEF8;
+      }
+
+      .contour3 {
+        width: 1400px;
+        height: 2px;
+        background-color: #efefef;
+        margin-top: 40px;
+      }
+
+
+    }
+
+    .room_info_amenities {
+      width: 100%;
+      padding: 60px;
+      background-color: #efefef;
+      border-radius: 20px;
+      margin-top: 80px;
+
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .bar1 {
+        width: calc(100% - 144px);
+        height: 2px;
+        background-color: #afafaf;
+        border-radius: 1px;
+        margin-top: 32px;
+      }
+
+      .icon_box {
+        width: calc(100% - 280px);
+        display: flex;
+        justify-content: space-between;
+        padding-top: 48px;
+
+        .vector_icon {
+          width: 40px;
+          height: 64px;
+
+          p {
             width: 40px;
-            height: 64px;
+            height: 40px;
+            margin: 0 auto;
 
-            p {
-              width: 40px;
-              height: 40px;
-              margin: 0 auto;
-
-              img {
-                width: 100%;
-              }
-            }
-
-            span {
-              text-align: center;
-              display: block;
-              padding-top: 4px;
-              // font-weight: lighter;
+            img {
+              width: 100%;
             }
           }
 
-          .vector_icon:nth-child(2) {
-            @include vectoricon(82px, 64px, 14px)
+          span {
+            text-align: center;
+            display: block;
+            padding-top: 4px;
+            // font-weight: lighter;
           }
+        }
 
-          .vector_icon:nth-child(3) {
-            @include vectoricon(60px, 64px, '')
-          }
+        .vector_icon:nth-child(2) {
+          @include vectoricon(82px, 64px, 14px)
+        }
 
-          .vector_icon:nth-child(4) {
-            @include vectoricon(65px, 61px, 14px);
+        .vector_icon:nth-child(3) {
+          @include vectoricon(60px, 64px, '')
+        }
 
-          }
+        .vector_icon:nth-child(4) {
+          @include vectoricon(65px, 61px, 14px);
+        }
 
-          .vector_icon:nth-child(5) {
-            @include vectoricon(40px, 64px, '');
+        .vector_icon:nth-child(5) {
+          @include vectoricon(40px, 64px, '');
+        }
 
-          }
+        .vector_icon:nth-child(6) {
+          @include vectoricon(60px, 64px, '');
+        }
 
-          .vector_icon:nth-child(6) {
-            @include vectoricon(60px, 64px, '');
+        .vector_icon:nth-child(7) {
+          @include vectoricon(46px, 64px, '');
+        }
 
-          }
+        .vector_icon:nth-child(8) {
+          @include vectoricon(46px, 64px, '');
+        }
 
-          .vector_icon:nth-child(7) {
-            @include vectoricon(46px, 64px, '');
+        .vector_icon:nth-child(9) {
+          @include vectoricon(48px, 64px, '');
 
-          }
-
-          .vector_icon:nth-child(8) {
-            @include vectoricon(46px, 64px, '');
-
-          }
-
-          .vector_icon:nth-child(9) {
-            @include vectoricon(48px, 64px, '');
-
-          }
         }
       }
     }
+  }
 
-    .caution {
+  .caution {
+    width: 100%;
+    height: 240px;
+    background-color: #efefef;
+    border-radius: 20px;
+    margin-top: 16px;
+    padding: 60px;
+
+    h2 {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .text_flexbox {
+      display: flex;
+      white-space: nowrap;
+      justify-content: space-between;
+      margin-top: 24px;
       width: 100%;
-      height: 240px;
-      background-color: #efefef;
-      border-radius: 20px;
-      margin-top: 16px;
-      padding: 60px;
 
-      h2 {
-        font-weight: bold;
-        font-size: 24px;
+      p {
+        font-size: 20px;
+
+        b {
+          font-size: 20px;
+          font-weight: bold;
+        }
       }
 
-      .text_flexbox {
-        display: flex;
-        white-space: nowrap;
-        justify-content: space-between;
-        margin-top: 24px;
+      p:nth-child(2) {
+        font-size: 20px;
+        margin-top: 12px;
 
-        width: 100%;
-
-        p {
+        b {
           font-size: 20px;
-
-          b {
-            font-size: 20px;
-            font-weight: bold;
-          }
+          font-weight: bold;
         }
+      }
+
+      .white-space {
+        font-size: 20px;
+        white-space: nowrap;
 
         p:nth-child(2) {
-          font-size: 20px;
           margin-top: 12px;
+        }
+      }
+    }
+  }
+}
 
-          b {
-            font-size: 20px;
-            font-weight: bold;
+//반응형 미디어쿼리
+
+//pc
+@media (min-width:1200px) and (max-width:1375px) {
+  .sub{
+    padding: 0 16px;
+    .contents{
+      .main_box{
+        .room_content{
+          .main_box2{
+            .love_you_list{}
           }
         }
+        .all_text{width: 100%;}
+      }
+    .caution{
+      height: 300px;
+    .text_flexbox{
+      display: block;
+    }
+     }
+    }
+  }
+}
 
-        .white-space {
-          font-size: 20px;
-          white-space: nowrap;
 
-          p:nth-child(2) {
-            margin-top: 12px;
+//테블릿
+@media (max-width:768px) {
+  .sub {
+    padding: 0 16px;
+    .contents {
+      .main_box {
+        .room_content {
+          .main_box2 {
+            flex-wrap: wrap;
+            .love_you_list {
+              width: 100%;
+            }
+          }
+        }
+        .all_text {
+          width: 100%;
+          margin: 30px;
+        }
+      }
+      .room_info_amenities {
+        width: 100%;
+        height: 350px;
+        .bar1{
+          width: 100%;
+        }
+        .icon_box{width: 100%;
+        gap: 10px;  
+        flex-wrap: wrap;}
+      }
+      .caution{
+        height: 300px;
+        .text_flexbox{
+          display: block;
+          white-space: normal;
+          p{font-size: 16px;
+            margin-top: 8px;
+          b{
+            font-size: 16px;
+          }}
+          .white-space{
+            white-space: normal;
+            p,b{font-size: 16px;
+            margin-top:8px;}
           }
         }
       }
     }
   }
 }
+
+// 모바일
+@media screen and (max-width:480px) {
+  .sub {
+    padding: 0 16px;
+    .contents {
+      .main_box {
+        .room_content {
+          .main_box2 {
+            flex-wrap: wrap;
+            .love_you_list {
+              width: 100%;
+            }
+          }
+        }
+        .all_text {
+          width: 100%;
+          margin: 30px;
+        }
+      }
+      .room_info_amenities {
+        width: 100%;
+        height: 550px;
+        .bar1{
+          width: 100%;
+        }
+        .icon_box{width: 100%;
+        gap: 50px;
+        flex-wrap: wrap;}
+      }
+      .caution{
+        height: 380px;
+        .text_flexbox{
+          display: block;
+          white-space: normal;
+          p{font-size: 16px;
+            margin-top: 8px;
+          b{
+            font-size: 16px;
+          }}
+          .white-space{
+            white-space: normal;
+            p,b{font-size: 16px;}
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//pc => 1200,1400 사이(깨짐 있어서 잡아야함)
