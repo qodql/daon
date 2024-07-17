@@ -489,7 +489,6 @@
     //intro 반응형 끝
 }
 
-
 @include res('mo-l'){
     //intro 반응형 시작
     .intro{
@@ -500,6 +499,7 @@
             }
             .contents {
                 padding: 16px;
+                padding-bottom: 0;
                 @keyframes fadeIn{
                 }
                 @keyframes expand{
@@ -526,7 +526,7 @@
                         }
                         &:nth-child(4){
                             height: 300px;
-                            img{object-position: 0px 8px;}
+                            img{object-position: 0px -44px;}
                         }
                         img{
                             border-radius: 8px;
@@ -542,7 +542,7 @@
                     }   
                 }
                 .intro_full_bg{
-                    margin-top: 80px;
+                    margin-top: 60px;
                     &::after{
                     }
                     &::before{
@@ -552,7 +552,12 @@
                     }
                     .intro_full_bg_inner{
                         width: 469px;
-                        .logo{margin: 0 auto;}
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 80%;
+                            }
+                        }
                         .intro_full_bg_inner_txt{
                             margin: 24px auto;
                             h5{
@@ -694,6 +699,87 @@
         }
    } 
    //contact 반응형 끝
+}
+
+@media screen and (max-width: 610px){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    p{
+                        height: 240px;
+                        &:nth-child(1){
+                            height: 200px;
+                        }
+                        &:nth-child(2){
+                            height: 200px;
+                            img{object-position: 0px -497px;}
+                        }
+                        &:nth-child(3){
+                            height: 200px;
+                        }
+                        &:nth-child(4){
+                            height: 200px;
+                            img{object-position: 0px -44px;}
+                        }
+                        img{
+                            border-radius: 8px;
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 566px;
+                    margin: 40px auto;
+                    h5{
+                        font-size: 16px;
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 60px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 80%;
+                            }
+                        }
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 16px;
+                                line-height: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  
+    
+    
 }
 
 @include res('mo-s'){

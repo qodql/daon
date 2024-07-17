@@ -63,7 +63,7 @@ mo-s(파랑): mo-l와 동일
     padding: 48px 24px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   body {
     background-color: rgb(111, 209, 248);
   }

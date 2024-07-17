@@ -64,8 +64,7 @@
   grid-area: b;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-  -o-object-position: 0px -360px;
-     object-position: 0px -360px;
+  object-position: 0px -360px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
   height: 250px;
@@ -76,13 +75,11 @@
   grid-area: d;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-  -o-object-position: 0px -190px;
-     object-position: 0px -190px;
+  object-position: 0px -190px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p img {
   position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
 }
 .intro .sub_container .contents .intro_txt {
@@ -320,7 +317,7 @@
   margin-right: 8px;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
   @keyframes fadeIn {}
   @keyframes expand {}
   .intro .sub_container .contents .intro_grid_wrapper {
@@ -663,6 +660,7 @@
 @media (max-width: 767px) {
   .intro .sub_container .contents {
     padding: 16px;
+    padding-bottom: 0;
   }
   @keyframes fadeIn {}
   @keyframes expand {}
@@ -690,7 +688,7 @@
     height: 300px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px 8px;
+    object-position: 0px -44px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p img {
     border-radius: 8px;
@@ -704,7 +702,7 @@
     line-height: 30px;
   }
   .intro .sub_container .contents .intro_full_bg {
-    margin-top: 80px;
+    margin-top: 60px;
   }
   .intro .sub_container .contents .intro_full_bg.intro_expand::after, .intro .sub_container .contents .intro_full_bg.intro_expand::before {
     animation: expand 2000ms ease-out forwards;
@@ -714,6 +712,9 @@
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo {
     margin: 0 auto;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
+    width: 80%;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
     margin: 24px auto;
@@ -835,7 +836,65 @@
     left: 5px;
   }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 610px) {
+  @keyframes fadeIn {}
+  @keyframes expand {}
+  .intro .sub_container .contents .intro_grid_wrapper p {
+    height: 240px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
+    object-position: 0px -497px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
+    object-position: 0px -44px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p img {
+    border-radius: 8px;
+  }
+  .intro .sub_container .contents .intro_txt {
+    width: 566px;
+    margin: 40px auto;
+  }
+  .intro .sub_container .contents .intro_txt h5 {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .intro .sub_container .contents .intro_full_bg {
+    margin-top: 60px;
+  }
+  .intro .sub_container .contents .intro_full_bg.intro_expand::after, .intro .sub_container .contents .intro_full_bg.intro_expand::before {
+    animation: expand 2000ms ease-out forwards;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
+    width: 469px;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo {
+    margin: 0 auto;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
+    width: 80%;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
+    margin: 24px auto;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
+    font-size: 16px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 479px) {
   .contact .sub_container .contents .contact_map .contact_map_btn {
     right: 8px;
     bottom: 12px;
