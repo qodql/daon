@@ -10,7 +10,7 @@
   .main {
     & + .footer {
       .box_wrap {
-        padding: 120px 7.25% 338px;
+        padding: 6.5% 7.25% 338px;
       }
     } 
   }
@@ -39,14 +39,6 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 64px;
-        .logo {
-          width: 80px;
-          height: 32px;
-          a {
-            background-size: 80px;
-            background-position: left center;
-          }
-        }
         .mb_menu {
           width: 40px;
           height: 40px;
@@ -142,11 +134,34 @@
       }
     }
   }
+  // logo
+  .logo {
+    width: 80px;
+    height: 32px;
+    a {
+      background-size: 80px;
+      background-position: left center;
+    }
+  }
   .footer {
     .box_wrap {
-      padding: 6.5% 80px 338px;
+      a, p, span {
+        font-size: 16px;
+      }
+      .top {
+        ul {
+          li {
+            &:not(:first-of-type) {
+              &::before {
+                height: 12px;
+                margin: 0 16px;
+              }
+            }
+          }
+        }
+      }
       .bottom {
-        margin-top: 64px;
+        margin-top: 40px;
         .info {
           ul {
             margin-bottom: 40px;
@@ -162,7 +177,7 @@
             }
           }
           .copyright {
-            font-size: 16px;
+            font-size: 14px;
           }
         }
       }

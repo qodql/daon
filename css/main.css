@@ -629,6 +629,10 @@
   }
   .main .container .section .inner .more_btn {
     right: 7.25%;
+    top: 225px;
+  }
+  .main .container .section .inner .contents {
+    margin-top: 40px;
   }
   .main .container .section.room .inner {
     padding: 120px 0;
@@ -638,6 +642,12 @@
   }
   .main .container .section.room .inner .more_btn {
     right: 7.25%;
+  }
+  .main .container .section.facilities {
+    height: 855px;
+  }
+  .main .container .section.facilities .contents .facilities_list {
+    height: 600px;
   }
   .main .container .section.facilities .contents .facilities_list li .box {
     left: 17.25%;
@@ -695,9 +705,6 @@
   .main .container .section.event .inner .contents {
     padding-left: 7.25%;
   }
-  .main .container .section.event .inner .contents .box_wrap .tab_wrap .tab_cont ul.location li:last-of-type {
-    position: static;
-  }
   .main .container .section.contact .contents .box_wrap {
     padding: 0;
   }
@@ -715,12 +722,23 @@
     left: 40px;
     top: 32px;
   }
+  .main .container .section.review .inner {
+    padding-bottom: 240px;
+  }
   .main .container .section.review .inner .contents ul li a > img {
     width: 300px;
     height: 300px;
   }
 }
 @media (max-width: 1279px) {
+  .tab.box {
+    margin-bottom: 24px !important;
+  }
+  .tab.box li {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 6px 12px;
+  }
   .quick_menu {
     width: calc(100% - 32px);
   }
@@ -733,6 +751,85 @@
   .quick_menu .search .search_btn {
     width: 56px;
     height: 56px;
+  }
+  .main .container .section .inner {
+    padding: 80px 7.25%;
+  }
+  .main .container .section .inner .title {
+    font-size: 40px;
+  }
+  .main .container .section .inner .title span {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+  .main .container .section .inner .more_btn {
+    top: 145px;
+  }
+  .main .container .section .inner .more_btn a {
+    font-size: 16px;
+  }
+  .main .container .section .inner .more_btn a::after {
+    background-size: 24px;
+  }
+  .main .container .section.room .inner {
+    padding: 80px 0;
+  }
+  .main .container .section.facilities {
+    height: 760px;
+    margin-bottom: 160px;
+  }
+  .main .container .section.facilities .contents .facilities_list {
+    height: 600px;
+  }
+  .main .container .section.facilities .contents .facilities_list li .box {
+    left: 17.25%;
+  }
+  .main .container .section.facilities .contents .facilities_list li .box p {
+    font-size: 20px;
+  }
+  .main .container .section.facilities .contents .facilities_list li.on .box {
+    width: 68%;
+  }
+  .main .container .section.facilities .contents .facilities_list li.on ~ li .box {
+    left: auto;
+    right: 17.25%;
+  }
+  .main .container .section.event .inner {
+    padding: 80px 0;
+  }
+  .main .container .section.contact .contents .box_wrap ul:not(.tab.box) li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .main .container .section.contact .contents .box_wrap ul:not(.tab.box) li:not(:first-of-type) {
+    margin-top: 16px;
+  }
+  .main .container .section.contact .contents .box_wrap ul:not(.tab.box) li::before {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    background-size: cover;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap > p {
+    margin-bottom: 24px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap > p::before {
+    width: 16px;
+    height: 16px;
+    margin: 3px 8px 0 0;
+    background-size: 20px;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li:not(:first-of-type) {
+    margin-top: 40px !important;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li span {
+    left: 28px;
+    top: 24px;
+  }
+  .main .container .section.review .inner .contents ul li a .name_box .name {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 819px) {

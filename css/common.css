@@ -559,7 +559,7 @@ body.prevent_scroll {
     padding: 0 80px;
   }
   .main + .footer .box_wrap {
-    padding: 120px 7.25% 338px;
+    padding: 6.5% 7.25% 338px;
   }
 }
 @media (max-width: 1279px) {
@@ -586,14 +586,6 @@ body.prevent_scroll {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 64px;
-  }
-  .header .inner .logo_wrap .logo {
-    width: 80px;
-    height: 32px;
-  }
-  .header .inner .logo_wrap .logo a {
-    background-size: 80px;
-    background-position: left center;
   }
   .header .inner .logo_wrap .mb_menu {
     width: 40px;
@@ -673,11 +665,23 @@ body.prevent_scroll {
   .header.on .inner .nav_menu {
     display: flex;
   }
-  .footer .box_wrap {
-    padding: 6.5% 80px 338px;
+  .logo {
+    width: 80px;
+    height: 32px;
+  }
+  .logo a {
+    background-size: 80px;
+    background-position: left center;
+  }
+  .footer .box_wrap a, .footer .box_wrap p, .footer .box_wrap span {
+    font-size: 16px;
+  }
+  .footer .box_wrap .top ul li:not(:first-of-type)::before {
+    height: 12px;
+    margin: 0 16px;
   }
   .footer .box_wrap .bottom {
-    margin-top: 64px;
+    margin-top: 40px;
   }
   .footer .box_wrap .bottom .info ul {
     margin-bottom: 40px;
@@ -693,6 +697,6 @@ body.prevent_scroll {
     margin-top: 8px;
   }
   .footer .box_wrap .bottom .info .copyright {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
