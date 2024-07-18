@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // [↓] swiper
     var swiper = new Swiper(".room_list", {
-        slidesPerView: 1.13,
+        slidesPerView: 1.04,
         spaceBetween: 40,
         centeredSlides: true,
         loop: true,
@@ -23,6 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
           1401: {
             slidesPerView: 1.36,  //브라우저가 1401보다 클 때
             spaceBetween: 40,
+          },
+          1279: {
+            slidesPerView: 1.16,  //브라우저가 1279 클 때
+            spaceBetween: 40,
+          },
+          768: {
+            slidesPerView: 1.16,  //브라우저가 767보다 클 때
+            spaceBetween: 16,
+          },
+          480: {
+            slidesPerView: 1.04,  //브라우저가 480보다 클 때
+            spaceBetween: 16,
           },
         },
     });

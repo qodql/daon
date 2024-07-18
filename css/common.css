@@ -565,7 +565,7 @@ body.prevent_scroll {
 @media (max-width: 1279px) {
   .header {
     height: 72px;
-    padding: 16px;
+    padding: 40px 7.25%;
     overflow: hidden;
   }
   .header .nav_bg {
@@ -608,16 +608,16 @@ body.prevent_scroll {
   }
   .header .inner .nav_menu {
     display: none;
-    width: calc(100% + 32px);
-    margin-left: -16px;
-    padding: 16px 0 0 16px;
+    width: 116%;
+    margin-left: -8%;
+    padding: 16px 0 0 8%;
     border-top: 1px solid #efefef;
     position: absolute;
     left: 0;
     bottom: 40px;
   }
   .header .inner .nav_menu li a {
-    color: #afafaf;
+    color: #9f9f9f;
   }
   .header.on {
     z-index: 10000001;
@@ -673,30 +673,59 @@ body.prevent_scroll {
     background-size: 80px;
     background-position: left center;
   }
-  .footer .box_wrap a, .footer .box_wrap p, .footer .box_wrap span {
+  .main + .footer .box_wrap a, .main + .footer .box_wrap p, .main + .footer .box_wrap span {
     font-size: 16px;
   }
-  .footer .box_wrap .top ul li:not(:first-of-type)::before {
+  .main + .footer .box_wrap .top ul li:not(:first-of-type)::before {
     height: 12px;
     margin: 0 16px;
   }
-  .footer .box_wrap .bottom {
+  .main + .footer .box_wrap .bottom {
     margin-top: 40px;
   }
-  .footer .box_wrap .bottom .info ul {
+  .main + .footer .box_wrap .bottom .info ul {
     margin-bottom: 40px;
   }
-  .footer .box_wrap .bottom .info ul li {
+  .main + .footer .box_wrap .bottom .info ul li {
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer .box_wrap .bottom .info ul li p {
+  .main + .footer .box_wrap .bottom .info ul li p {
     margin-right: 0;
   }
-  .footer .box_wrap .bottom .info ul li p:not(:first-of-type) {
+  .main + .footer .box_wrap .bottom .info ul li p:not(:first-of-type) {
     margin-top: 8px;
   }
-  .footer .box_wrap .bottom .info .copyright {
+  .main + .footer .box_wrap .bottom .info .copyright {
     font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    padding: 24px 2.09%;
+  }
+  .main + .footer .box_wrap .bottom {
+    margin-top: 32px;
+  }
+  .main + .footer .box_wrap .bottom .info ul {
+    margin-bottom: 24px;
+  }
+  .main + .footer .box_wrap .bottom .info ul li p:not(:first-of-type) {
+    margin-top: 4px;
+  }
+}
+@media screen and (max-width: 649px) {
+  .main + .footer .box_wrap {
+    padding: 8% 7.25%;
+  }
+  .main + .footer .box_wrap .bottom {
+    margin-top: 24px;
+  }
+  .main + .footer .box_wrap .bottom .info ul {
+    display: none;
+  }
+  .main + .footer .box_wrap .bottom .sns_btn {
+    left: 0;
+    bottom: -94px;
   }
 }

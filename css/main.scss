@@ -238,6 +238,7 @@
                                     background-color: rgba(0, 0, 0, 0.2);
                                     opacity: 0;
                                     visibility: hidden;
+                                    overflow: hidden;
                                     position: absolute;
                                     left: 0;
                                     top: 0;
@@ -248,6 +249,7 @@
                                         bottom: 20px;
                                         z-index: 11;
                                         transition: all 0.3s;
+                                        border-radius: 20px;
                                         p {
                                             margin-bottom: 12px;
                                             font-size: 40px;
@@ -425,17 +427,26 @@
                         padding-left: 13.5%;
                     }
                     .event_list {
-                        height: 732px;
+                        padding-bottom: 72px;
                     }
                     .swiper-wrapper {
                         padding-bottom: 20px;
                         .swiper-slide {
-                            width: 640px !important;
-                            height: 640px;
+                            width: calc(100% / 2.5);
+                            height: calc(100% / 2.5);
+                            padding-top: calc(100% / 2.5);
                             position: relative;
                             border-radius: 20px;
                             overflow: hidden;
                             box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.05);
+                            a {
+                                img {
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
                             .txt_box {
                                 width: 320px;
                                 height: 160px;
@@ -471,7 +482,13 @@
                         border-radius: 20px;
                         overflow: hidden;
                         margin-bottom: 40px;
+                        position: relative;
+                        padding-top: 50%;
                         img {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
                             display: block;
                         }
                     }

@@ -227,6 +227,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
@@ -238,6 +239,7 @@
   bottom: 20px;
   z-index: 11;
   transition: all 0.3s;
+  border-radius: 20px;
 }
 .main .container .section.room .inner .contents .room_list .swiper-slide .room_info .txt p {
   margin-bottom: 12px;
@@ -390,18 +392,25 @@
   padding-left: 13.5%;
 }
 .main .container .section.event .inner .event_list {
-  height: 732px;
+  padding-bottom: 72px;
 }
 .main .container .section.event .inner .swiper-wrapper {
   padding-bottom: 20px;
 }
 .main .container .section.event .inner .swiper-wrapper .swiper-slide {
-  width: 640px !important;
-  height: 640px;
+  width: 40%;
+  height: 40%;
+  padding-top: 40%;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.05);
+}
+.main .container .section.event .inner .swiper-wrapper .swiper-slide a img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .main .container .section.event .inner .swiper-wrapper .swiper-slide .txt_box {
   width: 320px;
@@ -431,8 +440,14 @@
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 40px;
+  position: relative;
+  padding-top: 50%;
 }
 .main .container .section.contact .contents .map img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: block;
 }
 .main .container .section.contact .contents .box_wrap {
@@ -664,7 +679,7 @@
   }
   .main .container .section.around_spot .inner {
     height: fit-content;
-    padding-bottom: 42%;
+    padding-bottom: 32%;
   }
   .main .container .section.around_spot .inner .title {
     margin-bottom: 32px;
@@ -674,7 +689,7 @@
   }
   .main .container .section.around_spot .inner .more_btn {
     right: 42%;
-    bottom: 13%;
+    bottom: 0;
   }
   .main .container .section.around_spot .inner .contents {
     margin-top: 0;
@@ -774,9 +789,22 @@
   .main .container .section.room .inner {
     padding: 80px 0;
   }
+  .main .container .section.room .inner .contents .room_list .swiper-slide .room_info .txt {
+    left: 5%;
+    bottom: 0;
+  }
+  .main .container .section.room .inner .contents .room_list .swiper-slide .room_info .txt p {
+    font-size: 24px;
+  }
+  .main .container .section.room .inner .contents .room_list .swiper-slide .room_info .txt span {
+    font-size: 16px;
+  }
+  .main .container .section.room .inner .contents .room_list .swiper-slide.swiper-slide-active:hover .room_info .txt {
+    bottom: 7.25%;
+  }
   .main .container .section.facilities {
     height: 760px;
-    margin-bottom: 160px;
+    margin-bottom: 240px;
   }
   .main .container .section.facilities .contents .facilities_list {
     height: 600px;
@@ -794,8 +822,31 @@
     left: auto;
     right: 17.25%;
   }
+  .main .container .section.around_spot .inner .desc {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
   .main .container .section.event .inner {
+    margin-top: 80px;
     padding: 80px 0;
+  }
+  .main .container .section.event .inner .swiper-wrapper .swiper-slide {
+    width: 66.6666666667%;
+    height: 66.6666666667%;
+    padding-top: 66.6666666667%;
+  }
+  .main .container .section.event .inner .swiper-wrapper .swiper-slide .txt_box {
+    height: 130px;
+    padding: 24px 64px 24px 24px;
+    border-radius: 0 0 20px 20px;
+  }
+  .main .container .section.event .inner .swiper-wrapper .swiper-slide .txt_box p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .main .container .section.event .inner .swiper-wrapper .swiper-slide .txt_box .date {
+    left: 24px;
+    bottom: 16px;
   }
   .main .container .section.contact .contents .box_wrap ul:not(.tab.box) li {
     font-size: 16px;
@@ -835,5 +886,99 @@
 @media screen and (max-width: 819px) {
   .quick_menu {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .main .container .section .inner {
+    padding: 80px 2%;
+  }
+  .main .container .section .inner .more_btn {
+    right: 2%;
+  }
+  .main .container .section.room .inner .title, .main .container .section.event .inner .title {
+    padding-left: 2%;
+  }
+  .main .container .section.room .inner .more_btn, .main .container .section.event .inner .more_btn {
+    right: 2%;
+  }
+  .main .container .section.facilities {
+    margin-bottom: 140px;
+  }
+  .main .container .section.around_spot .inner {
+    padding-bottom: 80px;
+  }
+  .main .container .section.around_spot .inner .more_btn {
+    right: 2%;
+    top: 145px;
+    bottom: auto;
+  }
+  .main .container .section.around_spot .inner .desc {
+    display: none;
+  }
+  .main .container .section.around_spot .inner .contents .spot_list {
+    top: 0;
+  }
+  .main .container .section.around_spot .inner .contents .spot_list li {
+    width: calc(50% - 6px) !important;
+    height: 300px;
+    position: static;
+  }
+  .main .container .section.around_spot .inner .contents .spot_list li:not(:first-of-type) {
+    margin-top: 12px;
+  }
+  .main .container .section.around_spot .inner .contents .spot_list li:last-of-type {
+    height: 612px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 0;
+  }
+  .main .container .section.around_spot .inner .contents .spot_list li a img {
+    object-position: center;
+    object-fit: cover;
+  }
+  .main .container .section.event .inner {
+    margin-top: 0;
+  }
+  .main .container .section.event .inner .contents {
+    padding-left: 2%;
+  }
+  .main .container .section.contact .contents .box_wrap {
+    flex-direction: column;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap {
+    margin-top: 48px;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li span {
+    position: static;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li:last-of-type {
+    margin-top: 16px !important;
+  }
+  .main .container .swiper .swiper_btn_wrap {
+    right: 2%;
+    bottom: 48px;
+  }
+  .main .container .swiper .swiper_btn_wrap > * {
+    width: 52px;
+    height: 52px;
+  }
+  .main .container .swiper .swiper_btn_wrap > *::after {
+    background-size: 20px;
+  }
+  .main .container .swiper .swiper_btn_wrap .swiper-button-prev {
+    right: 60px;
+  }
+  .main .container .swiper .swiper-pagination {
+    left: 2%;
+    bottom: 56px;
+  }
+  .main .container .swiper .swiper-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+  .main .container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 32px;
+    height: 12px;
   }
 }
