@@ -1,144 +1,36 @@
-@import "./_res";
-
 @include res('pc-s'){
-}
-
-@media screen and (max-width:1400px) {
-  .header {
-    padding: 0 80px;
-  }
+    .header {
+      background-color: orange;
+    }
 }
 
 @include res('tab'){
-  // header
   .header {
-    height: 72px;
-    padding: 16px;
-    overflow: hidden;
-    .nav_bg {
-      height: 100vh;
-      left: -100%;
-      top: 0;
-    }
+    background-color: brown;
     .inner {
-      height: calc(100vh - 32px);
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      position: relative;
-      .logo_wrap {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 64px;
-        .logo {
-          width: 80px;
-          height: 32px;
-          a {
-            background-size: 80px;
-            background-position: left center;
-          }
-        }
-        .mb_menu {
-          width: 40px;
-          height: 40px;
-          display: block;
-          background: url("../img/icon/icon_mb_menu_white.svg") no-repeat center;
+      .logo {
+        a {
+          height: 50%;
         }
       }
       .nav {
         display: none;
-        .sub {
-          flex-direction: column;
-          li {
-            .depth_1 { 
-              padding: 12px 0;
-            }
-            .depth_2 {
-              display: none;
-              left: 26px;
-            }
-          }
-        }
       }
       .nav_menu {
         display: none;
-        width: calc(100% + 32px);
-        margin-left: -16px;
-        padding: 16px 0 0 16px;
-        border-top: 1px solid #efefef;
-        position: absolute;
-        left: 0;
-        bottom: 40px;
-        li {
-          a {
-            color: #afafaf;
-          }
-        }
-      }
-    }
-    &.on {
-      z-index: 10000001;
-      overflow: visible;
-      .nav_bg {
-        left: 0;
-      }
-      .inner {
-        .logo_wrap {
-          .mb_menu {
-            background-image: url("../img/icon/icon_mb_menu_x.svg");
-          }
-        }
-        .nav {
-          display: block;
-          .sub {
-            li {
-              .depth_2 {
-                display: none;
-                max-height: 0;
-                position: relative;
-                left: 72px;
-                top: 0px;
-                &:last-of-type {
-                  margin-bottom: 24px;
-                }
-                a {
-                  text-align: left;
-                  &::before {
-                    content: '';
-                    display: inline-block;
-                    width: 2px;
-                    height: 2px;
-                    margin-top: -4px;
-                    background-color: #2f2f2f;
-                    vertical-align: middle;
-                    margin-right: 8px;
-                  }
-                }
-              }
-              &.on {
-                .depth_1 {
-                  font-weight: 700;
-                }
-                .depth_2 {
-                  max-height: 100%;
-                  display: block;
-                }
-              }
-            }
-          }
-        }
-        .nav_menu {
-          display: flex;
-        }
       }
     }
   }
 }
 
 @include res('mo-l'){
+  .header {
+    background-color: green;
+  }
 }
 
 @include res('mo-s'){
+  .header {
+    background-color: skyblue;
+  }
 }
