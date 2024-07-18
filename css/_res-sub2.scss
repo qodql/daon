@@ -1,4 +1,52 @@
 @import "./_res";
+@mixin size($a,$b,$c,$d,$e){
+  .sub {
+    padding: 0 16px;
+    .contents {
+      .main_box {
+        .room_content {
+          .main_box2 {
+            flex-wrap: wrap;
+            .love_you_list {
+              width: 100%;
+            }
+          }
+        }
+        .all_text {
+          width: $a;
+          margin: 30px;
+        }
+      }
+      .room_info_amenities {
+        width: 100%;
+        height: $bpx;
+        .bar1{
+          width: 100%;
+        }
+        .icon_box{width: 100%;
+        gap: $cpx;  
+        flex-wrap: wrap;}
+      }
+      .caution{
+        height: $dpx;
+        .text_flexbox{
+          display: block;
+          white-space: $e;
+          p{font-size: 16px;
+            margin-top: 8px;
+          b{
+            font-size: 16px;
+          }}
+          .white-space{
+            white-space: normal;
+            p,b{font-size: 16px;
+            margin-top:8px;}
+          }
+        }
+      }
+    }
+  }  
+}
 
 @include res('pc-s'){
   .header {
@@ -7,32 +55,30 @@
 }
 
 @include res('tab'){
-.header {
-  background-color: brown;
-  .inner {
-    .logo {
-      a {
-        height: 50%;
-      }
-    }
-    .nav {
-      display: none;
-    }
-    .nav_menu {
-      display: none;
-    }
+  @include size($a,$b ,$c ,$d,'' ){
+    $a : 100%;
+    $b : 350;
+    $c : 10;
+    $d : 300;
+   } 
   }
-}
-}
+  
+
 
 @include res('mo-l'){
-.header {
-  background-color: green;
-}
+  @include size($a,$b ,$c ,$d,'' ){
+    $a : 100%;
+    $b : 350;
+    $c : 10;
+    $d : 300;
+   } 
 }
 
 @include res('mo-s'){
-.header {
-  background-color: skyblue;
-}
+  @include size($a,$b ,$c, $d,''){
+$a : 100;
+$b : 550;
+$c : 50;
+$d : 380;
+  }
 }
