@@ -16,23 +16,58 @@ common 수정 금지
     });
 
     // [↓] gnb
+    const body = document.querySelector("body")
     const header = document.querySelector(".header")
     const navBg = document.querySelector(".nav_bg")
-    const logo = document.querySelector(".logo a img")
+    const navLi = document.querySelectorAll(".nav .sub > li")
+    const depth1 = document.querySelectorAll(".nav .sub > li > a:not(.solo)")
+    const mbBtn = document.querySelector(".mb_menu")
 
-    header.addEventListener("mouseover", (e) => {
-        e.preventDefault()
+    const handleMbBtnClick = () => {
+        header.classList.toggle("on");
+        body.classList.toggle("prevent_scroll");
+    };
+
+    const handleHeaderMouseOver = () => {
+        body.classList.add("prevent_scroll");
         header.classList.add("on");
-        logo.setAttribute("src", "./img/logo.svg")
-    })
-    navBg.addEventListener("mouseover", (e) => {
-        e.preventDefault()
+    };
+
+    const handleNavBgMouseOver = () => {
         header.classList.add("on");
-        logo.setAttribute("src", "./img/logo.svg")
-    })
-    navBg.addEventListener("mouseleave", (e) => {
-        e.preventDefault()
+    };
+
+    const handleNavBgMouseLeave = () => {
         header.classList.remove("on");
-        logo.setAttribute("src", "./img/logo_white.svg")
-    })
+        body.classList.remove("prevent_scroll");
+    };
+
+    const handleGnb = () => {
+        header.removeEventListener("mouseover", handleHeaderMouseOver);
+        navBg.removeEventListener("mouseover", handleNavBgMouseOver);
+        navBg.removeEventListener("mouseleave", handleNavBgMouseLeave);
+        mbBtn.removeEventListener("click", handleMbBtnClick);
+
+        if (body.offsetWidth > 1280) {
+            //pc
+            header.addEventListener("mouseover", handleHeaderMouseOver);
+            navBg.addEventListener("mouseover", handleNavBgMouseOver);
+            navBg.addEventListener("mouseleave", handleNavBgMouseLeave);
+        } else {
+            //mb
+            for (let i=0; i < depth1.length; i++){
+                depth1[i].addEventListener("click", (e) => {
+                    navLi.forEach((v, i) => {
+                        navLi[i].classList.remove("on")
+                    })
+                    e.preventDefault();
+                    e.target.parentNode.classList.toggle("on")
+                })
+            }
+            mbBtn.addEventListener("click", handleMbBtnClick);
+        }
+    };
+
+    handleGnb();
+    window.addEventListener("resize", handleGnb);
 })

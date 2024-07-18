@@ -1,0 +1,22 @@
+@import"./res";
+
+
+//max 1500
+@include res('pc-s'){
+
+}
+
+//max 1279
+@include res('tab'){
+
+}
+
+//max 767
+@include res('mo-l'){
+
+}
+
+//max 480
+@include res('mo-s'){
+
+}

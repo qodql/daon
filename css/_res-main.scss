@@ -1,0 +1,65 @@
+@import "./_res";
+
+@include res('pc-s'){
+}
+
+@media screen and (max-width:1400px) {
+    .quick_menu {
+        width: calc(100% - 160px);
+        justify-content: center;
+        ul {
+            li {
+                &:first-of-type {
+                    padding-left: 0;
+                }
+                p {
+                    font-size: 24px;
+                }
+                .select_wrap {
+                    &::after {
+                        width: 32px;
+                        height: 32px;
+                        background-size: 40px;
+                        bottom: -4px;
+                    }
+                    select {
+                        width: 72px;
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include res('tab'){
+    // quick_menu
+    .quick_menu {
+        width: calc(100% - 32px);
+        ul {
+            li {
+                padding: 16px 12px;
+                &:nth-of-type(2) {
+                }
+            }
+        }
+        .search {
+            margin-left: 12px;
+            .search_btn {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:819px) {
+    .quick_menu {
+        display: none;
+    }
+}
+@include res('mo-l'){
+}
+
+@include res('mo-s'){
+}

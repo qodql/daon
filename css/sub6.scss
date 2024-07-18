@@ -620,6 +620,13 @@
                             font-size: 32px;
                             font-weight: 700;
                             margin-bottom: 32px;
+                            span {
+                                display: block;
+                                font-size: 24px;
+                                font-weight: 700;
+                                margin-top: 24px;
+                                margin-bottom: 56px;
+                            }
                         }
                         span {
                             font-size: 24px;
@@ -655,8 +662,32 @@
 
 // look
 .look {
+    .sub_top {
+        background-image: url("../img/img_sub6_reservation_look.jpg");
+    }
     .sub_container {
         .contents {
+            .btn_wrap {
+                text-align: center;
+                button {
+                    width: 240px;
+                    padding: 16px 0;
+                    text-align: center;
+                    border: 2px solid #2f2f2f;
+                    border-radius: 8px;
+                    font-weight: 700;
+                    background-color: #fff;
+                    color: #2f2f2f;
+                    &:not(:first-of-type) {
+                        margin-left: 12px;
+                    }
+                    &.member:not(.not) {
+                        background-color: #2f2f2f;
+                        border-color: #2f2f2f;
+                        color: #fff;
+                    }
+                }
+            }
         }
     }
 }

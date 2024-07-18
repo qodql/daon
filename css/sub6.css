@@ -536,6 +536,13 @@
   font-weight: 700;
   margin-bottom: 32px;
 }
+.step3 .sub_container .contents .complete .txt_wrap p strong span {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 56px;
+}
 .step3 .sub_container .contents .complete .txt_wrap p span {
   font-size: 24px;
   line-height: 36px;
@@ -557,5 +564,30 @@
 .step3 .sub_container .contents .complete .btn_wrap button.reservation {
   border-color: #357EF1;
   background-color: #357EF1;
+  color: #fff;
+}
+
+.look .sub_top {
+  background-image: url("../img/img_sub6_reservation_look.jpg");
+}
+.look .sub_container .contents .btn_wrap {
+  text-align: center;
+}
+.look .sub_container .contents .btn_wrap button {
+  width: 240px;
+  padding: 16px 0;
+  text-align: center;
+  border: 2px solid #2f2f2f;
+  border-radius: 8px;
+  font-weight: 700;
+  background-color: #fff;
+  color: #2f2f2f;
+}
+.look .sub_container .contents .btn_wrap button:not(:first-of-type) {
+  margin-left: 12px;
+}
+.look .sub_container .contents .btn_wrap button.member:not(.not) {
+  background-color: #2f2f2f;
+  border-color: #2f2f2f;
   color: #fff;
 }
