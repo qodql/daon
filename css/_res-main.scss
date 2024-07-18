@@ -4,6 +4,7 @@
 }
 
 @media screen and (max-width:1400px) {
+    // quick_menu
     .quick_menu {
         width: calc(100% - 160px);
         justify-content: center;
@@ -30,27 +31,177 @@
             }
         }
     }
+    // main
     .main {
         .container {
             //swiper
             .swiper {
                 .swiper-pagination {
-                    left: 5.7%;
+                    left: 7.25%;
                 }
                 .swiper_btn_wrap {
-                    right: 5.7%;
+                    right: 7.25%;
                 }
             }
-            // section1 - room
             .section {
+                // section_common
+                .inner {
+                    padding: 120px 80px;
+                    .more_btn {
+                        right: 7.25%
+                    }
+                }
+                // section1 - room
                 &.room {
                     .inner {
                         padding: 120px 0;
                         .title {
-                            padding-left: 5.7%;
+                            padding-left: 7.25%;
                         }
                         .more_btn {
-                            right: 5.7%;
+                            right: 7.25%;
+                        }
+                    }
+                }
+                // section2 - facilities
+                &.facilities {
+                    .contents {
+                        .facilities_list {
+                            li{
+                                .box {
+                                    left: 17.25%;
+                                    p {
+                                        font-size: 20px;
+                                    }
+                                }
+                                &.on {
+                                    .box{
+                                        width: 68%;
+                                    }
+                                    & ~ li {
+                                        .box {
+                                            left: auto;
+                                            right: 17.25%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                } 
+                // section3 - around_spot
+                &.around_spot {
+                    .inner {
+                        height: fit-content;
+                        padding-bottom: 42%;
+                        .title {
+                            margin-bottom: 32px;
+                        }
+                        .desc {
+                            margin-bottom: 120px;
+                        }
+                        .more_btn {
+                            right: 42%;
+                            bottom: 13%;
+                        }
+                        .contents {
+                            margin-top: 0;
+                            .spot_list {
+                                top: -80px;
+                                li{
+                                    &:first-of-type{
+                                        width: 52.68%;
+                                        top: auto;
+                                        bottom: -100px;
+                                    }
+                                    &:nth-of-type(2) {
+                                        width: 61.43%
+                                    }
+                                    &:last-of-type {
+                                        width: 37.15%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.event {
+                    .inner {
+                        padding: 120px 0;
+                        .title {
+                            padding-left: 7.25%;
+                        }
+                        .more_btn {
+                            right: 7.25%;
+                        }
+                        .contents {
+                            padding-left: 7.25%;
+                            .box_wrap {
+                                .tab_wrap {
+                                    .tab_cont {
+                                        ul{
+                                            &.location{
+                                                li {
+                                                    &:last-of-type{
+                                                        position: static;
+                                                    }
+                                                } 
+                                            } 
+                                        } 
+                                    }
+                                }
+                            } 
+                        }
+                    }
+                }
+                &.contact {
+                    .contents {
+                        .box_wrap {
+                            padding: 0;
+                            .tab_wrap {
+                                .tab_cont {
+                                    ul{
+                                        &.location{
+                                            li {
+                                                &:last-of-type{
+                                                    position: static;
+                                                }
+                                            } 
+                                        } 
+                                    } 
+                                }
+                            }
+                            .pick_wrap {
+                                ul {
+                                    li {
+                                        position: relative;
+                                        &:not(:first-of-type) {
+                                            margin-top: 56px !important;
+                                        }
+                                        span {
+                                            position: absolute;
+                                            left: 40px;
+                                            top: 32px;
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+                &.review {
+                    .inner {
+                        .contents {
+                            ul {
+                                li {
+                                    a {
+                                        & > img {
+                                            width: 300px;
+                                            height: 300px;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -74,6 +225,12 @@
                 width: 56px;
                 height: 56px;
             }
+        }
+    }
+    // main
+    .main {
+        .container {
+            // section1 - room
         }
     }
 }

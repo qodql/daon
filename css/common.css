@@ -558,6 +558,9 @@ body.prevent_scroll {
   .header {
     padding: 0 80px;
   }
+  .main + .footer .box_wrap {
+    padding: 120px 7.25% 338px;
+  }
 }
 @media (max-width: 1279px) {
   .header {
@@ -669,5 +672,27 @@ body.prevent_scroll {
   }
   .header.on .inner .nav_menu {
     display: flex;
+  }
+  .footer .box_wrap {
+    padding: 6.5% 80px 338px;
+  }
+  .footer .box_wrap .bottom {
+    margin-top: 64px;
+  }
+  .footer .box_wrap .bottom .info ul {
+    margin-bottom: 40px;
+  }
+  .footer .box_wrap .bottom .info ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer .box_wrap .bottom .info ul li p {
+    margin-right: 0;
+  }
+  .footer .box_wrap .bottom .info ul li p:not(:first-of-type) {
+    margin-top: 8px;
+  }
+  .footer .box_wrap .bottom .info .copyright {
+    font-size: 16px;
   }
 }
