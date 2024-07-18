@@ -32,7 +32,7 @@ mo-s(파랑): mo-l와 동일
     background-color: rgb(123, 248, 111);
   }
   body .around_spot .sub_container {
-    margin: 0 16px;
+    padding: 0 16px;
   }
   body .around_spot .sub_container .contents .sub4_card .card_name {
     flex-direction: column;
@@ -112,6 +112,9 @@ body{
 }
 .around_spot .sub_top {
   background-image: url("../img/img_sub4_tops.jpg");
+}
+.around_spot .sub_container {
+  padding: 0 20px;
 }
 .around_spot .sub_container .contents .sub4_card {
   margin-bottom: 72px;

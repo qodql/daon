@@ -29,7 +29,7 @@ $mobile_font_title: 20px;
 
 
 @include res('pc-s'){}; //변동사항 없음
-@include res('tab'){
+@include res('tab'){    //노랑
     body{
         background-color: rgb(234, 248, 111);
         // 배경색 나중에 완전히 끝나면 삭제하기
@@ -51,14 +51,14 @@ $mobile_font_title: 20px;
         }
     }
 };
-@include res('mo-l'){
+@include res('mo-l'){   //초록
     body{
         background-color: rgb(123, 248, 111);
         // 배경색 나중에 완전히 끝나면 삭제하기
         .around_spot{
             .sub_top{}
             .sub_container{ 
-                margin: 0 $mobile_padding_16;
+                padding: 0 $mobile_padding_16;
                 .contents{
                     .sub4_card{ 
                         .card_name{
@@ -101,7 +101,7 @@ $mobile_font_title: 20px;
         }
     }
 }
-@include res('mo-s'){   //mo-l, mo-s동일
+@include res('mo-s'){   //파랑, mo-l과 동일
     body{
         background-color: rgb(111, 209, 248);
         // 배경색 나중에 완전히 끝나면 삭제하기
