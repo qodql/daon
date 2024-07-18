@@ -1,0 +1,146 @@
+@import "./_res";
+
+
+@include res('pc-s'){
+    // policy_service PC-S Responsive start
+    .policy_service {
+        .sub_top{
+            .dim{
+            }
+        }
+        .sub_container {
+            width: 100%;
+            .contents{
+                padding: 32px;
+                .service_wrap{
+                    width: 100%;
+                    .service_article{
+                        .service_article_tit{
+                            margin-bottom: 16px;
+                            h3{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                    .service_article_txt{
+                        margin: 16px 36px 32px;
+                        ul{
+                            padding: 16px;
+                            li{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // policy_service PC-S Responsive end
+}
+
+@include res('tab'){
+    // policy_service Tablet Responsive start
+    .policy_service {
+        .sub_top{
+            .dim{
+            }
+        }
+        .sub_container {
+            width: 100%;
+            .contents{
+                padding: 32px;
+                .service_wrap{
+                    width: 100%;
+                    .service_article{
+                        .service_article_tit{
+                            margin-bottom: 12px;
+                            h3{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                    .service_article_txt{
+                        margin: 16px 36px 32px;
+                        ul{
+                            padding: 12px;
+                            li{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // policy_service Tablet Responsive end
+}
+
+@include res('mo-l'){
+    // policy_service Mobile-Large Responsive start
+    .policy_service {
+        .sub_top{
+            .dim{
+            }
+        }
+        .sub_container {
+            .contents{
+                padding: 16px;
+                .service_wrap{
+                    .service_article{
+                        .service_article_tit{
+                            margin-bottom: 4px;
+                            h3{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    .service_article_txt{
+                        margin: 12px 0 24px;
+                        ul{
+                            li{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // policy_service Mobile-Large Responsive end
+}
+
+@include res('mo-s'){
+    // policy_service Mobile-Small Responsive start
+    .policy_service {
+        .sub_top{
+            .dim{
+            }
+        }
+        .sub_container {
+            .contents{
+                padding: 16px;
+                .service_wrap{
+                    .service_article{
+                        .service_article_tit{
+                            margin-bottom: 0px;
+                            h3{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .service_article_txt{
+                        margin: 8px 0 16px;
+                        ul{
+                            padding: 8px;
+                            li{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // policy_service Mobile-Small Responsive end
+}
+

@@ -202,3 +202,92 @@
   padding: 3px 8px;
   margin-right: 8px;
 }
+@media (max-width: 1499px) {
+  .policy_service .sub_container {
+    width: 100%;
+  }
+  .policy_service .sub_container .contents {
+    padding: 32px;
+  }
+  .policy_service .sub_container .contents .service_wrap {
+    width: 100%;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit {
+    margin-bottom: 16px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit h3 {
+    font-size: 20px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt {
+    margin: 16px 36px 32px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt ul {
+    padding: 16px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt ul li {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1279px) {
+  .policy_service .sub_container {
+    width: 100%;
+  }
+  .policy_service .sub_container .contents {
+    padding: 32px;
+  }
+  .policy_service .sub_container .contents .service_wrap {
+    width: 100%;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit {
+    margin-bottom: 12px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit h3 {
+    font-size: 18px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt {
+    margin: 16px 36px 32px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt ul {
+    padding: 12px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt ul li {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .policy_service .sub_container .contents {
+    padding: 16px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit {
+    margin-bottom: 4px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit h3 {
+    font-size: 16px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt {
+    margin: 12px 0 24px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt ul li {
+    font-size: 14px;
+  }
+}
+@media (max-width: 479px) {
+  .policy_service .sub_container .contents {
+    padding: 16px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit {
+    margin-bottom: 0px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article .service_article_tit h3 {
+    font-size: 14px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt {
+    margin: 8px 0 16px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt ul {
+    padding: 8px;
+  }
+  .policy_service .sub_container .contents .service_wrap .service_article_txt ul li {
+    font-size: 12px;
+  }
+}

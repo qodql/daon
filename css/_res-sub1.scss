@@ -448,7 +448,7 @@
                         }
                         &:nth-child(4){
                             height: 300px;
-                            img{object-position: 0px 8px;}
+                            img{object-position: 0px -3px;}
                         }
                         img{
                         }
@@ -726,7 +726,7 @@
                         }
                         &:nth-child(2){
                             height: 200px;
-                            img{object-position: 0px -497px;}
+                            img{object-position: 0px -416px;}
                         }
                         &:nth-child(3){
                             height: 200px;
@@ -741,11 +741,11 @@
                     }
                 }
                 .intro_txt{
-                    width: 566px;
-                    margin: 40px auto;
+                    width: 393px;
+                    margin: 36px auto;
                     h5{
-                        font-size: 16px;
-                        line-height: 30px;
+                        font-size: 14px;
+                        line-height: 28px;
                     }   
                 }
                 .intro_full_bg{
@@ -777,12 +777,86 @@
             }
         }
     }
-  
-    
-    
 }
 
 @include res('mo-s'){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    gap: 4px;
+                    p{
+                        height: 150px;
+                        &:nth-child(1){
+                            height: 150px;
+                        }
+                        &:nth-child(2){
+                            height: 150px;
+                            img{object-position: 0px -359px;}
+                        }
+                        &:nth-child(3){
+                            height: 150px;
+                        }
+                        &:nth-child(4){
+                            height: 150px;
+                            img{object-position: 0px -44px;}
+                        }
+                        img{
+                            border-radius: 8px;
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 319px;
+                    margin: 24px auto;
+                    h5{
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 60px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 70%;
+                            }
+                        }
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 14px;
+                                line-height: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
+    //contact 반응형 시작
     .contact{
         .sub_container{
             .contents{
@@ -894,4 +968,83 @@
             }
         }
    }
+}
+
+@media screen and (max-width: 405px){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    gap: 4px;
+                    p{
+                        height: 150px;
+                        &:nth-child(1){
+                            height: 150px;
+                        }
+                        &:nth-child(2){
+                            height: 150px;
+                            img{object-position: 0px -230px;}
+                        }
+                        &:nth-child(3){
+                            height: 150px;
+                        }
+                        &:nth-child(4){
+                            height: 150px;
+                            img{object-position: 0px -5px;}
+                        }
+                        img{
+                            border-radius: 8px;
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 260px;
+                    margin: 24px auto;
+                    h5{
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 60px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 70%;
+                            }
+                        }
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 14px;
+                                line-height: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
 }
