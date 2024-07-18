@@ -6,14 +6,15 @@
     width: 100%;
     height: 100vh;
     padding-top: 160px;
-    margin: 0 auto;
-    .logo_txt{
+    .logo_wrap{
         margin-bottom: 56px;
-        .logo{      //h1태그
-            width: fit-content;
+        .logo{
             margin: 0 auto;
+            a{            
+                background-image: url("../img/logo.svg");
+            }
         }
-        .txt{       //h2태그
+        .txt{
             margin-top: 40px;
             font-size: 32px;
             font-weight: 700;
@@ -35,63 +36,65 @@
 // 로그인
 .login{
     .login_wrap{
-        @include box_shadow;
-        width: fit-content;
-            .login_daon{
-                margin-bottom: 40px;
-                .login_login_daon{
-                    margin-bottom: 60px;
-                    .login_input_box{
-                        margin-bottom: 24px;
-                        .email_box{
-                            margin-bottom: 12px;
-                        }
-                    }
-                }
-                .login_join_daon{
-                    .white_btn{
-                        @include btn_reverse;
+        @include box_shadow{
+            padding: 72px 40px 48px;
+        };
+        .login_daon{
+            margin-bottom: 40px;
+            .login_login_daon{
+                margin-bottom: 60px;
+                .login_input_box{
+                    margin-bottom: 24px;
+                    .email_box{
+                        margin-bottom: 12px;
                     }
                 }
             }
-           .login_sns{
-               .login_login_sns{
-                display: flex;
-                justify-content: center;
-                gap: 16px;
-                li{
-                    button{
-                        width: 60px;
-                        height: 60px;
-                        border-radius: 60px;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                    }
-                    .kakao{
-                        background-color: #fff500;
-                        background-image: url(../img/icon/icon_kakao.svg);
-                    }
-                    .naver{
-                        background-color: #06CC80;
-                        background-image: url(../img/icon/icon_naver.svg);
-                    }
-                    .google{
-                        background-color: #ffffff;
-                        border: 1px solid #afafaf;
-                        background-image: url(../img/icon/icon_google.svg);
-                    }
+            .login_join_daon{
+                .white_btn{
+                    @include btn_reverse;
                 }
-              }
             }
+        }
+        .login_sns{
+            .login_login_sns{
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            li{
+                button{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 60px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                .kakao{
+                    background-color: #fff500;
+                    background-image: url(../img/icon/icon_kakao.svg);
+                }
+                .naver{
+                    background-color: #06CC80;
+                    background-image: url(../img/icon/icon_naver.svg);
+                }
+                .google{
+                    background-color: #ffffff;
+                    border: 1px solid #afafaf;
+                    background-image: url(../img/icon/icon_google.svg);
+                }
+            }
+            }
+        }
     }
 }
 // 회원가입
 .join{
     margin-bottom: 480px;
     .join_wrap{
-        width: $box-width;
+        width: 100%;
         margin: 0 auto;
         .join_personal_info{
+            width: $box-width;
             display: flex;
             flex-direction: column;
             // justify-content: center;
@@ -101,7 +104,7 @@
             };
             margin-bottom: 16px;
             .join_input_box{
-                width: fit-content;
+                width: 100%;
                 li{
                     margin-bottom: 12px;
                 }
@@ -111,23 +114,20 @@
                 }
             }
             .phone_verify_btn{
+                max-width: $box-width;
                 display: flex;
                 justify-content: space-between;
                 gap: 8px;
                 .phone_box{width: 70%;}
-                .join_btn{
+                .verify_btn{
                     width: 30%;
-                    .blue_btn{
-                        width: 100%;
-                    }
+                    .blue_btn{}
                 }
             } 
         }
         .join_agree{
             .agree_checkbox{
-                @include box_shadow(){
-                    padding: 0;
-                };
+                @include box_shadow;
                 overflow: hidden;
                 input{
                     display: none;
@@ -187,11 +187,11 @@
         }
         .join_join_btn{
             margin-top: 40px;
+            text-align: center;
             a{
                 text-align: center;
                 button{
-                    width: 100%;
-                    @include btn($w:width);       
+                    @include btn;       
                 }
             }
         }
@@ -199,21 +199,22 @@
 }
 // 회원가입 완료
 .join_complete{
-    .logo_txt{
-        .txt{
-            margin-top: 68px;
-            &::before{
-                content: '';
-                width: 80px;
-                height: 80px;
-                margin: 0 auto 24px;
-                display: block;
-                background-image: url(../img/icon/icon_check_big.svg);
-                background-position: center;
-                background-repeat: no-repeat;
+        margin-bottom: 0;
+        .logo_wrap{
+            .txt{
+                margin-top: 68px;
+                &::before{
+                    content: '';
+                    width: 80px;
+                    height: 80px;
+                    margin: 0 auto 24px;
+                    display: block;
+                    background-image: url(../img/icon/icon_check_big.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
             }
         }
-    }
     .join_complete_wrap{
         .greeting{
             margin-bottom: 100px;
@@ -223,10 +224,12 @@
             }
         }
         .join_complete_btn{
-            button{
-                width: 212px;
-                margin: 0 auto;
-                display: block;
+            text-align: center;
+            a{
+                // max-width: 240px;    //버튼이 화면 사이즈에 맞게 늘어나다가 240부터 안늘어나게 하고 싶은데 어떻게 해야할까요
+                button{
+                    padding: 16px 48px;
+                }
             }
         }
     }

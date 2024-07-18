@@ -8,7 +8,7 @@
 /* 변동사항(확인 후 삭제하셔도 됩니다!)--------------------------------------
 pc-s: 없음
 tab(노랑): 
- - pc-s에서 .txt_long p 의 우측패딩값 120->80px으로 변경, 나머지는 pc-s와 동일
+ - .txt_long p의 우측패딩값 120->80px으로 변경, 나머지는 pc-s와 동일
 mo-l(초록):
  - 기본 컨텐츠 좌우 패딩 16px
  - .card_name(제목): 세로정렬, 폰트 크기 24->20px
@@ -31,10 +31,9 @@ $mobile_font_title: 20px;
 @include res('pc-s'){}; //변동사항 없음
 @include res('tab'){    //노랑
     body{
-        background-color: rgb(234, 248, 111);
+        // background-color: rgb(234, 248, 111);
         // 배경색 나중에 완전히 끝나면 삭제하기
         .around_spot{
-            .sub_top{}
             .sub_container{
                 .contents{
                     .sub4_card{
@@ -53,12 +52,12 @@ $mobile_font_title: 20px;
 };
 @include res('mo-l'){   //초록
     body{
-        background-color: rgb(123, 248, 111);
+        // background-color: rgb(123, 248, 111);
         // 배경색 나중에 완전히 끝나면 삭제하기
         .around_spot{
-            .sub_top{}
             .sub_container{ 
-                padding: 0 $mobile_padding_16;
+                padding-left: $mobile_padding_16;
+                padding-right: $mobile_padding_16;
                 .contents{
                     .sub4_card{ 
                         .card_name{
@@ -66,7 +65,6 @@ $mobile_font_title: 20px;
                             strong{
                                 font-size: $mobile_font_title;
                             }
-                            .card_name_eng{}
                             p{
                                 font-size: $mobile_font_title;
                             }
@@ -91,7 +89,7 @@ $mobile_font_title: 20px;
                             }
                             .txt_long{
                                 p{
-                                    padding: $mobile_padding_48 $mobile_padding_24;
+                                    padding: $mobile_padding_24;
                                 }
                             }
                         }
@@ -103,48 +101,7 @@ $mobile_font_title: 20px;
 }
 @include res('mo-s'){   //파랑, mo-l과 동일
     body{
-        background-color: rgb(111, 209, 248);
+        // background-color: rgb(111, 209, 248);
         // 배경색 나중에 완전히 끝나면 삭제하기
     }
-}; 
-
-
-/*↓↓↓↓↓↓↓↓하단 나중에 작업 완료 후 삭제↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-/* 
-body{
-    background-color: rgb(248, 248, 111);
-    // 배경색 나중에 완전히 끝나면 삭제하기
-    .around_spot{
-        .sub_top{}
-        .sub_container{
-            .contents{
-                .sub4_card{ 
-                    .card_name{
-                        strong{
-                        }
-                        .card_name_eng{}
-                        p{
-                        }
-                    }
-                    .card_img{
-                        .imgbox{
-                        }
-                    }
-
-                    .card_txt{        
-                        .txt_short{
-                            li{
-                            }
-                        }
-                        .txt_long{
-                            p{
-                                padding: 40px 80px 40px 32px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-*/
+};

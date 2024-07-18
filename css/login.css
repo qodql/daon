@@ -11,7 +11,8 @@ mo-l(초록)와 mo-s(파랑)만 약간의 변동사항이 있으며 세부사항
 mo-l(초록):
     - .login_common : 
         ㄴ  기본 좌우 패딩 16px
-        ㄴ .logo_txt : 컨텐츠와의 간격 줄임 56->40px
+        ㄴ .logo_wrap : 컨텐츠와의 간격 줄임 56->48px
+        ㄴ .logo_wrap의 txt 폰트사이즈 줄임 32->24px
         ㄴ 인풋박스 width 400->360px
         ㄴ 버튼 width 400->360px 
     - .login : 
@@ -32,325 +33,40 @@ mo-s(파랑):  mo-l와 동일
   body {
     background-color: rgb(234, 248, 111);
   }
+  body .login_common .logo_wrap {
+    margin-bottom: 48px;
+  }
 }
 @media (max-width: 767px) {
   body {
     background-color: rgb(123, 248, 111);
   }
   body .login_common {
-    padding: 0 16px;
-    padding-top: 160px;
+    padding: 100px 16px 0;
   }
-  body .login_common .logo_txt {
-    margin-bottom: 48px;
+  body .login_common .logo_wrap .logo a {
+    background-size: 80px;
   }
-  body .login_common .email_box {
-    width: 360px;
-    padding-left: 20px;
-    position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  body .login_common .email_box label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    display: inline-block;
-    background-image: url(../img/icon/icon_mail_grey.svg);
-    background-repeat: no-repeat;
-    vertical-align: middle;
-  }
-  body .login_common .email_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
-    vertical-align: middle;
-  }
-  body .login_common .email_box input:focus {
-    width: calc(100% - 80px);
-  }
-  body .login_common .email_box .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    opacity: 1;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  body .login_common .email_box .eye {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  body .login_common .email_box input:focus ~ .input_reset_btn {
-    opacity: 1;
-    visibility: visible;
-  }
-  body .login_common .pw_box {
-    width: 360px;
-    padding-left: 20px;
-    position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  body .login_common .pw_box label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    display: inline-block;
-    background-image: url(../img/icon/icon_lock.svg);
-    background-repeat: no-repeat;
-    vertical-align: middle;
-  }
-  body .login_common .pw_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
-    vertical-align: middle;
-  }
-  body .login_common .pw_box input:focus {
-    width: calc(100% - 80px);
-  }
-  body .login_common .pw_box .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    opacity: 1;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  body .login_common .pw_box .eye {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  body .login_common .pw_box input:focus ~ .input_reset_btn {
-    opacity: 1;
-    visibility: visible;
-  }
-  body .login_common .pw_check_box {
-    width: 360px;
-    padding-left: 20px;
-    position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  body .login_common .pw_check_box label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    display: inline-block;
-    background-image: url(../img/icon/icon_lock.svg);
-    background-repeat: no-repeat;
-    vertical-align: middle;
-  }
-  body .login_common .pw_check_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
-    vertical-align: middle;
-  }
-  body .login_common .pw_check_box input:focus {
-    width: calc(100% - 80px);
-  }
-  body .login_common .pw_check_box .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    opacity: 1;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  body .login_common .pw_check_box .eye {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  body .login_common .pw_check_box input:focus ~ .input_reset_btn {
-    opacity: 1;
-    visibility: visible;
-  }
-  body .login_common .name_box {
-    width: 360px;
-    padding-left: 20px;
-    position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  body .login_common .name_box label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    display: inline-block;
-    background-image: url(../img/icon/icon_person.svg);
-    background-repeat: no-repeat;
-    vertical-align: middle;
-  }
-  body .login_common .name_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
-    vertical-align: middle;
-  }
-  body .login_common .name_box input:focus {
-    width: calc(100% - 80px);
-  }
-  body .login_common .name_box .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    opacity: 1;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  body .login_common .name_box .eye {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  body .login_common .name_box input:focus ~ .input_reset_btn {
-    opacity: 1;
-    visibility: visible;
-  }
-  body .login_common .phone_box {
-    width: 360px;
-    padding-left: 20px;
-    position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  body .login_common .phone_box label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    display: inline-block;
-    background-image: url(../img/icon/icon_phone.svg);
-    background-repeat: no-repeat;
-    vertical-align: middle;
-  }
-  body .login_common .phone_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
-    vertical-align: middle;
-  }
-  body .login_common .phone_box input:focus {
-    width: calc(100% - 80px);
-  }
-  body .login_common .phone_box .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    opacity: 1;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  body .login_common .phone_box .eye {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  body .login_common .phone_box input:focus ~ .input_reset_btn {
-    opacity: 1;
-    visibility: visible;
-  }
-  body .login_common .verify_box {
-    width: 360px;
-    padding-left: 20px;
-    position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  body .login_common .verify_box label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    display: inline-block;
-    background-image: url(../img/icon/icon_phone.svg);
-    background-repeat: no-repeat;
-    vertical-align: middle;
-  }
-  body .login_common .verify_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
-    vertical-align: middle;
-  }
-  body .login_common .verify_box input:focus {
-    width: calc(100% - 80px);
-  }
-  body .login_common .verify_box .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    opacity: 1;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  body .login_common .verify_box .eye {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  body .login_common .verify_box input:focus ~ .input_reset_btn {
-    opacity: 1;
-    visibility: visible;
-  }
-  body .login_common .blue_btn {
-    width: 360px;
-    padding: 16px 16px;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: 700;
-    background-color: #357EF1;
-    border-radius: 8px;
-    color: #ffffff;
+  body .login_common .logo_wrap .txt {
+    margin-top: 36px;
+    font-size: 24px;
   }
   body .login .login_wrap {
+    width: 100%;
     max-width: 480px;
-    padding: 72px 40px 48px;
+    padding: 0;
     margin: 0 auto;
     box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    padding: 48px 40px;
-    box-shadow: 0 0 0 0;
+    box-shadow: none;
   }
   body .login .login_wrap .login_daon .login_login_daon {
     margin-bottom: 40px;
   }
   body .login .login_wrap .login_daon .login_join_daon .white_btn {
-    width: 360px;
-    padding: 16px 32px;
+    width: 100%;
+    max-width: 480px;
+    padding: 16px 16px;
     text-align: center;
     font-weight: 700;
     background-color: #ffffff;
@@ -358,30 +74,26 @@ mo-s(파랑):  mo-l와 동일
     border-radius: 8px;
     color: #357EF1;
   }
-  body .join {
-    margin-bottom: 320px;
-  }
-  body .join .join_wrap {
-    width: 400px;
-  }
   body .join .join_wrap .join_personal_info {
+    width: 100%;
     max-width: 480px;
-    padding: 72px 40px 48px;
+    padding: 0;
     margin: 0 auto;
     box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 0;
-    box-shadow: 0 0 0 0;
+    box-shadow: none;
     margin-bottom: 48px;
   }
   body .join .join_wrap .join_agree .agree_checkbox {
+    width: 100%;
     max-width: 480px;
-    padding: 72px 40px 48px;
+    padding: 0;
     margin: 0 auto;
     box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 0;
-    box-shadow: 0 0 0 0;
+    box-shadow: none;
     border-radius: 0;
   }
   body .join .join_wrap .join_agree .agree_checkbox .agree_all {
@@ -392,149 +104,68 @@ mo-s(파랑):  mo-l와 동일
   body .join .join_wrap .join_agree .join_optional_info {
     margin-top: 0;
   }
+  body .join_complete .logo_wrap {
+    margin-bottom: 24px;
+  }
+  body .join_complete .logo_wrap .txt {
+    margin-top: 48px;
+    font-size: 24px;
+  }
+  body .join_complete .logo_wrap .txt::before {
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/icon/icon_check_big_mobile.svg);
+  }
   body .join_complete .join_complete_wrap .greeting {
     margin-bottom: 80px;
   }
   body .join_complete .join_complete_wrap .greeting p {
     font-size: 20px;
   }
+  body .join_complete .join_complete_wrap .join_complete_btn a button {
+    padding: 16px 32px;
+  }
 }
 @media (max-width: 479px) {
   body {
     background-color: rgb(111, 209, 248);
   }
+  body .login_common .logo_wrap .txt {
+    font-size: 20px;
+  }
+  body .join_complete .join_complete_wrap .greeting {
+    margin-bottom: 40px;
+  }
+  body .join_complete .join_complete_wrap .greeting p {
+    font-size: 16px;
+  }
+  body .join_complete .join_complete_wrap .join_complete_btn a button {
+    padding: 16px 24px;
+  }
 }
-/*↓↓↓↓↓↓↓↓하단 나중에 작업 완료 후 삭제↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-/*로그인+회원가입 공통 태그전부(내용x)------------
-.login_common{
-            .logo_txt{
-                .logo{      //h1태그
-                }
-                .txt{       //h2태그
-                }
-            }
-        }
-*/
-/*login 태그전부(내용x)------------
-.login{
-    .login_wrap{          
-        .login_daon{
-            .login_login_daon{
-                .login_input_box{
-                    .email_box{
-                    }
-                }
-            }
-            .login_join_daon{
-                .white_btn{}
-            }
-        }
-        .login_sns{
-        .login_login_sns{
-            li{
-                button{}
-                .kakao{}
-                .naver{}
-                .google{}
-            }
-        }
-        }
-    }
-}
-*/
-/*join 태그전부(내용x)------------
-.join{
-    .join_wrap{
-        .join_personal_info{
-            .join_input_box{
-                li{}
-                .verify_box
-                {}
-            }
-            .phone_verify_btn{                
-                .phone_box{}
-                .join_btn{
-                    .blue_btn{}
-                }
-            } 
-        }
-        .join_agree{
-            .agree_checkbox{
-                input{}
-                .agree_all{                
-                    .arrow_btn{
-                        svg{                            
-                            path{}
-                        }   
-                    }
-                }
-                .agree_list{
-                    li{                   
-                        .view_all{}
-                    }
-                    .agree_essential{
-                        label{
-                            &::after{}
-                        }
-                    }
-                    .agree_optional{
-                        label{                           
-                            &::after{}
-                        }
-                    }      
-                }
-            }
-            .join_optional_info{
-
-            }
-        }
-        .join_join_btn{            
-            button{}
-        }
-    }
-}
-*/
-/*join_complete 태그전부(내용x)------------
-.join_complete{
-            .logo_txt{
-                .txt{
-                    &::before{}
-                }
-            }
-            .join_complete_wrap{
-                .greeting{
-                    p{
-                        font-size: $mobile_font_title;
-                    }
-                }
-                .join_complete_btn{
-                    button{}
-                }
-            }
-        }
-*/
 .login_common {
   width: 100%;
   height: 100vh;
   padding-top: 160px;
-  margin: 0 auto;
 }
-.login_common .logo_txt {
+.login_common .logo_wrap {
   margin-bottom: 56px;
 }
-.login_common .logo_txt .logo {
-  width: -moz-fit-content;
-  width: fit-content;
+.login_common .logo_wrap .logo {
   margin: 0 auto;
 }
-.login_common .logo_txt .txt {
+.login_common .logo_wrap .logo a {
+  background-image: url("../img/logo.svg");
+}
+.login_common .logo_wrap .txt {
   margin-top: 40px;
   font-size: 32px;
   font-weight: 700;
   text-align: center;
 }
 .login_common .email_box {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
   padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
@@ -581,7 +212,8 @@ mo-s(파랑):  mo-l와 동일
   visibility: visible;
 }
 .login_common .pw_box {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
   padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
@@ -628,7 +260,8 @@ mo-s(파랑):  mo-l와 동일
   visibility: visible;
 }
 .login_common .pw_check_box {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
   padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
@@ -675,7 +308,8 @@ mo-s(파랑):  mo-l와 동일
   visibility: visible;
 }
 .login_common .name_box {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
   padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
@@ -722,7 +356,8 @@ mo-s(파랑):  mo-l와 동일
   visibility: visible;
 }
 .login_common .phone_box {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
   padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
@@ -769,7 +404,8 @@ mo-s(파랑):  mo-l와 동일
   visibility: visible;
 }
 .login_common .verify_box {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
   padding-left: 20px;
   position: relative;
   border: 1px solid #afafaf;
@@ -816,9 +452,9 @@ mo-s(파랑):  mo-l와 동일
   visibility: visible;
 }
 .login_common .blue_btn {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
   padding: 16px 16px;
-  margin: 0 auto;
   text-align: center;
   font-weight: 700;
   background-color: #357EF1;
@@ -827,13 +463,13 @@ mo-s(파랑):  mo-l와 동일
 }
 
 .login .login_wrap {
+  width: 100%;
   max-width: 480px;
-  padding: 72px 40px 48px;
+  padding: 0;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  width: -moz-fit-content;
-  width: fit-content;
+  padding: 72px 40px 48px;
 }
 .login .login_wrap .login_daon {
   margin-bottom: 40px;
@@ -848,8 +484,9 @@ mo-s(파랑):  mo-l와 동일
   margin-bottom: 12px;
 }
 .login .login_wrap .login_daon .login_join_daon .white_btn {
-  width: 400px;
-  padding: 16px 32px;
+  width: 100%;
+  max-width: 480px;
+  padding: 16px 16px;
   text-align: center;
   font-weight: 700;
   background-color: #ffffff;
@@ -887,15 +524,17 @@ mo-s(파랑):  mo-l와 동일
   margin-bottom: 480px;
 }
 .join .join_wrap {
-  width: 480px;
+  width: 100%;
   margin: 0 auto;
 }
 .join .join_wrap .join_personal_info {
+  width: 480px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   max-width: 480px;
-  padding: 72px 40px 48px;
+  padding: 0;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -903,8 +542,7 @@ mo-s(파랑):  mo-l와 동일
   margin-bottom: 16px;
 }
 .join .join_wrap .join_personal_info .join_input_box {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 .join .join_wrap .join_personal_info .join_input_box li {
   margin-bottom: 12px;
@@ -913,6 +551,7 @@ mo-s(파랑):  mo-l와 동일
   margin-bottom: 0;
 }
 .join .join_wrap .join_personal_info .phone_verify_btn {
+  max-width: 480px;
   display: flex;
   justify-content: space-between;
   gap: 8px;
@@ -920,19 +559,16 @@ mo-s(파랑):  mo-l와 동일
 .join .join_wrap .join_personal_info .phone_verify_btn .phone_box {
   width: 70%;
 }
-.join .join_wrap .join_personal_info .phone_verify_btn .join_btn {
+.join .join_wrap .join_personal_info .phone_verify_btn .verify_btn {
   width: 30%;
 }
-.join .join_wrap .join_personal_info .phone_verify_btn .join_btn .blue_btn {
-  width: 100%;
-}
 .join .join_wrap .join_agree .agree_checkbox {
+  width: 100%;
   max-width: 480px;
-  padding: 72px 40px 48px;
+  padding: 0;
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  padding: 0;
   overflow: hidden;
 }
 .join .join_wrap .join_agree .agree_checkbox input {
@@ -983,15 +619,15 @@ mo-s(파랑):  mo-l와 동일
 }
 .join .join_wrap .join_join_btn {
   margin-top: 40px;
+  text-align: center;
 }
 .join .join_wrap .join_join_btn a {
   text-align: center;
 }
 .join .join_wrap .join_join_btn a button {
   width: 100%;
-  width: width;
+  max-width: 480px;
   padding: 16px 16px;
-  margin: 0 auto;
   text-align: center;
   font-weight: 700;
   background-color: #357EF1;
@@ -999,10 +635,13 @@ mo-s(파랑):  mo-l와 동일
   color: #ffffff;
 }
 
-.join_complete .logo_txt .txt {
+.join_complete {
+  margin-bottom: 0;
+}
+.join_complete .logo_wrap .txt {
   margin-top: 68px;
 }
-.join_complete .logo_txt .txt::before {
+.join_complete .logo_wrap .txt::before {
   content: "";
   width: 80px;
   height: 80px;
@@ -1019,8 +658,9 @@ mo-s(파랑):  mo-l와 동일
   font-size: 24px;
   text-align: center;
 }
-.join_complete .join_complete_wrap .join_complete_btn button {
-  width: 212px;
-  margin: 0 auto;
-  display: block;
+.join_complete .join_complete_wrap .join_complete_btn {
+  text-align: center;
+}
+.join_complete .join_complete_wrap .join_complete_btn a button {
+  padding: 16px 48px;
 }
