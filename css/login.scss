@@ -94,11 +94,9 @@
         width: 100%;
         margin: 0 auto;
         .join_personal_info{
-            width: $box-width;
-            display: flex;
-            flex-direction: column;
-            // justify-content: center;
-            align-items: center;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
             @include box_shadow{
                 padding: 72px 40px;
             };
@@ -119,10 +117,7 @@
                 justify-content: space-between;
                 gap: 8px;
                 .phone_box{width: 70%;}
-                .verify_btn{
-                    width: 30%;
-                    .blue_btn{}
-                }
+                .verify_btn{width: 30%;}
             } 
         }
         .join_agree{
@@ -179,7 +174,8 @@
             }
             .join_optional_info{
                 width: 100%;
-                margin-top: 16px;
+                max-width: 480px;
+                margin: 16px auto 0;
                 font-size: 14px;
                 text-align: right;
                 color: #afafaf;
@@ -226,8 +222,8 @@
         .join_complete_btn{
             text-align: center;
             a{
-                // max-width: 240px;    //버튼이 화면 사이즈에 맞게 늘어나다가 240부터 안늘어나게 하고 싶은데 어떻게 해야할까요
                 button{
+                    max-width: 240px;    //버튼이 화면 사이즈에 맞게 늘어나다가 240부터 안늘어나게 하고 싶은데 어떻게 해야할까요
                     padding: 16px 48px;
                 }
             }
