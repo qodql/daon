@@ -1,4 +1,4 @@
-// 다온소개
+/*============================intro start=================================*/
 .intro_footer{
     margin-top: 0;
 }
@@ -128,9 +128,9 @@
         }
     }
 }
-// 다온소개 끝
+/*============================intro end=================================*/
 
-// 오시는길
+/*============================contact start=================================*/
 .contact {
     .sub_top{
         background: url("../img/img_sub_contact.jpg") no-repeat;
@@ -167,9 +167,10 @@
                             img{width: 19px;}
                         }
                         a{
+                            line-height: 42px;
                             color: #fff;
                             font-size: 16px;
-                            padding: 11px 5px;
+                            padding: 0 12px;
                             margin-left: 20px;
                         }
                     }
@@ -313,7 +314,7 @@
         }
     }
 }
-// 오시는길 끝
+/*============================contact end=================================*/
 
 @import "./res-sub1";
 

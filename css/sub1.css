@@ -1,3 +1,4 @@
+/*============================intro start=================================*/
 .intro_footer {
   margin-top: 0;
 }
@@ -147,6 +148,8 @@
   text-align: center;
 }
 
+/*============================intro end=================================*/
+/*============================contact start=================================*/
 .contact .sub_top {
   background: url("../img/img_sub_contact.jpg") no-repeat;
 }
@@ -188,9 +191,10 @@
   width: 19px;
 }
 .contact .sub_container .contents .contact_map .contact_map_btn button a {
+  line-height: 42px;
   color: #fff;
   font-size: 16px;
-  padding: 11px 5px;
+  padding: 0 12px;
   margin-left: 20px;
 }
 .contact .sub_container .contents .contact_map .contact_map_btn .contact_map_naver_btn {
@@ -317,6 +321,7 @@
   margin-right: 8px;
 }
 
+/*============================contact end=================================*/
 @media (max-width: 1499px) {
   @keyframes fadeIn {}
   @keyframes expand {}
