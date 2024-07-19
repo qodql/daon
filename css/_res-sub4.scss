@@ -19,20 +19,11 @@ mo-l(초록):
 mo-s(파랑): mo-l와 동일
 */
 /*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
-
 @import "./_res";
-$mobile_padding_16: 16px;
-$mobile_padding_24: 24px;
-$mobile_padding_48: 48px;
-$mobile_font: 16px;
-$mobile_font_title: 20px;
-
 
 @include res('pc-s'){}; //변동사항 없음
-@include res('tab'){    //노랑
+@include res('tab'){
     body{
-        // background-color: rgb(234, 248, 111);
-        // 배경색 나중에 완전히 끝나면 삭제하기
         .around_spot{
             .sub_container{
                 .contents{
@@ -50,28 +41,26 @@ $mobile_font_title: 20px;
         }
     }
 };
-@include res('mo-l'){   //초록
+@include res('mo-l'){
     body{
-        // background-color: rgb(123, 248, 111);
-        // 배경색 나중에 완전히 끝나면 삭제하기
         .around_spot{
             .sub_container{ 
-                padding-left: $mobile_padding_16;
-                padding-right: $mobile_padding_16;
+                padding-left: 16px;
+                padding-right: 16px;
                 .contents{
                     .sub4_card{ 
                         .card_name{
                             flex-direction: column;
                             strong{
-                                font-size: $mobile_font_title;
+                                font-size: 20px;
                             }
                             p{
-                                font-size: $mobile_font_title;
+                                font-size: 20px;
                             }
                         }
                         .card_img{
-                            margin: $mobile_padding_16 0;
-                            gap: $mobile_padding_16;
+                            margin: 16px 0;
+                            gap: 16px;
                             flex-direction: column;
                             .imgbox{
                                 width: 100%;
@@ -89,7 +78,7 @@ $mobile_font_title: 20px;
                             }
                             .txt_long{
                                 p{
-                                    padding: $mobile_padding_24;
+                                    padding: 24px;
                                 }
                             }
                         }
@@ -98,10 +87,5 @@ $mobile_font_title: 20px;
             }
         }
     }
-}
-@include res('mo-s'){   //파랑, mo-l과 동일
-    body{
-        // background-color: rgb(111, 209, 248);
-        // 배경색 나중에 완전히 끝나면 삭제하기
-    }
 };
+@include res('mo-s'){}; //mo-l과 동일
