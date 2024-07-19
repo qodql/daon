@@ -1,11 +1,3 @@
-@charset "UTF-8";
-/*
-
-=====================================
-common 수정 금지
-=====================================
-
-*/
 .template > div {
   max-width: 1400px;
   margin: 0 auto 120px;
@@ -353,6 +345,7 @@ body.prevent_scroll {
 }
 
 .main + .footer {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {

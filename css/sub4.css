@@ -58,53 +58,6 @@ mo-s(파랑): mo-l와 동일
     padding: 24px;
   }
 }
-<<<<<<< HEAD
-=======
-@media (max-width: 479px) {
-  body {
-    background-color: rgb(111, 209, 248);
-  }
-}
-/*↓↓↓↓↓↓↓↓하단 나중에 작업 완료 후 삭제↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-/* 
-body{
-    background-color: rgb(248, 248, 111);
-    // 배경색 나중에 완전히 끝나면 삭제하기
-    .around_spot{
-        .sub_top{}
-        .sub_container{
-            .contents{
-                .sub4_card{ 
-                    .card_name{
-                        strong{
-                        }
-                        .card_name_eng{}
-                        p{
-                        }
-                    }
-                    .card_img{
-                        .imgbox{
-                        }
-                    }
-
-                    .card_txt{        
-                        .txt_short{
-                            li{
-                            }
-                        }
-                        .txt_long{
-                            p{
-                                padding: 40px 80px 40px 32px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-*/
->>>>>>> e36ccff10603a266df0127a723b70d80224cffd9
 .around_spot img {
   vertical-align: middle;
 }
