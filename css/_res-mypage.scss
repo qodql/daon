@@ -206,11 +206,11 @@
                                 font-size: 18px;
                                 color: #2f2f2f;
                                 text-align: center;
-                                &:nth-child(1){width: 320px;}
-                                &:nth-child(2){width: 180px;}
-                                &:nth-child(3){width: 180px;}
-                                &:nth-child(4){width: 340px;}
-                                &:nth-child(5){width: 330px;}
+                                &:nth-child(1){width: 25%;} 
+                                &:nth-child(2){width: 15%;} 
+                                &:nth-child(3){width: 10%;} 
+                                &:nth-child(4){width: 25%;} 
+                                &:nth-child(5){width: 25%;} 
                             }
                         }
                     }
@@ -227,9 +227,9 @@
                                 td{
                                     font-size: 18px;
                                     border: 1px solid #AFAFAF;
-                                    padding: 20px 0 20px 60px;
+                                    padding: 20px 20px 20px 60px;
                                     &:first-child{
-                                        width: 420px;
+                                        width: 30%;
                                         height: 80px;
                                     }
                                     ul{
@@ -469,11 +469,11 @@
                                 font-size: 18px;
                                 color: #2f2f2f;
                                 text-align: center;
-                                &:nth-child(1){width: 200px;}
-                                &:nth-child(2){width: 100px;}
-                                &:nth-child(3){width: 100px;}
-                                &:nth-child(4){width: 200px;}
-                                &:nth-child(5){width: 200px;}
+                                &:nth-child(1){width: 25%;} 
+                                &:nth-child(2){width: 15%;} 
+                                &:nth-child(3){width: 10%;} 
+                                &:nth-child(4){width: 25%;} 
+                                &:nth-child(5){width: 25%;}
                             }
                         }
                     }
@@ -488,11 +488,11 @@
                             width: 100%;
                             tr{
                                 td{
-                                    font-size: 18px;
+                                    font-size: 16px;
                                     border: 1px solid #AFAFAF;
-                                    padding: 20px 0 20px 60px;
+                                    padding: 20px 30px 20px 40px;
                                     &:first-child{
-                                        width: 420px;
+                                        width: 30%;
                                         height: 80px;
                                     }
                                     ul{
@@ -502,10 +502,10 @@
                             }
                         }
                         span{
-                            font-size: 16px;
+                            font-size: 14px;
                             color: #AFAFAF;
                             font-weight: 300;
-                            margin: 12px 8px;
+                            margin: 8px 4px;
                             display: block;
                         }
                     }
