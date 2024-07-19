@@ -1,38 +1,180 @@
 @import "./_res";
 
-@include res('pc-s'){
-  .header {
-    background-color: orange;
-  }
-}
 
+
+//max 1500 변동 x
+@include res('pc-s'){}
+
+//  max 1279
 @include res('tab'){
-.header {
-  background-color: brown;
-  .inner {
-    .logo {
-      a {
-        height: 50%;
+  .sub{
+    padding: 0 16px;
+    .contents{
+      .main_box{
+        .room_content{
+          .main_box2{
+            .love_you_list{width: 100%;}
+          }
+        }
+        .all_text{width: calc(100% - 600px)}
+      }
+    .caution{
+
+        .text_flexbox{display: block;
+          p{margin-top: 8px;}
+          .white-space{margin-top:8px;
+            p{
+              margin-top: 8px;
+            }
+          }
+        }
       }
     }
-    .nav {
-      display: none;
-    }
-    .nav_menu {
-      display: none;
+  }
+}
+@media (max-width:1047px){
+  .sub {
+    padding: 0 16px;
+    .contents {
+      .main_box {
+        .room_content {
+          .main_box2 {flex-wrap: wrap;
+            .love_you_list {
+              width: 100%;
+            }
+          }
+        }
+        .all_text {
+          width: calc(100% - 500px);          
+          margin : 30px;
+        }
+      }
+      .room_info_amenities {
+        width: 100%;
+        .bar1{
+          width: 100%;
+        }
+        .icon_box{width: 100%;
+        gap: 40px;
+        flex-wrap: wrap;}
+      }
+      .caution{
+ 
+        .text_flexbox{
+          display: block;
+          white-space: normal;
+          p{font-size: 16px;
+            margin-top: 8px;
+          b{
+            font-size: 16px;
+          }}
+          .white-space{
+            white-space: normal;
+            p,b{font-size: 16px;}
+          }
+        }
+      }
     }
   }
 }
-}
 
+
+
+// max 767
 @include res('mo-l'){
-.header {
-  background-color: green;
-}
+  .sub {
+    padding: 0 16px;
+    .contents {
+      .main_box {
+        .room_content {
+          .main_box2 {
+            flex-wrap: wrap;
+            .love_you_list {
+              width: 100%;
+            }
+          }
+        }
+        .all_text {
+          width: 100%;
+          margin: 30px;
+        }
+      }
+      .room_info_amenities {
+        width: 100%;
+        .bar1{
+          width: 100%;
+        }
+        .icon_box{width: 100%;
+        gap: 40px;  
+        flex-wrap: wrap;}
+      }
+      .caution{
+        .text_flexbox{
+          display: block;
+          white-space: normal;
+          p{font-size: 16px;
+            margin-top: 8px;
+          b{
+            font-size: 16px;
+          }}
+          .white-space{
+            white-space: normal;
+            p,b{font-size: 16px;
+            margin-top:8px;}
+          }
+        }
+      }
+    }
+  }
 }
 
+  
+// max 480
 @include res('mo-s'){
-.header {
-  background-color: skyblue;
-}
-}
+
+    .sub {
+      padding: 0 16px;
+      .contents {
+        .main_box {
+          .room_content {
+            .main_box2 {
+              flex-wrap: wrap;
+              .love_you_list {
+                width: 100%;
+              }
+            }
+          }
+          .all_text {
+            width: 100%;
+            margin: 30px;
+          }
+        }
+        .room_info_amenities {
+          width: 100%;
+          height: 550px;
+          .bar1{
+            width: 100%;
+          }
+          .icon_box{width: 100%;
+          gap: 50px;
+          flex-wrap: wrap;}
+        }
+        .caution{
+
+          .text_flexbox{
+            display: block;
+            white-space: normal;
+            p{font-size: 16px;
+              margin-top: 8px;
+            b{
+              font-size: 16px;
+            }}
+            .white-space{
+              white-space: normal;
+              p,b{font-size: 16px;}
+            }
+          }
+        }
+      }
+    }
+  }

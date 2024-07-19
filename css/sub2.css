@@ -306,7 +306,7 @@
 }
 .sub .caution {
   width: 100%;
-  height: 240px;
+  height: 100%;
   background-color: #efefef;
   border-radius: 20px;
   margin-top: 16px;
@@ -346,7 +346,7 @@
   margin-top: 12px;
 }
 
-@media (min-width: 1200px) and (max-width: 1375px) {
+@media (max-width: 1279px) {
   .sub {
     padding: 0 16px;
   }
@@ -356,14 +356,8 @@
   .sub .contents .main_box .all_text {
     width: calc(100% - 600px);
   }
-  .sub .contents .caution {
-    height: 300px;
-  }
   .sub .contents .caution .text_flexbox {
     display: block;
-  }
-  .sub .contents .caution {
-    height: 320px;
   }
   .sub .contents .caution .text_flexbox p {
     margin-top: 8px;
@@ -375,7 +369,50 @@
     margin-top: 8px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1047px) {
+  .sub {
+    padding: 0 16px;
+  }
+  .sub .contents .main_box .room_content .main_box2 {
+    flex-wrap: wrap;
+  }
+  .sub .contents .main_box .room_content .main_box2 .love_you_list {
+    width: 100%;
+  }
+  .sub .contents .main_box .all_text {
+    width: calc(100% - 500px);
+    margin: 30px;
+  }
+  .sub .contents .room_info_amenities {
+    width: 100%;
+  }
+  .sub .contents .room_info_amenities .bar1 {
+    width: 100%;
+  }
+  .sub .contents .room_info_amenities .icon_box {
+    width: 100%;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .sub .contents .caution .text_flexbox {
+    display: block;
+    white-space: normal;
+  }
+  .sub .contents .caution .text_flexbox p {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .sub .contents .caution .text_flexbox p b {
+    font-size: 16px;
+  }
+  .sub .contents .caution .text_flexbox .white-space {
+    white-space: normal;
+  }
+  .sub .contents .caution .text_flexbox .white-space p, .sub .contents .caution .text_flexbox .white-space b {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
   .sub {
     padding: 0 16px;
   }
@@ -391,18 +428,14 @@
   }
   .sub .contents .room_info_amenities {
     width: 100%;
-    height: 350px;
   }
   .sub .contents .room_info_amenities .bar1 {
     width: 100%;
   }
   .sub .contents .room_info_amenities .icon_box {
     width: 100%;
-    gap: 10px;
+    gap: 40px;
     flex-wrap: wrap;
-  }
-  .sub .contents .caution {
-    height: 300px;
   }
   .sub .contents .caution .text_flexbox {
     display: block;
@@ -423,7 +456,7 @@
     margin-top: 8px;
   }
 }
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .sub {
     padding: 0 16px;
   }
@@ -448,9 +481,6 @@
     width: 100%;
     gap: 50px;
     flex-wrap: wrap;
-  }
-  .sub .contents .caution {
-    height: 380px;
   }
   .sub .contents .caution .text_flexbox {
     display: block;
