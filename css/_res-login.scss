@@ -277,23 +277,24 @@ $mobile_font_title: 24px;
         }
     }
 };
-
-// @media screen and (max-width:360px) {
-//     .join{
-//         .join_wrap{
-//             .join_personal_info{
-//                 .join_input_box{
-//                     li{
-//                     }
-//                     .verify_box
-//                     {
-//                     }
-//                 }
-//                 .phone_verify_btn{
-//                     .phone_box{width: 69%;}
-//                 } 
-//             }
-//         }
-//     }
-            
-// };
+//360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 그 부분만 추가했습니다.
+@media screen and (max-width:360px) {
+    body{
+        .join{
+            .join_wrap{
+                .join_personal_info{
+                    .join_input_box{
+                        li{
+                        }
+                        .verify_box
+                        {
+                        }
+                    }
+                    .phone_verify_btn{
+                        .phone_box{width: 69%;}
+                    } 
+                }
+            }
+        }            
+    }
+};

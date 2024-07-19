@@ -345,6 +345,7 @@ body.prevent_scroll {
 }
 
 .main + .footer {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
