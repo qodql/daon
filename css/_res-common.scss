@@ -4,28 +4,35 @@
 }
 
 @media screen and (max-width:1400px) {
+  // header
   .header {
-    padding: 0 7.25%;
+    padding: 0 80px;
   }
-  .sub {
-    .breadcrumb {
-      width: calc(100% - 14.5%);
-    }
-  }
+  // footer
   .main, .sub {
     & + .footer {
       .box_wrap {
-        padding: 6.5% 7.25% 338px !important;
+        padding: 6.5% 80px 338px !important;
       }
     } 
+  }
+  // sub
+  .sub {
+    .breadcrumb {
+      width: calc(100% - 160px);
+    }
+    .sub_container {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
   }
 }
 
 @include res('tab'){
   // header
   .header {
-    height: 72px;
-    padding: 40px 7.25%;
+    height: 100px;
+    padding: 32px 80px;
     overflow: hidden;
     .nav_bg {
       height: 100vh;
@@ -148,6 +155,7 @@
       background-position: left center;
     }
   }
+  // footer
   .main, .sub {
     & + .footer {
       .box_wrap {
@@ -195,12 +203,27 @@
       height: 460px;
     }
   }
+  // sub
+  .sub {
+    .sub_container {
+      .title {
+        font-size: 32px;
+        .desc {
+          font-size: 20px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
 }
 
 @include res('mo-l'){
+  // header
   .header {
-      padding: 24px 16px;
+    height: 72px;
+    padding: 16px;
   }
+  // footer
   .main, .sub {
     & + .footer {
       .box_wrap {
@@ -229,9 +252,6 @@
       }
     }
   }
-  .main {
-
-  }
   .sub {
     & + .footer {
       height: 356px;
@@ -240,12 +260,32 @@
       width: calc(100% - 32px);
     }
   }
+  // sub
+  .sub {
+    .breadcrumb {
+      padding: 16px;
+      ul {
+        li {
+          a {
+          }
+          &:not(:first-of-type) {
+            &::before {
+              margin: 0 8px;
+            }
+          }
+        }
+      }
+    }
+    .sub_container {
+      padding: 120px 16px 160px;
+    }
+  }
 }
 @media screen and (max-width:649px) {
   .main, .sub {
     & + .footer {
       .box_wrap {
-        // padding: 8% 7.25% !important;
+        // padding: 8% 80px !important;
         .bottom {
           margin-top: 24px;
           .info {

@@ -548,19 +548,23 @@ body.prevent_scroll {
 }
 @media screen and (max-width: 1400px) {
   .header {
-    padding: 0 7.25%;
-  }
-  .sub .breadcrumb {
-    width: 85.5%;
+    padding: 0 80px;
   }
   .main + .footer .box_wrap, .sub + .footer .box_wrap {
-    padding: 6.5% 7.25% 338px !important;
+    padding: 6.5% 80px 338px !important;
+  }
+  .sub .breadcrumb {
+    width: calc(100% - 160px);
+  }
+  .sub .sub_container {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
 @media (max-width: 1279px) {
   .header {
-    height: 72px;
-    padding: 40px 7.25%;
+    height: 100px;
+    padding: 32px 80px;
     overflow: hidden;
   }
   .header .nav_bg {
@@ -697,10 +701,18 @@ body.prevent_scroll {
   .sub + .footer {
     height: 460px;
   }
+  .sub .sub_container .title {
+    font-size: 32px;
+  }
+  .sub .sub_container .title .desc {
+    font-size: 20px;
+    margin-top: 8px;
+  }
 }
 @media (max-width: 767px) {
   .header {
-    padding: 24px 16px;
+    height: 72px;
+    padding: 16px;
   }
   .main + .footer .box_wrap, .sub + .footer .box_wrap {
     padding-left: 16px !important;
@@ -723,6 +735,15 @@ body.prevent_scroll {
   }
   .sub .breadcrumb {
     width: calc(100% - 32px);
+  }
+  .sub .breadcrumb {
+    padding: 16px;
+  }
+  .sub .breadcrumb ul li:not(:first-of-type)::before {
+    margin: 0 8px;
+  }
+  .sub .sub_container {
+    padding: 120px 16px 160px;
   }
 }
 @media screen and (max-width: 649px) {
