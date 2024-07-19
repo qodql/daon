@@ -331,8 +331,7 @@
     height: 220px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -294px;
-       object-position: 0px -294px;
+    object-position: 0px -294px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 220px;
@@ -341,8 +340,7 @@
     height: 345px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px -150px;
-       object-position: 0px -150px;
+    object-position: 0px -150px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 795px;
@@ -382,8 +380,7 @@
     height: 200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -253px;
-       object-position: 0px -253px;
+    object-position: 0px -253px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 200px;
@@ -392,8 +389,7 @@
     height: 325px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px -90px;
-       object-position: 0px -90px;
+    object-position: 0px -90px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 717px;
@@ -523,8 +519,7 @@
     height: 180px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -190px;
-       object-position: 0px -190px;
+    object-position: 0px -190px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 180px;
@@ -533,8 +528,7 @@
     height: 310px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px -22px;
-       object-position: 0px -22px;
+    object-position: 0px -22px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 630px;
@@ -624,8 +618,7 @@
     height: 170px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -134px;
-       object-position: 0px -134px;
+    object-position: 0px -134px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 170px;
@@ -634,8 +627,7 @@
     height: 300px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px 8px;
-       object-position: 0px 8px;
+    object-position: 0px -3px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 566px;
@@ -687,8 +679,7 @@
     height: 300px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -497px;
-       object-position: 0px -497px;
+    object-position: 0px -497px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 300px;
@@ -697,8 +688,7 @@
     height: 300px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px 8px;
-       object-position: 0px 8px;
+    object-position: 0px -44px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p img {
     border-radius: 8px;
@@ -846,7 +836,123 @@
     left: 5px;
   }
 }
+@media screen and (max-width: 610px) {
+  @keyframes fadeIn {}
+  @keyframes expand {}
+  .intro .sub_container .contents .intro_grid_wrapper p {
+    height: 240px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
+    object-position: 0px -416px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) {
+    height: 200px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
+    object-position: 0px -44px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p img {
+    border-radius: 8px;
+  }
+  .intro .sub_container .contents .intro_txt {
+    width: 393px;
+    margin: 36px auto;
+  }
+  .intro .sub_container .contents .intro_txt h5 {
+    font-size: 14px;
+    line-height: 28px;
+  }
+  .intro .sub_container .contents .intro_full_bg {
+    margin-top: 60px;
+  }
+  .intro .sub_container .contents .intro_full_bg.intro_expand::after, .intro .sub_container .contents .intro_full_bg.intro_expand::before {
+    animation: expand 2000ms ease-out forwards;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
+    width: 469px;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo {
+    margin: 0 auto;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
+    width: 80%;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
+    margin: 24px auto;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
+    font-size: 16px;
+    line-height: 36px;
+  }
+}
 @media (max-width: 479px) {
+  @keyframes fadeIn {}
+  @keyframes expand {}
+  .intro .sub_container .contents .intro_grid_wrapper {
+    gap: 4px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p {
+    height: 150px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
+    height: 150px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) {
+    height: 150px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
+    object-position: 0px -359px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
+    height: 150px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) {
+    height: 150px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
+    object-position: 0px -44px;
+  }
+  .intro .sub_container .contents .intro_grid_wrapper p img {
+    border-radius: 8px;
+  }
+  .intro .sub_container .contents .intro_txt {
+    width: 319px;
+    margin: 24px auto;
+  }
+  .intro .sub_container .contents .intro_txt h5 {
+    line-height: 30px;
+  }
+  .intro .sub_container .contents .intro_full_bg {
+    margin-top: 60px;
+  }
+  .intro .sub_container .contents .intro_full_bg.intro_expand::after, .intro .sub_container .contents .intro_full_bg.intro_expand::before {
+    animation: expand 2000ms ease-out forwards;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
+    width: 469px;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo {
+    margin: 0 auto;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
+    width: 70%;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
+    margin: 24px auto;
+  }
+  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
+    font-size: 14px;
+    line-height: 32px;
+  }
   .contact .sub_container .contents .contact_map .contact_map_btn {
     right: 8px;
     bottom: 12px;

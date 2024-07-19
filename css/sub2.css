@@ -456,7 +456,7 @@
     margin-top: 8px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .sub {
     padding: 0 16px;
   }

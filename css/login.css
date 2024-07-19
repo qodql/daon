@@ -470,7 +470,7 @@ mo-s(파랑):  mo-l와 동일
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  width: fit-content;
+  padding: 72px 40px 48px;
 }
 .login .login_wrap .login_daon {
   margin-bottom: 40px;

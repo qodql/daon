@@ -644,19 +644,19 @@
     text-align: center;
   }
   .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(1), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(1) {
-    width: 320px;
+    width: 200px;
   }
   .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(2), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(2) {
-    width: 180px;
+    width: 100px;
   }
   .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(3), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(3) {
-    width: 180px;
+    width: 100px;
   }
   .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(4), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(4) {
-    width: 340px;
+    width: 200px;
   }
   .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(5), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(5) {
-    width: 330px;
+    width: 200px;
   }
   .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel {
     width: 100%;
