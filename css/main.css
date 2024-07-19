@@ -9,7 +9,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  object-fit: fill;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .quick_menu {
@@ -22,7 +23,8 @@
   left: 50%;
   bottom: 20%;
   transform: translateX(-50%);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   z-index: 11;
@@ -106,6 +108,7 @@
   position: relative;
 }
 .main .container .section .inner .title {
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 64px;
   font-weight: 700;
@@ -180,6 +183,7 @@
   right: 0;
 }
 .main .container .swiper .swiper-pagination {
+  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   display: flex;

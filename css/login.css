@@ -823,6 +823,7 @@ mo-s(파랑):  mo-l와 동일
   margin: 0 auto;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .login .login_wrap .login_daon {
@@ -893,6 +894,7 @@ mo-s(파랑):  mo-l와 동일
   margin-bottom: 16px;
 }
 .join .join_wrap .join_personal_info .join_input_box {
+  width: -moz-fit-content;
   width: fit-content;
 }
 .join .join_wrap .join_personal_info .join_input_box li {
@@ -1012,4 +1014,40 @@ mo-s(파랑):  mo-l와 동일
   width: 212px;
   margin: 0 auto;
   display: block;
+}
+
+/** 분기점 
+~480: 모바일
+481~768: 태블릿
+769~1279: 중간
+1280~: pc
+좌우패딩 16px
+*/
+@media screen and (max-width: 480px) {
+  body {
+    background-color: rgb(183, 219, 201);
+  }
+  body .login_common .logo_txt {
+    margin-bottom: 56px;
+  }
+  body .login .login_wrap {
+    width: 480px;
+    padding: 72px 40px 48px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0;
+  }
+  body .login .login_wrap .login_daon .login_login_daon {
+    margin-bottom: 60px;
+  }
+  body .login .login_wrap .login_daon .login_login_daon .login_input_box {
+    margin-bottom: 24px;
+  }
+  body .login .login_wrap .login_daon .login_login_daon .login_input_box .email_box {
+    margin-bottom: 12px;
+  }
+  body .login .login_wrap .login_daon .login_join_daon {
+    margin-bottom: 40px;
+  }
 }
