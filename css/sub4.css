@@ -8,7 +8,7 @@
 /* 변동사항(확인 후 삭제하셔도 됩니다!)--------------------------------------
 pc-s: 없음
 tab(노랑): 
- - pc-s에서 .txt_long p 의 우측패딩값 120->80px으로 변경, 나머지는 pc-s와 동일
+ - .txt_long p의 우측패딩값 120->80px으로 변경, 나머지는 pc-s와 동일
 mo-l(초록):
  - 기본 컨텐츠 좌우 패딩 16px
  - .card_name(제목): 세로정렬, 폰트 크기 24->20px
@@ -20,19 +20,14 @@ mo-s(파랑): mo-l와 동일
 */
 /*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
 @media (max-width: 1279px) {
-  body {
-    background-color: rgb(234, 248, 111);
-  }
   body .around_spot .sub_container .contents .sub4_card .card_txt .txt_long p {
     padding: 40px 80px 40px 32px;
   }
 }
 @media (max-width: 767px) {
-  body {
-    background-color: rgb(123, 248, 111);
-  }
   body .around_spot .sub_container {
-    margin: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   body .around_spot .sub_container .contents .sub4_card .card_name {
     flex-direction: column;
@@ -60,53 +55,9 @@ mo-s(파랑): mo-l와 동일
     margin: 8px;
   }
   body .around_spot .sub_container .contents .sub4_card .card_txt .txt_long p {
-    padding: 48px 24px;
+    padding: 24px;
   }
 }
-@media (max-width: 479px) {
-  body {
-    background-color: rgb(111, 209, 248);
-  }
-}
-/*↓↓↓↓↓↓↓↓하단 나중에 작업 완료 후 삭제↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-/* 
-body{
-    background-color: rgb(248, 248, 111);
-    // 배경색 나중에 완전히 끝나면 삭제하기
-    .around_spot{
-        .sub_top{}
-        .sub_container{
-            .contents{
-                .sub4_card{ 
-                    .card_name{
-                        strong{
-                        }
-                        .card_name_eng{}
-                        p{
-                        }
-                    }
-                    .card_img{
-                        .imgbox{
-                        }
-                    }
-
-                    .card_txt{        
-                        .txt_short{
-                            li{
-                            }
-                        }
-                        .txt_long{
-                            p{
-                                padding: 40px 80px 40px 32px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-*/
 .around_spot img {
   vertical-align: middle;
 }
