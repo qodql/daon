@@ -471,6 +471,7 @@ mo-s(파랑):  mo-l와 동일
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 72px 40px 48px;
+  width: fit-content;
 }
 .login .login_wrap .login_daon {
   margin-bottom: 40px;
@@ -540,6 +541,7 @@ mo-s(파랑):  mo-l와 동일
 }
 .join .join_wrap .join_personal_info .join_input_box {
   width: 100%;
+  width: fit-content;
 }
 .join .join_wrap .join_personal_info .join_input_box li {
   margin-bottom: 12px;
@@ -662,4 +664,9 @@ mo-s(파랑):  mo-l와 동일
 .join_complete .join_complete_wrap .join_complete_btn a button {
   max-width: 240px;
   padding: 16px 48px;
+}
+.join_complete .join_complete_wrap .join_complete_btn button {
+  width: 212px;
+  margin: 0 auto;
+  display: block;
 }
