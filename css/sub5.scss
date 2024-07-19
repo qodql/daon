@@ -19,6 +19,10 @@
     width: 1400px;
     margin: 0 auto;
     padding: 0 16px;
+    .title {
+      padding: 60px;
+      margin: 80px;
+    }
     .contents {
       table {
         width: 100%;
@@ -83,91 +87,89 @@
   }
 }
 // 공지사항 내용
-.title{
+.title2 {
   display: none;
-  
-.contents_notice {
-  justify-items: end;
-  padding: 0 16px;
-  .notice_inner_1 {
-    text-align: center;
-    padding-bottom: 64px;
-    h2 {
-      font-size: 40px;
-      font-weight: bold;
-      p {
-        font-size: 24px;
+  .contents_notice {
+    justify-items: end;
+    padding: 0 16px;
+    .notice_inner_1 {
+      text-align: center;
+      padding-bottom: 64px;
+      h2 {
+        font-size: 40px;
         font-weight: bold;
-      }
-    }
-  }
-  .notice_inner_2 {
-    background-color: rgba(226, 226, 226, 0.26);
-    padding-top: 64px;
-    margin-bottom: 64px;
-    padding: 32px 44px 44px;
-    justify-items: center;
-    .p {
-      font-size: 20px;
-    }
-  }
-  .notice_inner_3 {
-    border: solid 1px #afafaf;
-    table {
-      width: 100%;
-      tr {
-        border-bottom: 1px solid #afafaf;
-        &:last-child {
-          border: none;
+        p {
+          font-size: 24px;
+          font-weight: bold;
         }
       }
     }
-    td:nth-of-type(1) {
-      width: 80px;
+    .notice_inner_2 {
+      background-color: rgba(226, 226, 226, 0.26);
+      padding-top: 64px;
+      margin-bottom: 64px;
+      padding: 32px 44px 44px;
+      justify-items: center;
+      .p {
+        font-size: 20px;
+      }
     }
-    td {
-      padding: 15px 15px 15px 40px;
+    .notice_inner_3 {
+      border: solid 1px #afafaf;
+      table {
+        width: 100%;
+        tr {
+          border-bottom: 1px solid #afafaf;
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+      td:nth-of-type(1) {
+        width: 80px;
+      }
+      td {
+        padding: 15px 15px 15px 40px;
+      }
+    }
+    .notice_list {
+      margin: 80px auto;
+      text-align: center;
+    }
+    .notice_list a {
+      padding: 16px 68px;
+      border: #357ef1;
+      border-radius: 8px;
+      background-color: #357ef1;
+      color: white;
+      font-size: 24px;
+      display: inline-block;
     }
   }
-  .notice_list {
-    margin: 80px auto;
-    text-align: center;
-  }
-  .notice_list a {
-    padding: 16px 68px;
-    border: #357ef1;
-    border-radius: 8px;
-    background-color: #357ef1;
-    color: white;
-    font-size: 24px;
-    display: inline-block;
-  }
-}
 }
 // faq
 // faq는 별도로 inner로 빼지 않고, 일괄 작업 진행함.
 .faq {
-  .sub_top{
+  .sub_top {
     background-image: url(../img/img_community_faq_0.jpg);
   }
   .sub_container {
-    .title{
+    .title {
       display: flex;
       justify-content: center;
 
-      .icon{
+      .icon {
         position: relative;
       }
-      
+
       .icon .img1 {
         padding: 10px;
       }
-      
+
       &:hover span {
         display: block !important;
-       
       }
-      
+
       .icon span {
         white-space: nowrap;
         position: absolute;
@@ -183,7 +185,7 @@
         display: none;
         // transform: translateX(-50%);
       }
-      
+
       .icon span:after {
         content: "";
         position: absolute;
@@ -196,15 +198,15 @@
         border-bottom: 0px solid transparent;
       }
     }
-      .desc{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        padding-bottom: 40px;
-        font-size: 24px;
-        font-weight: bold;
-      }
+    .desc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding-bottom: 40px;
+      font-size: 24px;
+      font-weight: bold;
+    }
     .contents {
       .sub5_community_faq {
         ul {
@@ -270,21 +272,21 @@
             flex-direction: column;
             margin-bottom: 20px;
 
-           .blue {
+            .blue {
               border: solid 1px #357ef1;
               color: #357ef1;
             }
             .green {
-              border: solid 1px #00C400;
-              color: #00C400;
+              border: solid 1px #00c400;
+              color: #00c400;
             }
             .purple {
-              border: solid 1px #8E40B7;
-              color: #8E40B7;
+              border: solid 1px #8e40b7;
+              color: #8e40b7;
             }
             .yell {
-              border: solid 1px #FFB140;
-              color: #FFB140;
+              border: solid 1px #ffb140;
+              color: #ffb140;
             }
 
             .question {
@@ -329,7 +331,7 @@
   }
 
   .sub_container {
-    .title{
+    .title {
       padding-bottom: 70px;
     }
     .contents {
@@ -366,9 +368,9 @@
 }
 
 // 히든쪽은 js 작업 진행할 때 팝업 기능을 이용하여
-// 마저 작업할 예정.  
+// 마저 작업할 예정.
 
-.hidden{
+.hidden {
   display: none;
 }
 
