@@ -18,6 +18,7 @@
   .sub_container {
     width: 1400px;
     margin: 0 auto;
+    padding: 0 16px;
     .contents {
       table {
         width: 100%;
@@ -82,8 +83,12 @@
   }
 }
 // 공지사항 내용
+.title{
+  display: none;
+  
 .contents_notice {
   justify-items: end;
+  padding: 0 16px;
   .notice_inner_1 {
     text-align: center;
     padding-bottom: 64px;
@@ -138,7 +143,7 @@
     display: inline-block;
   }
 }
-
+}
 // faq
 // faq는 별도로 inner로 빼지 않고, 일괄 작업 진행함.
 .faq {
