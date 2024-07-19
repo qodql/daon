@@ -418,23 +418,24 @@
         display: none;
     }
 }
+
 @include res('mo-l'){
     .main {
         .container {
             .section {
                 .inner {
-                    padding: 80px 2%;
+                    padding: 80px 16px;
                     .more_btn {
-                        right: 2%;
+                        right: 16px;
                     }
                 }
                 &.room, &.event {
                     .inner {
                         .title {
-                            padding-left: 2%;
+                            padding-left: 16px;
                         }
                         .more_btn {
-                            right: 2%;
+                            right: 16px;
                         }
                     }
                 }
@@ -445,7 +446,7 @@
                     .inner {
                         padding-bottom: 80px;
                         .more_btn {
-                            right: 2%;
+                            right: 16px;
                             top: 145px;
                             bottom: auto;
                         }
@@ -484,7 +485,7 @@
                     .inner {
                         margin-top: 0;
                         .contents {
-                            padding-left: 2%;
+                            padding-left: 16px;
                         }
                     }
                 }
@@ -511,7 +512,7 @@
             }
             .swiper {
                 .swiper_btn_wrap {
-                    right: 2%;
+                    right: 16px;
                     bottom: 48px;
                     > * {
                         width: 52px;
@@ -525,7 +526,7 @@
                     }
                 }
                 .swiper-pagination {
-                    left: 2%;
+                    left: 16px;
                     bottom: 56px;
                     .swiper-pagination-bullet {
                         width: 10px;
