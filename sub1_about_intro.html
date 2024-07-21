@@ -201,24 +201,13 @@
     
     <script>
         //intro grid image scroll event
-        function animateElement(elementClass, slideInClass){
+
+
+
         
-        const element = document.getElementsByClassName(elementClass)[0]; // id로 해당 요소 찾기
-        const rect = element.getBoundingClientRect(); // 요소 위치 구하기
-    
-        // 요소가 화면 안쪽으로 들어왔을 경우 isVisible로 인식
-        const isVisible = rect.top <= window.innerHeight && rect.bottom >= 1200; 
-            if(isVisible) {
-                element.classList.add(slideInClass);
-            }
-        };
-  
-        document.addEventListener("scroll", function() {
-            animateElement("intro_grid_wrapper", "intro_fadein");
-        });
 
         //intro full bg scroll event
-        function animateElement2(elementClass, slideInClass) {
+        function expandAnimate(elementClass, slideInClass) {
         
         const element2 = document.getElementsByClassName(elementClass)[0]; 
         const rect2 = element2.getBoundingClientRect(); 
@@ -231,7 +220,7 @@
         }
   
         document.addEventListener("scroll", function() {
-            animateElement2("intro_full_bg", "intro_expand");
+            expandAnimate("intro_full_bg", "intro_expand");
         });
     </script>
 
