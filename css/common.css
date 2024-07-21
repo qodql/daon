@@ -179,6 +179,7 @@
 }
 
 .main + .footer {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
@@ -271,6 +272,4 @@
   display: block;
   border-radius: 8px;
   background: #fff url("/img/icon/icon_sns_instagram.svg") no-repeat center;
-}
-
-/*# sourceMappingURL=common.css.map */
+}/*# sourceMappingURL=common.css.map */
