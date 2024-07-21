@@ -1,1 +1,502 @@
+<<<<<<< HEAD
 /*# sourceMappingURL=sub3.css.map */
+=======
+@charset "UTF-8";
+.pool .sub_top {
+  background-image: url("../img/img_facilities_pool_0.jpg");
+}
+.pool .sub_container .contents .sub3_pool_contents {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-img {
+  width: 66%;
+  display: flex;
+  overflow: hidden;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-img a {
+  flex-shrink: 0;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-img a .img:nth-last-of-type(1) {
+  position: absolute;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-img a .img:nth-last-of-type(2) {
+  position: absolute;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-img a .img:nth-last-of-type(3) {
+  position: absolute;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-img a .img:nth-last-of-type(4) {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(1) {
+  width: 62px;
+  height: 32px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #a0fad9;
+  border-radius: 8px;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(2) {
+  font-size: 40px;
+  margin: 12px 0px;
+  font-weight: 600;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(3) {
+  font-size: 20px;
+  margin: 24 0px;
+  font-weight: 600;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s {
+  margin-top: auto;
+  font-size: 20px;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s .pool-s1 {
+  padding: 32px 32px 32px;
+  margin: 0 0 12px;
+  background-color: #efefef;
+  border-radius: 20px;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s .pool-s1 dt {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s .pool-s1 dt::before {
+  content: "●";
+  font-size: 0.5rem;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-bt a {
+  border: 2px solid #2f2f2f;
+  padding: 16px 26px 10px;
+  border-radius: 40px;
+  display: inline-block;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-bt a::after {
+  content: url(../img/icon/icon_facilities_arrow.svg);
+  display: none;
+  vertical-align: middle;
+  padding-left: 8px;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-bt a.active {
+  background-color: #2f2f2f;
+  color: white;
+}
+.pool .sub_container .contents .sub3_pool_contents .pool-title .pool-bt a.active::after {
+  display: inline-block;
+}
+
+.rooftop .sub_top {
+  background-image: url("../img/img_facilities_rooftop_0.jpg");
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img {
+  width: 66%;
+  display: flex;
+  overflow: hidden;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img a {
+  flex-shrink: 0;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img a .img:nth-last-of-type(1) {
+  position: absolute;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img a .img:nth-last-of-type(2) {
+  position: absolute;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img a .img:nth-last-of-type(3) {
+  position: absolute;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img a .img:nth-last-of-type(4) {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-t p:nth-of-type(1) {
+  width: 80px;
+  height: 32px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  background-color: #ddef73;
+  border-radius: 8px;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-t p:nth-of-type(2) {
+  font-size: 40px;
+  margin: 12px 0px;
+  font-weight: 600;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-t p:nth-of-type(3) {
+  font-size: 20px;
+  margin: 24 0px;
+  font-weight: 600;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-s {
+  padding: 214px 0 34px;
+  font-size: 20px;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-s .rooftop-s1 {
+  padding: 32px 32px 32px;
+  margin: 0 0 12px;
+  background-color: #efefef;
+  border-radius: 20px;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-s .rooftop-s1 dt {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-s .rooftop-s1 dt::before {
+  content: "●";
+  font-size: 0.5rem;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-bt a {
+  border: 2px solid #2f2f2f;
+  padding: 16px 26px 10px;
+  border-radius: 40px;
+  display: inline-block;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-bt a::after {
+  content: url(../img/icon/icon_facilities_arrow.svg);
+  display: none;
+  vertical-align: middle;
+  padding-left: 8px;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-bt a.active {
+  background-color: #2f2f2f;
+  color: white;
+}
+.rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-bt a.active::after {
+  display: inline-block;
+}
+
+.bbq .sub_top {
+  background-image: url("../img/img_facilities_bbq_0.jpg");
+}
+.bbq .sub_container .sub3_bbq_contents {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-img {
+  width: 66%;
+  overflow: hidden;
+  display: flex;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-img a {
+  flex-shrink: 0;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-img a .img:nth-last-of-type(1) {
+  position: absolute;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-img a .img:nth-last-of-type(2) {
+  position: absolute;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-img a .img:nth-last-of-type(3) {
+  position: absolute;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-img a .img:nth-last-of-type(4) {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(1) {
+  width: 87px;
+  height: 32px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #efaf73;
+  border-radius: 8px;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(2) {
+  font-size: 40px;
+  margin: 12px 0px;
+  font-weight: 600;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(3) {
+  font-size: 20px;
+  margin: 24 0px;
+  font-weight: 600;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s {
+  padding: 64px 0;
+  font-size: 20px;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s .bbq-s1 {
+  padding: 32px 32px 32px;
+  margin: 0 0 12px;
+  background-color: #efefef;
+  border-radius: 20px;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s .bbq-s1 dt {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s .bbq-s1 dt::before {
+  content: "●";
+  font-size: 0.5rem;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-bt a {
+  border: 2px solid #2f2f2f;
+  padding: 16px 26px 10px;
+  border-radius: 40px;
+  display: inline-block;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-bt a::after {
+  content: url(../img/icon/icon_facilities_arrow.svg);
+  display: none;
+  vertical-align: middle;
+  padding-left: 8px;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-bt a.active {
+  background-color: #2f2f2f;
+  color: white;
+}
+.bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-bt a.active::after {
+  display: inline-block;
+}
+
+@media (max-width: 1499px) {
+  .pool .sub_container .contents .sub3_pool_contents {
+    padding: 20px 40px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-img {
+    width: 60%;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title {
+    width: 36%;
+  }
+}
+@media (max-width: 1279px) {
+  .pool .sub_container .contents .sub3_pool_contents {
+    padding: 20px 40px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-img {
+    width: 54%;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title {
+    width: 44%;
+  }
+}
+@media (max-width: 1024px) {
+  .pool .sub_container .contents .sub3_pool_contents {
+    padding: 20px 40px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-img {
+    width: 54%;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title {
+    width: 44%;
+  }
+}
+@media (max-width: 976px) {
+  .pool .sub_container .contents .sub3_pool_contents {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-img {
+    width: 100%;
+    height: auto;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-img .img {
+    position: relative;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t {
+    margin: 20px 0px 40px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(2) {
+    font-size: 32px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(3) {
+    font-size: 18px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+    font-size: 18px;
+  }
+  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s .pool-s1 {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 479px) {
+  .bbq .sub_container .contents .sub3_bbq_contents {
+    padding: 20px 40px;
+  }
+  .bbq .sub_container .contents .sub3_bbq_contents .bbq-img {
+    width: 60%;
+  }
+  .bbq .sub_container .contents .sub3_bbq_contents .bbq-title {
+    width: 36%;
+  }
+}
+@media (max-width: 1499px) {
+  .bbq .sub_container .sub3_bbq_contents {
+    padding: 20px 40px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-img {
+    width: 60%;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title {
+    width: 38%;
+  }
+}
+@media (max-width: 1279px) {
+  .bbq .sub_container .sub3_bbq_contents {
+    padding: 20px 40px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-img {
+    width: 54%;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title {
+    width: 44%;
+  }
+}
+@media (max-width: 1024px) {
+  .bbq .sub_container .sub3_bbq_contents {
+    padding: 20px 40px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-img {
+    width: 54%;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title {
+    width: 44%;
+  }
+}
+@media (max-width: 976px) {
+  .bbq .sub_container .sub3_bbq_contents {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-img {
+    width: 100%;
+    height: auto;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-img .img {
+    position: relative;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t {
+    margin: 20px 0px 40px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(2) {
+    font-size: 32px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(3) {
+    font-size: 18px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+    font-size: 18px;
+  }
+  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s .pool-s1 {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1499px) {
+  .rooftop .sub_container .sub3_rooftop_contents {
+    padding: 20px 40px;
+  }
+  .rooftop .sub_container .sub3_rooftop_contents .rooftop-img {
+    width: 60%;
+  }
+  .rooftop .sub_container .sub3_rooftop_contents .rooftop-title {
+    width: 38%;
+  }
+}
+@media (max-width: 1279px) {
+  .rooftop .sub_container .sub3_rooftop_contents {
+    padding: 20px 40px;
+  }
+  .rooftop .sub_container .sub3_rooftop_contents .rooftop-img {
+    width: 54%;
+  }
+  .rooftop .sub_container .sub3_rooftop_contents .rooftop-title {
+    width: 44%;
+  }
+}
+@media (max-width: 1024px) {
+  .rooftop .sub_container .sub3_rooftop_contents {
+    padding: 20px 40px;
+  }
+  .rooftop .sub_container .sub3_rooftop_contents .rooftop-img {
+    width: 54%;
+  }
+  .rooftop .sub_container .sub3_rooftop_contents .rooftop-title {
+    width: 44%;
+  }
+}
+@media (max-width: 976px) {
+  .rooftop .sub_container .contents .sub3_rooftop_contents {
+    flex-direction: column;
+    align-items: center;
+  }
+  .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img {
+    width: 100%;
+    height: auto;
+  }
+  .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-img .img {
+    position: relative;
+  }
+  .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-t {
+    margin: 20px 0px 40px;
+  }
+  .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-s {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+    font-size: 18px;
+  }
+  .rooftop .sub_container .contents .sub3_rooftop_contents .rooftop-title .rooftop-s .rooftop-s1 {
+    margin-bottom: 20px;
+  }
+}
+>>>>>>> 8dede0a10cc94ee84c94fa129348c11d759cf755

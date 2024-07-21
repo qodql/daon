@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAON 리뉴얼</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <!-- [↓] swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/common.js"></script>
+    <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
+    <link rel="stylesheet" href="./css/sub2.css">
+    <script src="./js/sub2.js"></script>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="nav_bg"></div>
+        <div class="inner">
+            <div class="logo_wrap">
+                <h1 class="logo">
+                    <a href="./index.html"></a>
+                </h1>
+                <button type="button" class="mb_only mb_menu"></button>
+            </div>
+            <nav class="nav">
+                <ul class="sub">
+                    <li>
+                        <a href="./sub1_about_intro.html" class="depth_1">ABOUT</a>
+                        <ul class="depth_2">
+                            <a href="./sub1_about_intro.html">다온소개</a>
+                            <li><a href="./sub1_about_contact.html">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./sub2_room_love_you.html" class="depth_1">ROOM</a>
+                        <ul class="depth_2">
+                            <li><a href="./sub2_room_love_you.html">LOVE YOU</a></li>
+                            <li><a href="./sub2_room_only_you.html">ONLY YOU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./sub3_facilities_pool.html" class="depth_1">FACILITIES</a>
+                        <ul class="depth_2">
+                            <li><a href="./sub3_facilities_pool.html">야외 수영장</a></li>
+                            <li><a href="./sub3_facilities_bbq.html">바베큐</a></li>
+                            <li><a href="./sub3_facilities_rooftop.html">옥상정원</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./sub4_around_spot.html" class="depth_1 solo">AROUND SPOT</a>
+                    </li>
+                    <li>
+                        <a href="./sub5_community_notice.html" class="depth_1">COMMUNITY</a>
+                        <ul class="depth_2">
+                            <li><a href="./sub5_community_notice.html">공지사항</a></li>
+                            <li><a href="./sub5_community_event.html">이벤트</a></li>
+                            <li><a href="./sub5_community_faq.html">FAQ</a></li>
+                            <li><a href="./sub5_community_review.html">이용후기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./sub6_reservation_step1.html" class="depth_1">RESERVATION</a>
+                        <ul class="depth_2">
+                            <li><a href="./sub6_reservation_step1.html">예약하기</a></li>
+                            <li><a href="./sub6_reservation_look.html">예약조회</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="nav_menu">
+                <li><a href="./login.html">로그인</a></li>
+                <li><a href="./join.html">회원가입</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- 컨텐츠 -->
+    <div class="sub room_common only_you">
+        <!-- 서브페이지 상단 고정 영역 -->
+        <div class="sub_top">
+            <div class="dim"></div>
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./sub2_room_love_you.html">ROOM</a></li>
+                    <li><a href="./sub2_room_love_you.html">LOVE YOU</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub_container">
+            <h2 class="title">
+                객실안내
+                <span class="desc">세계적인 관광지 산토리니 스타일의 공간에 특별한 순간을 멋지고 우아하게 기억하세요.</span>
+            </h2>
+            <ul class="tab line">
+                <li class="on"><a href="" class="love_you_a">LOVE YOU</a></li>
+                <li><a href="./sub2_room_only_you.html">ONLY YOU</a></li>
+            </ul>
+            <!-- 페이지 컨텐츠 내용 -->
+            <div class="contents">
+                <div class="main_box">
+                    <ul class="room_content">
+                        <li class="main_box2">
+                            <div class="swiper love_you_list">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love101_01.jpg" alt="love you 101호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love101_02.jpg" alt="love you 101호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love101_03.jpg" alt="love you 101호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love101_04.jpg" alt="love you 101호">
+                                    </div>
+                                </div>
+                                <div class="swiper_btn_wrap">
+                                    <div class="swiper-button-next love_you_next"></div>
+                                    <div class="swiper-button-prev love_you_prev"></div>
+                                </div>
+                            </div>
+                            <ul class="all_text">
+                                <h3>LOVE YOU 101호</h3>
+                                <li>
+                                    <p>객실크기</p>
+                                    <p>16평</p>
+                                </li>
+                                <li>
+                                    <p>객실구성</p>
+                                    <p>침대룸A(더블1),주방, 화장실</p>
+                                </li>
+                                <li>
+                                    <p>최대인원</p>
+                                    <p>기본2인/최대6인</p>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
+                        </li>
+                        <li class="main_box2">
+                            <div class="swiper love_you_list">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love102_01.jpg" alt="love you 102호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love102_02.jpg" alt="love you 102호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love102_03.jpg" alt="love you 102호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love102_04.jpg" alt="love you 102호">
+                                    </div>
+
+
+                                </div>
+                                <div class="swiper_btn_wrap">
+                                    <div class="swiper-button-next love_you_next"></div>
+                                    <div class="swiper-button-prev love_you_prev"></div>
+                                </div>
+                            </div>
+                            <ul class="all_text">
+                                <h3>LOVE YOU 102호</h3>
+                                <li>
+                                    <p>객실크기</p>
+                                    <p>16평</p>
+                                </li>
+                                <li>
+                                    <p>객실구성</p>
+                                    <p>침대룸A(더블1),주방, 화장실</p>
+                                </li>
+                                <li>
+                                    <p>최대인원</p>
+                                    <p>기본2인/최대6인</p>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
+                        </li>
+                        <li class="main_box2">
+                            <div class="swiper love_you_list">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love201_01.jpg" alt="love you 201호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love201_02.jpg" alt="love you 201호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love201_03.jpg" alt="love you 201호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love201_04.jpg" alt="love you 201호">
+                                    </div>
+
+
+                                </div>
+                                <div class="swiper_btn_wrap">
+                                    <div class="swiper-button-next love_you_next"></div>
+                                    <div class="swiper-button-prev love_you_prev"></div>
+                                </div>
+                            </div>
+                            <ul class="all_text">
+                                <h3>LOVE YOU 201호</h3>
+                                <li>
+                                    <p>객실크기</p>
+                                    <p>16평</p>
+                                </li>
+                                <li>
+                                    <p>객실구성</p>
+                                    <p>침대룸A(더블1),주방, 화장실</p>
+                                </li>
+                                <li>
+                                    <p>최대인원</p>
+                                    <p>기본2인/최대6인</p>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
+                        </li>
+                        <li class="main_box2">
+                            <div class="swiper love_you_list">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love202_01.jpg" alt="love you 202호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love202_02.jpg" alt="love you 202호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love202_03.jpg" alt="love you 202호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love202_04.jpg" alt="love you 202호">
+                                    </div>
+
+
+                                </div>
+                                <div class="swiper_btn_wrap">
+                                    <div class="swiper-button-next love_you_next"></div>
+                                    <div class="swiper-button-prev love_you_prev"></div>
+                                </div>
+                            </div>
+                            <ul class="all_text">
+                                <h3>LOVE YOU 202호</h3>
+                                <li>
+                                    <p>객실크기</p>
+                                    <p>16평</p>
+                                </li>
+                                <li>
+                                    <p>객실구성</p>
+                                    <p>침대룸A(더블1),주방, 화장실</p>
+                                </li>
+                                <li>
+                                    <p>최대인원</p>
+                                    <p>기본2인/최대6인</p>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
+                        </li>
+                        <li class="main_box2">
+                            <div class="swiper love_you_list">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love203_01.jpg" alt="love you 203호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love203_02.jpg" alt="love you 203호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love203_03.jpg" alt="love you 203호">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/img_sub2_room_love203_04.jpg" alt="love you 203호">
+                                    </div>
+
+
+                                </div>
+                                <div class="swiper_btn_wrap">
+                                    <div class="swiper-button-next love_you_next"></div>
+                                    <div class="swiper-button-prev love_you_prev"></div>
+                                </div>
+                            </div>
+                            <ul class="all_text">
+                                <h3>LOVE YOU 203호</h3>
+                                <li>
+                                    <p>객실크기</p>
+                                    <p>16평</p>
+                                </li>
+                                <li>
+                                    <p>객실구성</p>
+                                    <p>침대룸A(더블1),주방, 화장실</p>
+                                </li>
+                                <li>
+                                    <p>최대인원</p>
+                                    <p>기본2인/최대6인</p>
+                                </li>
+                                <button onclick="location.href='./sub6_reservation_step1.html'" ;>예약하기</button>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="room_info_amenities">
+                    <h2>
+                        Amenities
+                    </h2>
+                    <div class="bar1"></div>
+                    <div class="icon_box">
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_01.svg" alt=""></p>
+                            <span>TV</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_02.svg" alt=""></p>
+                            <span>샴푸/컨디셔너</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_03.svg" alt=""></p>
+                            <span>드라이기</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_04.svg" alt=""></p>
+                            <span>전자레인지</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_05.svg" alt=""></p>
+                            <span>침대</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_06.svg" alt=""></p>
+                            <span>취사도구</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_07.svg" alt=""></p>
+                            <span>샤워실</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_08.svg" alt=""></p>
+                            <span>냉장고</span>
+                        </div>
+                        <div class="vector_icon">
+                            <p><img src="./img/icon/icon_sub2_room_09.svg" alt=""></p>
+                            <span>에어컨</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="caution">
+                    <h2>주의사항</h2>
+                    <div class="text_flexbox">
+                        <div>
+                            <p><b>애완견 동반</b>시 입실이 <b>불가능</b> 합니다.</p>
+
+                            <p>보호자랑 동반하지 않은 미성년자는 예약이 <b>불가능</b> 합니다</p>
+
+
+                        </div>
+                        <div class="white-space">
+                            <p>최대 인원 기준 <b>2인 초과</b>시 <b>추가 요금</b>이 발생할 수 있습니다</p>
+
+
+                            <p>금액은 부가세 별도,평일 비수기 기준입니다. 자세한 금액은 <b>예약시 확인</b>해주세요. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="fixed_menu">
+            <ul>
+                <li class="weather_btn">
+                    <a href="#">
+                        <img src="./img/icon/icon_clouds.svg" alt="weather">
+                        <span>30.1°</span>
+                    </a>
+                </li>
+                <li class="chat_btn">
+                    <a href="#">
+                        <img src="./img/icon/icon_chat.svg" alt="chat">
+                    </a>
+                </li>
+                <li class="top_btn">
+                    <a href="#">
+                        <img src="./img/icon/icon_top.svg" alt="top">
+                        <span>TOP</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="box_wrap">
+            <div class="top">
+                <h1 class="logo">
+                    <a href="./index.html"><img src="./img/logo_white.svg" alt=""></a>
+                </h1>
+                <ul>
+                    <li><a href="./sub_policy_service.html">이용약관</a></li>
+                    <li><a href="./sub_policy_privacy.html">개인정보처리방침</a></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <div class="info">
+                    <ul>
+                        <li>
+                            <p>
+                                <span>주소</span>
+                                경기도 가평군 가평읍 경반안로 357-187 (경반리 583-34)
+                            </p>
+                            <p>
+                                <span>대표</span>
+                                박춘하
+                            </p>
+                            <p>
+                                <span>사업자등록번호</span>
+                                286-11-00158
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>전화번호</span>
+                                031-581-0662
+                            </p>
+                            <p>
+                                <span>E-mail</span>
+                                daonpension@daon.com
+                            </p>
+                        </li>
+                    </ul>
+                    <p class="copyright">Copyright @2015 다온펜션 All Rights Reserved</p>
+                </div>
+                <ul class="sns_btn">
+                    <li>
+                        <a href="https://www.instagram.com/explore/tags/%EA%B0%80%ED%8F%89%EB%8B%A4%EC%98%A8%ED%8E%9C%EC%85%98/"
+                            target="_blank">instagram</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/people/%EA%B0%80%ED%8F%89%EB%8B%A4%EC%98%A8/pfbid029trZ5x6crfe8x2XLffh3CHvMDx9koQc5EXsoCPaXACQ5nGZZrTTWTmHtWikcG6del/"
+                            target="_blank">facebook</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

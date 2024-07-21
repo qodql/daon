@@ -13,13 +13,14 @@
     }
 }
 .quick_menu {
-    width: 1400px;
+    max-width: 1400px;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 0 16px;
     position: absolute;
     left: 50%;
-    bottom: 260px;
+    bottom: 20%;
     transform: translateX(-50%);
     backdrop-filter: blur(3px);
     background-color: rgba(0, 0, 0, 0.05);
@@ -73,7 +74,7 @@
                     bottom: -8px;
                     width: 50px;
                     height: 50px;
-                    background: url("/img/icon/icon_select.svg") no-repeat center;
+                    background: url("../img/icon/icon_select.svg") no-repeat center;
                     cursor: pointer;
                     z-index: 1;
                 }
@@ -89,10 +90,10 @@
             height: 80px;
             padding: 24px;
             display: block;
-            background: url("/img/icon/icon_search.svg") no-repeat center;
+            background: url("../img/icon/icon_search.svg") no-repeat center;
             transition: all 0.3s;
             &:hover {
-                background: #fff url("/img/icon/icon_search_black.svg") no-repeat center;
+                background: #fff url("../img/icon/icon_search_black.svg") no-repeat center;
             }
         }
     }
@@ -138,7 +139,7 @@
                             width: 32px;
                             height: 32px;
                             margin-left: 8px;
-                            background: url("/img/icon/icon_arrow_more.svg") no-repeat center;
+                            background: url("../img/icon/icon_arrow_more.svg") no-repeat center;
                         }
                         &:hover {
                             &::after {
@@ -166,13 +167,13 @@
                         display: block;
                         width: 32px;
                         height: 32px;
-                        background: url("/img/icon/icon_arrow.svg") no-repeat center;
+                        background: url("../img/icon/icon_arrow.svg") no-repeat center;
                         transition: all 0.3s;
                     }
                     &:hover {
                         border-color: #2f2f2f;
                         &::after {
-                            background-image: url("/img/icon/icon_arrow_on.svg");
+                            background-image: url("../img/icon/icon_arrow_on.svg");
                         }
                     }
                 }
@@ -225,6 +226,7 @@
                             padding-bottom: 84px;
                             .swiper-slide {
                                 transform: scaleY(0.95);
+                                overflow: hidden;
                                 > img {
                                     border-radius: 20px;
                                 }
@@ -236,6 +238,7 @@
                                     background-color: rgba(0, 0, 0, 0.2);
                                     opacity: 0;
                                     visibility: hidden;
+                                    overflow: hidden;
                                     position: absolute;
                                     left: 0;
                                     top: 0;
@@ -246,6 +249,7 @@
                                         bottom: 20px;
                                         z-index: 11;
                                         transition: all 0.3s;
+                                        border-radius: 20px;
                                         p {
                                             margin-bottom: 12px;
                                             font-size: 40px;
@@ -324,19 +328,19 @@
                             }
                             &.pool {
                                 a {
-                                    background: url("/img/img_facilities_pool.jpg") no-repeat left top;
+                                    background: url("../img/img_facilities_pool.jpg") no-repeat left top;
                                 }
                             }
                             &.rooftop {
                                 z-index: 13;
                                 a {
-                                    background: url("/img/img_facilities_rooftop.jpg") no-repeat right top;
+                                    background: url("../img/img_facilities_rooftop.jpg") no-repeat right top;
                                 }
                             }
                             &.bbq {
                                 z-index: 12;
                                 a {
-                                    background: url("/img/img_facilities_bbq.jpg") no-repeat right top;
+                                    background: url("../img/img_facilities_bbq.jpg") no-repeat right top;
                                 }
                             }
                             &.on {
@@ -423,17 +427,26 @@
                         padding-left: 13.5%;
                     }
                     .event_list {
-                        height: 732px;
+                        padding-bottom: 72px;
                     }
                     .swiper-wrapper {
                         padding-bottom: 20px;
                         .swiper-slide {
-                            width: 640px !important;
-                            height: 640px;
+                            width: calc(100% / 2.5);
+                            height: calc(100% / 2.5);
+                            padding-top: calc(100% / 2.5);
                             position: relative;
                             border-radius: 20px;
                             overflow: hidden;
                             box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.05);
+                            a {
+                                img {
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
                             .txt_box {
                                 width: 320px;
                                 height: 160px;
@@ -469,7 +482,13 @@
                         border-radius: 20px;
                         overflow: hidden;
                         margin-bottom: 40px;
+                        position: relative;
+                        padding-top: 50%;
                         img {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
                             display: block;
                         }
                     }
@@ -478,7 +497,7 @@
                         padding: 0 40px;
                         // common
                         ul{
-                            &:not(.tab_box) {
+                            &:not(.tab.box) {
                                 li {
                                     font-size: 20px;
                                     line-height: 32px;
@@ -492,7 +511,7 @@
                                         height: 32px;
                                         display: inline-block;
                                         margin-right: 8px;
-                                        background: url("/img/icon/icon_check.svg") no-repeat center;
+                                        background: url("../img/icon/icon_check.svg") no-repeat center;
                                     }
                                     span {
                                         font: inherit;
@@ -504,8 +523,10 @@
                         // left
                         .tab_wrap {
                             flex: 0.5;
-                            .tab_box {
-                                margin-bottom: 40px;
+                            .tab {
+                                &.box {
+                                    margin-bottom: 40px;
+                                }
                             }
                             .tab_cont {
                                 ul {
@@ -515,12 +536,12 @@
                                         li {
                                             &:first-of-type {
                                                 &::before {
-                                                    background-image: url("/img/icon/icon_location.svg");
+                                                    background-image: url("../img/icon/icon_location.svg");
                                                 }
                                             }
                                             &:nth-of-type(2) {
                                                 &::before {
-                                                    background-image: url("/img/icon/icon_tel.svg");
+                                                    background-image: url("../img/icon/icon_tel.svg");
                                                 }
                                             }
                                             &:last-of-type {
@@ -528,7 +549,7 @@
                                                 left: 232px;
                                                 bottom: 0;
                                                 &::before {
-                                                    background-image: url("/img/icon/icon_mail.svg");
+                                                    background-image: url("../img/icon/icon_mail.svg");
                                                 }
                                             }
                                         }
@@ -560,14 +581,14 @@
                                     width: 24px;
                                     height: 24px;
                                     margin: 2px 4px 0 0;
-                                    background: url("/img/icon/icon_car.svg") no-repeat center;
+                                    background: url("../img/icon/icon_car.svg") no-repeat center;
                                 }
                             }
                             ul {
                                 li {
                                     &:last-of-type {
                                         &::before {
-                                            background-image: url("/img/icon/icon_tel.svg");
+                                            background-image: url("../img/icon/icon_tel.svg");
                                         }
                                     }
                                 }
@@ -632,7 +653,7 @@
                                                     width: 24px;
                                                     height: 24px;
                                                     margin: 2px 0 0 8px;
-                                                    background: url("/img/icon/icon_influencer.svg") no-repeat center;
+                                                    background: url("../img/icon/icon_influencer.svg") no-repeat center;
                                                 }
                                             }
                                         }
@@ -673,3 +694,5 @@
         transform: translateX(0px);
     }
 }
+
+@import "./_res-main";

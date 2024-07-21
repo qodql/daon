@@ -1,0 +1,1050 @@
+@import "./_res";
+
+@include res('pc-s'){
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    width: 1200px;
+                    grid-gap: 15px;
+                    p{
+                        &:nth-child(1){
+                            height: 580px;
+                        }
+                        &:nth-child(2){
+                            height: 220px;
+                            img{object-position: 0px -294px;}
+                        }
+                        &:nth-child(3){
+                            height: 220px;
+                        }
+                        &:nth-child(4){
+                            height: 345px;
+                            img{object-position: 0px -150px;}
+                        }
+                        img{}
+                    }
+                }
+                .intro_txt{
+                    width: 795px;
+                    h5{
+                        font-size: 22px;
+                        line-height: 36px;
+                    }   
+                }
+                .intro_full_bg{
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 660px;
+                        .logo{margin: 0 auto;}
+                        .intro_full_bg_inner_txt{
+                            margin: 32px auto;
+                            h5{
+                                font-size: 22px;
+                                line-height: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include res('tab'){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    width: 1000px;
+                    grid-gap: 15px;
+                    p{
+                        &:nth-child(1){
+                            height: 540px;
+                        }
+                        &:nth-child(2){
+                            height: 200px;
+                            img{object-position: 0px -253px;}
+                        }
+                        &:nth-child(3){
+                            height: 200px;
+                        }
+                        &:nth-child(4){
+                            height: 325px;
+                            img{object-position: 0px -90px;}
+                        }
+                        img{}
+                    }
+                }
+                .intro_txt{
+                    width: 717px;
+                    margin: 60px auto;
+                    h5{
+                        font-size: 20px;
+                        line-height: 32px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 100px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 597px;
+                        .logo{margin: 0 auto;}
+                        .intro_full_bg_inner_txt{
+                            margin: 28px auto;
+                            h5{
+                                font-size: 20px;
+                                line-height: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
+    .contact{
+        .sub_container{
+            .contents{
+                .contact_map{
+                    width: calc(100% - 20%);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    p{
+                        img{border-radius: 8px;}
+                    }
+                    .contact_map_btn{
+                        right: 16px;
+                        bottom: 16px;
+                        gap: 8px;
+                        button{
+                            height: 38px;
+                            i{
+                                top: 9px;
+                                left: 6px;
+                                img{width: 15px;}
+                            }
+                            a{
+                                font-size: 14px;
+                                padding: 7px 4px;
+                            }
+                        }
+                        .contact_map_naver_btn{
+                            width: 130px;
+                        }
+                        .contact_map_google_btn{
+                            width: 118px;
+                        }
+                    }
+                }
+                .contact_infomation{
+                    width: 80%;
+                    margin: 0 auto;
+                    .contact_info{
+                        &.contact_info1{}
+                        &.contact_info2{
+                            .contact_info_txt{
+                                li{
+                                    p{
+                                        font-size: 14px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 14px;
+                                            height: 14px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                        line-height: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            .contact_info_txt{
+                                li{width: 200%;}
+                            }
+                        }
+                        .contact_info_tit{
+                            margin-top: 24px;
+                            padding-left: 6px;
+                            h3{
+                                font-size: 20px;
+                            }
+                            &::before{
+                                height: 16px;
+                                top: 6px;
+                            }
+                        }
+                        .contact_info_txt{
+                            margin-top: 16px;
+                            li{
+                                font-size: 14px;
+                                padding: 16px;
+                                gap: 4px;
+                                &::before{
+                                    width: 30px;
+                                    height: 30px;
+                                    margin-right: 4px;
+                                }
+                                &::after{
+                                    width: 195%;
+                                    left: 5px;
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   } 
+}
+
+@media screen and (max-width: 1060px){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    width: 800px;
+                    grid-gap: 10px;
+                    p{
+                        &:nth-child(1){
+                            height: 500px;
+                        }
+                        &:nth-child(2){
+                            height: 180px;
+                            img{object-position: 0px -190px;}
+                        }
+                        &:nth-child(3){
+                            height: 180px;
+                        }
+                        &:nth-child(4){
+                            height: 310px;
+                            img{object-position: 0px -22px;}
+                        }
+                        img{}
+                    }
+                }
+                .intro_txt{
+                    width: 630px;
+                    margin: 40px auto;
+                    h5{
+                        font-size: 18px;
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 80px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 530px;
+                        .logo{margin: 0 auto;}
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 18px;
+                                line-height: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
+}
+
+@media screen and (max-width: 975px){
+    .contact{
+        .sub_container{
+            .contents{
+                width: 100%;
+                .contact_map{
+                    p{
+                        img{}
+                    }
+                    .contact_map_btn{
+                        button{
+                            i{
+                                img{}
+                            }
+                            a{
+                            }
+                        }
+                        .contact_map_naver_btn{
+                        }
+                        .contact_map_google_btn{
+                        }
+                    }
+                }
+                .contact_infomation{
+                    .contact_info{
+                        &.contact_info1{
+                            .contact_info_txt{
+                                li{
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 24px;}
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info2{
+                            .contact_info_txt{
+                                li{
+                                    p{
+                                        font-size: 12px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 14px;
+                                            height: 14px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                        line-height: 0;
+                                    }
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 22px;}
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            .contact_info_txt{
+                                li{
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 24px;}
+                                    }
+                                }
+                            }
+                        }
+                        .contact_info_tit{
+                            &::before{
+                            }
+                        }
+                        .contact_info_txt{
+                            li{
+                                font-size: 14px;
+                                padding: 0;
+                                gap: 0;
+                                &::before{
+                                    width: 26px;
+                                    height: 26px;
+                                    margin-right: 4px;
+                                }
+                                &::after{
+                                    width: 195%;
+                                    left: 5px;
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   } 
+}
+
+@media screen and (max-width: 870px){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    width: 700px;
+                    grid-gap: 10px;
+                    p{
+                        &:nth-child(1){
+                            height: 480px;
+                        }
+                        &:nth-child(2){
+                            height: 170px;
+                            img{object-position: 0px -134px;}
+                        }
+                        &:nth-child(3){
+                            height: 170px;
+                        }
+                        &:nth-child(4){
+                            height: 300px;
+                            img{object-position: 0px -3px;}
+                        }
+                        img{
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 566px;
+                    margin: 40px auto;
+                    h5{
+                        font-size: 16px;
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 80px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{margin: 0 auto;}
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 16px;
+                                line-height: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
+}
+
+@include res('mo-l'){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                padding: 16px;
+                padding-bottom: 0;
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    p{
+                        height: 300px;
+                        &:nth-child(1){
+                            height: 300px;
+                        }
+                        &:nth-child(2){
+                            height: 300px;
+                            img{object-position: 0px -497px;}
+                        }
+                        &:nth-child(3){
+                            height: 300px;
+                        }
+                        &:nth-child(4){
+                            height: 300px;
+                            img{object-position: 0px -44px;}
+                        }
+                        img{
+                            border-radius: 8px;
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 566px;
+                    margin: 40px auto;
+                    h5{
+                        font-size: 16px;
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 60px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 80%;
+                            }
+                        }
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 16px;
+                                line-height: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
+    
+    //contact 반응형 시작
+    .contact{
+        .sub_container{
+            .contents{
+                padding: 16px;
+                .contact_map{
+                    width: 100%;
+                    p{
+                        img{}
+                    }
+                    .contact_map_btn{
+                        right: 12px;
+                        bottom: 16px;
+                        gap: 8px;
+                        button{
+                            height: 30px;
+                            i{
+                                top: 5.5px;
+                                left: 4px;
+                                img{width: 13px;}
+                            }
+                            a{
+                                font-size: 12px;
+                                padding: 5px 4px;
+                                margin-left: 14px;
+                            }
+                        }
+                        .contact_map_naver_btn{
+                            width: 108px;
+                        }
+                        .contact_map_google_btn{
+                            width: 96px;
+                        }
+                    }
+                }
+                .contact_infomation{
+                    width: 100%;
+                    flex-direction: column;
+                    .contact_info{
+                        width: 100%;
+                        &.contact_info1{
+                            .contact_info_txt{
+                                li{
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 20px;}
+                                    }    
+                                }
+                            }
+                        }
+                        &.contact_info2{
+                            .contact_info_txt{
+                                margin-top: 8px;
+                                li{
+                                    p{
+                                        font-size: 14px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 12px;
+                                            height: 12px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                        line-height: 0;
+                                    }
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 20px;}
+                                    }
+                                    &:nth-child(3){
+                                        width: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            margin-top: -80px;
+                            .contact_info_txt{
+                                li{
+                                    width: 100%;
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 20px;}
+                                    }
+                                }
+                            }
+                        }
+                        .contact_info_tit{
+                            margin-top: 24px;
+                            padding-left: 6px;
+                            h3{font-size: 24px;}
+                            &::before{
+                                height: 16px;
+                                top: 9px;
+                            }
+                        }
+                        .contact_info_txt{
+                            margin-top: 16px;
+                            li{
+                                height: 80px;
+                                font-size: 14px;
+                                padding: 16px;
+                                gap: 4px;
+                                padding: 0;
+                                padding-left: 8px;
+                                border-bottom: 1px solid #efefef;
+                                b{font-size: 14px;}
+                                &::before{
+                                    width: 24px;
+                                    height: 24px;
+                                }
+                                &::after{
+                                    width: 195%;
+                                    left: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   } 
+   //contact 반응형 끝
+}
+
+@media screen and (max-width: 610px){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    p{
+                        height: 240px;
+                        &:nth-child(1){
+                            height: 200px;
+                        }
+                        &:nth-child(2){
+                            height: 200px;
+                            img{object-position: 0px -416px;}
+                        }
+                        &:nth-child(3){
+                            height: 200px;
+                        }
+                        &:nth-child(4){
+                            height: 200px;
+                            img{object-position: 0px -44px;}
+                        }
+                        img{
+                            border-radius: 8px;
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 393px;
+                    margin: 36px auto;
+                    h5{
+                        font-size: 14px;
+                        line-height: 28px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 60px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 80%;
+                            }
+                        }
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 16px;
+                                line-height: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include res('mo-s'){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    gap: 4px;
+                    p{
+                        height: 150px;
+                        &:nth-child(1){
+                            height: 150px;
+                        }
+                        &:nth-child(2){
+                            height: 150px;
+                            img{object-position: 0px -359px;}
+                        }
+                        &:nth-child(3){
+                            height: 150px;
+                        }
+                        &:nth-child(4){
+                            height: 150px;
+                            img{object-position: 0px -44px;}
+                        }
+                        img{
+                            border-radius: 8px;
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 319px;
+                    margin: 24px auto;
+                    h5{
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 60px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 70%;
+                            }
+                        }
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 14px;
+                                line-height: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
+    //contact 반응형 시작
+    .contact{
+        .sub_container{
+            .contents{
+                .contact_map{
+                    .contact_map_btn{
+                        right: 8px;
+                        bottom: 12px;
+                        gap: 4px;
+                        button{
+                            height: 28px;
+                            border-radius: 4px;
+                            i{
+                                top: 5px;
+                                left: 6px;
+                                img{width: 12px;}
+                            }
+                            a{
+                                font-size: 10px;
+                                padding: 7px 4px;
+                                margin-left: 13px;
+                            }
+                        }
+                        .contact_map_naver_btn{
+                            width: 100px;
+                        }
+                        .contact_map_google_btn{
+                            width: 96px;
+                        }
+                    }
+                }
+                .contact_infomation{
+                    width: 100%;
+                    .contact_info{
+                        width: 100%;
+                        &.contact_info1{
+                            .contact_info_txt{
+                                li{
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 16px;}
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info2{
+                            .contact_info_txt{
+                                margin-top: 8px;
+                                li{
+                                    p{
+                                        font-size: 12px;
+                                        padding-right: 2px;
+                                        &::after{
+                                            width: 12px;
+                                            height: 12px;
+                                        }
+                                    }
+                                    div{
+                                        height: 26px;
+                                        span{
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    i{
+                                        width: 34px;
+                                    }
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 16px;}
+                                    }
+                                    &:nth-child(3){
+                                        width: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact_info3{
+                            margin-top: -52px;
+                            .contact_info_txt{
+                                li{
+                                    width: 100%;
+                                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                                        &::before{background-size: 16px;}
+                                    }
+                                }
+                            }
+                        }
+                        .contact_info_tit{
+                            margin-top: 20px;
+                            h3{font-size: 20px;}
+                            &::before{
+                                height: 16px;
+                                top: 6px;
+                            }
+                        }
+                        .contact_info_txt{
+                            margin-top: 16px;
+                            li{
+                                height: 56px;
+                                font-size: 12px;
+                                padding: 8px;
+                                gap: 0;
+                                padding-left: 4px;
+                                &::before{
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   }
+}
+
+@media screen and (max-width: 405px){
+    //intro 반응형 시작
+    .intro{
+        .sub_top{
+        }
+        .sub_container{
+            &.sub_container_full{
+            }
+            .contents {
+                @keyframes fadeIn{
+                }
+                @keyframes expand{
+                } 
+                .intro_fadein{
+                    p{
+                    }
+                }
+                .intro_grid_wrapper{
+                    gap: 4px;
+                    p{
+                        height: 150px;
+                        &:nth-child(1){
+                            height: 150px;
+                        }
+                        &:nth-child(2){
+                            height: 150px;
+                            img{object-position: 0px -230px;}
+                        }
+                        &:nth-child(3){
+                            height: 150px;
+                        }
+                        &:nth-child(4){
+                            height: 150px;
+                            img{object-position: 0px -5px;}
+                        }
+                        img{
+                            border-radius: 8px;
+                        }
+                    }
+                }
+                .intro_txt{
+                    width: 260px;
+                    margin: 24px auto;
+                    h5{
+                        line-height: 30px;
+                    }   
+                }
+                .intro_full_bg{
+                    margin-top: 60px;
+                    &::after{
+                    }
+                    &::before{
+                    }
+                    &.intro_expand{
+                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
+                    }
+                    .intro_full_bg_inner{
+                        width: 469px;
+                        .logo{
+                            margin: 0 auto;
+                            img{
+                                width: 70%;
+                            }
+                        }
+                        .intro_full_bg_inner_txt{
+                            margin: 24px auto;
+                            h5{
+                                font-size: 14px;
+                                line-height: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //intro 반응형 끝
+}

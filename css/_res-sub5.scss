@@ -1,0 +1,238 @@
+@import "_res";
+
+//=================================notice====================================
+//==================작업자: 허다영=========================================
+
+// pc 1500px
+@include res("pc-s") {
+  .notice {
+    .sub_top {
+      background-image: url("../img/img_community_notice_0.jpg");
+    }
+    .sub_container {
+      width: 100%;
+      margin: 0 auto;
+      .notice-1 {
+        width: 100%;
+      }
+      .pagination {
+        width: 416px;
+        height: 32px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 120px;
+        // 폰트조절
+        a:nth-of-type(3),
+        a:nth-of-type(4),
+        a:nth-of-type(5),
+        a:nth-of-type(6),
+        a:nth-of-type(7) {
+          @include abc();
+        }
+      }
+    }
+  }
+}
+
+// with 1279
+@include res("tab") {
+}
+
+// with 1210px
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 976px) {
+}
+
+// with 767
+// 767에서 480까지는 위 상황 유지.
+// 다만, 함부로 해당 include를 지우면 안 될것 같아서 일단 해당 서식은 유지하도록 함.
+
+@include res("mo-l") {
+  .notice {
+    .sub_container {
+      width: 100%;
+      margin: 0 auto;
+      .title {
+        font-size: 24px;
+      }
+      .desc{
+        font-size: 20px;
+      }
+      .notice-1 {
+        margin: 16px 16px;
+        width: 100%;
+        font-size: 14px;
+
+        th:nth-of-type(1),
+        th:nth-of-type(2) {
+        
+          font-size: 14px;
+        }
+        th:nth-child(3) {
+          display: none;
+        }
+        td:nth-child(1),
+        td:nth-child(2) {
+          font-size: 16px;
+        }
+        td:nth-child(3) {
+          display: none;
+        }
+        .pagination {
+          width: auto;
+          height: 32px;
+          margin: 16px auto;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 120px;
+          // 폰트조절
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// with 480
+
+@include res("mo-s") {
+}
+
+
+//=================================notice inner====================================
+//==================작업자: 허다영=========================================
+
+// pc 1500px
+@include res("pc-s") {
+    .title2{
+        display: none;
+        
+      .contents_notice {
+        justify-items: end;
+        padding: 0 16px;
+        .notice_inner_1 {
+          text-align: center;
+          padding-bottom: 64px;
+          h2 {
+            font-size: 40px;
+            font-weight: bold;
+            p {
+              font-size: 24px;
+              font-weight: bold;
+            }
+          }
+        }
+        .notice_inner_2 {
+          background-color: rgba(226, 226, 226, 0.26);
+          padding-top: 64px;
+          margin-bottom: 64px;
+          padding: 32px 44px 44px;
+          justify-items: center;
+          .p {
+            font-size: 20px;
+          }
+        }
+        .notice_inner_3 {
+          border: solid 1px #afafaf;
+          table {
+            width: 100%;
+            tr {
+              border-bottom: 1px solid #afafaf;
+              &:last-child {
+                border: none;
+              }
+            }
+          }
+          td:nth-of-type(1) {
+            width: 80px;
+          }
+          td {
+            padding: 15px 15px 15px 40px;
+          }
+        }
+        .notice_list {
+          margin: 80px auto;
+          text-align: center;
+        }
+        .notice_list a {
+          padding: 16px 68px;
+          border: #357ef1;
+          border-radius: 8px;
+          background-color: #357ef1;
+          color: white;
+          font-size: 24px;
+          display: inline-block;
+        }
+      }
+      }
+  }
+  
+  // with 1279
+  @include res("tab") {
+  }
+  
+  // with 1210px
+  @media (max-width: 1024px) {
+  }
+  
+  @media (max-width: 976px) {
+  }
+  
+  // with 767
+  // 767에서 480까지는 위 상황 유지.
+  // 다만, 함부로 해당 include를 지우면 안 될것 같아서 일단 해당 서식은 유지하도록 함.
+  
+  @include res("mo-l") {
+    .notice {
+      .sub_container {
+        width: 100%;
+        margin: 0 auto;
+        .title {
+          font-size: 24px;
+        }
+        .desc{
+          font-size: 20px;
+        }
+        .notice-1 {
+          margin: 16px 16px;
+          width: 100%;
+          font-size: 14px;
+  
+          th:nth-of-type(1),
+          th:nth-of-type(2) {
+          
+            font-size: 14px;
+          }
+          th:nth-child(3) {
+            display: none;
+          }
+          td:nth-child(1),
+          td:nth-child(2) {
+            font-size: 16px;
+          }
+          td:nth-child(3) {
+            display: none;
+          }
+          .pagination {
+            width: auto;
+            height: 32px;
+            margin: 16px auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 120px;
+            // 폰트조절
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  
+  // with 480
+  
+  @include res("mo-s") {
+  }
+  

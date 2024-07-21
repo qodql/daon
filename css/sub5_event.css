@@ -1,0 +1,305 @@
+.sub .sub_top {
+  width: 100%;
+  height: 500px;
+  background: url("../img/img_event_05_2_header_02.jpg") no-repeat center/cover;
+  position: relative;
+}
+.sub .breadcrumb {
+  width: 1400px;
+  height: 64px;
+  padding: 16px 32px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  transform: translateX(-50%);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: 11;
+}
+.sub .breadcrumb ul {
+  display: flex;
+  align-items: center;
+}
+.sub .breadcrumb ul li {
+  display: flex;
+  align-items: center;
+}
+.sub .breadcrumb ul li:first-of-type::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+  background: url("../img/icon/icon_home.svg") no-repeat center;
+}
+.sub .breadcrumb ul li:not(:first-of-type) {
+  color: #afafaf;
+}
+.sub .breadcrumb ul li:not(:first-of-type)::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0 16px;
+  background: url("../img/icon/icon_arrow.svg") no-repeat center/15px;
+}
+.sub .breadcrumb ul li a {
+  font-size: 14px;
+}
+
+.align_box {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  gap: 80px 0;
+}
+.align_box li {
+  width: 30%;
+}
+.align_box li a {
+  display: block;
+}
+.align_box li a .img_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.align_box li a .img_box img {
+  width: 100%;
+  height: 100%;
+}
+.align_box li a .img_box .end_event {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #2f2f2f;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.align_box li a .end_event_text {
+  font-size: 40px;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  opacity: 1;
+}
+.align_box li a .event_text_box {
+  text-align: center;
+  padding-top: 24px;
+}
+.align_box li a .event_text_box p {
+  font-size: 24px;
+  font-weight: bold;
+}
+.align_box li a .event_text_box span {
+  padding-top: 8px;
+}
+
+.title_sub {
+  display: block;
+  padding-top: 16px;
+}
+
+.sub5_event_inner_box {
+  width: 100%;
+  background-color: #e2e2e2;
+  padding: 80px 235px;
+}
+.sub5_event_inner_box .sub5_event_inner_content {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.sub5_event_inner_box .sub5_event_inner_content .sub5_img_box {
+  width: 100%;
+  margin: 0 auto;
+}
+.sub5_event_inner_box .sub5_event_inner_content .sub5_img_box img {
+  width: 100%;
+  height: 100%;
+}
+.sub5_event_inner_box .sub5_event_inner_content .sub5_text_box {
+  margin-top: 56px;
+}
+.sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+  width: 100%;
+  font-size: 24px;
+}
+
+.sub5_button {
+  width: 100%;
+  height: 83.5px;
+  border-top: 2px solid #afafaf;
+  border-bottom: 2px solid #efefef;
+  margin-top: 80px;
+}
+.sub5_button:nth-of-type(3) {
+  height: 55.5px;
+  border-bottom: 2px solid #afafaf;
+  margin: 0;
+  border-top: none;
+}
+.sub5_button a {
+  width: 100%;
+  display: block;
+}
+.sub5_button a .sub5_next_button {
+  max-width: 265px;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  margin-top: 28px;
+  margin-left: 44px;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub5_button a .sub5_next_button .sub_event_icon {
+  width: 28px;
+  height: 25px;
+}
+.sub5_button a .sub5_next_button .sub_event_icon img {
+  width: 100%;
+  height: 100%;
+}
+.sub5_button .sub5_next_button2 {
+  max-width: 293.31px;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  margin-top: 28px;
+  margin-left: 44px;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub5_button .sub5_next_button2 .sub_event_icon {
+  width: 28px;
+  height: 25px;
+}
+.sub5_button .sub5_next_button2 .sub_event_icon img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1279px) {
+  .sub {
+    padding: 0 16px;
+  }
+  .sub ul li a .img_box .end_event_text {
+    font-size: 32px;
+  }
+  .sub ul li a .event_text_box p {
+    font-size: 16px;
+  }
+  .sub ul li a .event_text_box span {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .sub {
+    padding: 0 16px;
+  }
+  .sub ul li a .img_box .end_event_text {
+    font-size: 20px;
+  }
+  .sub ul li a .event_text_box p {
+    font-size: 16px;
+  }
+  .sub ul li a .event_text_box span {
+    font-size: 12px;
+  }
+}
+@media (max-width: 567px) {
+  .sub {
+    padding: 0 16px;
+  }
+  .sub ul li a .img_box .end_event_text {
+    font-size: 20px;
+  }
+  .sub ul li a .event_text_box p {
+    font-size: 12px;
+  }
+  .sub ul li a .event_text_box span {
+    font-size: 8px;
+  }
+}
+@media (max-width: 479px) {
+  .sub {
+    padding: 0 16px;
+  }
+  .sub ul li a .img_box .end_event_text {
+    font-size: 20px;
+  }
+  .sub ul li a .event_text_box p {
+    font-size: 12px;
+  }
+  .sub ul li a .event_text_box span {
+    font-size: 8px;
+  }
+}
+@media (max-width: 1389px) {
+  .sub .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1279px) {
+  .contents {
+    padding: 0 16px;
+  }
+  .contents .sub5_event_inner_box {
+    padding: 80px 165px;
+  }
+}
+@media (max-width: 1151px) {
+  .contents {
+    padding: 0 16px;
+  }
+  .contents .sub5_event_inner_box {
+    padding: 80px 125px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .contents {
+    padding: 0 16px;
+  }
+  .contents .sub5_event_inner_box {
+    padding: 60px 85px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 550px) {
+  .contents {
+    padding: 0 16px;
+  }
+  .contents .sub5_event_inner_box {
+    padding: 60px 65px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 479px) {
+  .contents {
+    padding: 0 16px;
+  }
+  .contents .sub5_event_inner_box {
+    padding: 40px 45px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box {
+    margin-top: 32px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,385 @@
+// community 공통
+.community_common {
+  .sub_container {
+    .contents {
+    }
+  }
+}
+@mixin abc {
+  padding: 0 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+// 공지사항
+.notice {
+  .sub_top {
+    background-image: url("../img/img_community_notice_0.jpg");
+  }
+  .sub_container {
+    width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+    .title {
+      padding: 60px;
+      margin: 80px;
+    }
+    .contents {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #2f2f2f;
+
+        tr {
+          width: auto;
+        }
+
+        th {
+          &:nth-of-type(1) {
+            width: 150px;
+          }
+
+          &:nth-of-type(3) {
+            width: 200px;
+          }
+          background-color: rgba(154, 190, 248, 0.22);
+          font-size: 22px;
+          font-weight: 700;
+          padding: 16px 54px;
+        }
+
+        td {
+          padding: 20px;
+          margin: 0 auto;
+          font-size: 24px;
+          border-top: solid 1px #d9d9d9;
+          border-bottom: solid 1px #d9d9d9;
+
+          &:nth-of-type(1) {
+            text-align: center;
+          }
+
+          &:nth-of-type(2) {
+            text-align: left;
+          }
+          &:nth-of-type(3) {
+            text-align: center;
+          }
+        }
+      }
+
+      .pagination {
+        width: 416px;
+        height: 32px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 120px;
+        // 폰트조절
+        a:nth-of-type(3),
+        a:nth-of-type(4),
+        a:nth-of-type(5),
+        a:nth-of-type(6),
+        a:nth-of-type(7) {
+          @include abc();
+        }
+      }
+    }
+  }
+}
+// 공지사항 내용
+.title2 {
+  display: none;
+  .contents_notice {
+    justify-items: end;
+    padding: 0 16px;
+    .notice_inner_1 {
+      text-align: center;
+      padding-bottom: 64px;
+      h2 {
+        font-size: 40px;
+        font-weight: bold;
+        p {
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+    }
+    .notice_inner_2 {
+      background-color: rgba(226, 226, 226, 0.26);
+      padding-top: 64px;
+      margin-bottom: 64px;
+      padding: 32px 44px 44px;
+      justify-items: center;
+      .p {
+        font-size: 20px;
+      }
+    }
+    .notice_inner_3 {
+      border: solid 1px #afafaf;
+      table {
+        width: 100%;
+        tr {
+          border-bottom: 1px solid #afafaf;
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+      td:nth-of-type(1) {
+        width: 80px;
+      }
+      td {
+        padding: 15px 15px 15px 40px;
+      }
+    }
+    .notice_list {
+      margin: 80px auto;
+      text-align: center;
+    }
+    .notice_list a {
+      padding: 16px 68px;
+      border: #357ef1;
+      border-radius: 8px;
+      background-color: #357ef1;
+      color: white;
+      font-size: 24px;
+      display: inline-block;
+    }
+  }
+}
+// faq
+// faq는 별도로 inner로 빼지 않고, 일괄 작업 진행함.
+.faq {
+  .sub_top {
+    background-image: url(../img/img_community_faq_0.jpg);
+  }
+  .sub_container {
+    .title {
+      display: flex;
+      justify-content: center;
+
+      .icon {
+        position: relative;
+      }
+
+      .icon .img1 {
+        padding: 10px;
+      }
+
+      &:hover span {
+        display: block !important;
+      }
+
+      .icon span {
+        white-space: nowrap;
+        position: absolute;
+        justify-items: center;
+        width: auto;
+        height: auto;
+        background: #484848;
+        color: white;
+        border-radius: 50px;
+        padding: 12px 12px;
+        top: -40px;
+        left: 0%;
+        display: none;
+        // transform: translateX(-50%);
+      }
+
+      .icon span:after {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 10%;
+        transform: translateX(-50%);
+        border-top: 20px solid #484848;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 0px solid transparent;
+      }
+    }
+    .desc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding-bottom: 40px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .contents {
+      .sub5_community_faq {
+        ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          list-style: none;
+          padding-bottom: 56px;
+
+          li {
+            width: 200px;
+            height: auto;
+            margin: 0 16px;
+            padding: 12px 32px;
+            border-radius: 50px;
+            text-align: center;
+            a {
+              font-size: 28px;
+              font-weight: 700;
+            }
+          }
+
+          li:nth-of-type(1) {
+            border: solid 2px #357ef1;
+            color: #357ef1;
+          }
+          li:nth-of-type(2) {
+            border: solid 2px #00c400;
+            color: #00c400;
+          }
+          li:nth-of-type(3) {
+            border: solid 2px #8e40b7;
+            color: #8e40b7;
+          }
+          li:nth-of-type(4) {
+            border: solid 2px #ffb140;
+            color: #ffb140;
+          }
+        }
+        .abc {
+          margin: 0px auto;
+          align-items: center;
+          text-align: center;
+          font-size: 24px;
+          padding-bottom: 65px;
+          span {
+            font-weight: bold;
+            font-size: 24px;
+          }
+        }
+      }
+      .faq_wrap {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+
+        .faq {
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            .blue {
+              border: solid 1px #357ef1;
+              color: #357ef1;
+            }
+            .green {
+              border: solid 1px #00c400;
+              color: #00c400;
+            }
+            .purple {
+              border: solid 1px #8e40b7;
+              color: #8e40b7;
+            }
+            .yell {
+              border: solid 1px #ffb140;
+              color: #ffb140;
+            }
+
+            .question {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border-top: solid 1px #afafaf;
+              border-bottom: solid 1px #afafaf;
+
+              padding: 10px;
+              cursor: pointer;
+
+              span {
+                margin-right: 10px;
+                padding: 8px 24px;
+                border-radius: 50px;
+                font-weight: bold;
+              }
+
+              button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+              }
+            }
+
+            .answer {
+              padding: 26px;
+              background-color: #f1f1f1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 이용후기
+.review {
+  .sub_top {
+    background-image: url("../img/img_community_review_0.jpg");
+  }
+
+  .sub_container {
+    .title {
+      padding-bottom: 70px;
+    }
+    .contents {
+      .images {
+        ul {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            width: 420px;
+            height: 420px;
+            margin: 10px;
+
+            a {
+              display: block;
+              width: 100%;
+              height: 100%;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 히든쪽은 js 작업 진행할 때 팝업 기능을 이용하여
+// 마저 작업할 예정.
+
+.hidden {
+  display: none;
+}
+
+// 상세 공통
+.inner_common {
+  .sub_container {
+    .contents {
+    }
+  }
+}
+
+@import "_res-sub5";

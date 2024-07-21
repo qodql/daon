@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAON 리뉴얼</title>
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <!-- [↓] swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/common.js"></script>
+    <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js"></script>
+</head>
+<body>
+    <!-- 컨텐츠 -->
+    <div class="login_common join">
+        <div class="logo_wrap">
+            <h1 class="logo">
+                <a href="./index.html"></a>
+            </h1>
+            <h2 class="txt">
+                회원가입
+            </h2>
+        </div>
+        <div class="join_wrap checkbox_wrap">
+            <div class="join_personal_info">
+                <ul class="join_input_box">
+                    <li class="email_box">
+                        <label for="email"></label>
+                        <input id="email" type="email" placeholder="이메일">
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <li class="pw_box">
+                        <label for="password"></label>
+                        <input id="password" type="password" placeholder="비밀번호(영문/숫자/특문 조합 8~15자)">
+                        <button type="button" class="input_reset_btn eye"></button>
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <li class="pw_check_box">
+                        <label for="pw_check"></label>
+                        <input id="pw_check" type="password" placeholder="비밀번호 확인">
+                        <button type="button" class="input_reset_btn eye"></button>
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <li class="name_box">
+                        <label for="name"></label>
+                        <input id="name" type="text" placeholder="이름">
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                    <div class="phone_verify_btn">
+                        <li class="phone_box">
+                            <label for="phone"></label>
+                            <input id="phone" type="tel" placeholder="휴대폰 번호(-없이 입력)">
+                            <button type="button" class="input_reset_btn"></button>
+                        </li>
+                        <li class="verify_btn">
+                            <button type="button" class="blue_btn">인증번호</button>
+                        </li>
+                    </div>
+                    <li class="verify_box">
+                        <label for="verify"></label>
+                        <input id="verify" type="email" placeholder="인증번호">
+                        <button type="button" class="input_reset_btn"></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="join_agree">
+                <div class="agree_checkbox">
+                    <div class="agree_all">    <!--전체동의-->
+                        <input type="checkbox" class="checkbox" id="all_chk">
+                        <label for="all_chk"><i></i>전체 동의</label>
+                        <button type="button" class="arrow_btn">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26 18.8827C26.0008 19.0289 25.9728 19.1738 25.9175 19.3092C25.8622 19.4445 25.7808 19.5676 25.6778 19.6714C25.5746 19.7755 25.4517 19.8582 25.3163 19.9146C25.181 19.971 25.0358 20 24.8891 20C24.7425 20 24.5973 19.971 24.4619 19.9146C24.3265 19.8582 24.2037 19.7755 24.1004 19.6714L16.0023 11.5621L7.90411 19.6714C7.69493 19.8806 7.41123 19.9981 7.1154 19.9981C6.96893 19.9981 6.82388 19.9693 6.68856 19.9132C6.55323 19.8571 6.43027 19.775 6.32669 19.6714C6.22312 19.5678 6.14096 19.4449 6.08491 19.3095C6.02885 19.1742 6 19.0292 6 18.8827C6 18.5869 6.11752 18.3032 6.32669 18.094L15.2136 9.20713C15.3168 9.10301 15.4397 9.02037 15.5751 8.96397C15.7104 8.90758 15.8556 8.87854 16.0023 8.87854C16.1489 8.87854 16.2941 8.90758 16.4295 8.96397C16.5648 9.02037 16.6877 9.10301 16.791 9.20713L25.6778 18.094C25.7808 18.1978 25.8622 18.3209 25.9175 18.4562C25.9728 18.5916 26.0008 18.7365 26 18.8827Z" fill="#2F2F2F"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="agree_list">     <!--체크리스트-->
+                        <li class="agree_essential">
+                            <input type="checkbox" class="checkbox" id="agree_age">
+                            <label for="agree_age"><i></i>만 19세 이상</label>
+                        </li>
+                        <li class="agree_essential">
+                            <input type="checkbox" class="checkbox" id="agree_terms">
+                            <label for="agree_terms"><i></i>이용약관에 대한 동의</label>
+                            <a href="#" class="view_all">전체보기</a>
+                        </li>
+                        <li class="agree_essential">
+                            <input type="checkbox" class="checkbox" id="agree_personal">
+                            <label for="agree_personal"><i></i>개인정보 수집, 이용에 대한 동의</label>
+                            <a href="#" class="view_all">전체보기</a>
+                        </li>
+                        <li class="agree_optional">
+                            <input type="checkbox" class="checkbox" id="agree_personal_marketing">
+                            <label for="agree_personal_marketing"><i></i>개인정보 마케팅 활용 동의</label>
+                        </li>
+                        <li class="agree_optional">
+                            <input type="checkbox" class="checkbox" id="agree_email_marketing">
+                            <label for="agree_email_marketing"><i></i>이메일 마케팅 수신 동의<span>(선택)</span></label>
+                        </li>
+                    </ul>
+                </div>
+                <p class="join_optional_info">* 선택항목은 동의 없이 가입 가능합니다.</p>
+            </div>
+            <div class="join_join_btn">
+                <a href="./join_complete.html">
+                    <button type="button">가입완료</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 푸터 -->
+    <footer class="footer">
+        Copyright@ 2015 다온펜션 All Rights Reserved.
+    </footer>
+</body>
+</html>

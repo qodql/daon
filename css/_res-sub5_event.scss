@@ -1,0 +1,107 @@
+@import"./res";
+
+
+//max 1500 변동 x
+@include res('pc-s'){}
+
+//max 1279
+@include res('tab'){
+.sub{padding: 0 16px;
+      ul{
+        li{
+          a{
+            .img_box{
+              .end_event_text{
+                font-size: 32px;
+              }
+            }
+            .event_text_box{
+              p {font-size: 16px; 
+              }
+              span{font-size: 12px;
+                
+              }
+            }
+          }
+        }
+      }
+
+      }
+    }
+  
+
+
+//max 767
+@include res('mo-l'){
+  .sub{padding: 0 16px;
+    ul{
+      li{
+        a{
+          .img_box{
+            .end_event_text{
+              font-size: 20px;
+            }
+          }
+          .event_text_box{
+            p {font-size: 16px; 
+            }
+            span{font-size: 12px;
+              
+            }
+          }
+        }
+      }
+    }
+
+    }
+  }
+@media (max-width : 567px){
+  .sub{padding: 0 16px;
+    ul{
+      li{
+        a{
+          .img_box{
+            .end_event_text{
+              font-size: 20px;
+            }
+          }
+          .event_text_box{
+            p {font-size: 12px; 
+            }
+            span{font-size: 8px;
+              
+            }
+          }
+        }
+      }
+    }
+
+    }
+  }
+
+
+//max 480
+@include res('mo-s'){
+  .sub{padding: 0 16px;
+    ul{
+      li{
+        a{
+          .img_box{
+            .end_event_text{
+              font-size: 20px;
+            }
+          }
+          .event_text_box{
+            p {font-size: 12px; 
+            }
+            span{font-size: 8px;
+              
+            }
+          }
+        }
+      }
+    }
+
+    }
+  }
+
