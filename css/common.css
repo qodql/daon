@@ -345,7 +345,6 @@ body.prevent_scroll {
 }
 
 .main + .footer {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
@@ -439,10 +438,6 @@ body.prevent_scroll {
   height: 40px;
   display: block;
   border-radius: 8px;
-<<<<<<< HEAD
-  background: #fff url("/img/icon/icon_sns_instagram.svg") no-repeat center;
-}/*# sourceMappingURL=common.css.map */
-=======
   background: #fff url("../img/icon/icon_sns_instagram.svg") no-repeat center;
 }
 
@@ -766,4 +761,3 @@ body.prevent_scroll {
     height: 272px;
   }
 }
->>>>>>> 8dede0a10cc94ee84c94fa129348c11d759cf755

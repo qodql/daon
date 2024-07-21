@@ -2,11 +2,264 @@
 
 @include res('pc-s'){
 }
+@media screen and (max-width:1400px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    .calendar_container {
+                        padding: 0 100px;
+                        .title {
+                            left: 25.5%;
+                            &.right{
+                                right:25.5%
+                            }
+                        }
+                        #calendar{
+                            // width: calc(50% - 40px);
+                            width: 380px;
+                        }
+                    }
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            width: 80px;
+                            height: 80px;
+                            background-size: 64px;
+                            left: 40px;
+                            &.next {
+                                right: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @include res('tab'){
+    .reservation_common {
+        .sub_container {
+            .contents {
+                .step_wrap {
+                    .step {
+                        li {
+                            &:not(:last-of-type) {
+                                .circle {
+                                    &::after {
+                                        left: 62px;
+                                        top: 28px;
+                                    }
+                                }
+                            }
+                            .circle {
+                                width: 56px;
+                                height: 56px;
+                                border-width: 6px;
+                                span {
+                                    line-height: 44px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    .calendar_container {
+                        padding: 0 100px;
+                        justify-content: center;
+                        .right {
+                            display: none;
+                        }
+                        .title {
+                            &.left {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                }
+                .data_area {
+                    .date_person {
+                        li{
+                            &:not(:first-of-type, .room) {
+                                margin-left: 64px;
+                            }
+                            .label {
+                                font-size: 20px;
+                                margin-bottom: 12px;
+                            }
+                            .input_wrap {
+                                input {
+                                    width: 100px;
+                                }
+                                .btn_wrap {
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+                    .room_list_wrap {
+                        li {
+                            .room_img {
+                            }
+                            .room_info {
+                                ul {
+                                    padding: 32px;
+                                    li {
+                                        &:not(:first-of-type) {
+                                            margin-top: 16px;
+                                        }
+                                    }
+                                }
+                                .room_btn_wrap {
+                                    right: 32px;
+                                    bottom: 26px;
+                                    .room_select_btn {
+                                        padding: 8px 16px;
+                                    }
+                                }
+                                .room_name {
+                                    font-size: 20px;
+                                    // margin-bottom: 12px;
+                                    .tag {
+                                        padding: 8px 16px;
+                                        margin-right: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    margin-bottom: 40px;
+                }
+                .data_area {
+                    .date_person {
+                        li{
+                            &:first-of-type {
+
+                            }
+                            &:not(:first-of-type, .room) {
+                                margin-left: 40px;
+                            }
+                            .label {
+                                margin-bottom: 8px;
+                            }
+                            .input_wrap {
+                                input {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .room_list_wrap {
+                        margin-top: 40px;
+                        padding-top: 64px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:863px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    padding-bottom: 80px;
+                    .calendar_container {
+                        padding: 0 60px;
+                        #calendar {
+                            width: 360px;
+                            height: 360px;
+                        }
+                    }
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            left: 32px;
+                            &.next {
+                                right: 32px;
+                            }
+                        }
+                    }
+                }
+                .data_area {
+                    .date_person {
+                        li {
+                            &:not(:first-of-type, .room) {
+                                margin-left: 32px;
+                            }
+                            .label {
+                                margin-bottom: 4px;
+                            }
+                            .input_wrap {
+                                input {
+                                    width: 88px;
+                                }
+                                .btn_wrap {
+                                    width: 88px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include res('mo-l'){
+}
+
+
+@media screen and (max-width:683px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            left: 20px;
+                            &.next {
+                                right: 20px;
+                            }
+                        }
+                    }
+                }
+                .data_area {
+                    .date_person {
+                        li {
+                            .label {
+                                font-size: 16px;
+                            }
+                            .input_wrap {
+                                input {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include res('mo-s'){

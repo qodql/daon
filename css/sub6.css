@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-.sub .sub_top {
-  width: 100%;
-  max-height: 500px;
-  background: url("/img/img_sub_reservation.jpg") no-repeat center;
-=======
 .reservation_common .sub_container .contents .step_wrap .step {
   display: flex;
   align-items: center;
@@ -16,7 +10,6 @@
 }
 .reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) {
   margin-right: 120px;
->>>>>>> 8dede0a10cc94ee84c94fa129348c11d759cf755
   position: relative;
 }
 .reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle::after {
@@ -94,48 +87,6 @@
 }
 .reservation_common .sub_container .contents .next_wrap .next_btn::after {
   content: "";
-<<<<<<< HEAD
-  display: block;
-  width: 30px;
-  height: 30px;
-  margin-right: 4px;
-  background: url("/img/icon/icon_home.svg") no-repeat center;
-}
-.sub .breadcrumb ul li:not(:first-of-type) {
-  color: #afafaf;
-}
-.sub .breadcrumb ul li:not(:first-of-type)::before {
-  content: "";
-  display: block;
-  width: 15px;
-  height: 15px;
-  margin: 0 16px;
-  background: url("/img/icon/icon_arrow.svg") no-repeat center/15px;
-}
-.sub .breadcrumb ul li a {
-  font-size: 14px;
-}
-.sub .sub_container {
-  width: 1400px;
-  padding: 140px 0 240px;
-  margin: 0 auto;
-}
-.sub .sub_container .title {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 80px;
-}
-.sub .sub_container .title .desc {
-  display: block;
-  margin-top: 16px;
-  font-size: 24px;
-}
-.sub .sub_container .contents {
-  height: 500px;
-  background-color: #afafaf;
-}/*# sourceMappingURL=sub6.css.map */
-=======
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -158,7 +109,7 @@
   justify-content: space-between;
 }
 .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
-  width: calc(50% - 60px);
+  width: 420px;
   height: 410px;
 }
 .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar:first-of-type .toastui-calendar-grid-cell-date .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
@@ -239,8 +190,11 @@
 .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type) {
   margin-left: 100px;
 }
+.step1 .sub_container .contents .data_area .date_person li.data .input_wrap {
+  width: 100%;
+}
 .step1 .sub_container .contents .data_area .date_person li.data .input_wrap input {
-  width: calc(100% + 20px);
+  width: 100%;
 }
 .step1 .sub_container .contents .data_area .date_person li.room {
   margin-left: auto;
@@ -397,11 +351,12 @@
   width: calc(100% - 128px);
 }
 .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.tel_wrap > div button {
-  padding: 16px 32px;
+  padding: 16px 28px;
   background-color: #357EF1;
   border-radius: 8px;
   color: #fff;
   font-weight: 700;
+  white-space: nowrap;
 }
 .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.textarea_wrap {
   width: 100%;
@@ -640,4 +595,147 @@
   border-color: #2f2f2f;
   color: #fff;
 }
->>>>>>> 8dede0a10cc94ee84c94fa129348c11d759cf755
+
+@media screen and (max-width: 1400px) {
+  .step1 .sub_container .contents .calendar_wrap .calendar_container {
+    padding: 0 100px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container .title {
+    left: 25.5%;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container .title.right {
+    right: 25.5%;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
+    width: 380px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+    width: 80px;
+    height: 80px;
+    background-size: 64px;
+    left: 40px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
+    right: 40px;
+  }
+}
+@media (max-width: 1279px) {
+  .reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle::after {
+    left: 62px;
+    top: 28px;
+  }
+  .reservation_common .sub_container .contents .step_wrap .step li .circle {
+    width: 56px;
+    height: 56px;
+    border-width: 6px;
+  }
+  .reservation_common .sub_container .contents .step_wrap .step li .circle span {
+    line-height: 44px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container {
+    padding: 0 100px;
+    justify-content: center;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container .right {
+    display: none;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container .title.left {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type, .room) {
+    margin-left: 64px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .label {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
+    width: 100px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap .btn_wrap {
+    width: 100px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info ul {
+    padding: 32px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info ul li:not(:first-of-type) {
+    margin-top: 16px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap {
+    right: 32px;
+    bottom: 26px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap .room_select_btn {
+    padding: 8px 16px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name {
+    font-size: 20px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag {
+    padding: 8px 16px;
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .step1 .sub_container .contents .calendar_wrap {
+    margin-bottom: 40px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type, .room) {
+    margin-left: 40px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .label {
+    margin-bottom: 8px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
+    font-size: 20px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap {
+    margin-top: 40px;
+    padding-top: 64px;
+  }
+}
+@media screen and (max-width: 863px) {
+  .step1 .sub_container .contents .calendar_wrap {
+    padding-bottom: 80px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container {
+    padding: 0 60px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
+    width: 360px;
+    height: 360px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+    left: 32px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
+    right: 32px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type, .room) {
+    margin-left: 32px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .label {
+    margin-bottom: 4px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
+    width: 88px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap .btn_wrap {
+    width: 88px;
+  }
+}
+@media screen and (max-width: 683px) {
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+    left: 20px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
+    right: 20px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .label {
+    font-size: 16px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
+    font-size: 16px;
+  }
+}
