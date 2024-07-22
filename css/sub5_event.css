@@ -130,7 +130,7 @@
 }
 .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
   width: 100%;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .sub5_button {
@@ -255,6 +255,9 @@
   .contents .sub5_event_inner_box {
     padding: 80px 165px;
   }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 18px;
+  }
 }
 @media (max-width: 1151px) {
   .contents {
@@ -267,12 +270,37 @@
     font-size: 16px;
   }
 }
+@media (max-width: 1001px) {
+  .contents {
+    padding: 0 16px;
+  }
+  .contents .sub5_event_inner_box {
+    padding: 80px 85px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 833px) {
+  .contents {
+    padding: 0 16px;
+  }
+  .contents .sub5_event_inner_box {
+    padding: 60px 65px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
+    font-size: 14px;
+  }
+  .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p br:nth-of-type(2) {
+    display: none !important;
+  }
+}
 @media (max-width: 767px) {
   .contents {
     padding: 0 16px;
   }
   .contents .sub5_event_inner_box {
-    padding: 60px 85px;
+    padding: 60px 65px;
   }
   .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
     font-size: 16px;
@@ -283,10 +311,10 @@
     padding: 0 16px;
   }
   .contents .sub5_event_inner_box {
-    padding: 60px 65px;
+    padding: 40px 45px;
   }
   .contents .sub5_event_inner_box .sub5_event_inner_content .sub5_text_box p {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 @media (max-width: 479px) {
