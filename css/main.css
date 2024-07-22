@@ -634,16 +634,16 @@
     font-size: 24px;
   }
   .main .container .swiper .swiper-pagination {
-    left: 7.25%;
+    left: 80px;
   }
   .main .container .swiper .swiper_btn_wrap {
-    right: 7.25%;
+    right: 80px;
   }
   .main .container .section .inner {
     padding: 120px 80px;
   }
   .main .container .section .inner .more_btn {
-    right: 7.25%;
+    right: 80px;
     top: 225px;
   }
   .main .container .section .inner .contents {
@@ -653,10 +653,10 @@
     padding: 120px 0;
   }
   .main .container .section.room .inner .title {
-    padding-left: 7.25%;
+    padding-left: 80px;
   }
   .main .container .section.room .inner .more_btn {
-    right: 7.25%;
+    right: 80px;
   }
   .main .container .section.facilities {
     height: 855px;
@@ -665,7 +665,7 @@
     height: 600px;
   }
   .main .container .section.facilities .contents .facilities_list li .box {
-    left: 17.25%;
+    left: 17.5%;
   }
   .main .container .section.facilities .contents .facilities_list li .box p {
     font-size: 20px;
@@ -675,7 +675,7 @@
   }
   .main .container .section.facilities .contents .facilities_list li.on ~ li .box {
     left: auto;
-    right: 17.25%;
+    right: 17.5%;
   }
   .main .container .section.around_spot .inner {
     height: fit-content;
@@ -712,13 +712,13 @@
     padding: 120px 0;
   }
   .main .container .section.event .inner .title {
-    padding-left: 7.25%;
+    padding-left: 80px;
   }
   .main .container .section.event .inner .more_btn {
-    right: 7.25%;
+    right: 80px;
   }
   .main .container .section.event .inner .contents {
-    padding-left: 7.25%;
+    padding-left: 80px;
   }
   .main .container .section.contact .contents .box_wrap {
     padding: 0;
@@ -755,7 +755,7 @@
     padding: 6px 12px;
   }
   .quick_menu {
-    width: calc(100% - 32px);
+    width: 85%;
   }
   .quick_menu ul li {
     padding: 16px 12px;
@@ -768,7 +768,7 @@
     height: 56px;
   }
   .main .container .section .inner {
-    padding: 80px 7.25%;
+    padding: 80px 80px;
   }
   .main .container .section .inner .title {
     font-size: 40px;
@@ -800,7 +800,7 @@
     font-size: 16px;
   }
   .main .container .section.room .inner .contents .room_list .swiper-slide.swiper-slide-active:hover .room_info .txt {
-    bottom: 7.25%;
+    bottom: 80px;
   }
   .main .container .section.facilities {
     height: 760px;
@@ -808,19 +808,6 @@
   }
   .main .container .section.facilities .contents .facilities_list {
     height: 600px;
-  }
-  .main .container .section.facilities .contents .facilities_list li .box {
-    left: 17.25%;
-  }
-  .main .container .section.facilities .contents .facilities_list li .box p {
-    font-size: 20px;
-  }
-  .main .container .section.facilities .contents .facilities_list li.on .box {
-    width: 68%;
-  }
-  .main .container .section.facilities .contents .facilities_list li.on ~ li .box {
-    left: auto;
-    right: 17.25%;
   }
   .main .container .section.around_spot .inner .desc {
     font-size: 16px;
@@ -884,7 +871,15 @@
     font-size: 16px;
   }
 }
-@media screen and (max-width: 819px) {
+@media screen and (max-width: 924px) {
+  .quick_menu ul li {
+    padding: 12px 8px;
+  }
+  .quick_menu ul li:nth-of-type(2) {
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 858px) {
   .quick_menu {
     display: none;
   }
