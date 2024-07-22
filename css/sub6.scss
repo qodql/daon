@@ -138,7 +138,8 @@
                     align-items: center;
                     justify-content: space-between;
                     #calendar {
-                        width: calc(50% - 60px);
+                        // width: calc(50% - 60px);
+                        width: 420px;
                         height: 410px;
                         &:first-of-type {
                             .toastui-calendar-grid-cell-date .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
@@ -240,9 +241,12 @@
                             margin-left: 100px;
                         }
                         &.data {
+                            width: calc(100% + 20px);
                             .input_wrap {
+                                width: 100%;
                                 input {
-                                    width:calc(100% + 20px);
+                                    width: 100%;
+                                    text-align: left;
                                 }
                             }
                         }
@@ -255,11 +259,6 @@
                         }
                         .input_wrap {
                             position: relative;
-                            // .tui-datepicker-input {
-                            //     font-size: 24px;
-                            //     font-weight: 700;
-                            //     border: none;
-                            // }
                             input {
                                 width: 126px;
                                 height: 30px;
@@ -384,10 +383,11 @@
             .info_wrap {
                 display: flex;
                 position: relative;
+                justify-content: space-between;
                 .left {
-                    width: calc(100% - 41%);
+                    width: calc(64% - 20px);
                     display: block;
-                    margin: 56px 80px 0 0;
+                    margin-top: 56px;
                     padding-top: 40px;
                     border-top: 1px solid #efefef;
                     .user_info {
@@ -396,34 +396,26 @@
                         border-bottom: 1px solid #efefef;
                         .input_list {
                             li {
-                                width: calc(50% - 20px);
                                 &:not(:first-of-type) {
                                     margin-top: 24px;
-                                }
-                                &.half {
-                                    width: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: space-between;
-                                    > div {
-                                        width: calc(50% - 20px);
-                                    }
                                 }
                                 &.tel_wrap {
                                     > div {
                                         display: flex;
                                         margin-bottom: 8px;
                                         align-items: center;
-                                        justify-content: space-between;
                                         input {
-                                            width: calc(100% - 128px);
+                                            width: calc(100% - 120px);
                                         }
                                         button {
-                                            padding: 16px 32px;
+                                            width: 112px;
+                                            margin-left: 8px;
+                                            padding: 16px 0;
                                             background-color: #357EF1;
                                             border-radius: 8px;
                                             color: #fff;
                                             font-weight: 700;
+                                            white-space: nowrap;
                                         }
                                     }
                                 }
@@ -511,94 +503,97 @@
                     }
                 }
                 .right {
-                    width: calc(100% - 59%);
+                    width: calc(36% - 20px);
                     margin-top: 56px;
                     .sticky_menu {
                         position: sticky;
                         right: 0;
                         top: 56px;
-                        .data_list {
-                            padding: 40px;
-                            margin-bottom: 40px;
-                            border-radius: 20px;
-                            border: 1px solid #efefef;
-                            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
-                            li {
-                                .label {
-                                    font-weight: 500;
-                                    margin-bottom: 8px;
-                                }
-                                .data {
-                                    font-size: 20px;
-                                    font-weight: 700;
-                                    .tag {
-                                        padding: 8px 12px;
-                                        margin-right: 8px;
-                                        background-color: #3226C1;
-                                        border-radius: 8px;
-                                        font-size: 12px;
-                                        font-weight: 700;
-                                        color: #fff;
-                                        vertical-align: middle;
-                                    }
-                                }
-                                &:not(:first-of-type) {
-                                    margin-top: 32px;
-                                }
-                            }
-                        }
-                        .price_wrap {
-                            margin-bottom: 24px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            > p {
-                                font-size: 20px;
-                                font-weight: 700;
-                            }
-                            .price {
-                                text-align: right;
-                                .sale {
-                                    font-size: 20px;
-                                    color: #afafaf;
-                                    text-decoration: line-through;
-                                }
-                                p {
-                                    font-size: 32px;
-                                    font-weight: 700;
-                                    display: flex;
-                                    align-items: center;
-                                    &::before {
-                                        content: '';
-                                        display: inline-block;
-                                        width: 32px;
-                                        height: 32px;
-                                        margin-right: 4px;
-                                        background: url("../img/icon/icon_krw.svg") no-repeat center;
-                                    }
-                                }
-                            }
-                        }
-                        .payment_btn_wrap {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border: 1px solid #2f2f2f;
-                            border-radius: 8px;
-                            overflow: hidden;
-                            .payment_btn {
-                                width: 50%;
-                                padding: 20px 0;
-                                font-size: 20px;
-                                font-weight: 700;
-                                &.member {
-                                    background-color: #2f2f2f;
-                                    color: #fff;
-                                }
-                            }
-                        }
                     }
                 }
+            }
+        }
+    }
+    .right_mb_info, .right_mb_menu {
+        display: none;
+    }
+    .data_list {
+        padding: 40px;
+        margin-bottom: 40px;
+        border-radius: 20px;
+        border: 1px solid #efefef;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
+        li {
+            .label {
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+            .data {
+                font-size: 20px;
+                font-weight: 700;
+                .tag {
+                    padding: 8px 12px;
+                    margin-right: 8px;
+                    background-color: #3226C1;
+                    border-radius: 8px;
+                    font-size: 12px;
+                    font-weight: 700;
+                    color: #fff;
+                    vertical-align: middle;
+                }
+            }
+            &:not(:first-of-type) {
+                margin-top: 32px;
+            }
+        }
+    }
+    .price_wrap {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > p {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .price {
+            text-align: right;
+            .sale {
+                font-size: 20px;
+                color: #afafaf;
+                text-decoration: line-through;
+            }
+            p {
+                font-size: 32px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 4px;
+                    background: url("../img/icon/icon_krw.svg") no-repeat center;
+                }
+            }
+        }
+    }
+    .payment_btn_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #2f2f2f;
+        border-radius: 8px;
+        overflow: hidden;
+        .payment_btn {
+            width: 50%;
+            padding: 20px 0;
+            font-size: 20px;
+            font-weight: 700;
+            &.member {
+                background-color: #2f2f2f;
+                color: #fff;
             }
         }
     }
@@ -637,6 +632,7 @@
                     }
                 }
                 .btn_wrap {
+                    font-size: 0;
                     button {
                         width: 240px;
                         padding: 16px 0;
