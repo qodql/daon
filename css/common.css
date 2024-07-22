@@ -8,6 +8,19 @@
   margin: 40px;
 }
 
+ul.input_list li {
+  width: calc(50% - 10px);
+}
+ul.input_list li.half {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ul.input_list li.half > div {
+  width: calc(50% - 10px);
+}
+
 body.prevent_scroll {
   height: 100%;
   overflow: hidden;
@@ -735,6 +748,9 @@ body.prevent_scroll {
   }
   .sub .breadcrumb {
     width: calc(100% - 32px);
+  }
+  .checkbox_wrap {
+    width: 100%;
   }
   .sub .breadcrumb {
     padding: 16px;

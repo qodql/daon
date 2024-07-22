@@ -12,6 +12,25 @@
         }
     }
 }
+
+// ul li.half
+ul {
+  &.input_list {
+    li {
+      width: calc(50% - 10px);
+      &.half {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > div {
+          width: calc(50% - 10px);
+        }
+      }
+    }
+  }
+}
+
 // body scroll 방지
 body {
   &.prevent_scroll {

@@ -191,7 +191,7 @@
   margin-left: 100px;
 }
 .step1 .sub_container .contents .data_area .date_person li.data .input_wrap {
-  width: 100%;
+  width: calc(100% + 20px);
 }
 .step1 .sub_container .contents .data_area .date_person li.data .input_wrap input {
   width: 100%;
@@ -313,11 +313,12 @@
 .step2 .sub_container .contents .info_wrap {
   display: flex;
   position: relative;
+  justify-content: space-between;
 }
 .step2 .sub_container .contents .info_wrap .left {
-  width: 59%;
+  width: calc(64% - 20px);
   display: block;
-  margin: 56px 80px 0 0;
+  margin-top: 56px;
   padding-top: 40px;
   border-top: 1px solid #efefef;
 }
@@ -326,32 +327,21 @@
   padding-bottom: 40px;
   border-bottom: 1px solid #efefef;
 }
-.step2 .sub_container .contents .info_wrap .left .user_info .input_list li {
-  width: calc(50% - 20px);
-}
 .step2 .sub_container .contents .info_wrap .left .user_info .input_list li:not(:first-of-type) {
   margin-top: 24px;
-}
-.step2 .sub_container .contents .info_wrap .left .user_info .input_list li.half {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.step2 .sub_container .contents .info_wrap .left .user_info .input_list li.half > div {
-  width: calc(50% - 20px);
 }
 .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.tel_wrap > div {
   display: flex;
   margin-bottom: 8px;
   align-items: center;
-  justify-content: space-between;
 }
 .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.tel_wrap > div input {
-  width: calc(100% - 128px);
+  width: calc(100% - 120px);
 }
 .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.tel_wrap > div button {
-  padding: 16px 28px;
+  width: 112px;
+  margin-left: 8px;
+  padding: 16px 0;
   background-color: #357EF1;
   border-radius: 8px;
   color: #fff;
@@ -436,7 +426,7 @@
   right: 40px;
 }
 .step2 .sub_container .contents .info_wrap .right {
-  width: 41%;
+  width: calc(36% - 20px);
   margin-top: 56px;
 }
 .step2 .sub_container .contents .info_wrap .right .sticky_menu {
@@ -444,22 +434,25 @@
   right: 0;
   top: 56px;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list {
+.step2 .right_mb_info, .step2 .right_mb_menu {
+  display: none;
+}
+.step2 .data_list {
   padding: 40px;
   margin-bottom: 40px;
   border-radius: 20px;
   border: 1px solid #efefef;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list li .label {
+.step2 .data_list li .label {
   font-weight: 500;
   margin-bottom: 8px;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list li .data {
+.step2 .data_list li .data {
   font-size: 20px;
   font-weight: 700;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list li .data .tag {
+.step2 .data_list li .data .tag {
   padding: 8px 12px;
   margin-right: 8px;
   background-color: #3226C1;
@@ -469,34 +462,34 @@
   color: #fff;
   vertical-align: middle;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list li:not(:first-of-type) {
+.step2 .data_list li:not(:first-of-type) {
   margin-top: 32px;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap {
+.step2 .price_wrap {
   margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap > p {
+.step2 .price_wrap > p {
   font-size: 20px;
   font-weight: 700;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap .price {
+.step2 .price_wrap .price {
   text-align: right;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap .price .sale {
+.step2 .price_wrap .price .sale {
   font-size: 20px;
   color: #afafaf;
   text-decoration: line-through;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap .price p {
+.step2 .price_wrap .price p {
   font-size: 32px;
   font-weight: 700;
   display: flex;
   align-items: center;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .price_wrap .price p::before {
+.step2 .price_wrap .price p::before {
   content: "";
   display: inline-block;
   width: 32px;
@@ -504,7 +497,7 @@
   margin-right: 4px;
   background: url("../img/icon/icon_krw.svg") no-repeat center;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .payment_btn_wrap {
+.step2 .payment_btn_wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -512,13 +505,13 @@
   border-radius: 8px;
   overflow: hidden;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .payment_btn_wrap .payment_btn {
+.step2 .payment_btn_wrap .payment_btn {
   width: 50%;
   padding: 20px 0;
   font-size: 20px;
   font-weight: 700;
 }
-.step2 .sub_container .contents .info_wrap .right .sticky_menu .payment_btn_wrap .payment_btn.member {
+.step2 .payment_btn_wrap .payment_btn.member {
   background-color: #2f2f2f;
   color: #fff;
 }
@@ -676,6 +669,129 @@
     padding: 8px 16px;
     margin-right: 12px;
   }
+  .step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list {
+    padding: 32px;
+  }
+}
+@media screen and (max-width: 1088px) {
+  .step1 .sub_container .contents .data_area .room_list_wrap > li {
+    flex-direction: column;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap > li .room_img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap > li .room_info {
+    width: 100%;
+  }
+  .step2 {
+    position: relative;
+  }
+  .step2 .sub_container {
+    padding-bottom: 0;
+  }
+  .step2 .sub_container .contents .info_wrap .left {
+    width: 100%;
+  }
+  .step2 .sub_container .contents .info_wrap .right {
+    display: none;
+  }
+  .step2 .right_mb_menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px 80px;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    border-top: 1px solid #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  .step2 .right_mb_menu > div {
+    width: 200px;
+  }
+  .step2 .right_mb_menu > div:first-of-type {
+    width: calc(100% - 224px);
+    max-width: 320px;
+  }
+  .step2 .right_mb_menu .payment_btn_wrap {
+    border: none;
+    justify-content: flex-end;
+  }
+  .step2 .right_mb_menu .payment_btn_wrap .payment_btn {
+    width: 100px;
+    padding: 12px 0;
+    font-size: 14px;
+    border: 1px solid #2f2f2f;
+  }
+  .step2 .right_mb_menu .payment_btn_wrap .payment_btn:first-of-type {
+    border-radius: 8px 0 0 8px;
+  }
+  .step2 .right_mb_info {
+    display: block;
+    width: calc(100% + 160px);
+    margin: 80px 0 0 -80px;
+    padding: 40px 80px;
+    border-top: 8px solid #efefef;
+  }
+  .step2 .right_mb_info .data_list {
+    padding: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    border: none;
+  }
+  .step2 .right_mb_info .data_list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .step2 .right_mb_info .data_list li:not(:first-of-type) {
+    margin-top: 8px;
+  }
+  .step2 .right_mb_info .data_list li > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .step2 .right_mb_info .data_list li .label {
+    margin-bottom: 0;
+  }
+  .step2 .right_mb_info .data_list li .data .stay {
+    margin-left: 12px;
+    color: #afafaf;
+  }
+  .step2 .right_mb_info .data_list li .data .tag {
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+  .step2 .price_wrap {
+    display: block;
+    margin-bottom: 0;
+  }
+  .step2 .price_wrap .price {
+    text-align: left;
+  }
+  .step2 .price_wrap .price .sale {
+    display: none;
+  }
+  .step2 .price_wrap .price > p {
+    font-size: 20px;
+  }
+  .step2 .price_wrap .price > p::before {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+  }
+  .step2 .price_wrap > p {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .step1 .sub_container .contents .calendar_wrap {
@@ -725,6 +841,20 @@
     width: 88px;
   }
 }
+@media (max-width: 767px) {
+  .step2 .right_mb_info {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    padding: 40px 16px;
+  }
+  .step2 .right_mb_menu {
+    padding: 20px 16px;
+  }
+  .step2 .price_wrap {
+    display: flex;
+    align-items: center;
+  }
+}
 @media screen and (max-width: 683px) {
   .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
     left: 20px;
@@ -737,5 +867,18 @@
   }
   .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
     font-size: 16px;
+  }
+  .step2 .input_list li {
+    width: 100%;
+  }
+  .step2 .input_list li.half {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .step2 .input_list li.half > div {
+    width: 100%;
+  }
+  .step2 .input_list li.half > div:last-of-type {
+    margin-top: 24px;
   }
 }

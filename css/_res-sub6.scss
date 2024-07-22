@@ -16,7 +16,6 @@
                             }
                         }
                         #calendar{
-                            // width: calc(50% - 40px);
                             width: 380px;
                         }
                     }
@@ -139,8 +138,160 @@
             }
         }
     }
+    .step2 {
+        .sub_container {
+            .contents {
+                .info_wrap {
+                    .right {
+                        .sticky_menu {
+                            .data_list {
+                                padding: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
+@media screen and (max-width:1088px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .data_area {
+                    .room_list_wrap {
+                        > li {
+                            flex-direction: column;
+                            .room_img {
+                                width: 100%;
+                                height: auto;
+                                margin-right: 0;
+                                margin-bottom: 20px;
+                            }
+                            .room_info {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step2 {
+        position: relative;
+        .sub_container {
+            padding-bottom: 0;
+            .contents {
+                .info_wrap {
+                    .left {
+                        width: 100%;
+                    }
+                    .right {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .right_mb_menu {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 20px 80px;
+            position: sticky;
+            left: 0;
+            bottom: 0;
+            background-color: #fff;
+            border-top: 1px solid #efefef;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+            > div {
+                width: 200px;
+                &:first-of-type {
+                    width: calc(100% - 224px);
+                    max-width: 320px;
+                }
+            }
+            .payment_btn_wrap {
+                border: none;
+                justify-content: flex-end;
+                .payment_btn {
+                    width: 100px;
+                    padding: 12px 0;
+                    font-size: 14px;
+                    border: 1px solid #2f2f2f;
+                    &:first-of-type {
+                        border-radius: 8px 0 0 8px;
+                    }
+                }
+            }
+        }
+        .right_mb_info {
+            display: block;
+            width: calc(100% + 160px);
+            margin: 80px 0 0 -80px;
+            padding: 40px 80px;
+            border-top: 8px solid #efefef;
+            .data_list {
+                padding: 0;
+                margin-bottom: 0;
+                box-shadow: none;
+                border: none;
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    &:not(:first-of-type) {
+                        margin-top: 8px;
+                    }
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .label {
+                        margin-bottom: 0;
+                    }
+                    .data {
+                        .stay {
+                            margin-left: 12px;
+                            color: #afafaf;
+                        }
+                        .tag {
+                            padding: 6px 10px;
+                            border-radius: 4px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .price_wrap {
+            display: block;
+            margin-bottom: 0;
+            .price {
+                text-align: left;
+                .sale {
+                    // font-size: 14px;
+                    display: none;
+                }
+                > p {
+                    font-size: 20px;
+                    &::before {
+                        width: 24px;
+                        height: 24px;
+                        background-size: 24px;
+                    }
+                }
+            }
+            > p {
+                font-size: 16px;
+            }
+        }
+    }
+}
 @media screen and (max-width:1024px) {
     .step1 {
         .sub_container {
@@ -151,9 +302,6 @@
                 .data_area {
                     .date_person {
                         li{
-                            &:first-of-type {
-
-                            }
                             &:not(:first-of-type, .room) {
                                 margin-left: 40px;
                             }
@@ -226,6 +374,20 @@
 }
 
 @include res('mo-l'){
+    .step2 {
+        .right_mb_info {
+            width: calc(100% + 32px);
+            margin-left: -16px;
+            padding: 40px 16px;
+        }
+        .right_mb_menu {
+            padding: 20px 16px;
+        }
+        .price_wrap {
+            display: flex;
+            align-items: center;
+        }
+    }
 }
 
 
@@ -254,6 +416,23 @@
                                     font-size: 16px;
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step2 {
+        .input_list {
+            li {
+                width: 100%;
+                &.half {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    > div {
+                        width: 100%;
+                        &:last-of-type {
+                            margin-top: 24px;
                         }
                     }
                 }
