@@ -91,11 +91,6 @@
 .join{
     margin-bottom: 480px;
     .join_wrap{
-        width: 100%;
-        padding: 0;
-        margin: 0 auto;
-        border: none;
-        border-radius: 0;
         .join_personal_info{
             @include box_shadow{
                 padding: 72px 40px;
@@ -121,6 +116,11 @@
             } 
         }
         .join_agree{
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            border: none;
+            border-radius: 0;
             .agree_checkbox{
                 @include box_shadow;
                 overflow: hidden;
@@ -224,8 +224,7 @@
             text-align: center;
             a{
                 button{
-                    max-width: 240px;    //버튼이 화면 사이즈에 맞게 늘어나다가 240부터 안늘어나게 하고 싶은데 어떻게 해야할까요
-                    padding: 16px 48px;
+                    max-width: 240px;
                 }
             }
         }
