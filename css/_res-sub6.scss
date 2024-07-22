@@ -2,11 +2,562 @@
 
 @include res('pc-s'){
 }
+@media screen and (max-width:1400px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    .calendar_container {
+                        padding: 0 100px;
+                        .title {
+                            left: 25.5%;
+                            &.right{
+                                right:25.5%
+                            }
+                        }
+                        #calendar{
+                            width: 380px;
+                        }
+                    }
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            width: 80px;
+                            height: 80px;
+                            background-size: 64px;
+                            left: 40px;
+                            &.next {
+                                right: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @include res('tab'){
+    .reservation_common {
+        .sub_container {
+            .contents {
+                .step_wrap {
+                    .step {
+                        li {
+                            &:not(:last-of-type) {
+                                .circle {
+                                    &::after {
+                                        left: 62px;
+                                        top: 28px;
+                                    }
+                                }
+                            }
+                            .circle {
+                                width: 56px;
+                                height: 56px;
+                                border-width: 6px;
+                                span {
+                                    line-height: 44px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    .calendar_container {
+                        padding: 0 100px;
+                        justify-content: center;
+                        .right {
+                            display: none;
+                        }
+                        .title {
+                            &.left {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                }
+                .data_area {
+                    .date_person {
+                        li{
+                            &:not(:first-of-type, .room) {
+                                margin-left: 64px;
+                            }
+                            .label {
+                                font-size: 20px;
+                                margin-bottom: 12px;
+                            }
+                            .input_wrap {
+                                input {
+                                    width: 100px;
+                                }
+                                .btn_wrap {
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+                    .room_list_wrap {
+                        li {
+                            .room_img {
+                            }
+                            .room_info {
+                                ul {
+                                    padding: 32px;
+                                    li {
+                                        &:not(:first-of-type) {
+                                            margin-top: 16px;
+                                        }
+                                    }
+                                }
+                                .room_btn_wrap {
+                                    right: 32px;
+                                    bottom: 26px;
+                                    .room_select_btn {
+                                        padding: 8px 16px;
+                                    }
+                                }
+                                .room_name {
+                                    font-size: 20px;
+                                    // margin-bottom: 12px;
+                                    .tag {
+                                        padding: 8px 16px;
+                                        margin-right: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step2 {
+        .sub_container {
+            .contents {
+                .info_wrap {
+                    .right {
+                        .sticky_menu {
+                            .data_list {
+                                padding: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step3 {
+        .sub_container {
+            .contents {
+                .complete {
+                    .txt_wrap {
+                        p {
+                            strong {
+                                font-size: 28px;
+                                span {
+                                    margin-top: 12px;
+                                    margin-bottom: 40px;
+                                    font-size: 20px;
+                                }
+                            }
+                            > span {
+                                font-size: 20px;
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1088px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .data_area {
+                    .room_list_wrap {
+                        > li {
+                            flex-direction: column;
+                            .room_img {
+                                width: 100%;
+                                height: auto;
+                                margin-right: 0;
+                                margin-bottom: 20px;
+                            }
+                            .room_info {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step2 {
+        position: relative;
+        .sub_container {
+            padding-bottom: 0;
+            .contents {
+                .info_wrap {
+                    .left {
+                        width: 100%;
+                    }
+                    .right {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .right_mb_menu {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 20px 80px;
+            position: sticky;
+            left: 0;
+            bottom: 0;
+            background-color: #fff;
+            border-top: 1px solid #efefef;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+            > div {
+                width: 200px;
+                &:first-of-type {
+                    width: calc(100% - 224px);
+                    max-width: 320px;
+                }
+            }
+            .payment_btn_wrap {
+                border: none;
+                justify-content: flex-end;
+                .payment_btn {
+                    width: 100px;
+                    padding: 12px 0;
+                    font-size: 14px;
+                    border: 1px solid #2f2f2f;
+                    &:first-of-type {
+                        border-radius: 8px 0 0 8px;
+                    }
+                }
+            }
+        }
+        .right_mb_info {
+            display: block;
+            width: calc(100% + 160px);
+            margin: 80px 0 0 -80px;
+            padding: 40px 80px;
+            border-top: 8px solid #efefef;
+            .data_list {
+                padding: 0;
+                margin-bottom: 0;
+                box-shadow: none;
+                border: none;
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    &:not(:first-of-type) {
+                        margin-top: 8px;
+                    }
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .label {
+                        margin-bottom: 0;
+                    }
+                    .data {
+                        .stay {
+                            margin-left: 12px;
+                            color: #afafaf;
+                        }
+                        .tag {
+                            padding: 6px 10px;
+                            border-radius: 4px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .price_wrap {
+            display: block;
+            margin-bottom: 0;
+            .price {
+                text-align: left;
+                .sale {
+                    display: none;
+                }
+                > p {
+                    font-size: 24px;
+                    &::before {
+                        width: 24px;
+                        height: 24px;
+                        background-size: 24px;
+                    }
+                }
+            }
+            > p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1024px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    margin-bottom: 40px;
+                }
+                .data_area {
+                    .date_person {
+                        li{
+                            &:not(:first-of-type, .room) {
+                                margin-left: 40px;
+                            }
+                            .label {
+                                margin-bottom: 8px;
+                            }
+                            .input_wrap {
+                                input {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .room_list_wrap {
+                        margin-top: 40px;
+                        padding-top: 64px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:863px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    padding-bottom: 80px;
+                    .calendar_container {
+                        padding: 0 60px;
+                        #calendar {
+                            width: 360px;
+                            height: 360px;
+                        }
+                    }
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            width: 64px;
+                            height: 64px;
+                            background-size: 40px;
+                            left: 32px;
+                            &.next {
+                                right: 32px;
+                            }
+                        }
+                    }
+                }
+                .data_area {
+                    .date_person {
+                        li {
+                            &:not(:first-of-type, .room) {
+                                margin-left: 32px;
+                            }
+                            .label {
+                                margin-bottom: 4px;
+                            }
+                            .input_wrap {
+                                input {
+                                    width: 88px;
+                                }
+                                .btn_wrap {
+                                    width: 88px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include res('mo-l'){
+    .step2 {
+        .right_mb_info {
+            width: calc(100% + 32px);
+            margin-left: -16px;
+            padding: 40px 16px;
+        }
+        .right_mb_menu {
+            padding: 20px 16px;
+        }
+        .price_wrap {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+
+@media screen and (max-width:683px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .calendar_wrap {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            left: 20px;
+                            &.next {
+                                right: 20px;
+                            }
+                        }
+                    }
+                }
+                .data_area {
+                    .date_person {
+                        li {
+                            .label {
+                                font-size: 16px;
+                            }
+                            .input_wrap {
+                                input {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step2 {
+        .input_list {
+            li {
+                width: 100%;
+                &.half {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    > div {
+                        width: 100%;
+                        &:last-of-type {
+                            margin-top: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step3 {
+        .sub_container {
+            .contents {
+                .complete {
+                    .btn_wrap {
+                        button {
+                            width: calc(50% - 8px);
+                            &.reservation {
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:612px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .data_area {
+                    .date_person {
+                        flex-direction: column;
+                        position: relative;
+                        padding-bottom: 80px;
+                        li {
+                            margin-left: 0 !important;
+                            &.data {
+                                width: 100%;
+                            }
+                            &:not(.data) {
+                                width: 88px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                            }
+                            &:nth-last-of-type(2) {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                            &:nth-last-of-type(1) {
+                                left: auto;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+                .calendar_wrap {
+                    padding: 100px 0 40px;
+                    .calendar_container {
+                        padding: 0 40px;
+                        #calendar {
+                            width: 300px;
+                            height: 300px;
+                        }
+                        .title {
+                            top: 48px;
+                        }
+                    }
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            left: 8px;
+                            &.next {
+                                right: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:529px) {
+    .look {
+        .sub_container {
+            .contents {
+                .btn_wrap {
+                    font-size: 0;
+                    button {
+                        width: calc(50% - 4px);
+                        &:last-of-type {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include res('mo-s'){
