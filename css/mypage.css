@@ -102,6 +102,9 @@
   border: 1px solid #afafaf;
   border-radius: 8px;
 }
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::-moz-placeholder {
+  padding-left: 48px;
+}
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
   padding-left: 48px;
 }
@@ -317,6 +320,10 @@
     width: 400px;
     height: 44px;
     border-radius: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::-moz-placeholder {
+    padding-left: 52px;
+    font-size: 16px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
     padding-left: 52px;
@@ -545,6 +552,10 @@
     line-height: 40px;
     border-radius: 8px;
   }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::-moz-placeholder {
+    padding-left: 42px;
+    font-size: 14px;
+  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
     padding-left: 42px;
     font-size: 14px;
@@ -767,6 +778,10 @@
     height: 36px;
     line-height: 36px;
     border-radius: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::-moz-placeholder {
+    padding-left: 40px;
+    font-size: 12px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
     padding-left: 40px;
@@ -991,6 +1006,10 @@
     line-height: 32px;
     border-radius: 8px;
   }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::-moz-placeholder {
+    padding-left: 40px;
+    font-size: 12px;
+  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
     padding-left: 40px;
     font-size: 12px;
@@ -1125,6 +1144,10 @@
     height: 32px;
     line-height: 32px;
     border-radius: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::-moz-placeholder {
+    padding-left: 28px;
+    font-size: 12px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
     padding-left: 28px;

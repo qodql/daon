@@ -1,33 +1,52 @@
 // _res-login.scss
 /* 분기점 
 1280~1500: pc   pc-s
-768~1279: 태블릿     tab  노랑   rgb(234, 248, 111)
-481~767: 모바일라지  mo-l  초록   rgb(123, 248, 111)
-~480: 모바일         mo-s  파랑   rgb(111, 209, 248)
+768~1279: 태블릿     tab
+481~767: 모바일라지  mo-l
+~480: 모바일         mo-s 
 */
 /* 변동사항(확인 후 삭제하셔도 됩니다!)--------------------------------------
-모든 로그인 페이지는 기본 디자인을 모바일 기준으로 잡았기 때문에 변동사항이 매우 적습니다.
-mo-l(초록)와 mo-s(파랑)만 약간의 변동사항이 있으며 세부내역은 아래와 같습니다.
-****마지막 작업 후 변동사항 세부내역 업데이트를 아직 하지 않았습니다!!!!!*****
-mo-l(초록):
+모든 로그인 관련 페이지는 모바일 기준으로 기본 디자인을 잡았기 때문에 디자인적 변동사항이 적습니다.
+세부사항은 아래와 같습니다.
+tab: 
+- .login_common
+        ㄴ .logo_wrap : 로고-텍스트묶음의 하단 간격 조정 56->48px
+mo-l:
     - .login_common : 
-        ㄴ  기본 좌우 패딩 16px
-        ㄴ .logo_wrap : 컨텐츠와의 간격 줄임 56->48px
-        ㄴ .logo_wrap의 txt 폰트사이즈 줄임 32->24px
-        ㄴ 인풋박스 width 400->360px
-        ㄴ 버튼 width 400->360px 
+        ㄴ 기본 좌우 패딩 16px
+        ㄴ .logo_wrap 로고-텍스트 간 간격 줄임(40->36px)
+        ㄴ .logo_wrap 로고-텍스트의 텍스트 폰트사이즈 줄임(32->24px)
+        ㄴ 인풋박스 width 크게(400->480px)
+        ㄴ 버튼 width 크게(400->480px)
     - .login : 
         ㄴ 그림자 박스 제거
-        ㄴ 버튼 width 400->360px 
-        ㄴ 로그인-회원가입버튼 간격 60->40px
+        ㄴ 인풋박스 width 크게 (400->480px)
+        ㄴ 버튼 width 크게(400 -> 480px)
+        ㄴ 로그인-회원가입버튼 간격(60->40px)
     - .join : 
         ㄴ 그림자 박스 제거
-        ㄴ 버튼 width 480->400px 
-        ㄴ 전체동의 배경색 제거, border로 변경
-        ㄴ margin-bottom 480->320px
+        ㄴ 인풋박스 width 크게
+        ㄴ 버튼 width(480->400px)
+        ㄴ 인풋박스-체크박스 간 간격 조정 (16->48px)
+        ㄴ 전체 동의 배경색 제거, border를 추가해 영역 구분
+        ㄴ .join_optional_info(*선택항목은 동의없이~) 상단 마진 삭제
     - .join_complete
-        ㄴ.greeting p (환영합~) : 폰트 사이즈 축소(24px → 20($mobile_font_title)
-mo-s(파랑):  mo-l와 동일   
+        ㄴ 로고-체크-텍스트와 컨텐츠 간 간격 조정(48->24px)
+        ㄴ mo-l .login_common의 3번째 항목: .logo_wrap 간격 늘림(36->48px)
+        ㄴ 체크 아이콘 사이즈 작게(80x80 -> 60x60)
+        ㄴ.greeting p (환영합~) : 폰트 사이즈 축소 (24->20px)
+        ㄴ.greeting p (환영합~)와 버튼 간격 축소 (100->80px)
+        ㄴ 버튼 max-width 줄임(240->200px)
+mo-s: 
+    - .login_common : 
+        ㄴ 텍스트 폰트사이즈 줄임(24->20px)
+    - .login : 
+        ㄴ 없음
+    - .join_complete 
+        ㄴ.greeting p (환영합~)와 버튼 간격 축소 (80->40px)
+        ㄴ .greeting p (환영합~) : 폰트 사이즈 축소 (20->16px)
+        ㄴ 버튼 width 고정(깨짐 방지)(160px)
+* 360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 미디어쿼리 추가했습니다.
 */
 /*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
 
@@ -124,18 +143,9 @@ $box-width: 480px;
     @content
 }
 // ============================================================
-$mobile_padding_16: 16px;
-$mobile_padding_24: 24px;
-$mobile_padding_48: 48px;
-$mobile_font: 16px;
-$mobile_font_title: 24px;
-@include res('pc-s'){    //변동사항 없음
-};
-@include res('tab'){    //변동사항 없음
+@include res('pc-s'){};
+@include res('tab'){
     body{
-        background-color: rgb(234, 248, 111);
-        // 배경색 나중에 완전히 끝나면 삭제하기
-
         // 로그인+회원가입 공통
         .login_common{
             .logo_wrap{
@@ -146,19 +156,10 @@ $mobile_font_title: 24px;
 };  
 @include res('mo-l'){
     body{
-        background-color: rgb(123, 248, 111);
-        // 배경색 나중에 완전히 끝나면 삭제하기
-
         // 로그인+회원가입 공통
         .login_common{
             padding: 100px 16px 0;  //16은 common에 들어가면 빼기
             .logo_wrap{
-                // margin-bottom: 48px;
-                .logo{
-                    a{
-                        background-size: 80px;
-                    }
-                }
                 .txt{
                     margin-top: 36px;
                     font-size: 24px;
@@ -169,17 +170,11 @@ $mobile_font_title: 24px;
         .login{
             .login_wrap{
                 @include box_shadow(){
-                    // width: fit-content;
                     box-shadow: none;
                 };
                 .login_daon{
                     .login_login_daon{
                         margin-bottom: 40px;
-                    }
-                    .login_join_daon{
-                        .white_btn{
-                            @include btn_reverse;
-                        }
                     }
                 }
             }
@@ -219,7 +214,6 @@ $mobile_font_title: 24px;
                 margin-bottom: 24px;    //절반
                 .txt{
                     margin-top: 48px;   //줄
-                    font-size: 24px;    //줄임
                     &::before{
                         width: 60px;    //줄
                         height: 60px;   //줄
@@ -237,7 +231,7 @@ $mobile_font_title: 24px;
                 .join_complete_btn{
                     a{
                         button{
-                            padding: 16px 32px;
+                            max-width: 200px;
                         }
                     }
                 }
@@ -247,8 +241,7 @@ $mobile_font_title: 24px;
 };
 @include res('mo-s'){
     body{
-        background-color: rgb(111, 209, 248);
-        // 배경색 나중에 완전히 끝나면 삭제하기
+        // 로그인+회원가입 공통
         .login_common{
             .logo_wrap{
                 .txt{
@@ -256,6 +249,7 @@ $mobile_font_title: 24px;
                 }
             }
         }
+        // 로그인
         // 회원가입
         // 회원가입 완료
         .join_complete{
@@ -269,7 +263,7 @@ $mobile_font_title: 24px;
                 .join_complete_btn{
                     a{
                         button{
-                            padding: 16px 24px;
+                            width: 160px;
                         }
                     }
                 }
@@ -283,13 +277,6 @@ $mobile_font_title: 24px;
         .join{
             .join_wrap{
                 .join_personal_info{
-                    .join_input_box{
-                        li{
-                        }
-                        .verify_box
-                        {
-                        }
-                    }
                     .phone_verify_btn{
                         .phone_box{width: 69%;}
                     } 
