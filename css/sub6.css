@@ -960,3 +960,14 @@
     right: 8px;
   }
 }
+@media screen and (max-width: 529px) {
+  .look .sub_container .contents .btn_wrap {
+    font-size: 0;
+  }
+  .look .sub_container .contents .btn_wrap button {
+    width: calc(50% - 4px);
+  }
+  .look .sub_container .contents .btn_wrap button:last-of-type {
+    margin-left: 8px;
+  }
+}
