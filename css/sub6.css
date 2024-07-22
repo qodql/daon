@@ -544,6 +544,9 @@
   font-size: 24px;
   line-height: 36px;
 }
+.step3 .sub_container .contents .complete .btn_wrap {
+  font-size: 0;
+}
 .step3 .sub_container .contents .complete .btn_wrap button {
   width: 240px;
   padding: 16px 0;
@@ -672,6 +675,18 @@
   .step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list {
     padding: 32px;
   }
+  .step3 .sub_container .contents .complete .txt_wrap p strong {
+    font-size: 28px;
+  }
+  .step3 .sub_container .contents .complete .txt_wrap p strong span {
+    margin-top: 12px;
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+  .step3 .sub_container .contents .complete .txt_wrap p > span {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 @media screen and (max-width: 1088px) {
   .step1 .sub_container .contents .data_area .room_list_wrap > li {
@@ -782,7 +797,7 @@
     display: none;
   }
   .step2 .price_wrap .price > p {
-    font-size: 20px;
+    font-size: 24px;
   }
   .step2 .price_wrap .price > p::before {
     width: 24px;
@@ -823,6 +838,9 @@
     height: 360px;
   }
   .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+    width: 64px;
+    height: 64px;
+    background-size: 40px;
     left: 32px;
   }
   .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
@@ -856,6 +874,10 @@
   }
 }
 @media screen and (max-width: 683px) {
+  .step1 .sub_container .contents .calendar_wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
     left: 20px;
   }
@@ -880,5 +902,32 @@
   }
   .step2 .input_list li.half > div:last-of-type {
     margin-top: 24px;
+  }
+  .step3 .sub_container .contents .complete .btn_wrap button {
+    width: calc(50% - 8px);
+  }
+  .step3 .sub_container .contents .complete .btn_wrap button.reservation {
+    margin-left: 8px;
+  }
+}
+@media screen and (max-width: 612px) {
+  .step1 .sub_container .contents .calendar_wrap {
+    padding: 100px 0 40px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container {
+    padding: 0 40px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
+    width: 300px;
+    height: 300px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_container .title {
+    top: 48px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
+    left: 8px;
+  }
+  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
+    right: 8px;
   }
 }

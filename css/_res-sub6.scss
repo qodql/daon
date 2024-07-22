@@ -153,6 +153,30 @@
             }
         }
     }
+    .step3 {
+        .sub_container {
+            .contents {
+                .complete {
+                    .txt_wrap {
+                        p {
+                            strong {
+                                font-size: 28px;
+                                span {
+                                    margin-top: 12px;
+                                    margin-bottom: 40px;
+                                    font-size: 20px;
+                                }
+                            }
+                            > span {
+                                font-size: 20px;
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width:1088px) {
@@ -274,11 +298,10 @@
             .price {
                 text-align: left;
                 .sale {
-                    // font-size: 14px;
                     display: none;
                 }
                 > p {
-                    font-size: 20px;
+                    font-size: 24px;
                     &::before {
                         width: 24px;
                         height: 24px;
@@ -341,6 +364,9 @@
                     }
                     .calendar_btn_wrap {
                         .nav_button {
+                            width: 64px;
+                            height: 64px;
+                            background-size: 40px;
                             left: 32px;
                             &.next {
                                 right: 32px;
@@ -396,6 +422,8 @@
         .sub_container {
             .contents {
                 .calendar_wrap {
+                    padding-left: 20px;
+                    padding-right: 20px;
                     .calendar_btn_wrap {
                         .nav_button {
                             left: 20px;
@@ -433,6 +461,57 @@
                         width: 100%;
                         &:last-of-type {
                             margin-top: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .step3 {
+        .sub_container {
+            .contents {
+                .complete {
+                    .btn_wrap {
+                        button {
+                            width: calc(50% - 8px);
+                            &.reservation {
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:612px) {
+    .step1 {
+        .sub_container {
+            .contents {
+                .data_area {
+                    .date_person {
+
+                    }
+                }
+                .calendar_wrap {
+                    padding: 100px 0 40px;
+                    .calendar_container {
+                        padding: 0 40px;
+                        #calendar {
+                            width: 300px;
+                            height: 300px;
+                        }
+                        .title {
+                            top: 48px;
+                        }
+                    }
+                    .calendar_btn_wrap {
+                        .nav_button {
+                            left: 8px;
+                            &.next {
+                                right: 8px;
+                            }
                         }
                     }
                 }
