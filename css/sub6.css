@@ -190,11 +190,15 @@
 .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type) {
   margin-left: 100px;
 }
-.step1 .sub_container .contents .data_area .date_person li.data .input_wrap {
+.step1 .sub_container .contents .data_area .date_person li.data {
   width: calc(100% + 20px);
+}
+.step1 .sub_container .contents .data_area .date_person li.data .input_wrap {
+  width: 100%;
 }
 .step1 .sub_container .contents .data_area .date_person li.data .input_wrap input {
   width: 100%;
+  text-align: left;
 }
 .step1 .sub_container .contents .data_area .date_person li.room {
   margin-left: auto;
@@ -911,6 +915,31 @@
   }
 }
 @media screen and (max-width: 612px) {
+  .step1 .sub_container .contents .data_area .date_person {
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 80px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li {
+    margin-left: 0 !important;
+  }
+  .step1 .sub_container .contents .data_area .date_person li.data {
+    width: 100%;
+  }
+  .step1 .sub_container .contents .data_area .date_person li:not(.data) {
+    width: 88px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .step1 .sub_container .contents .data_area .date_person li:nth-last-of-type(2) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .step1 .sub_container .contents .data_area .date_person li:nth-last-of-type(1) {
+    left: auto;
+    right: 0;
+  }
   .step1 .sub_container .contents .calendar_wrap {
     padding: 100px 0 40px;
   }

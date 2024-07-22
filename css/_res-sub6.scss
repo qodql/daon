@@ -491,7 +491,29 @@
             .contents {
                 .data_area {
                     .date_person {
-
+                        flex-direction: column;
+                        position: relative;
+                        padding-bottom: 80px;
+                        li {
+                            margin-left: 0 !important;
+                            &.data {
+                                width: 100%;
+                            }
+                            &:not(.data) {
+                                width: 88px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                            }
+                            &:nth-last-of-type(2) {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                            &:nth-last-of-type(1) {
+                                left: auto;
+                                right: 0;
+                            }
+                        }
                     }
                 }
                 .calendar_wrap {

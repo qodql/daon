@@ -241,10 +241,12 @@
                             margin-left: 100px;
                         }
                         &.data {
+                            width: calc(100% + 20px);
                             .input_wrap {
-                                width: calc(100% + 20px);
+                                width: 100%;
                                 input {
                                     width: 100%;
+                                    text-align: left;
                                 }
                             }
                         }
@@ -257,11 +259,6 @@
                         }
                         .input_wrap {
                             position: relative;
-                            // .tui-datepicker-input {
-                            //     font-size: 24px;
-                            //     font-weight: 700;
-                            //     border: none;
-                            // }
                             input {
                                 width: 126px;
                                 height: 30px;
