@@ -152,9 +152,6 @@
                                 min-width: 24px;
                                 min-height: 24px;
                             }
-                            em{
-                                font-style: normal;
-                            }
                         }
                         display: flex;
                         justify-content: space-between;
@@ -162,12 +159,13 @@
                     }
                     .agree_essential{
                         label{
-                            span{color: #ff0f0f;}
+                            span{
+                                span{color: #ff0f0f;}
+                            }
                         }
                     }
                     .agree_optional{
                         label{
-                            em{color: #afafaf;}
                             span{color: #afafaf;}
                         }
                     }   
