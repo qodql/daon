@@ -171,14 +171,15 @@
                 padding: 32px;
                 ul.tab{
                     width: 100%;
-                    height: 60px;
+                    height: 40px;
+                    line-height: 40px;
                     display: flex;
                     border-bottom: 1px solid #afafaf;
                     li{
-                        width: 140px;
-                        font-size: 24px;
+                        width: 120px;
+                        font-size: 20px;
                         color: #afafaf;
-                        padding: 8px 16px;
+                        padding: 4px 16px;
                         text-align: center;
                         cursor: pointer;
                         &.on{
@@ -195,6 +196,7 @@
                         li{
                             width: 100%;
                             display: flex;
+                            align-items: center;
                             padding: 24px 0;
                             border-bottom: 2px solid #EFEFEF;
                             &:nth-child(4){
@@ -206,7 +208,7 @@
                                 font-size: 18px;
                                 color: #2f2f2f;
                                 text-align: center;
-                                &:nth-child(1){width: 25%;} 
+                                &:nth-child(1){width: 25%; padding-right: 10px;} 
                                 &:nth-child(2){width: 15%;} 
                                 &:nth-child(3){width: 10%;} 
                                 &:nth-child(4){width: 25%;} 
@@ -434,20 +436,21 @@
                 padding: 32px;
                 ul.tab{
                     width: 100%;
-                    height: 60px;
+                    height: 32px;
+                    line-height: 32px;
                     display: flex;
                     border-bottom: 1px solid #afafaf;
                     li{
-                        width: 140px;
-                        font-size: 24px;
+                        width: 100px;
+                        font-size: 18px;
                         color: #afafaf;
-                        padding: 8px 16px;
+                        padding: 4px 12px;
                         text-align: center;
                         cursor: pointer;
                         &.on{
                             color: #2f2f2f;
                             font-weight: 700;
-                            border-bottom: 4px solid #2f2f2f;
+                            border-bottom: 2px solid #2f2f2f;
                         }
                     }
                 }
@@ -458,7 +461,7 @@
                         li{
                             width: 100%;
                             display: flex;
-                            padding: 24px 0;
+                            padding: 16px 0;
                             border-bottom: 2px solid #EFEFEF;
                             &:nth-child(4){
                                 p{color: #AFAFAF;}
@@ -686,6 +689,98 @@
         }
     }
     //mypage Mobile-Large Responsive end
+    //reservation Mobile-Large Responsive start
+    .reservation_state {
+        .sub_top{
+            .dim{
+            }
+        }
+        .sub_container {
+            .contents{
+                padding: 16px;
+                ul.tab{
+                    width: 100%;
+                    height: 32px;
+                    line-height: 32px;
+                    display: flex;
+                    border-bottom: 1px solid #afafaf;
+                    li{
+                        width: 100px;
+                        font-size: 18px;
+                        color: #afafaf;
+                        padding: 4px 12px;
+                        text-align: center;
+                        cursor: pointer;
+                        &.on{
+                            color: #2f2f2f;
+                            font-weight: 700;
+                            border-bottom: 2px solid #2f2f2f;
+                        }
+                    }
+                }
+                .mypage_reservation{
+                    width: 100%;
+                    ul.mypage_reservation_list{
+                        width: 100%;
+                        li{
+                            width: 100%;
+                            display: flex;
+                            padding: 16px 0;
+                            border-bottom: 2px solid #EFEFEF;
+                            &:nth-child(4){
+                                p{color: #AFAFAF;}
+                            }
+                            h5{font-weight: 700;}
+                            p{}
+                            h5,p{
+                                font-size: 16px;
+                                color: #2f2f2f;
+                                text-align: center;
+                                &:nth-child(1){width: 25%;} 
+                                &:nth-child(2){width: 15%;} 
+                                &:nth-child(3){width: 10%;} 
+                                &:nth-child(4){width: 25%;} 
+                                &:nth-child(5){width: 25%;}
+                            }
+                        }
+                    }
+                    .mypage_reservation_cancel{
+                        width: 100%;
+                        h3{
+                            margin: 40px 0 20px;
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
+                        table{
+                            width: 100%;
+                            tr{
+                                td{
+                                    font-size: 16px;
+                                    border: 1px solid #AFAFAF;
+                                    padding: 20px 40px;
+                                    &:first-child{
+                                        width: 30%;
+                                        height: 40px;
+                                    }
+                                    ul{
+                                        li{font-size: 14px;}
+                                    }
+                                }
+                            }
+                        }
+                        span{
+                            font-size: 12px;
+                            color: #AFAFAF;
+                            font-weight: 300;
+                            margin: 8px 4px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //reservation Mobile-Large Responsive end
 }
 
 @media screen and (max-width:620px){
@@ -1034,6 +1129,98 @@
         }
     }
     //mypage Mobile-Small Responsive end
+    //reservation Mobile-Small Responsive start
+    .reservation_state {
+        .sub_top{
+            .dim{
+            }
+        }
+        .sub_container {
+            .contents{
+                padding: 16px;
+                ul.tab{
+                    width: 100%;
+                    height: 32px;
+                    line-height: 32px;
+                    display: flex;
+                    border-bottom: 1px solid #afafaf;
+                    li{
+                        width: 100px;
+                        font-size: 18px;
+                        color: #afafaf;
+                        padding: 4px 12px;
+                        text-align: center;
+                        cursor: pointer;
+                        &.on{
+                            color: #2f2f2f;
+                            font-weight: 700;
+                            border-bottom: 2px solid #2f2f2f;
+                        }
+                    }
+                }
+                .mypage_reservation{
+                    width: 100%;
+                    ul.mypage_reservation_list{
+                        width: 100%;
+                        li{
+                            width: 100%;
+                            display: flex;
+                            padding: 12px 0;
+                            border-bottom: 1px solid #EFEFEF;
+                            &:nth-child(4){
+                                p{color: #AFAFAF;}
+                            }
+                            h5{font-weight: 700;}
+                            p{}
+                            h5,p{
+                                font-size: 14px;
+                                color: #2f2f2f;
+                                text-align: center;
+                                &:nth-child(1){width: 25%;} 
+                                &:nth-child(2){width: 15%;} 
+                                &:nth-child(3){width: 10%;} 
+                                &:nth-child(4){width: 25%;} 
+                                &:nth-child(5){width: 25%;}
+                            }
+                        }
+                    }
+                    .mypage_reservation_cancel{
+                        width: 100%;
+                        h3{
+                            margin: 36px 0 16px;
+                            font-size: 14px;
+                            font-weight: 700;
+                        }
+                        table{
+                            width: 100%;
+                            tr{
+                                td{
+                                    font-size: 14px;
+                                    border: 1px solid #AFAFAF;
+                                    padding: 12px 16px;
+                                    &:first-child{
+                                        width: 30%;
+                                        height: 40px;
+                                    }
+                                    ul{
+                                        li{font-size: 12px;}
+                                    }
+                                }
+                            }
+                        }
+                        span{
+                            font-size: 12px;
+                            color: #AFAFAF;
+                            font-weight: 300;
+                            margin: 4px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //reservation Mobile-Small Responsive end
 }
 
 

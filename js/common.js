@@ -62,4 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     handleGnb();
     window.addEventListener("resize", handleGnb);
+
+    // [↓] chekcbox
+    const chkAll = document.querySelector(".checkbox_wrap #all_chk")
+    const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
+    chkAll.addEventListener("click", ()=>{
+        chk.forEach((v,i)=>{
+            chk[i].checked = true;
+        })
+    })
 })
