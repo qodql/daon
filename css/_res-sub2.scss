@@ -2,21 +2,45 @@
 
 
 
-//max 1500 변동 x
-@include res('pc-s'){}
-
-//  max 1279
-@include res('tab'){
+//max 1500
+@include res('pc-s'){
   .sub{
-    padding: 0 16px;
-    .contents{
+    .contents{padding: 0 16px;
       .main_box{
         .room_content{
           .main_box2{
-            .love_you_list{width: 100%;}
+            .love_you_list{width: calc(100% - 600px);
+            height: 100%;}
           }
         }
-        .all_text{width: calc(100% - 600px)}
+        .all_text{width: calc(100% - 780px);
+        margin-top: 80px;}
+      }
+    .caution{
+
+        .text_flexbox{
+          p{margin-top: 8px;}
+          .white-space{
+            p{
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+@media (max-width : 1398px){
+  .sub{
+    .contents{padding: 0 16px;
+      .main_box{
+        .room_content{
+          .main_box2{
+            .love_you_list{width: calc(100% - 500px);}
+          }
+        }
+        .all_text{width: calc(100% - 680px)}
       }
     .caution{
 
@@ -32,10 +56,38 @@
     }
   }
 }
-@media (max-width:1047px){
+
+
+//  max 1279
+@include res('tab'){
+  .sub{
+    .contents{padding: 0 16px;
+      .main_box{
+        .room_content{
+          .main_box2{
+            .love_you_list{width: calc(100% - 370px);}
+          }
+        }
+        .all_text{width: calc(100% - 600px);
+        margin-top: 40px;}
+      }
+    .caution{
+
+        .text_flexbox{display: block;
+          p{margin-top: 8px;}
+          .white-space{margin-top:8px;
+            p{
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:1066px){
   .sub {
-    padding: 0 16px;
-    .contents {
+    .contents {padding: 0 16px;
       .main_box {
         .room_content {
           .main_box2 {flex-wrap: wrap;
@@ -45,7 +97,7 @@
           }
         }
         .all_text {
-          width: calc(100% - 500px);          
+          width: 100%;          
           margin : 30px;
         }
       }
@@ -83,8 +135,7 @@
 // max 767
 @include res('mo-l'){
   .sub {
-    padding: 0 16px;
-    .contents {
+    .contents {padding: 0 16px;
       .main_box {
         .room_content {
           .main_box2 {
@@ -133,8 +184,7 @@
 @include res('mo-s'){
 
     .sub {
-      padding: 0 16px;
-      .contents {
+      .contents {padding: 0 16px;
         .main_box {
           .room_content {
             .main_box2 {
