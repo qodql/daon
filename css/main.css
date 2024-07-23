@@ -9,8 +9,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .quick_menu {
@@ -23,8 +22,7 @@
   left: 50%;
   bottom: 20%;
   transform: translateX(-50%);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   z-index: 11;
@@ -108,7 +106,6 @@
   position: relative;
 }
 .main .container .section .inner .title {
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 64px;
   font-weight: 700;
@@ -144,66 +141,6 @@
 .main .container .section .inner .more_btn a:hover::after {
   animation: more 0.5s infinite linear;
 }
-.main .container .swiper {
-  position: relative;
-}
-.main .container .swiper .swiper_btn_wrap {
-  position: absolute;
-  right: 13.5%;
-  bottom: 38px;
-}
-.main .container .swiper .swiper_btn_wrap > * {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #afafaf;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-.main .container .swiper .swiper_btn_wrap > *::after {
-  font-size: 0;
-  display: block;
-  width: 32px;
-  height: 32px;
-  background: url("../img/icon/icon_arrow.svg") no-repeat center;
-  transition: all 0.3s;
-}
-.main .container .swiper .swiper_btn_wrap > *:hover {
-  border-color: #2f2f2f;
-}
-.main .container .swiper .swiper_btn_wrap > *:hover::after {
-  background-image: url("../img/icon/icon_arrow_on.svg");
-}
-.main .container .swiper .swiper_btn_wrap .swiper-button-prev {
-  left: auto;
-  right: 70px;
-  transform: rotate(180deg);
-}
-.main .container .swiper .swiper_btn_wrap .swiper-button-next {
-  left: auto;
-  right: 0;
-}
-.main .container .swiper .swiper-pagination {
-  width: -moz-fit-content;
-  width: fit-content;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  left: 13.5%;
-  top: auto;
-  bottom: 28px;
-}
-.main .container .swiper .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #efefef;
-  opacity: 1;
-}
-.main .container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 40px;
-  height: 16px;
-  border-radius: 999px;
-  background: #2f2f2f;
-}
 .main .container .section.room .inner {
   max-width: 100%;
 }
@@ -225,7 +162,7 @@
 }
 .main .container .section.room .inner .contents .room_list .swiper-slide .room_info {
   width: 100%;
-  height: calc(100% - 6px);
+  height: 100%;
   display: block;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.2);
@@ -368,6 +305,7 @@
   top: 0;
   border-radius: 20px;
   overflow: hidden;
+  transition: all 0.3s;
 }
 .main .container .section.around_spot .inner .contents .spot_list li:first-of-type {
   top: -405px;
@@ -381,7 +319,14 @@
   top: 115px;
 }
 .main .container .section.around_spot .inner .contents .spot_list li a img {
+  transition: all 0.3s;
   display: block;
+}
+.main .container .section.around_spot .inner .contents .spot_list li:hover {
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+.main .container .section.around_spot .inner .contents .spot_list li:hover a img {
+  transform: scale(1.02);
 }
 .main .container .section.event .inner {
   max-width: 100%;
@@ -415,6 +360,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.3s;
 }
 .main .container .section.event .inner .swiper-wrapper .swiper-slide .txt_box {
   width: 320px;
@@ -436,6 +382,9 @@
   bottom: 32px;
   line-height: 2;
   color: #7a7a7a;
+}
+.main .container .section.event .inner .swiper-wrapper .swiper-slide:hover a img {
+  transform: translate(-50%, -50%) scale(1.05) rotate(-1deg);
 }
 .main .container .section.event .inner .swiper-pagination {
   left: 0;
@@ -682,7 +631,6 @@
     right: 17.5%;
   }
   .main .container .section.around_spot .inner {
-    height: -moz-fit-content;
     height: fit-content;
     padding-bottom: 32%;
   }
@@ -705,7 +653,7 @@
   .main .container .section.around_spot .inner .contents .spot_list li:first-of-type {
     width: 52.68%;
     top: auto;
-    bottom: -100px;
+    bottom: -102px;
   }
   .main .container .section.around_spot .inner .contents .spot_list li:nth-of-type(2) {
     width: 61.43%;
@@ -805,7 +753,7 @@
     font-size: 16px;
   }
   .main .container .section.room .inner .contents .room_list .swiper-slide.swiper-slide-active:hover .room_info .txt {
-    bottom: 80px;
+    bottom: 8%;
   }
   .main .container .section.facilities {
     height: 760px;
@@ -902,6 +850,9 @@
   .main .container .section.room .inner .more_btn, .main .container .section.event .inner .more_btn {
     right: 16px;
   }
+  .main .container .section.room .inner .contents .room_list .swiper-slide .room_info .txt p {
+    margin-bottom: 4px;
+  }
   .main .container .section.facilities {
     margin-bottom: 140px;
   }
@@ -935,10 +886,8 @@
     margin-top: 0;
   }
   .main .container .section.around_spot .inner .contents .spot_list li a img {
-    -o-object-position: center;
-       object-position: center;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-position: center;
+    object-fit: cover;
   }
   .main .container .section.event .inner {
     margin-top: 0;

@@ -14,7 +14,95 @@
     }
 }
 
-// ul li.half
+// swiper
+.swiper {
+  position: relative;
+  .swiper_btn_wrap {
+      z-index: 2;
+      > * {
+          width: 60px;
+          height: 60px;
+          border: 2px solid #efefef;
+          border-radius: 8px;
+          transition: all 0.3s;
+          &::after {
+              font-size: 0;
+              display: block;
+              width: 32px;
+              height: 32px;
+              background: url("../img/icon/icon_arrow_white.svg") no-repeat center;
+              transition: all 0.3s;
+          }
+          &:hover {
+              border-color: #2f2f2f;
+              &::after {
+                  background-image: url("../img/icon/icon_arrow_on.svg");
+              }
+          }
+      }
+      .swiper-button-prev {
+          left: 24px;
+          transform: rotate(180deg);
+      }
+      .swiper-button-next {
+        left:auto;
+        right: 24px;
+      }
+  }
+  .swiper-pagination {
+      width: fit-content;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      left: 13.5%;
+      top:auto;
+      bottom: 28px;
+      .swiper-pagination-bullet {
+          width: 12px;
+          height: 12px;
+          background: #efefef;
+          opacity: 1;
+          &.swiper-pagination-bullet-active {
+              width: 40px;
+              height: 16px;
+              border-radius: 999px;
+              background: #2f2f2f;
+          }
+      }
+  }
+}
+.main {
+  .swiper {
+    .swiper_btn_wrap {
+        position: absolute;
+        right: 13.5%;
+        bottom: 38px;
+        transform: translateY(-50%);
+        > * {
+          border-color: #afafaf;
+          &::after {
+            background-image: url("../img/icon/icon_arrow.svg");
+          }
+          &:hover {
+              border-color: #2f2f2f;
+              &::after {
+                  background-image: url("../img/icon/icon_arrow_on.svg");
+              }
+          }
+        }
+        .swiper-button-prev {
+            left: auto;
+            right:70px;
+        }
+        .swiper-button-next {
+            left: auto;
+            right:0;
+        }
+    }
+  }
+}
+
+// input_list li.half
 ul {
   &.input_list {
     li {

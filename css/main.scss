@@ -150,65 +150,6 @@
                 }
             }
         }
-        .swiper {
-            position: relative;
-            .swiper_btn_wrap {
-                position: absolute;
-                right: 13.5%;
-                bottom: 38px;
-                > * {
-                    width: 60px;
-                    height: 60px;
-                    border: 2px solid #afafaf;
-                    border-radius: 8px;
-                    transition: all 0.3s;
-                    &::after {
-                        font-size: 0;
-                        display: block;
-                        width: 32px;
-                        height: 32px;
-                        background: url("../img/icon/icon_arrow.svg") no-repeat center;
-                        transition: all 0.3s;
-                    }
-                    &:hover {
-                        border-color: #2f2f2f;
-                        &::after {
-                            background-image: url("../img/icon/icon_arrow_on.svg");
-                        }
-                    }
-                }
-                .swiper-button-prev {
-                    left: auto;
-                    right:70px;
-                    transform: rotate(180deg);
-                }
-                .swiper-button-next {
-                    left: auto;
-                    right:0;
-                }
-            }
-            .swiper-pagination {
-                width: fit-content;
-                text-align: left;
-                display: flex;
-                align-items: center;
-                left: 13.5%;
-                top:auto;
-                bottom: 28px;
-                .swiper-pagination-bullet {
-                    width: 12px;
-                    height: 12px;
-                    background: #efefef;
-                    opacity: 1;
-                    &.swiper-pagination-bullet-active {
-                        width: 40px;
-                        height: 16px;
-                        border-radius: 999px;
-                        background: #2f2f2f;
-                    }
-                }
-            }
-        }
         // section
         .section {
             // room
@@ -232,7 +173,7 @@
                                 }
                                 .room_info {
                                     width: 100%;
-                                    height: calc(100% - 6px);
+                                    height: 100%;
                                     display: block;
                                     border-radius: 20px;
                                     background-color: rgba(0, 0, 0, 0.2);
@@ -392,6 +333,7 @@
                                 top: 0;
                                 border-radius: 20px;
                                 overflow: hidden;
+                                transition: all 0.3s;
                                 &:first-of-type {
                                     top: -405px;
                                 }
@@ -405,7 +347,16 @@
                                 }
                                 a {
                                     img {
+                                        transition: all 0.3s;
                                         display: block;
+                                    }
+                                }
+                                &:hover {
+                                    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+                                    a {
+                                        img {
+                                            transform: scale(1.02);
+                                        }
                                     }
                                 }
                             }
@@ -445,6 +396,7 @@
                                     left: 50%;
                                     top: 50%;
                                     transform: translate(-50%, -50%);
+                                    transition: all 0.3s;
                                 }
                             }
                             .txt_box {
@@ -466,6 +418,13 @@
                                     bottom: 32px;
                                     line-height: 2;
                                     color: #7a7a7a;
+                                }
+                            }
+                            &:hover {
+                                a {
+                                    img {
+                                        transform: translate(-50%, -50%) scale(1.05) rotate(-1deg);
+                                    }
                                 }
                             }
                         }

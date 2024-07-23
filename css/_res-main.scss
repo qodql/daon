@@ -118,7 +118,7 @@
                                     &:first-of-type{
                                         width: 52.68%;
                                         top: auto;
-                                        bottom: -100px;
+                                        bottom: -102px;
                                     }
                                     &:nth-of-type(2) {
                                         width: 61.43%
@@ -271,7 +271,7 @@
                                         &:hover {
                                             .room_info {
                                                 .txt {
-                                                    bottom: 80px;
+                                                    bottom: 8%;
                                                 }
                                             }
                                         }
@@ -429,6 +429,23 @@
                         }
                         .more_btn {
                             right: 16px;
+                        }
+                    }
+                }
+                &.room {
+                    .inner {
+                        .contents {
+                            .room_list {
+                                .swiper-slide {
+                                    .room_info {
+                                        .txt {
+                                            p {
+                                                margin-bottom: 4px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
