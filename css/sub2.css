@@ -14,48 +14,6 @@
   background: url("../img/img_sub2_room_header.jpg") no-repeat center/cover;
   position: relative;
 }
-.sub .breadcrumb {
-  width: 1400px;
-  height: 64px;
-  padding: 16px 32px;
-  background-color: #fff;
-  position: absolute;
-  left: 50%;
-  bottom: -32px;
-  transform: translateX(-50%);
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
-  z-index: 11;
-}
-.sub .breadcrumb ul {
-  display: flex;
-  align-items: center;
-}
-.sub .breadcrumb ul li {
-  display: flex;
-  align-items: center;
-}
-.sub .breadcrumb ul li:first-of-type::before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 30px;
-  margin-right: 4px;
-  background: url("../img/icon/icon_home.svg") no-repeat center;
-}
-.sub .breadcrumb ul li:not(:first-of-type) {
-  color: #afafaf;
-}
-.sub .breadcrumb ul li:not(:first-of-type)::before {
-  content: "";
-  display: block;
-  width: 15px;
-  height: 15px;
-  margin: 0 16px;
-  background: url("../img/icon/icon_arrow.svg") no-repeat center/15px;
-}
-.sub .breadcrumb ul li a {
-  font-size: 14px;
-}
 .sub .on .love_you_a {
   color: #2f2f2f;
   font-weight: 700;
@@ -346,15 +304,34 @@
   margin-top: 12px;
 }
 
-@media (max-width: 1279px) {
-  .sub {
+@media (max-width: 1499px) {
+  .sub .contents {
     padding: 0 16px;
   }
   .sub .contents .main_box .room_content .main_box2 .love_you_list {
-    width: 100%;
+    width: calc(100% - 600px);
+    height: 100%;
   }
   .sub .contents .main_box .all_text {
-    width: calc(100% - 600px);
+    width: calc(100% - 780px);
+    margin-top: 80px;
+  }
+  .sub .contents .caution .text_flexbox p {
+    margin-top: 8px;
+  }
+  .sub .contents .caution .text_flexbox .white-space p {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 1398px) {
+  .sub .contents {
+    padding: 0 16px;
+  }
+  .sub .contents .main_box .room_content .main_box2 .love_you_list {
+    width: calc(100% - 500px);
+  }
+  .sub .contents .main_box .all_text {
+    width: calc(100% - 680px);
   }
   .sub .contents .caution .text_flexbox {
     display: block;
@@ -369,8 +346,32 @@
     margin-top: 8px;
   }
 }
-@media (max-width: 1047px) {
-  .sub {
+@media (max-width: 1279px) {
+  .sub .contents {
+    padding: 0 16px;
+  }
+  .sub .contents .main_box .room_content .main_box2 .love_you_list {
+    width: calc(100% - 370px);
+  }
+  .sub .contents .main_box .all_text {
+    width: calc(100% - 600px);
+    margin-top: 40px;
+  }
+  .sub .contents .caution .text_flexbox {
+    display: block;
+  }
+  .sub .contents .caution .text_flexbox p {
+    margin-top: 8px;
+  }
+  .sub .contents .caution .text_flexbox .white-space {
+    margin-top: 8px;
+  }
+  .sub .contents .caution .text_flexbox .white-space p {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 1066px) {
+  .sub .contents {
     padding: 0 16px;
   }
   .sub .contents .main_box .room_content .main_box2 {
@@ -380,7 +381,7 @@
     width: 100%;
   }
   .sub .contents .main_box .all_text {
-    width: calc(100% - 500px);
+    width: 100%;
     margin: 30px;
   }
   .sub .contents .room_info_amenities {
@@ -413,7 +414,7 @@
   }
 }
 @media (max-width: 767px) {
-  .sub {
+  .sub .contents {
     padding: 0 16px;
   }
   .sub .contents .main_box .room_content .main_box2 {
@@ -457,7 +458,7 @@
   }
 }
 @media (max-width: 479px) {
-  .sub {
+  .sub .contents {
     padding: 0 16px;
   }
   .sub .contents .main_box .room_content .main_box2 {
