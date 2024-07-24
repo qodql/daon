@@ -93,6 +93,12 @@
   margin-top: -4px;
   background: url("../img/icon/icon_arrow.svg") no-repeat center/24px;
 }
+.reservation_common .sub_container .contents .toastui-calendar-weekday .toastui-calendar-grid-selection {
+  border-radius: 999px;
+}
+.reservation_common .sub_container .contents .toastui-calendar-weekday .toastui-calendar-grid-selection:first-of-type, .reservation_common .sub_container .contents .toastui-calendar-weekday .toastui-calendar-grid-selection:last-of-type {
+  background-color: rgba(81, 92, 230, 0.1);
+}
 
 .step1 .sub_container .contents .calendar_wrap {
   width: 100%;

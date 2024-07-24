@@ -117,6 +117,14 @@
                     }
                 }
             }
+            .toastui-calendar-weekday {
+                .toastui-calendar-grid-selection {
+                    border-radius: 999px;
+                    &:first-of-type, &:last-of-type {
+                        background-color: rgba(81, 92, 230, 0.1);
+                    }
+                }
+            }
         }
     }
 }

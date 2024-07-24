@@ -66,9 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // [↓] chekcbox
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
-    chkAll.addEventListener("click", ()=>{
-        chk.forEach((v,i)=>{
-            chk[i].checked = true;
+    if (chkAll) {
+        chkAll.addEventListener("click", ()=>{
+            chk.forEach((v,i)=>{
+                chk[i].checked = true;
+            })
         })
-    })
+    }
 })
