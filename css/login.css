@@ -600,17 +600,11 @@ mo-s:
   min-width: 24px;
   min-height: 24px;
 }
-.join .join_wrap .join_agree .agree_checkbox .agree_list li label em {
-  font-style: normal;
-}
 .join .join_wrap .join_agree .agree_checkbox .agree_list li .view_all {
   color: #afafaf;
 }
-.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_essential label span {
+.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_essential label span span {
   color: #ff0f0f;
-}
-.join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label em {
-  color: #afafaf;
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_list .agree_optional label span {
   color: #afafaf;
