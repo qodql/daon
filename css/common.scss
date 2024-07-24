@@ -32,8 +32,8 @@ ul {
   }
 }
 
-// popup
-.popup{
+//coupon_popup
+.coupon_popup{
   width: 514px;
   height: 709px;
   margin: 50px auto;
@@ -41,10 +41,10 @@ ul {
   box-shadow: 0 4px 4px rgba(0,0,0,0.1);
   border-radius: 20px;
   z-index: 999;
-  .popup_cont{
+  .coupon_popup_cont{
       width: 100%;
       position: relative;
-      .close_btn{
+      .coupon_popup_close_btn{
           width: 20px;
           height: 20px;
           position: absolute;

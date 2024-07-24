@@ -22,7 +22,7 @@ ul.input_list li.half > div {
   width: calc(50% - 10px);
 }
 
-.popup {
+.coupon_popup {
   width: 514px;
   height: 709px;
   margin: 50px auto;
@@ -31,11 +31,11 @@ ul.input_list li.half > div {
   border-radius: 20px;
   z-index: 999;
 }
-.popup .popup_cont {
+.coupon_popup .coupon_popup_cont {
   width: 100%;
   position: relative;
 }
-.popup .popup_cont .close_btn {
+.coupon_popup .coupon_popup_cont .coupon_popup_close_btn {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -43,16 +43,16 @@ ul.input_list li.half > div {
   right: 24px;
   background: url("../img/icon/icon_popup_close.svg") no-repeat center;
 }
-.popup .popup_cont .popup_tit {
+.coupon_popup .coupon_popup_cont .popup_tit {
   text-align: center;
   padding: 40px 0 32px 0;
 }
-.popup .popup_cont .popup_tit h3 {
+.coupon_popup .coupon_popup_cont .popup_tit h3 {
   font-size: 24px;
   font-weight: 700;
   color: #2f2f2f;
 }
-.popup .popup_cont .popup_cont_inner {
+.coupon_popup .coupon_popup_cont .popup_cont_inner {
   width: 434px;
   height: 544px;
   margin: 0 auto;
@@ -61,7 +61,7 @@ ul.input_list li.half > div {
   border-radius: 20px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon {
   width: 394px;
   height: 117px;
   margin: 0 auto;
@@ -75,32 +75,32 @@ ul.input_list li.half > div {
   align-items: flex-end;
   justify-content: space-between;
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon.mypage_coupon_popup_cont_inner_coupon_02 .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date .mypage_coupon_popup_cont_inner_coupon_txt_date_icon {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon.mypage_coupon_popup_cont_inner_coupon_02 .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date .mypage_coupon_popup_cont_inner_coupon_txt_date_icon {
   background-color: #FF0F0F;
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_tit h2 {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_tit h2 {
   color: #357EF1;
   font-size: 40px;
   font-weight: 700;
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_tit h3 {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_tit h3 {
   color: #2f2f2f;
   font-size: 16px;
   font-weight: 600;
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt span {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt span {
   font-size: 14px;
   color: #AFAFAF;
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date {
   display: flex;
 }
-.popup .popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date .mypage_coupon_popup_cont_inner_coupon_txt_date_icon {
+.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date .mypage_coupon_popup_cont_inner_coupon_txt_date_icon {
   width: 31px;
   height: 18px;
   border-radius: 4px;
@@ -523,7 +523,6 @@ body.prevent_scroll {
 }
 
 .main + .footer {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
