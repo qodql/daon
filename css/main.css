@@ -9,7 +9,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  object-fit: fill;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .quick_menu {
@@ -22,7 +23,8 @@
   left: 50%;
   bottom: 20%;
   transform: translateX(-50%);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   z-index: 11;
@@ -106,6 +108,7 @@
   position: relative;
 }
 .main .container .section .inner .title {
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 64px;
   font-weight: 700;
@@ -140,65 +143,6 @@
 }
 .main .container .section .inner .more_btn a:hover::after {
   animation: more 0.5s infinite linear;
-}
-.main .container .swiper {
-  position: relative;
-}
-.main .container .swiper .swiper_btn_wrap {
-  position: absolute;
-  right: 13.5%;
-  bottom: 38px;
-}
-.main .container .swiper .swiper_btn_wrap > * {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #afafaf;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-.main .container .swiper .swiper_btn_wrap > *::after {
-  font-size: 0;
-  display: block;
-  width: 32px;
-  height: 32px;
-  background: url("../img/icon/icon_arrow.svg") no-repeat center;
-  transition: all 0.3s;
-}
-.main .container .swiper .swiper_btn_wrap > *:hover {
-  border-color: #2f2f2f;
-}
-.main .container .swiper .swiper_btn_wrap > *:hover::after {
-  background-image: url("../img/icon/icon_arrow_on.svg");
-}
-.main .container .swiper .swiper_btn_wrap .swiper-button-prev {
-  left: auto;
-  right: 70px;
-  transform: rotate(180deg);
-}
-.main .container .swiper .swiper_btn_wrap .swiper-button-next {
-  left: auto;
-  right: 0;
-}
-.main .container .swiper .swiper-pagination {
-  width: fit-content;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  left: 13.5%;
-  top: auto;
-  bottom: 28px;
-}
-.main .container .swiper .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #efefef;
-  opacity: 1;
-}
-.main .container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 40px;
-  height: 16px;
-  border-radius: 999px;
-  background: #2f2f2f;
 }
 .main .container .section.room .inner {
   max-width: 100%;
@@ -690,6 +634,7 @@
     right: 17.5%;
   }
   .main .container .section.around_spot .inner {
+    height: -moz-fit-content;
     height: fit-content;
     padding-bottom: 32%;
   }
@@ -945,8 +890,10 @@
     margin-top: 0;
   }
   .main .container .section.around_spot .inner .contents .spot_list li a img {
-    object-position: center;
-    object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .main .container .section.event .inner {
     margin-top: 0;

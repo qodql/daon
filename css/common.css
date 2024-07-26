@@ -45,6 +45,7 @@
   right: 24px;
 }
 .swiper .swiper-pagination {
+  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   display: flex;
@@ -607,6 +608,7 @@ body.prevent_scroll {
 }
 
 .main + .footer {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .main + .footer .dim {
