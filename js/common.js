@@ -89,11 +89,22 @@ fetch('./component/common.html')
     // [↓] chekcbox
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
-    if (chkAll) {
+    chk.forEach((v,i)=>{
         chkAll.addEventListener("click", ()=>{
-            chk.forEach((v,i)=>{
+            if (chkAll.checked) {
                 chk[i].checked = true;
-            })
+            } else {
+                chk[i].checked = false;
+            }
         })
-    }
+        chk[i].addEventListener("change", ()=>{
+            const chkLength = chk.length;
+            const chkCheckedLength = document.querySelectorAll(".checkbox_wrap input[name='chk']:checked").length
+            if (chkCheckedLength === chkLength) {
+                chkAll.checked = true;
+            } else {
+                chkAll.checked = false;
+            }
+        })
+    })
 })
