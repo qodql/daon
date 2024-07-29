@@ -11,20 +11,19 @@ fetch('./component/common.html')
 
     // [↓] header, footer 제어
     const login = document.querySelector(".login_common")
-    const body = document.querySelector("body")
     const footer = document.querySelector(".footer")
     if (!login) {
+        const body = document.querySelector("body")
         let createHeader = document.createElement('header')
         let createFooter = document.createElement('footer')
         createHeader.className = 'header'
         createFooter.className = 'footer'
         createHeader.innerHTML = data.split('/nn')[0];
         createFooter.innerHTML = data.split('/nn')[1];
-        document.body.prepend(createHeader)
-        document.body.append(createFooter)
+        body.prepend(createHeader)
+        body.append(createFooter)
         
         const footerVideo = document.querySelector(".footer .video_wrap")
-        const body = document.querySelector("body")
         const main = document.querySelector(".main")
         const footer = document.querySelector(".footer")
 
