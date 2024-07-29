@@ -14,7 +14,7 @@ fetch('./component/common.html')
     const footer = document.querySelector(".footer")
     const main = document.querySelector(".main")
     const sub = document.querySelector(".sub")
-    if (main || sub) {
+    if (!login) {
         let createHeader = document.createElement('header')
         let createFooter = document.createElement('footer')
         createHeader.className = 'header'
@@ -62,30 +62,39 @@ fetch('./component/common.html')
         };
         
         const handleGnb = () => {
-            header.removeEventListener("mouseover", handleHeaderMouseOver);
-            navBg.removeEventListener("mouseover", handleNavBgMouseOver);
-            navBg.removeEventListener("mouseleave", handleNavBgMouseLeave);
-            mbBtn.removeEventListener("click", handleMbBtnClick);
-        
-            if (body.offsetWidth > 1280) {
-                //pc
-                header.addEventListener("mouseover", handleHeaderMouseOver);
-                navBg.addEventListener("mouseover", handleNavBgMouseOver);
-                navBg.addEventListener("mouseleave", handleNavBgMouseLeave);
-            } else {
-                //mb
-                for (let i=0; i < depth1.length; i++){
-                    depth1[i].addEventListener("click", (e) => {
-                        navLi.forEach((v, i) => {
-                            navLi[i].classList.remove("on")
-                        })
-                        e.preventDefault();
-                        e.target.parentNode.classList.toggle("on")
-                    })
-                }
-                mbBtn.addEventListener("click", handleMbBtnClick);
+            if (header) {
+                header.removeEventListener("mouseover", handleHeaderMouseOver);
             }
-        };
+            if (navBg) {
+                navBg.removeEventListener("mouseover", handleNavBgMouseOver);
+                navBg.removeEventListener("mouseleave", handleNavBgMouseLeave);
+            }
+            if (mbBtn) {
+                mbBtn.removeEventListener("click", handleMbBtnClick);
+            }
+            if (body.offsetWidth > 1280) {
+                // pc
+                if (header) {
+                    header.addEventListener("mouseover", handleHeaderMouseOver);
+                }
+                if (navBg) {
+                    navBg.addEventListener("mouseover", handleNavBgMouseOver);
+                    navBg.addEventListener("mouseleave", handleNavBgMouseLeave);
+                }
+            } else {
+                // mb
+                depth1.forEach((depth) => {
+                    depth.addEventListener("click", (e) => {
+                        navLi.forEach((v) => v.classList.remove("on"));
+                        e.preventDefault();
+                        e.target.parentNode.classList.toggle("on");
+                    });
+                });
+                if (mbBtn) {
+                    mbBtn.addEventListener("click", handleMbBtnClick);
+                }
+            }
+        }
         
         handleGnb();
         window.addEventListener("resize", handleGnb);
