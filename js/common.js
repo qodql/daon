@@ -12,28 +12,30 @@ fetch('./component/common.html')
     // [↓] header, footer 제어
     const login = document.querySelector(".login_common")
     const footer = document.querySelector(".footer")
-    if (!login) {
-        const body = document.querySelector("body")
+    const main = document.querySelector(".main")
+    const sub = document.querySelector(".sub")
+    if (main || sub) {
         let createHeader = document.createElement('header')
         let createFooter = document.createElement('footer')
         createHeader.className = 'header'
         createFooter.className = 'footer'
         createHeader.innerHTML = data.split('/nn')[0];
         createFooter.innerHTML = data.split('/nn')[1];
-        body.prepend(createHeader)
-        body.append(createFooter)
+        document.body.prepend(createHeader)
+        document.body.append(createFooter)
         
         const footerVideo = document.querySelector(".footer .video_wrap")
         const main = document.querySelector(".main")
         const footer = document.querySelector(".footer")
-
+        
         if (main) {
             footer.classList.add("main")
         } else {
             footerVideo.remove();
         }
-
+        
         // [↓] gnb
+        const body = document.querySelector("body")
         const header = document.querySelector(".header")
         const navBg = document.querySelector(".nav_bg")
         const navLi = document.querySelectorAll(".nav .sub > li")
