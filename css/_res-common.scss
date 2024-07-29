@@ -281,6 +281,22 @@
       padding: 120px 16px 160px;
     }
   }
+  .swiper {
+    .swiper_btn_wrap {
+        right: 16px;
+        bottom: 48px;
+        > * {
+            width: 52px;
+            height: 52px;
+            &::after {
+                background-size: 20px;
+            }
+        }
+        .swiper-button-prev {
+            right: 60px;
+        }
+    }
+  }
 }
 @media screen and (max-width:649px) {
   .footer {

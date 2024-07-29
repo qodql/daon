@@ -1,4 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // calendar
+    var Calendar = tui.Calendar;
+
+    var today = new Date();
+    var firstMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    var secondMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+
+    var calendarLeft = new Calendar('#calendar.left', {
+        defaultView: 'month',
+        taskView: true,
+        scheduleView: true,
+        useCreationPopup: true,
+        useDetailPopup: true,
+        renderStartDate: firstMonth
+    });
+
+    var calendarRight = new Calendar('#calendar.right', {
+        defaultView: 'month',
+        taskView: true,
+        scheduleView: true,
+        useCreationPopup: true,
+        useDetailPopup: true,
+        renderStartDate: secondMonth
+    });
+
+    function moveCalendar(monthDiff) {
+        firstMonth.setMonth(firstMonth.getMonth() + monthDiff);
+        secondMonth.setMonth(secondMonth.getMonth() + monthDiff);
+
+        calendarLeft.setDate(firstMonth);
+        calendarRight.setDate(secondMonth);
+    }
+
+    document.getElementById('calendar_prev').addEventListener('click', function () {
+        moveCalendar(-1);
+    });
+
+    document.getElementById('calendar_next').addEventListener('click', function () {
+        moveCalendar(1);
+    });
 
     // [↓] step1 객실 수, 성인 수, 어린이 수 선택
     const roomInput = document.querySelector(".date_person .room input")

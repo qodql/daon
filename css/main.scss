@@ -514,6 +514,27 @@
                                         }
                                     }
                                     &.transport {
+                                        li {
+                                            span {
+                                                display: block;
+                                                margin-right: 8px;
+                                                font-size: 14px;
+                                                padding: 0px 8px;
+                                                border-radius: 8px;
+                                                font-weight: 400;
+                                            }
+                                        &:first-of-type {
+                                            span {
+                                                background-color: #30B141;
+                                                color: #fff;
+                                            }
+                                        }
+                                        }
+                                        &:last-of-type {
+                                            span {
+                                                background-color: #94CD1E;
+                                            }
+                                        }
                                     }
                                     &.on {
                                         display: block;

@@ -2,6 +2,14 @@ fetch('./component/common.html')
 .then((data)=>{ return data.text()})
 .then((data)=>{ 
 
+    // chatbot
+    (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+
+    ChannelIO('boot', {
+        "pluginKey": "dbf51d87-0b32-4469-b099-572fefb331ca"
+    });
+
+    // [↓] header, footer 제어
     const login = document.querySelector(".login_common")
     if (!login) {
         let createHeader = document.createElement('header')
@@ -12,6 +20,16 @@ fetch('./component/common.html')
         createFooter.innerHTML = data.split('/nn')[1];
         document.body.prepend(createHeader)
         document.body.append(createFooter)
+        
+        const footerVideo = document.querySelector(".footer .video_wrap")
+        const main = document.querySelector(".main")
+        const footer = document.querySelector(".footer")
+
+        if (main) {
+            footer.classList.add("main")
+        } else {
+            footerVideo.remove();
+        }
 
         // [↓] gnb
         const body = document.querySelector("body")
@@ -68,23 +86,11 @@ fetch('./component/common.html')
         
         handleGnb();
         window.addEventListener("resize", handleGnb);
-        
-    }
-    // footer style
-    const main = document.querySelector(".main")
-    const footer = document.querySelector(".footer")
-    const footerVideo = document.querySelector(".footer .video_wrap")
-    const handleFooterClass = () => {
-        if(main) {
-            footer.classList.add("main")
-        } else if (login) {
-            footer.classList.add("login")
-        } else {
-            footerVideo.remove();
-        }
-    }
-    handleFooterClass();
 
+        
+    } else if (login) {
+        footer.classList.add("login")
+    }
 
     // [↓] chekcbox
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
@@ -105,6 +111,20 @@ fetch('./component/common.html')
             } else {
                 chkAll.checked = false;
             }
+        })
+    })
+
+    // [↓] tab
+    const tabCont = document.querySelectorAll(".tab_cont > *")
+    const tabLi = document.querySelectorAll(".tab li")
+    tabLi.forEach((v,i)=>{
+        v.addEventListener("click", ()=>{
+            for(let i=0;i<tabLi.length;i++){
+                tabLi[i].classList.remove("on")
+                tabCont[i].classList.remove("on")
+            }
+            v.classList.add("on")
+            tabCont[i].classList.add("on")
         })
     })
 })

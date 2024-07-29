@@ -1006,6 +1006,20 @@ body.prevent_scroll {
   .sub .sub_container {
     padding: 120px 16px 160px;
   }
+  .swiper .swiper_btn_wrap {
+    right: 16px;
+    bottom: 48px;
+  }
+  .swiper .swiper_btn_wrap > * {
+    width: 52px;
+    height: 52px;
+  }
+  .swiper .swiper_btn_wrap > *::after {
+    background-size: 20px;
+  }
+  .swiper .swiper_btn_wrap .swiper-button-prev {
+    right: 60px;
+  }
 }
 @media screen and (max-width: 649px) {
   .footer:not(.login) .box_wrap .bottom {

@@ -264,63 +264,6 @@
                 </div>
             </div>
         </div>
-    </div>  
-    <script>
-        // calendar
-        document.addEventListener("DOMContentLoaded", function () {
-            var Calendar = tui.Calendar;
-
-            var today = new Date();
-            var firstMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-            var secondMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
-
-            var calendarLeft = new Calendar('#calendar.left', {
-                defaultView: 'month',
-                taskView: true,
-                scheduleView: true,
-                useCreationPopup: true,
-                useDetailPopup: true,
-                renderStartDate: firstMonth
-            });
-
-            var calendarRight = new Calendar('#calendar.right', {
-                defaultView: 'month',
-                taskView: true,
-                scheduleView: true,
-                useCreationPopup: true,
-                useDetailPopup: true,
-                renderStartDate: secondMonth
-            });
-
-            function moveCalendar(monthDiff) {
-                firstMonth.setMonth(firstMonth.getMonth() + monthDiff);
-                secondMonth.setMonth(secondMonth.getMonth() + monthDiff);
-
-                calendarLeft.setDate(firstMonth);
-                calendarRight.setDate(secondMonth);
-            }
-
-            document.getElementById('calendar_prev').addEventListener('click', function () {
-                moveCalendar(-1);
-            });
-
-            document.getElementById('calendar_next').addEventListener('click', function () {
-                moveCalendar(1);
-            });
-
-            // datepicker
-            const DatePicker = tui.DatePicker;
-            const container = document.getElementById('tui-date-picker-container');
-            const target = document.getElementById('tui-date-picker-target');
-
-            const instance = new DatePicker(container, {
-                input: {
-                    element: target
-                },
-            });
-
-            instance.getDate();
-        });
-    </script>
+    </div>
 </body>
 </html>
