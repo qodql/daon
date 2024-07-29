@@ -454,6 +454,21 @@
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.location li:last-of-type::before {
   background-image: url("../img/icon/icon_mail.svg");
 }
+.main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.transport li span {
+  display: block;
+  margin-right: 8px;
+  font-size: 14px;
+  padding: 0px 8px;
+  border-radius: 8px;
+  font-weight: 400;
+}
+.main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.transport li:first-of-type span {
+  background-color: #30B141;
+  color: #fff;
+}
+.main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.transport:last-of-type span {
+  background-color: #94CD1E;
+}
 .main .container .section.contact .contents .box_wrap .tab_wrap .tab_cont ul.on {
   display: block;
 }

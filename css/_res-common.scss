@@ -9,12 +9,12 @@
     padding: 0 80px;
   }
   // footer
-  .main, .sub {
-    & + .footer {
+  .footer {
+    &:not(.login) {
       .box_wrap {
         padding: 6.5% 80px 338px !important;
       }
-    } 
+    }
   }
   // sub
   .sub {
@@ -156,8 +156,8 @@
     }
   }
   // footer
-  .main, .sub {
-    & + .footer {
+  .footer {
+    &:not(.login) {
       .box_wrap {
         a, p, span {
           font-size: 16px;
@@ -198,8 +198,8 @@
       }
     }
   }
-  .sub {
-    & + .footer {
+  .footer {
+    &:not(.main, .login) {
       height: 460px;
     }
   }
@@ -224,8 +224,8 @@
     padding: 16px;
   }
   // footer
-  .main, .sub {
-    & + .footer {
+  .footer {
+    &:not(.login) {
       .box_wrap {
         padding-left: 16px !important;
         padding-right: 16px !important;
@@ -252,12 +252,9 @@
       }
     }
   }
-  .sub {
-    & + .footer {
+  .footer {
+    &:not(.main, .login) {
       height: 356px;
-    }
-    .breadcrumb {
-      width: calc(100% - 32px);
     }
   }
   .checkbox_wrap {
@@ -266,6 +263,7 @@
   // sub
   .sub {
     .breadcrumb {
+      width: calc(100% - 32px);
       padding: 16px;
       ul {
         li {
@@ -283,10 +281,26 @@
       padding: 120px 16px 160px;
     }
   }
+  .swiper {
+    .swiper_btn_wrap {
+        right: 16px;
+        bottom: 48px;
+        > * {
+            width: 52px;
+            height: 52px;
+            &::after {
+                background-size: 20px;
+            }
+        }
+        .swiper-button-prev {
+            right: 60px;
+        }
+    }
+  }
 }
 @media screen and (max-width:649px) {
-  .main, .sub {
-    & + .footer {
+  .footer {
+    &:not(.login) {
       .box_wrap {
         // padding: 8% 80px !important;
         .bottom {
@@ -304,8 +318,8 @@
       }
     }
   }
-  .sub {
-    & + .footer {
+  .footer {
+    &:not(.main, .login) {
       height: 272px;
     }
   }

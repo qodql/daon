@@ -700,23 +700,7 @@ body {
   }
 }
 
-// main_footer
-.main {
-  & + .footer {
-    height: fit-content;
-
-    .dim {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .video_wrap {
-      padding-top: calc(53% - 6px);
-    }
-
-    .box_wrap {
-      padding: 200px 13.5% 338px;
-    }
-  }
+.footer {
 }
 
 // sub_footer
@@ -828,11 +812,21 @@ body {
       }
     }
   }
-}
-
-// login_footer
-.login_common {
-  & + .footer {
+  // main_footer
+  &.main {
+    height: fit-content;
+    .dim {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .video_wrap {
+      padding-top: calc(53% - 6px);
+    }
+    .box_wrap {
+      padding: 200px 13.5% 338px;
+    }
+  }
+  // login_footer
+  &.login {
     width: 100%;
     height: 80px;
     padding: 24px 0;
