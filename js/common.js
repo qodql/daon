@@ -11,6 +11,7 @@ fetch('./component/common.html')
 
     // [↓] header, footer 제어
     const login = document.querySelector(".login_common")
+    const body = document.querySelector("body")
     const footer = document.querySelector(".footer")
     if (!login) {
         let createHeader = document.createElement('header')
@@ -23,6 +24,7 @@ fetch('./component/common.html')
         document.body.append(createFooter)
         
         const footerVideo = document.querySelector(".footer .video_wrap")
+        const body = document.querySelector("body")
         const main = document.querySelector(".main")
         const footer = document.querySelector(".footer")
 
@@ -33,7 +35,6 @@ fetch('./component/common.html')
         }
 
         // [↓] gnb
-        const body = document.querySelector("body")
         const header = document.querySelector(".header")
         const navBg = document.querySelector(".nav_bg")
         const navLi = document.querySelectorAll(".nav .sub > li")
