@@ -141,65 +141,6 @@
 .main .container .section .inner .more_btn a:hover::after {
   animation: more 0.5s infinite linear;
 }
-.main .container .swiper {
-  position: relative;
-}
-.main .container .swiper .swiper_btn_wrap {
-  position: absolute;
-  right: 13.5%;
-  bottom: 38px;
-}
-.main .container .swiper .swiper_btn_wrap > * {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #afafaf;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-.main .container .swiper .swiper_btn_wrap > *::after {
-  font-size: 0;
-  display: block;
-  width: 32px;
-  height: 32px;
-  background: url("../img/icon/icon_arrow.svg") no-repeat center;
-  transition: all 0.3s;
-}
-.main .container .swiper .swiper_btn_wrap > *:hover {
-  border-color: #2f2f2f;
-}
-.main .container .swiper .swiper_btn_wrap > *:hover::after {
-  background-image: url("../img/icon/icon_arrow_on.svg");
-}
-.main .container .swiper .swiper_btn_wrap .swiper-button-prev {
-  left: auto;
-  right: 70px;
-  transform: rotate(180deg);
-}
-.main .container .swiper .swiper_btn_wrap .swiper-button-next {
-  left: auto;
-  right: 0;
-}
-.main .container .swiper .swiper-pagination {
-  width: fit-content;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  left: 13.5%;
-  top: auto;
-  bottom: 28px;
-}
-.main .container .swiper .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #efefef;
-  opacity: 1;
-}
-.main .container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 40px;
-  height: 16px;
-  border-radius: 999px;
-  background: #2f2f2f;
-}
 .main .container .section.room .inner {
   max-width: 100%;
 }
