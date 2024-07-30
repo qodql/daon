@@ -52,14 +52,62 @@ document.addEventListener("DOMContentLoaded", () => {
         plusBtn[i].addEventListener("click", (e) => {
             let targetLi = e.target.parentElement.parentElement.parentElement;
             if (targetLi.classList.contains("room")) {
-                roomNum++;
-                roomInput.value = roomNum;
+                if(roomNum >= 4) {
+                    alert('동시예약 가능한 최대 객실 수는 4개 입니다.')
+                } else {
+                    roomNum++;
+                    roomInput.value = roomNum;
+                }
             } else if (targetLi.classList.contains("adult")) {
                 adultNum++;
                 adultInput.value = adultNum;
+                if (adultInput.value > 24){
+                    adultInput.value = 24;
+                    alert('최대 예약 인원 수를 초과하였습니다.')
+                } else if (adultInput.value >= 19){
+                    if(roomInput.value < 4) {
+                        roomInput.value = 4;
+                    }
+                } else if (adultInput.value >= 13) {
+                    if(roomInput.value < 3) {
+                        roomInput.value = 3;
+                    }
+                } else if (adultInput.value >= 7){
+                    if(roomInput.value < 2) {
+                        roomInput.value = 2;
+                    }
+                }
             } else if (targetLi.classList.contains("child")) {
                 childNum++;
                 childInput.value = childNum;
+            }
+        })
+    })
+
+    minusBtn.forEach((v,i)=>{
+        minusBtn[i].addEventListener("click", (e) => {
+            let targetLi = e.target.parentElement.parentElement.parentElement;
+            if (targetLi.classList.contains("room")) {
+                if(roomNum <= 1) {
+                    roomInput.value = 1;
+                } else {
+                    roomNum--;
+                    roomInput.value = roomNum;
+                }
+            } else if (targetLi.classList.contains("adult")) {
+                if(adultNum <= 2) {
+                    adultInput.value = 2;
+                } else {
+                    adultNum--;
+                    adultInput.value = adultNum;
+                }
+            } else if (targetLi.classList.contains("child")) {
+                if(childNum <= 0) {
+                    childInput.value = 0;
+                } else {
+                    childNum--;
+                    childInput.value = childNum;
+                }
             }
         })
     })
@@ -79,4 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     })
+
+
 })
