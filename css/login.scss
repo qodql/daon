@@ -128,19 +128,14 @@
                     display: none;
                 }
                 .agree_all{
+                    width: 100%;
                     padding: 24px;
+                    margin: 0;
                     background-color: #efefef;
                     display: flex;
                     justify-content: space-between;
-                    .arrow_btn{
-                        svg{
-                            width: 20px;
-                            height: 20px;
-                            fill: #ffffff;
-                            path{
-                                fill: #afafaf;
-                            }
-                        }   
+                    .toggle_btn{
+                       top: 24px;  
                     }
                 }
                 .agree_list{
@@ -175,9 +170,7 @@
                 width: 100%;
                 max-width: 480px;
                 margin: 16px auto 0;
-                font-size: 14px;
                 text-align: right;
-                color: #afafaf;
             }
         }
         .join_join_btn{

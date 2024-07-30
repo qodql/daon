@@ -575,18 +575,15 @@ mo-s:
   display: none;
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_all {
+  width: 100%;
   padding: 24px;
+  margin: 0;
   background-color: #efefef;
   display: flex;
   justify-content: space-between;
 }
-.join .join_wrap .join_agree .agree_checkbox .agree_all .arrow_btn svg {
-  width: 20px;
-  height: 20px;
-  fill: #ffffff;
-}
-.join .join_wrap .join_agree .agree_checkbox .agree_all .arrow_btn svg path {
-  fill: #afafaf;
+.join .join_wrap .join_agree .agree_checkbox .agree_all .toggle_btn {
+  top: 24px;
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_list {
   padding: 12px 24px;
@@ -613,9 +610,7 @@ mo-s:
   width: 100%;
   max-width: 480px;
   margin: 16px auto 0;
-  font-size: 14px;
   text-align: right;
-  color: #afafaf;
 }
 .join .join_wrap .join_join_btn {
   margin-top: 40px;
