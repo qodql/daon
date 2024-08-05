@@ -36,7 +36,7 @@
             </h2>
             <!-- 페이지 컨텐츠 내용 -->
             <div class="contents">
-                <div id="intro_grid_wrapper" class="intro_grid_wrapper">
+                <div class="intro_grid_wrapper">
                     <p><img src="./img/img_intro_grid_01.jpg" alt="gird1"></p>
                     <p><img src="./img/img_intro_grid_02.jpg" alt="gird2"></p>
                     <p><img src="./img/img_intro_grid_03.jpg" alt="gird3"></p>
@@ -63,29 +63,5 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        //intro grid image scroll event
-        //intro full bg scroll event
-        function expandAnimate(elementClass, slideInClass) {
-        
-        const element2 = document.getElementsByClassName(elementClass)[0]; 
-        const rect2 = element2.getBoundingClientRect(); 
-    
-        const isVisible2 = rect2.top <= window.innerHeight && rect2.top <= 350; 
-
-            if (isVisible2) {
-                element2.classList.add(slideInClass);
-            }
-        }
-  
-        document.addEventListener("scroll", function() {
-            expandAnimate("intro_full_bg", "intro_expand");
-        });
-    </script>
-
-
 </body>
-
-
 </html>
