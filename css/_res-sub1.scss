@@ -2,65 +2,40 @@
 
 @include res('pc-s'){
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
             .contents {
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
                 .intro_grid_wrapper{
-                    width: 1200px;
-                    grid-gap: 15px;
-                    p{
-                        &:nth-child(1){
-                            height: 580px;
-                        }
-                        &:nth-child(2){
+                width: 1200px;
+                grid-gap: 15px;
+                p{
+                    &:nth-child(1){height: 580px;}
+                    &:nth-child(2){
                             height: 220px;
                             img{object-position: 0px -294px;}
                         }
-                        &:nth-child(3){
-                            height: 220px;
-                        }
+                        &:nth-child(3){height: 220px;}
                         &:nth-child(4){
                             height: 345px;
                             img{object-position: 0px -150px;}
                         }
-                        img{}
-                    }
                 }
-                .intro_txt{
-                    width: 795px;
-                    h5{
-                        font-size: 22px;
-                        line-height: 36px;
-                    }   
-                }
-                .intro_full_bg{
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
-                    .intro_full_bg_inner{
-                        width: 660px;
-                        .logo{margin: 0 auto;}
-                        .intro_full_bg_inner_txt{
-                            margin: 32px auto;
-                            h5{
-                                font-size: 22px;
-                                line-height: 32px;
-                            }
+            }
+            .intro_txt{
+                width: 795px;
+                h5{
+                    font-size: 22px;
+                    line-height: 36px;
+                }   
+            }
+            .intro_full_bg{
+                .intro_full_bg_inner{
+                    width: 660px;
+                    .logo{margin: 0 auto;}
+                    .intro_full_bg_inner_txt{
+                        margin: 32px auto;
+                        h5{
+                            font-size: 22px;
+                            line-height: 32px;
                         }
                     }
                 }
@@ -68,24 +43,13 @@
         }
     }
 }
+}
 
 @include res('tab'){
     //intro 반응형 시작
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
-            .contents {
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
+            .contents{
                 .intro_grid_wrapper{
                     width: 1000px;
                     grid-gap: 15px;
@@ -104,7 +68,6 @@
                             height: 325px;
                             img{object-position: 0px -90px;}
                         }
-                        img{}
                     }
                 }
                 .intro_txt{
@@ -117,13 +80,6 @@
                 }
                 .intro_full_bg{
                     margin-top: 100px;
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
                     .intro_full_bg_inner{
                         width: 597px;
                         .logo{margin: 0 auto;}
@@ -147,9 +103,7 @@
                     width: calc(100% - 20%);
                     left: 50%;
                     transform: translateX(-50%);
-                    p{
-                        img{border-radius: 8px;}
-                    }
+                    border-radius: 8px;
                     .contact_map_btn{
                         right: 16px;
                         bottom: 16px;
@@ -247,20 +201,8 @@
 @media screen and (max-width: 1060px){
     //intro 반응형 시작
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
             .contents {
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
                 .intro_grid_wrapper{
                     width: 800px;
                     grid-gap: 10px;
@@ -279,7 +221,6 @@
                             height: 310px;
                             img{object-position: 0px -22px;}
                         }
-                        img{}
                     }
                 }
                 .intro_txt{
@@ -292,16 +233,8 @@
                 }
                 .intro_full_bg{
                     margin-top: 80px;
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
                     .intro_full_bg_inner{
                         width: 530px;
-                        .logo{margin: 0 auto;}
                         .intro_full_bg_inner_txt{
                             margin: 24px auto;
                             h5{
@@ -323,9 +256,6 @@
             .contents{
                 width: 100%;
                 .contact_map{
-                    p{
-                        img{}
-                    }
                     .contact_map_btn{
                         button{
                             i{
@@ -418,20 +348,8 @@
 @media screen and (max-width: 870px){
     //intro 반응형 시작
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
             .contents {
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
                 .intro_grid_wrapper{
                     width: 700px;
                     grid-gap: 10px;
@@ -450,8 +368,6 @@
                             height: 300px;
                             img{object-position: 0px -3px;}
                         }
-                        img{
-                        }
                     }
                 }
                 .intro_txt{
@@ -464,16 +380,8 @@
                 }
                 .intro_full_bg{
                     margin-top: 80px;
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
                     .intro_full_bg_inner{
                         width: 469px;
-                        .logo{margin: 0 auto;}
                         .intro_full_bg_inner_txt{
                             margin: 24px auto;
                             h5{
@@ -492,26 +400,13 @@
 @include res('mo-l'){
     //intro 반응형 시작
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
-            .contents {
-                padding: 16px;
-                padding-bottom: 0;
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
+            .contents{
                 .intro_grid_wrapper{
                     display: flex;
                     flex-direction: column;
                     width: 100%;
+                    padding: 16px;
                     p{
                         height: 300px;
                         &:nth-child(1){
@@ -543,17 +438,9 @@
                 }
                 .intro_full_bg{
                     margin-top: 60px;
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
                     .intro_full_bg_inner{
                         width: 469px;
                         .logo{
-                            margin: 0 auto;
                             img{
                                 width: 80%;
                             }
@@ -579,9 +466,6 @@
                 padding: 16px;
                 .contact_map{
                     width: 100%;
-                    p{
-                        img{}
-                    }
                     .contact_map_btn{
                         right: 12px;
                         bottom: 16px;
@@ -704,20 +588,8 @@
 @media screen and (max-width: 610px){
     //intro 반응형 시작
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
             .contents {
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
                 .intro_grid_wrapper{
                     p{
                         height: 240px;
@@ -735,9 +607,6 @@
                             height: 200px;
                             img{object-position: 0px -44px;}
                         }
-                        img{
-                            border-radius: 8px;
-                        }
                     }
                 }
                 .intro_txt{
@@ -750,21 +619,8 @@
                 }
                 .intro_full_bg{
                     margin-top: 60px;
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
                     .intro_full_bg_inner{
                         width: 469px;
-                        .logo{
-                            margin: 0 auto;
-                            img{
-                                width: 80%;
-                            }
-                        }
                         .intro_full_bg_inner_txt{
                             margin: 24px auto;
                             h5{
@@ -782,20 +638,8 @@
 @include res('mo-s'){
     //intro 반응형 시작
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
             .contents {
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
                 .intro_grid_wrapper{
                     gap: 4px;
                     p{
@@ -814,31 +658,18 @@
                             height: 150px;
                             img{object-position: 0px -44px;}
                         }
-                        img{
-                            border-radius: 8px;
-                        }
                     }
                 }
                 .intro_txt{
                     width: 319px;
                     margin: 24px auto;
-                    h5{
-                        line-height: 30px;
-                    }   
+                    h5{line-height: 30px;}   
                 }
                 .intro_full_bg{
                     margin-top: 60px;
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
                     .intro_full_bg_inner{
                         width: 469px;
                         .logo{
-                            margin: 0 auto;
                             img{
                                 width: 70%;
                             }
@@ -973,22 +804,9 @@
 @media screen and (max-width: 405px){
     //intro 반응형 시작
     .intro{
-        .sub_top{
-        }
         .sub_container{
-            &.sub_container_full{
-            }
             .contents {
-                @keyframes fadeIn{
-                }
-                @keyframes expand{
-                } 
-                .intro_fadein{
-                    p{
-                    }
-                }
                 .intro_grid_wrapper{
-                    gap: 4px;
                     p{
                         height: 150px;
                         &:nth-child(1){
@@ -1005,35 +823,16 @@
                             height: 150px;
                             img{object-position: 0px -5px;}
                         }
-                        img{
-                            border-radius: 8px;
-                        }
                     }
                 }
                 .intro_txt{
                     width: 260px;
                     margin: 24px auto;
-                    h5{
-                        line-height: 30px;
-                    }   
                 }
                 .intro_full_bg{
                     margin-top: 60px;
-                    &::after{
-                    }
-                    &::before{
-                    }
-                    &.intro_expand{
-                        &::after,&::before{ animation: expand 2000ms ease-out forwards;}
-                    }
                     .intro_full_bg_inner{
                         width: 469px;
-                        .logo{
-                            margin: 0 auto;
-                            img{
-                                width: 70%;
-                            }
-                        }
                         .intro_full_bg_inner_txt{
                             margin: 24px auto;
                             h5{

@@ -14,6 +14,7 @@
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/sub1.css">
     <script src="./js/sub1.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=968c94e07185af1f9c1b59c3f1b85383"></script>
 </head>
 <body>
     <!-- 컨텐츠 -->
@@ -36,7 +37,7 @@
             </h2>
             <!-- 페이지 컨텐츠 내용 -->
             <div class="contents">
-                <div class="contact_map">
+                <div id="map" class="contact_map">
                     <p><img src="./img/img_contact_contact_map.jpg" alt="map"></p>
                     <div class="contact_map_btn">
                         <button class="contact_map_naver_btn">
