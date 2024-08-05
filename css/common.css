@@ -45,7 +45,6 @@
   right: 24px;
 }
 .swiper .swiper-pagination {
-  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   display: flex;
