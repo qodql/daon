@@ -43,26 +43,7 @@
   }
 }
 
-// with 1210px
-@media (max-width: 1024px) {
-  .pool {
-    .sub_container {
-      .contents {
-        .sub3_pool_contents {
-          padding: 20px 40px;
-          // margin: 64px 0;
-          .pool-img {
-            width: 54%;
-          }
-          .pool-title {
-            width: 44%;
-          }
-        }
-      }
-    }
-  }
-}
-
+// with 976px
 @media (max-width: 976px) {
   .pool {
     .sub_container {
