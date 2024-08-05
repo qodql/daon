@@ -1,0 +1,99 @@
+{
+  "love":[
+    {
+      "id":0,
+      "type" : "LOVE YOU",
+      "room_name" : "101호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]
+    },
+    {
+      "id":1,
+      "type" : "LOVE YOU",
+      "room_name" : "102호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]
+    },
+    {
+      "id":2,
+      "type" : "LOVE YOU",
+      "room_name" : "201호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]},
+    {
+      "id":3,
+      "type" : "LOVE YOU",
+      "room_name" : "202호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]
+    },
+    {
+      "id":4,
+      "type" : "LOVE YOU",
+      "room_name" : "203호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]
+    }
+  ],
+
+  "ONLY" : [
+    {
+      "id":0,
+      "type" : "ONLY YOU",
+      "room_name" : "101호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]
+    },
+    {
+      "id":1,
+      "type" : "ONLY YOU",
+      "room_name" : "102호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]
+    },
+    {
+      "id":2,
+      "type" : "ONLY YOU",
+      "room_name" : "201호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["../img/img_sub2_room_only201_01.jpg","../img/img_sub2_room_only201_02.jpg","../img/img_sub2_room_only201_03.jpg", "../img/img_sub2_room_only201_04.jpg"]
+    },
+    {
+      "id":3,
+      "type" : "ONLY YOU",
+      "room_name" : "202호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["url","url2"]
+    },
+    {
+      "id":4,
+      "type" : "ONLY YOU",
+      "room_name" : "203호",
+      "room_info" : "16평",
+      "room_composition" : "침대룸A(더블1),주방, 화장실",
+      "room_personnel" : "기본2인/최대6인",
+      "photo":["../img/img_sub2_room_only203_01.jpg","../img/img_sub2_room_only203_02.jpg","../img/img_sub2_room_only203_02.jpg", "../img/img_sub2_room_only203_03.jpg", "../img/img_sub2_room_only203_04.jpg"]
+    }
+  ]
+
+
+
+}
