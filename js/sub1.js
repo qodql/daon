@@ -11,10 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     })
-
     elGrid.forEach((v)=>{
         gridAnimate.observe(v);
     })
+
+    testest
     
     
 
