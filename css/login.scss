@@ -27,7 +27,9 @@
     .pw_check_box{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
     .name_box{@include inputbox($icn: url(../img/icon/icon_person.svg));}
     .phone_box{@include inputbox($icn: url(../img/icon/icon_phone.svg))}
-    .verify_box{@include inputbox($icn: url(../img/icon/icon_phone.svg))}
+    .verify_box{@include inputbox($icn: url(../img/icon/icon_phone.svg)){
+                            background-color: #efefef;  //readonly용, 양옆 흰색 여백 있어서 추가
+                }}
     //기본 파란 버튼
     .blue_btn{
         @include btn;
@@ -102,7 +104,7 @@
                     margin-bottom: 12px;
                 }
                 .verify_box
-                {
+                {   
                     margin-bottom: 0;
                 }
             }
@@ -128,19 +130,14 @@
                     display: none;
                 }
                 .agree_all{
+                    width: 100%;
                     padding: 24px;
+                    margin: 0;
                     background-color: #efefef;
                     display: flex;
                     justify-content: space-between;
-                    .arrow_btn{
-                        svg{
-                            width: 20px;
-                            height: 20px;
-                            fill: #ffffff;
-                            path{
-                                fill: #afafaf;
-                            }
-                        }   
+                    .toggle_btn{
+                       top: 24px;  
                     }
                 }
                 .agree_list{
@@ -175,9 +172,7 @@
                 width: 100%;
                 max-width: 480px;
                 margin: 16px auto 0;
-                font-size: 14px;
                 text-align: right;
-                color: #afafaf;
             }
         }
         .join_join_btn{
