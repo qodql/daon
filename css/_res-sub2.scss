@@ -5,7 +5,7 @@
 //max 1500
 @include res('pc-s'){
   .sub{
-    .contents{padding: 0 16px;
+    .contents{
       .main_box{
         .room_content{
           .main_box2{
@@ -33,7 +33,7 @@
 }
 @media (max-width : 1398px){
   .sub{
-    .contents{padding: 0 16px;
+    .contents{
       .main_box{
         .room_content{
           .main_box2{
@@ -61,7 +61,7 @@
 //  max 1279
 @include res('tab'){
   .sub{
-    .contents{padding: 0 16px;
+    .contents{
       .main_box{
         .room_content{
           .main_box2{
@@ -87,7 +87,7 @@
 }
 @media (max-width:1066px){
   .sub {
-    .contents {padding: 0 16px;
+    .contents {
       .main_box {
         .room_content {
           .main_box2 {flex-wrap: wrap;
@@ -135,7 +135,7 @@
 // max 767
 @include res('mo-l'){
   .sub {
-    .contents {padding: 0 16px;
+    .contents {
       .main_box {
         .room_content {
           .main_box2 {
@@ -184,7 +184,7 @@
 @include res('mo-s'){
 
     .sub {
-      .contents {padding: 0 16px;
+      .contents {
         .main_box {
           .room_content {
             .main_box2 {

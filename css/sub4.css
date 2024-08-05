@@ -6,17 +6,18 @@
 ~480: 모바일    mo-s
 */
 /* 변동사항(확인 후 삭제하셔도 됩니다!)--------------------------------------
+  mo-l부터 컨텐츠를 세로로 정렬했습니다. 세부사항은 아래와 같습니다.
 pc-s: 없음
-tab(노랑): 
+tab: 
  - .txt_long p의 우측패딩값 120->80px으로 변경, 나머지는 pc-s와 동일
-mo-l(초록):
+mo-l:
  - 기본 컨텐츠 좌우 패딩 16px
  - .card_name(제목): 세로정렬, 폰트 크기 24->20px
  - .card_img(사진): 세로정렬, width 50->100%, 간격 20->16px
  - .card_txt(글): 
         ㄴ.txt_short(아이콘+텍스트) : 세로정렬, 패딩 절반으로, 마진 변경
         ㄴ.txt_long(설명 텍스트) : 세로정렬, 패딩 변경
-mo-s(파랑): mo-l와 동일
+mo-s: mo-l와 동일
 */
 /*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
 @media (max-width: 1279px) {
@@ -25,14 +26,11 @@ mo-s(파랑): mo-l와 동일
   }
 }
 @media (max-width: 767px) {
-  body .around_spot .sub_container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
   body .around_spot .sub_container .contents .sub4_card .card_name {
     flex-direction: column;
   }
   body .around_spot .sub_container .contents .sub4_card .card_name strong {
+    margin: 0;
     font-size: 20px;
   }
   body .around_spot .sub_container .contents .sub4_card .card_name p {
@@ -52,7 +50,10 @@ mo-s(파랑): mo-l와 동일
     flex-direction: column;
   }
   body .around_spot .sub_container .contents .sub4_card .card_txt .txt_short li {
-    margin: 8px;
+    padding: 8px;
+  }
+  body .around_spot .sub_container .contents .sub4_card .card_txt .txt_short li:not(:last-of-type) {
+    margin: 0;
   }
   body .around_spot .sub_container .contents .sub4_card .card_txt .txt_long p {
     padding: 24px;
@@ -64,7 +65,7 @@ mo-s(파랑): mo-l와 동일
 .around_spot .sub_top {
   background-image: url("../img/img_sub4_tops.jpg");
 }
-.around_spot .sub_container .contents .sub4_card {
+.around_spot .sub_container .contents .sub4_card:not(:last-of-type) {
   margin-bottom: 72px;
 }
 .around_spot .sub_container .contents .sub4_card .card_name {
@@ -103,10 +104,12 @@ mo-s(파랑): mo-l와 동일
   display: flex;
 }
 .around_spot .sub_container .contents .sub4_card .card_txt .txt_short li {
-  margin-right: 32px;
   text-align: center;
   display: flex;
   align-items: center;
+}
+.around_spot .sub_container .contents .sub4_card .card_txt .txt_short li:not(:last-of-type) {
+  margin-right: 32px;
 }
 .around_spot .sub_container .contents .sub4_card .card_txt .txt_short li::before {
   content: "";
@@ -131,7 +134,4 @@ mo-s(파랑): mo-l와 동일
   padding: 40px 120px 40px 32px;
   border-top: 1px solid #efefef;
   line-height: 24px;
-}
-.around_spot .sub_container .contents .sub4_card:nth-of-type(6) {
-  margin-bottom: 0;
 }
