@@ -9,6 +9,13 @@
     .sub_container{
         .contents{
             .sub4_card{
+                opacity: 0;
+                transition: 1.2s;
+                transform: translateY(5%);
+                &.active{
+                    opacity: 1;
+                    transform: translateX(0%);
+                }
                 &:not(:last-of-type){
                     margin-bottom: 72px;
                 }

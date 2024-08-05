@@ -65,6 +65,15 @@ mo-s: mo-l와 동일
 .around_spot .sub_top {
   background-image: url("../img/img_sub4_tops.jpg");
 }
+.around_spot .sub_container .contents .sub4_card {
+  opacity: 0;
+  transition: 1.2s;
+  transform: translateY(5%);
+}
+.around_spot .sub_container .contents .sub4_card.active {
+  opacity: 1;
+  transform: translateX(0%);
+}
 .around_spot .sub_container .contents .sub4_card:not(:last-of-type) {
   margin-bottom: 72px;
 }
