@@ -28,16 +28,26 @@
                         <li>
                             <span>CHECK IN</span>
                             <div class="date in">
-                                <p>2024. 02. 07 <span>(수)</span></p>
+                                <!-- <p>2024. 02. 07 <span>(수)</span></p> -->
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input id="startpicker-input" type="text" aria-label="Date" readonly>
+                                    <div id="startpicker-container" style="margin-left: -1px;"></div>
+                                </div>
+                                <span>(수)</span>
                             </div>
                         </li>
                         <li>
                             <span>CHECK OUT</span>
                             <div class="date out">
-                                <p>2024. 05. 05 <span>(일)</span></p>
+                                <!-- <p>2024. 05. 05 <span>(일)</span></p> -->
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input id="endpicker-input" type="text" aria-label="Date" readonly>
+                                    <div id="endpicker-container" style="margin-left: -1px;"></div>
+                                </div>
+                                <span>(수)</span>
                             </div>
                         </li>
-                        <li class="select">
+                        <li>
                             <div class="select_wrap">
                                 <label for="room">ROOM</label>
                                 <select name="room_select" id="room" defaultValue="1">
@@ -48,7 +58,7 @@
                                 </select>
                             </div>
                         </li>
-                        <li class="select">
+                        <li>
                             <div class="select_wrap">
                                 <label for="adult">ADULT</label>
                                 <select name="adult_select" id="adult" defaultValue="1">
@@ -67,7 +77,7 @@
                                 </select>
                             </div>
                         </li>
-                        <li class="select">
+                        <li>
                             <div class="select_wrap">
                                 <label for="child">CHILD</label>
                                 <select name="child_select" id="child" defaultValue="1">
@@ -104,39 +114,39 @@
                         <div class="swiper room_list">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="./img/img_room_love_101.jpg" alt="love you 101호">
+                                    <img src="./img/img_sub2_room_love101_01.jpg" alt="love you 101호">
                                     <a href="./sub2_room_love_you.html" class="room_info">
                                         <div class="txt">
                                             <p>LOVE YOU #101</p>
-                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                            <span>따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./img/img_room_love_102.jpg" alt="love you 102호">
+                                    <img src="./img/img_sub2_room_love201_02.jpg" alt="love you 201호">
                                     <a href="./sub2_room_love_you.html" class="room_info">
                                         <div class="txt">
-                                            <p>LOVE YOU #102</p>
-                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                            <p>LOVE YOU #201</p>
+                                            <span>다채로운 쉼을 선물하는 최고급 타워형 객실에서 휴식을 만끽하세요.</span>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./img/img_room_love_203.jpg" alt="love you 203호">
+                                    <img src="./img/img_sub2_room_only101_01.jpg" alt="only you 101호">
                                     <a href="./sub2_room_love_you.html" class="room_info">
                                         <div class="txt">
-                                            <p>LOVE YOU #203</p>
-                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                            <p>ONLY YOU #101</p>
+                                            <span>단순함속의 세련됨, 단아함속의 편안함을 느끼면서 즐거운 시간을 보내세요.</span>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./img/img_room_love_203.jpg" alt="love you 203호">
+                                    <img src="./img/img_sub2_room_only201_01.jpg" alt="only you 201호">
                                     <a href="./sub2_room_love_you.html" class="room_info">
                                         <div class="dim"></div>
                                         <div class="txt">
-                                            <p>LOVE YOU #203</p>
-                                            <span>온전한 힐링을 위한 따뜻하지만 모던한 인테리어 안에서 아늑한 휴식을 누릴 수 있습니다.</span>
+                                            <p>ONLY YOU #201</p>
+                                            <span>넓은 실내로 고객님 마음에 즐거움을 더하며, 여유로운 시간을 즐길 수 있습니다.</span>
                                         </div>
                                     </a>
                                 </div>
@@ -245,7 +255,7 @@
                                         <img src="./img/img_event_01.jpg" alt="성수기 할인이벤트">
                                         <div class="txt_box">
                                             <p class="event_title">성수기 할인이벤트</p>
-                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                            <span class="date">2024. 07. 01 ~ 2024. 08. 31</span>
                                         </div>
                                     </a>
                                 </div>
@@ -254,7 +264,7 @@
                                         <img src="./img/img_event_02.jpg" alt="성수기 할인이벤트">
                                         <div class="txt_box">
                                             <p class="event_title">인플루언서에게 제공되는 호캉스&힐링 패키지</p>
-                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                            <span class="date">2024. 08. 12 ~ 2025. 05. 05</span>
                                         </div>
                                     </a>
                                 </div>
@@ -262,17 +272,17 @@
                                     <a href="./sub5_community_event.html">
                                         <img src="./img/img_event_03.jpg" alt="성수기 할인이벤트">
                                         <div class="txt_box">
-                                            <p class="event_title">리뷰 이벤트! 추첨을 통해 총 50분께 스타벅스...</p>
-                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                            <p class="event_title">현대 미술관 할인 이벤트</p>
+                                            <span class="date">2024. 09. 01 ~ 2025. 02. 07</span>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="./sub5_community_event.html">
-                                        <img src="./img/img_event_01.jpg" alt="성수기 할인이벤트">
+                                        <img src="./img/img_event_04.jpg" alt="성수기 할인이벤트">
                                         <div class="txt_box">
                                             <p class="event_title">리뷰 이벤트! 추첨을 통해 총 50분께 스타벅스...</p>
-                                            <span class="date">2024. 06. 24 ~ 2024. 06. 24</span>
+                                            <span class="date">2023. 01. 01 ~ 상시</span>
                                         </div>
                                     </a>
                                 </div>
@@ -452,5 +462,68 @@
             </section>
         </div>
     </main>
+    <!-- [↓] datepicker -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
+    <script>
+        let today = new Date();
+        let tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+        const day = document.querySelectorAll(".quick_menu li .date span")
+        const weekDay = ['일', '월', '화', '수', '목', '금', '토'];
+        const todayWeekDay = weekDay[today.getDay()];
+        const tomorrowWeekDay = weekDay[tomorrow.getDay()];
+        day.forEach((v,i)=>{
+            day[0].innerText = `(${todayWeekDay})`;
+            day[1].innerText = `(${tomorrowWeekDay})`;
+        })
+        let picker = tui.DatePicker.createRangePicker({
+            language: 'ko',
+            startpicker: {
+                date: today,
+                input: '#startpicker-input',
+                container: '#startpicker-container'
+            },
+            endpicker: {
+                date: tomorrow,
+                input: '#endpicker-input',
+                container: '#endpicker-container'
+            },
+            selectableRanges: [
+                [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+            ],
+            format: 'YYYY. MM. dd',
+        });
+
+        function getDayOfWeek(date) {
+            if (!date) return '';
+            var dayOfWeek = date.getDay();
+            var daysOfWeek = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
+            return daysOfWeek[dayOfWeek];
+        }
+
+        picker.getStartpicker().on('change', function() {
+            var selectedDate = picker.getStartpicker().getDate();
+            day[0].innerHTML = `${getDayOfWeek(selectedDate)}`;
+        });
+
+        picker.getEndpicker().on('change', function() {
+            var selectedDate = picker.getEndpicker().getDate();
+            day[1].innerHTML = `${getDayOfWeek(selectedDate)}`;
+        });
+    </script>
+    <style>
+
+        .tui-datepicker .tui-is-blocked {
+            & + .tui-is-selected {
+                border-radius: 50% 0 0 50%;
+            } 
+        }
+        .tui-is-selected-range {
+            & + .tui-is-selected {
+                border-radius: 0 50% 50% 0;
+            }
+        }
+    </style>
 </body>
 </html>
