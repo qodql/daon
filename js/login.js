@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ACCESS_TOKEN = "";  //매번 랜덤하게 바뀜
     const kakao = document.querySelector('.kakao');
 
-    // 1. 인가코드 받기(주소창에 파라미터(?code=형태)로 들어옴)
+    // 1. 인가코드 받기(주소창에 파라미터(?code=형태)로 들어옴) //login.js
     function loginWithKakao() {
         Kakao.Auth.authorize({
           redirectUri: REDIRECT_URI
@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     kakao.addEventListener('click',loginWithKakao);
     
 
-    // 2. 액세스 토큰 발급(인가코드 있어야 발급 가능)
+    // 2. 액세스 토큰 발급(인가코드 있어야 발급 가능)   //common.js(로그인 성공 후 메인으로 이동, 다른 페이지에서 로그인 정보 계속 사용)
     function displayToken() {
-        //액세스 토큰(ACCESS_TOKEN = 주소창 ?code=) 가져오기
-        if(AUTHORIZE_CODE.get('code')){
+        //액세스 토큰(ACCESS_TOKEN = 주소창의?code=)가져오기
+        if(AUTHORIZE_CODE.get('code')){ //인가 코드가 있을 때 실행
             fetch("https://kauth.kakao.com/oauth/token", {
                 method: "POST",
                 headers: {
@@ -62,15 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 //엑세스 토큰 유효기간 설정하기
                 const endDate = new Date(); 
-                endDate.setHours(endDate.getHours+24);
-                document.cookie = `access_token=${ACCESS_TOKEN};expires=${endDate.toGMTString()};`;
-                userInfoFunc();
+                endDate.setHours(endDate.getHours+24);  //24시간 설정
+                document.cookie = `access_token=${ACCESS_TOKEN};expires=${endDate.toGMTString()};`; //쿠키에 엑세스 토큰, 유효기간 저장
+                userInfoFunc(); //3. 사용자 정보 받기 실행
             })
         }
     }
-    displayToken();
+    displayToken();  // 2. 액세스 토큰 발급 실행
 
-    //3. 사용자 정보 받기
+    //3. 사용자 정보 받기   //common.js(다른 페이지에서 로그인 정보 계속 사용)
     function userInfoFunc(){
         fetch("https://kapi.kakao.com/v2/user/me", {
             headers: {
@@ -81,20 +81,21 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(res => {
             //사용자 정보 받은 것 확인
             console.log(res.properties.nickname);
-            //로그아웃
-            function kakaoLogout() {
-                Kakao.Auth.logout()
-                .then(function() {
-                    alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
-                    // deleteCookie();
-                    document.cookie = `access_token=;expires=;`;
-                    console.log('로그아웃 성공');
-                })
-                .catch(function() {
-                    alert('로그인하지 않았습니다.');
-                });
-            }
         })
+    }
+
+    //4. 로그아웃   //common.js(다른 페이지에서 로그인 정보 계속 사용)
+    function kakaoLogout() {
+        Kakao.Auth.logout()
+        .then(function() {
+            alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
+            // deleteCookie();
+            document.cookie = `access_token=;expires=;`;
+            console.log('로그아웃 성공');
+        })
+        .catch(function() {
+            alert('로그인하지 않았습니다.');
+        });
     }
     // 회원가입
     // 회원가입 완료
