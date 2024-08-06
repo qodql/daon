@@ -1,4 +1,4 @@
-@mixin vectoricon($f, $a, $b) {
+@mixin vectoricon($f, $a) {
   width: $f;
   height: $a;
 
@@ -15,7 +15,7 @@
   span {
     text-align: center;
     display: block;
-    font-size: $b;
+    @content;
   }
 }
 
@@ -38,7 +38,7 @@
   }
 
   .on {
-    .love_you_active {
+    .room_active {
       color: #2f2f2f;
       font-weight: 700;
     }
@@ -83,27 +83,22 @@
         width: calc(100% - 1102px);
         margin-top: 114px;
         margin-left: 72px;
-
         h3 {
           font-size: 24px;
           font-weight: bold;
         }
-
         li {
           display: flex;
         }
-
         p:nth-of-type(1) {
           font-weight: bold;
           margin-top: 8px;
         }
-
         p:nth-of-type(2) {
           margin-left: 32px;
           margin-top: 8px;
         }
       }
-
       button {
         margin-top: 48px;
         border: 1px solid #2f2f2f;
@@ -111,41 +106,36 @@
         border-radius: 8px;
         transition: 0.5s;
       }
-
       button:hover {
-        background-color: #9ABEF8;
+        background-color: #357EF1;
+        color: white;
       }
-
       .contour3 {
         width: 1400px;
         height: 2px;
         background-color: #efefef;
         margin-top: 40px;
       }
-
-
     }
-
     .room_info_amenities {
       width: 100%;
       padding: 60px;
       background-color: #efefef;
       border-radius: 20px;
       margin-top: 80px;
-
       h2 {
         font-size: 24px;
         font-weight: bold;
+        &::after{
+          content :"";
+          display: block;
+          border-bottom: 1px solid black ;
+          height: 2px;
+          border-radius: 1px;
+          margin-top: 32px;
+        }
       }
-
-      .bar1 {
-        width: calc(100% - 144px);
-        height: 2px;
-        background-color: #afafaf;
-        border-radius: 1px;
-        margin-top: 32px;
-      }
-
+      
       .icon_box {
         width: calc(100% - 280px);
         display: flex;
@@ -175,35 +165,39 @@
         }
 
         .vector_icon:nth-child(2) {
-          @include vectoricon(82px, 64px, 14px)
+          @include vectoricon(82px, 64px){
+            font-size: 14px;
+          }
         }
 
         .vector_icon:nth-child(3) {
-          @include vectoricon(60px, 64px, '')
+          @include vectoricon(60px, 64px)
         }
 
         .vector_icon:nth-child(4) {
-          @include vectoricon(65px, 61px, 14px);
+          @include vectoricon(65px, 61px){
+            font-size: 14px;
+          }
         }
 
         .vector_icon:nth-child(5) {
-          @include vectoricon(40px, 64px, '');
+          @include vectoricon(40px, 64px);
         }
 
         .vector_icon:nth-child(6) {
-          @include vectoricon(60px, 64px, '');
+          @include vectoricon(60px, 64p);
         }
 
         .vector_icon:nth-child(7) {
-          @include vectoricon(46px, 64px, '');
+          @include vectoricon(46px, 64px);
         }
 
         .vector_icon:nth-child(8) {
-          @include vectoricon(46px, 64px, '');
+          @include vectoricon(46px, 64px);
         }
 
         .vector_icon:nth-child(9) {
-          @include vectoricon(48px, 64px, '');
+          @include vectoricon(48px, 64px);
 
         }
       }
@@ -249,10 +243,7 @@
         }
       }
 
-      .white-space {
-        font-size: 20px;
-        white-space: nowrap;
-
+      li{
         p:nth-child(2) {
           margin-top: 12px;
         }

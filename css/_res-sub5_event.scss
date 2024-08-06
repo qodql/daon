@@ -8,24 +8,16 @@
 @include res('tab'){
 .sub{
       ul{
-        li{
+        li{width: 45%;
           a{
             .img_box{
               .end_event_text{
                 font-size: 32px;
               }
             }
-            .event_text_box{
-              p {font-size: 16px; 
-              }
-              span{font-size: 12px;
-                
-              }
-            }
           }
         }
       }
-
       }
     }
 
@@ -39,22 +31,11 @@
                   font-size: 20px;
                 }
               }
-              .event_text_box{
-                p {font-size: 16px; 
-                }
-                span{font-size: 12px;
-                  
-                }
-              }
             }
           }
-        }
-    
-        }
+        }    
+      }
     }
-  
-
-
 //max 767
 @include res('mo-l'){
   .sub{
@@ -66,19 +47,11 @@
               font-size: 20px;
             }
           }
-          .event_text_box{
-            p {font-size: 16px; 
-            }
-            span{font-size: 12px;
-              
-            }
-          }
         }
       }
     }
-
-    }
   }
+}
 @media (max-width : 567px){
   .sub{
     ul{
@@ -89,21 +62,11 @@
               font-size: 20px;
             }
           }
-          .event_text_box{
-            p {font-size: 12px; 
-            }
-            span{font-size: 8px;
-              
-            }
-          }
         }
       }
     }
-
-    }
   }
-
-
+}
 //max 480
 @include res('mo-s'){
   .sub{
@@ -115,17 +78,9 @@
               font-size: 20px;
             }
           }
-          .event_text_box{
-            p {font-size: 12px; 
-            }
-            span{font-size: 8px;
-              
-            }
-          }
         }
       }
     }
-
-    }
   }
+}
 
