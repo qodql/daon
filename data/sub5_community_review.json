@@ -1,0 +1,12 @@
+{
+  "community_review" :[
+    {"review_user" : ["@asdlfjqwie"], 
+     "review_text" : ["다녀온 후기✌🏻:)<br>
+                  사진 많이 찍고📸바베큐도 먹고 🍖불멍하면서 🔥 힐링 했어용❣️<br>
+                  붉은 빛, 푸른 빛 너무 예쁜 불멍🥰<br>
+                  올여름☀️가평 놀러 갈 예정이신 분들은 꼭 한번 방문해보시길 추천드립니당🩵🏝️"],
+      "review_img" : ["../img/img_coumunity_review_01.jpg","../img/img_coumunity_review_02.jpg", "../img/img_coumunity_review_03.jpg", "../img/img_coumunity_review_04.jpg", "../img/img_coumunity_review_05.jpg", "../img/img_coumunity_review_06.jpg", "../img/img_coumunity_review_07.jpg", "../img/img_coumunity_review_08.jpg", "../img/img_coumunity_review_09.jpg"]
+
+    }
+  ]
+}
