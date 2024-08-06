@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* [↓] 하단 나중에 작업 완료 후 삭제 [↓] */
 /* 분기점 
 1280~1500: pc   pc-s
 768~1279: 태블릿     tab
@@ -49,7 +50,7 @@ mo-s:
         ㄴ 버튼 width 고정(깨짐 방지)(160px)
 * 360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 미디어쿼리 추가했습니다.
 */
-/*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
+/* [↑] 상단 나중에 작업 완료 후 삭제 [↑] */
 @media (max-width: 1279px) {
   body .login_common .logo_wrap {
     margin-bottom: 48px;
@@ -140,11 +141,6 @@ mo-s:
     width: 160px;
   }
 }
-@media screen and (max-width: 360px) {
-  body .join .join_wrap .join_personal_info .phone_verify_btn .phone_box {
-    width: 69%;
-  }
-}
 .login_common {
   width: 100%;
   height: 100vh;
@@ -165,294 +161,63 @@ mo-s:
   font-weight: 700;
   text-align: center;
 }
-.login_common .email_box {
+.login_common .input_box li {
   width: 100%;
   max-width: 480px;
-  padding-left: 20px;
   position: relative;
+}
+.login_common .input_box li label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.login_common .input_box li input {
+  width: 100%;
+  padding: 16px 48px;
   border: 1px solid #afafaf;
   border-radius: 8px;
-  overflow: hidden;
+  vertical-align: middle;
+}
+.login_common .input_box li .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.login_common .input_box li .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.login_common .input_box li input:focus ~ .input_reset_btn {
+  visibility: visible;
 }
 .login_common .email_box label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
   background-image: url(../img/icon/icon_mail_grey.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.login_common .email_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.login_common .email_box input:focus {
-  width: calc(100% - 80px);
-}
-.login_common .email_box .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.login_common .email_box .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.login_common .email_box input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
-}
-.login_common .pw_box {
-  width: 100%;
-  max-width: 480px;
-  padding-left: 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .login_common .pw_box label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
   background-image: url(../img/icon/icon_lock.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.login_common .pw_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.login_common .pw_box input:focus {
-  width: calc(100% - 80px);
-}
-.login_common .pw_box .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.login_common .pw_box .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.login_common .pw_box input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
-}
-.login_common .pw_check_box {
-  width: 100%;
-  max-width: 480px;
-  padding-left: 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.login_common .pw_check_box label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
-  background-image: url(../img/icon/icon_lock.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.login_common .pw_check_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.login_common .pw_check_box input:focus {
-  width: calc(100% - 80px);
-}
-.login_common .pw_check_box .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.login_common .pw_check_box .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.login_common .pw_check_box input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
-}
-.login_common .name_box {
-  width: 100%;
-  max-width: 480px;
-  padding-left: 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .login_common .name_box label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
   background-image: url(../img/icon/icon_person.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.login_common .name_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.login_common .name_box input:focus {
-  width: calc(100% - 80px);
-}
-.login_common .name_box .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.login_common .name_box .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.login_common .name_box input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
-}
-.login_common .phone_box {
-  width: 100%;
-  max-width: 480px;
-  padding-left: 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .login_common .phone_box label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
   background-image: url(../img/icon/icon_phone.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.login_common .phone_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.login_common .phone_box input:focus {
-  width: calc(100% - 80px);
-}
-.login_common .phone_box .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.login_common .phone_box .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.login_common .phone_box input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
-}
-.login_common .verify_box {
-  width: 100%;
-  max-width: 480px;
-  padding-left: 20px;
-  position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #efefef;
 }
 .login_common .verify_box label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  display: inline-block;
   background-image: url(../img/icon/icon_phone.svg);
-  background-repeat: no-repeat;
-  vertical-align: middle;
-}
-.login_common .verify_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
-  vertical-align: middle;
-}
-.login_common .verify_box input:focus {
-  width: calc(100% - 80px);
-}
-.login_common .verify_box .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  opacity: 1;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.login_common .verify_box .eye {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.login_common .verify_box input:focus ~ .input_reset_btn {
-  opacity: 1;
-  visibility: visible;
 }
 .login_common .blue_btn {
   width: 100%;
@@ -480,10 +245,10 @@ mo-s:
 .login .login_wrap .login_daon .login_login_daon {
   margin-bottom: 60px;
 }
-.login .login_wrap .login_daon .login_login_daon .login_input_box {
+.login .login_wrap .login_daon .login_login_daon .input_box {
   margin-bottom: 24px;
 }
-.login .login_wrap .login_daon .login_login_daon .login_input_box .email_box {
+.login .login_wrap .login_daon .login_login_daon .input_box .email_box {
   margin-bottom: 12px;
 }
 .login .login_wrap .login_daon .login_join_daon .white_btn {
@@ -502,22 +267,22 @@ mo-s:
   justify-content: center;
   gap: 16px;
 }
-.login .login_wrap .login_sns .login_login_sns li button {
+.login .login_wrap .login_sns .login_login_sns li a button {
   width: 60px;
   height: 60px;
   border-radius: 60px;
   background-repeat: no-repeat;
   background-position: center;
 }
-.login .login_wrap .login_sns .login_login_sns li .kakao {
+.login .login_wrap .login_sns .login_login_sns li a .kakao {
   background-color: #fff500;
   background-image: url(../img/icon/icon_kakao.svg);
 }
-.login .login_wrap .login_sns .login_login_sns li .naver {
+.login .login_wrap .login_sns .login_login_sns li a .naver {
   background-color: #06CC80;
   background-image: url(../img/icon/icon_naver.svg);
 }
-.login .login_wrap .login_sns .login_login_sns li .google {
+.login .login_wrap .login_sns .login_login_sns li a .google {
   background-color: #ffffff;
   border: 1px solid #afafaf;
   background-image: url(../img/icon/icon_google.svg);
@@ -536,26 +301,26 @@ mo-s:
   padding: 72px 40px;
   margin-bottom: 16px;
 }
-.join .join_wrap .join_personal_info .join_input_box {
-  width: 100%;
-}
-.join .join_wrap .join_personal_info .join_input_box li {
+.join .join_wrap .join_personal_info .input_box li:not(:last-of-type) {
   margin-bottom: 12px;
 }
-.join .join_wrap .join_personal_info .join_input_box .verify_box {
-  margin-bottom: 0;
-}
-.join .join_wrap .join_personal_info .phone_verify_btn {
+.join .join_wrap .join_personal_info .phone_verify {
   max-width: 480px;
   display: flex;
   justify-content: space-between;
   gap: 8px;
 }
-.join .join_wrap .join_personal_info .phone_verify_btn .phone_box {
+.join .join_wrap .join_personal_info .phone_verify .phone_box {
   width: 70%;
 }
-.join .join_wrap .join_personal_info .phone_verify_btn .verify_btn {
+.join .join_wrap .join_personal_info .phone_verify .phone_box .input_reset_btn {
+  right: 33%;
+}
+.join .join_wrap .join_personal_info .phone_verify .verify_btn {
   width: 30%;
+}
+.join .join_wrap .join_personal_info .phone_verify .verify_btn button {
+  white-space: nowrap;
 }
 .join .join_wrap .join_agree {
   width: 100%;

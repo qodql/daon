@@ -21,15 +21,13 @@
             text-align: center;
         }
     }
-    //인풋박스들
-    .email_box{@include inputbox($icn: url(../img/icon/icon_mail_grey.svg));}
-    .pw_box{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
-    .pw_check_box{@include inputbox($icn: url(../img/icon/icon_lock.svg));}
-    .name_box{@include inputbox($icn: url(../img/icon/icon_person.svg));}
-    .phone_box{@include inputbox($icn: url(../img/icon/icon_phone.svg))}
-    .verify_box{@include inputbox($icn: url(../img/icon/icon_phone.svg)){
-                            background-color: #efefef;  //readonly용, 양옆 흰색 여백 있어서 추가
-                }}
+    //로그인 관련 모든 인풋박스들
+    .input_box li {@include inputbox;}
+    .email_box{label{background-image: url(../img/icon/icon_mail_grey.svg);}}
+    .pw_box{label{background-image: url(../img/icon/icon_lock.svg);}}
+    .name_box{label{background-image: url(../img/icon/icon_person.svg);}}
+    .phone_box{label{background-image: url(../img/icon/icon_phone.svg);}}
+    .verify_box{label{background-image: url(../img/icon/icon_phone.svg);}}
     //기본 파란 버튼
     .blue_btn{
         @include btn;
@@ -45,7 +43,7 @@
             margin-bottom: 40px;
             .login_login_daon{
                 margin-bottom: 60px;
-                .login_input_box{
+                .input_box{
                     margin-bottom: 24px;
                     .email_box{
                         margin-bottom: 12px;
@@ -60,31 +58,33 @@
         }
         .login_sns{
             .login_login_sns{
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            li{
-                button{
-                    width: 60px;
-                    height: 60px;
-                    border-radius: 60px;
-                    background-repeat: no-repeat;
-                    background-position: center;
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                li{
+                    a{
+                        button{
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 60px;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        .kakao{
+                            background-color: #fff500;
+                            background-image: url(../img/icon/icon_kakao.svg);
+                        }
+                        .naver{
+                            background-color: #06CC80;
+                            background-image: url(../img/icon/icon_naver.svg);
+                        }
+                        .google{
+                            background-color: #ffffff;
+                            border: 1px solid #afafaf;
+                            background-image: url(../img/icon/icon_google.svg);
+                        }
+                    }
                 }
-                .kakao{
-                    background-color: #fff500;
-                    background-image: url(../img/icon/icon_kakao.svg);
-                }
-                .naver{
-                    background-color: #06CC80;
-                    background-image: url(../img/icon/icon_naver.svg);
-                }
-                .google{
-                    background-color: #ffffff;
-                    border: 1px solid #afafaf;
-                    background-image: url(../img/icon/icon_google.svg);
-                }
-            }
             }
         }
     }
@@ -98,23 +98,30 @@
                 padding: 72px 40px;
             };
             margin-bottom: 16px;
-            .join_input_box{
-                width: 100%;
+            .input_box{
                 li{
-                    margin-bottom: 12px;
-                }
-                .verify_box
-                {   
-                    margin-bottom: 0;
+                    &:not(:last-of-type) {
+                        margin-bottom: 12px;
+                    }
                 }
             }
-            .phone_verify_btn{
+            .phone_verify{
                 max-width: $box-width;
                 display: flex;
                 justify-content: space-between;
                 gap: 8px;
-                .phone_box{width: 70%;}
-                .verify_btn{width: 30%;}
+                .phone_box{
+                    width: 70%;
+                    .input_reset_btn{
+                        right: 33%;
+                    }
+                }
+                .verify_btn{
+                    width: 30%;
+                    button{
+                        white-space: nowrap;   //반응형 360px아래 깨짐 방지용
+                    }
+                }
             } 
         }
         .join_agree{

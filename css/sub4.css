@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* [↓] 하단 나중에 작업 완료 후 삭제 [↓] */
 /* 분기점 
 1280~1500: pc   pc-s
 768~1279: 태블릿    tab
@@ -19,7 +20,7 @@ mo-l:
         ㄴ.txt_long(설명 텍스트) : 세로정렬, 패딩 변경
 mo-s: mo-l와 동일
 */
-/*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
+/* [↑] 상단 나중에 작업 완료 후 삭제 [↑] */
 @media (max-width: 1279px) {
   body .around_spot .sub_container .contents .sub4_card .card_txt .txt_long p {
     padding: 40px 80px 40px 32px;
