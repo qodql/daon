@@ -124,17 +124,19 @@ document.addEventListener("DOMContentLoaded", () => {
         roomBtn[i].addEventListener("click", (e) => {
             const roomSelectedBtn = document.querySelectorAll(".room_select_btn.selected")
             let roomSelectedBtnLength = roomSelectedBtn.length
-            if (roomSelectedBtn){
-                if(roomNum - 1 < roomSelectedBtnLength) {
-                    alert("선택할 수 있는 객실 수를 초과하였습니다.")
-                } else {
-                    e.target.classList.add("selected")
-                }
+            if(roomNum - 1 < roomSelectedBtnLength) {
+                alert("선택할 수 있는 객실 수를 초과하였습니다.")
+            } else {
+                e.target.classList.add("selected")
             }
+            console.log(roomSelectedBtn);
+            console.log(roomSelectedBtnLength);
+            // 1. 셀렉트 된 애를 다시 클릭했을때, 해제가 되어야함.
         })
     })
 
     nextBtn.addEventListener("click", ()=>{
+        // 2. 최소 roomNum개의 객실을 선택하세요. 선택했으면 페이지 이동
         if(confirm(`객실 ${roomNum}개, 성인 ${adultNum}명, 어린이 ${childNum}명으로 예약을 진행하시겠습니까?`)) {
             window.location.href='./sub6_reservation_step2.html'
         }
