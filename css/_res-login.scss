@@ -1,3 +1,4 @@
+/* [↓] 하단 나중에 작업 완료 후 삭제 [↓] */
 /* 분기점 
 1280~1500: pc   pc-s
 768~1279: 태블릿     tab
@@ -48,45 +49,45 @@ mo-s:
         ㄴ 버튼 width 고정(깨짐 방지)(160px)
 * 360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 미디어쿼리 추가했습니다.
 */
-/*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
+/* [↑] 상단 나중에 작업 완료 후 삭제 [↑] */
 @import "./_res";
 //=====@mixin모음(4개)================================================
 $input-width: 400px;
 $mo-width: 360px;
 $box-width: 480px;
 // (1)로그인 관련 키보드 입력 들어가는 모든 인풋박스
-@mixin inputbox($icn){   
+@mixin inputbox(){   
     width: 100%;
     max-width: $box-width;
-    padding-left: 20px;
     position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
+    // overflow: hidden;
     // label: 인풋박스 내부 : 좌측 아이콘
     label{
         width: 20px;
         height: 20px;
         margin-right: 8px;
         display: inline-block;
-        background-image: $icn;
         background-repeat: no-repeat;
         vertical-align: middle;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     input{
-        width: calc(100% - 40px);
-        padding: 16px 0;
-        color: #afafaf;    
+        width: 100%;
+        padding: 16px 48px;
+        border: 1px solid #afafaf;
+        border-radius: 8px;
         vertical-align: middle; 
-        &:focus{
-            width: calc(100% - 80px);
-        }
+        // &:focus{
+        //     width: calc(100% - 80px);
+        // }
     }
     // 인풋박스 내부 : 우측 [x, 눈] 아이콘
     .input_reset_btn{
         width: 16px;
         height: 16px;
-        opacity: 1;
         visibility: hidden;
         position: absolute;
         top: 50%;
@@ -101,12 +102,12 @@ $box-width: 480px;
         background-image: url(../img/icon/icon_eye.svg);
     }
     input:focus ~ .input_reset_btn{
-        opacity: 1;
         visibility: visible;
     }
     @content
 }
-// (2) 그림자 박스
+
+// (2)그림자 박스
 @mixin box_shadow(){
     width: 100%;
     max-width: $box-width;
@@ -268,19 +269,5 @@ $box-width: 480px;
                 }
             }
         }
-    }
-};
-//360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 그 부분만 추가했습니다.
-@media screen and (max-width:360px) {
-    body{
-        .join{
-            .join_wrap{
-                .join_personal_info{
-                    .phone_verify_btn{
-                        .phone_box{width: 69%;}
-                    } 
-                }
-            }
-        }            
     }
 };
