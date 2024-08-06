@@ -4,7 +4,7 @@
 }
 
 .intro .sub_top {
-  background: url("../img/img_sub_intro.jpg") no-repeat;
+  background: url("../img/img_sub_intro.jpg") no-repeat center/cover;
 }
 .intro .sub_top .dim {
   background-color: rgba(0, 0, 0, 0.38);
@@ -126,7 +126,7 @@
 /*============================intro end=================================*/
 /*============================contact start=================================*/
 .contact .sub_top {
-  background: url("../img/img_sub_contact.jpg") no-repeat;
+  background: url("../img/img_sub_contact.jpg") no-repeat center/cover;
 }
 .contact .sub_top .dim {
   background-color: rgba(0, 0, 0, 0.55);
