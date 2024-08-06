@@ -19,7 +19,7 @@
                 animation: fadeIn 1200ms;
             }
             .intro_grid_wrapper{
-                width: 1400px;
+                max-width: 1400px;
                 margin: 0 auto;
                 display: grid;
                 grid-template-columns: repeat(3,1fr);
@@ -131,6 +131,7 @@
             width: 100%;
             .contact_map{
                 width: 100%;
+                height: 600px;
                 position: relative;
                 border-radius: 20px;
                 .contact_map_btn{
@@ -194,9 +195,6 @@
                                 }
                                 &:nth-child(2){
                                     &::before{background: url('../img/icon/icon_bus.svg') no-repeat center;}
-                                    p{
-                                        &::after{border-color: #94CD1E;}
-                                    }
                                 }
                                 &::after{width: 0;}
                                 i{
@@ -210,18 +208,9 @@
                                     align-items: center;
                                     padding-right: 12px;
                                     line-height: 20px;
-                                    &::after{
-                                        width: 18px;
-                                        height: 18px;
-                                        content: '';
-                                        background-color: #fff;
-                                        border-radius: 50%;
-                                        border: 2px solid #30B141;
-                                    }
                                 }
                                 div{
                                     width: 40px;
-                                    height: 24px;
                                     display: flex;
                                     align-items: flex-end;
                                     justify-content: center;

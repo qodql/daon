@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 
-    var iwContent = '<div style="width=40px; padding:10px; text-align:center;">다온펜션</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    var iwContent = '<div style="padding:10px; margin-left:30px; font-weight:700; color:#111">다온펜션</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
     iwPosition = new kakao.maps.LatLng(20, 100); //인포윈도우 표시 위치입니다
 
     // 인포윈도우를 생성합니다

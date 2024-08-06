@@ -20,7 +20,7 @@
   animation: fadeIn 1200ms;
 }
 .intro .sub_container .contents .intro_grid_wrapper {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -136,6 +136,7 @@
 }
 .contact .sub_container .contents .contact_map {
   width: 100%;
+  height: 600px;
   position: relative;
   border-radius: 20px;
 }
@@ -200,9 +201,6 @@
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2)::before {
   background: url("../img/icon/icon_bus.svg") no-repeat center;
 }
-.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2) p::after {
-  border-color: #94CD1E;
-}
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li::after {
   width: 0;
 }
@@ -218,17 +216,8 @@
   padding-right: 12px;
   line-height: 20px;
 }
-.contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
-  width: 18px;
-  height: 18px;
-  content: "";
-  background-color: #fff;
-  border-radius: 50%;
-  border: 2px solid #30B141;
-}
 .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
   width: 40px;
-  height: 24px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -298,7 +287,6 @@
 /*============================contact end=================================*/
 @media (max-width: 1499px) {
   .intro .sub_container .contents .intro_grid_wrapper {
-    width: 1200px;
     grid-gap: 15px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
@@ -340,11 +328,12 @@
     line-height: 32px;
   }
 }
-@media (max-width: 1279px) {
+@media screen and (max-width: 1400px) {
   .intro .sub_container .contents .intro_grid_wrapper {
-    width: 1000px;
-    grid-gap: 15px;
+    width: calc(100% - 160px);
   }
+}
+@media (max-width: 1279px) {
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
     height: 540px;
   }
@@ -352,7 +341,7 @@
     height: 200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    object-position: 0px -253px;
+    object-position: 0px -200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 200px;
@@ -361,7 +350,7 @@
     height: 325px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px -90px;
+    object-position: 0px -26px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 717px;
@@ -388,7 +377,8 @@
     line-height: 40px;
   }
   .contact .sub_container .contents .contact_map {
-    width: 80%;
+    width: 100%;
+    height: 400px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 8px;
@@ -402,8 +392,8 @@
     height: 38px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn button i {
-    top: 9px;
-    left: 6px;
+    top: 6px;
+    left: 9px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn button i img {
     width: 15px;
@@ -419,7 +409,7 @@
     width: 118px;
   }
   .contact .sub_container .contents .contact_infomation {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
@@ -430,11 +420,8 @@
     width: 14px;
     height: 14px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
-    height: 26px;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
-    margin-right: 6px;
+    margin: 3px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
     width: 34px;
@@ -474,7 +461,6 @@
 }
 @media screen and (max-width: 1060px) {
   .intro .sub_container .contents .intro_grid_wrapper {
-    width: 800px;
     grid-gap: 10px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
@@ -484,7 +470,7 @@
     height: 180px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    object-position: 0px -190px;
+    object-position: 0px -125px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 180px;
@@ -493,7 +479,7 @@
     height: 310px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px -22px;
+    object-position: 0px 0px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 630px;
@@ -518,9 +504,6 @@
   }
 }
 @media screen and (max-width: 975px) {
-  .contact .sub_container .contents {
-    width: 100%;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(3)::before {
     background-size: 24px;
   }
@@ -532,15 +515,10 @@
     width: 14px;
     height: 14px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
-    height: 26px;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
-    margin-right: 6px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
-    width: 34px;
-    line-height: 0;
+    width: 3px;
+    height: 3px;
+    margin: 2px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(3)::before {
     background-size: 22px;
@@ -564,10 +542,6 @@
   }
 }
 @media screen and (max-width: 870px) {
-  .intro .sub_container .contents .intro_grid_wrapper {
-    width: 700px;
-    grid-gap: 10px;
-  }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
     height: 480px;
   }
@@ -575,16 +549,13 @@
     height: 170px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    object-position: 0px -134px;
+    object-position: 0px -90px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 170px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) {
     height: 300px;
-  }
-  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px -3px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 566px;
@@ -663,11 +634,9 @@
     font-size: 16px;
     line-height: 36px;
   }
-  .contact .sub_container .contents {
-    padding: 16px;
-  }
   .contact .sub_container .contents .contact_map {
     width: 100%;
+    height: 280px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn {
     right: 12px;
@@ -678,7 +647,7 @@
     height: 30px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn button i {
-    top: 5.5px;
+    top: 2px;
     left: 4px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn button i img {
@@ -696,7 +665,6 @@
     width: 96px;
   }
   .contact .sub_container .contents .contact_infomation {
-    width: 100%;
     flex-direction: column;
   }
   .contact .sub_container .contents .contact_infomation .contact_info {
@@ -715,16 +683,6 @@
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
     width: 12px;
     height: 12px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
-    height: 26px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
-    margin-right: 6px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
-    width: 34px;
-    line-height: 0;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(3)::before {
     background-size: 20px;
@@ -777,6 +735,9 @@
   }
 }
 @media screen and (max-width: 610px) {
+  .intro .sub_container.sub_container_full .title {
+    padding: 0 16px;
+  }
   .intro .sub_container .contents .intro_grid_wrapper p {
     height: 240px;
   }
@@ -810,7 +771,7 @@
     margin-top: 60px;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
-    width: 469px;
+    width: 345px;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
     margin: 24px auto;
@@ -855,9 +816,6 @@
   .intro .sub_container .contents .intro_full_bg {
     margin-top: 60px;
   }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
-    width: 469px;
-  }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
     width: 70%;
   }
@@ -878,8 +836,8 @@
     border-radius: 4px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn button i {
-    top: 5px;
-    left: 6px;
+    top: 1px;
+    left: 8px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn button i img {
     width: 12px;
@@ -915,20 +873,8 @@
     width: 12px;
     height: 12px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div {
-    height: 26px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
-    margin-right: 6px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
-    width: 34px;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(3)::before {
     background-size: 16px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(3) {
-    width: 0;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 {
     margin-top: -52px;
@@ -994,7 +940,7 @@
     margin-top: 60px;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
-    width: 469px;
+    width: 283px;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
     margin: 24px auto;
