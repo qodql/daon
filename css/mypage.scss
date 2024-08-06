@@ -21,6 +21,7 @@
             .mypage_wrap{
                 .mypage_tap_wrap{
                     width: 100%;
+                    /*
                     ul.tab{
                         width: 100%;
                         height: 60px;
@@ -40,6 +41,7 @@
                             }
                         }
                     }
+                    */
                 }
                 .tab_cont{
                     width: 100%;
@@ -58,9 +60,14 @@
                                             width: 330px;
                                             border: none;
                                             padding: 16px 40px;
-                                            span{
-                                                color: #afafaf;
+                                            overflow: visible;
+                                            span{color: #afafaf;}
+                                            .checkbox,label{
+                                                display: flex;
+                                                border: none;
+                                                background-color: transparent;
                                             }
+                                            label{width: 330px;}
                                         }
                                     }
                                     &.phone_ul, &.birth_ul, &.coupon_ul{
@@ -73,35 +80,38 @@
                                         color: #2f2f2f;
                                     }
                                     li{
+                                        @include inputbox;
                                         &.email_box{
-                                            @include inputbox($icn: url(../img/icon/icon_mail_grey.svg));
                                             background-color: #EFEFEF;
+                                            border-radius: 8px;
+                                            label{background-image: url(../img/icon/icon_mail_grey.svg)}
                                         }
                                         &.pw_box{
-                                            @include inputbox($icn: url(../img/icon/icon_lock.svg));
+                                            label{background-image: url(../img/icon/icon_lock.svg)}
                                         }
                                         &.pw_check_box{
-                                            @include inputbox($icn: url(../img/icon/icon_lock.svg));
+                                            label{background-image: url(../img/icon/icon_lock.svg)}
                                         }
                                         &.name_box{
-                                            @include inputbox($icn: url(../img/icon/icon_person.svg));
+                                            label{background-image: url(../img/icon/icon_person.svg)}
                                         }
                                         &.phone_box{
-                                            @include inputbox($icn: url(../img/icon/icon_phone.svg));
+                                            label{background-image: url(../img/icon/icon_phone.svg)}
                                         }
                                         &.birth_box{
-                                            @include inputbox($icn: url(../img/icon/icon_calendar.svg));
+                                            label{background-image: url(../img/icon/icon_calendar.svg)}
                                         }
                                         &.coupon_box{
                                             input{
                                                 width: 116px;
                                                 height: 36px;
+                                                line-height: 36px;
+                                                padding: 2px 0;
                                                 font-size: 16px;
                                                 background-color: #357EF1;
                                                 border: none;
                                                 border-radius: 8px;
                                                 color: #fff;
-                                                text-align: center;
                                             }
                                         }
                                     }
@@ -160,25 +170,6 @@
     }
     .sub_container {
         .contents {
-            ul.tab{
-                width: 100%;
-                height: 60px;
-                display: flex;
-                border-bottom: 1px solid #afafaf;
-                li{
-                    width: 140px;
-                    font-size: 24px;
-                    color: #afafaf;
-                    padding: 8px 16px;
-                    text-align: center;
-                    cursor: pointer;
-                    &.on{
-                        color: #2f2f2f;
-                        font-weight: 700;
-                        border-bottom: 4px solid #2f2f2f;
-                    }
-                }
-            }
             .mypage_reservation{
                 width: 100%;
                 ul.mypage_reservation_list{
