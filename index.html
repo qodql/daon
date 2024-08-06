@@ -14,6 +14,8 @@
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/main.js"></script>
+    <!-- [↓] kakao map api -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=968c94e07185af1f9c1b59c3f1b85383"></script>
 </head>
 <body>
     <!-- 메인 -->
@@ -28,23 +30,21 @@
                         <li>
                             <span>CHECK IN</span>
                             <div class="date in">
-                                <!-- <p>2024. 02. 07 <span>(수)</span></p> -->
                                 <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
                                     <input id="startpicker-input" type="text" aria-label="Date" readonly>
                                     <div id="startpicker-container" style="margin-left: -1px;"></div>
                                 </div>
-                                <span>(수)</span>
+                                <span title="day"></span>
                             </div>
                         </li>
                         <li>
                             <span>CHECK OUT</span>
                             <div class="date out">
-                                <!-- <p>2024. 05. 05 <span>(일)</span></p> -->
                                 <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
                                     <input id="endpicker-input" type="text" aria-label="Date" readonly>
                                     <div id="endpicker-container" style="margin-left: -1px;"></div>
                                 </div>
-                                <span>(수)</span>
+                                <span title="day"></span>
                             </div>
                         </li>
                         <li>
@@ -305,9 +305,7 @@
                     </h2>
                     <div class="more_btn"><a href="./sub1_about_contact.html">VIEW MORE</a></div>
                     <div class="contents">
-                        <div class="map">
-                            <img src="./img/img_map.jpg" alt="지도">
-                        </div>
+                        <div id="map" class="contact_map map"></div>
                         <div class="box_wrap">
                             <div class="tab_wrap">
                                 <ul class="tab box">
@@ -323,7 +321,7 @@
                                         <li>daonpension@daon.com</li>
                                     </ul>
                                     <ul class="transport">
-                                        <li><span>255-7</span>첫차 06:50 막차 18:45 배차간격 매일 8회</li>
+                                        <li><span>71-4</span>첫차 06:50 막차 18:45 배차간격 매일 8회</li>
                                         <li><span>가평역</span>1번 출구, 경반리윗말역 하차 후 도보 20분</li>
                                     </ul>
                                 </div>
@@ -353,6 +351,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">엄청 쾌적해서 놀랬구, 하나하나 디테일이 너무 깔끔하고 이뻤던 곳입니다.</p>
                                 </a>
                             </li>
                             <li>
@@ -364,6 +363,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">언제 가도 나에게 힐링을 주는 공간 힐링이 뭐 별거 있나요? 내가 좋아하는 공간에서 좋은 사람들과 예쁜 것 보면서 맛있는거 먹으면 그게 힐링이지!!</p>
                                 </a>
                             </li>
                             <li>
@@ -375,6 +375,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">다온펜션 다녀온 후기:) 사진 많이 찍고 바베큐도 먹고 불멍하면서 힐링 했어용❣️</p>
                                 </a>
                             </li>
                             <li>
@@ -386,6 +387,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">간만에 가평 여행 숙소에서 한발자국도 안나가고 하루종일 친구들이랑 수영하고 맛난거 먹고, 영화보고</p>
                                 </a>
                             </li>
                             <li>
@@ -397,6 +399,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">사진 많이 찍고 고기도 먹고, 힐링시간도 가질 수 있는 숙소 랍니다❣️</p>
                                 </a>
                             </li>
                         </ul>
@@ -410,6 +413,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">엄청 쾌적해서 놀랬구, 하나하나 디테일이 너무 깔끔하고 이뻤던 곳입니다.</p>
                                 </a>
                             </li>
                             <li>
@@ -421,6 +425,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">언제 가도 나에게 힐링을 주는 공간 힐링이 뭐 별거 있나요? 내가 좋아하는 공간에서 좋은 사람들과 예쁜 것 보면서 맛있는거 먹으면 그게 힐링이지!!</p>
                                 </a>
                             </li>
                             <li>
@@ -432,6 +437,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">다온펜션 다녀온 후기:) 사진 많이 찍고 바베큐도 먹고 불멍하면서 힐링 했어용❣️</p>
                                 </a>
                             </li>
                             <li>
@@ -443,6 +449,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">간만에 가평 여행 숙소에서 한발자국도 안나가고 하루종일 친구들이랑 수영하고 맛난거 먹고, 영화보고</p>
                                 </a>
                             </li>
                             <li>
@@ -454,6 +461,7 @@
                                             <img src="./img/icon/icon_star.svg" alt="">
                                         </div>
                                     </div>
+                                    <p class="review_desc">사진 많이 찍고 고기도 먹고, 힐링시간도 가질 수 있는 숙소 랍니다❣️</p>
                                 </a>
                             </li>
                         </ul>
@@ -496,20 +504,25 @@
         });
 
         function getDayOfWeek(date) {
-            if (!date) return '날짜 선택';
+            if (!date) {
+                return
+            }
             var dayOfWeek = date.getDay();
             var daysOfWeek = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
             return daysOfWeek[dayOfWeek];
         }
-
+        
         picker.getStartpicker().on('change', function() {
             var selectedDate = picker.getStartpicker().getDate();
             day[0].innerHTML = `${getDayOfWeek(selectedDate)}`;
+            day[1].style.cssText = 'margin-left:-140px;';
+            day[1].innerText = '날짜 선택';
         });
-
+        
         picker.getEndpicker().on('change', function() {
             var selectedDate = picker.getEndpicker().getDate();
             day[1].innerHTML = `${getDayOfWeek(selectedDate)}`;
+            day[1].style.cssText = 'margin-left:0px;';
         });
     </script>
     <style>

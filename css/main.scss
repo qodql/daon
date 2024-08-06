@@ -598,17 +598,23 @@
                                                 padding: 0px 8px;
                                                 border-radius: 8px;
                                                 font-weight: 400;
-                                            }
-                                        &:first-of-type {
-                                            span {
-                                                background-color: #30B141;
                                                 color: #fff;
                                             }
-                                        }
-                                        }
-                                        &:last-of-type {
-                                            span {
-                                                background-color: #94CD1E;
+                                            &:first-of-type {
+                                                span {
+                                                    background-color: #94CD1E;
+                                                }
+                                                &::before {
+                                                    background-image: url('../img/icon/icon_bus_black.svg');
+                                                }
+                                            }
+                                            &:last-of-type {
+                                                span {
+                                                    background-color: #30B141;
+                                                }
+                                                &::before {
+                                                    background-image: url('../img/icon/icon_subway.svg');
+                                                }
                                             }
                                         }
                                     }
@@ -683,11 +689,11 @@
                                     }
                                 }
                                 a {
-                                    width: 100%;
+                                    width: 400px;
                                     height: 100%;
                                     display: block;
                                     > img {
-                                        width: 400px;
+                                        width: 100%;
                                         height: 400px;
                                         margin-bottom: 12px;
                                         border-radius: 20px;
@@ -713,9 +719,16 @@
                                                 }
                                             }
                                         }
-                                        .rating {
-                                            
-                                        }
+                                    }
+                                    .review_desc {
+                                        width: 100%;
+                                        margin-top: 8px;
+                                        padding: 0 12px;
+                                        font-size: 14px;
+                                        color: #afafaf;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
                                     }
                                 }
                             }
