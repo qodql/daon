@@ -10,6 +10,7 @@
   font-size: 20px;
   font-weight: bold;
 }
+
 // 공지사항
 .notice {
   .sub_top {
@@ -28,22 +29,26 @@
         border-collapse: collapse;
         color: #2f2f2f;
 
-        tr {
-          width: auto;
+        .col_num {
+          width: 80px;
+        }
+
+        .col_date {
+          width: 180px;
+        }
+
+        tbody {
+          tr {
+            width: auto;
+            cursor: pointer;
+          }
         }
 
         th {
-          &:nth-of-type(1) {
-            width: 150px;
-          }
-
-          &:nth-of-type(3) {
-            width: 200px;
-          }
           background-color: rgba(154, 190, 248, 0.22);
           font-size: 22px;
           font-weight: 700;
-          padding: 16px 54px;
+          padding: 16px;
         }
 
         td {
@@ -54,10 +59,15 @@
           border-bottom: solid 1px #d9d9d9;
           border-collapse: collapse;
 
-          a {
-            display: block;
-          }
+          p {
+            font-size: inherit;
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
 
+          }
           &:nth-of-type(1) {
             text-align: center;
           }
@@ -68,25 +78,6 @@
           &:nth-of-type(3) {
             text-align: center;
           }
-        }
-      }
-
-      .pagination {
-        width: 416px;
-        height: 32px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 120px;
-        margin-bottom: 120px;
-
-        // 폰트조절
-        a:nth-of-type(3),
-        a:nth-of-type(4),
-        a:nth-of-type(5),
-        a:nth-of-type(6),
-        a:nth-of-type(7) {
-          @include abc();
         }
       }
     }
@@ -113,6 +104,7 @@
     p {
       font-size: 24px;
       font-weight: bold;
+      
     }
   }
 
@@ -331,7 +323,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 text-align: left;
-                flex: 1; /* p 태그가 남은 공간을 차지하게 하여 오른쪽 버튼과 분리 */
+                flex: 1; 
               }
               span {
                 margin-right: 10px;
