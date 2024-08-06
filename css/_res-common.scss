@@ -215,6 +215,24 @@
       }
     }
   }
+  // fixed_menu
+  .fixed_menu {
+    right: 44px;
+    bottom: 72px;
+    ul {
+      li {
+        width: 56px;
+        height: 56px;
+        &.top_btn {
+          a {
+            span {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @include res('mo-l'){

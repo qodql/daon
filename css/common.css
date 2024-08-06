@@ -968,6 +968,17 @@ body.prevent_scroll {
     font-size: 20px;
     margin-top: 8px;
   }
+  .fixed_menu {
+    right: 44px;
+    bottom: 72px;
+  }
+  .fixed_menu ul li {
+    width: 56px;
+    height: 56px;
+  }
+  .fixed_menu ul li.top_btn a span {
+    font-size: 12px;
+  }
 }
 @media (max-width: 767px) {
   .header {
