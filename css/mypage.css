@@ -1,3 +1,150 @@
+@charset "UTF-8";
+/* 분기점 
+1280~1500: pc   pc-s
+768~1279: 태블릿     tab
+481~767: 모바일라지  mo-l
+~480: 모바일         mo-s 
+*/
+/* 변동사항(확인 후 삭제하셔도 됩니다!)--------------------------------------
+  모든 로그인 관련 페이지는 모바일 기준으로 기본 디자인을 잡았기 때문에 디자인적 변동사항이 적습니다.
+  세부사항은 아래와 같습니다.
+pc-s: 없음
+tab: 
+- .login_common
+        ㄴ .logo_wrap : 로고-텍스트묶음의 하단 간격 조정 56->48px
+mo-l:
+    - .login_common : 
+        ㄴ 기본 좌우 패딩 16px
+        ㄴ .logo_wrap 로고-텍스트 간 간격 줄임(40->36px)
+        ㄴ .logo_wrap 로고-텍스트의 텍스트 폰트사이즈 줄임(32->24px)
+        ㄴ 인풋박스 width 크게(400->480px)
+        ㄴ 버튼 width 크게(400->480px)
+    - .login : 
+        ㄴ 그림자 박스 제거
+        ㄴ 인풋박스 width 크게 (400->480px)
+        ㄴ 버튼 width 크게(400 -> 480px)
+        ㄴ 로그인-회원가입버튼 간격(60->40px)
+    - .join : 
+        ㄴ 그림자 박스 제거
+        ㄴ 인풋박스 width 크게
+        ㄴ 버튼 width(480->400px)
+        ㄴ 인풋박스-체크박스 간 간격 조정 (16->48px)
+        ㄴ 전체 동의 배경색 제거, border를 추가해 영역 구분
+        ㄴ .join_optional_info(*선택항목은 동의없이~) 상단 마진 삭제
+    - .join_complete
+        ㄴ 로고-체크-텍스트와 컨텐츠 간 간격 조정(48->24px)
+        ㄴ mo-l .login_common의 3번째 항목: .logo_wrap 간격 늘림(36->48px)
+        ㄴ 체크 아이콘 사이즈 작게(80x80 -> 60x60)
+        ㄴ.greeting p (환영합~) : 폰트 사이즈 축소 (24->20px)
+        ㄴ.greeting p (환영합~)와 버튼 간격 축소 (100->80px)
+        ㄴ 버튼 max-width 줄임(240->200px)
+mo-s: 
+    - .login_common : 
+        ㄴ 텍스트 폰트사이즈 줄임(24->20px)
+    - .login : 
+        ㄴ 없음
+    - .join_complete 
+        ㄴ.greeting p (환영합~)와 버튼 간격 축소 (80->40px)
+        ㄴ .greeting p (환영합~) : 폰트 사이즈 축소 (20->16px)
+        ㄴ 버튼 width 고정(깨짐 방지)(160px)
+* 360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 미디어쿼리 추가했습니다.
+*/
+/*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
+@media (max-width: 1279px) {
+  body .login_common .logo_wrap {
+    margin-bottom: 48px;
+  }
+}
+@media (max-width: 767px) {
+  body .login_common {
+    padding: 100px 16px 0;
+  }
+  body .login_common .logo_wrap .txt {
+    margin-top: 36px;
+    font-size: 24px;
+  }
+  body .login .login_wrap {
+    width: 100%;
+    max-width: 480px;
+    padding: 0;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: none;
+  }
+  body .login .login_wrap .login_daon .login_login_daon {
+    margin-bottom: 40px;
+  }
+  body .join .join_wrap .join_personal_info {
+    width: 100%;
+    max-width: 480px;
+    padding: 0;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 48px;
+  }
+  body .join .join_wrap .join_agree .agree_checkbox {
+    width: 100%;
+    max-width: 480px;
+    padding: 0;
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  body .join .join_wrap .join_agree .agree_checkbox .agree_all {
+    background-color: transparent;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px dotted #efefef;
+  }
+  body .join .join_wrap .join_agree .join_optional_info {
+    margin-top: 0;
+  }
+  body .join_complete .logo_wrap {
+    margin-bottom: 24px;
+  }
+  body .join_complete .logo_wrap .txt {
+    margin-top: 48px;
+  }
+  body .join_complete .logo_wrap .txt::before {
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/icon/icon_check_big_mobile.svg);
+  }
+  body .join_complete .join_complete_wrap .greeting {
+    margin-bottom: 80px;
+  }
+  body .join_complete .join_complete_wrap .greeting p {
+    font-size: 20px;
+  }
+  body .join_complete .join_complete_wrap .join_complete_btn a button {
+    max-width: 200px;
+  }
+}
+@media (max-width: 479px) {
+  body .login_common .logo_wrap .txt {
+    font-size: 20px;
+  }
+  body .join_complete .join_complete_wrap .greeting {
+    margin-bottom: 40px;
+  }
+  body .join_complete .join_complete_wrap .greeting p {
+    font-size: 16px;
+  }
+  body .join_complete .join_complete_wrap .join_complete_btn a button {
+    width: 160px;
+  }
+}
+@media screen and (max-width: 360px) {
+  body .join .join_wrap .join_personal_info .phone_verify_btn .phone_box {
+    width: 69%;
+  }
+}
 .mypage .sub_top {
   background: url("../img/img_sub_mypage.jpg") no-repeat;
 }
@@ -37,46 +184,310 @@
   margin: 40px 24px;
   position: relative;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li {
-  width: 100%;
-  margin-bottom: 16px;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul {
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div input:not(.mypage_info_input_agree_box > input) {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.phone_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.birth_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul {
+  padding-bottom: 16px;
+  border-bottom: 2px solid #efefef;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul p {
+  width: 170px;
+  font-size: 20px;
+  color: #2f2f2f;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box {
+  width: 100%;
+  max-width: 480px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
   background-color: #EFEFEF;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div::before {
-  background: url("../img/icon/icon_mail_grey.svg") no-repeat center;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_mail_grey.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_box div::before {
-  background: url("../img/icon/icon_lock.svg") no-repeat center;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_confirm_box div::before {
-  background: url("../img/icon/icon_lock.svg") no-repeat center;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input:focus {
+  width: calc(100% - 80px);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.name_box div::before {
-  background: url("../img/icon/icon_person.svg") no-repeat center;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box {
-  border-bottom: 2px solid #efefef;
-  padding-bottom: 16px;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box div::before {
-  background: url("../img/icon/icon_phone.svg") no-repeat center;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box {
-  border-bottom: 2px solid #efefef;
-  padding-bottom: 16px;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box {
+  width: 100%;
+  max-width: 480px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box div::before {
-  background: url("../img/icon/icon_calendar.svg") no-repeat center;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_lock.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box {
-  border-bottom: 2px solid #efefef;
-  padding-bottom: 16px;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box div input {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input:focus {
+  width: calc(100% - 80px);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box {
+  width: 100%;
+  max-width: 480px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_lock.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input:focus {
+  width: calc(100% - 80px);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box {
+  width: 100%;
+  max-width: 480px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_person.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input:focus {
+  width: calc(100% - 80px);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box {
+  width: 100%;
+  max-width: 480px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_phone.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input:focus {
+  width: calc(100% - 80px);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box {
+  width: 100%;
+  max-width: 480px;
+  padding-left: 20px;
+  position: relative;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  background-image: url(../img/icon/icon_calendar.svg);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input {
+  width: calc(100% - 40px);
+  padding: 16px 0;
+  color: #afafaf;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input:focus {
+  width: calc(100% - 80px);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box .eye {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input:focus ~ .input_reset_btn {
+  opacity: 1;
+  visibility: visible;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
   width: 116px;
   height: 36px;
   font-size: 16px;
@@ -85,47 +496,6 @@
   border-radius: 8px;
   color: #fff;
   text-align: center;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li label {
-  width: 170px;
-  font-size: 20px;
-  color: #2f2f2f;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input {
-  width: 480px;
-  height: 52px;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
-  padding-left: 48px;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box::before {
-  width: 20px;
-  height: 20px;
-  content: "";
-  position: absolute;
-  left: 20px;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box {
-  margin-left: 40px;
-  padding: 16px 0;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box input {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #AFAFAF;
-  background-color: #fff;
-  border-radius: 4px;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box label {
-  font-size: 16px;
-  color: #afafaf;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
   width: 100%;
@@ -262,120 +632,6 @@
 }
 
 @media (max-width: 1499px) {
-  .mypage .sub_container .contents {
-    padding: 32px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap {
-    width: 100%;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab {
-    height: 40px;
-    line-height: 40px;
-    display: flex;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li {
-    width: 120px;
-    font-size: 20px;
-    color: #afafaf;
-    padding: 4px 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li.on {
-    border-bottom: 3px solid #2f2f2f;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
-    margin: 36px 20px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li {
-    margin-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box {
-    padding-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box {
-    padding-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box {
-    padding-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box div input {
-    width: 100px;
-    height: 32px;
-    line-height: 32px;
-    font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li label {
-    width: 170px;
-    font-size: 18px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input {
-    width: 400px;
-    height: 44px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
-    padding-left: 52px;
-    font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box::before {
-    width: 18px;
-    height: 18px;
-    content: "";
-    position: absolute;
-    left: 20px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box {
-    margin-left: 40px;
-    padding: 16px 0;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box input {
-    width: 16px;
-    height: 16px;
-    border: 1px solid #AFAFAF;
-    background-color: #fff;
-    border-radius: 4px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box label {
-    font-size: 16px;
-    color: #afafaf;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-    margin-top: 104px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
-    width: 200px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
-    border: none;
-    margin-right: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
-    font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
-    font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
-    width: 60px;
-    height: 20px;
-    right: 20px;
-    padding-bottom: 24px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
-    color: #afafaf;
-    font-size: 16px;
-  }
   .reservation_state .sub_container .contents {
     padding: 32px;
   }
@@ -471,136 +727,6 @@
   }
 }
 @media (max-width: 1279px) {
-  .mypage .sub_container .contents {
-    padding: 32px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap {
-    width: 100%;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab {
-    height: 32px;
-    line-height: 32px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li {
-    width: 100px;
-    font-size: 18px;
-    color: #afafaf;
-    padding: 4px 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li.on {
-    border-bottom: 2px solid #2f2f2f;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
-    margin: 32px 18px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li {
-    margin-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_confirm_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.name_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box {
-    padding-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box {
-    padding-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box {
-    padding-bottom: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box div input {
-    width: 100px;
-    height: 32px;
-    line-height: 32px;
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li label {
-    width: 130px;
-    font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input {
-    width: 360px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
-    padding-left: 42px;
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box::before {
-    width: 16px;
-    height: 16px;
-    content: "";
-    position: absolute;
-    left: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box {
-    margin-left: 28px;
-    padding: 8px 0;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box input {
-    width: 16px;
-    height: 16px;
-    border: 1px solid #AFAFAF;
-    background-color: #fff;
-    border-radius: 4px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box label {
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-    margin-top: 100px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
-    width: 180x;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
-    border: none;
-    margin-right: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
-    font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
-    font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
-    width: 52px;
-    height: 20px;
-    right: 20px;
-    padding-bottom: 22px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
-    font-size: 14px;
-  }
   .reservation_state .sub_container .contents {
     padding: 32px;
   }
@@ -694,136 +820,6 @@
   }
 }
 @media (max-width: 767px) {
-  .mypage .sub_container .contents {
-    padding: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap {
-    width: 100%;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab {
-    height: 32px;
-    line-height: 32px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li {
-    width: 100px;
-    font-size: 18px;
-    color: #afafaf;
-    padding: 4px 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li.on {
-    border-bottom: 2px solid #2f2f2f;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
-    margin: 28px 12px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li {
-    margin-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_confirm_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.name_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box div input {
-    width: 80px;
-    height: 28px;
-    line-height: 28px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li label {
-    width: 100px;
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input {
-    width: 320px;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
-    padding-left: 40px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box::before {
-    width: 16px;
-    height: 16px;
-    content: "";
-    position: absolute;
-    left: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box {
-    margin-left: 20px;
-    padding: 4px 0;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box input {
-    width: 16px;
-    height: 16px;
-    border: 1px solid #AFAFAF;
-    background-color: #fff;
-    border-radius: 4px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box label {
-    font-size: 10px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-    margin-top: 80px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
-    width: 160px;
-    height: 32px;
-    line-height: 32px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
-    border: none;
-    margin-right: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
-    width: 46px;
-    height: 20px;
-    right: 16px;
-    padding-bottom: 22px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
-    font-size: 12px;
-  }
   .reservation_state .sub_container .contents {
     padding: 16px;
   }
@@ -916,275 +912,7 @@
     display: block;
   }
 }
-@media screen and (max-width: 620px) {
-  .mypage .sub_container .contents {
-    padding: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap {
-    width: 100%;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab {
-    height: 32px;
-    line-height: 32px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li {
-    width: 100px;
-    font-size: 18px;
-    color: #afafaf;
-    padding: 4px 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li.on {
-    border-bottom: 2px solid #2f2f2f;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
-    margin: 24px 8px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li {
-    margin-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_confirm_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.name_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box div::before {
-    background-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box div input {
-    width: 80px;
-    height: 28px;
-    line-height: 28px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li label {
-    width: 80px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input {
-    width: 260px;
-    height: 32px;
-    line-height: 32px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
-    padding-left: 40px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box::before {
-    width: 16px;
-    height: 16px;
-    content: "";
-    position: absolute;
-    left: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box {
-    width: 85px;
-    height: 32px;
-    line-height: 0;
-    margin-left: 12px;
-    padding: 4px 0;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box input {
-    width: 8px;
-    height: 8px;
-    border: 1px solid #AFAFAF;
-    background-color: #fff;
-    border-radius: 4px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box label {
-    font-size: 10px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-    margin-top: 80px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
-    width: 120px;
-    height: 28px;
-    line-height: 28px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
-    border: none;
-    margin-right: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
-    width: 46px;
-    height: 20px;
-    right: 16px;
-    padding-bottom: 22px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
-    font-size: 12px;
-  }
-}
 @media (max-width: 479px) {
-  .mypage .sub_container .contents {
-    padding: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap {
-    width: 100%;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab {
-    height: 32px;
-    line-height: 32px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li {
-    width: 100px;
-    font-size: 18px;
-    color: #afafaf;
-    padding: 4px 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .mypage_tap_wrap ul.tab li.on {
-    border-bottom: 2px solid #2f2f2f;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
-    margin: 18px 4px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li {
-    margin-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.email_box div::before {
-    background-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_box div::before {
-    background-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.pw_confirm_box div::before {
-    background-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.name_box div::before {
-    background-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.phone_box div::before {
-    background-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.birth_box div::before {
-    background-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box {
-    padding-bottom: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li.coupon_box div input {
-    width: 80px;
-    height: 28px;
-    line-height: 28px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li label {
-    width: 80px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input {
-    width: 240px;
-    height: 32px;
-    line-height: 32px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box input::placeholder {
-    padding-left: 28px;
-    font-size: 12px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_box::before {
-    width: 12px;
-    height: 12px;
-    content: "";
-    position: absolute;
-    left: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box {
-    width: 52px;
-    height: 32px;
-    line-height: 0;
-    margin-left: 4px;
-    padding: 4px 0;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box input {
-    width: 8px;
-    height: 8px;
-    border: 1px solid #AFAFAF;
-    background-color: #fff;
-    border-radius: 4px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li .mypage_info_input_agree_box label {
-    font-size: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-    margin-top: 80px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
-    width: 120px;
-    height: 28px;
-    line-height: 28px;
-    border-radius: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
-    border: none;
-    margin-right: 8px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
-    width: 46px;
-    height: 20px;
-    right: 8px;
-    padding-bottom: 20px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
-    font-size: 12px;
-  }
   .reservation_state .sub_container .contents {
     padding: 16px;
   }

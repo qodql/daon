@@ -1,3 +1,5 @@
+@import "./_res-login";
+
 // 마이페이지 공통
 .mypage_common {
     .sub_container {
@@ -6,15 +8,15 @@
 }
 
 // 회원정보
-.mypage {
+.mypage{
     .sub_top{
         background: url("../img/img_sub_mypage.jpg") no-repeat;
         .dim{
             background-color: rgba(0,0,0,0.3);
         }
     }
-    .sub_container {
-        .contents {
+    .sub_container{
+        .contents{
             width: 100%;
             .mypage_wrap{
                 .mypage_tap_wrap{
@@ -47,104 +49,52 @@
                         position: relative;
                         .mypage_info_input{
                             li{
-                                width: 100%;
-                                margin-bottom: 16px;
-                                display: flex;
-                                align-items: center;
-                                &.email_box{
-                                    div{
-                                        input:not(.mypage_info_input_agree_box>input){
-                                            background-color: #EFEFEF;
-                                        }
-                                        &::before{background: url('../img/icon/icon_mail_grey.svg') no-repeat center;}
-                                    }
-                                }
-                                &.pw_box{
-                                    div{
-                                        &::before{background: url('../img/icon/icon_lock.svg') no-repeat center;}
-                                    }
-                                }
-                                &.pw_confirm_box{
-                                    div{
-                                        &::before{background: url('../img/icon/icon_lock.svg') no-repeat center;}
-                                    }
-                                }
-                                &.name_box{
-                                    div{
-                                        &::before{background: url('../img/icon/icon_person.svg') no-repeat center;}
-                                    }
-                                }
-                                &.phone_box{
-                                    border-bottom: 2px solid #efefef;
-                                    padding-bottom: 16px;
-                                    div{
-                                        &::before{background: url('../img/icon/icon_phone.svg') no-repeat center;}
-                                    }
-                                }
-                                &.birth_box{
-                                    border-bottom: 2px solid #efefef;
-                                    padding-bottom: 16px;
-                                    div{
-                                        &::before{background: url('../img/icon/icon_calendar.svg') no-repeat center;}
-                                    }
-                                }
-                                &.coupon_box{
-                                    border-bottom: 2px solid #efefef;
-                                    padding-bottom: 16px;
-                                    div{
-                                        input{
-                                            width: 116px;
-                                            height: 36px;
-                                            font-size: 16px;
-                                            background-color: #357EF1;
-                                            border: none;
-                                            border-radius: 8px;
-                                            color: #fff;
-                                            text-align: center;
-                                        }
-                                    }
-                                }
-                                label{
-                                    width: 170px;
-                                    font-size: 20px;
-                                    color: #2f2f2f;
-                                }
-                                .mypage_info_input_box{
-                                    position: relative;
+                                ul{
                                     display: flex;
                                     align-items: center;
-                                    input{
-                                        width: 480px;
-                                        height: 52px;
-                                        border: 1px solid #afafaf;
-                                        border-radius: 8px;
-                                        &::placeholder{
-                                            padding-left: 48px;
+                                    margin-bottom: 16px;
+                                    &.phone_ul, &.birth_ul, &.coupon_ul{
+                                        padding-bottom: 16px;
+                                        border-bottom: 2px solid #efefef;
+                                    } 
+                                    p{
+                                        width: 170px;
+                                        font-size: 20px;
+                                        color: #2f2f2f;
+                                    }
+                                    li{
+                                        &.email_box{
+                                            @include inputbox($icn: url(../img/icon/icon_mail_grey.svg));
+                                            background-color: #EFEFEF;
+                                        }
+                                        &.pw_box{
+                                            @include inputbox($icn: url(../img/icon/icon_lock.svg));
+                                        }
+                                        &.pw_check_box{
+                                            @include inputbox($icn: url(../img/icon/icon_lock.svg));
+                                        }
+                                        &.name_box{
+                                            @include inputbox($icn: url(../img/icon/icon_person.svg));
+                                        }
+                                        &.phone_box{
+                                            @include inputbox($icn: url(../img/icon/icon_phone.svg));
+                                        }
+                                        &.birth_box{
+                                            @include inputbox($icn: url(../img/icon/icon_calendar.svg));
+                                        }
+                                        &.coupon_box{
+                                            input{
+                                                width: 116px;
+                                                height: 36px;
+                                                font-size: 16px;
+                                                background-color: #357EF1;
+                                                border: none;
+                                                border-radius: 8px;
+                                                color: #fff;
+                                                text-align: center;
+                                            }
                                         }
                                     }
-                                    &::before{
-                                        width: 20px;
-                                        height: 20px;
-                                        content: '';
-                                        position: absolute;
-                                        left: 20px;
-                                    }
-                                }
-                                .mypage_info_input_agree_box{
-                                    margin-left: 40px;
-                                    padding: 16px 0;
-                                    input{
-                                        width: 16px;
-                                        height: 16px;
-                                        border: 1px solid #AFAFAF;
-                                        background-color: #fff;
-                                        border-radius: 4px;
-                                    }
-                                    label{
-                                        font-size: 16px;
-                                        color: #afafaf;
-                                    }
-                                    
                                 }
                             }
                         }

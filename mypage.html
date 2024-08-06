@@ -45,43 +45,71 @@
                         <div class="tab_cont">
                             <div class="mypage_info">
                                 <ul class="mypage_info_input">
-                                    <li class="email_box">
-                                        <label for="email">이메일</label>
-                                        <div class="mypage_info_input_box">
-                                            <input type="email" onfocus="this.blur()" placeholder="bengby@naver.com">
-                                        </div>
-                                        <div class="mypage_info_input_agree_box">
-                                            <input type="checkbox">
-                                            <label>이메일 마케팅 수신 동의 (선택)</label>
-                                        </div>
+                                    <li>
+                                        <ul>
+                                            <p>이메일</p>
+                                            <li class="email_box">
+                                                <label for="email"></label>
+                                                <input id="email" type="email" readonly placeholder="bengby@naver.com">
+                                                <!-- <div class="mypage_info_input_agree_box">
+                                                    <input type="checkbox">
+                                                    <label>이메일 마케팅 수신 동의 (선택)</label>
+                                                </div> -->
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="pw_box">
-                                        <label for="password">비밀번호</label>
-                                        <div class="mypage_info_input_box"><input type="password"></div>
+                                    <li>
+                                        <ul>
+                                            <p>비밀번호</p>
+                                            <li class="pw_box">
+                                                <label for="password"></label>
+                                                <input id="password" type="password" placeholder="(영문/숫자/특문 조합 8~15자)">
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="pw_confirm_box">
-                                        <label for="password_confirm">비밀번호 확인</label>
-                                        <div class="mypage_info_input_box"><input type="password"></div>
+                                    <li>
+                                        <ul>
+                                            <p>비밀번호 확인</p>
+                                            <li class="pw_check_box">
+                                                <label for="pw_check"></label>
+                                                <input id="pw_check" type="password" placeholder="(영문/숫자/특문 조합 8~15자)">
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="name_box">
-                                        <label for="name">이름</label>
-                                        <div class="mypage_info_input_box"><input type="name"></div>
-                                        <div class="mypage_info_input_agree_box">
-                                            <input type="checkbox">
-                                            <label>개인정보 마케팅 활용 동의 (선택)</label>
-                                        </div>
+                                    <li>
+                                        <ul>
+                                            <p>이름</p>
+                                            <li class="name_box">
+                                                <label for="name"></label>
+                                                <input id="name" type="text">
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="phone_box">
-                                        <label for="phone">휴대폰번호</label>
-                                        <div class="mypage_info_input_box"><input type="phone"></div>
+                                    <li>
+                                        <ul class="phone_ul">
+                                            <p>휴대폰번호</p>
+                                            <li class="phone_box">
+                                                <label for="phone"></label>
+                                                <input id="phone" type="tel" placeholder="휴대폰 번호(-없이 입력)">
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="birth_box">
-                                        <label for="birth">생년월일</label>
-                                        <div class="mypage_info_input_box"><input type="text"></div>
+                                    <li>
+                                        <ul class="birth_ul">
+                                            <p>생년월일</p>
+                                            <li class="birth_box">
+                                                <label for="birth"></label>
+                                                <input id="birth" type="text">
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="coupon_box">
-                                        <label for="coupon">쿠폰</label>
-                                        <div><input type="button" value="쿠폰확인"></div>
+                                    <li>
+                                        <ul class="coupon_ul">
+                                            <p>쿠폰</p>
+                                            <li class="coupon_box">
+                                                <input type="button" value="쿠폰확인">
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                                 <div class="mypage_info_member_delete">

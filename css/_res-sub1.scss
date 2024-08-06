@@ -9,14 +9,14 @@
                     p{
                         &:nth-child(1){height: 580px;}
                         &:nth-child(2){
-                                height: 220px;
-                                img{object-position: 0px -294px;}
-                            }
-                            &:nth-child(3){height: 220px;}
-                            &:nth-child(4){
-                                height: 345px;
-                                img{object-position: 0px -150px;}
-                            }
+                            height: 220px;
+                            img{object-position: 0px -294px;}
+                        }
+                        &:nth-child(3){height: 220px;}
+                        &:nth-child(4){
+                            height: 345px;
+                            img{object-position: 0px -150px;}
+                        }
                     }
                 }
                 .intro_txt{
@@ -83,16 +83,12 @@
                 .intro_txt{
                     width: 717px;
                     margin: 60px auto;
-                    h5{
-                        font-size: 20px;
-                        line-height: 32px;
-                    }   
+                    h5{font-size: 20px;}   
                 }
                 .intro_full_bg{
                     margin-top: 100px;
                     .intro_full_bg_inner{
                         width: 597px;
-                        .logo{margin: 0 auto;}
                         .intro_full_bg_inner_txt{
                             margin: 28px auto;
                             h5{
@@ -106,11 +102,11 @@
         }
     }
     //intro 반응형 끝
+    //contact 반응형 시작
     .contact{
         .sub_container{
             .contents{
                 .contact_map{
-                    width: 100%;
                     height: 400px;
                     left: 50%;
                     transform: translateX(-50%);
@@ -140,7 +136,6 @@
                     }
                 }
                 .contact_infomation{
-                    width: 100%;
                     margin: 0 auto;
                     .contact_info{
                         &.contact_info2{
@@ -197,7 +192,8 @@
                 }
             }
         }
-   } 
+   }
+   //contact 반응형 끝
 }
 
 @media screen and (max-width: 1060px){
@@ -271,7 +267,6 @@
                                 li{
                                     p{
                                         font-size: 12px;
-                                        padding-right: 2px;
                                         &::after{
                                             width: 14px;
                                             height: 14px;
@@ -301,7 +296,6 @@
                         }
                         .contact_info_txt{
                             li{
-                                font-size: 14px;
                                 padding: 0;
                                 gap: 0;
                                 &::before{
@@ -346,22 +340,13 @@
                 }
                 .intro_txt{
                     width: 566px;
-                    margin: 40px auto;
-                    h5{
-                        font-size: 16px;
-                        line-height: 30px;
-                    }   
+                    h5{font-size: 16px;}   
                 }
                 .intro_full_bg{
-                    margin-top: 80px;
                     .intro_full_bg_inner{
                         width: 469px;
                         .intro_full_bg_inner_txt{
-                            margin: 24px auto;
-                            h5{
-                                font-size: 16px;
-                                line-height: 36px;
-                            }
+                            h5{font-size: 16px;}
                         }
                     }
                 }
@@ -397,34 +382,15 @@
                             height: 300px;
                             img{object-position: 0px -44px;}
                         }
-                        img{
-                            border-radius: 8px;
-                        }
+                        img{border-radius: 8px;}
                     }
-                }
-                .intro_txt{
-                    width: 566px;
-                    margin: 40px auto;
-                    h5{
-                        font-size: 16px;
-                        line-height: 30px;
-                    }   
                 }
                 .intro_full_bg{
                     margin-top: 60px;
                     .intro_full_bg_inner{
                         width: 469px;
                         .logo{
-                            img{
-                                width: 80%;
-                            }
-                        }
-                        .intro_full_bg_inner_txt{
-                            margin: 24px auto;
-                            h5{
-                                font-size: 16px;
-                                line-height: 36px;
-                            }
+                            img{width: 80%;}
                         }
                     }
                 }
@@ -438,7 +404,6 @@
         .sub_container{
             .contents{
                 .contact_map{
-                    width: 100%;
                     height: 280px;
                     .contact_map_btn{
                         right: 12px;
@@ -480,11 +445,9 @@
                         }
                         &.contact_info2{
                             .contact_info_txt{
-                                margin-top: 8px;
                                 li{
                                     p{
                                         font-size: 14px;
-                                        padding-right: 2px;
                                         &::after{
                                             width: 12px;
                                             height: 12px;
@@ -509,8 +472,6 @@
                             }
                         }
                         .contact_info_tit{
-                            margin-top: 24px;
-                            padding-left: 6px;
                             h3{font-size: 24px;}
                             &::before{
                                 height: 16px;
@@ -521,10 +482,7 @@
                             margin-top: 16px;
                             li{
                                 height: 80px;
-                                font-size: 14px;
-                                padding: 16px;
                                 gap: 4px;
-                                padding: 0;
                                 padding-left: 8px;
                                 border-bottom: 1px solid #efefef;
                                 b{font-size: 14px;}
@@ -551,9 +509,7 @@
     .intro{
         .sub_container{
             &.sub_container_full{
-                .title{
-                    padding: 0 16px;
-                }
+                .title{padding: 0 16px;}
             }
             .contents {
                 .intro_grid_wrapper{
@@ -584,11 +540,9 @@
                     }   
                 }
                 .intro_full_bg{
-                    margin-top: 60px;
                     .intro_full_bg_inner{
                         width: 345px;
                         .intro_full_bg_inner_txt{
-                            margin: 24px auto;
                             h5{
                                 font-size: 16px;
                                 line-height: 36px;
@@ -632,12 +586,9 @@
                     h5{line-height: 30px;}   
                 }
                 .intro_full_bg{
-                    margin-top: 60px;
                     .intro_full_bg_inner{
                         .logo{
-                            img{
-                                width: 70%;
-                            }
+                            img{width: 70%;}
                         }
                         .intro_full_bg_inner_txt{
                             margin: 24px auto;
@@ -675,18 +626,11 @@
                                 margin-left: 13px;
                             }
                         }
-                        .contact_map_naver_btn{
-                            width: 100px;
-                        }
-                        .contact_map_google_btn{
-                            width: 96px;
-                        }
+                        .contact_map_naver_btn{width: 100px;}
                     }
                 }
                 .contact_infomation{
-                    width: 100%;
                     .contact_info{
-                        width: 100%;
                         &.contact_info1{
                             .contact_info_txt{
                                 li{
@@ -702,7 +646,6 @@
                                 li{
                                     p{
                                         font-size: 12px;
-                                        padding-right: 2px;
                                         &::after{
                                             width: 12px;
                                             height: 12px;
@@ -778,22 +721,9 @@
                         }
                     }
                 }
-                .intro_txt{
-                    width: 260px;
-                    margin: 24px auto;
-                }
+                .intro_txt{width: 260px;}
                 .intro_full_bg{
-                    margin-top: 60px;
-                    .intro_full_bg_inner{
-                        width: 283px;
-                        .intro_full_bg_inner_txt{
-                            margin: 24px auto;
-                            h5{
-                                font-size: 14px;
-                                line-height: 32px;
-                            }
-                        }
-                    }
+                    .intro_full_bg_inner{width: 283px;}
                 }
             }
         }

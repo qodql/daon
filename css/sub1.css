@@ -358,16 +358,12 @@
   }
   .intro .sub_container .contents .intro_txt h5 {
     font-size: 20px;
-    line-height: 32px;
   }
   .intro .sub_container .contents .intro_full_bg {
     margin-top: 100px;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
     width: 597px;
-  }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo {
-    margin: 0 auto;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
     margin: 28px auto;
@@ -377,7 +373,6 @@
     line-height: 40px;
   }
   .contact .sub_container .contents .contact_map {
-    width: 100%;
     height: 400px;
     left: 50%;
     transform: translateX(-50%);
@@ -409,7 +404,6 @@
     width: 118px;
   }
   .contact .sub_container .contents .contact_infomation {
-    width: 100%;
     margin: 0 auto;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
@@ -509,7 +503,6 @@
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
     font-size: 12px;
-    padding-right: 2px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
     width: 14px;
@@ -527,7 +520,6 @@
     background-size: 24px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li {
-    font-size: 14px;
     padding: 0;
     gap: 0;
   }
@@ -559,24 +551,15 @@
   }
   .intro .sub_container .contents .intro_txt {
     width: 566px;
-    margin: 40px auto;
   }
   .intro .sub_container .contents .intro_txt h5 {
     font-size: 16px;
-    line-height: 30px;
-  }
-  .intro .sub_container .contents .intro_full_bg {
-    margin-top: 80px;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
     width: 469px;
   }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
-    margin: 24px auto;
-  }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
     font-size: 16px;
-    line-height: 36px;
   }
 }
 @media (max-width: 767px) {
@@ -610,14 +593,6 @@
   .intro .sub_container .contents .intro_grid_wrapper p img {
     border-radius: 8px;
   }
-  .intro .sub_container .contents .intro_txt {
-    width: 566px;
-    margin: 40px auto;
-  }
-  .intro .sub_container .contents .intro_txt h5 {
-    font-size: 16px;
-    line-height: 30px;
-  }
   .intro .sub_container .contents .intro_full_bg {
     margin-top: 60px;
   }
@@ -627,15 +602,7 @@
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
     width: 80%;
   }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
-    margin: 24px auto;
-  }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
-    font-size: 16px;
-    line-height: 36px;
-  }
   .contact .sub_container .contents .contact_map {
-    width: 100%;
     height: 280px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn {
@@ -673,12 +640,8 @@
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(3)::before {
     background-size: 20px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt {
-    margin-top: 8px;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
     font-size: 14px;
-    padding-right: 2px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
     width: 12px;
@@ -699,10 +662,6 @@
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(3)::before {
     background-size: 20px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit {
-    margin-top: 24px;
-    padding-left: 6px;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit h3 {
     font-size: 24px;
   }
@@ -715,10 +674,7 @@
   }
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li {
     height: 80px;
-    font-size: 14px;
-    padding: 16px;
     gap: 4px;
-    padding: 0;
     padding-left: 8px;
     border-bottom: 1px solid #efefef;
   }
@@ -767,14 +723,8 @@
     font-size: 14px;
     line-height: 28px;
   }
-  .intro .sub_container .contents .intro_full_bg {
-    margin-top: 60px;
-  }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
     width: 345px;
-  }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
-    margin: 24px auto;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
     font-size: 16px;
@@ -813,9 +763,6 @@
   .intro .sub_container .contents .intro_txt h5 {
     line-height: 30px;
   }
-  .intro .sub_container .contents .intro_full_bg {
-    margin-top: 60px;
-  }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
     width: 70%;
   }
@@ -850,15 +797,6 @@
   .contact .sub_container .contents .contact_map .contact_map_btn .contact_map_naver_btn {
     width: 100px;
   }
-  .contact .sub_container .contents .contact_map .contact_map_btn .contact_map_google_btn {
-    width: 96px;
-  }
-  .contact .sub_container .contents .contact_infomation {
-    width: 100%;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info {
-    width: 100%;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info1 .contact_info_txt li:nth-child(3)::before {
     background-size: 16px;
   }
@@ -867,7 +805,6 @@
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
     font-size: 12px;
-    padding-right: 2px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
     width: 12px;
@@ -934,20 +871,9 @@
   }
   .intro .sub_container .contents .intro_txt {
     width: 260px;
-    margin: 24px auto;
-  }
-  .intro .sub_container .contents .intro_full_bg {
-    margin-top: 60px;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
     width: 283px;
-  }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
-    margin: 24px auto;
-  }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
-    font-size: 14px;
-    line-height: 32px;
   }
 }
 @keyframes fadeIn {
