@@ -145,58 +145,31 @@
 }
 
 @media (max-width: 1279px) {
+  .sub ul li {
+    width: 45%;
+  }
   .sub ul li a .img_box .end_event_text {
     font-size: 32px;
-  }
-  .sub ul li a .event_text_box p {
-    font-size: 16px;
-  }
-  .sub ul li a .event_text_box span {
-    font-size: 12px;
   }
 }
 @media (max-width: 839px) {
   .sub ul li a .img_box .end_event_text {
     font-size: 20px;
   }
-  .sub ul li a .event_text_box p {
-    font-size: 16px;
-  }
-  .sub ul li a .event_text_box span {
-    font-size: 12px;
-  }
 }
 @media (max-width: 767px) {
   .sub ul li a .img_box .end_event_text {
     font-size: 20px;
-  }
-  .sub ul li a .event_text_box p {
-    font-size: 16px;
-  }
-  .sub ul li a .event_text_box span {
-    font-size: 12px;
   }
 }
 @media (max-width: 567px) {
   .sub ul li a .img_box .end_event_text {
     font-size: 20px;
   }
-  .sub ul li a .event_text_box p {
-    font-size: 12px;
-  }
-  .sub ul li a .event_text_box span {
-    font-size: 8px;
-  }
 }
 @media (max-width: 479px) {
   .sub ul li a .img_box .end_event_text {
     font-size: 20px;
-  }
-  .sub ul li a .event_text_box p {
-    font-size: 12px;
-  }
-  .sub ul li a .event_text_box span {
-    font-size: 8px;
   }
 }
 @media (max-width: 1389px) {
