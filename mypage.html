@@ -46,15 +46,18 @@
                             <div class="mypage_info">
                                 <ul class="mypage_info_input">
                                     <li>
-                                        <ul>
+                                        <ul class="email_ul">
                                             <p>이메일</p>
                                             <li class="email_box">
                                                 <label for="email"></label>
                                                 <input id="email" type="email" readonly placeholder="bengby@naver.com">
-                                                <!-- <div class="mypage_info_input_agree_box">
-                                                    <input type="checkbox">
-                                                    <label>이메일 마케팅 수신 동의 (선택)</label>
-                                                </div> -->
+                                            </li>
+                                            <li class="checkbox_wrap">
+                                                <input type="checkbox" class="checkbox" id="agree_email_marketing" name="chk">
+                                                <label for="agree_email_marketing">
+                                                    <i></i>
+                                                    <span>이메일 마케팅 수신 동의 <span>(선택)</span></span>
+                                                </label>
                                             </li>
                                         </ul>
                                     </li>
@@ -77,11 +80,18 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <ul>
+                                        <ul class="name_ul">
                                             <p>이름</p>
                                             <li class="name_box">
                                                 <label for="name"></label>
                                                 <input id="name" type="text">
+                                            </li>
+                                            <li class="checkbox_wrap">
+                                                <input type="checkbox" class="checkbox" id="agree_privacy_marketing" name="chk">
+                                                <label for="agree_privacy_marketing">
+                                                    <i></i>
+                                                    <span>개인정보 마케팅 활용 동의 <span>(선택)</span></span>
+                                                </label>
                                             </li>
                                         </ul>
                                     </li>

@@ -3,7 +3,147 @@
 
 @include res('pc-s'){
     //mypage PC-S Responsive start
-   
+    .mypage{
+        .sub_top{
+            background: url("../img/img_sub_mypage.jpg") no-repeat;
+            .dim{
+                background-color: rgba(0,0,0,0.3);
+            }
+        }
+        .sub_container{
+            .contents{
+                width: 100%;
+                .mypage_wrap{
+                    .mypage_tap_wrap{
+                        width: 100%;
+                        ul.tab{
+                            width: 100%;
+                            height: 60px;
+                            display: flex;
+                            border-bottom: 1px solid #afafaf;
+                            li{
+                                width: 140px;
+                                font-size: 24px;
+                                color: #afafaf;
+                                padding: 8px 16px;
+                                text-align: center;
+                                cursor: pointer;
+                                &.on{
+                                    color: #2f2f2f;
+                                    font-weight: 700;
+                                    border-bottom: 4px solid #2f2f2f;
+                                }
+                            }
+                        }
+                    }
+                    .tab_cont{
+                        width: 100%;
+                        .mypage_info{
+                            width: 100%;
+                            margin: 40px 24px;
+                            position: relative;
+                            .mypage_info_input{
+                                li{
+                                    ul{
+                                        display: flex;
+                                        align-items: center;
+                                        margin-bottom: 16px;
+                                        &.email_ul, &.name_ul{
+                                            .checkbox_wrap{
+                                                width: 330px;
+                                                border: none;
+                                                padding: 16px 40px;
+                                                span{
+                                                    color: #afafaf;
+                                                }
+                                            }
+                                        }
+                                        &.phone_ul, &.birth_ul, &.coupon_ul{
+                                            padding-bottom: 16px;
+                                            border-bottom: 2px solid #efefef;
+                                        } 
+                                        p{
+                                            width: 170px;
+                                            font-size: 20px;
+                                            color: #2f2f2f;
+                                        }
+                                        li{
+                                            &.email_box{
+                                                @include inputbox($icn: url(../img/icon/icon_mail_grey.svg));
+                                                background-color: #EFEFEF;
+                                            }
+                                            &.pw_box{
+                                                @include inputbox($icn: url(../img/icon/icon_lock.svg));
+                                            }
+                                            &.pw_check_box{
+                                                @include inputbox($icn: url(../img/icon/icon_lock.svg));
+                                            }
+                                            &.name_box{
+                                                @include inputbox($icn: url(../img/icon/icon_person.svg));
+                                            }
+                                            &.phone_box{
+                                                @include inputbox($icn: url(../img/icon/icon_phone.svg));
+                                            }
+                                            &.birth_box{
+                                                @include inputbox($icn: url(../img/icon/icon_calendar.svg));
+                                            }
+                                            &.coupon_box{
+                                                input{
+                                                    width: 116px;
+                                                    height: 36px;
+                                                    font-size: 16px;
+                                                    background-color: #357EF1;
+                                                    border: none;
+                                                    border-radius: 8px;
+                                                    color: #fff;
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .mypage_info_btn{
+                                width: 100%;
+                                display: block;
+                                text-align: center;
+                                margin-top: 104px;
+                                button{
+                                    width: 249px;
+                                    height: 46px;
+                                    border-radius: 8px;
+                                }
+                                .mypage_info_fix_btn{
+                                    background-color: #357EF1;
+                                    border: none;
+                                    margin-right: 12px;
+                                    a{color: #fff; font-size: 18px;}
+                                }
+                                .mypage_info_cancel_btn{
+                                    border: 1px solid #AFAFAF;
+                                    a{color: #2f2f2f; font-size: 18px;}
+                                }
+                            }
+                            .mypage_info_member_delete{
+                                width: 60px;
+                                height: 20px;
+                                right: 8px;
+                                border-bottom: 1px solid #afafaf;
+                                position: absolute;
+                                right: 24px;
+                                .mypage_info_member_delete_btn{
+                                    a{
+                                        color: #afafaf;
+                                        font-size: 16px;
+                                    }
+                                }           
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     //mypage PC-S Responsive end
     //reservation PC-S Responsive start
     .reservation_state {
