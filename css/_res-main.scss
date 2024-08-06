@@ -13,8 +13,24 @@
                 &:first-of-type {
                     padding-left: 0;
                 }
+                &:nth-child(2) {
+                    margin-right: 12px;
+                }
                 p {
                     font-size: 24px;
+                }
+                .date {
+                    width: 190px;
+                    span {
+                        margin-top: 4px;
+                    }
+                    .tui-datepicker-input {
+                        width: 148px;
+                        height: 36px;
+                        & > input {
+                            font-size: 24px;
+                        }
+                    }
                 }
                 .select_wrap {
                     &::after {
@@ -29,6 +45,9 @@
                     }
                 }
             }
+        }
+        .search {
+            padding-right: 0;
         }
     }
     // main
@@ -399,8 +418,27 @@
         ul {
             li {
                 padding: 12px 8px;
-                &:nth-of-type(2) {
+                &:not(:last-of-type) {
                     margin-right: 12px;
+                } 
+                &:nth-of-type(2) {
+                    margin-right: 20px;
+                }
+                .date {
+                    width: 142px;
+                    .tui-datepicker-input {
+                        & > input {
+                            font-size: 20px;
+                        }
+                    } 
+                    span {
+                        margin-top: 0;
+                    }
+                }
+                .select_wrap {
+                    select {
+                        font-size: 20px;
+                    }
                 }
             }
         }

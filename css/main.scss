@@ -41,7 +41,82 @@
                 font-weight: 700;
             }
             .date {
-                cursor: pointer;
+                width: 220px;
+                display: flex; 
+                align-items: center;
+                span {
+                    margin-top: 6px;
+                    white-space: nowrap;
+                }
+                input {
+                    cursor: pointer;
+                }
+                .tui-datepicker {
+                    padding: 0 12px 12px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+                .tui-is-selectable {
+                    &.tui-is-selected {
+                        border-radius: 50% 0 0 50%;
+                        background-color: #357EF1;
+                        color: #fff !important;
+                        &:hover {
+                            border-radius: 50% 0 0 50%;
+                            background-color: #357EF1;
+                        }
+                    }
+                    &:hover {
+                        border-radius: 50%;
+                        background-color: #efefef;
+                    }
+                }
+                .tui-calendar-header-info {
+                    display: none;
+                }
+                .tui-calendar-body-header {
+                    border-bottom: 1px solid #efefef;
+                }
+                .tui-calendar th, .tui-calendar td {
+                    color: #2f2f2f;
+                }
+                .tui-sun, .tui-calendar-sun {
+                    color: #FF0F0F !important;
+                }
+                .tui-sat, .tui-calendar-sat {
+                    color: #357EF1 !important;
+
+                }
+                .tui-datepicker .tui-is-blocked, .tui-calendar-prev-month, .tui-calendar-next-month {
+                    color: #afafaf !important;
+                    visibility: visible;
+                }
+                .tui-is-selected-range {
+                    & + .tui-is-selected {
+                        border-radius: 0 50% 50% 0;
+                        &:hover {
+                            border-radius: 0 50% 50% 0;
+                        }
+                    }
+                    &:hover {
+                        border-radius: 0;
+                    }
+                }
+                .tui-datepicker-input {
+                    width: 200px;
+                    height: 48px;
+                    &.tui-has-focus {
+                        border: 0;
+                    }
+                    & > input {
+                        padding: 0; 
+                        font-size: 32px;
+                        font-weight: 700;
+                        letter-spacing: -1px;
+                        color: #fff;
+                        background-color: transparent;
+                    }
+                }
             }
             .select_wrap {
                 position: relative;
@@ -83,6 +158,7 @@
     }
     .search {
         margin-left: 42px;
+        padding-right: 32px;
         .search_btn {
             border: 1px solid #fff;
             border-radius: 8px;

@@ -46,7 +46,77 @@
   font-weight: 700;
 }
 .quick_menu ul li .date {
+  width: 220px;
+  display: flex;
+  align-items: center;
+}
+.quick_menu ul li .date span {
+  margin-top: 6px;
+  white-space: nowrap;
+}
+.quick_menu ul li .date input {
   cursor: pointer;
+}
+.quick_menu ul li .date .tui-datepicker {
+  padding: 0 12px 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.quick_menu ul li .date .tui-is-selectable.tui-is-selected {
+  border-radius: 50% 0 0 50%;
+  background-color: #357EF1;
+  color: #fff !important;
+}
+.quick_menu ul li .date .tui-is-selectable.tui-is-selected:hover {
+  border-radius: 50% 0 0 50%;
+  background-color: #357EF1;
+}
+.quick_menu ul li .date .tui-is-selectable:hover {
+  border-radius: 50%;
+  background-color: #efefef;
+}
+.quick_menu ul li .date .tui-calendar-header-info {
+  display: none;
+}
+.quick_menu ul li .date .tui-calendar-body-header {
+  border-bottom: 1px solid #efefef;
+}
+.quick_menu ul li .date .tui-calendar th, .quick_menu ul li .date .tui-calendar td {
+  color: #2f2f2f;
+}
+.quick_menu ul li .date .tui-sun, .quick_menu ul li .date .tui-calendar-sun {
+  color: #FF0F0F !important;
+}
+.quick_menu ul li .date .tui-sat, .quick_menu ul li .date .tui-calendar-sat {
+  color: #357EF1 !important;
+}
+.quick_menu ul li .date .tui-datepicker .tui-is-blocked, .quick_menu ul li .date .tui-calendar-prev-month, .quick_menu ul li .date .tui-calendar-next-month {
+  color: #afafaf !important;
+  visibility: visible;
+}
+.quick_menu ul li .date .tui-is-selected-range + .tui-is-selected {
+  border-radius: 0 50% 50% 0;
+}
+.quick_menu ul li .date .tui-is-selected-range + .tui-is-selected:hover {
+  border-radius: 0 50% 50% 0;
+}
+.quick_menu ul li .date .tui-is-selected-range:hover {
+  border-radius: 0;
+}
+.quick_menu ul li .date .tui-datepicker-input {
+  width: 200px;
+  height: 48px;
+}
+.quick_menu ul li .date .tui-datepicker-input.tui-has-focus {
+  border: 0;
+}
+.quick_menu ul li .date .tui-datepicker-input > input {
+  padding: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #fff;
+  background-color: transparent;
 }
 .quick_menu ul li .select_wrap {
   position: relative;
@@ -86,6 +156,7 @@
 }
 .quick_menu .search {
   margin-left: 42px;
+  padding-right: 32px;
 }
 .quick_menu .search .search_btn {
   border: 1px solid #fff;
@@ -591,7 +662,23 @@
   .quick_menu ul li:first-of-type {
     padding-left: 0;
   }
+  .quick_menu ul li:nth-child(2) {
+    margin-right: 12px;
+  }
   .quick_menu ul li p {
+    font-size: 24px;
+  }
+  .quick_menu ul li .date {
+    width: 190px;
+  }
+  .quick_menu ul li .date span {
+    margin-top: 4px;
+  }
+  .quick_menu ul li .date .tui-datepicker-input {
+    width: 148px;
+    height: 36px;
+  }
+  .quick_menu ul li .date .tui-datepicker-input > input {
     font-size: 24px;
   }
   .quick_menu ul li .select_wrap::after {
@@ -603,6 +690,9 @@
   .quick_menu ul li .select_wrap select {
     width: 72px;
     font-size: 24px;
+  }
+  .quick_menu .search {
+    padding-right: 0;
   }
   .main .container .swiper .swiper-pagination {
     left: 80px;
@@ -847,8 +937,23 @@
   .quick_menu ul li {
     padding: 12px 8px;
   }
-  .quick_menu ul li:nth-of-type(2) {
+  .quick_menu ul li:not(:last-of-type) {
     margin-right: 12px;
+  }
+  .quick_menu ul li:nth-of-type(2) {
+    margin-right: 20px;
+  }
+  .quick_menu ul li .date {
+    width: 142px;
+  }
+  .quick_menu ul li .date .tui-datepicker-input > input {
+    font-size: 20px;
+  }
+  .quick_menu ul li .date span {
+    margin-top: 0;
+  }
+  .quick_menu ul li .select_wrap select {
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 858px) {
