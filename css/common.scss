@@ -140,7 +140,7 @@ ul {
           right: 24px;
           background: url("../img/icon/icon_popup_close.svg") no-repeat center;
       }
-      .popup_tit{
+      .coupon_popup_tit{
           text-align: center;
           padding: 40px 0 32px 0;
           h3{
@@ -149,7 +149,7 @@ ul {
               color: #2f2f2f;
           }
       }
-      .popup_cont_inner{
+      .coupon_popup_cont_inner{
           width: 434px;
           height: 544px;
           margin: 0 auto;
@@ -157,7 +157,7 @@ ul {
           background-color: #fff;
           border-radius: 20px;
           box-shadow: 0 4px 4px rgba(0,0,0,0.1);
-          .mypage_coupon_popup_cont_inner_coupon{
+          .coupon_popup_cont_inner_coupon{
               width: 394px;
               height: 117px;
               margin: 0 auto;
@@ -170,16 +170,16 @@ ul {
               display: flex;
               align-items: flex-end;
               justify-content: space-between;
-              &.mypage_coupon_popup_cont_inner_coupon_02{
-                  .mypage_coupon_popup_cont_inner_coupon_txt{
-                      .mypage_coupon_popup_cont_inner_coupon_txt_date{
-                          .mypage_coupon_popup_cont_inner_coupon_txt_date_icon{
+              &.coupon_popup_cont_inner_coupon_02{
+                  .coupon_popup_cont_inner_coupon_txt{
+                      .coupon_popup_cont_inner_coupon_txt_date{
+                          .coupon_popup_cont_inner_coupon_txt_date_icon{
                               background-color: #FF0F0F;
                           }
                       }
                   }
               }
-              .mypage_coupon_popup_cont_inner_coupon_tit{
+              .coupon_popup_cont_inner_coupon_tit{
                   h2{
                       color: #357EF1;
                       font-size: 40px;
@@ -191,7 +191,7 @@ ul {
                       font-weight: 600;
                   }
               }
-              .mypage_coupon_popup_cont_inner_coupon_txt{
+              .coupon_popup_cont_inner_coupon_txt{
                   display: flex;
                   flex-direction: column;
                   align-items: flex-end;
@@ -199,9 +199,9 @@ ul {
                       font-size: 14px;
                       color: #AFAFAF;
                   }
-                  .mypage_coupon_popup_cont_inner_coupon_txt_date{
+                  .coupon_popup_cont_inner_coupon_txt_date{
                       display: flex;
-                      .mypage_coupon_popup_cont_inner_coupon_txt_date_icon{
+                      .coupon_popup_cont_inner_coupon_txt_date_icon{
                           width: 31px;
                           height: 18px;
                           border-radius: 4px;
@@ -246,22 +246,22 @@ ul {
         position: absolute;
         top: 0;
         left: 0;
-        .join-popup_tit{
+        .join_popup_tit{
             text-align: center;
-            .join-popup_title{
+            .join_popup_title{
                 font-size: 24px;
                 font-weight: 700;
                 color: #357EF1;
                 padding-bottom: 12px;
                 padding-top: 56px;
             }
-            .join-popup_sub_title{
+            .join_popup_sub_title{
                 font-size: 20px;
                 font-weight: 600;
                 color: #2f2f2f;
             }
         }
-        .join-popup_txt{
+        .join_popup_txt{
             text-align: center;
             padding: 32px 0;
             p{font-size: 16px; color: #2f2f2f;}

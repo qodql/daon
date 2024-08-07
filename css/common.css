@@ -127,16 +127,16 @@ ul.input_list li.half > div {
   right: 24px;
   background: url("../img/icon/icon_popup_close.svg") no-repeat center;
 }
-.coupon_popup .coupon_popup_cont .popup_tit {
+.coupon_popup .coupon_popup_cont .coupon_popup_tit {
   text-align: center;
   padding: 40px 0 32px 0;
 }
-.coupon_popup .coupon_popup_cont .popup_tit h3 {
+.coupon_popup .coupon_popup_cont .coupon_popup_tit h3 {
   font-size: 24px;
   font-weight: 700;
   color: #2f2f2f;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner {
   width: 434px;
   height: 544px;
   margin: 0 auto;
@@ -145,7 +145,7 @@ ul.input_list li.half > div {
   border-radius: 20px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon {
   width: 394px;
   height: 117px;
   margin: 0 auto;
@@ -159,32 +159,32 @@ ul.input_list li.half > div {
   align-items: flex-end;
   justify-content: space-between;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon.mypage_coupon_popup_cont_inner_coupon_02 .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date .mypage_coupon_popup_cont_inner_coupon_txt_date_icon {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon.coupon_popup_cont_inner_coupon_02 .coupon_popup_cont_inner_coupon_txt .coupon_popup_cont_inner_coupon_txt_date .coupon_popup_cont_inner_coupon_txt_date_icon {
   background-color: #FF0F0F;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_tit h2 {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon .coupon_popup_cont_inner_coupon_tit h2 {
   color: #357EF1;
   font-size: 40px;
   font-weight: 700;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_tit h3 {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon .coupon_popup_cont_inner_coupon_tit h3 {
   color: #2f2f2f;
   font-size: 16px;
   font-weight: 600;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon .coupon_popup_cont_inner_coupon_txt {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt span {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon .coupon_popup_cont_inner_coupon_txt span {
   font-size: 14px;
   color: #AFAFAF;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon .coupon_popup_cont_inner_coupon_txt .coupon_popup_cont_inner_coupon_txt_date {
   display: flex;
 }
-.coupon_popup .coupon_popup_cont .popup_cont_inner .mypage_coupon_popup_cont_inner_coupon .mypage_coupon_popup_cont_inner_coupon_txt .mypage_coupon_popup_cont_inner_coupon_txt_date .mypage_coupon_popup_cont_inner_coupon_txt_date_icon {
+.coupon_popup .coupon_popup_cont .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon .coupon_popup_cont_inner_coupon_txt .coupon_popup_cont_inner_coupon_txt_date .coupon_popup_cont_inner_coupon_txt_date_icon {
   width: 31px;
   height: 18px;
   border-radius: 4px;
@@ -225,26 +225,26 @@ ul.input_list li.half > div {
   top: 0;
   left: 0;
 }
-.join_popup .join_popup_cont .join-popup_tit {
+.join_popup .join_popup_cont .join_popup_tit {
   text-align: center;
 }
-.join_popup .join_popup_cont .join-popup_tit .join-popup_title {
+.join_popup .join_popup_cont .join_popup_tit .join_popup_title {
   font-size: 24px;
   font-weight: 700;
   color: #357EF1;
   padding-bottom: 12px;
   padding-top: 56px;
 }
-.join_popup .join_popup_cont .join-popup_tit .join-popup_sub_title {
+.join_popup .join_popup_cont .join_popup_tit .join_popup_sub_title {
   font-size: 20px;
   font-weight: 600;
   color: #2f2f2f;
 }
-.join_popup .join_popup_cont .join-popup_txt {
+.join_popup .join_popup_cont .join_popup_txt {
   text-align: center;
   padding: 32px 0;
 }
-.join_popup .join_popup_cont .join-popup_txt p {
+.join_popup .join_popup_cont .join_popup_txt p {
   font-size: 16px;
   color: #2f2f2f;
 }
