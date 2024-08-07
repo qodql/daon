@@ -321,6 +321,7 @@
   border-radius: 20px;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card {
+  display: inline-grid;
   width: 400px;
   height: 240px;
   padding: 40px;
@@ -329,20 +330,23 @@
   border: 4px solid #D6B46C;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
   position: relative;
-  transition: all 2s;
+  transform: perspective(800px) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on {
-  transform: rotateY(180deg);
+  transform: perspective(800px) rotateY(180deg);
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on > div {
+  grid-area: 1/1/1/1;
+  backface-visibility: hidden;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on .card_front {
   opacity: 0;
-  visibility: hidden;
-  transition: all 0s ease 0.5s;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on .card_back {
   opacity: 1;
-  visibility: visible;
-  transition: all 0s ease 0.5s;
+  transform: rotateY(180deg);
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on .card_back::before {
   content: "";
@@ -371,8 +375,7 @@
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front {
   opacity: 1;
-  visibility: visible;
-  transition: all 0s ease 0.5s;
+  transition: all 0s ease 0.2s;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front > p {
   font-size: 20px;
@@ -415,8 +418,7 @@
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_back {
   opacity: 0;
-  visibility: visible;
-  transition: all 0s ease 0.5s;
+  transition: all 0s ease 0.2s;
 }
 .step2 .sub_container .contents .info_wrap .right {
   width: calc(36% - 20px);
