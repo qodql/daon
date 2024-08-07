@@ -24,7 +24,7 @@
                     }
                     .mypage_info{
                         width: 100%;
-                        margin: 40px 24px;
+                        padding: 40px 24px;
                         position: relative;
                         .mypage_info_input{
                             li{
@@ -35,10 +35,14 @@
                                     &.email_ul, &.name_ul{
                                         .checkbox_wrap{
                                             width: 330px;
+                                            height: 40px;
                                             border: none;
-                                            padding: 16px 40px;
+                                            padding: 0px 40px;
                                             overflow: visible;
-                                            span{color: #afafaf;}
+                                            span{
+                                                font-size: 16px;
+                                                color: #afafaf;
+                                            }
                                             .checkbox,label{
                                                 display: flex;
                                                 border: none;
@@ -59,9 +63,9 @@
                                     li{
                                         @include inputbox;
                                         &.email_box{
-                                            background-color: #EFEFEF;
                                             border-radius: 8px;
                                             label{background-image: url(../img/icon/icon_mail_grey.svg)}
+                                            input{background-color: #EFEFEF;}
                                         }
                                         &.pw_box{
                                             label{background-image: url(../img/icon/icon_lock.svg)}
@@ -117,34 +121,35 @@
                             }
                         }
                         .mypage_info_member_delete{
-                            width: 60px;
+                            width: 80px;
                             height: 20px;
-                            right: 8px;
-                            border-bottom: 1px solid #afafaf;
+                            display: block;
                             position: absolute;
                             right: 24px;
                             .mypage_info_member_delete_btn{
                                 a{
                                     color: #afafaf;
+                                    border-bottom: 1px solid #afafaf;
                                     font-size: 16px;
+                                    padding: 2px;
                                 }
                             }           
                         }
                     }
                     .mypage_reservation{
                         width: 100%;
-                        ul.mypage_reservation_list{
+                        table.mypage_reservation_list{
                             width: 100%;
-                            li{
+                            tr{
                                 width: 100%;
                                 display: flex;
                                 padding: 24px 0;
                                 border-bottom: 2px solid #EFEFEF;
                                 &:nth-child(4){
-                                    p{color: #AFAFAF;}
+                                    td{color: #AFAFAF;}
                                 }
-                                h5{font-weight: 700;}
-                                h5,p{
+                                th{font-weight: 700;}
+                                th,td{
                                     font-size: 20px;
                                     color: #2f2f2f;
                                     text-align: center;
@@ -166,7 +171,6 @@
                             table{
                                 width: 100%;
                                 tr{
-                                    
                                     th{
                                         width: 420px;
                                         height: 80px;
@@ -195,11 +199,27 @@
                     }
                 }
             }
+            .coupon_popup_layer{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 99;
+                top: 0;
+                left: 0;
+                background-color: rgba(0,0,0,0.6);
+                display: none;
+                .coupon_popup{
+                    margin: 70px auto;
+                }
+            }
         }
     }
 }
 
+
+
 // 예약내역
+/*
 .reservation_state {
     .sub_top{
         background: url("../img/img_sub_mypage.jpg") no-repeat;
@@ -207,11 +227,7 @@
             background-color: rgba(0,0,0,0.3);
         }
     }
-    .sub_container {
-        .contents {
-            
-        }
-    }
 }
+*/
 
 @import "./res-mypage";

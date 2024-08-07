@@ -172,8 +172,8 @@ ul {
               justify-content: space-between;
               &.coupon_popup_cont_inner_coupon_02{
                   .coupon_popup_cont_inner_coupon_txt{
-                      .coupon_popup_cont_inner_coupon_txt_date{
-                          .coupon_popup_cont_inner_coupon_txt_date_icon{
+                      .coupon_popup_cont_inner_coupon_date{
+                          .coupon_popup_cont_inner_coupon_date_icon{
                               background-color: #FF0F0F;
                           }
                       }
@@ -199,9 +199,9 @@ ul {
                       font-size: 14px;
                       color: #AFAFAF;
                   }
-                  .coupon_popup_cont_inner_coupon_txt_date{
+                  .coupon_popup_cont_inner_coupon_date{
                       display: flex;
-                      .coupon_popup_cont_inner_coupon_txt_date_icon{
+                      .coupon_popup_cont_inner_coupon_date_icon{
                           width: 31px;
                           height: 18px;
                           border-radius: 4px;

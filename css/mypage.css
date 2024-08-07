@@ -164,7 +164,7 @@ mo-s:
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
   width: 100%;
-  margin: 40px 24px;
+  padding: 40px 24px;
   position: relative;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul {
@@ -174,11 +174,13 @@ mo-s:
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap {
   width: 330px;
+  height: 40px;
   border: none;
-  padding: 16px 40px;
+  padding: 0px 40px;
   overflow: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap span, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap span {
+  font-size: 16px;
   color: #afafaf;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap .checkbox, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap .checkbox, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label {
@@ -242,11 +244,13 @@ mo-s:
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box {
-  background-color: #EFEFEF;
   border-radius: 8px;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box label {
   background-image: url(../img/icon/icon_mail_grey.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input {
+  background-color: #EFEFEF;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box label {
   background-image: url(../img/icon/icon_lock.svg);
@@ -302,53 +306,54 @@ mo-s:
   font-size: 18px;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
-  width: 60px;
+  width: 80px;
   height: 20px;
-  right: 8px;
-  border-bottom: 1px solid #afafaf;
+  display: block;
   position: absolute;
   right: 24px;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
   color: #afafaf;
+  border-bottom: 1px solid #afafaf;
   font-size: 16px;
+  padding: 2px;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation {
   width: 100%;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list {
   width: 100%;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr {
   width: 100%;
   display: flex;
   padding: 24px 0;
   border-bottom: 2px solid #EFEFEF;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li:nth-child(4) p {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr:nth-child(4) td {
   color: #AFAFAF;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5 {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th {
   font-weight: 700;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td {
   font-size: 20px;
   color: #2f2f2f;
   text-align: center;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(1) {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(1) {
   width: 320px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(2) {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(2) {
   width: 180px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(3) {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(3) {
   width: 180px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(4) {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(4) {
   width: 340px;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li h5:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation ul.mypage_reservation_list li p:nth-child(5) {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(5) {
   width: 330px;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel {
@@ -384,101 +389,107 @@ mo-s:
   margin: 16px 8px;
   display: block;
 }
+.mypage .sub_container .contents .coupon_popup_layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.mypage .sub_container .contents .coupon_popup_layer .coupon_popup {
+  margin: 70px auto;
+}
 
-.reservation_state .sub_top {
-  background: url("../img/img_sub_mypage.jpg") no-repeat;
+/*
+.reservation_state {
+    .sub_top{
+        background: url("../img/img_sub_mypage.jpg") no-repeat;
+        .dim{
+            background-color: rgba(0,0,0,0.3);
+        }
+    }
 }
-.reservation_state .sub_top .dim {
-  background-color: rgba(0, 0, 0, 0.3);
-}
+*/
 @media (max-width: 1499px) {
-  .reservation_state .sub_container .contents {
-    padding: 32px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
+    margin-top: 100px;
   }
-  .reservation_state .sub_container .contents ul.tab {
-    width: 100%;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
+    width: 220px;
     height: 40px;
-    line-height: 40px;
-    display: flex;
-    border-bottom: 1px solid #afafaf;
+    line-height: 42px;
   }
-  .reservation_state .sub_container .contents ul.tab li {
-    width: 120px;
-    font-size: 20px;
-    color: #afafaf;
-    padding: 4px 16px;
-    text-align: center;
-    cursor: pointer;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
+    right: 12px;
   }
-  .reservation_state .sub_container .contents ul.tab li.on {
-    color: #2f2f2f;
-    font-weight: 700;
-    border-bottom: 4px solid #2f2f2f;
-  }
-  .reservation_state .sub_container .contents .mypage_reservation {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr {
     width: 100%;
     display: flex;
-    align-items: center;
     padding: 24px 0;
     border-bottom: 2px solid #EFEFEF;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li:nth-child(4) p {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr:nth-child(4) td {
     color: #AFAFAF;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5 {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th {
     font-weight: 700;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5, .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td {
     font-size: 18px;
     color: #2f2f2f;
     text-align: center;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(1), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(1) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(1) {
     width: 25%;
     padding-right: 10px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(2), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(2) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(2) {
     width: 15%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(3), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(3) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(3) {
     width: 10%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(4), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(4) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(4) {
     width: 25%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(5), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(5) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(5) {
     width: 25%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel h3 {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel h3 {
     margin: 60px 0 40px;
     font-size: 20px;
     font-weight: 700;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr th {
+    width: 30%;
+    height: 80px;
     font-size: 18px;
     border: 1px solid #AFAFAF;
     padding: 20px 20px 20px 60px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td:first-child {
-    width: 30%;
-    height: 80px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td {
+    border: 1px solid #AFAFAF;
+    padding: 20px 20px 20px 60px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td ul li {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td ul li {
     font-size: 16px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel span {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel span {
     font-size: 16px;
     color: #AFAFAF;
     font-weight: 300;
@@ -487,6 +498,186 @@ mo-s:
   }
 }
 @media (max-width: 1279px) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul {
+    height: 44px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap {
+    padding: 0 40px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label {
+    width: 280px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label i, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label i {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.phone_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.birth_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul {
+    height: 56px;
+    margin-bottom: 12px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul p {
+    width: 140px;
+    font-size: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    width: 360px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    vertical-align: middle;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+    visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    height: 44px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
+    margin-top: 100px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
+    width: 220px;
+    height: 40px;
+    line-height: 42px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
+    background-color: #357EF1;
+    border: none;
+    margin-right: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
+    color: #fff;
+    font-size: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn {
+    border: 1px solid #AFAFAF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
+    color: #2f2f2f;
+    font-size: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
+    right: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr {
+    width: 100%;
+    display: flex;
+    padding: 24px 0;
+    border-bottom: 2px solid #EFEFEF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr:nth-child(4) td {
+    color: #AFAFAF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th {
+    font-weight: 700;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td {
+    font-size: 20px;
+    color: #2f2f2f;
+    text-align: center;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(1) {
+    width: 320px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(2) {
+    width: 180px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(3) {
+    width: 180px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(4) {
+    width: 340px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(5) {
+    width: 330px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel h3 {
+    margin: 60px 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr th {
+    width: 420px;
+    height: 80px;
+    font-size: 20px;
+    border: 1px solid #AFAFAF;
+    padding: 30px 0 30px 80px;
+    text-align: left;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td {
+    border: 1px solid #AFAFAF;
+    padding: 30px 0 30px 80px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td ul li {
+    font-size: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel span {
+    font-size: 16px;
+    color: #AFAFAF;
+    font-weight: 300;
+    margin: 16px 8px;
+    display: block;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer .coupon_popup {
+    margin: 70px auto;
+  }
   .reservation_state .sub_container .contents {
     padding: 32px;
   }
@@ -579,7 +770,413 @@ mo-s:
     display: block;
   }
 }
+@media screen and (max-width: 1056px) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
+    padding: 32px 20px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul {
+    height: auto;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap {
+    padding: 0;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap input, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap input {
+    padding: 0;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label {
+    width: 280px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label i, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label i {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.phone_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.birth_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul {
+    height: auto;
+    margin-bottom: 12px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul p {
+    display: none;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul p {
+    width: 140px;
+    font-size: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    max-width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    vertical-align: middle;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+    visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    width: 100%;
+    height: auto;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
+    margin-top: 100px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
+    width: 180px;
+    height: 36px;
+    line-height: 38px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
+    background-color: #357EF1;
+    border: none;
+    margin-right: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
+    color: #fff;
+    font-size: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn {
+    border: 1px solid #AFAFAF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
+    color: #2f2f2f;
+    font-size: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
+    right: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr {
+    width: 100%;
+    display: flex;
+    padding: 24px 0;
+    border-bottom: 2px solid #EFEFEF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr:nth-child(4) td {
+    color: #AFAFAF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th {
+    font-weight: 700;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td {
+    font-size: 20px;
+    color: #2f2f2f;
+    text-align: center;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(1) {
+    width: 320px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(2) {
+    width: 180px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(3) {
+    width: 180px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(4) {
+    width: 340px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(5) {
+    width: 330px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel h3 {
+    margin: 60px 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr th {
+    width: 420px;
+    height: 80px;
+    font-size: 20px;
+    border: 1px solid #AFAFAF;
+    padding: 30px 0 30px 80px;
+    text-align: left;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td {
+    border: 1px solid #AFAFAF;
+    padding: 30px 0 30px 80px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td ul li {
+    font-size: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel span {
+    font-size: 16px;
+    color: #AFAFAF;
+    font-weight: 300;
+    margin: 16px 8px;
+    display: block;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer .coupon_popup {
+    margin: 70px auto;
+  }
+}
 @media (max-width: 767px) {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
+    padding: 28px 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul {
+    margin-bottom: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label {
+    width: 280px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label i, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label i {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.phone_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.birth_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul {
+    height: auto;
+    margin-bottom: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul p {
+    display: none;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul p {
+    width: 140px;
+    font-size: 18px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    max-width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    vertical-align: middle;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+    visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    width: 100%;
+    height: auto;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
+    width: 80px;
+    height: 28px;
+    line-height: 27px;
+    font-size: 14px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
+    margin-top: 80px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
+    width: 160px;
+    height: 32px;
+    line-height: 34px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
+    background-color: #357EF1;
+    border: none;
+    margin-right: 8px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
+    color: #fff;
+    font-size: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn {
+    border: 1px solid #AFAFAF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
+    color: #2f2f2f;
+    font-size: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
+    width: 60px;
+    right: 4px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
+    font-size: 12px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr {
+    width: 100%;
+    display: flex;
+    padding: 24px 0;
+    border-bottom: 2px solid #EFEFEF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr:nth-child(4) td {
+    color: #AFAFAF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th {
+    font-weight: 700;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td {
+    font-size: 20px;
+    color: #2f2f2f;
+    text-align: center;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(1) {
+    width: 320px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(2) {
+    width: 180px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(3) {
+    width: 180px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(4) {
+    width: 340px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(5) {
+    width: 330px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel h3 {
+    margin: 60px 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table {
+    width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr th {
+    width: 420px;
+    height: 80px;
+    font-size: 20px;
+    border: 1px solid #AFAFAF;
+    padding: 30px 0 30px 80px;
+    text-align: left;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td {
+    border: 1px solid #AFAFAF;
+    padding: 30px 0 30px 80px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td ul li {
+    font-size: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel span {
+    font-size: 16px;
+    color: #AFAFAF;
+    font-weight: 300;
+    margin: 16px 8px;
+    display: block;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer .coupon_popup {
+    margin: 70px auto;
+  }
   .reservation_state .sub_container .contents {
     padding: 16px;
   }
@@ -673,95 +1270,201 @@ mo-s:
   }
 }
 @media (max-width: 479px) {
-  .reservation_state .sub_container .contents {
-    padding: 16px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info {
+    padding: 20px 12px;
   }
-  .reservation_state .sub_container .contents ul.tab {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul {
+    margin-bottom: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap span, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap span {
+    font-size: 12px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label {
+    width: 230px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap label i, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap label i {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.phone_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.birth_ul, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul {
+    height: auto;
+    margin-bottom: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.coupon_ul p {
+    display: none;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul p {
+    width: 140px;
+    font-size: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
     width: 100%;
-    height: 32px;
-    line-height: 32px;
-    display: flex;
-    border-bottom: 1px solid #afafaf;
+    max-width: 480px;
+    position: relative;
+    max-width: 100%;
   }
-  .reservation_state .sub_container .contents ul.tab li {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    vertical-align: middle;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+    width: 16px;
+    height: 16px;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/icon/icon_x_circle.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+    width: 20px;
+    height: 20px;
+    right: 32px;
+    background-image: url(../img/icon/icon_eye.svg);
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+    visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+    width: 100%;
+    height: auto;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
+    width: 80px;
+    height: 28px;
+    line-height: 27px;
+    font-size: 14px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
+    margin-top: 80px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
     width: 100px;
-    font-size: 18px;
-    color: #afafaf;
-    padding: 4px 12px;
-    text-align: center;
-    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
   }
-  .reservation_state .sub_container .contents ul.tab li.on {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn {
+    background-color: #357EF1;
+    border: none;
+    margin-right: 4px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_fix_btn a {
+    color: #fff;
+    font-size: 16px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn {
+    border: 1px solid #AFAFAF;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn .mypage_info_cancel_btn a {
     color: #2f2f2f;
-    font-weight: 700;
-    border-bottom: 2px solid #2f2f2f;
+    font-size: 16px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete {
+    width: 60px;
+    right: 4px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_member_delete .mypage_info_member_delete_btn a {
+    font-size: 12px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr {
     width: 100%;
     display: flex;
-    padding: 12px 0;
-    border-bottom: 1px solid #EFEFEF;
+    padding: 24px 0;
+    border-bottom: 2px solid #EFEFEF;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li:nth-child(4) p {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr:nth-child(4) td {
     color: #AFAFAF;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5 {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th {
     font-weight: 700;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5, .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p {
-    font-size: 14px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td {
+    font-size: 20px;
     color: #2f2f2f;
     text-align: center;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(1), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(1) {
-    width: 25%;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(1), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(1) {
+    width: 320px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(2), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(2) {
-    width: 15%;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(2), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(2) {
+    width: 180px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(3), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(3) {
-    width: 10%;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(3), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(3) {
+    width: 180px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(4), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(4) {
-    width: 25%;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(4), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(4) {
+    width: 340px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li h5:nth-child(5), .reservation_state .sub_container .contents .mypage_reservation ul.mypage_reservation_list li p:nth-child(5) {
-    width: 25%;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr th:nth-child(5), .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr td:nth-child(5) {
+    width: 330px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel h3 {
-    margin: 36px 0 16px;
-    font-size: 14px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel h3 {
+    margin: 60px 0;
+    font-size: 24px;
     font-weight: 700;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table {
     width: 100%;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td {
-    font-size: 14px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr th {
+    width: 420px;
+    height: 80px;
+    font-size: 20px;
     border: 1px solid #AFAFAF;
-    padding: 12px 16px;
+    padding: 30px 0 30px 80px;
+    text-align: left;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td:first-child {
-    width: 30%;
-    height: 40px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td {
+    border: 1px solid #AFAFAF;
+    padding: 30px 0 30px 80px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel table tr td ul li {
-    font-size: 12px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel table tr td ul li {
+    font-size: 16px;
   }
-  .reservation_state .sub_container .contents .mypage_reservation .mypage_reservation_cancel span {
-    font-size: 12px;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation .mypage_reservation_cancel span {
+    font-size: 16px;
     color: #AFAFAF;
     font-weight: 300;
-    margin: 4px;
+    margin: 16px 8px;
     display: block;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+  .mypage .sub_container .contents .coupon_popup_layer .coupon_popup {
+    margin: 70px auto;
   }
 }
