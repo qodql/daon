@@ -13,7 +13,7 @@
     <script src="./js/common.js"></script>
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/sub6.css">
-    <script src="./js/sub.js"></script>
+    <script src="./js/sub6.js"></script>
 </head>
 <body>
     <!-- 컨텐츠 -->
@@ -92,31 +92,36 @@
                             <div class="card_wrap">
                                 <div class="card_box">
                                     <div class="card">
-                                        <p>CREDIT CARD</p>
-                                        <div class="card_data">
-                                            <p class="num">**** **** **** ****</p>
-                                            <p class="name">LEE HAN JOO</p>
-                                            <p class="date">10/25</p>
+                                        <div class="card_front">
+                                            <p>CREDIT CARD</p>
+                                            <div class="card_data">
+                                                <p class="num">**** **** **** ****</p>
+                                                <p class="name">LEE HAN JOO</p>
+                                                <p class="date">10/25</p>
+                                            </div>
+                                        </div>
+                                        <div class="card_back">
+                                            <p class="cvc_num">123</p>
                                         </div>
                                     </div>
                                 </div>
                                 <ul class="input_list">
                                     <li>
                                         <p class="label">신용카드 번호</p>
-                                        <input type="text" placeholder="신용카드 번호를 입력해주세요."/>
+                                        <input type="text" class="card_num" placeholder="신용카드 번호를 입력해주세요."/>
                                     </li>
                                     <li>
                                         <p class="label">소유자 명</p>
-                                        <input type="text" placeholder="소유자 명을 입력해주세요."/>
+                                        <input type="text" class="card_name" placeholder="소유자 명을 입력해주세요."/>
                                     </li>
                                     <li class="half">
                                         <div>
                                             <p class="label">만료기한</p>
-                                            <input type="text" placeholder="만료기한을 입력해주세요."/>
+                                            <input type="text" class="card_date" placeholder="만료기한을 입력해주세요."/>
                                         </div>
                                         <div>
                                             <p class="label">보안번호(CVC)</p>
-                                            <input type="text" placeholder="보안번호를 입력해주세요."/>
+                                            <input type="text" class="card_cvc" placeholder="보안번호를 입력해주세요." maxlength="3"/>
                                         </div>
                                     </li>
                                 </ul>

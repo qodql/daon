@@ -104,126 +104,42 @@ document.addEventListener("DOMContentLoaded", () => {
             footer.classList.add("login")
         }
 
-        // [↓] chekcbox
-        const chkAll = document.querySelector(".checkbox_wrap #all_chk")
-        const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
-        chk.forEach((v,i)=>{
-            chkAll.addEventListener("click", ()=>{
-                if (chkAll.checked) {
-                    chk[i].checked = true;
-                } else {
-                    chk[i].checked = false;
-                }
-            })
-            chk[i].addEventListener("change", ()=>{
-                const chkLength = chk.length;
-                const chkCheckedLength = document.querySelectorAll(".checkbox_wrap input[name='chk']:checked").length
-                if (chkCheckedLength === chkLength) {
-                    chkAll.checked = true;
-                } else {
-                    chkAll.checked = false;
-                }
-            })
-        })
+    })
 
-        // [↓] tab
-        const tabCont = document.querySelectorAll(".tab_cont > *")
-        const tabLi = document.querySelectorAll(".tab li")
-        tabLi.forEach((v,i)=>{
-            v.addEventListener("click", ()=>{
-                for(let i=0;i<tabLi.length;i++){
-                    tabLi[i].classList.remove("on")
-                    tabCont[i].classList.remove("on")
-                }
-                v.classList.add("on")
-                tabCont[i].classList.add("on")
-            })
+    // [↓] chekcbox
+    const chkAll = document.querySelector(".checkbox_wrap #all_chk")
+    const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
+    chk.forEach((v,i)=>{
+        chkAll.addEventListener("click", ()=>{
+            if (chkAll.checked) {
+                chk[i].checked = true;
+            } else {
+                chk[i].checked = false;
+            }
         })
-        
-        // KAKAO MAP
-        const mapContainer = document.getElementById('map'); // 지도를 표시할 div
-        if (mapContainer){ 
-            let mapOption = { 
-                center: new kakao.maps.LatLng(37.83117086809958, 127.46889840605908), // 지도의 중심좌표
-                level: 1 // 지도의 확대 레벨
-            };
-        
-            var map = new kakao.maps.Map(mapContainer, mapOption);
-        
-            // 마커가 표시될 위치입니다 
-            var markerPosition  = new kakao.maps.LatLng(37.83117086809958, 127.46889840605908); 
-        
-            // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-        
-            // 마커가 지도 위에 표시되도록 설정합니다
-            marker.setMap(map);
-        
-            var iwContent = '<div style="padding:10px; margin-left:30px; font-weight:700; color:#111">다온펜션</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-            iwPosition = new kakao.maps.LatLng(20, 100); //인포윈도우 표시 위치입니다
-        
-            // 인포윈도우를 생성합니다
-            var infowindow = new kakao.maps.InfoWindow({
-                position : iwPosition, 
-                content : iwContent 
-            });
+        chk[i].addEventListener("change", ()=>{
+            const chkLength = chk.length;
+            const chkCheckedLength = document.querySelectorAll(".checkbox_wrap input[name='chk']:checked").length
+            if (chkCheckedLength === chkLength) {
+                chkAll.checked = true;
+            } else {
+                chkAll.checked = false;
+            }
+        })
+    })
 
-            // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-            infowindow.open(map, marker); 
-        }
+    // [↓] tab
+    const tabCont = document.querySelectorAll(".tab_cont > *")
+    const tabLi = document.querySelectorAll(".tab li")
+    tabLi.forEach((v,i)=>{
+        v.addEventListener("click", ()=>{
+            for(let i=0;i<tabLi.length;i++){
+                tabLi[i].classList.remove("on")
+                tabCont[i].classList.remove("on")
+            }
+            v.classList.add("on")
+            tabCont[i].classList.add("on")
+        })
     })
     
-    // [↓] datepicker
-    let today = new Date();
-    let tomorrow = new Date(today);
-    tomorrow.setDate(today.getDate() + 1);
-    const day = document.querySelectorAll("ul li .date span")
-    const weekDay = ['일', '월', '화', '수', '목', '금', '토'];
-    const todayWeekDay = weekDay[today.getDay()];
-    const tomorrowWeekDay = weekDay[tomorrow.getDay()];
-    day.forEach((v,i)=>{
-        day[0].innerText = `(${todayWeekDay})`;
-        day[1].innerText = `(${tomorrowWeekDay})`;
-    })
-    let picker = tui.DatePicker.createRangePicker({
-        language: 'ko',
-        startpicker: {
-            date: today,
-            input: '#startpicker-input',
-            container: '#startpicker-container'
-        },
-        endpicker: {
-            date: tomorrow,
-            input: '#endpicker-input',
-            container: '#endpicker-container'
-        },
-        selectableRanges: [
-            [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
-        ],
-        format: 'YYYY. MM. dd',
-    });
-
-    function getDayOfWeek(date) {
-        if (!date) { return '날짜 선택'; }
-        var dayOfWeek = date.getDay();
-        var daysOfWeek = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
-        return daysOfWeek[dayOfWeek];
-    }
-    
-    picker.getStartpicker().on('change', function() {
-        var selectedDate = picker.getStartpicker().getDate();
-        day[0].innerHTML = `${getDayOfWeek(selectedDate)}`;
-    });
-    
-    picker.getEndpicker().on('change', function() {
-        var selectedDate = picker.getEndpicker().getDate();
-        day[1].innerHTML = `${getDayOfWeek(selectedDate)}`;
-        if(day[1].innerText !== '날짜 선택') { 
-            day[1].style.cssText = 'margin-left:0px;'
-        } else {
-            day[1].style.cssText = 'margin-left:-140px;'
-        }
-    });
 })

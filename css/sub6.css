@@ -329,8 +329,52 @@
   border: 4px solid #D6B46C;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: all 2s;
 }
-.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > p {
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on {
+  transform: rotateY(180deg);
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on .card_front {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0s ease 0.5s;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on .card_back {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0s ease 0.5s;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on .card_back::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #afafaf;
+  position: absolute;
+  left: 0;
+  top: 32px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on .card_back p {
+  width: 50%;
+  height: 32px;
+  padding: 4px 20px;
+  position: absolute;
+  right: 32px;
+  top: 96px;
+  text-align: right;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #2f2f2f;
+  transform: rotateY(180deg);
+  background-color: #efefef;
+  border-radius: 999px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0s ease 0.5s;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front > p {
   font-size: 20px;
   color: #fff;
   font-weight: 700;
@@ -339,7 +383,7 @@
   right: 40px;
   top: 40px;
 }
-.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data::before {
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front .card_data::before {
   content: "";
   display: block;
   width: 54px;
@@ -349,24 +393,30 @@
   left: 40px;
   top: 64px;
 }
-.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p {
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front .card_data p {
   color: #fff;
   letter-spacing: 0;
 }
-.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.num {
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front .card_data p.num {
   margin-top: 84px;
   font-size: 20px;
   font-weight: 700;
 }
-.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.name, .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.date {
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front .card_data p.name, .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front .card_data p.date {
   display: inline-block;
   position: absolute;
   left: 40px;
   bottom: 40px;
 }
-.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_data p.date {
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front .card_data p.date {
+  width: fit-content;
   left: auto;
   right: 40px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_back {
+  opacity: 0;
+  visibility: visible;
+  transition: all 0s ease 0.5s;
 }
 .step2 .sub_container .contents .info_wrap .right {
   width: calc(36% - 20px);
