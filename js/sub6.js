@@ -1,143 +1,175 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // calendar
-    var Calendar = tui.Calendar;
 
-    var today = new Date();
-    var firstMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-    var secondMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
-
-    var calendarLeft = new Calendar('#calendar.left', {
-        defaultView: 'month',
-        taskView: true,
-        scheduleView: true,
-        useCreationPopup: true,
-        useDetailPopup: true,
-        renderStartDate: firstMonth
-    });
-
-    var calendarRight = new Calendar('#calendar.right', {
-        defaultView: 'month',
-        taskView: true,
-        scheduleView: true,
-        useCreationPopup: true,
-        useDetailPopup: true,
-        renderStartDate: secondMonth
-    });
-
-    function moveCalendar(monthDiff) {
-        firstMonth.setMonth(firstMonth.getMonth() + monthDiff);
-        secondMonth.setMonth(secondMonth.getMonth() + monthDiff);
-
-        calendarLeft.setDate(firstMonth);
-        calendarRight.setDate(secondMonth);
-    }
-
-    document.getElementById('calendar_prev').addEventListener('click', function () {
-        moveCalendar(-1);
-    });
-
-    document.getElementById('calendar_next').addEventListener('click', function () {
-        moveCalendar(1);
-    });
-
-    // [↓] step1 객실 수, 성인 수, 어린이 수 선택
+    // *****************[step1]******************* //
+    // [↓] step1 객실 수, 성인 수, 어린이 수 증감
+    const step1 = document.querySelector(".step1")
     const roomInput = document.querySelector(".date_person .room input")
     const adultInput = document.querySelector(".date_person .adult input")
     const childInput = document.querySelector(".date_person .child input")
     const plusBtn = document.querySelectorAll(".date_person .btn_wrap .plus")
     const minusBtn = document.querySelectorAll(".date_person .btn_wrap .minus")
     const nextBtn = document.querySelector(".next_btn")
-
     let roomNum=1, adultNum=2, childNum=0;
-    plusBtn.forEach((v,i)=>{
-        plusBtn[i].addEventListener("click", (e) => {
-            let targetLi = e.target.parentElement.parentElement.parentElement;
-            if (targetLi.classList.contains("adult")) {
-                adultNum++;
-                adultInput.value = adultNum;
-                if(adultNum > 24){
-                    alert('한번에 예약 가능한 최대 인원 수는 24명 입니다.')
-                    adultNum = 24;
-                    adultInput.value = adultNum;
-                } else if (adultNum > 18){
-                    roomNum = 4;
-                    roomInput.value = roomNum;
-                } else if (adultNum > 12){
-                    roomNum = 3;
-                    roomInput.value = roomNum;
-                } else if (adultNum > 6){
-                    roomNum = 2;
-                    roomInput.value = roomNum;
-                }
-            }
-            if (targetLi.classList.contains("room")) {
-                if(roomNum > 3) {
-                    alert('한번에 예약 가능한 최대 객실 수는 4개 입니다.')
-                } else {
-                    roomNum++;
-                }
-                roomInput.value = roomNum;
-            }
-            if (targetLi.classList.contains("child")) {
-                childNum++;
-                childInput.value = childNum;
-                if(childNum > (24 - adultNum)){
-                    alert(`예약 가능한 최대 어린이 수는 ${24 - adultNum}명 입니다.`)
-                    childNum = 24 - adultNum;
-                    childInput.value = childNum;
-                }
-            }
-        })
-    })
 
-    minusBtn.forEach((v,i)=>{
-        minusBtn[i].addEventListener("click", (e) => {
-            let targetLi = e.target.parentElement.parentElement.parentElement;
-            if (targetLi.classList.contains("adult")) {
-                if(adultNum <= 2) {
-                    adultInput.value = 2;
-                } else {
-                    adultNum--;
+    if(step1){
+        plusBtn.forEach((v,i)=>{
+            plusBtn[i].addEventListener("click", (e) => {
+                let targetLi = e.target.parentElement.parentElement.parentElement;
+                if (targetLi.classList.contains("adult")) {
+                    if (adultNum < 12){
+                        adultNum++;
+                        if(adultNum > 12){
+                            adultNum = 12;
+                            adultInput.value = adultNum;
+                        } else if (adultNum > 6){
+                            roomNum = 2;
+                            roomInput.value = roomNum;
+                            let roomMinusBtn = document.querySelector(".date_person .room .minus")
+                            roomMinusBtn.style.cssText = "opacity:1;"
+                        }
+                        if (adultNum < 12){
+                            v.style.cssText = 'opacity:1;'
+                            minusBtn[i].style.cssText = 'opacity:1;'
+                        } else {
+                            v.style.cssText = 'opacity:0.3;'
+                        }
+                    }
                     adultInput.value = adultNum;
                 }
-            } 
-            if (targetLi.classList.contains("room")) {
-                if(roomNum > 1) {
-                    roomNum--;
+                if (targetLi.classList.contains("room")) {
+                    if(roomNum < 4) {
+                        roomNum++;
+                        if (roomNum !== 4){
+                            v.style.cssText = 'opacity:1;'
+                        } else {
+                            v.style.cssText = 'opacity:0.3;'
+                        }
+                        if (roomNum !== 1) {
+                            minusBtn[i].style.cssText = 'opacity: 1;'
+                        }
+                    }
+                    roomInput.value = roomNum;
                 }
-                roomInput.value = roomNum;
-            }
-            if (targetLi.classList.contains("child")) {
-                if(childNum <= 0) {
-                    childInput.value = 0;
-                } else {
-                    childNum--;
+                if (targetLi.classList.contains("child")) {
+                    if (childNum < 12){
+                        childNum++;
+                        if(childNum > 12){
+                            childNum = 12;
+                            childInput.value = childNum;
+                        } else if (childNum > 6){
+                            roomNum = 2;
+                            roomInput.value = roomNum;
+                            let roomMinusBtn = document.querySelector(".date_person .room .minus")
+                            roomMinusBtn.style.cssText = "opacity:1;"
+                        }
+                        if (childNum < 12){
+                            v.style.cssText = 'opacity:1;'
+                            minusBtn[i].style.cssText = 'opacity:1;'
+                        } else {
+                            v.style.cssText = 'opacity:0.3;'
+                        }
+                    }
                     childInput.value = childNum;
                 }
-            }
+            })
         })
-    })
-
-    // [↓] step1 객실 선택
-    const roomBtn = document.querySelectorAll(".room_select_btn")
-    roomBtn.forEach((v,i)=>{
-        roomBtn[i].addEventListener("click", (e) => {
-            const roomSelectedBtn = document.querySelectorAll(".room_select_btn.selected")
-            let roomSelectedBtnLength = roomSelectedBtn.length
-            if (roomSelectedBtn){
-                if(roomNum - 1 < roomSelectedBtnLength) {
-                    alert("선택할 수 있는 객실 수를 초과하였습니다.")
-                } else {
-                    e.target.classList.add("selected")
+        minusBtn.forEach((v,i)=>{
+            minusBtn[i].addEventListener("click", (e) => {
+                let targetLi = e.target.parentElement.parentElement.parentElement;
+                if (targetLi.classList.contains("adult")) {
+                    if(adultNum <= 2) {
+                        adultInput.value = 2;
+                    } else {
+                        adultNum--;
+                        adultInput.value = adultNum;
+                        if (adultNum < 12){
+                            plusBtn[i].style.cssText = 'opacity:1;'
+                            v.style.cssText = 'opacity: 1;'
+                        }
+                        if (adultNum == 2){
+                            v.style.cssText = 'opacity: 0.3;'
+                        }
+                    }
+                } 
+                if (targetLi.classList.contains("room")) {
+                    if(roomNum > 1) {
+                        roomNum--;
+                        if (roomNum !== 4){
+                            plusBtn[i].style.cssText = 'opacity:1;'
+                        }
+                        if (roomNum == 1) {
+                            minusBtn[i].style.cssText = 'opacity: 0.3;'
+                        }
+                    }
+                    roomInput.value = roomNum;
                 }
+                if (targetLi.classList.contains("child")) {
+                    if(childNum <= 2) {
+                        childInput.value = 2;
+                    } else {
+                        childNum--;
+                        childInput.value = childNum;
+                        if (childNum < 12){
+                            plusBtn[i].style.cssText = 'opacity:1;'
+                            v.style.cssText = 'opacity: 1;'
+                        }
+                        if (childNum == 2){
+                            v.style.cssText = 'opacity: 0.3;'
+                        }
+                    }
+                }
+            })
+        })
+    
+        // [↓] step1 객실 선택
+        const roomBtn = document.querySelectorAll(".room_select_btn");
+        let roomBtnSelected = '';
+    
+        roomBtn.forEach((v,i)=>{
+            v.addEventListener("click", (e)=>{
+                e.target.classList.toggle("selected");
+                roomBtnSelected = document.querySelectorAll(".room_select_btn.selected").length;
+                if(roomBtnSelected > roomNum) {
+                    alert('선택 가능한 객실 수를 초과하였습니다.');
+                    e.target.classList.remove("selected");
+                }
+            })
+        })
+    
+        // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
+        nextBtn.addEventListener("click", ()=>{
+            if (!roomBtnSelected) {
+                alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
+            } else {
+                window.location.href='./sub6_reservation_step2.html'
             }
         })
-    })
+    }
 
-    nextBtn.addEventListener("click", ()=>{
-        if(confirm(`객실 ${roomNum}개, 성인 ${adultNum}명, 어린이 ${childNum}명으로 예약을 진행하시겠습니까?`)) {
-            window.location.href='./sub6_reservation_step2.html'
-        }
-    })
+    // *****************[step2]******************* //
+    // [↓] step2 card
+    const step2 = document.querySelector(".step2")
+    const card = document.querySelector(".card")
+    const cardNum = document.querySelector(".card_data .num")
+    const cardName = document.querySelector(".card_data .name")
+    const cardDate = document.querySelector(".card_data .date")
+    const cardAllInput = document.querySelectorAll(".input_list li input")
+    const cardNumInput = document.querySelector(".input_list .card_num")
+    const cardNameInput = document.querySelector(".input_list .card_name")
+    const cardDateInput = document.querySelector(".input_list .card_date")
+    const cardCvcInput = document.querySelector(".input_list .card_cvc")
 
+    if (step2) {
+        cardAllInput.forEach((v,i)=>{
+            if(v.classList.contains("card_cvc")){
+                cardCvcInput.addEventListener("focus", ()=>{
+                    card.classList.add("on")
+                }) 
+            } else {
+                v.addEventListener("focus", ()=>{
+                    card.classList.remove("on")
+                }) 
+            }
+        })
+    }
 })

@@ -2,39 +2,6 @@
 
 @include res('pc-s'){
 }
-@media screen and (max-width:1400px) {
-    .step1 {
-        .sub_container {
-            .contents {
-                .calendar_wrap {
-                    .calendar_container {
-                        padding: 0 100px;
-                        .title {
-                            left: 25.5%;
-                            &.right{
-                                right:25.5%
-                            }
-                        }
-                        #calendar{
-                            width: 380px;
-                        }
-                    }
-                    .calendar_btn_wrap {
-                        .nav_button {
-                            width: 80px;
-                            height: 80px;
-                            background-size: 64px;
-                            left: 40px;
-                            &.next {
-                                right: 40px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 
 @include res('tab'){
     .reservation_common {
@@ -68,21 +35,6 @@
     .step1 {
         .sub_container {
             .contents {
-                .calendar_wrap {
-                    .calendar_container {
-                        padding: 0 100px;
-                        justify-content: center;
-                        .right {
-                            display: none;
-                        }
-                        .title {
-                            &.left {
-                                left: 50%;
-                                transform: translateX(-50%);
-                            }
-                        }
-                    }
-                }
                 .data_area {
                     .date_person {
                         li{
@@ -319,14 +271,11 @@
     .step1 {
         .sub_container {
             .contents {
-                .calendar_wrap {
-                    margin-bottom: 40px;
-                }
                 .data_area {
                     .date_person {
                         li{
                             &:not(:first-of-type, .room) {
-                                margin-left: 40px;
+                                margin-left: 24px;
                             }
                             .label {
                                 margin-bottom: 8px;
@@ -334,6 +283,13 @@
                             .input_wrap {
                                 input {
                                     font-size: 20px;
+                                }
+                                .date {
+                                    width: 140px;
+                                    & + .sign {
+                                        font-size: 20px;
+                                        margin: 0 12px;
+                                    }
                                 }
                             }
                         }
@@ -353,36 +309,15 @@
     .step1 {
         .sub_container {
             .contents {
-                .calendar_wrap {
-                    padding-bottom: 80px;
-                    .calendar_container {
-                        padding: 0 60px;
-                        #calendar {
-                            width: 360px;
-                            height: 360px;
-                        }
-                    }
-                    .calendar_btn_wrap {
-                        .nav_button {
-                            width: 64px;
-                            height: 64px;
-                            background-size: 40px;
-                            left: 32px;
-                            &.next {
-                                right: 32px;
-                            }
-                        }
-                    }
-                }
                 .data_area {
                     .date_person {
+                        height: 248px;
+                        flex-direction: column;
+                        position: relative;
+                        margin: 64px 0;
+                        padding: 40px 0;
                         li {
-                            &:not(:first-of-type, .room) {
-                                margin-left: 32px;
-                            }
-                            .label {
-                                margin-bottom: 4px;
-                            }
+                            margin-left: 0 !important;
                             .input_wrap {
                                 input {
                                     width: 88px;
@@ -390,6 +325,23 @@
                                 .btn_wrap {
                                     width: 88px;
                                 }
+                            }
+                            &.data {
+                                width: 100%;
+                            }
+                            &:not(.data) {
+                                width: 88px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 40px;
+                            }
+                            &:nth-last-of-type(2) {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                            &:nth-last-of-type(1) {
+                                left: auto;
+                                right: 0;
                             }
                         }
                     }
@@ -414,42 +366,11 @@
             align-items: center;
         }
     }
+    
 }
 
 
 @media screen and (max-width:683px) {
-    .step1 {
-        .sub_container {
-            .contents {
-                .calendar_wrap {
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    .calendar_btn_wrap {
-                        .nav_button {
-                            left: 20px;
-                            &.next {
-                                right: 20px;
-                            }
-                        }
-                    }
-                }
-                .data_area {
-                    .date_person {
-                        li {
-                            .label {
-                                font-size: 16px;
-                            }
-                            .input_wrap {
-                                input {
-                                    font-size: 16px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
     .step2 {
         .input_list {
             li {
@@ -476,63 +397,6 @@
                             width: calc(50% - 8px);
                             &.reservation {
                                 margin-left: 8px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width:612px) {
-    .step1 {
-        .sub_container {
-            .contents {
-                .data_area {
-                    .date_person {
-                        flex-direction: column;
-                        position: relative;
-                        padding-bottom: 80px;
-                        li {
-                            margin-left: 0 !important;
-                            &.data {
-                                width: 100%;
-                            }
-                            &:not(.data) {
-                                width: 88px;
-                                position: absolute;
-                                left: 0;
-                                bottom: 0;
-                            }
-                            &:nth-last-of-type(2) {
-                                left: 50%;
-                                transform: translateX(-50%);
-                            }
-                            &:nth-last-of-type(1) {
-                                left: auto;
-                                right: 0;
-                            }
-                        }
-                    }
-                }
-                .calendar_wrap {
-                    padding: 100px 0 40px;
-                    .calendar_container {
-                        padding: 0 40px;
-                        #calendar {
-                            width: 300px;
-                            height: 300px;
-                        }
-                        .title {
-                            top: 48px;
-                        }
-                    }
-                    .calendar_btn_wrap {
-                        .nav_button {
-                            left: 8px;
-                            &.next {
-                                right: 8px;
                             }
                         }
                     }

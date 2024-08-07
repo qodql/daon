@@ -66,6 +66,81 @@
   background: #2f2f2f;
 }
 
+.date {
+  width: 220px;
+  display: flex;
+  align-items: center;
+}
+.date span {
+  margin-top: 6px;
+  white-space: nowrap;
+}
+.date input {
+  cursor: pointer;
+}
+.date .tui-datepicker {
+  padding: 0 12px 12px;
+  border-radius: 8px;
+  z-index: 999;
+  overflow: hidden;
+}
+.date .tui-is-selectable.tui-is-selected {
+  border-radius: 50% 0 0 50%;
+  background-color: #357EF1;
+  color: #fff !important;
+}
+.date .tui-is-selectable.tui-is-selected:hover {
+  border-radius: 50% 0 0 50%;
+  background-color: #357EF1;
+}
+.date .tui-is-selectable:hover {
+  border-radius: 50%;
+  background-color: #efefef;
+}
+.date .tui-calendar-header-info {
+  display: none;
+}
+.date .tui-calendar-body-header {
+  border-bottom: 1px solid #efefef;
+}
+.date .tui-calendar th, .date .tui-calendar td {
+  color: #2f2f2f;
+}
+.date .tui-sun, .date .tui-calendar-sun {
+  color: #FF0F0F !important;
+}
+.date .tui-sat, .date .tui-calendar-sat {
+  color: #357EF1 !important;
+}
+.date .tui-datepicker .tui-is-blocked, .date .tui-calendar-prev-month, .date .tui-calendar-next-month {
+  color: #afafaf !important;
+  visibility: visible;
+}
+.date .tui-is-selected-range + .tui-is-selected {
+  border-radius: 0 50% 50% 0;
+}
+.date .tui-is-selected-range + .tui-is-selected:hover {
+  border-radius: 0 50% 50% 0;
+}
+.date .tui-is-selected-range:hover {
+  border-radius: 0;
+}
+.date .tui-datepicker-input {
+  width: 200px;
+  height: 48px;
+}
+.date .tui-datepicker-input.tui-has-focus {
+  border: 0;
+}
+.date .tui-datepicker-input > input {
+  padding: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #fff;
+  background-color: transparent;
+}
+
 .main .swiper .swiper_btn_wrap {
   position: absolute;
   right: 13.5%;
@@ -968,6 +1043,17 @@ body.prevent_scroll {
   .sub .sub_container .title .desc {
     font-size: 20px;
     margin-top: 8px;
+  }
+  .fixed_menu {
+    right: 44px;
+    bottom: 72px;
+  }
+  .fixed_menu ul li {
+    width: 56px;
+    height: 56px;
+  }
+  .fixed_menu ul li.top_btn a span {
+    font-size: 12px;
   }
 }
 @media (max-width: 767px) {
