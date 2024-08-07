@@ -12,8 +12,15 @@
     <link rel="stylesheet" href="./css/common.css">
     <script src="./js/common.js"></script>
     <!-- [↓] sns 로그인 -->
+        <!-- 카카오 -->
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
     <script>Kakao.init('f585b1797615499ab112a287f601e011');</script>
+        <!-- 네이버 -->
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- 구글 -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="507623855565-u1kp5fvsfg2e263jpq2vmtage1rmmkcf.apps.googleusercontent.com">
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/login.css">
     <script src="./js/login.js"></script>
@@ -57,13 +64,13 @@
                     <ul class="login_login_sns">
                         <!-- 카카오 -->
                         <li>
-                            <a id="kakao-login-btn" href="javascript:loginWithKakao()">
+                            <a id="kakao-login-btn" href="#">
                                 <button type="button" class="kakao"></button>
                             </a>
                         </li>
                         <!-- 네이버 -->
                         <li>
-                            <a href="https://www.naver.com">
+                            <a id="naver_id_login" href="#">
                                 <button type="button" class="naver"></button>
                             </a>
                         </li>
