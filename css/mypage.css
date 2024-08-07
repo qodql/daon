@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* [↓] 하단 나중에 작업 완료 후 삭제 [↓] */
 /* 분기점 
 1280~1500: pc   pc-s
 768~1279: 태블릿     tab
@@ -49,7 +50,7 @@ mo-s:
         ㄴ 버튼 width 고정(깨짐 방지)(160px)
 * 360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 미디어쿼리 추가했습니다.
 */
-/*↑↑↑↑↑↑↑↑↑상단 나중에 작업 완료 후 삭제↑↑↑↑↑↑↑↑↑↑↑*/
+/* [↑] 상단 나중에 작업 완료 후 삭제 [↑] */
 @media (max-width: 1279px) {
   body .login_common .logo_wrap {
     margin-bottom: 48px;
@@ -140,11 +141,6 @@ mo-s:
     width: 160px;
   }
 }
-@media screen and (max-width: 360px) {
-  body .join .join_wrap .join_personal_info .phone_verify_btn .phone_box {
-    width: 69%;
-  }
-}
 .mypage .sub_top {
   background: url("../img/img_sub_mypage.jpg") no-repeat;
 }
@@ -209,11 +205,7 @@ mo-s:
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box {
   width: 100%;
   max-width: 480px;
-  padding-left: 20px;
   position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
   background-color: #EFEFEF;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box label {
@@ -221,23 +213,24 @@ mo-s:
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_mail_grey.svg);
   background-repeat: no-repeat;
+  background-image: url(../img/icon/icon_mail_grey.svg);
   vertical-align: middle;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
+  width: 100%;
+  padding: 16px 48px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
   vertical-align: middle;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input:focus {
-  width: calc(100% - 80px);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box .input_reset_btn {
   width: 16px;
   height: 16px;
-  opacity: 1;
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -252,40 +245,36 @@ mo-s:
   background-image: url(../img/icon/icon_eye.svg);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input:focus ~ .input_reset_btn {
-  opacity: 1;
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box {
   width: 100%;
   max-width: 480px;
-  padding-left: 20px;
   position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_lock.svg);
   background-repeat: no-repeat;
+  background-image: url(../img/icon/icon_lock.svg);
   vertical-align: middle;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
+  width: 100%;
+  padding: 16px 48px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
   vertical-align: middle;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input:focus {
-  width: calc(100% - 80px);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box .input_reset_btn {
   width: 16px;
   height: 16px;
-  opacity: 1;
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -300,40 +289,36 @@ mo-s:
   background-image: url(../img/icon/icon_eye.svg);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input:focus ~ .input_reset_btn {
-  opacity: 1;
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box {
   width: 100%;
   max-width: 480px;
-  padding-left: 20px;
   position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_lock.svg);
   background-repeat: no-repeat;
+  background-image: url(../img/icon/icon_lock.svg);
   vertical-align: middle;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
+  width: 100%;
+  padding: 16px 48px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
   vertical-align: middle;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input:focus {
-  width: calc(100% - 80px);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box .input_reset_btn {
   width: 16px;
   height: 16px;
-  opacity: 1;
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -348,40 +333,36 @@ mo-s:
   background-image: url(../img/icon/icon_eye.svg);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input:focus ~ .input_reset_btn {
-  opacity: 1;
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box {
   width: 100%;
   max-width: 480px;
-  padding-left: 20px;
   position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_person.svg);
   background-repeat: no-repeat;
+  background-image: url(../img/icon/icon_person.svg);
   vertical-align: middle;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
+  width: 100%;
+  padding: 16px 48px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
   vertical-align: middle;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input:focus {
-  width: calc(100% - 80px);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box .input_reset_btn {
   width: 16px;
   height: 16px;
-  opacity: 1;
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -396,40 +377,36 @@ mo-s:
   background-image: url(../img/icon/icon_eye.svg);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input:focus ~ .input_reset_btn {
-  opacity: 1;
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box {
   width: 100%;
   max-width: 480px;
-  padding-left: 20px;
   position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_phone.svg);
   background-repeat: no-repeat;
+  background-image: url(../img/icon/icon_phone.svg);
   vertical-align: middle;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
+  width: 100%;
+  padding: 16px 48px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
   vertical-align: middle;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input:focus {
-  width: calc(100% - 80px);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box .input_reset_btn {
   width: 16px;
   height: 16px;
-  opacity: 1;
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -444,40 +421,36 @@ mo-s:
   background-image: url(../img/icon/icon_eye.svg);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input:focus ~ .input_reset_btn {
-  opacity: 1;
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box {
   width: 100%;
   max-width: 480px;
-  padding-left: 20px;
   position: relative;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   display: inline-block;
-  background-image: url(../img/icon/icon_calendar.svg);
   background-repeat: no-repeat;
+  background-image: url(../img/icon/icon_calendar.svg);
   vertical-align: middle;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input {
-  width: calc(100% - 40px);
-  padding: 16px 0;
-  color: #afafaf;
+  width: 100%;
+  padding: 16px 48px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
   vertical-align: middle;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input:focus {
-  width: calc(100% - 80px);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box .input_reset_btn {
   width: 16px;
   height: 16px;
-  opacity: 1;
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -492,7 +465,6 @@ mo-s:
   background-image: url(../img/icon/icon_eye.svg);
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input:focus ~ .input_reset_btn {
-  opacity: 1;
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
@@ -704,11 +676,7 @@ mo-s:
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box {
     width: 100%;
     max-width: 480px;
-    padding-left: 20px;
     position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
     background-color: #EFEFEF;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box label {
@@ -716,23 +684,24 @@ mo-s:
     height: 20px;
     margin-right: 8px;
     display: inline-block;
-    background-image: url(../img/icon/icon_mail_grey.svg);
     background-repeat: no-repeat;
+    background-image: url(../img/icon/icon_mail_grey.svg);
     vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
     vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input:focus {
-    width: calc(100% - 80px);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box .input_reset_btn {
     width: 16px;
     height: 16px;
-    opacity: 1;
     visibility: hidden;
     position: absolute;
     top: 50%;
@@ -747,40 +716,36 @@ mo-s:
     background-image: url(../img/icon/icon_eye.svg);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box input:focus ~ .input_reset_btn {
-    opacity: 1;
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box {
     width: 100%;
     max-width: 480px;
-    padding-left: 20px;
     position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
     display: inline-block;
-    background-image: url(../img/icon/icon_lock.svg);
     background-repeat: no-repeat;
+    background-image: url(../img/icon/icon_lock.svg);
     vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
     vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input:focus {
-    width: calc(100% - 80px);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box .input_reset_btn {
     width: 16px;
     height: 16px;
-    opacity: 1;
     visibility: hidden;
     position: absolute;
     top: 50%;
@@ -795,40 +760,36 @@ mo-s:
     background-image: url(../img/icon/icon_eye.svg);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_box input:focus ~ .input_reset_btn {
-    opacity: 1;
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box {
     width: 100%;
     max-width: 480px;
-    padding-left: 20px;
     position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
     display: inline-block;
-    background-image: url(../img/icon/icon_lock.svg);
     background-repeat: no-repeat;
+    background-image: url(../img/icon/icon_lock.svg);
     vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
     vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input:focus {
-    width: calc(100% - 80px);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box .input_reset_btn {
     width: 16px;
     height: 16px;
-    opacity: 1;
     visibility: hidden;
     position: absolute;
     top: 50%;
@@ -843,40 +804,36 @@ mo-s:
     background-image: url(../img/icon/icon_eye.svg);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.pw_check_box input:focus ~ .input_reset_btn {
-    opacity: 1;
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box {
     width: 100%;
     max-width: 480px;
-    padding-left: 20px;
     position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
     display: inline-block;
-    background-image: url(../img/icon/icon_person.svg);
     background-repeat: no-repeat;
+    background-image: url(../img/icon/icon_person.svg);
     vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
     vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input:focus {
-    width: calc(100% - 80px);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box .input_reset_btn {
     width: 16px;
     height: 16px;
-    opacity: 1;
     visibility: hidden;
     position: absolute;
     top: 50%;
@@ -891,40 +848,36 @@ mo-s:
     background-image: url(../img/icon/icon_eye.svg);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.name_box input:focus ~ .input_reset_btn {
-    opacity: 1;
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box {
     width: 100%;
     max-width: 480px;
-    padding-left: 20px;
     position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
     display: inline-block;
-    background-image: url(../img/icon/icon_phone.svg);
     background-repeat: no-repeat;
+    background-image: url(../img/icon/icon_phone.svg);
     vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
     vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input:focus {
-    width: calc(100% - 80px);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box .input_reset_btn {
     width: 16px;
     height: 16px;
-    opacity: 1;
     visibility: hidden;
     position: absolute;
     top: 50%;
@@ -939,40 +892,36 @@ mo-s:
     background-image: url(../img/icon/icon_eye.svg);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.phone_box input:focus ~ .input_reset_btn {
-    opacity: 1;
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box {
     width: 100%;
     max-width: 480px;
-    padding-left: 20px;
     position: relative;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    overflow: hidden;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
     display: inline-block;
-    background-image: url(../img/icon/icon_calendar.svg);
     background-repeat: no-repeat;
+    background-image: url(../img/icon/icon_calendar.svg);
     vertical-align: middle;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input {
-    width: calc(100% - 40px);
-    padding: 16px 0;
-    color: #afafaf;
+    width: 100%;
+    padding: 16px 48px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
     vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input:focus {
-    width: calc(100% - 80px);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box .input_reset_btn {
     width: 16px;
     height: 16px;
-    opacity: 1;
     visibility: hidden;
     position: absolute;
     top: 50%;
@@ -987,7 +936,6 @@ mo-s:
     background-image: url(../img/icon/icon_eye.svg);
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.birth_box input:focus ~ .input_reset_btn {
-    opacity: 1;
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
