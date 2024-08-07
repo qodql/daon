@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <script src="./js/common.js"></script>
-    <!-- [↓] 달력 -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
-    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
-    <!-- [↓] 데이트피커 -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
-    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
     <!-- [↓] 페이지에 맞는 css, script 불러오기 -->
     <link rel="stylesheet" href="./css/sub6.css">
     <script src="./js/sub6.js"></script>
@@ -64,24 +58,26 @@
                         </li>
                     </ul>
                 </div>
-                <div class="calendar_wrap">
-                    <div class="calendar_container">
-                        <p class="title left">2024년 7월</p>
-                        <div id="calendar" class="left"></div>
-                        <p class="title right">2024년 8월</p>
-                        <div id="calendar" class="right"></div>
-                    </div>
-                    <div class="calendar_btn_wrap">
-                        <span id="calendar_prev" class="nav_button prev"></span>
-                        <span id="calendar_next" class="nav_button next"></span>
-                    </div>
-                </div>
                 <div class="data_area">
                     <ul class="date_person">
                         <li class="data">
                             <p class="label">투숙기간</p>
                             <div class="input_wrap">
-                                <input type="text" value="2024. 07. 15 ~ 2024. 07. 15">
+                                <div class="date in">
+                                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input id="startpicker-input" type="text" aria-label="Date" readonly>
+                                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                                    </div>
+                                    <span title="day"></span>
+                                </div>
+                                <span class="sign">~</span>
+                                <div class="date out">
+                                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input id="endpicker-input" type="text" aria-label="Date" readonly>
+                                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                                    </div>
+                                    <span title="day"></span>
+                                </div>
                             </div>
                         </li>
                         <li class="room">
@@ -265,5 +261,20 @@
             </div>
         </div>
     </div>
+    <!-- [↓] datepicker -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
+    <style>
+        .tui-datepicker .tui-is-blocked {
+            & + .tui-is-selected {
+                border-radius: 50% 0 0 50%;
+            } 
+        }
+        .tui-is-selected-range {
+            & + .tui-is-selected {
+                border-radius: 0 50% 50% 0;
+            }
+        }
+    </style>
 </body>
 </html>
