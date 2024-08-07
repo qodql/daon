@@ -170,10 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.classList.remove("on")
                 }) 
             }
-            cardNumInput.addEventListener("change", (e)=>{
-                cardNum.innerHTML = `${cardNumInput.value}`
-                console.log(cardNumInput.value);
-            })
         })
     }
 })

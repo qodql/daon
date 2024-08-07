@@ -108,7 +108,7 @@
                                 <ul class="input_list">
                                     <li>
                                         <p class="label">신용카드 번호</p>
-                                        <input type="text" class="card_num" placeholder="신용카드 번호를 입력해주세요."/>
+                                        <input type="text" class="card_num" placeholder="신용카드 번호를 입력해주세요." oninput="handleCardNum()" maxlength="16"/>
                                     </li>
                                     <li>
                                         <p class="label">소유자 명</p>
@@ -225,5 +225,13 @@
             </div>
         </div>
     </div>
+    <script>
+        const handleCardNum = (e) => {
+            const cardInputValue = document.querySelector(".input_list .card_num").value
+            const cardNum = document.querySelector(".card_data .num")
+            console.log(cardInputValue);
+            cardNum.innerText = cardInputValue;
+        }
+    </script>
 </body>
 </html>
