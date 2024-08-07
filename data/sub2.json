@@ -7,7 +7,10 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_love101_01.jpg","../img/img_sub2_room_love101_02.jpg", "../img/img_sub2_room_love101_03.jpg", "../img/img_sub2_room_love101_04.jpg"],
+      "room_price" : "126,000"
+      
     },
     {
       "id":1,
@@ -16,7 +19,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_love102_01.jpg","../img/img_sub2_room_love102_02.jpg", "../img/img_sub2_room_love102_03.jpg", "../img/img_sub2_room_love102_04.jpg"],
+      "room_price" : "126,000"
     },
     {
       "id":2,
@@ -25,7 +30,10 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]},
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_love201_01.jpg","../img/img_sub2_room_love201_02.jpg", "../img/img_sub2_room_love201_03.jpg", "../img/img_sub2_room_love201_04.jpg"],
+      "room_price" : "126,000"
+    },
     {
       "id":3,
       "type" : "LOVE YOU",
@@ -33,7 +41,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_love202_01.jpg","../img/img_sub2_room_love202_02.jpg", "../img/img_sub2_room_love202_03.jpg", "../img/img_sub2_room_love202_04.jpg"],
+      "room_price" : "126,000"
     },
     {
       "id":4,
@@ -42,7 +52,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_love203_01.jpg","../img/img_sub2_room_love203_02.jpg", "../img/img_sub2_room_love203_03.jpg", "../img/img_sub2_room_love203_04.jpg"],
+      "room_price" : "126,000"
     }
   ],
 
@@ -54,7 +66,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_only101_01.jpg","../img/img_sub2_room_only101_02.jpg", "../img/img_sub2_room_only101_03.jpg", "../img/img_sub2_room_only101_04.jpg"],
+      "room_price" : "126,000"
     },
     {
       "id":1,
@@ -63,7 +77,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_only102_01.jpg","u../img/img_sub2_room_only102_02.jpg", "../img/img_sub2_room_only102_03.jpg", "../img/img_sub2_room_only102_04.jpg"],
+      "room_price" : "126,000"
     },
     {
       "id":2,
@@ -72,7 +88,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["../img/img_sub2_room_only201_01.jpg","../img/img_sub2_room_only201_02.jpg","../img/img_sub2_room_only201_03.jpg", "../img/img_sub2_room_only201_04.jpg"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_only201_01.jpg","../img/img_sub2_room_only201_02.jpg","../img/img_sub2_room_only201_03.jpg", "../img/img_sub2_room_only201_04.jpg"],
+      "room_price" : "126,000"
     },
     {
       "id":3,
@@ -81,7 +99,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["url","url2"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_only202_01.jpg","../img/img_sub2_room_only202_02.jpg", "../img/img_sub2_room_only202_03.jpg", "../img/img_sub2_room_only202_04.jpg"],
+      "room_price" : "126,000"
     },
     {
       "id":4,
@@ -90,7 +110,9 @@
       "room_info" : "16평",
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
-      "photo":["../img/img_sub2_room_only203_01.jpg","../img/img_sub2_room_only203_02.jpg","../img/img_sub2_room_only203_02.jpg", "../img/img_sub2_room_only203_03.jpg", "../img/img_sub2_room_only203_04.jpg"]
+      "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
+      "photo":["../img/img_sub2_room_only203_01.jpg","../img/img_sub2_room_only203_02.jpg","../img/img_sub2_room_only203_02.jpg", "../img/img_sub2_room_only203_03.jpg", "../img/img_sub2_room_only203_04.jpg"],
+      "room_price" : "126,000"
     }
   ]
 
