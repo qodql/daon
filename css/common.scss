@@ -87,6 +87,7 @@
   .tui-datepicker {
       padding: 0 12px 12px;
       border-radius: 8px;
+      z-index: 999;
       overflow: hidden;
   }
   .tui-is-selectable {

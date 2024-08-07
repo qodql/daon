@@ -205,7 +205,9 @@
                                     position: absolute;
                                     left: 0;
                                     top: 3px;
-                                    &.minus {}
+                                    &.minus {
+                                        opacity: 0.3;
+                                    }
                                     &.plus {
                                         left: auto;
                                         right: 0;

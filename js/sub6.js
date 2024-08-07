@@ -13,27 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
         plusBtn[i].addEventListener("click", (e) => {
             let targetLi = e.target.parentElement.parentElement.parentElement;
             if (targetLi.classList.contains("adult")) {
-                adultNum++;
+                if (adultNum < 12){
+                    adultNum++;
+                    if(adultNum > 12){
+                        adultNum = 12;
+                        adultInput.value = adultNum;
+                    } else if (adultNum > 6){
+                        roomNum = 2;
+                        roomInput.value = roomNum;
+                        let roomMinusBtn = document.querySelector(".date_person .room .minus")
+                        roomMinusBtn.style.cssText = "opacity:1;"
+                    }
+                    if (adultNum < 12){
+                        v.style.cssText = 'opacity:1;'
+                        minusBtn[i].style.cssText = 'opacity:1;'
+                    } else {
+                        v.style.cssText = 'opacity:0.3;'
+                    }
+                }
                 adultInput.value = adultNum;
-                if(adultNum > 24){
-                    alert('한번에 예약 가능한 최대 인원 수는 24명 입니다.')
-                    adultNum = 24;
-                    adultInput.value = adultNum;
-                } else if (adultNum > 18){
-                    roomNum = 4;
-                    roomInput.value = roomNum;
-                } else if (adultNum > 12){
-                    roomNum = 3;
-                    roomInput.value = roomNum;
-                } else if (adultNum > 6){
-                    roomNum = 2;
-                    roomInput.value = roomNum;
-                }
-                if(adultNum > (24 - childNum)){
-                    alert('한번에 예약 가능한 최대 인원 수는 24명 입니다.')
-                    adultNum = 24 - childNum;
-                    adultInput.value = adultNum;
-                }
             }
             if (targetLi.classList.contains("room")) {
                 if(roomNum < 4) {
@@ -43,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         v.style.cssText = 'opacity:0.3;'
                     }
-                    if(roomNum >= 1) {
-                        minusBtn[i].style.cssText = 'opacity:0.3;'
+                    if (roomNum !== 1) {
+                        minusBtn[i].style.cssText = 'opacity: 1;'
                     }
-                } 
+                }
                 roomInput.value = roomNum;
             }
             if (targetLi.classList.contains("child")) {
@@ -70,6 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     adultNum--;
                     adultInput.value = adultNum;
+                    if (adultNum < 12){
+                        plusBtn[i].style.cssText = 'opacity:1;'
+                    }
+                    if (adultNum == 2){
+                        v.style.cssText = 'opacity: 0.3;'
+                    }
                 }
             } 
             if (targetLi.classList.contains("room")) {
@@ -77,6 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     roomNum--;
                     if (roomNum !== 4){
                         plusBtn[i].style.cssText = 'opacity:1;'
+                    }
+                    if (roomNum == 1) {
+                        minusBtn[i].style.cssText = 'opacity: 0.3;'
                     }
                 }
                 roomInput.value = roomNum;
