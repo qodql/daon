@@ -229,8 +229,15 @@
         const handleCardNum = (e) => {
             const cardInputValue = document.querySelector(".input_list .card_num").value
             const cardNum = document.querySelector(".card_data .num")
-            console.log(cardInputValue);
+            console.log(cardInputValue.length);
             cardNum.innerText = cardInputValue;
+            if(cardInputValue.length === 12){
+                console.log("12");
+            } else if (cardInputValue.length === 8) {
+                console.log("8");
+            } else if (cardInputValue.length === 4) {
+                console.log("4");
+            }
         }
     </script>
 </body>
