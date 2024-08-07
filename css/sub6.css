@@ -535,29 +535,6 @@
   color: #fff;
 }
 
-@media screen and (max-width: 1400px) {
-  .step1 .sub_container .contents .calendar_wrap .calendar_container {
-    padding: 0 100px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container .title {
-    left: 25.5%;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container .title.right {
-    right: 25.5%;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
-    width: 380px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
-    width: 80px;
-    height: 80px;
-    background-size: 64px;
-    left: 40px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
-    right: 40px;
-  }
-}
 @media (max-width: 1279px) {
   .reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle::after {
     left: 62px;
@@ -570,17 +547,6 @@
   }
   .reservation_common .sub_container .contents .step_wrap .step li .circle span {
     line-height: 44px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container {
-    padding: 0 100px;
-    justify-content: center;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container .right {
-    display: none;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container .title.left {
-    left: 50%;
-    transform: translateX(-50%);
   }
   .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type, .room) {
     margin-left: 64px;
@@ -752,11 +718,8 @@
   }
 }
 @media screen and (max-width: 1024px) {
-  .step1 .sub_container .contents .calendar_wrap {
-    margin-bottom: 40px;
-  }
   .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type, .room) {
-    margin-left: 40px;
+    margin-left: 24px;
   }
   .step1 .sub_container .contents .data_area .date_person li .label {
     margin-bottom: 8px;
@@ -764,42 +727,51 @@
   .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
     font-size: 20px;
   }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap .date {
+    width: 140px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li .input_wrap .date + .sign {
+    font-size: 20px;
+    margin: 0 12px;
+  }
   .step1 .sub_container .contents .data_area .room_list_wrap {
     margin-top: 40px;
     padding-top: 64px;
   }
 }
 @media screen and (max-width: 863px) {
-  .step1 .sub_container .contents .calendar_wrap {
-    padding-bottom: 80px;
+  .step1 .sub_container .contents .data_area .date_person {
+    height: 248px;
+    flex-direction: column;
+    position: relative;
+    margin: 64px 0;
+    padding: 40px 0;
   }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container {
-    padding: 0 60px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
-    width: 360px;
-    height: 360px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
-    width: 64px;
-    height: 64px;
-    background-size: 40px;
-    left: 32px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
-    right: 32px;
-  }
-  .step1 .sub_container .contents .data_area .date_person li:not(:first-of-type, .room) {
-    margin-left: 32px;
-  }
-  .step1 .sub_container .contents .data_area .date_person li .label {
-    margin-bottom: 4px;
+  .step1 .sub_container .contents .data_area .date_person li {
+    margin-left: 0 !important;
   }
   .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
     width: 88px;
   }
   .step1 .sub_container .contents .data_area .date_person li .input_wrap .btn_wrap {
     width: 88px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li.data {
+    width: 100%;
+  }
+  .step1 .sub_container .contents .data_area .date_person li:not(.data) {
+    width: 88px;
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+  }
+  .step1 .sub_container .contents .data_area .date_person li:nth-last-of-type(2) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .step1 .sub_container .contents .data_area .date_person li:nth-last-of-type(1) {
+    left: auto;
+    right: 0;
   }
 }
 @media (max-width: 767px) {
@@ -817,22 +789,6 @@
   }
 }
 @media screen and (max-width: 683px) {
-  .step1 .sub_container .contents .calendar_wrap {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
-    left: 20px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
-    right: 20px;
-  }
-  .step1 .sub_container .contents .data_area .date_person li .label {
-    font-size: 16px;
-  }
-  .step1 .sub_container .contents .data_area .date_person li .input_wrap input {
-    font-size: 16px;
-  }
   .step2 .input_list li {
     width: 100%;
   }
@@ -851,52 +807,6 @@
   }
   .step3 .sub_container .contents .complete .btn_wrap button.reservation {
     margin-left: 8px;
-  }
-}
-@media screen and (max-width: 612px) {
-  .step1 .sub_container .contents .data_area .date_person {
-    flex-direction: column;
-    position: relative;
-    padding-bottom: 80px;
-  }
-  .step1 .sub_container .contents .data_area .date_person li {
-    margin-left: 0 !important;
-  }
-  .step1 .sub_container .contents .data_area .date_person li.data {
-    width: 100%;
-  }
-  .step1 .sub_container .contents .data_area .date_person li:not(.data) {
-    width: 88px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
-  .step1 .sub_container .contents .data_area .date_person li:nth-last-of-type(2) {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .step1 .sub_container .contents .data_area .date_person li:nth-last-of-type(1) {
-    left: auto;
-    right: 0;
-  }
-  .step1 .sub_container .contents .calendar_wrap {
-    padding: 100px 0 40px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container {
-    padding: 0 40px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container #calendar {
-    width: 300px;
-    height: 300px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_container .title {
-    top: 48px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button {
-    left: 8px;
-  }
-  .step1 .sub_container .contents .calendar_wrap .calendar_btn_wrap .nav_button.next {
-    right: 8px;
   }
 }
 @media screen and (max-width: 529px) {

@@ -48,13 +48,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 roomInput.value = roomNum;
             }
             if (targetLi.classList.contains("child")) {
-                childNum++;
-                childInput.value = childNum;
-                if(childNum > (24 - adultNum)){
-                    alert('한번에 예약 가능한 최대 인원 수는 24명 입니다.')
-                    childNum = 24 - adultNum;
-                    childInput.value = childNum;
+                if (childNum < 12){
+                    childNum++;
+                    if(childNum > 12){
+                        childNum = 12;
+                        childInput.value = childNum;
+                    } else if (childNum > 6){
+                        roomNum = 2;
+                        roomInput.value = roomNum;
+                        let roomMinusBtn = document.querySelector(".date_person .room .minus")
+                        roomMinusBtn.style.cssText = "opacity:1;"
+                    }
+                    if (childNum < 12){
+                        v.style.cssText = 'opacity:1;'
+                        minusBtn[i].style.cssText = 'opacity:1;'
+                    } else {
+                        v.style.cssText = 'opacity:0.3;'
+                    }
                 }
+                childInput.value = childNum;
             }
         })
     })
@@ -70,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     adultInput.value = adultNum;
                     if (adultNum < 12){
                         plusBtn[i].style.cssText = 'opacity:1;'
+                        v.style.cssText = 'opacity: 1;'
                     }
                     if (adultNum == 2){
                         v.style.cssText = 'opacity: 0.3;'
@@ -89,11 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 roomInput.value = roomNum;
             }
             if (targetLi.classList.contains("child")) {
-                if(childNum <= 0) {
-                    childInput.value = 0;
+                if(childNum <= 2) {
+                    childInput.value = 2;
                 } else {
                     childNum--;
                     childInput.value = childNum;
+                    if (childNum < 12){
+                        plusBtn[i].style.cssText = 'opacity:1;'
+                        v.style.cssText = 'opacity: 1;'
+                    }
+                    if (childNum == 2){
+                        v.style.cssText = 'opacity: 0.3;'
+                    }
                 }
             }
         })
