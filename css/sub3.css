@@ -106,6 +106,7 @@
 .rooftop .sub_container .rooftop-title .rooftop-bt a.active {
   background-color: #2f2f2f;
   color: white;
+  transition: 1s;
 }
 .rooftop .sub_container .rooftop-title .rooftop-bt a.active::after {
   display: inline-block;

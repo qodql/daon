@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let contents = document.querySelector(".contents");
 
-        let content = 
-        `<div class="sub3_rooftop_contents">
+        let content = `<div class="sub3_rooftop_contents">
           <div class="swiper slide rooftop-img">
             <div class="swiper-wrapper">
               <a class="swiper-slide"><img src="${data.img[0]}" a href="#" /></a>
@@ -59,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>`;
 
         contents.innerHTML = content;
+        const button = document.querySelectorAll(".rooftop-bt a");
+        button[n].classList.add("active");
 
         var swiper = new Swiper(".slide", {
           slidesPerView: 1,
@@ -74,15 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         });
 
-        const button = document.querySelectorAll(".rooftop-bt a");
-
         button.forEach(function (bt, i) {
           bt.onclick = function (e) {
             e.preventDefault();
             datacontents(i);
 
-            button.forEach((btn) => btn.classList.remove("active"));
-            bt.classList.add("active");
           };
         });
       };
