@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     roomInput.value = roomNum;
                 }
                 if (targetLi.classList.contains("child")) {
-                    if(childNum <= 2) {
-                        childInput.value = 2;
+                    if(childNum <= 0) {
+                        childInput.value = 0;
                     } else {
                         childNum--;
                         childInput.value = childNum;
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             plusBtn[i].style.cssText = 'opacity:1;'
                             v.style.cssText = 'opacity: 1;'
                         }
-                        if (childNum == 2){
+                        if (childNum == 0){
                             v.style.cssText = 'opacity: 0.3;'
                         }
                     }
@@ -138,25 +138,19 @@ document.addEventListener("DOMContentLoaded", () => {
     
         // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
         nextBtn.addEventListener("click", ()=>{
-            if (!roomBtnSelected) {
+            if (!roomBtnSelected || roomBtnSelected < roomNum) {
                 alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
-            } else {
+            } else if(roomBtnSelected === roomNum){
                 window.location.href='./sub6_reservation_step2.html'
             }
         })
     }
 
     // *****************[step2]******************* //
-    // [↓] step2 card
+    // [↓] step2 card transform
     const step2 = document.querySelector(".step2")
     const card = document.querySelector(".card")
-    const cardNum = document.querySelector(".card_data .num")
-    const cardName = document.querySelector(".card_data .name")
-    const cardDate = document.querySelector(".card_data .date")
     const cardAllInput = document.querySelectorAll(".input_list li input")
-    const cardNumInput = document.querySelector(".input_list .card_num")
-    const cardNameInput = document.querySelector(".input_list .card_name")
-    const cardDateInput = document.querySelector(".input_list .card_date")
     const cardCvcInput = document.querySelector(".input_list .card_cvc")
 
     if (step2) {

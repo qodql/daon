@@ -393,6 +393,11 @@
                                         opacity: 0;
                                     }
                                     .card_back {
+                                        width: calc(100% + 80px);
+                                        margin-left: -40px;
+                                        position: relative;
+                                        left: 0;
+                                        top: -32px;
                                         opacity: 1;
                                         transform: rotateY(180deg);
                                         &::before {
@@ -410,13 +415,12 @@
                                             height: 32px;
                                             padding: 4px 20px;
                                             position: absolute;
-                                            right: 32px;
+                                            left: 32px;
                                             top: 96px;
                                             text-align: right;
                                             font-weight: 700;
                                             letter-spacing: 0;
                                             color: #2f2f2f;
-                                            transform: rotateY(180deg);
                                             background-color: #efefef;
                                             border-radius: 999px;
                                         }
