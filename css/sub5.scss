@@ -425,6 +425,7 @@
         z-index: 999;
         border: 1px solid #afafaf;
         border-radius: 8px;
+        overflow: hidden;
         
         .popup_top{
           height: 65px;
@@ -432,13 +433,13 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          p{
-            margin-left: 24px;
-            color: #2f2f2f;
-            font-weight: bold;
-            font-size: 24px;
-          }
-          button{width: 64px;}
+            p{
+              margin-left: 24px;
+              color: #2f2f2f;
+              font-weight: bold;
+              font-size: 24px;
+            }
+            button{width: 64px;}
         }
         .popup_main{display: flex;
           div{width: 50%;
@@ -457,7 +458,7 @@
             }
             .popup_img{width: 96px;
               margin-top: 40px;
-              img{width: 100%;}
+                img{width: 100%;}
             }
             .popup_text{
               margin-top: 12px;

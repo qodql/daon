@@ -348,6 +348,7 @@
   z-index: 999;
   border: 1px solid #afafaf;
   border-radius: 8px;
+  overflow: hidden;
 }
 .popup.active .popup_box .popup_top {
   height: 65px;

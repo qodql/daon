@@ -13,14 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
   popup_btn.forEach((v)=>{  
     v.addEventListener('click', function(){
       popup.classList.add("active");
-      body.classList.add("scroll_hidden");//style로 넣지 말고 class 넣어서 제어
+      body.classList.add("scroll_hidden");
       
       popup_close.onclick = function(){
         popup.classList.remove("active");
-        body.classList.remove("scroll_hidden")
+        body.classList.remove("scroll_hidden");
       }
     })
-    
   })
   popup.addEventListener('click', function(e){
     if(e.target == popup){
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.remove("scroll_hidden")
     }
   })
-
 })
 
 
