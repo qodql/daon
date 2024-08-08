@@ -41,10 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const b = a.querySelectorAll(".question");
       const answer = document.querySelectorAll(".answer");
+
       b.forEach((v, i) => {
         v.onclick = function () {
           answer[i].classList.add("active");
         };
+        if(
+            
+        ){}
+        else(){
+
+        }
       });
     });
 });
