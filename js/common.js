@@ -106,6 +106,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
+    // [↓] popup
+    const popupBtn = document.querySelectorAll("[name='pop_btn']"),
+    popup = document.querySelector('.popup'),
+    popupClose = document.querySelector('.popup_close_btn'),
+    body = document.body;
+
+    popupBtn.forEach((v)=>{  
+        v.addEventListener('click', function(){
+            popup.classList.add("active");
+            body.classList.add("scroll_hidden");
+        })
+    })
+    popupClose.onclick = function(){
+        popup.classList.remove("active");
+        body.classList.remove("scroll_hidden");
+    }
+    popup.addEventListener('click', function(e){
+        if(e.target == popup){
+            popup.classList.remove("active");
+            body.classList.remove("scroll_hidden");
+        }
+    })
+
     // [↓] chekcbox
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
