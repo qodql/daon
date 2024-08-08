@@ -3,18 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('./component/common.html')
     .then((data)=>{ return data.text()})
     .then((data)=>{ 
-
-        // chatbot
-        (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
-
-        ChannelIO('boot', {
-            "pluginKey": "dbf51d87-0b32-4469-b099-572fefb331ca"
-        });
-
-        // [↓] header, footer 제어
+        
         const login = document.querySelector(".login_common")
         const footer = document.querySelector(".footer")
         if (!login) {
+            // chatbot
+            (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+            ChannelIO('boot', {
+                "pluginKey": "dbf51d87-0b32-4469-b099-572fefb331ca"
+            });
+            
+            // [↓] header, footer 제어
             let createHeader = document.createElement('header')
             let createFooter = document.createElement('footer')
             createHeader.className = 'header'
