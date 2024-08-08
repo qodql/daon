@@ -275,7 +275,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: bold;
-  width: 100px;
+  width: 110px;
   text-align: center;
 }
 .faq .sub_container .contents .faq_wrap .faq li .question button {
@@ -286,10 +286,15 @@
 .faq .sub_container .contents .faq_wrap .faq li .answer {
   padding: 26px;
   background-color: #f1f1f1;
+  display: none;
 }
 .faq .sub_container .contents .faq_wrap .faq li .answer a {
   color: #357ef1;
   text-decoration: underline;
+}
+.faq .sub_container .contents .faq_wrap .faq li .answer.active {
+  display: block;
+  transition: 0.5ms;
 }
 
 .review .sub_top {
