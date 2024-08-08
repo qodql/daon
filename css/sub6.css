@@ -412,6 +412,7 @@
   bottom: 40px;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card .card_front .card_data p.date {
+  width: -moz-fit-content;
   width: fit-content;
   left: auto;
   right: 40px;
