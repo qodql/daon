@@ -106,8 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // [↓] chekcbox
+    const chkWrap = document.querySelector(".checkbox_wrap")
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
+    const chkBtn = document.querySelector(".checkbox_wrap .toggle_btn")
     chk.forEach((v,i)=>{
         chkAll.addEventListener("click", ()=>{
             if (chkAll.checked) {
@@ -125,6 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 chkAll.checked = false;
             }
         })
+    })
+    chkBtn.addEventListener("click", ()=>{
+        chkWrap.classList.toggle("fold")
     })
 
     // [↓] tab
