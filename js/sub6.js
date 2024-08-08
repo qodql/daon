@@ -157,11 +157,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardFirstNameInput = document.querySelector(".input_list .card_name.first")
     const cardLastNameInput = document.querySelector(".input_list .card_name.last")
     const cardFirstName = document.querySelector(".card_data .name")
-    const cardDateSelect = document.querySelector(".input_list .card_date.month")
-    const cardYear = document.querySelector(".input_list .card_date.year")
-    const cardMonth = document.querySelector(".input_list .card_date.month")
-    const cardDateYear = document.querySelector(".card_data .date.year")
-    const cardDateMonth = document.querySelector(".card_data .date.month")
+    const cardYearInput = document.querySelector(".input_list .card_date.year")
+    const cardMonthInput = document.querySelector(".input_list .card_date.month")
+    const cardYear = document.querySelector(".card_data .date.year")
+    const cardMonth = document.querySelector(".card_data .date.month")
+    const cardCvc = document.querySelector(".card_back .cvc_num")
 
     if (step2) {
         cardAllInput.forEach((v,i)=>{
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 v.addEventListener("focus", ()=>{
                     card.classList.remove("on")
                 })
-                cardDateSelect.addEventListener("click", ()=>{
+                cardMonthInput.addEventListener("click", ()=>{
                     card.classList.remove("on")
                 })
             }
@@ -201,11 +201,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 cardLastName.innerText = e.target.value;
             })
         })
-        cardYear.addEventListener("input", (e)=>{
-            cardDateYear.innerText = e.target.value;
+        cardYearInput.addEventListener("input", (e)=>{
+            cardYear.innerText = e.target.value;
         })
-        cardMonth.addEventListener("input", (e)=>{
-            cardDateMonth.innerText = e.target.value;
+        cardMonthInput.addEventListener("input", (e)=>{
+            cardMonth.innerText = e.target.value;
+        })
+        cardCvcInput.addEventListener("input", (e)=>{
+            cardCvc.innerText = e.target.value;
         })
     }
 })
