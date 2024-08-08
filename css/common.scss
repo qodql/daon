@@ -567,6 +567,9 @@ body {
         border-radius: 8px;
         background-color: #fff;
       }
+      span {
+        color: #FF0F0F;
+      }
     }
     &:checked {
       & + label {

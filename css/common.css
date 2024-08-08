@@ -497,6 +497,9 @@ body.prevent_scroll {
   border-radius: 8px;
   background-color: #fff;
 }
+.checkbox_wrap .checkbox + label span {
+  color: #FF0F0F;
+}
 .checkbox_wrap .checkbox:checked + label {
   color: #2f2f2f;
 }
@@ -778,6 +781,7 @@ body.prevent_scroll {
   background: #fff url("../img/icon/icon_sns_instagram.svg") no-repeat center;
 }
 .footer.main {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .footer.main .dim {
