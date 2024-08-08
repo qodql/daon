@@ -307,6 +307,7 @@
               color: #ffb140;
             }
 
+           
             .question {
               display: flex;
               justify-content: space-between;
@@ -330,7 +331,7 @@
                 padding: 8px 24px;
                 border-radius: 50px;
                 font-weight: bold;
-                width: 100px;
+                width: 110px;
                 text-align: center;
               }
 
@@ -344,9 +345,16 @@
             .answer {
               padding: 26px;
               background-color: #f1f1f1;
+              display: none;
+              // height: 0px;
               a {
                 color: #357ef1;
                 text-decoration: underline;
+              }
+              &.active {
+                // height: 100%;
+                display: block;
+                transition: 0.5ms;
               }
             }
           }

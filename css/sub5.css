@@ -271,7 +271,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: bold;
-  width: 100px;
+  width: 110px;
   text-align: center;
 }
 .faq .sub_container .contents .faq_wrap .faq li .question button {
@@ -282,10 +282,15 @@
 .faq .sub_container .contents .faq_wrap .faq li .answer {
   padding: 26px;
   background-color: #f1f1f1;
+  display: none;
 }
 .faq .sub_container .contents .faq_wrap .faq li .answer a {
   color: #357ef1;
   text-decoration: underline;
+}
+.faq .sub_container .contents .faq_wrap .faq li .answer.active {
+  display: block;
+  transition: 0.5ms;
 }
 
 .review .sub_top {
@@ -789,8 +794,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -829,8 +833,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -868,8 +871,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 1499px) {
@@ -900,8 +902,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -940,8 +941,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -979,7 +979,6 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }

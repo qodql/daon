@@ -765,7 +765,6 @@ body.prevent_scroll {
   background: #fff url("../img/icon/icon_sns_instagram.svg") no-repeat center;
 }
 .footer.main {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .footer.main .dim {
