@@ -311,6 +311,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 .review .sub_container .contents .images ul li a img {
   width: 100%;
@@ -332,6 +333,9 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
+}
+.popup.unactive {
+  display: none !important;
 }
 .popup.active {
   display: block;
@@ -378,8 +382,7 @@
   width: 148px;
   background-color: rgba(154, 190, 248, 0.22);
   font-size: 24px;
-  padding-top: 7px;
-  padding-left: 3px;
+  padding: 7px 3px;
 }
 .popup.active .popup_bg .popup_main .popup_review .popup_img {
   width: 96px;
@@ -789,8 +792,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -829,8 +831,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -868,8 +869,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 1499px) {
@@ -900,8 +900,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -940,8 +939,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -979,7 +977,6 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
