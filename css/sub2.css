@@ -75,6 +75,7 @@
 .sub .contents .main_box button:hover {
   background-color: #357EF1;
   color: white;
+  border: #357ef1;
 }
 .sub .contents .main_box .contour3 {
   width: 1400px;
