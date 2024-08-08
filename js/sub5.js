@@ -5,26 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
     return res.json();
   })
   .then(function(data){
-    const pageReverse = data.community_notice.reverse();
     //notice page
+    const pageReverse = data.community_notice.reverse();
     let page = [];
-    for(let i=0; i < pageReverse.length; i+=5){
-      page.push(pageReverse.slice(i,i+5));
+    for(let i=0; i<pageReverse.length; i+=5){
+      page.push(pageReverse.slice(i, i+5));
     }
 
     let noticePaging = ()=>{
-      const pageUl = document.querySelector('.pagination');
+      const pageUl = document.querySelector('.pagination .page');
       const createLi = document.createElement('li');
 
       page.forEach((v,i)=>{
-        createLi.innerHTML += `<button>${i+1}</button>`
+        createLi.innerHTML += `<button>${i+1}</button>`;
       })
       pageUl.append(createLi);
 
-      const pageBtn = document.querySelectorAll('button');
-      pageBtn.forEach((btn,pageNum)=>{
+      const pageBtn = document.querySelectorAll('.pagination button');
+      pageBtn.forEach((btn, pageNum)=>{
         btn.onclick = ()=>{
-          notice_data(pageNum);
+          noticeData(pageNum);
         }
       })
     }
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //notice data insert
     const noticeTable = document.querySelector('.notice-1 tbody');
     
-    let notice_data = (n) =>{
+    let noticeData = (n) =>{
       noticeTable.innerHTML = '';
 
       page[n].forEach((v,i)=>{
@@ -43,14 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <td>${v.board_date}</td>`;
       })
     }
-    notice_data(0);
+
+    noticeData(0);
     noticePaging();
-
-
-
-
-
-
   })
 
 
