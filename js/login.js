@@ -1,4 +1,4 @@
-/* common에 추가
+/* 
 const elHead = document.querySelector('body')
 const createScript = document.createElement('script');
 createScript.src = './js/login.js';
