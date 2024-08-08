@@ -1,36 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // [↓] swiper
-  var swiper = new Swiper(".room_list", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    centeredSlides: true,
-    loop: true,
-    autoplay: false,
-    navigation: {
-        nextEl: ".swiper-button-next.room_img_next",
-        prevEl: ".swiper-button-prev.room_img_prev",
-    },
-  });
+
 
   // database
   fetch("../data/sub2.json")
   .then((res)=> {return res.json()})
   .then((data)=>{
-    const abc = document.querySelector('.room_content');
+    const room_content = document.querySelector('.room_content');
     let dataLove = data.LOVE;
+    let a = "";
 
     dataLove.forEach((value,i)=>{
+        a = '';
      value.photo.forEach((v,i)=>{
-      a = `<img src="${v}" alt="love you 101호"></div>`;
-      console.log(a);
-      a += 1
+      a += `<div class="swiper-slide"><img src="${v}" alt="love you 101호"></div>`;
     });
-console.log(a)
-      abc.innerHTML += `<li class="main_box2">
+      room_content.innerHTML += `<li class="main_box2">
                             <div class="swiper room_list">
                                 <div class="swiper-wrapper">
-                                   <div class="swiper-slide">
                                   ${a}
                                 </div>
                                 <div class="swiper_btn_wrap">
@@ -62,6 +50,19 @@ console.log(a)
                             </ul>
                         </li>`
     })
+
+    var swiper = new Swiper(".room_list", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        centeredSlides: true,
+        loop: true,
+        autoplay: false,
+        navigation: {
+            nextEl: ".swiper-button-next.room_img_next",
+            prevEl: ".swiper-button-prev.room_img_prev",
+        },
+      });
+
     
   })
 })
