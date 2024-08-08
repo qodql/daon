@@ -147,11 +147,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // *****************[step2]******************* //
-    // [↓] step2 card transform
+    // [↓] step2 card input
     const step2 = document.querySelector(".step2")
     const card = document.querySelector(".card")
     const cardAllInput = document.querySelectorAll(".input_list li input")
     const cardCvcInput = document.querySelector(".input_list .card_cvc")
+    const cardNumInput = document.querySelector(".input_list .card_num")
+    const cardNum = document.querySelector(".card_data .num")
+    const cardFirstNameInput = document.querySelector(".input_list .card_name.first")
+    const cardLastNameInput = document.querySelector(".input_list .card_name.last")
+    const cardFirstName = document.querySelector(".card_data .name")
+    const cardDateSelect = document.querySelector(".input_list .card_date.month")
+    const cardYear = document.querySelector(".input_list .card_date.year")
+    const cardMonth = document.querySelector(".input_list .card_date.month")
+    const cardDateYear = document.querySelector(".card_data .date.year")
+    const cardDateMonth = document.querySelector(".card_data .date.month")
 
     if (step2) {
         cardAllInput.forEach((v,i)=>{
@@ -162,8 +172,40 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 v.addEventListener("focus", ()=>{
                     card.classList.remove("on")
-                }) 
+                })
+                cardDateSelect.addEventListener("click", ()=>{
+                    card.classList.remove("on")
+                })
             }
+        })
+        cardNumInput.addEventListener("input",(e)=>{
+            let input = e.target;
+            let value = input.value.replace(/ /g, '');
+            let formattedValue = '';
+
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formattedValue += ' ';
+                }
+                formattedValue += value[i];
+            }
+        
+            input.value = formattedValue;
+
+            cardNum.innerText = input.value;
+        })
+        cardFirstNameInput.addEventListener("input", (e)=>{
+            cardFirstName.innerHTML = e.target.value;
+            const cardLastName = document.querySelector(".card_data .name.last")
+            cardLastNameInput.addEventListener("input", (e)=>{
+                cardLastName.innerText = e.target.value;
+            })
+        })
+        cardYear.addEventListener("input", (e)=>{
+            cardDateYear.innerText = e.target.value;
+        })
+        cardMonth.addEventListener("input", (e)=>{
+            cardDateMonth.innerText = e.target.value;
         })
     }
 })

@@ -96,8 +96,15 @@
                                             <p>CREDIT CARD</p>
                                             <div class="card_data">
                                                 <p class="num">**** **** **** ****</p>
-                                                <p class="name">LEE HAN JOO</p>
-                                                <p class="date">10/25</p>
+                                                <div class="name_wrap">
+                                                    <p class="name first">LEE</p>
+                                                    <p class="name last">HANJOO</p>
+                                                </div>
+                                                <div class="date_wrap">
+                                                    <p class="date month">10</p>
+                                                    <span>/</span>
+                                                    <p class="date year">25</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="card_back">
@@ -108,20 +115,40 @@
                                 <ul class="input_list">
                                     <li>
                                         <p class="label">신용카드 번호</p>
-                                        <input type="text" class="card_num" placeholder="신용카드 번호를 입력해주세요." oninput="handleCardNum()" maxlength="16"/>
+                                        <input type="text" class="card_num" placeholder="신용카드 번호 16자리를 입력해주세요." maxlength="19"/>
                                     </li>
                                     <li>
                                         <p class="label">소유자 명</p>
-                                        <input type="text" class="card_name" placeholder="소유자 명을 입력해주세요."/>
+                                        <div class="input_wrap">
+                                            <input type="text" class="card_name first" placeholder="성" maxlength="8"/>
+                                            <input type="text" class="card_name last" placeholder="이름" maxlength="12"/>
+                                        </div>
                                     </li>
                                     <li class="half">
                                         <div>
                                             <p class="label">만료기한</p>
-                                            <input type="text" class="card_date" placeholder="만료기한을 입력해주세요."/>
+                                            <div class="input_wrap">
+                                                <select name="card_date_month" class="card_date month">
+                                                    <option class="default" selected>월</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                                <input type="text" class="card_date year" placeholder="년" maxlength="2"/>
+                                            </div>
                                         </div>
                                         <div>
                                             <p class="label">보안번호(CVC)</p>
-                                            <input type="text" class="card_cvc" placeholder="보안번호를 입력해주세요." maxlength="3"/>
+                                            <input type="text" class="card_cvc" placeholder="보안번호" maxlength="3"/>
                                         </div>
                                     </li>
                                 </ul>
@@ -225,20 +252,5 @@
             </div>
         </div>
     </div>
-    <script>
-        const handleCardNum = (e) => {
-            const cardInputValue = document.querySelector(".input_list .card_num").value
-            const cardNum = document.querySelector(".card_data .num")
-            console.log(cardInputValue.length);
-            cardNum.innerText = cardInputValue;
-            if(cardInputValue.length === 12){
-                console.log("12");
-            } else if (cardInputValue.length === 8) {
-                console.log("8");
-            } else if (cardInputValue.length === 4) {
-                console.log("4");
-            }
-        }
-    </script>
 </body>
 </html>

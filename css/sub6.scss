@@ -352,6 +352,42 @@
                                     padding: 16px 20px;
                                     border: 1px solid #afafaf;
                                     border-radius: 8px;
+                                    &.card_name {
+                                        text-transform: uppercase;
+                                    }
+                                }
+                                select {
+                                    width: 100%;
+                                    padding: 16px 20px;
+                                    border: 1px solid #afafaf;
+                                    border-radius: 8px;
+                                    background: url("../img/icon/icon_arrow_down.svg") no-repeat right 16px center / 20px;
+                                }
+                                .input_wrap {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    .first, .month  {
+                                        width: calc(40% - 4px);
+                                    }
+                                    .last, .year {
+                                        width: calc(60% - 4px);
+                                    }
+                                }
+                            }
+                        }
+                        .card_wrap {
+                            .input_list {
+                                li {
+                                    &.half {
+                                        justify-content: flex-start;
+                                        > div {
+                                            &:last-of-type {
+                                                width: 20%;
+                                                margin-left: 20px;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -390,6 +426,7 @@
                                     top: 0;
                                     &.card_front {
                                         opacity: 1;
+                                        z-index: 2;
                                         transition: all 0s ease 0.2s;
                                         > p {
                                             font-size: 20px;
@@ -411,6 +448,24 @@
                                                 left: 40px;
                                                 top: 64px;
                                             }
+                                            .name_wrap {
+                                                width: calc(100% - 52px);
+                                                display: flex;
+                                                align-items: center;
+                                                margin-top: 16px;
+                                            }
+                                            .date_wrap {
+                                                width: 52px;
+                                                display: flex;
+                                                align-items: center;
+                                                position: absolute;
+                                                right: 40px;
+                                                bottom: 40px;
+                                                span {
+                                                    margin: 0 4px 0 2px;
+                                                    color: #fff;
+                                                }
+                                            }
                                             p {
                                                 color: #fff;
                                                 letter-spacing: 0;
@@ -419,11 +474,11 @@
                                                     font-size: 20px;
                                                     font-weight: 700;
                                                 }
-                                                &.name, &.date {
-                                                    display: inline-block;
-                                                    position: absolute;
-                                                    left: 40px;
-                                                    bottom: 40px;
+                                                &.name {
+                                                    text-transform: uppercase;
+                                                    &.last {
+                                                        margin-left: 4px;
+                                                    }
                                                 }
                                                 &.date {
                                                     width: fit-content;
@@ -437,6 +492,7 @@
                                         opacity: 0;
                                         position: relative;
                                         transform: rotateY(180deg);
+                                        z-index: 1;
                                         transition: all 0s ease 0.2s;
                                         &::before {
                                             content: '';
@@ -469,9 +525,11 @@
                                     > div {
                                         &.card_front {
                                             opacity: 0;
+                                            z-index: 1;
                                         }
                                         &.card_back {
                                             opacity: 1;
+                                            z-index: 2;
                                         }
                                     }
                                 }

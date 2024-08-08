@@ -304,6 +304,34 @@
   border: 1px solid #afafaf;
   border-radius: 8px;
 }
+.step2 .sub_container .contents .info_wrap .left .user_info .input_list li input.card_name {
+  text-transform: uppercase;
+}
+.step2 .sub_container .contents .info_wrap .left .user_info .input_list li select {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  background: url("../img/icon/icon_arrow_down.svg") no-repeat right 16px center/20px;
+}
+.step2 .sub_container .contents .info_wrap .left .user_info .input_list li .input_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.step2 .sub_container .contents .info_wrap .left .user_info .input_list li .input_wrap .first, .step2 .sub_container .contents .info_wrap .left .user_info .input_list li .input_wrap .month {
+  width: calc(40% - 4px);
+}
+.step2 .sub_container .contents .info_wrap .left .user_info .input_list li .input_wrap .last, .step2 .sub_container .contents .info_wrap .left .user_info .input_list li .input_wrap .year {
+  width: calc(60% - 4px);
+}
+.step2 .sub_container .contents .info_wrap .left .user_info .card_wrap .input_list li.half {
+  justify-content: flex-start;
+}
+.step2 .sub_container .contents .info_wrap .left .user_info .card_wrap .input_list li.half > div:last-of-type {
+  width: 20%;
+  margin-left: 20px;
+}
 .step2 .sub_container .contents .info_wrap .left .card_wrap {
   width: 100%;
   margin-top: 40px;
@@ -342,6 +370,7 @@
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front {
   opacity: 1;
+  z-index: 2;
   transition: all 0s ease 0.2s;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front > p {
@@ -363,6 +392,24 @@
   left: 40px;
   top: 64px;
 }
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data .name_wrap {
+  width: calc(100% - 52px);
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data .date_wrap {
+  width: 52px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data .date_wrap span {
+  margin: 0 4px 0 2px;
+  color: #fff;
+}
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data p {
   color: #fff;
   letter-spacing: 0;
@@ -372,11 +419,11 @@
   font-size: 20px;
   font-weight: 700;
 }
-.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data p.name, .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data p.date {
-  display: inline-block;
-  position: absolute;
-  left: 40px;
-  bottom: 40px;
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data p.name {
+  text-transform: uppercase;
+}
+.step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data p.name.last {
+  margin-left: 4px;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data p.date {
   width: -moz-fit-content;
@@ -388,6 +435,7 @@
   opacity: 0;
   position: relative;
   transform: rotateY(180deg);
+  z-index: 1;
   transition: all 0s ease 0.2s;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_back::before {
@@ -419,9 +467,11 @@
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on > div.card_front {
   opacity: 0;
+  z-index: 1;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card.on > div.card_back {
   opacity: 1;
+  z-index: 2;
 }
 .step2 .sub_container .contents .info_wrap .right {
   width: calc(36% - 20px);
@@ -844,18 +894,20 @@
   }
 }
 @media screen and (max-width: 683px) {
-  .step2 .input_list li {
+  .step2 .sub_container .contents .info_wrap .left .user_info .input_list li {
     width: 100%;
   }
-  .step2 .input_list li.half {
+  .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.half {
     flex-direction: column;
     align-items: flex-start;
   }
-  .step2 .input_list li.half > div {
+  .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.half > div {
     width: 100%;
   }
-  .step2 .input_list li.half > div:last-of-type {
+  .step2 .sub_container .contents .info_wrap .left .user_info .input_list li.half > div:last-of-type {
+    width: 100% !important;
     margin-top: 24px;
+    margin-left: 0 !important;
   }
   .step3 .sub_container .contents .complete .btn_wrap button {
     width: calc(50% - 8px);

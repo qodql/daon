@@ -141,4 +141,22 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
     
+    // [↓] select
+    const select = document.querySelectorAll("select")
+    const option = document.querySelectorAll("select option")
+    const main = document.querySelector(".main")
+    select.forEach((v,i)=>{
+        const defaultOption = document.querySelector("select option.default")
+        for(let i=0;i<option.length;i++){
+            if(option[i].classList.contains('default')){
+                defaultOption.style.cssText = 'display:none;'
+                v.style.cssText = 'color:#afafaf;'
+            }
+        }
+        if(!main){
+            v.addEventListener("input", ()=>{
+                v.style.cssText = 'color:#2f2f2f;'
+            })
+        }
+    })
 })
