@@ -366,40 +366,78 @@
                             height: 368px;
                             margin-bottom: 40px;
                             background-color: #efefef;
-                            display: flex;
+                            display: inline-grid;
                             align-items: center;
                             justify-content: center;
                             border-radius: 20px;
                             .card {
-                                display: inline-grid;
                                 width: 400px;
                                 height: 240px;
-                                padding: 40px;
-                                background-color: #2f2f2f;
-                                border-radius: 16px;
-                                border: 4px solid #D6B46C;
-                                box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
                                 position: relative;
                                 transform: perspective(800px) rotateY(0deg);
                                 transform-style: preserve-3d;
                                 transition: transform 0.6s;
-                                &.on {
-                                    transform: perspective(800px) rotateY(180deg);
-                                    > div {
-                                        grid-area: 1 / 1 / 1 / 1;
-                                        backface-visibility: hidden;
-                                    }
-                                    .card_front {
-                                        opacity: 0;
-                                    }
-                                    .card_back {
-                                        width: calc(100% + 80px);
-                                        margin-left: -40px;
-                                        position: relative;
-                                        left: 0;
-                                        top: -32px;
+                                > div {
+                                    width: 100%;
+                                    height: 100%;
+                                    padding: 40px;
+                                    background-color: #2f2f2f;
+                                    border-radius: 16px;
+                                    border: 4px solid #D6B46C;
+                                    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    &.card_front {
                                         opacity: 1;
+                                        transition: all 0s ease 0.2s;
+                                        > p {
+                                            font-size: 20px;
+                                            color: #fff;
+                                            font-weight: 700;
+                                            letter-spacing: 0;
+                                            position: absolute;
+                                            right: 40px;
+                                            top: 40px;
+                                        }
+                                        .card_data {
+                                            &::before {
+                                                content: '';
+                                                display: block;
+                                                width: 54px;
+                                                height: 40px;
+                                                background: url("../img/icon/icon_sim.svg") no-repeat center;
+                                                position: absolute;
+                                                left: 40px;
+                                                top: 64px;
+                                            }
+                                            p {
+                                                color: #fff;
+                                                letter-spacing: 0;
+                                                &.num {
+                                                    margin-top: 84px;
+                                                    font-size: 20px;
+                                                    font-weight: 700;
+                                                }
+                                                &.name, &.date {
+                                                    display: inline-block;
+                                                    position: absolute;
+                                                    left: 40px;
+                                                    bottom: 40px;
+                                                }
+                                                &.date {
+                                                    width: fit-content;
+                                                    left: auto;
+                                                    right: 40px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.card_back {
+                                        opacity: 0;
+                                        position: relative;
                                         transform: rotateY(180deg);
+                                        transition: all 0s ease 0.2s;
                                         &::before {
                                             content: '';
                                             display: block;
@@ -426,54 +464,16 @@
                                         }
                                     }
                                 }
-                                .card_front {
-                                    opacity: 1;
-                                    transition: all 0s ease 0.2s;
-                                    > p {
-                                        font-size: 20px;
-                                        color: #fff;
-                                        font-weight: 700;
-                                        letter-spacing: 0;
-                                        position: absolute;
-                                        right: 40px;
-                                        top: 40px;
-                                    }
-                                    .card_data {
-                                        &::before {
-                                            content: '';
-                                            display: block;
-                                            width: 54px;
-                                            height: 40px;
-                                            background: url("../img/icon/icon_sim.svg") no-repeat center;
-                                            position: absolute;
-                                            left: 40px;
-                                            top: 64px;
+                                &.on {
+                                    transform: perspective(800px) rotateY(180deg);
+                                    > div {
+                                        &.card_front {
+                                            opacity: 0;
                                         }
-                                        p {
-                                            color: #fff;
-                                            letter-spacing: 0;
-                                            &.num {
-                                                margin-top: 84px;
-                                                font-size: 20px;
-                                                font-weight: 700;
-                                            }
-                                            &.name, &.date {
-                                                display: inline-block;
-                                                position: absolute;
-                                                left: 40px;
-                                                bottom: 40px;
-                                            }
-                                            &.date {
-                                                width: fit-content;
-                                                left: auto;
-                                                right: 40px;
-                                            }
+                                        &.card_back {
+                                            opacity: 1;
                                         }
                                     }
-                                }
-                                .card_back {
-                                    opacity: 0;
-                                    transition: all 0s ease 0.2s;
                                 }
                             }
                         }
