@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     roomInput.value = roomNum;
                 }
                 if (targetLi.classList.contains("child")) {
-                    if(childNum <= 2) {
-                        childInput.value = 2;
+                    if(childNum <= 0) {
+                        childInput.value = 0;
                     } else {
                         childNum--;
                         childInput.value = childNum;
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             plusBtn[i].style.cssText = 'opacity:1;'
                             v.style.cssText = 'opacity: 1;'
                         }
-                        if (childNum == 2){
+                        if (childNum == 0){
                             v.style.cssText = 'opacity: 0.3;'
                         }
                     }
@@ -138,26 +138,30 @@ document.addEventListener("DOMContentLoaded", () => {
     
         // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
         nextBtn.addEventListener("click", ()=>{
-            if (!roomBtnSelected) {
+            if (!roomBtnSelected || roomBtnSelected < roomNum) {
                 alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
-            } else {
+            } else if(roomBtnSelected === roomNum){
                 window.location.href='./sub6_reservation_step2.html'
             }
         })
     }
 
     // *****************[step2]******************* //
-    // [↓] step2 card
+    // [↓] step2 card input
     const step2 = document.querySelector(".step2")
     const card = document.querySelector(".card")
-    const cardNum = document.querySelector(".card_data .num")
-    const cardName = document.querySelector(".card_data .name")
-    const cardDate = document.querySelector(".card_data .date")
     const cardAllInput = document.querySelectorAll(".input_list li input")
-    const cardNumInput = document.querySelector(".input_list .card_num")
-    const cardNameInput = document.querySelector(".input_list .card_name")
-    const cardDateInput = document.querySelector(".input_list .card_date")
     const cardCvcInput = document.querySelector(".input_list .card_cvc")
+    const cardNumInput = document.querySelector(".input_list .card_num")
+    const cardNum = document.querySelector(".card_data .num")
+    const cardFirstNameInput = document.querySelector(".input_list .card_name.first")
+    const cardLastNameInput = document.querySelector(".input_list .card_name.last")
+    const cardFirstName = document.querySelector(".card_data .name")
+    const cardYearInput = document.querySelector(".input_list .card_date.year")
+    const cardMonthInput = document.querySelector(".input_list .card_date.month")
+    const cardYear = document.querySelector(".card_data .date.year")
+    const cardMonth = document.querySelector(".card_data .date.month")
+    const cardCvc = document.querySelector(".card_back .cvc_num")
 
     if (step2) {
         cardAllInput.forEach((v,i)=>{
@@ -168,8 +172,43 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 v.addEventListener("focus", ()=>{
                     card.classList.remove("on")
-                }) 
+                })
+                cardMonthInput.addEventListener("click", ()=>{
+                    card.classList.remove("on")
+                })
             }
+        })
+        cardNumInput.addEventListener("input",(e)=>{
+            let input = e.target;
+            let value = input.value.replace(/ /g, '');
+            let formattedValue = '';
+
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formattedValue += ' ';
+                }
+                formattedValue += value[i];
+            }
+        
+            input.value = formattedValue;
+
+            cardNum.innerText = input.value;
+        })
+        cardFirstNameInput.addEventListener("input", (e)=>{
+            cardFirstName.innerHTML = e.target.value;
+            const cardLastName = document.querySelector(".card_data .name.last")
+            cardLastNameInput.addEventListener("input", (e)=>{
+                cardLastName.innerText = e.target.value;
+            })
+        })
+        cardYearInput.addEventListener("input", (e)=>{
+            cardYear.innerText = e.target.value;
+        })
+        cardMonthInput.addEventListener("input", (e)=>{
+            cardMonth.innerText = e.target.value;
+        })
+        cardCvcInput.addEventListener("input", (e)=>{
+            cardCvc.innerText = e.target.value;
         })
     }
 })

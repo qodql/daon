@@ -443,15 +443,21 @@ body.prevent_scroll {
 
 .checkbox_wrap {
   width: 500px;
-  padding: 16px 24px 24px;
+  max-height: 100%;
   border: 1px solid #efefef;
   border-radius: 20px;
+  transition: all 0.4s ease;
   overflow: hidden;
 }
+.checkbox_wrap.fold {
+  max-height: 58px;
+}
+.checkbox_wrap.fold .all .toggle_btn {
+  transform: rotate(90deg);
+}
 .checkbox_wrap .all {
-  width: calc(100% + 48px);
+  width: 100%;
   padding: 16px 24px;
-  margin: -16px 0 24px -24px;
   background-color: #efefef;
   position: relative;
 }
@@ -463,7 +469,8 @@ body.prevent_scroll {
   position: absolute;
   right: 24px;
   top: 16px;
-  transform: rotate(90deg);
+  transition: all 0.3s;
+  transform: rotate(-90deg);
   cursor: pointer;
 }
 .checkbox_wrap .checkbox:not(:first-of-type) + label {
@@ -473,6 +480,8 @@ body.prevent_scroll {
   color: #2f2f2f;
 }
 .checkbox_wrap .checkbox + label {
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   align-items: center;
   font-weight: 500;
@@ -494,6 +503,9 @@ body.prevent_scroll {
 .checkbox_wrap .checkbox:checked + label i {
   border: 2px solid #2f2f2f;
   background: #fff url("../img/icon/icon_check_single.svg") no-repeat center;
+}
+.checkbox_wrap .checkbox_cont {
+  padding: 16px 24px 24px;
 }
 
 .alert {

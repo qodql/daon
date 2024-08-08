@@ -749,8 +749,11 @@
   .main .container .section.review .inner {
     padding-bottom: 240px;
   }
-  .main .container .section.review .inner .contents ul li a > img {
+  .main .container .section.review .inner .contents ul li a {
     width: 300px;
+  }
+  .main .container .section.review .inner .contents ul li a > img {
+    width: 100%;
     height: 300px;
   }
 }
