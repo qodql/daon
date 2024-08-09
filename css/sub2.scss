@@ -38,9 +38,8 @@
   }
 
   .on {
-    .room_active {
-      color: #2f2f2f;
-      font-weight: 700;
+    >a{
+      font-weight: inherit;
     }
   }
 

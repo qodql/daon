@@ -11,9 +11,8 @@
 .sub .sub_top {
   background: url("../img/img_sub2_room_header.jpg") no-repeat center/cover;
 }
-.sub .on .room_active {
-  color: #2f2f2f;
-  font-weight: 700;
+.sub .on > a {
+  font-weight: inherit;
 }
 .sub .contents {
   width: 100%;

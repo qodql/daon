@@ -3,20 +3,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
   .then((res)=> {return res.json()})
   .then((data)=> {
     // sub5_event.html script
-    const abc = window.location.href;
+    const event = document.querySelector(".event")
     const event_box = document.querySelector('.align_box');
     const data_event = data.event_page;
-    if(abc.includes('sub5_community_event.html')){    
+    if(event){    
     data_event.forEach((v,i)=>{
 
       if(i <5){
       event_box.innerHTML += `<li> <a href="${v.event_link}">
                             <div class="img_box">
-                                <img src="${v.event_img}.jpg" alt="이벤트 사진 1번">
+                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번">
                             </div>
                             <div class="event_text_box">
-                                <p>${v.event_text}</p>
-                                <span>${v.event_period}
+                                <p>${v.event_title}</p>
+                                <span>기간 : ${v.event_startday} ~ ${v.event_lastday}
                                 </span>
                             </div>
                         </a>
@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         event_box.innerHTML += `<li>
                             <a href="#">
                             <div class="img_box">
-                                <img src="${v.event_img}.jpg" alt="이벤트 사진 ${v.id}번">
+                                <img src="${v.event_thm}.jpg" alt="이벤트 사진 ${v.id}번">
                                 <div class="end_event">
-                                    <p class="end_event_text">${v.event_end}</p>
+                                    <p class="end_event_text">${v.event_lastday}</p>
                                 </div>
                             </div>
                             <div class="event_text_box">
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const event_innerbox = document.querySelector('.sub5_event_inner_content');
     const event_innerdata = data.event_inner;
     event_innerbox.innerHTML = `<div class="sub5_img_box">
-                            <img src="${event_innerdata.event_inner_img}.jpg" alt="">
+                            <img src="./img/img_sub5_2_event_inner_0${v.id}.jpg" alt="">
                         </div>
                         <div class="sub5_text_box">
                             <p>
