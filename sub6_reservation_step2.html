@@ -39,7 +39,13 @@
                 <div class="step_wrap">
                     <ul class="step">
                         <li class="complete">
-                            <a href="./sub6_reservation_step1.html" class="circle">
+                            <a href="javascript:;" class="circle" 
+                                onclick="
+                                    if(confirm('입력한 정보가 사라집니다. 페이지를 이동하시겠습니까?')){
+                                        window.location.href='./sub6_reservation_step1.html';
+                                    }
+                                "
+                            >
                                 <span>1</span>
                             </a>
                             <p>객실 선택</p>
@@ -97,13 +103,13 @@
                                             <div class="card_data">
                                                 <p class="num">**** **** **** ****</p>
                                                 <div class="name_wrap">
-                                                    <p class="name first">LEE</p>
-                                                    <p class="name last">HANJOO</p>
+                                                    <p class="name first">first</p>
+                                                    <p class="name last">lastname</p>
                                                 </div>
                                                 <div class="date_wrap">
-                                                    <p class="date month">10</p>
+                                                    <p class="date month">00</p>
                                                     <span>/</span>
-                                                    <p class="date year">25</p>
+                                                    <p class="date year">00</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -901,6 +901,18 @@
   .quick_menu ul li .select_wrap select {
     font-size: 20px;
   }
+  .main .container .section.contact .contents .box_wrap {
+    flex-direction: column;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap {
+    margin-top: 48px;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li span {
+    position: static;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li:last-of-type {
+    margin-top: 16px !important;
+  }
 }
 @media screen and (max-width: 858px) {
   .quick_menu {
@@ -965,18 +977,6 @@
   .main .container .section.event .inner .contents {
     padding-left: 16px;
   }
-  .main .container .section.contact .contents .box_wrap {
-    flex-direction: column;
-  }
-  .main .container .section.contact .contents .box_wrap .pick_wrap {
-    margin-top: 48px;
-  }
-  .main .container .section.contact .contents .box_wrap .pick_wrap ul li span {
-    position: static;
-  }
-  .main .container .section.contact .contents .box_wrap .pick_wrap ul li:last-of-type {
-    margin-top: 16px !important;
-  }
   .main .container .swiper .swiper_btn_wrap {
     right: 16px;
     bottom: 48px;
@@ -1002,5 +1002,16 @@
   .main .container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     width: 32px;
     height: 12px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .container .section.contact .contents .box_wrap {
+    flex-direction: column;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li span {
+    position: absolute;
+  }
+  .main .container .section.contact .contents .box_wrap .pick_wrap ul li:last-child {
+    margin-top: 32px !important;
   }
 }

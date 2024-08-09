@@ -341,7 +341,8 @@
     height: 200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    object-position: 0px -200px;
+    -o-object-position: 0px -200px;
+       object-position: 0px -200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 200px;
@@ -350,7 +351,8 @@
     height: 325px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px -26px;
+    -o-object-position: 0px -26px;
+       object-position: 0px -26px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 717px;
@@ -464,7 +466,8 @@
     height: 180px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    object-position: 0px -125px;
+    -o-object-position: 0px -125px;
+       object-position: 0px -125px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 180px;
@@ -473,7 +476,8 @@
     height: 310px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px 0px;
+    -o-object-position: 0px 0px;
+       object-position: 0px 0px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 630px;
@@ -541,7 +545,8 @@
     height: 170px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    object-position: 0px -90px;
+    -o-object-position: 0px -90px;
+       object-position: 0px -90px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 170px;
