@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         data.text.forEach((text) => {
-          info += `<div class="rooftop-s1">
+          info += `<div class="facilities_s1">
                         <dt>${text.subtext1}</dt>
                         <dd>${text.subtext1inner}</dd>
                     </div>`;
@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let contents = document.querySelector(".contents");
 
-        let content = `<div class="sub3_rooftop_contents">
-          <div class="swiper slide rooftop-img">
+        let content = `<div class="sub3_contents">
+          <div class="swiper slide facilities_img">
             <div class="swiper-wrapper">
               <a class="swiper-slide"><img src="${data.img[0]}" a href="#" /></a>
               <a class="swiper-slide"><img src="${data.img[1]}" a href="#" /></a>
@@ -40,25 +40,25 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="swiper-pagination"> </div>
             </div>
-            <div class="rooftop-title">
-                    <div class="rooftop-t">
+            <div class="facilities_title">
+                    <div class="facilities_t">
                         <p>${data.title[0]}</p>
                         <p>${data.title[1]}</p>
                         <p>${data.title[2]}</p>
                     </div>
-            <dl class="rooftop-s">
+            <dl class="facilities_s">
               ${info}
             </dl>
-              <div class="rooftop-bt">
+              <div class="facilities_bt">
                 <a href="#">바베큐 </a>
+                <a href="#">야외 수영장</a>
                 <a href="#">옥상 정원</a>
-                <a href="#"> 야외 수영장</a>
               </div>
             </div>
           </div>`;
 
         contents.innerHTML = content;
-        const button = document.querySelectorAll(".rooftop-bt a");
+        const button = document.querySelectorAll(".facilities_bt a");
         button[n].classList.add("active");
 
         var swiper = new Swiper(".slide", {
@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
           bt.onclick = function (e) {
             e.preventDefault();
             datacontents(i);
-
           };
         });
       };

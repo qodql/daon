@@ -207,8 +207,9 @@
                             ul {
                                 li {
                                     a {
+                                        width: 300px;
                                         & > img {
-                                            width: 300px;
+                                            width: 100%;
                                             height: 300px;
                                         }
                                     }
@@ -444,6 +445,32 @@
             }
         }
     }
+    .main {
+        .container {
+            .section {
+                &.contact {
+                    .contents {
+                        .box_wrap {
+                            flex-direction: column;
+                            .pick_wrap {
+                                margin-top: 48px;
+                                ul {
+                                    li {
+                                        span {
+                                            position: static;
+                                        }
+                                        &:last-of-type {
+                                            margin-top: 16px !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width:858px) {
     .quick_menu {
@@ -538,26 +565,6 @@
                         }
                     }
                 }
-                &.contact {
-                    .contents {
-                        .box_wrap {
-                            flex-direction: column;
-                            .pick_wrap {
-                                margin-top: 48px;
-                                ul {
-                                    li {
-                                        span {
-                                            position: static;
-                                        }
-                                        &:last-of-type {
-                                            margin-top: 16px !important;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
             }
             .swiper {
                 .swiper_btn_wrap {
@@ -583,6 +590,33 @@
                         &.swiper-pagination-bullet-active {
                             width: 32px;
                             height: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:560px) {
+    .main {
+        .container {
+            .section {
+                &.contact {
+                    .contents {
+                        .box_wrap {
+                            flex-direction: column;
+                            .pick_wrap {
+                                ul {
+                                    li {
+                                        span {
+                                            position: absolute;
+                                        }
+                                        &:last-child {
+                                            margin-top: 32px !important;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

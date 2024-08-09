@@ -38,9 +38,8 @@
   }
 
   .on {
-    .room_active {
-      color: #2f2f2f;
-      font-weight: 700;
+    >a{
+      font-weight: inherit;
     }
   }
 
@@ -71,7 +70,7 @@
             padding-bottom: 40px;
           }
 
-          .love_you_list {
+          .room_list {
             width: calc(100% - 570px);
             height: calc(100% - 6px);
             margin: 0;
@@ -109,6 +108,7 @@
       button:hover {
         background-color: #357EF1;
         color: white;
+        border: #357ef1;
       }
       .contour3 {
         width: 1400px;

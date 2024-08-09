@@ -1,30 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
+  
   //sub5_community_notice json
-  fetch("./data/sub5_community_notice.json")
-  .then(function(res){
-    return res.json();
-  })
-  .then(function(data){
-    //notice page
-    const pageReverse = data.community_notice.reverse();
-    let page = [];
-    for(let i=0; i<pageReverse.length; i+=5){
-      page.push(pageReverse.slice(i, i+5));
-    }
+ fetch("./data/sub5_community_notice.json")
+ .then(function(res){
+   return res.json();
+ })
+ .then(function(data){
+   //notice page
+   const pageReverse = data.community_notice.reverse();
+   let page = [];
+   for(let i=0; i<pageReverse.length; i+=5){
+     page.push(pageReverse.slice(i, i+5));
+   }
 
     let noticePaging = ()=>{
-      const pageUl = document.querySelector('.pagination .page');
-      const createLi = document.createElement('li');
-
+      const pageList = document.querySelector('.pagination .pagination_num');
+      
       page.forEach((v,i)=>{
-        createLi.innerHTML += `<button>${i+1}</button>`;
+        pageList.innerHTML += `<a href="#">${i+1}</a>`;
       })
-      pageUl.append(createLi);
 
-      const pageBtn = document.querySelectorAll('.pagination button');
+      const pageBtn = document.querySelectorAll('.pagination .pagination_num a');
       pageBtn.forEach((btn, pageNum)=>{
-        btn.onclick = ()=>{
+        btn.onclick = (e)=>{
+          e.preventDefault();
           noticeData(pageNum);
+          e.target.classList.add('on');
         }
       })
     }
@@ -56,6 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+ //sub5_coumunity_review 스크립트
+
+
+// review_btn 이렇게 하거나 reviewBtn << 스크립트에선 이게 좋음 하지만 언더바 사용하기로 약속했으니 이번 프로젝트에선 언더바 사용
+
 })
 
 
@@ -68,13 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//sub5_coumunity_review 스크립트
 
-const review_Btn = document.querySelectorAll('.images ul li a[name="pop_btn"]'),
-      review_Popup = document.querySelector('.popup');
-  review_btn.forEach((v)=>{
-    v.addEventListener('click', function(){
-      review_Popup.classList.add("active")
-    })
-  })
-      
+
+     

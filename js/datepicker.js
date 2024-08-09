@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function getDayOfWeek(date) {
-        if (!date) { return '날짜 선택'; }
+        if (!date) { return '날짜를 선택해주세요.'; }
         var dayOfWeek = date.getDay();
         var daysOfWeek = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
         return daysOfWeek[dayOfWeek];
@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
     picker.getEndpicker().on('change', function() {
         var selectedDate = picker.getEndpicker().getDate();
         day[1].innerHTML = `${getDayOfWeek(selectedDate)}`;
-        if(day[1].innerText !== '날짜 선택') { 
+        if(day[1].innerText !== '날짜를 선택해주세요.') { 
             day[1].style.cssText = 'margin-left:0px;'
         } else {
-            day[1].style.cssText = 'margin-left:-140px;'
+            day[1].style.cssText = 'margin-left:-140px; font-weight: 700;'
         }
     });
 })

@@ -3,14 +3,14 @@
     {
       "id":0,
       "review_id" : "@asdlfjqwie",
-      "review_text" : "엄청 쾌적해서 놀랬구, 하나하나 디테일이 너무 깔끔하구 이뻤던 곳💙💙",
+      "review_text" : "엄청 쾌적해서 놀랬구, 하나하나 디테일이 너무 깔끔하구 이뻤던 곳",
       "review_img" : "../img/img_coumunity_review_01.jpg",
       "rating" : "1"
     },
     {
       "id":1,
       "review_id" : "@vvaterdog",
-      "review_text" : "언제 가도 나에게 힐링을 주는 공간😘힐링이 뭐 별거 있나요<br>내가 좋아하는 공간에서 좋은 사람들과 예쁜 것 보면서 맛있는거 먹으면 그게 힐링이지!!🥰🥰<br>이렇게 말하고 보니 좀 어려운거 같기도 하고 아닌거 같기도 하고?ㅎㅎ",
+      "review_text" : "언제 가도 나에게 힐링을 주는 공간 힐링이 뭐 별거 있나요<br>내가 좋아하는 공간에서 좋은 사람들과 예쁜 것 보면서 맛있는거 먹으면 그게 힐링이지!!<br>이렇게 말하고 보니 좀 어려운거 같기도 하고 아닌거 같기도 하고?ㅎㅎ",
       "review_img" : "../img/im_coumunity_review_02.jpg",
       "rating" : "4"
     },
@@ -24,35 +24,35 @@
     {
       "id":3,
       "review_id" : "@seongkyu",
-      "review_text" : "간만에 가평 여행🌊<br>숙소에서 한발자국도 안나가고 하루종일 친구들이랑 수영하고 맛난거 먹고,<br>영화보고☺️",
+      "review_text" : "간만에 가평 여행<br>숙소에서 한발자국도 안나가고 하루종일 친구들이랑 수영하고 맛난거 먹고,<br>영화보고☺️",
       "review_img" : "../img/im_coumunity_review_04.jpg",
       "review_icon" : "../img/icon/icon_sub5_review_5star"
     },
     {
       "id":4,
       "review_id" : "@ppuie",
-      "review_text" : "사진 많이 찍고📸 고기도 먹고,<br>힐링시간도 가질 수 있는 숙소 랍니다❣️",
+      "review_text" : "사진 많이 찍고 고기도 먹고,<br>힐링시간도 가질 수 있는 숙소 랍니다",
       "review_img" : "../img/im_coumunity_review_05.jpg",
       "review_icon" : "../img/icon/icon_sub5_review_5star"
     },
     {
       "id":5,
       "review_id" : "@lin",
-      "review_text" : "룸 컨디션도 좋고 뷰도 너뮤 이뻐서 기분조은😉",
+      "review_text" : "룸 컨디션도 좋고 뷰도 너뮤 이뻐서 기분조은",
       "review_img" : "../img/im_coumunity_review_06.jpg",
       "review_icon" : "../img/icon/icon_sub5_review_5star"
     },
     {
       "id":6,
       "review_id" : "@qwer",
-      "review_text" : "사장님도 너무 친절하시고 좋았어요!<br>또 방문하고 싶은 곳✨",
+      "review_text" : "사장님도 너무 친절하시고 좋았어요!<br>또 방문하고 싶은 곳",
       "review_img" : "../img/im_coumunity_review_07.jpg",
       "review_icon" : "../img/icon/icon_sub5_review_5star"
     },
     {
       "id":7,
       "review_id" : "@asdf",
-      "review_text" : "바베큐도 너무 맛있고, 옥상 정원도 너무 이뻤던..🎈",
+      "review_text" : "바베큐도 너무 맛있고, 옥상 정원도 너무 이뻤던..",
       "review_img" : "../img/im_coumunity_review_08.jpg",
       "review_icon" : "../img/icon/icon_sub5_review_5star"
     },

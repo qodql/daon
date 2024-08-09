@@ -3,18 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('./component/common.html')
     .then((data)=>{ return data.text()})
     .then((data)=>{ 
-
-        // chatbot
-        (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
-
-        ChannelIO('boot', {
-            "pluginKey": "dbf51d87-0b32-4469-b099-572fefb331ca"
-        });
-
-        // [↓] header, footer 제어
+        
         const login = document.querySelector(".login_common")
         const footer = document.querySelector(".footer")
         if (!login) {
+            // chatbot
+            (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+            ChannelIO('boot', {
+                "pluginKey": "dbf51d87-0b32-4469-b099-572fefb331ca"
+            });
+            
+            // [↓] header, footer 제어
             let createHeader = document.createElement('header')
             let createFooter = document.createElement('footer')
             createHeader.className = 'header'
@@ -106,9 +105,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
+    // [↓] popup
+    const popupBtn = document.querySelectorAll("[name='pop_btn']"),
+    popup = document.querySelector('.popup'),
+    popupClose = document.querySelector('.popup_close_btn'),
+    body = document.body;
+
+    if (popup) {
+        popupBtn.forEach((v)=>{  
+            v.addEventListener('click', function(){
+                popup.classList.add("active");
+                body.classList.add("prevent_scroll");
+            })
+        })
+        popupClose.onclick = function(){
+            popup.classList.remove("active");
+            body.classList.remove("prevent_scroll");
+        }
+        popup.addEventListener('click', function(e){
+            if(e.target == popup){
+                popup.classList.remove("active");
+                body.classList.remove("prevent_scroll");
+            }
+        })
+    }
+
     // [↓] chekcbox
+    const chkWrap = document.querySelector(".checkbox_wrap")
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
+    const chkBtn = document.querySelector(".checkbox_wrap .toggle_btn")
     chk.forEach((v,i)=>{
         chkAll.addEventListener("click", ()=>{
             if (chkAll.checked) {
@@ -126,13 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 chkAll.checked = false;
             }
         })
+        chkBtn.addEventListener("click", ()=>{
+            chkWrap.classList.toggle("fold")
+        })
     })
 
     // [↓] tab
     const tabCont = document.querySelectorAll(".tab_cont > *")
     const tabLi = document.querySelectorAll(".tab li")
     tabLi.forEach((v,i)=>{
-        v.addEventListener("click", ()=>{
+        v.addEventListener("click", (e)=>{
+            e.preventDefault();
             for(let i=0;i<tabLi.length;i++){
                 tabLi[i].classList.remove("on")
                 tabCont[i].classList.remove("on")
@@ -142,4 +172,22 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
     
+    // [↓] select
+    const select = document.querySelectorAll("select")
+    const option = document.querySelectorAll("select option")
+    const main = document.querySelector(".main")
+    select.forEach((v,i)=>{
+        const defaultOption = document.querySelector("select option.default")
+        for(let i=0;i<option.length;i++){
+            if(option[i].classList.contains('default')){
+                defaultOption.style.cssText = 'display:none;'
+                v.style.cssText = 'color:#afafaf;'
+            }
+        }
+        if(!main){
+            v.addEventListener("input", ()=>{
+                v.style.cssText = 'color:#2f2f2f;'
+            })
+        }
+    })
 })

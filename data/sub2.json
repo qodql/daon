@@ -1,5 +1,5 @@
 {
-  "love":[
+  "LOVE":[
     {
       "id":0,
       "type" : "LOVE YOU",
@@ -8,7 +8,7 @@
       "room_composition" : "침대룸A(더블1),주방, 화장실",
       "room_personnel" : "기본2인/최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "photo":["../img/img_sub2_room_love101_01.jpg","../img/img_sub2_room_love101_02.jpg", "../img/img_sub2_room_love101_03.jpg", "../img/img_sub2_room_love101_04.jpg"],
+      "photo":["./img/img_sub2_room_love101_01.jpg","./img/img_sub2_room_love101_02.jpg", "./img/img_sub2_room_love101_03.jpg", "./img/img_sub2_room_love101_04.jpg"],
       "room_price" : "126,000"
       
     },

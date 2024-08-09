@@ -54,6 +54,12 @@
 .notice .sub_container .contents table td:nth-of-type(3) {
   text-align: center;
 }
+.notice .sub_container .contents .pagination .pagination_num {
+  display: flex;
+}
+.notice .sub_container .contents .pagination .pagination_num a {
+  cursor: pointer;
+}
 
 .title2 {
   display: none;
@@ -271,7 +277,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: bold;
-  width: 100px;
+  width: 110px;
   text-align: center;
 }
 .faq .sub_container .contents .faq_wrap .faq li .question button {
@@ -282,10 +288,15 @@
 .faq .sub_container .contents .faq_wrap .faq li .answer {
   padding: 26px;
   background-color: #f1f1f1;
+  display: none;
 }
 .faq .sub_container .contents .faq_wrap .faq li .answer a {
   color: #357ef1;
   text-decoration: underline;
+}
+.faq .sub_container .contents .faq_wrap .faq li .answer.active {
+  display: block;
+  transition: 0.5ms;
 }
 
 .review .sub_top {
@@ -321,77 +332,6 @@
   margin-top: 120px;
 }
 
-.popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(47, 47, 47, 0.22);
-  z-index: 999;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-}
-.popup.active {
-  display: block;
-}
-.popup.active .popup_bg {
-  max-width: 1000px;
-  width: 100%;
-  z-index: 999;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-}
-.popup.active .popup_bg .popup_top {
-  height: 65px;
-  background-color: #EBEBEC;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.popup.active .popup_bg .popup_top p {
-  margin-left: 24px;
-  color: #2f2f2f;
-  font-weight: bold;
-  font-size: 24px;
-}
-.popup.active .popup_bg .popup_top button {
-  width: 64px;
-}
-.popup.active .popup_bg .popup_main {
-  display: flex;
-}
-.popup.active .popup_bg .popup_main div {
-  width: 50%;
-}
-.popup.active .popup_bg .popup_main div img {
-  width: 100%;
-}
-.popup.active .popup_bg .popup_main .popup_review {
-  display: block;
-  padding-top: 64px;
-  padding-left: 40px;
-  background-color: white;
-}
-.popup.active .popup_bg .popup_main .popup_review .user_id {
-  width: 148px;
-  background-color: rgba(154, 190, 248, 0.22);
-  font-size: 24px;
-  padding-top: 7px;
-  padding-left: 3px;
-}
-.popup.active .popup_bg .popup_main .popup_review .popup_img {
-  width: 96px;
-  margin-top: 40px;
-}
-.popup.active .popup_bg .popup_main .popup_review .popup_img img {
-  width: 100%;
-}
-.popup.active .popup_bg .popup_main .popup_review .popup_text {
-  margin-top: 12px;
-}
-
 @media (max-width: 1499px) {
   .notice .sub_top {
     background-image: url("../img/img_community_notice_0.jpg");
@@ -402,23 +342,6 @@
   }
   .notice .sub_container .notice-1 {
     width: 100%;
-  }
-  .notice .sub_container .pagination {
-    width: 416px;
-    height: 32px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 120px;
-  }
-  .notice .sub_container .pagination a:nth-of-type(3),
-  .notice .sub_container .pagination a:nth-of-type(4),
-  .notice .sub_container .pagination a:nth-of-type(5),
-  .notice .sub_container .pagination a:nth-of-type(6),
-  .notice .sub_container .pagination a:nth-of-type(7) {
-    padding: 0 12px;
-    font-size: 20px;
-    font-weight: bold;
   }
 }
 @media (max-width: 1024px) {
@@ -789,7 +712,8 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -828,7 +752,8 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -866,7 +791,8 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 1499px) {
@@ -897,7 +823,8 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -936,7 +863,8 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -974,6 +902,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
