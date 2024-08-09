@@ -653,15 +653,6 @@ body.prevent_scroll {
   align-items: center;
   justify-content: center;
 }
-.pagination li:not(:first-of-type) {
-  margin-left: 8px;
-}
-.pagination li.on a {
-  background-color: #357ef1;
-  border-radius: 50%;
-  color: #fff;
-  font-weight: 700;
-}
 .pagination li a {
   width: 32px;
   height: 32px;
@@ -670,6 +661,15 @@ body.prevent_scroll {
   line-height: 32px;
   font-size: 20px;
   color: #afafaf;
+}
+.pagination li a.on {
+  background-color: #357ef1;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+}
+.pagination li a:not(:first-of-type) {
+  margin-left: 8px;
 }
 .pagination li:nth-last-child(2) {
   margin-left: 32px;

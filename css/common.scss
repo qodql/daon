@@ -751,17 +751,6 @@ body {
   align-items: center;
   justify-content: center;
   li {
-    &:not(:first-of-type) {
-      margin-left: 8px;
-    }
-    &.on {
-      a {
-        background-color: #357ef1;
-        border-radius: 50%;
-        color: #fff;
-        font-weight: 700;
-      }
-    }
     a {
       width: 32px;
       height: 32px;
@@ -770,6 +759,15 @@ body {
       line-height: 32px;
       font-size: 20px;
       color: #afafaf;
+      &.on {
+        background-color: #357ef1;
+        border-radius: 50%;
+        color: #fff;
+        font-weight: 700;
+      }
+      &:not(:first-of-type) {
+        margin-left: 8px;
+      }
     }
     &:nth-last-child(2) {
       margin-left: 32px;
