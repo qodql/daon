@@ -45,6 +45,7 @@
 
           a {
             flex-shrink: 0;
+            object-fit: cover;
             .img:nth-last-of-type(1) {
               position: absolute;
             }
@@ -118,6 +119,7 @@
           padding: 16px 26px 14px;
           border-radius: 40px;
           display: inline-block;
+          margin: 4px;
 
           &::after {
             content: url(../img/icon/icon_facilities_arrow.svg);

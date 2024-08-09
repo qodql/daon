@@ -244,7 +244,7 @@
 // pc 1500px
 
 @include res("pc-s") {
-  .rooftop {
+  .facilities_common {
     .sub_container {
       .sub3_contents {
    
@@ -263,7 +263,7 @@
 
 // with 1279
 @include res("tab") {
-  .rooftop {
+  .facilities_common {
     .sub_container {
       .sub3_contents {
        
@@ -281,7 +281,7 @@
 
 // with 1210px
 @media (max-width: 1024px) {
-  .rooftop {
+  .facilities_common {
     .sub_container {
       .sub3_contents {
         gap: 10px;
@@ -299,7 +299,7 @@
 }
 
 @media (max-width: 976px) {
-  .rooftop {
+  .facilities_common {
     .sub_container {
       .contents {
         .sub3_contents {
