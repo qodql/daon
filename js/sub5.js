@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       //const createLi = document.createElement('li');
 
       page.forEach((v,i)=>{
-        pageList.innerHTML += `<li><a href="#">${i+1}</a></li>`;
+        pageList.innerHTML += `<li><a>${i+1}</a></li>`;
       })
       pageList.append();
 

@@ -80,6 +80,14 @@
           }
         }
       }
+      .pagination{
+        .page{
+          display: flex;
+          a{
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }

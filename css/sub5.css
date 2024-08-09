@@ -58,6 +58,12 @@
 .notice .sub_container .contents table td:nth-of-type(3) {
   text-align: center;
 }
+.notice .sub_container .contents .pagination .page {
+  display: flex;
+}
+.notice .sub_container .contents .pagination .page a {
+  cursor: pointer;
+}
 
 .title2 {
   display: none;
