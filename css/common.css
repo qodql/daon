@@ -283,7 +283,6 @@ body.prevent_scroll {
   border: 1px solid #efefef;
   border-radius: 20px;
   padding: 0 24px 24px 24px;
-  transition: max-height 0.3s ease-out;
   overflow: hidden;
 }
 .checkbox_wrap .all {
@@ -302,7 +301,6 @@ body.prevent_scroll {
   position: absolute;
   right: 24px;
   top: 16px;
-  transition: all 0.3s;
   transform: rotate(-90deg);
   cursor: pointer;
 }
@@ -733,7 +731,7 @@ body.prevent_scroll {
 }
 .popup .popup_cont {
   width: 100%;
-  max-width: 1000px;
+  max-width: 600px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -771,11 +769,11 @@ body.prevent_scroll {
   transform: translateY(-50%);
 }
 .popup .popup_cont .popup_inner {
-  width: calc(100% - 160px);
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 0 0 20px 20px;
 }
 
 .popup.coupon .popup_cont {
@@ -908,6 +906,42 @@ body.prevent_scroll {
 }
 .popup.join .popup_cont .popup_bottom_btn .join_popup_btn_cancel {
   background-color: #AFAFAF;
+}
+
+.popup.review .popup_cont {
+  max-width: 1000px;
+}
+.popup.review .popup_cont .popup_inner {
+  padding: 0;
+}
+.popup.review .popup_cont .popup_inner .review_wrap {
+  display: flex;
+}
+.popup.review .popup_cont .popup_inner .review_wrap div {
+  width: 50%;
+}
+.popup.review .popup_cont .popup_inner .review_wrap .review_cont {
+  display: block;
+  padding: 40px;
+  background-color: white;
+}
+.popup.review .popup_cont .popup_inner .review_wrap .review_cont .user_id {
+  width: 148px;
+  background-color: rgba(154, 190, 248, 0.22);
+  font-size: 24px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+.popup.review .popup_cont .popup_inner .review_wrap .review_cont .rating_img {
+  width: 96px;
+  margin-top: 40px;
+}
+.popup.review .popup_cont .popup_inner .review_wrap .review_cont .rating_img img {
+  width: 100%;
+}
+.popup.review .popup_cont .popup_inner .review_wrap .review_cont .review_desc {
+  margin-top: 12px;
 }
 
 .pc_only {

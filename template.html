@@ -109,7 +109,24 @@
             <h2>[5] 팝업</h2>
             <!-- 기본 팝업 class="popup"에 해당 팝업 이름 넣어주고 그 클래스 이름으로 스타일 제어. 지금의 경우엔 .coupon 에서 스타일 제어중입니다. -->
             <!-- 팝업을 열리게하는 클릭요소에 name="pop_btn"을 넣어줘야 js가 작동합니다. -->
-            <button type="button" class="coupon" name="pop_btn">쿠폰 팝업</button>
+            <button type="button" name="pop_btn">팝업</button>
+            <div class="popup">
+                <div class="popup_cont">
+                    <div class="popup_top">
+                        <h3 class="popup_title">타이틀</h3>
+                        <button class="popup_close_btn"></button>
+                    </div>
+                    <div class="popup_inner">
+                        <!-- inner 안쪽에 팝업 내용 작업 -->
+                        컨텐츠 내용<br/>
+                        컨텐츠 내용<br/>
+                        컨텐츠 내용<br/>
+                        컨텐츠 내용<br/>
+                        컨텐츠 내용
+                    </div>
+                </div>
+            </div>
+            <!-- 쿠폰 팝업 -->
             <div class="popup coupon">
                 <div class="popup_cont">
                     <div class="popup_top">

@@ -343,7 +343,7 @@ body {
   border: 1px solid #efefef;
   border-radius: 20px;
   padding: 0 24px 24px 24px;
-  transition: max-height 0.3s ease-out;
+  // transition: max-height 0.3s ease-out;
   overflow: hidden;
   .all {
     width: calc(100% + 48px);
@@ -360,7 +360,7 @@ body {
       position: absolute;
       right: 24px;
       top: 16px;
-      transition: all 0.3s;
+      // transition: all 0.3s;
       transform: rotate(-90deg);
       cursor: pointer;
     }
@@ -875,7 +875,7 @@ body {
   }
   .popup_cont{
     width: 100%;
-    max-width: 1000px;
+    max-width: 600px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -911,11 +911,11 @@ body {
       }
     }
     .popup_inner {
-      width: calc(100% - 160px);
+      width: 100%;
       margin: 0 auto;
       padding: 20px;
       background-color: #fff;
-      border-radius: 8px;
+      border-radius: 0 0 20px 20px;
     }
   }
 }
@@ -1063,6 +1063,46 @@ body {
           .join_popup_btn_cancel{
               background-color: #AFAFAF;
           }
+      }
+    }
+  }
+}
+// 이용후기 팝업
+.popup {
+  &.review {
+    .popup_cont {
+      max-width: 1000px;
+      .popup_inner {
+        padding: 0;
+        .review_wrap {
+          display: flex;
+          div{ 
+            width: 50%;
+          }
+          .review_cont{
+            display: block;
+            padding: 40px;
+            background-color: white;
+            .user_id{
+              width: 148px;
+              background-color: rgb(154,190,248,0.22);
+              font-size: 24px;
+              border-radius: 8px;
+              padding: 4px 8px;
+              white-space: nowrap;
+            }
+            .rating_img{
+              width: 96px;
+              margin-top: 40px;
+              img{
+                width: 100%;
+              }
+            }
+            .review_desc{
+              margin-top: 12px;
+            }
+          }
+        }
       }
     }
   }
