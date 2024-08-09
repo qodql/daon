@@ -551,7 +551,6 @@ body {
     align-items: center;
     border-bottom: 1px solid #afafaf;
     li {
-      padding-bottom: 15px;
       color: #afafaf;
       font-size: 20px;
       position: relative;
@@ -572,6 +571,11 @@ body {
           left: 0;
           bottom: -1px;
         }
+      }
+      a {
+        display: block;
+        padding-bottom: 15px;
+        font: inherit;
       }
     }
   }
