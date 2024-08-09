@@ -45,6 +45,7 @@
   right: 24px;
 }
 .swiper .swiper-pagination {
+  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   display: flex;
@@ -310,6 +311,7 @@ body.prevent_scroll {
   color: #2f2f2f;
 }
 .checkbox_wrap .checkbox + label {
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   align-items: center;
@@ -460,7 +462,6 @@ body.prevent_scroll {
   border-bottom: 1px solid #afafaf;
 }
 .tab.line li {
-  padding-bottom: 15px;
   color: #afafaf;
   font-size: 20px;
   position: relative;
@@ -482,6 +483,11 @@ body.prevent_scroll {
   position: absolute;
   left: 0;
   bottom: -1px;
+}
+.tab.line li a {
+  display: block;
+  padding-bottom: 15px;
+  font: inherit;
 }
 
 .tab_cont > * {
