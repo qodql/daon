@@ -45,7 +45,6 @@
   right: 24px;
 }
 .swiper .swiper-pagination {
-  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   display: flex;
@@ -251,11 +250,24 @@ body.prevent_scroll {
 .header .inner .nav_menu li {
   color: #fff;
 }
-.header .inner .nav_menu li:last-child {
+.header .inner .nav_menu li:nth-child(even) {
   margin-left: 24px;
 }
-.header .inner .nav_menu li a {
-  color: inherit;
+.header .inner .nav_menu li.login {
+  display: none;
+}
+.header .inner .nav_menu li:not(.login) {
+  display: block;
+}
+.header .inner .nav_menu li a.mypage_btn {
+  display: flex;
+  align-items: center;
+}
+.header .inner .nav_menu.on li.login {
+  display: block;
+}
+.header .inner .nav_menu.on li:not(.login) {
+  display: none;
 }
 .header.on .nav_bg {
   top: 0;
@@ -311,7 +323,6 @@ body.prevent_scroll {
   color: #2f2f2f;
 }
 .checkbox_wrap .checkbox + label {
-  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   align-items: center;
@@ -626,7 +637,6 @@ body.prevent_scroll {
   background: #fff url("../img/icon/icon_sns_instagram.svg") no-repeat center;
 }
 .footer.main {
-  height: -moz-fit-content;
   height: fit-content;
 }
 .footer.main .dim {
@@ -753,7 +763,6 @@ body.prevent_scroll {
   position: relative;
 }
 .popup .popup_cont .popup_top .popup_title {
-  width: -moz-fit-content;
   width: fit-content;
   color: #2f2f2f;
   font-weight: bold;
@@ -1143,6 +1152,13 @@ body.prevent_scroll {
   }
   .fixed_menu ul li.top_btn a span {
     font-size: 12px;
+  }
+  .nav_menu li a.mypage_btn::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../img/icon/icon_mypage.svg") no-repeat center/20px;
   }
 }
 @media (max-width: 767px) {

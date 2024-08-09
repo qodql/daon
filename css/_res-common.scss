@@ -233,6 +233,21 @@
       }
     }
   }
+  .nav_menu {
+    li {
+      a {
+        &.mypage_btn {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('../img/icon/icon_mypage.svg') no-repeat center / 20px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include res('mo-l'){

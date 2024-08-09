@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 v.addEventListener("click", (e)=>{
                     let depthDataNum = e.target.dataset.num;
                     localStorage.depthNum = JSON.parse( depthDataNum );
-                    console.log(localStorage.num);
                 })
             })
 
@@ -113,18 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 로그인 nav_menu 체인지.
         const isLogin = sessionStorage.getItem('login')
-        const navMenu = document.querySelectorAll('.nav_menu li')
-        if(isLogin !== 'true') {
-            navMenu[0].innerHTML = `<a href="./login.html">로그인</a>`;
-            navMenu[1].innerHTML = `<a href="./join.html">회원가입</a>`;
-        } else {
-            navMenu[0].innerHTML = `<a href="#" class="logout_btn">로그아웃</a>`;
-            navMenu[1].innerHTML = `<a href="./mypage.html">마이페이지</a>`;
+        const navMenu = document.querySelector('.nav_menu')
+        const mypageBtn = document.querySelector('.mypage_btn')
+        const cookie = document.cookie.split(';');
+        const userName = cookie[3].split('=')[1]
+        if(isLogin === 'true') {
+            navMenu.classList.add("on");
+            mypageBtn.innerText = userName + ' 님';
         }
         
         const logoutBtn = document.querySelector(".logout_btn");
         if (logoutBtn) {
             logoutBtn.addEventListener("click", ()=>{
+                navMenu.classList.remove("on")
                 sessionStorage.clear()
                 // 240809 lhj : 쿠키 값 지워주기부터 하면 됨.
                 document.cookie = `access_token=${false}; expires=${null};`
