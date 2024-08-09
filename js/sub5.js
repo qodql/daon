@@ -22,9 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const pageBtn = document.querySelectorAll('.pagination .pagination_num a');
       pageBtn.forEach((btn, pageNum)=>{
-        btn.onclick = ()=>{
+        btn.onclick = (e)=>{
+          e.preventDefault();
           noticeData(pageNum);
-          btn.classList.add('on');
+          e.target.classList.add('on');
         }
       })
     }
