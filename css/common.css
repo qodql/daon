@@ -488,6 +488,13 @@ body.prevent_scroll {
   bottom: -1px;
 }
 
+.tab_cont > * {
+  display: none;
+}
+.tab_cont > *.on {
+  display: block;
+}
+
 .pagination {
   margin-top: 72px;
   display: flex;

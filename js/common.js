@@ -115,17 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
         popupBtn.forEach((v)=>{  
             v.addEventListener('click', function(){
                 popup.classList.add("active");
-                body.classList.add("scroll_hidden");
+                body.classList.add("prevent_scroll");
             })
         })
         popupClose.onclick = function(){
             popup.classList.remove("active");
-            body.classList.remove("scroll_hidden");
+            body.classList.remove("prevent_scroll");
         }
         popup.addEventListener('click', function(e){
             if(e.target == popup){
                 popup.classList.remove("active");
-                body.classList.remove("scroll_hidden");
+                body.classList.remove("prevent_scroll");
             }
         })
     }
@@ -152,16 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 chkAll.checked = false;
             }
         })
-    })
-    chkBtn.addEventListener("click", ()=>{
-        chkWrap.classList.toggle("fold")
+        chkBtn.addEventListener("click", ()=>{
+            chkWrap.classList.toggle("fold")
+        })
     })
 
     // [↓] tab
     const tabCont = document.querySelectorAll(".tab_cont > *")
     const tabLi = document.querySelectorAll(".tab li")
     tabLi.forEach((v,i)=>{
-        v.addEventListener("click", ()=>{
+        v.addEventListener("click", (e)=>{
+            e.preventDefault();
             for(let i=0;i<tabLi.length;i++){
                 tabLi[i].classList.remove("on")
                 tabCont[i].classList.remove("on")

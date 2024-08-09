@@ -576,6 +576,14 @@ body {
     }
   }
 }
+.tab_cont {
+  > * {
+    display: none;
+    &.on {
+      display: block;
+    }
+  }
+}
 
 // pagination
 .pagination {
