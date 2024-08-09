@@ -13,24 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
       page.push(pageReverse.slice(i, i+5));
     }
 
-   
     let noticePaging = ()=>{
-      const pageList = document.querySelector('.pagination .page');
+      const pageList = document.querySelector('.pagination .pagination_num');
       
-      let pageList2 = pageList.nextElementSibling;
-      console.log(pageList2);
-
-      //const createLi = document.createElement('li');
-
       page.forEach((v,i)=>{
-        pageList.innerHTML += `<li><a href="#">${i+1}</a></li>`;
+        pageList.innerHTML += `<a href="#">${i+1}</a>`;
       })
-      pageList.append();
 
-      const pageBtn = document.querySelectorAll('.pagination .page li a');
+      const pageBtn = document.querySelectorAll('.pagination .pagination_num a');
       pageBtn.forEach((btn, pageNum)=>{
         btn.onclick = ()=>{
           noticeData(pageNum);
+          btn.classList.add('on');
         }
       })
     }
