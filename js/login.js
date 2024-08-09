@@ -1,9 +1,4 @@
-/* 
-const elHead = document.querySelector('body')
-const createScript = document.createElement('script');
-createScript.src = './js/login.js';
-elHead.append(createScript);
-*/
+// [↓] 다온 로그인
 document.addEventListener("DOMContentLoaded", () => { 
 // 로그인+회원가입 공통
 // 로그인
@@ -34,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     */
 })
 
-// [↓] sns 로그인
+// [↓] sns 로그인(dom제어 필요없는 부분이라 밖으로 뺐습니다.)
 
 //로그인 여부 판별: 쿠키에 access_token값 있는지?
 // let cookie = document.cookie.split(';');    //쿠키에서
