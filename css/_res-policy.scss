@@ -4,10 +4,6 @@
 @include res('pc-s'){
     // policy_service PC-S Responsive start
     .policy_service {
-        .sub_top{
-            .dim{
-            }
-        }
         .sub_container {
             width: 100%;
             .contents{
@@ -73,6 +69,57 @@
         }
     }
     // policy_service Tablet Responsive end
+    // policy_privacy Tablet Responsive start
+    .policy_privacy {
+        .sub_container {
+            .contents{
+                .privacy_wrap{
+                    .privacy_chapter{
+                        article{
+                            h3{
+                                font-size: 18px;
+                            }
+                            .privacy_chapter_table{
+                                padding: 24px;
+                                margin: 24px 0 36px;
+                                ul{
+                                    gap: 24px;
+                                    li{
+                                        width: 240px;
+                                        a{
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .privacy_info{
+                        margin-top: 16px;
+                        article{
+                            h3{
+                                font-size: 18px;
+                            }
+                            .privacy_info_cont{
+                                margin: 18px 0;
+                                padding: 0 8px;
+                                border-bottom: 1px dotted #AFAFAF;
+                                ul{
+                                    li{
+                                        padding-bottom: 18px;
+                                        p{
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // policy_privacy Tablet Responsive end
 }
 
 @include res('mo-l'){
@@ -107,6 +154,57 @@
         }
     }
     // policy_service Mobile-Large Responsive end
+    // policy_privacy Mobile-Large Responsive start
+    .policy_privacy {
+        .sub_container {
+            .contents{
+                .privacy_wrap{
+                    .privacy_chapter{
+                        article{
+                            h3{
+                                font-size: 16px;
+                            }
+                            .privacy_chapter_table{
+                                padding: 16px;
+                                margin: 16px 0 24px;
+                                ul{
+                                    gap: 8px;
+                                    li{
+                                        width: 192px;
+                                        a{
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .privacy_info{
+                        margin-top: 16px;
+                        article{
+                            h3{
+                                font-size: 16px;
+                            }
+                            .privacy_info_cont{
+                                margin: 12px 0;
+                                padding: 0 8px;
+                                border-bottom: 1px dotted #AFAFAF;
+                                ul{
+                                    li{
+                                        padding-bottom: 18px;
+                                        p{
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // policy_privacy Mobile-Large Responsive end
 }
 
 @include res('mo-s'){
@@ -142,5 +240,56 @@
         }
     }
     // policy_service Mobile-Small Responsive end
+    // policy_privacy Mobile-Small Responsive start
+    .policy_privacy {
+        .sub_container {
+            .contents{
+                .privacy_wrap{
+                    .privacy_chapter{
+                        article{
+                            h3{
+                                font-size: 16px;
+                            }
+                            .privacy_chapter_table{
+                                padding: 8px;
+                                margin: 16px 0 24px;
+                                ul{
+                                    gap: 4px;
+                                    li{
+                                        width: 120px;
+                                        a{
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .privacy_info{
+                        margin-top: 16px;
+                        article{
+                            h3{
+                                font-size: 16px;
+                            }
+                            .privacy_info_cont{
+                                margin: 12px 0;
+                                padding: 0 8px;
+                                border-bottom: 1px dotted #AFAFAF;
+                                ul{
+                                    li{
+                                        padding-bottom: 18px;
+                                        p{
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // policy_privacy Mobile-Small Responsive end
 }
 

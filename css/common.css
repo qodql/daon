@@ -45,7 +45,6 @@
   right: 24px;
 }
 .swiper .swiper-pagination {
-  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   display: flex;
@@ -480,7 +479,6 @@ body.prevent_scroll {
   color: #2f2f2f;
 }
 .checkbox_wrap .checkbox + label {
-  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   align-items: center;
