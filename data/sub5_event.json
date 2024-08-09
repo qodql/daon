@@ -5,35 +5,40 @@
       "event_img" : "./img/img_event_05_2_contents_01",
       "event_text" : "단체 할인 이벤트",
       "event_period" : "기간 : 2024.07.01 ~ 2024.07.30",
-      "event_link" : "./sub5_community_event_inner.html"
+      "event_link" : "./sub5_community_event_inner.html",
+      "event_end" : "종료된 이벤트"
     },
     {
       "id" : 1,
       "event_img" : "./img/img_event_05_2_contents_02",
       "event_text" : "포토라인 이벤트",
       "event_period" : "기간 : 2024.07.01 ~ 2024.07.30",
-      "event_link" : "./sub5_community_event_inner.html"
+      "event_link" : "./sub5_community_event_inner.html",
+      "event_end" : "종료된 이벤트"
     },
     {
       "id" : 2,
       "event_img" : "./img/img_event_05_2_contents_03",
       "event_text" : "홈페이지 예약시 할인",
       "event_period" : "기간 : 2024.07.01 ~ 2024.07.30",
-      "event_link" : "./sub5_community_event_inner.html"
+      "event_link" : "./sub5_community_event_inner.html",
+      "event_end" : "종료된 이벤트"
     },
     {
       "id" : 3,
       "event_img" : "./img/img_event_05_2_contents_04",
       "event_text" : "리뷰 이벤트",
       "event_period" : "기간 : 2024.07.01 ~ 2024.07.30",
-      "event_link" : "./sub5_community_event_inner.html"
+      "event_link" : "./sub5_community_event_inner.html",
+      "event_end" : "종료된 이벤트"
     },
     {
       "id" : 4,
       "event_img" : "./img/img_event_05_2_contents_05",
       "event_text" : "초특가 99.9% 할인",
       "event_period" : "기간 : 2024.07.01 ~ 2024.07.30",
-      "event_link" : "./sub5_community_event_inner.html"
+      "event_link" : "./sub5_community_event_inner.html",
+      "event_end" : "종료된 이벤트"
     },
     {
       "id" : 5,
@@ -41,8 +46,10 @@
       "event_text" : "가평 칼봉산 짚라인 할인",
       "event_period" : "기간 : 2024.07.01 ~ 2024.07.30",
       "event_end_text" : "종료된 이벤트",
-      "event_link" : "./sub5_community_event_inner.html"
+      "event_link" : "./sub5_community_event_inner.html",
+      "event_end" : "종료된 이벤트"
     }
+    
   ],
   "event_inner" : {
     "event_inner_text" : "안녕하세요 다온펜션 입니다.인스타그램 포토 라인 이벤트 진행중입니다.<br> 다온펜션에서 찍은 나만의 포토존을 인스타그램 #다온펜션 #나만의포토존 및 <br>@Daonofficial을 태그하여 게시글을 올려주세요. <br>선정된 우수작은 특별한 선물을 드립니다! <br>많은 참여 부탁드립니다.",

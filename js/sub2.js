@@ -10,19 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const room_content = document.querySelector('.room_content');
     let data_love = data.LOVE;
     let data_only = data.ONLY;
-    let a = "";
+    let room_img = "";
     const currentUrl = window.location.href;
       // love_you_html 페이지 스크립트 실행
     if (currentUrl.includes('sub2_room_love_you.html')) {
       data_love.forEach((value)=>{
-          a = '';
+        room_img = '';
        value.photo.forEach((v)=>{
-        a += `<div class="swiper-slide"><img src="${v}" alt="${value.type} ${value.room_info}"></div>`;
+        room_img += `<div class="swiper-slide"><img src="${v}" alt="${value.type} ${value.room_info}"></div>`;
       });
         room_content.innerHTML += `<li class="main_box2">
                               <div class="swiper room_list">
                                   <div class="swiper-wrapper">
-                                    ${a}
+                                    ${room_img}
                                   </div>
                                   <div class="swiper_btn_wrap">
                                       <div class="swiper-button-next room_img_next"></div>

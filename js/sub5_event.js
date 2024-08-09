@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const data_event = data.event_page;
     if(abc.includes('sub5_community_event.html')){    
     data_event.forEach((v,i)=>{
-      console
+
+      if(i <5){
       event_box.innerHTML += `<li> <a href="${v.event_link}">
                             <div class="img_box">
                                 <img src="${v.event_img}.jpg" alt="이벤트 사진 1번">
@@ -20,6 +21,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
                             </div>
                         </a>
                     </li>`
+                  }
+      else if(i == 5){
+        event_box.innerHTML += `<li>
+                            <a href="#">
+                            <div class="img_box">
+                                <img src="${v.event_img}.jpg" alt="이벤트 사진 ${v.id}번">
+                                <div class="end_event">
+                                    <p class="end_event_text">${v.event_end}</p>
+                                </div>
+                            </div>
+                            <div class="event_text_box">
+                                <p>가평 칼봉산 짚라인 할인</p>
+                                <span>기간 : 2024.07.01 ~ 2024.07.30
+                                </span>
+                            </div>
+                        </a>
+                    </li> `
+      }
 
     })
   }
