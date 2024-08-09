@@ -111,6 +111,27 @@ document.addEventListener("DOMContentLoaded", () => {
             footer.classList.add("login")
         }
 
+        // 로그인 nav_menu 체인지.
+        const isLogin = sessionStorage.getItem('login')
+        const navMenu = document.querySelectorAll('.nav_menu li')
+        if(isLogin !== 'true') {
+            navMenu[0].innerHTML = `<a href="./login.html">로그인</a>`;
+            navMenu[1].innerHTML = `<a href="./join.html">회원가입</a>`;
+        } else {
+            navMenu[0].innerHTML = `<a href="#" class="logout_btn">로그아웃</a>`;
+            navMenu[1].innerHTML = `<a href="./mypage.html">마이페이지</a>`;
+        }
+        
+        const logoutBtn = document.querySelector(".logout_btn");
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", ()=>{
+                sessionStorage.clear()
+                // 240809 lhj : 쿠키 값 지워주기부터 하면 됨.
+                document.cookie = `access_token=${false}; expires=${null};`
+                window.location.href='./index.html'
+            })
+        }
+
     })
 
     // [↓] popup
@@ -143,14 +164,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
     const chkBtn = document.querySelector(".checkbox_wrap .toggle_btn")
+    if (chk) {
         chk.forEach((v,i)=>{
-            chkAll.addEventListener("click", ()=>{
-                if (chkAll.checked) {
-                    chk[i].checked = true;
-                } else {
-                    chk[i].checked = false;
-                }
-            })
+            if (chkAll) {
+                chkAll.addEventListener("click", ()=>{
+                    if (chkAll.checked) {
+                        chk[i].checked = true;
+                    } else {
+                        chk[i].checked = false;
+                    }
+                })
+            }
             chk[i].addEventListener("change", ()=>{
                 const chkLength = chk.length;
                 const chkCheckedLength = document.querySelectorAll(".checkbox_wrap input[name='chk']:checked").length
@@ -160,10 +184,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     chkAll.checked = false;
                 }
             })
-            chkBtn.addEventListener("click", ()=>{
-                chkWrap.classList.toggle("fold")
-            })
+            if (chkBtn) {
+                chkBtn.addEventListener("click", ()=>{
+                    chkWrap.classList.toggle("fold")
+                })
+            }
         })
+    }
 
     // [↓] tab
     const tabCont = document.querySelector(".tab_cont")
@@ -203,4 +230,5 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
     })
+
 })
