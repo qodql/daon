@@ -41,7 +41,7 @@ let access_token= cookie.filter((v)=>v.match('access_token')); //엑세스 토�
 var login = false; //로그인 상태일 때:true , 로그아웃 상태일 때: false
 if(access_token.length && access_token[0].split('=')[1]){ //엑세스 토큰 값있
     login = true;
-    location.href="/";
+    // location.href="/";
 } else{                         //엑세스 토큰 값없: 로그인 진행
 
 /* sns 로그인 공통 변수, 함수*/
@@ -59,11 +59,11 @@ var profile =  {
     age: '',
     b_day: '',
     gender: '',
-    mobile: '',
-    id: ''
+    mobile: ''
+    // id: ''
 };
-//(5) 쿠키(+세션)에 저장하는 함수
-const setCookie = function(accessToken) {
+//(5) 쿠키와 세션에 유저 정보를 저장하는 함수
+const setUserInfo = function(accessToken) {
     //1. 유효기간 설정
     let endDate = new Date();
     endDate.setSeconds(endDate.getSeconds() + 86400);   //24시간 (단위:초)
@@ -138,7 +138,7 @@ const kakaoLogin = function(){
             //유저 정보 저장
             profile.nickname = res.properties.nickname;
             //쿠키에 저장
-            setCookie(ACCESS_TOKEN_KAKAO);
+            setUserInfo(ACCESS_TOKEN_KAKAO);
         })
     }
     
@@ -189,7 +189,7 @@ function naverSignInCallback() {
         profile[key] = naver_id_login.getProfileData(key);
     })
     //쿠키에 저장
-    setCookie(ACCESS_TOKEN_NAVER);
+    setUserInfo(ACCESS_TOKEN_NAVER);
 }
 
 naver.addEventListener('click', function(){
