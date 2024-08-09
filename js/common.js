@@ -40,14 +40,23 @@ document.addEventListener("DOMContentLoaded", () => {
             const navLi = document.querySelectorAll(".nav .sub > li")
             const depth1 = document.querySelectorAll(".nav .sub > li > a:not(.solo)")
             const mbBtn = document.querySelector(".mb_menu")
+            const facilitiesDepth2 = document.querySelectorAll(".nav .sub li:nth-child(3) .depth_2 li a")
             
+            // [↓] header에 facilities 메뉴 클릭시 pageType값을 설정해주기 위해 localstorage에 data-num을 심어줍니다. 
+            facilitiesDepth2.forEach((v,i)=>{
+                v.addEventListener("click", (e)=>{
+                    let depthDataNum = e.target.dataset.num;
+                    localStorage.depthNum = JSON.parse( depthDataNum );
+                    console.log(localStorage.num);
+                })
+            })
+
             const handleMbBtnClick = () => {
                 header.classList.toggle("on");
                 body.classList.toggle("prevent_scroll");
             };
             
             const handleHeaderMouseOver = () => {
-                // body.classList.add("prevent_scroll");
                 header.classList.add("on");
             };
             
@@ -56,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
             };
             
             const handleNavBgMouseLeave = () => {
-                // body.classList.remove("prevent_scroll");
                 header.classList.remove("on");
             };
             
@@ -135,40 +143,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
     const chkBtn = document.querySelector(".checkbox_wrap .toggle_btn")
-    chk.forEach((v,i)=>{
-        chkAll.addEventListener("click", ()=>{
-            if (chkAll.checked) {
-                chk[i].checked = true;
-            } else {
-                chk[i].checked = false;
-            }
+        chk.forEach((v,i)=>{
+            chkAll.addEventListener("click", ()=>{
+                if (chkAll.checked) {
+                    chk[i].checked = true;
+                } else {
+                    chk[i].checked = false;
+                }
+            })
+            chk[i].addEventListener("change", ()=>{
+                const chkLength = chk.length;
+                const chkCheckedLength = document.querySelectorAll(".checkbox_wrap input[name='chk']:checked").length
+                if (chkCheckedLength === chkLength) {
+                    chkAll.checked = true;
+                } else {
+                    chkAll.checked = false;
+                }
+            })
+            chkBtn.addEventListener("click", ()=>{
+                chkWrap.classList.toggle("fold")
+            })
         })
-        chk[i].addEventListener("change", ()=>{
-            const chkLength = chk.length;
-            const chkCheckedLength = document.querySelectorAll(".checkbox_wrap input[name='chk']:checked").length
-            if (chkCheckedLength === chkLength) {
-                chkAll.checked = true;
-            } else {
-                chkAll.checked = false;
-            }
-        })
-        chkBtn.addEventListener("click", ()=>{
-            chkWrap.classList.toggle("fold")
-        })
-    })
 
     // [↓] tab
-    const tabCont = document.querySelectorAll(".tab_cont > *")
+    const tabCont = document.querySelector(".tab_cont")
+    const tabContDiv = document.querySelectorAll(".tab_cont > *")
     const tabLi = document.querySelectorAll(".tab li")
     tabLi.forEach((v,i)=>{
         v.addEventListener("click", (e)=>{
             e.preventDefault();
             for(let i=0;i<tabLi.length;i++){
                 tabLi[i].classList.remove("on")
-                tabCont[i].classList.remove("on")
+                if(tabCont) {
+                    tabContDiv[i].classList.remove("on")
+                }
             }
             v.classList.add("on")
-            tabCont[i].classList.add("on")
+            if(tabCont) {
+                tabContDiv[i].classList.add("on")
+            }
         })
     })
     

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let datacontents = function (n) {
         let data,
           info = "";
+        
 
         switch (n) {
           case 0:
@@ -82,7 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
           };
         });
       };
+      
       let pageType = Number(localStorage.num) || 0;
-      datacontents(pageType);
+
+      // [↓] (240809) lhj : header에 nav facilities 클릭 시 localstorage에 depthNum을 남겨주고, depthNum의 value를 datacontents에 넘겨줍니다.
+      let depthLocalstorage = localStorage.getItem('depthNum');
+      if (depthLocalstorage) {
+        datacontents(Number(depthLocalstorage));
+      } else {
+        datacontents(pageType);
+      }
+
     });
 });
