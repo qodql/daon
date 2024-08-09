@@ -202,176 +202,6 @@ ul {
   }
 }
 
-//coupon_popup
-.coupon_popup{
-  width: 514px;
-  height: 709px;
-  margin: 50px auto;
-  background-color: #efefef;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.1);
-  border-radius: 20px;
-  z-index: 999;
-  .coupon_popup_cont{
-      width: 100%;
-      position: relative;
-      .coupon_popup_close_btn{
-          width: 20px;
-          height: 20px;
-          position: absolute;
-          top: 24px;
-          right: 24px;
-          background: url("../img/icon/icon_popup_close.svg") no-repeat center;
-      }
-      .coupon_popup_tit{
-          text-align: center;
-          padding: 40px 0 32px 0;
-          h3{
-              font-size: 24px;
-              font-weight: 700;
-              color: #2f2f2f;
-          }
-      }
-      .coupon_popup_cont_inner{
-          width: 434px;
-          height: 544px;
-          margin: 0 auto;
-          padding: 20px;
-          background-color: #fff;
-          border-radius: 20px;
-          box-shadow: 0 4px 4px rgba(0,0,0,0.1);
-          .coupon_popup_cont_inner_coupon{
-              width: 394px;
-              height: 117px;
-              margin: 0 auto;
-              margin-bottom: 12px;
-              padding: 20px;
-              background-color: #fff;
-              border: 1px solid #efefef;
-              border-radius: 8px;
-              box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
-              display: flex;
-              align-items: flex-end;
-              justify-content: space-between;
-              &.coupon_popup_cont_inner_coupon_02{
-                  .coupon_popup_cont_inner_coupon_txt{
-                      .coupon_popup_cont_inner_coupon_date{
-                          .coupon_popup_cont_inner_coupon_date_icon{
-                              background-color: #FF0F0F;
-                          }
-                      }
-                  }
-              }
-              .coupon_popup_cont_inner_coupon_tit{
-                  h2{
-                      color: #357EF1;
-                      font-size: 40px;
-                      font-weight: 700;
-                  }
-                  h3{
-                      color: #2f2f2f;
-                      font-size: 16px;
-                      font-weight: 600;
-                  }
-              }
-              .coupon_popup_cont_inner_coupon_txt{
-                  display: flex;
-                  flex-direction: column;
-                  align-items: flex-end;
-                  span{
-                      font-size: 14px;
-                      color: #AFAFAF;
-                  }
-                  .coupon_popup_cont_inner_coupon_date{
-                      display: flex;
-                      .coupon_popup_cont_inner_coupon_date_icon{
-                          width: 31px;
-                          height: 18px;
-                          border-radius: 4px;
-                          background: #357EF1;
-                          color: #fff;
-                          text-align: center;
-                          font-size: 8px;
-                          font-weight: 700;
-                          padding: 3px 8px;
-                          margin-right: 8px;
-                      }
-                  }
-              }
-          }
-      }
-  }
-}
-// join popup 팝업
-  .join_popup{
-    width: 460px;
-    height: 309px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-    position: relative;
-    .join_popup_close_btn{
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        right: 24px;
-        top: 24px;
-        span{
-            width: 100%;
-            height: 100%;
-            background: url("../img/icon/icon_popup_close.svg") no-repeat center;
-            display: block;
-        }
-    }
-    .join_popup_cont{
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        .join_popup_tit{
-            text-align: center;
-            .join_popup_title{
-                font-size: 24px;
-                font-weight: 700;
-                color: #357EF1;
-                padding-bottom: 12px;
-                padding-top: 56px;
-            }
-            .join_popup_sub_title{
-                font-size: 20px;
-                font-weight: 600;
-                color: #2f2f2f;
-            }
-        }
-        .join_popup_txt{
-            text-align: center;
-            padding: 32px 0;
-            p{font-size: 16px; color: #2f2f2f;}
-        }
-        .join_popup_btn{
-            text-align: center;
-            button{
-                width: 184px;
-                height: 36px;
-                border-radius: 8px;
-                text-align: center;
-                vertical-align: middle;
-                a{
-                    color: #fff;
-                    padding: 8px 32px;
-                }
-            }
-            .join_popup_btn_progress{
-                background-color: #357EF1;
-                margin-right: 12px;
-            }
-            .join_popup_btn_cancel{
-                background-color: #AFAFAF;
-            }
-        }
-    }
-}
-
 // body scroll 방지
 body {
   &.prevent_scroll {
@@ -512,19 +342,14 @@ body {
   max-height: 100%;
   border: 1px solid #efefef;
   border-radius: 20px;
-  transition: all 0.4s ease;
+  padding: 0 24px 24px 24px;
+  transition: max-height 0.3s ease-out;
   overflow: hidden;
-  &.fold {
-    max-height: 58px;
-    .all {
-      .toggle_btn {
-        transform: rotate(90deg);
-      }
-    }
-  }
   .all {
-    width: 100%;
+    width: calc(100% + 48px);
+    margin-left: -24px;
     padding: 16px 24px;
+    margin-bottom: 16px;
     background-color: #efefef;
     position: relative;
     .toggle_btn {
@@ -581,8 +406,13 @@ body {
       }
     }
   }
-  .checkbox_cont {
-    padding: 16px 24px 24px;
+  &.fold {
+    max-height: 58px;
+    .all {
+      .toggle_btn {
+        transform: rotate(90deg);
+      }
+    }
   }
 }
 // alert
@@ -1022,68 +852,212 @@ body {
   }
 }
 
-// popup 
+// popup
 .popup{
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(47,47,47,0.7);
+  background-color: rgb(0,0,0,0.7);
   z-index: 998;
   display: none;
-    &.active {
-      display: block;
-      .popup_cont{
-        position: fixed;
+  &.active {
+    display: block;
+  }
+  .popup_cont{
+    width: 100%;
+    max-width: 1000px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background-color: #EBEBEC;
+    border: 1px solid #afafaf;
+    border-radius: 20px;
+    overflow: hidden;
+    .popup_top{
+      width: 100%;
+      height: 65px;
+      text-align: center;
+      position: relative;
+      .popup_title{
+        width: fit-content;
+        color: #2f2f2f;
+        font-weight: bold;
+        font-size: 20px;
+        position: absolute;
+        left: 24px;
         top: 50%;
+        transform: translateY(-50%);
+      }
+      .popup_close_btn{
+        width: 64px;
+        height: 64px;
+        background: url("../img/icon/icon_popup_close.svg") no-repeat center;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .popup_inner {
+      width: calc(100% - 160px);
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+  }
+}
+// 쿠폰 팝업
+.popup {
+  &.coupon {
+    .popup_cont {
+      max-width: 514px;
+      padding-bottom: 40px;
+      .popup_title {
         left: 50%;
-        transform: translate(-50%,-50%);
-        max-width: 1000px;
-        width: 100%;
-        z-index: 999;
-        border: 1px solid #afafaf;
-        border-radius: 8px;
-        overflow: hidden;
-        .popup_top{
+        transform: translate(-50%, -50%);
+      }
+      .popup_inner {
+        width: 434px;
+        height: 544px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .coupon_popup_cont_inner{
           width: 100%;
-          height: 65px;
-          background-color: #EBEBEC;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-            .popup_tit{
-              margin-left: 24px;
-              color: #2f2f2f;
-              font-weight: bold;
-              font-size: 24px;
+          >div {
+            width: 394px;
+            height: 117px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #efefef;
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            &:not(:last-of-type) {
+              margin-bottom: 12px;
             }
-            .popup_close_btn{width: 64px;height: 64px;
-            background: url("../img/icon/icon_popup_close.svg") no-repeat center;}
-        }
-        .popup_inner{display: flex;
-          >div{width: 50%;}
-          .popup_review{
-            display: block;
-            padding-top: 64px;
-            padding-left: 40px;
-            background-color: white;
-            .user_id{
-              width: 148px;
-              background-color: rgb(154,190,248,0.22);
-              font-size: 24px;
-              padding: 7px 3px;
-            }
-            .rating_img{width: 96px;
-              margin-top: 20px;
-            }
-            .popup_text{
-              margin-top: 12px;
-            }
+          }
+          .coupon_popup_cont_inner_coupon_02{
+              .coupon_popup_cont_inner_coupon_txt{
+                  .coupon_popup_cont_inner_coupon_date{
+                      .coupon_popup_cont_inner_coupon_date_icon{
+                          background-color: #FF0F0F;
+                      }
+                  }
+              }
+          }
+          .coupon_popup_cont_inner_coupon_tit{
+              h2{
+                  color: #357EF1;
+                  font-size: 40px;
+                  font-weight: 700;
+              }
+              h3{
+                  color: #2f2f2f;
+                  font-size: 16px;
+                  font-weight: 600;
+              }
+          }
+          .coupon_popup_cont_inner_coupon_txt{
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              span{
+                  font-size: 14px;
+                  color: #AFAFAF;
+              }
+              .coupon_popup_cont_inner_coupon_date{
+                  display: flex;
+                  .coupon_popup_cont_inner_coupon_date_icon{
+                      width: 31px;
+                      height: 18px;
+                      border-radius: 4px;
+                      background: #357EF1;
+                      color: #fff;
+                      text-align: center;
+                      font-size: 8px;
+                      font-weight: 700;
+                      padding: 3px 8px;
+                      margin-right: 8px;
+                  }
+              }
           }
         }
       }
     }
+  }
+}
+// 회원가입 팝업
+.popup {
+  &.join {
+    .popup_cont {
+      width: 460px;
+      padding-bottom: 40px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+      .popup_inner {
+        width: 100%;
+        padding-top: 0;
+        .join_popup_tit{
+            text-align: center;
+            .join_popup_title{
+                font-size: 24px;
+                font-weight: 700;
+                color: #357EF1;
+                margin-bottom: 12px;
+            }
+            .join_popup_sub_title{
+                font-size: 20px;
+                font-weight: 600;
+                color: #2f2f2f;
+            }
+        }
+        .join_popup_txt{
+            text-align: center;
+            margin-top: 32px;
+            p {
+              font-size: 16px; 
+              color: #2f2f2f;
+            }
+        }
+      }
+      .popup_bottom_btn{
+          margin-top: 12px;
+          display: flex;
+          justify-content: center;
+          button{
+              width: 184px;
+              padding: 8px 32px;
+              border-radius: 8px;
+              text-align: center;
+              a{
+                  color: #fff;
+              }
+          }
+          .join_popup_btn_progress{
+              background-color: #357EF1;
+              margin-right: 12px;
+          }
+          .join_popup_btn_cancel{
+              background-color: #AFAFAF;
+          }
+      }
+    }
+  }
 }
 
 // responsive
