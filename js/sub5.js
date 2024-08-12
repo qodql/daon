@@ -7,37 +7,43 @@ document.addEventListener("DOMContentLoaded", () => {
  })
  .then(function(data){
    //notice page
-   const pageReverse = data.community_notice.reverse();
+   const page_reverse = data.community_notice.reverse();
    let page = [];
-   for(let i=0; i<pageReverse.length; i+=5){
-     page.push(pageReverse.slice(i, i+5));
+   for(let i=0; i<page_reverse.length; i+=5){
+     page.push(page_reverse.slice(i, i+5));
    }
 
-    let noticePaging = ()=>{
-      const pageList = document.querySelector('.pagination .pagination_num');
+    let notice_paging = ()=>{
+      const page_list = document.querySelector('.pagination_num');
       
       page.forEach((v,i)=>{
-        pageList.innerHTML += `<a href="#">${i+1}</a>`;
+        page_list.innerHTML += `<a href='#'>${i+1}</a>`;
       })
+      
+      const page_btn = document.querySelectorAll('.pagination_num a');
+      
+      page_list.firstElementChild.classList.add('on');
 
-      const pageBtn = document.querySelectorAll('.pagination .pagination_num a');
-      pageBtn.forEach((btn, pageNum)=>{
-        btn.onclick = (e)=>{
+      page_btn.forEach((btn, page_num)=>{
+        btn.addEventListener('click',(e)=>{
           e.preventDefault();
-          noticeData(pageNum);
-          e.target.classList.add('on');
-        }
+          page_btn.forEach((v)=>{
+            notice_data(page_num);
+            v.classList.remove('on');
+          })
+          btn.classList.add('on');
+        })
       })
     }
 
     //notice data insert
-    const noticeTable = document.querySelector('.notice-1 tbody');
+    const notice_table = document.querySelector('.notice-1 tbody');
     
-    let noticeData = (n) =>{
-      noticeTable.innerHTML = '';
+    let notice_data = (n) =>{
+      notice_table.innerHTML = '';
 
       page[n].forEach((v,i)=>{
-        noticeTable.innerHTML += `<td>${v.board_num}</td>
+        notice_table.innerHTML += `<td>${v.board_num}</td>
                                   <td>
                                     <p>${v.board_title}</p>
                                   </td>
@@ -45,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    noticeData(0);
-    noticePaging();
+    notice_data(0);
+    notice_paging();
   })
 
 
