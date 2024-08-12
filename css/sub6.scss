@@ -27,6 +27,9 @@
                                     top: 32px;
                                     z-index: 1;
                                 }
+                                & + p {
+                                    white-space: nowrap;
+                                }
                             }
                         }
                         &.active {
@@ -37,6 +40,7 @@
                                 .circle {
                                     & + p {
                                         color: #efefef;
+                                        white-space: nowrap;
                                     }
                                 }
                             }
@@ -241,12 +245,13 @@
                                 font-weight: 700;
                                 margin-bottom: 20px;
                                 .tag {
-                                    padding: 12px 24px;
+                                    padding: 8px 16px;
                                     display: inline-block;
-                                    margin-right: 20px;
+                                    margin-right: 8px;
                                     font-weight: 700;
                                     border: 2px solid #BE004F;
                                     border-radius: 8px;
+                                    text-transform: uppercase;
                                     &.love {
                                         color: #BE004F;
                                     }
@@ -254,6 +259,11 @@
                                         border-color: #3226C1;
                                         color: #3226C1;
                                     }
+                                }
+                                .room_price {
+                                    margin-left: 4px;
+                                    color: #afafaf;
+                                    font-weight: 600;
                                 }
                             }
                             ul {
@@ -567,7 +577,7 @@
             .data {
                 font-size: 20px;
                 font-weight: 700;
-                .tag {
+                #tag {
                     padding: 8px 12px;
                     margin-right: 8px;
                     background-color: #3226C1;
@@ -576,6 +586,22 @@
                     font-weight: 700;
                     color: #fff;
                     vertical-align: middle;
+                }
+                
+                #room_num, span {
+                    font: inherit;
+                    em {
+                        font: inherit;
+                    }
+                }
+                .room_data {
+                    color: #afafaf;
+                    font-weight: 400;
+                    font-size: 16px;
+                    #room_data {
+                        color: inherit;
+                        font: inherit;
+                    }
                 }
             }
             &:not(:first-of-type) {
@@ -594,7 +620,7 @@
         }
         .price {
             text-align: right;
-            .sale {
+            #primary {
                 font-size: 20px;
                 color: #afafaf;
                 text-decoration: line-through;

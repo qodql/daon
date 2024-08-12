@@ -4,10 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data)=> {return data.json()})
     .then((data)=>{
 
-        const reservationRoomList = document.querySelector(".room_list_wrap")
-       
         // *****************[step1]******************* //
-        // [↓] step1 객실 수, 성인 수, 어린이 수 증감
         const step1 = document.querySelector(".step1")
         const roomInput = document.querySelector(".date_person .room input")
         const adultInput = document.querySelector(".date_person .adult input")
@@ -18,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let roomNum=1, adultNum=2, childNum=0;
     
         if(step1){
+            // [↓] step1 객실 수, 성인 수, 어린이 수 증감
             plusBtn.forEach((v,i)=>{
                 plusBtn[i].addEventListener("click", (e) => {
                     let targetLi = e.target.parentElement.parentElement.parentElement;
@@ -126,6 +124,57 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 })
             })
+
+            // [↓] step1 room list 뿌리기
+            const loveRoomList = document.querySelector(".room_list_wrap.love")
+            const onlyRoomList = document.querySelector(".room_list_wrap.only")
+            
+            let listWrite = (page) => {
+                let type, listName;
+                if (page === data.love) {
+                    type = "love";
+                    listName = loveRoomList;
+                } else if (page === data.only) {
+                    type = "only";
+                    listName = onlyRoomList;
+                }
+                page.forEach((v,i)=>{
+                    listName.innerHTML += `
+                    <li>
+                        <div class="room_img">
+                            <img src="./img/img_sub2_room_${type + v.room_num+"_01.jpg"}" alt="${type} ${v.room_sqft}평">
+                        </div>
+                        <div class="room_info">
+                            <p class="room_name">
+                                <span class="tag ${type}">${type} YOU</span>
+                                ${v.room_num}호
+                                <span class="room_price">${v.room_price}원</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <p><span>객실크기</span>${v.room_sqft}평 (약 ${v.room_sqft * 3}㎡)</p>
+                                </li>
+                                <li>
+                                    <p><span>객실구성</span>${v.room_personnel}</p>
+                                </li>
+                                <li>
+                                    <p><span>최대인원</span>${v.room_composition}</p>
+                                </li>
+                                <li>
+                                    <p><span>추가요금</span>${v.room_caution}</p>
+                                </li>
+                            </ul>
+                            <div class="room_btn_wrap">
+                                <button type="button" class="room_select_btn">선택</button>
+                            </div>
+                        </div>
+                    </li>
+                    `
+                })
+            }
+            
+            listWrite(data.love)
+            listWrite(data.only)
         
             // [↓] step1 객실 선택
             const roomBtn = document.querySelectorAll(".room_select_btn");
@@ -136,17 +185,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     e.target.classList.toggle("selected");
                     roomBtnSelected = document.querySelectorAll(".room_select_btn.selected").length;
                     if(roomBtnSelected > roomNum) {
-                        alert('선택 가능한 객실 수를 초과하였습니다.');
                         e.target.classList.remove("selected");
+                        alert('선택 가능한 객실 수를 초과하였습니다.');
                     }
                 })
             })
         
+            let profile = [{"adultNum":adultNum},{"roomNum":roomNum},{"childNum":childNum}]
+            profile.forEach((v,i) => {
+                console.log(v);
+                // 240813 lhj 여기서부터 하면 됨
+                // document.cookie = `${v}=${v.value};`;
+            })
             // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
             nextBtn.addEventListener("click", ()=>{
                 if (!roomBtnSelected || roomBtnSelected < roomNum) {
                     alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
                 } else if(roomBtnSelected === roomNum){
+
+                    // document.cookie = `adultNum=${adultNum};`
+                    // document.cookie = `roomNum=${roomNum};`
+                    // document.cookie = `childNum=${childNum};`
                     window.location.href='./sub6_reservation_step2.html'
                 }
             })
@@ -169,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardYear = document.querySelector(".card_data .date.year")
         const cardMonth = document.querySelector(".card_data .date.month")
         const cardCvc = document.querySelector(".card_back .cvc_num")
-    
+            
         if (step2) {
             cardAllInput.forEach((v,i)=>{
                 if(v.classList.contains("card_cvc")){
@@ -233,7 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 input.value = formattedValue;
                 cardLastName.innerHTML = formattedValue;
             })
-
             cardYearInput.addEventListener("input", (e)=>{
                 let input = e.target;
                 let value = input.value;
@@ -249,11 +307,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 input.value = formattedValue;
                 cardYear.innerHTML = formattedValue;
             })
-
             cardMonthInput.addEventListener("input", (e)=>{
                 cardMonth.innerText = e.target.value;
             })
-            
             cardCvcInput.addEventListener("input", (e)=>{
                 let input = e.target;
                 let value = input.value;
@@ -269,6 +325,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 input.value = formattedValue;
                 cardCvc.innerHTML = formattedValue;
             })
+            
+            const cookie = document.cookie.split(';');
+            for(let i=0;i <cookie.length; i++) {
+                const getDataName = cookie[i].split('=')[0]
+                const getData = cookie[i].split('=')[1]
+                // 객실 수
+                if (getDataName.includes('roomNum')) {
+                    room_data[0].innerHTML = getData;
+                    room_data[1].innerHTML = getData;
+                }
+                // 성인, 어린이 수
+                if (getDataName.includes('adultNum')) {
+                    adult_num[0].innerHTML = getData;
+                    adult_num[1].innerHTML = getData;
+                } else if (getDataName.includes('childNum')) {
+                    child_num[0].innerHTML = getData;
+                    child_num[1].innerHTML = getData;
+                }0
+            }
         }
     })
 

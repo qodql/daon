@@ -266,6 +266,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
-
+    const resize = () => {
+        var minWidth = 480;
+        var body = document.getElementsByTagName('body')[0];
+        if (window.innerWidth < minWidth) { body.style.zoom = (window.innerWidth / minWidth); }
+        else body.style.zoom = 1;
+    }
+    window.addEventListener('resize', resize);
 
 })

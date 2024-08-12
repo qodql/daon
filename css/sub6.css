@@ -22,11 +22,15 @@
   top: 32px;
   z-index: 1;
 }
+.reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle + p {
+  white-space: nowrap;
+}
 .reservation_common .sub_container .contents .step_wrap .step li.active .circle {
   background-color: #2f2f2f;
 }
 .reservation_common .sub_container .contents .step_wrap .step li.active ~ li .circle + p {
   color: #efefef;
+  white-space: nowrap;
 }
 .reservation_common .sub_container .contents .step_wrap .step li.complete .circle {
   cursor: pointer;
@@ -206,12 +210,13 @@
   margin-bottom: 20px;
 }
 .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag {
-  padding: 12px 24px;
+  padding: 8px 16px;
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 8px;
   font-weight: 700;
   border: 2px solid #BE004F;
   border-radius: 8px;
+  text-transform: uppercase;
 }
 .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag.love {
   color: #BE004F;
@@ -219,6 +224,11 @@
 .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag.only {
   border-color: #3226C1;
   color: #3226C1;
+}
+.step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .room_price {
+  margin-left: 4px;
+  color: #afafaf;
+  font-weight: 600;
 }
 .step1 .sub_container .contents .data_area .room_list_wrap li .room_info ul {
   padding: 38px 40px;
@@ -501,7 +511,7 @@
   font-size: 20px;
   font-weight: 700;
 }
-.step2 .data_list li .data .tag {
+.step2 .data_list li .data #tag {
   padding: 8px 12px;
   margin-right: 8px;
   background-color: #3226C1;
@@ -510,6 +520,21 @@
   font-weight: 700;
   color: #fff;
   vertical-align: middle;
+}
+.step2 .data_list li .data #room_num, .step2 .data_list li .data span {
+  font: inherit;
+}
+.step2 .data_list li .data #room_num em, .step2 .data_list li .data span em {
+  font: inherit;
+}
+.step2 .data_list li .data .room_data {
+  color: #afafaf;
+  font-weight: 400;
+  font-size: 16px;
+}
+.step2 .data_list li .data .room_data #room_data {
+  color: inherit;
+  font: inherit;
 }
 .step2 .data_list li:not(:first-of-type) {
   margin-top: 32px;
@@ -527,7 +552,7 @@
 .step2 .price_wrap .price {
   text-align: right;
 }
-.step2 .price_wrap .price .sale {
+.step2 .price_wrap .price #primary {
   font-size: 20px;
   color: #afafaf;
   text-decoration: line-through;
@@ -642,7 +667,11 @@
 }
 
 @media (max-width: 1279px) {
+  .reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) {
+    margin-right: 100px;
+  }
   .reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) .circle::after {
+    width: 100px;
     left: 62px;
     top: 28px;
   }
@@ -674,18 +703,15 @@
     margin-top: 16px;
   }
   .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap {
-    right: 32px;
-    bottom: 26px;
+    right: 0;
+    bottom: auto;
+    top: 2px;
   }
   .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap .room_select_btn {
     padding: 8px 16px;
   }
   .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name {
     font-size: 20px;
-  }
-  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .tag {
-    padding: 8px 16px;
-    margin-right: 12px;
   }
   .step2 .sub_container .contents .info_wrap .right .sticky_menu .data_list {
     padding: 32px;
@@ -715,6 +741,11 @@
   }
   .step1 .sub_container .contents .data_area .room_list_wrap > li .room_info {
     width: 100%;
+  }
+  .step1 .sub_container .contents .data_area .room_list_wrap > li .room_info .room_btn_wrap {
+    top: auto;
+    right: 32px;
+    bottom: 26px;
   }
   .step2 {
     position: relative;
@@ -792,11 +823,11 @@
   .step2 .right_mb_info .data_list li .label {
     margin-bottom: 0;
   }
-  .step2 .right_mb_info .data_list li .data .stay {
+  .step2 .right_mb_info .data_list li .data .room {
     margin-left: 12px;
     color: #afafaf;
   }
-  .step2 .right_mb_info .data_list li .data .tag {
+  .step2 .right_mb_info .data_list li .data #tag {
     padding: 6px 10px;
     border-radius: 4px;
     font-size: 10px;
@@ -807,9 +838,6 @@
   }
   .step2 .price_wrap .price {
     text-align: left;
-  }
-  .step2 .price_wrap .price .sale {
-    display: none;
   }
   .step2 .price_wrap .price > p {
     font-size: 24px;
@@ -839,10 +867,6 @@
   .step1 .sub_container .contents .data_area .date_person li .input_wrap .date + .sign {
     font-size: 20px;
     margin: 0 12px;
-  }
-  .step1 .sub_container .contents .data_area .room_list_wrap {
-    margin-top: 40px;
-    padding-top: 64px;
   }
 }
 @media screen and (max-width: 863px) {
@@ -918,6 +942,11 @@
   }
 }
 @media screen and (max-width: 529px) {
+  .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap {
+    right: 0;
+    bottom: auto;
+    top: 2px;
+  }
   .look .sub_container .contents .btn_wrap {
     font-size: 0;
   }
