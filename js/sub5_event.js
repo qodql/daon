@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
       else if(i == 5){
         event_box.innerHTML += `<li>
                             <a href="#">
-                            <div class="img_box">
-                                <img src="${v.event_thm}.jpg" alt="이벤트 사진 ${v.id}번">
+                             <div class="img_box">
+                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번">
                                 <div class="end_event">
                                     <p class="end_event_text">${v.event_lastday}</p>
                                 </div>

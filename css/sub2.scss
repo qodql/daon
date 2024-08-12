@@ -37,12 +37,6 @@
     background: url("../img/img_sub2_room_header.jpg") no-repeat center / cover;
   }
 
-  .on {
-    >a{
-      font-weight: inherit;
-    }
-  }
-
   .contents {
     width: 100%;
     opacity: 1;
@@ -108,7 +102,7 @@
       button:hover {
         background-color: #357EF1;
         color: white;
-        border: #357ef1;
+        border-color: #357ef1;
       }
       .contour3 {
         width: 1400px;

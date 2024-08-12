@@ -2,7 +2,6 @@
   "event_page" :[
     {
       "id": 0,
-      "event_thm" : "./img/img_event_05_2_contents_01",
       "event_title" : "단체 할인 이벤트",
       "event_startday" : "2024.07.01",
       "event_lastday" : "2024.07.01",
@@ -10,43 +9,37 @@
     },
     {
       "id" : 1,
-      "event_thm" : ".02",
       "event_title" : "포토라인 이벤트",
-      "event_startday" : "2024.07.01",
-      "event_lastday" : "2024.07.01",
+      "event_startday" : "2024.08.01",
+      "event_lastday" : "2024.12.31",
       "event_link" : "./sub5_community_event_inner.html"
     },
     {
       "id" : 2,
-      "event_thm" : "./img/img_event_05_2_contents_03",
       "event_title" : "홈페이지 예약시 할인",
-      "event_startday" : "2024.07.01",
-      "event_lastday" : "2024.07.01",
+      "event_startday" : "2024.08.11",
+      "event_lastday" : "2024.12.31",
       "event_link" : "./sub5_community_event_inner.html"
-
     },
     {
       "id" : 3,
-      "event_thm" : "./img/img_event_05_2_contents_04",
       "event_title" : "리뷰 이벤트",
-      "event_startday" : "2024.07.01",
-      "event_lastday" : "2024.07.01",
+      "event_startday" : "2024.08.08",
+      "event_lastday" : "2024.12.31",
       "event_link" : "./sub5_community_event_inner.html"
     },
     {
       "id" : 4,
-      "event_thm" : "./img/img_event_05_2_contents_05",
       "event_title" : "초특가 99.9% 할인",
-      "event_startday" : "2024.07.01",
-      "event_lastday" : "2024.07.01",
+      "event_startday" : "2024.05.01",
+      "event_lastday" : "2024.12.31",
       "event_link" : "./sub5_community_event_inner.html"
     },
     {
       "id" : 5,
-      "event_thm" : "./img/img_event_05_2_contents_06",
       "event_title" : "가평 칼봉산 짚라인 할인",
-      "event_startday" : "2024.07.01",
-      "event_lastday" : "2024.07.01",
+      "event_startday" : "2024.08.01",
+      "event_lastday" : "2024.08.02",
       "event_link" : "./sub5_community_event_inner.html"
     }
     
