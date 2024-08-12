@@ -162,7 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardNum = document.querySelector(".card_data .num")
         const cardFirstNameInput = document.querySelector(".input_list .card_name.first")
         const cardLastNameInput = document.querySelector(".input_list .card_name.last")
-        const cardFirstName = document.querySelector(".card_data .name")
+        const cardFirstName = document.querySelector(".card_data .name.first")
+        const cardLastName = document.querySelector(".card_data .name.last")
         const cardYearInput = document.querySelector(".input_list .card_date.year")
         const cardMonthInput = document.querySelector(".input_list .card_date.month")
         const cardYear = document.querySelector(".card_data .date.year")
@@ -186,37 +187,87 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             cardNumInput.addEventListener("input",(e)=>{
                 let input = e.target;
-                let value = input.value.replace(/ /g, '');
+                let value = input.value;
+                
+                // 숫자만 남기고 문자를 제거
+                let numericValue = value.replace(/\D/g, '');
+            
                 let formattedValue = '';
-    
-                for (let i = 0; i < value.length; i++) {
+                for (let i = 0; i < numericValue.length; i++) {
                     if (i > 0 && i % 4 === 0) {
                         formattedValue += ' ';
                     }
-                    formattedValue += value[i];
+                    formattedValue += numericValue[i];
                 }
             
                 input.value = formattedValue;
-                console.log(parseInt(input.value));
-    
-                // cardNum.innerText = input.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-                cardNum.innerText = input.value;
+                cardNum.innerHTML = formattedValue;
             })
             cardFirstNameInput.addEventListener("input", (e)=>{
-                cardFirstName.innerHTML = e.target.value;
-                const cardLastName = document.querySelector(".card_data .name.last")
-                cardLastNameInput.addEventListener("input", (e)=>{
-                    cardLastName.innerText = e.target.value;
-                })
+                let input = e.target;
+                let value = input.value;
+                
+                // 문자만 남기고 숫자 제거
+                let stringicValue = value.replace(/[^a-zA-Z]/g, '');
+                
+                let formattedValue = '';
+                for (let i = 0; i < stringicValue.length; i++) {
+                    formattedValue += stringicValue[i];
+                }
+            
+                input.value = formattedValue;
+                cardFirstName.innerHTML = formattedValue;
             })
+            cardLastNameInput.addEventListener("input", (e)=>{
+                let input = e.target;
+                let value = input.value;
+                
+                // 문자만 남기고 숫자 제거
+                let stringicValue = value.replace(/[^a-zA-Z]/g, '');
+                
+                let formattedValue = '';
+                for (let i = 0; i < stringicValue.length; i++) {
+                    formattedValue += stringicValue[i];
+                }
+            
+                input.value = formattedValue;
+                cardLastName.innerHTML = formattedValue;
+            })
+
             cardYearInput.addEventListener("input", (e)=>{
-                cardYear.innerText = e.target.value;
+                let input = e.target;
+                let value = input.value;
+                
+                // 숫자만 남기고 문자를 제거
+                let numericValue = value.replace(/\D/g, '');
+                
+                let formattedValue = '';
+                for (let i = 0; i < numericValue.length; i++) {
+                    formattedValue += numericValue[i];
+                }
+            
+                input.value = formattedValue;
+                cardYear.innerHTML = formattedValue;
             })
+
             cardMonthInput.addEventListener("input", (e)=>{
                 cardMonth.innerText = e.target.value;
             })
+            
             cardCvcInput.addEventListener("input", (e)=>{
-                cardCvc.innerText = e.target.value;
+                let input = e.target;
+                let value = input.value;
+                
+                // 숫자만 남기고 문자를 제거
+                let numericValue = value.replace(/\D/g, '');
+                
+                let formattedValue = '';
+                for (let i = 0; i < numericValue.length; i++) {
+                    formattedValue += numericValue[i];
+                }
+            
+                input.value = formattedValue;
+                cardCvc.innerHTML = formattedValue;
             })
         }
     })
