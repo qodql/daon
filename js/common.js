@@ -115,15 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const navMenu = document.querySelector('.nav_menu')
         const mypageBtn = document.querySelector('.mypage_btn')
         const cookie = document.cookie.split(';');
-        if (cookie.length > 2) {
-            for(let i=0;i <cookie.length; i++) {
-                const getUserName = cookie[i].split('=')[0]
-                const userName = cookie[i].split('=')[1]
+        for(let i=0;i <cookie.length; i++) {
+            const getUserName = cookie[i].split('=')[0]
+            const userName = cookie[i].split('=')[1]
+            if(isLogin === 'true') {
                 if (getUserName.includes('name')) {
-                    if(isLogin === 'true') {
-                        navMenu.classList.add("on");
-                        mypageBtn.innerText = userName + ' 님';
-                    }
+                    navMenu.classList.add("on");
+                    mypageBtn.innerText = userName + ' 님';
                 }
             }
         }
@@ -132,7 +130,18 @@ document.addEventListener("DOMContentLoaded", () => {
             logoutBtn.addEventListener("click", ()=>{
                 navMenu.classList.remove("on")
                 sessionStorage.clear()
-                document.cookie = `access_token=${false}; expires=${null};`
+                var profile =  {
+                    email: '',
+                    name:'',
+                    age: '',
+                    b_day: '',
+                    gender: '',
+                    mobile: ''
+                };
+
+                Object.entries(profile).forEach(([key, value]) => {
+                    document.cookie = `${key}=undefined;`;
+                })
                 window.location.href='./index.html'
             })
         }
