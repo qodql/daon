@@ -192,12 +192,12 @@ mo-s:
   font-size: 20px;
   color: #2f2f2f;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
   width: 100%;
   max-width: 480px;
   position: relative;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -209,45 +209,37 @@ mo-s:
   top: 50%;
   transform: translateY(-50%);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
   width: 100%;
-  padding: 16px 48px;
+  padding: 16px 36px;
   border: 1px solid #afafaf;
   border-radius: 8px;
   vertical-align: middle;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
-  padding: 0;
-  visibility: hidden;
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   background-repeat: no-repeat;
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
   width: 16px;
   height: 16px;
-  padding: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
   right: 8px;
-  transform: translate(-50%, -50%);
-  background: url(../img/icon/icon_x_circle.svg);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
   width: 20px;
   height: 20px;
-  padding: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
   right: 32px;
-  transform: translate(-50%, -50%);
-  background: url(../img/icon/icon_eye.svg);
+  background-image: url(../img/icon/icon_eye.svg);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
   visibility: visible;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
+  padding: 16px 64px 16px 48px;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box {
   border-radius: 8px;
@@ -517,12 +509,14 @@ mo-s:
     font-size: 18px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+    width: 360px;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
     width: 100%;
     max-width: 480px;
     position: relative;
-    width: 360px;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
@@ -534,45 +528,37 @@ mo-s:
     top: 50%;
     transform: translateY(-50%);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
     width: 100%;
-    padding: 16px 48px;
+    padding: 16px 36px;
     border: 1px solid #afafaf;
     border-radius: 8px;
     vertical-align: middle;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
-    padding: 0;
-    visibility: hidden;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     background-repeat: no-repeat;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
     width: 16px;
     height: 16px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 8px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_x_circle.svg);
+    background-image: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
     width: 20px;
     height: 20px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 32px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_eye.svg);
+    background-image: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
     visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
+    padding: 16px 64px 16px 48px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
     height: 44px;
@@ -737,12 +723,14 @@ mo-s:
     font-size: 18px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+    max-width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
     width: 100%;
     max-width: 480px;
     position: relative;
-    max-width: 100%;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
@@ -754,45 +742,37 @@ mo-s:
     top: 50%;
     transform: translateY(-50%);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
     width: 100%;
-    padding: 16px 48px;
+    padding: 16px 36px;
     border: 1px solid #afafaf;
     border-radius: 8px;
     vertical-align: middle;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
-    padding: 0;
-    visibility: hidden;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     background-repeat: no-repeat;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
     width: 16px;
     height: 16px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 8px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_x_circle.svg);
+    background-image: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
     width: 20px;
     height: 20px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 32px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_eye.svg);
+    background-image: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
     visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
+    padding: 16px 64px 16px 48px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
     width: 100%;
@@ -942,12 +922,14 @@ mo-s:
     font-size: 18px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+    max-width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
     width: 100%;
     max-width: 480px;
     position: relative;
-    max-width: 100%;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
@@ -959,45 +941,37 @@ mo-s:
     top: 50%;
     transform: translateY(-50%);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
     width: 100%;
-    padding: 16px 48px;
+    padding: 16px 36px;
     border: 1px solid #afafaf;
     border-radius: 8px;
     vertical-align: middle;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
-    padding: 0;
-    visibility: hidden;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     background-repeat: no-repeat;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
     width: 16px;
     height: 16px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 8px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_x_circle.svg);
+    background-image: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
     width: 20px;
     height: 20px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 32px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_eye.svg);
+    background-image: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
     visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
+    padding: 16px 64px 16px 48px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
     width: 100%;
@@ -1154,12 +1128,14 @@ mo-s:
     font-size: 16px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+    max-width: 100%;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
     width: 100%;
     max-width: 480px;
     position: relative;
-    max-width: 100%;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
     width: 20px;
     height: 20px;
     margin-right: 8px;
@@ -1171,45 +1147,37 @@ mo-s:
     top: 50%;
     transform: translateY(-50%);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
     width: 100%;
-    padding: 16px 48px;
+    padding: 16px 36px;
     border: 1px solid #afafaf;
     border-radius: 8px;
     vertical-align: middle;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
-    padding: 0;
-    visibility: hidden;
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     background-repeat: no-repeat;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
     width: 16px;
     height: 16px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 8px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_x_circle.svg);
+    background-image: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
     width: 20px;
     height: 20px;
-    padding: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
     right: 32px;
-    transform: translate(-50%, -50%);
-    background: url(../img/icon/icon_eye.svg);
+    background-image: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
     visibility: visible;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
+    padding: 16px 64px 16px 48px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
     width: 100%;

@@ -48,66 +48,64 @@ $input-width: 400px;
 $mo-width: 360px;
 $box-width: 480px;
 // (1)로그인 관련 키보드 입력 들어가는 모든 인풋박스
-@mixin inputbox(){   
-    width: 100%;
-    max-width: $box-width;
-    position: relative;
-    // label: 인풋박스 내부 : 좌측 아이콘
-    label{
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        display: inline-block;
-        background-repeat: no-repeat;
-        vertical-align: middle;
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    input{
+@mixin inputbox(){
+    li{
         width: 100%;
-        padding: 16px 48px;
-        border: 1px solid #afafaf;
-        border-radius: 8px;
-        vertical-align: middle; 
-        // &:focus{
-        //     width: calc(100% - 80px);
-        // }
+        max-width: $box-width;
+        position: relative;
+        // label: 인풋박스 내부 : 좌측 아이콘
+        label{
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        input{
+            width: 100%;
+            padding: 16px 36px;
+            border: 1px solid #afafaf;
+            border-radius: 8px;
+            vertical-align: middle; 
+            // &:focus{
+            //     width: calc(100% - 80px);
+            // }
+        }
+        // 인풋박스 내부 : 우측 [x, 눈] 아이콘
+        .input_btn{
+            // visibility: hidden;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-repeat: no-repeat;
+        }
+        .input_reset_btn{
+            width: 16px;
+            height: 16px;
+            right: 8px;
+            background-image: url(../img/icon/icon_x_circle.svg);
+        }
+        .input_eye_btn{
+            width: 20px;
+            height: 20px;
+            right: 32px;
+            background-image: url(../img/icon/icon_eye.svg);
+        }
+        input.hasValue ~ .input_reset_btn,
+        input.hasValue ~ .input_eye_btn{
+            visibility: visible;
+        }
+
     }
-    // 인풋박스 내부 : 우측 [x, 눈] 아이콘
-    button{
-        padding: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background-repeat: no-repeat;
-    }
-    .input_reset_btn{
-        width: 16px;
-        height: 16px;
-        padding: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 50%;
-        right: 8px;
-        transform: translate(-50%, -50%);
-        background: url(../img/icon/icon_x_circle.svg);
-    }
-    .input_eye_btn{
-        width: 20px;
-        height: 20px;
-        padding: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 50%;
-        right: 32px;
-        transform: translate(-50%, -50%);
-        background: url(../img/icon/icon_eye.svg);
-    }
-    input.hasValue ~ .input_reset_btn{
-        visibility: visible;
+    .pw_box{    //눈 버튼 때문에 우측 패딩값 추가
+        input{
+            padding: 16px 64px 16px 48px;
+        }
     }
     @content
 }

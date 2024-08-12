@@ -22,7 +22,7 @@
         }
     }
     //로그인 관련 모든 인풋박스들
-    .input_box li{
+    .input_box{
         @include inputbox;
     }
     .email_box{label{background-image: url(../img/icon/icon_mail_grey.svg);}}
@@ -31,7 +31,7 @@
     .phone_box{label{background-image: url(../img/icon/icon_phone.svg);}}
     .verify_box{label{background-image: url(../img/icon/icon_phone.svg);}}
     //기본 파란 버튼
-    button{
+    .blue_btn{
         @include btn;
     }
 }

@@ -110,7 +110,7 @@ const emailBox = document.querySelector('.email_box input'),
       phoneBox = document.querySelector('.phone_box input'),
       verifyBox = document.querySelector('.verify_box input');
 const resetBtn = document.querySelectorAll('.input_box .input_reset_btn'),
-      eyeBtn = document.querySelectorAll('.input_box .input_eye_btn');
+      eyeBtn = document.querySelectorAll('.pw_box .input_eye_btn');
 //인풋박스 내부 : 우측 [x, 눈] 아이콘 input시 활성화, blur 시 비활성화
 inputBoxs.forEach((inputbox) => {
     //focus시
@@ -120,23 +120,20 @@ inputBoxs.forEach((inputbox) => {
         }else{  //값이 있으면 버튼 보이게
             inputbox.classList.add('hasValue')  
         }
-        //input시
-        inputbox.addEventListener('input', function(){
-            if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
-                inputbox.classList.remove('hasValue')
-            }else{  //값이 있으면 버튼 보이게
-                inputbox.classList.add('hasValue')
-            }
-        })
+    })
+    // input시
+    inputbox.addEventListener('input', function(){
+        if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
+            inputbox.classList.remove('hasValue')
+        }else{  //값이 있으면 버튼 보이게
+            inputbox.classList.add('hasValue')
+        }
     })
     //blur시
     inputbox.addEventListener('blur', function(){
         inputbox.classList.remove('hasValue')   //버튼 안보이게
     })
 })
-
-
-console.log(resetBtn);
 
 resetBtn.forEach((reset => {
     reset.addEventListener('click', function(){

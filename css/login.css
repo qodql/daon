@@ -172,14 +172,12 @@ mo-s:
 }
 .login_common .input_box li input {
   width: 100%;
-  padding: 16px 48px;
+  padding: 16px 36px;
   border: 1px solid #afafaf;
   border-radius: 8px;
   vertical-align: middle;
 }
-.login_common .input_box li button {
-  padding: 0;
-  visibility: hidden;
+.login_common .input_box li .input_btn {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -188,27 +186,21 @@ mo-s:
 .login_common .input_box li .input_reset_btn {
   width: 16px;
   height: 16px;
-  padding: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
   right: 8px;
-  transform: translate(-50%, -50%);
-  background: url(../img/icon/icon_x_circle.svg);
+  background-image: url(../img/icon/icon_x_circle.svg);
 }
 .login_common .input_box li .input_eye_btn {
   width: 20px;
   height: 20px;
-  padding: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
   right: 32px;
-  transform: translate(-50%, -50%);
-  background: url(../img/icon/icon_eye.svg);
+  background-image: url(../img/icon/icon_eye.svg);
 }
-.login_common .input_box li input.hasValue ~ .input_reset_btn {
+.login_common .input_box li input.hasValue ~ .input_reset_btn,
+.login_common .input_box li input.hasValue ~ .input_eye_btn {
   visibility: visible;
+}
+.login_common .input_box .pw_box input {
+  padding: 16px 64px 16px 48px;
 }
 .login_common .email_box label {
   background-image: url(../img/icon/icon_mail_grey.svg);
@@ -225,7 +217,7 @@ mo-s:
 .login_common .verify_box label {
   background-image: url(../img/icon/icon_phone.svg);
 }
-.login_common button {
+.login_common .blue_btn {
   width: 100%;
   max-width: 480px;
   padding: 16px 16px;
