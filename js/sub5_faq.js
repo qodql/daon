@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const cate = document.querySelectorAll(".categories ul li a");
 
       let tem = function (type) {
-        
+        a.innerHTML='';
         data.forEach((item) => {
           let t;
 
@@ -42,29 +42,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
           console.log(item);
         });
-      };
-      
-      tem('all');
-      
-      cate.forEach((v,i)=>{
-        cate[i].onclick = function () {
-          let categories = this.getAttribute('href')
-          tem.setAttribute('')
-        }
-      })
 
-      const b = a.querySelectorAll(".question");
-      const answer = document.querySelectorAll(".answer");
-      
-      b.forEach((v, i) => {
-        v.onclick = function () {
-          answer.forEach((b, q) => {
-            answer[q].classList.remove("active");
-          });
-          answer[i].classList.add("active");
+        const b = a.querySelectorAll(".question");
+        const answer = document.querySelectorAll(".answer");
+  
+        b.forEach((v, i) => {
+          v.onclick = function () {
+            answer.forEach((b, q) => {
+              answer[q].classList.remove("active");
+            });
+            answer[i].classList.add("active");
+          };
+        });
+
+      };
+
+      tem("all");
+
+      cate.forEach((v, i) => {
+        cate[i].onclick = function (e) {
+          e.preventDefault();
+          let categories = this.getAttribute("href");
+          tem(categories);
         };
       });
-    });
 
-    
+      
+
+
+
+    });
 });
