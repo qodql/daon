@@ -49,6 +49,7 @@
 .sub .contents .main_box .all_text h3 {
   font-size: 24px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 .sub .contents .main_box .all_text li {
   display: flex;
