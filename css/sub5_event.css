@@ -145,10 +145,10 @@
 }
 
 @media (max-width: 1279px) {
-  .sub ul li {
+  .sub .align-box li {
     width: 45%;
   }
-  .sub ul li a .img_box .end_event_text {
+  .sub .align-box li a .img_box .end_event_text {
     font-size: 32px;
   }
 }

@@ -85,10 +85,6 @@ textarea {
   font-size: 16px;
 }
 
-textarea::-moz-placeholder {
-  color: #afafaf;
-}
-
 textarea::placeholder {
   color: #afafaf;
 }
@@ -104,16 +100,8 @@ input {
   font-family: "Montserrat", sans-serif;
 }
 
-input:-moz-read-only {
-  background-color: #efefef;
-}
-
 input:read-only {
   background-color: #efefef;
-}
-
-input::-moz-placeholder {
-  color: #afafaf;
 }
 
 input::placeholder {

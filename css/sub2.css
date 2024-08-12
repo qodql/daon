@@ -11,9 +11,6 @@
 .sub .sub_top {
   background: url("../img/img_sub2_room_header.jpg") no-repeat center/cover;
 }
-.sub .on > a {
-  font-weight: inherit;
-}
 .sub .contents {
   width: 100%;
   opacity: 1;
@@ -74,7 +71,7 @@
 .sub .contents .main_box button:hover {
   background-color: #357EF1;
   color: white;
-  border: #357ef1;
+  border-color: #357ef1;
 }
 .sub .contents .main_box .contour3 {
   width: 1400px;

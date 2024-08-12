@@ -7,9 +7,9 @@
 //max 1279
 @include res('tab'){
 .sub{
-      ul{
+      .align-box{
         li{width: 45%;
-          a{
+          & a{
             .img_box{
               .end_event_text{
                 font-size: 32px;
