@@ -197,7 +197,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             
                 input.value = formattedValue;
+                console.log(parseInt(input.value));
     
+                // cardNum.innerText = input.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
                 cardNum.innerText = input.value;
             })
             cardFirstNameInput.addEventListener("input", (e)=>{
