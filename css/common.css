@@ -45,6 +45,7 @@
   right: 24px;
 }
 .swiper .swiper-pagination {
+  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   display: flex;
@@ -323,6 +324,7 @@ body.prevent_scroll {
   color: #2f2f2f;
 }
 .checkbox_wrap .checkbox + label {
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   align-items: center;
@@ -637,6 +639,7 @@ body.prevent_scroll {
   background: #fff url("../img/icon/icon_sns_instagram.svg") no-repeat center;
 }
 .footer.main {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .footer.main .dim {
@@ -763,6 +766,7 @@ body.prevent_scroll {
   position: relative;
 }
 .popup .popup_cont .popup_top .popup_title {
+  width: -moz-fit-content;
   width: fit-content;
   color: #2f2f2f;
   font-weight: bold;

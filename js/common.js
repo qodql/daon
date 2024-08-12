@@ -115,18 +115,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const navMenu = document.querySelector('.nav_menu')
         const mypageBtn = document.querySelector('.mypage_btn')
         const cookie = document.cookie.split(';');
-        const userName = cookie[3].split('=')[1]
-        if(isLogin === 'true') {
-            navMenu.classList.add("on");
-            mypageBtn.innerText = userName + ' 님';
+        if (cookie.length > 2) {
+            for(let i=0;i <cookie.length; i++) {
+                const getUserName = cookie[i].split('=')[0]
+                const userName = cookie[i].split('=')[1]
+                if (getUserName.includes('nickname') || getUserName.includes('name')) {
+                    if(isLogin === 'true') {
+                        navMenu.classList.add("on");
+                        mypageBtn.innerText = userName + ' 님';
+                    }
+                }
+            }
         }
-        
         const logoutBtn = document.querySelector(".logout_btn");
         if (logoutBtn) {
             logoutBtn.addEventListener("click", ()=>{
                 navMenu.classList.remove("on")
                 sessionStorage.clear()
-                // 240809 lhj : 쿠키 값 지워주기부터 하면 됨.
                 document.cookie = `access_token=${false}; expires=${null};`
                 window.location.href='./index.html'
             })
