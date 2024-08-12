@@ -203,4 +203,28 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
     })
+
+    // [↓] weather
+    const weather_key = 'f34bf64dd3e6f2cc24032a347aefb6e3';
+    const weather_latitude = '37.83117086809958';
+    const weather_longitude = '127.46889840605908';
+      
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${weather_latitude}&lon=${weather_longitude}&appid=${weather_key}&units=metric&lang=kr`)
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+
+        const weather_btn = document.querySelector('.weather_btn a');
+        const weather_icon = data.weather[0].icon;
+        const weather_temp = data.main.temp.toFixed(1);
+       
+        weather_btn.innerHTML = `<img src='http://openweathermap.org/img/wn/${weather_icon}@2x.png'; alt='weather'>
+                                 <span>${weather_temp}°</sapn>`
+        
+
+    })
+
+
+
 })
