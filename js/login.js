@@ -55,7 +55,6 @@ const REDIRECT_URI = "http://127.0.0.1:5501/login.html";
 const AFTER_REDIRECT_URI = "http://127.0.0.1:5501/";
 //(4) 유저 정보 구조
 var profile =  {
-    nickname: '',
     email: '',
     name:'',
     age: '',
@@ -138,7 +137,7 @@ const kakaoLogin = function(){
         .then(res => res.json())
         .then(res => {
             //유저 정보 저장
-            profile.nickname = res.properties.nickname;
+            profile.name = res.properties.nickname; //원래는 닉네임값인데 name에 넣음
             //쿠키에 저장
             setUserInfo(ACCESS_TOKEN_KAKAO);
         })
@@ -203,7 +202,7 @@ const googleLogin = function(){
     const GOOGLE_CLIENT_ID = '507623855565-u1kp5fvsfg2e263jpq2vmtage1rmmkcf.apps.googleusercontent.com';
     const google = document.querySelector('.google');
     
-    function signIn(){
+    function signInGoogle(){
         //엔드포인트주소, 엑세스 토큰을 주고 유저정보를 받아오는 곳
         var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
         //엑세스 토큰값을 서버에 주기 위해서 form생성
@@ -231,10 +230,11 @@ const googleLogin = function(){
         //form자동제출(submit)
         form.submit();
     }
-    google.addEventListener('click', signIn);
+    google.addEventListener('click', signInGoogle);
     
     
     //주소창에 들어온 access_token 뽑아서 저장하기
+    let ACCESS_TOKEN_GOOGLE;
     var fragmentString = location.hash.substring(1);
     var params = {};
     var regex = /([^&=]+)=([^&]*)/g, m;
@@ -244,19 +244,21 @@ const googleLogin = function(){
     if (Object.keys(params).length > 0 && params['state']) {  
         localStorage.setItem('authInfo', JSON.stringify(params)); //로컬스토리지에 엑세스토큰 저장하기
         var authInfo = JSON.parse(localStorage.getItem('authInfo'));    //로컬스토리지에 저장한 엑세스토큰값 가져오기
-        // console.log(info);
-        console.log(authInfo['access_token']);  //엑세스토큰값
-        
+        // console.log(authInfo['access_token']);  //엑세스토큰값
+        ACCESS_TOKEN_GOOGLE = authInfo['access_token'];
         fetch("https://www.googleapis.com/oauth2/v3/userinfo",{
             headers:{
-                "Authorization": `Bearer ${authInfo['access_token']}`
+                "Authorization": `Bearer ${ACCESS_TOKEN_GOOGLE}`
             }
         })
         .then((data) => data.json())    //데이터 받아서 json형태로 만들기
         .then((info) => {
             // console.log(info);
+            profile.name = info.name;
+            profile.email = info.email;
             console.log(info.email);    //이메일주소
             console.log(info.name);     //이름
+            setUserInfo(ACCESS_TOKEN_GOOGLE);
         })
     }
 }
