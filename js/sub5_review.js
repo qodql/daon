@@ -4,4 +4,8 @@ document.addEventListener('DOMContentLoaded',()=> {
   .then((data)=> {
     const data_review = data.community_review;
   })
+
+  data_review.forEach(()=>{
+       
+  })
 })
