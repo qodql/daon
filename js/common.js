@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
             for(let i=0;i <cookie.length; i++) {
                 const getUserName = cookie[i].split('=')[0]
                 const userName = cookie[i].split('=')[1]
-                if (getUserName.includes('nickname') || getUserName.includes('name')) {
+                if (getUserName.includes('name')) {
                     if(isLogin === 'true') {
                         navMenu.classList.add("on");
                         mypageBtn.innerText = userName + ' 님';
