@@ -27,104 +27,88 @@
             </h2>
         </div>
         <div class="join_wrap">
-            <div class="join_personal_info">
-                <ul class="input_box">
-                    <li class="email_box">
-                        <label for="email"></label>
-                        <input id="email" type="email" placeholder="이메일">
-                        <button type="button" class="input_reset_btn"></button>
-                    </li>
-                    <li class="pw_box">
-                        <label for="password"></label>
-                        <input id="password" type="password" placeholder="비밀번호(영문/숫자/특문 조합 8~15자)">
-                        <button type="button" class="input_reset_btn eye"></button>
-                        <button type="button" class="input_reset_btn"></button>
-                    </li>
-                    <li class="pw_check_box pw_box">
-                        <label for="pw_check"></label>
-                        <input id="pw_check" type="password" placeholder="비밀번호 확인">
-                        <button type="button" class="input_reset_btn eye"></button>
-                        <button type="button" class="input_reset_btn"></button>
-                    </li>
-                    <li class="name_box">
-                        <label for="name"></label>
-                        <input id="name" type="text" placeholder="이름">
-                        <button type="button" class="input_reset_btn"></button>
-                    </li>
-                    <li class="phone_verify">
-                        <div class="phone_box"> 
-                            <label for="phone"></label>
-                            <input id="phone" type="tel" placeholder="휴대폰 번호(-없이 입력)">
+            <form action="http://127.0.0.1:5501/join_complete.html">
+                <div class="join_personal_info">
+                    <ul class="input_box">
+                        <li class="email_box">
+                            <label for="email"></label>
+                            <input id="email" type="email" autocomplete="email" placeholder="이메일" required>
                             <button type="button" class="input_reset_btn"></button>
-                        </div>
-                        <div class="verify_btn">
-                            <button type="button" class="blue_btn">인증번호</button>
-                        </div>
-                    </li>
-                    <li class="verify_box">
-                        <label for="verify"></label>
-                        <input id="verify" type="email" placeholder="인증번호" readonly>
-                        <button type="button" class="input_reset_btn"></button>
-                    </li>
-                </ul>
-            </div>
-            <div class="join_agree checkbox_wrap">
-
-                <!-- <div class="checkbox_wrap">
-                    <div class="all">
-                        <input type="checkbox" class="checkbox" id="all_chk">
-                        <label for="all_chk"><i></i>전체동의</label>
-                        <button type="button" class="toggle_btn"></button>
-                    </div>
-                    <div class="checkbox_cont">
-                        <input type="checkbox" class="checkbox" id="chk1" name="chk">
-                        <label for="chk1"><i></i>이용약관 및 취소규정 동의 (필수)</label>
-                        <input type="checkbox" class="checkbox" id="chk2" name="chk">
-                        <label for="chk2"><i></i>개인정보 수집 및 이용 목적 동의 (필수)</label>
-                        <input type="checkbox" class="checkbox" id="chk3" name="chk">
-                        <label for="chk3"><i></i>할인 혜택 및 프로모션 안내 동의 (선택)</label>
-                    </div>
-                </div> -->
-
-                <div class="agree_checkbox">
-                    <!--전체동의-->
-                    <div class="agree_all all">
-                        <input type="checkbox" class="checkbox" id="all_chk">
-                        <label for="all_chk"><i></i>전체동의</label>
-                        <button type="button" class="toggle_btn"></button>
-                    </div>
-                    <ul class="agree_list checkbox_cont">     <!--체크리스트-->
-                        <li class="agree_essential">
-                            <input type="checkbox" class="checkbox" id="chk1" name="chk">
-                            <label for="chk1"><i></i><p>만 19세 이상 <span>(필수)</span></p></label>
                         </li>
-                        <li class="agree_essential">
-                            <input type="checkbox" class="checkbox" id="chk2" name="chk">
-                            <label for="chk2"><i></i><p>이용약관에 대한 동의 <span>(필수)</span></p></label>
-                            <a href="./sub_policy_service.html" class="view_all">전체보기</a>
+                        <li class="pw_box">
+                            <label for="password"></label>
+                            <input id="password" type="password" autocomplete="new-password" placeholder="비밀번호(영문/숫자/특문 조합 8~15자)" required>
+                            <button type="button" class="input_reset_btn input_eye_btn"></button>
+                            <button type="button" class="input_reset_btn"></button>
                         </li>
-                        <li class="agree_essential">
-                            <input type="checkbox" class="checkbox" id="chk3" name="chk">
-                            <label for="chk3"><i></i><p>개인정보 수집, 이용에 대한 동의 <span>(필수)</span></p></label>
-                            <a href="./sub_policy_privacy.html" class="view_all">전체보기</a>
+                        <li class="pw_check_box pw_box">
+                            <label for="pw_check"></label>
+                            <input id="pw_check" type="password" autocomplete="new-password" placeholder="비밀번호 확인" required>
+                            <button type="button" class="input_reset_btn input_eye_btn"></button>
+                            <button type="button" class="input_reset_btn"></button>
                         </li>
-                        <li class="agree_optional">
-                            <input type="checkbox" class="checkbox" id="chk4" name="chk">
-                            <label for="chk4"><i></i><p>개인정보 마케팅 활용 동의 <span>(선택)</span></p></label>
+                        <li class="name_box">
+                            <label for="name"></label>
+                            <input id="name" type="text" autocomplete="name" placeholder="이름" required>
+                            <button type="button" class="input_reset_btn"></button>
                         </li>
-                        <li class="agree_optional">
-                            <input type="checkbox" class="checkbox" id="chk5" name="chk">
-                            <label for="chk5"><i></i><p>이메일 마케팅 수신 동의 <span>(선택)</span></p></label>
+                        <li class="phone_verify">
+                            <div class="phone_box"> 
+                                <label for="phone"></label>
+                                <input id="phone" type="tel" autocomplete="tel" placeholder="휴대폰 번호(-없이 입력)" required>
+                                <button type="button" class="input_reset_btn"></button>
+                            </div>
+                            <div class="verify_btn">
+                                <button type="button" class="blue_btn" disabled>인증번호</button>
+                            </div>
+                        </li>
+                        <li class="verify_box">
+                            <label for="verify"></label>
+                            <input id="verify" type="number" placeholder="인증번호" readonly required>
+                            <button type="button" class="input_reset_btn"></button>
                         </li>
                     </ul>
                 </div>
-                <p class="join_optional_info alert">* 선택항목은 동의 없이 가입 가능합니다.</p>
-            </div>
-            <div class="join_join_btn">
-                <a href="./join_complete.html">
-                    <button type="button">가입완료</button>
-                </a>
-            </div>
+                <div class="join_agree checkbox_wrap">
+                    <div class="agree_checkbox">
+                        <div class="agree_all all">
+                            <input type="checkbox" class="checkbox" id="all_chk">
+                            <label for="all_chk"><i></i>전체동의</label>
+                            <button type="button" class="toggle_btn"></button>
+                        </div>
+                        <ul class="agree_list checkbox_cont">
+                            <li class="agree_essential">
+                                <input type="checkbox" class="checkbox" id="age19" name="chk" required>
+                                <label for="age19"><i></i><p>만 19세 이상 <span>(필수)</span></p></label>
+                            </li>
+                            <li class="agree_essential">
+                                <input type="checkbox" class="checkbox" id="policy_service" name="chk" required>
+                                <label for="policy_service"><i></i><p>이용약관에 대한 동의 <span>(필수)</span></p></label>
+                                <a href="./sub_policy_service.html" class="view_all">전체보기</a>
+                            </li>
+                            <li class="agree_essential">
+                                <input type="checkbox" class="checkbox" id="policy_privacy" name="chk" required>
+                                <label for="policy_privacy"><i></i><p>개인정보 수집, 이용에 대한 동의 <span>(필수)</span></p></label>
+                                <a href="./sub_policy_privacy.html" class="view_all">전체보기</a>
+                            </li>
+                            <li class="agree_optional">
+                                <input type="checkbox" class="checkbox" id="personal_marketing" name="chk">
+                                <label for="personal_marketing"><i></i><p>개인정보 마케팅 활용 동의 <span>(선택)</span></p></label>
+                            </li>
+                            <li class="agree_optional">
+                                <input type="checkbox" class="checkbox" id="email_ads" name="chk">
+                                <label for="email_ads"><i></i><p>이메일 마케팅 수신 동의 <span>(선택)</span></p></label>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="join_optional_info alert">* 선택항목은 동의 없이 가입 가능합니다.</p>
+                </div>
+                <div class="join_join_btn">
+                    <a href="./join_complete.html">
+                        <button type="submit" class="blue_btn" disabled>가입완료</button>
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
     <!-- 푸터 -->

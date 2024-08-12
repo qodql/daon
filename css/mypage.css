@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/* [↓] 하단 나중에 작업 완료 후 삭제 [↓] */
-/* 분기점 
-1280~1500: pc   pc-s
-768~1279: 태블릿     tab
-481~767: 모바일라지  mo-l
-~480: 모바일         mo-s 
-*/
 /* 변동사항(확인 후 삭제하셔도 됩니다!)--------------------------------------
   모든 로그인 관련 페이지는 모바일 기준으로 기본 디자인을 잡았기 때문에 디자인적 변동사항이 적습니다.
   세부사항은 아래와 같습니다.
@@ -48,7 +41,6 @@ mo-s:
         ㄴ.greeting p (환영합~)와 버튼 간격 축소 (80->40px)
         ㄴ .greeting p (환영합~) : 폰트 사이즈 축소 (20->16px)
         ㄴ 버튼 width 고정(깨짐 방지)(160px)
-* 360px일 때 회원가입 페이지-인증번호 버튼이 2줄로 깨지는 현상 때문에 미디어쿼리 추가했습니다.
 */
 /* [↑] 상단 나중에 작업 완료 후 삭제 [↑] */
 @media (max-width: 1279px) {
@@ -224,23 +216,37 @@ mo-s:
   border-radius: 8px;
   vertical-align: middle;
 }
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
+  padding: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+}
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
   width: 16px;
   height: 16px;
+  padding: 0;
   visibility: hidden;
   position: absolute;
   top: 50%;
   right: 8px;
   transform: translate(-50%, -50%);
-  background-image: url(../img/icon/icon_x_circle.svg);
+  background: url(../img/icon/icon_x_circle.svg);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
   width: 20px;
   height: 20px;
+  padding: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
   right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
+  transform: translate(-50%, -50%);
+  background: url(../img/icon/icon_eye.svg);
 }
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
   visibility: visible;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box {
@@ -535,23 +541,37 @@ mo-s:
     border-radius: 8px;
     vertical-align: middle;
   }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
     width: 16px;
     height: 16px;
+    padding: 0;
     visibility: hidden;
     position: absolute;
     top: 50%;
     right: 8px;
     transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
+    background: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
     width: 20px;
     height: 20px;
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
     right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
+    transform: translate(-50%, -50%);
+    background: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
@@ -741,23 +761,37 @@ mo-s:
     border-radius: 8px;
     vertical-align: middle;
   }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
     width: 16px;
     height: 16px;
+    padding: 0;
     visibility: hidden;
     position: absolute;
     top: 50%;
     right: 8px;
     transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
+    background: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
     width: 20px;
     height: 20px;
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
     right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
+    transform: translate(-50%, -50%);
+    background: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
@@ -932,23 +966,37 @@ mo-s:
     border-radius: 8px;
     vertical-align: middle;
   }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
     width: 16px;
     height: 16px;
+    padding: 0;
     visibility: hidden;
     position: absolute;
     top: 50%;
     right: 8px;
     transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
+    background: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
     width: 20px;
     height: 20px;
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
     right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
+    transform: translate(-50%, -50%);
+    background: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
@@ -1130,23 +1178,37 @@ mo-s:
     border-radius: 8px;
     vertical-align: middle;
   }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li button {
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
     width: 16px;
     height: 16px;
+    padding: 0;
     visibility: hidden;
     position: absolute;
     top: 50%;
     right: 8px;
     transform: translate(-50%, -50%);
-    background-image: url(../img/icon/icon_x_circle.svg);
+    background: url(../img/icon/icon_x_circle.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .eye {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
     width: 20px;
     height: 20px;
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
     right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
+    transform: translate(-50%, -50%);
+    background: url(../img/icon/icon_eye.svg);
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input:focus ~ .input_reset_btn {
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn {
     visibility: visible;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {

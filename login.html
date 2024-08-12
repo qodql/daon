@@ -41,17 +41,17 @@
                         <ul class="input_box">
                             <li class="email_box">
                                 <label for="email"></label>
-                                <input id="email" type="email" placeholder="이메일">
+                                <input id="email" type="email" autocomplete="current-password" name="email" placeholder="이메일" required>
                                 <button type="button" class="input_reset_btn"></button>
                             </li>
                             <li class="pw_box">
                                 <label for="password"></label>
-                                <input id="password" type="password" placeholder="비밀번호 (영문/숫자/특문 조합 8~15자)">
-                                <button type="button" class="input_reset_btn eye"></button>
+                                <input id="password" type="password" autocomplete="current-password" name="password" placeholder="비밀번호 (영문/숫자/특문 조합 8~15자)" required>
+                                <button type="button" class="input_reset_btn input_eye_btn"></button>
                                 <button type="button" class="input_reset_btn"></button>
                             </li>
                         </ul>
-                        <button type="button" class="blue_btn">로그인</button>
+                        <button type="submit" class="blue_btn">로그인</button>
                     </div>
                     <div class="login_join_daon">
                         <a href="./join.html">
@@ -61,19 +61,16 @@
                 </div>          
                 <div class="login_sns">
                     <ul class="login_login_sns">
-                        <!-- 카카오 -->
                         <li>
                             <a href="#">
                                 <button type="button" class="kakao"></button>
                             </a>
                         </li>
-                        <!-- 네이버 -->
                         <li>
                             <a href="#" id="naver_id_login">
                                 <button type="button" class="naver"></button>
                             </a>
                         </li>
-                        <!-- 구글 -->
                         <li>
                             <a href="#">
                                 <button type="button" class="google"></button>

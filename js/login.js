@@ -1,32 +1,201 @@
 // [↓] 다온 로그인
 document.addEventListener("DOMContentLoaded", () => { 
-// 로그인+회원가입 공통
-// 로그인
-// 회원가입
-// 회원가입 완료
-    /* 
-    // 비밀번호 패턴검사 정규식
-    let pwChecker = (pw) => {
-        //정규식 조건: 영문소문자/숫자/특문 조합 8~15자
-        const pwPattern = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[a-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,15}$/;
-        //비번 추가조건1: 연속 3개 이상의 문자/숫자/특문이 오지 않도록
-        const pwAdditional1 = /(.)\1{2,}/;
-        //비번 추가조건2: 아이디와 4글자 이상 겹치지 않도록
-        // const pwAdditional2 = id.substring();
-
-        //비밀번호 패턴 검증
-        if(!pwPattern.test(pw)){
-            return false;
-        } else if(pwAdditional1.test(pw)){ //추가조건1
-            return false;    
-        // }
-        // else if(pwAdditional2.test(pw)){  //추가조건2
-        //     return false;
-        }else{
-            return true;
-        }
+// 로그인+회원가입 공통------------------
+// 이메일 유효성 검사
+const emailChecker = (email) => {
+    //이메일 조건(ex. my_Account-01@naver.com): 
+    // 아이디 부분(my_Account-01): 영문 대소문자, 숫자, ._-%+- 의 특문 입력 가능
+    // @: 필수, @로 구분됨
+    // 도메인 부분(naver): 영문 대소문자, 숫자, .-의 특문 입력 가능
+    // 도메인 끝부분(.com): .필수, 2개 이상의 영문 대소문자 입력 가능
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let emailErrorMsg = '';
+    let isValid = false;
+    if(!emailRegex.test(email)){
+        emailErrorMsg = '유효하지 않은 이메일 주소입니다.';
+    }else{
+        emailErrorMsg = '올바른 이메일 주소입니다.';
+        isValid = true;
+        return {isValid: isValid, emailErrorMsg: emailErrorMsg};
     }
-    */
+    return {isValid: isValid, emailErrorMsg: emailErrorMsg};
+}
+// 비밀번호 유효성 검사
+const pwChecker = (pw) => { 
+    //조건: 영문/숫자/특문 각각 1개 이상의 조합으로 8~15자
+    const pwRegex = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,15}$/;
+    let pwErrorMsg = '';
+    let isValid = false;
+    //길이 검증
+    if(pw.length < 8){
+        pwErrorMsg = '비밀번호가 너무 짧습니다. 8자 이상 입력해 주세요.'
+    }else if(pw.length > 15){
+        pwErrorMsg = '비밀번호가 너무 깁니다. 15자 이하로 입력해 주세요.'
+    //조건 검증
+    }else if(!pwRegex.test(pw)){
+        pwErrorMsg ='영문, 숫자, 특수문자를 조합하여 입력해 주세요.';
+    }else{
+        pwErrorMsg ='유효한 비밀번호 입니다.';
+        isValid = true;
+        return {isValid: isValid, pwErrorMsg: pwErrorMsg};
+    }
+    return {isValid: isValid, pwErrorMsg: pwErrorMsg};
+}
+//이름 유효성 검사
+const nameChecker = (name) => {
+    //조건 : 한글만 입력 가능, 2~20자, 띄어쓰기 불가능
+    const nameRegex = /^[가-힣\s]+$/;
+    let nameErrorMsg = '';
+    let isValid = false;
+    //길이 검증, 조건 검증
+    if(!nameRegex.test(name)){
+        nameErrorMsg = '이름에는 한글만 입력해 주세요.'
+    }else if(name.length < 2){
+        nameErrorMsg = '이름의 길이는 2자 이상이어야 합니다.';   
+    }else if(name.length > 20){
+        nameErrorMsg = '이름의 길이는 20자 이하여야 합니다.';
+    }else if(/\s/.test(name)){
+        nameErrorMsg = '이름에는 띄어쓰기를 입력할 수 없습니다.';
+    }else{
+        nameErrorMsg = '올바른 이름입니다.';
+        isValid = true;
+        return {isValid: isValid, nameErrorMsg: nameErrorMsg};
+    }
+    return {isValid: isValid, nameErrorMsg: nameErrorMsg};
+}
+//휴대폰 번호 유효성 검사
+const phoneChecker = (phone) => {
+    //조건: 숫자만 입력 가능, (010,011,016,017,018,019)으로 시작, 10자 이상 11자 미만
+    const phoneRegex = /^01[016789]-[0-9]{3,4}-[0-9]{4}$/;
+    const onlyNumRegex = /^\d+$/;
+    let phoneErrorMsg = '';
+    let isValid = false;
+    //숫자 외 입력값 유무 검증
+    if(!onlyNumRegex.test(phone)){
+        phoneErrorMsg = '휴대폰 번호에는 숫자만 입력할 수 있습니다.';
+    //통신사 번호 검증(010,011,016,017,018,019)
+    }else if(!/^01[016789]/.test(phone)){
+        phoneErrorMsg = '유효하지 않은 통신사 번호입니다. 다시 입력해 주세요.';
+    //길이 검증
+    }else if(phone.length < 10){
+        phoneErrorMsg = '휴대폰 번호 길이가 짧습니다.';   
+    }else if(phone.length > 11){
+        phoneErrorMsg = '휴대폰 번호 길이가 깁니다.'; 
+    //조건 검증
+    }else if(phoneRegex){
+        phoneErrorMsg = '올바른 휴대폰 번호입니다.';
+        isValid = true;
+        return {isValid: isValid, phoneErrorMsg: phoneErrorMsg};
+    }
+    return {isValid: isValid, phoneErrorMsg: phoneErrorMsg};
+}
+//인증번호(6자리) 생성함수
+const verifyNumGenerator = () => {
+    //앞3자리: 100~999사이의 랜덤숫자
+    let ranNum = (Math.floor((Math.random()*900)) + 100); //100~999사이의 랜덤숫자
+    //뒤3자리: 밀리초
+    let today = new Date();
+    let milliSec = today.getMilliseconds();
+    let ranNum2 = milliSec.toString().padStart(3, '0');
+    let verifyNum = parseInt(ranNum.toString() + ranNum2.toString());
+    return verifyNum;
+}
+
+//로그인 관련 키보드 입력 들어가는 모든 인풋박스
+const inputBoxs = document.querySelectorAll('.input_box input');
+const emailBox = document.querySelector('.email_box input'),
+      pwBox = document.querySelector('.pw_box input'),
+      pwCheckBox = document.querySelector('.pw_check_box input'),
+      nameBox = document.querySelector('.name_box input'),
+      phoneBox = document.querySelector('.phone_box input'),
+      verifyBox = document.querySelector('.verify_box input');
+const resetBtn = document.querySelectorAll('.input_box .input_reset_btn'),
+      eyeBtn = document.querySelectorAll('.input_box .input_eye_btn');
+//인풋박스 내부 : 우측 [x, 눈] 아이콘 input시 활성화, blur 시 비활성화
+inputBoxs.forEach((inputbox) => {
+    //focus시
+    inputbox.addEventListener('focus', function(){
+        if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
+            inputbox.classList.remove('hasValue')
+        }else{  //값이 있으면 버튼 보이게
+            inputbox.classList.add('hasValue')  
+        }
+        //input시
+        inputbox.addEventListener('input', function(){
+            if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
+                inputbox.classList.remove('hasValue')
+            }else{  //값이 있으면 버튼 보이게
+                inputbox.classList.add('hasValue')
+            }
+        })
+    })
+    //blur시
+    inputbox.addEventListener('blur', function(){
+        inputbox.classList.remove('hasValue')   //버튼 안보이게
+    })
+})
+
+
+console.log(resetBtn);
+
+resetBtn.forEach((reset => {
+    reset.addEventListener('click', function(){
+        inputBoxs.forEach((inputbox) => {
+            inputbox.value = '';
+        })
+    })
+}))
+
+eyeBtn.addEventListener('click', function(){
+    pwBox.type = 'text';
+})
+
+
+// 로그인-----------------------------------
+
+// 회원가입---------------------------------
+
+const verifyBtn = document.querySelector('.verify_btn button');
+
+
+emailBox.addEventListener('blur', function(){
+    profile.email = emailBox.value;
+    let result = emailChecker(profile.email);
+    console.log(profile.email);
+    if(result.isValid){}
+})
+
+
+
+
+
+//휴대폰번호 유효하면 버튼 disabled 제거 
+phoneBox.onblur = function(){
+    profile.phone = phoneBox.value;
+    if(phoneChecker(profile.phone)){
+        verifyBtn.removeAttribute('disabled');
+    }
+}
+
+verifyBtn.addEventListener('click', function(){
+    verifyNum = verifyNumGenerator();
+    alert(`인증번호: ${verifyNum}`);
+
+    //버튼 클릭 시 readonly 제거
+    verifyBox.removeAttribute('readonly');
+    verifyBox.value = verifyNum;
+})
+
+
+
+
+
+
+
+// 회원가입 완료: ${name} 저장해서 가져오기-----------------
+
+    
+
 })
 
 // [↓] sns 로그인(dom제어 필요없는 부분이라 밖으로 뺐습니다.)
@@ -67,13 +236,13 @@ const setUserInfo = function(accessToken) {
     //1. 유효기간 설정
     let endDate = new Date();
     endDate.setSeconds(endDate.getSeconds() + 86400);   //24시간 (단위:초)
-    //2. 유저 정보를 쿠키에 저장
+    //2-1. 유저 정보를 쿠키에 저장
     Object.entries(profile).forEach(([key, value]) => {
         document.cookie = `${key}=${value}; expires=${endDate.toGMTString()};`;
     })
-    //3. 엑세스 토큰을 쿠키에 저장
+    //2-2. 엑세스 토큰을 쿠키에 저장
     document.cookie = `access_token=${accessToken}; expires=${endDate.toGMTString()};`
-    //3-1. 정보를 세션에 저장(로그인 페이지 외 다른 페이지에서도 사용할 수 있게)
+    //3. 정보를 세션에 저장(로그인 페이지 외 다른 페이지에서도 사용할 수 있게)
         //1) 프로필 정보
     sessionStorage.profile = JSON.stringify(profile);
         //2) 로그인 여부
@@ -197,7 +366,7 @@ naver.addEventListener('click', function(){
     loginWithNaver();
 })
 
-/* 구글 */
+/* 구글 ---------------------------------*/
 const googleLogin = function(){
     const GOOGLE_CLIENT_ID = '507623855565-u1kp5fvsfg2e263jpq2vmtage1rmmkcf.apps.googleusercontent.com';
     const google = document.querySelector('.google');
@@ -241,11 +410,9 @@ const googleLogin = function(){
     while (m = regex.exec(fragmentString)) {
         params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
     }
-    if (Object.keys(params).length > 0 && params['state']) {  
-        localStorage.setItem('authInfo', JSON.stringify(params)); //로컬스토리지에 엑세스토큰 저장하기
-        var authInfo = JSON.parse(localStorage.getItem('authInfo'));    //로컬스토리지에 저장한 엑세스토큰값 가져오기
-        // console.log(authInfo['access_token']);  //엑세스토큰값
-        ACCESS_TOKEN_GOOGLE = authInfo['access_token'];
+    if (Object.keys(params).length > 0 && params['state']) {
+        var authInfo = JSON.parse(JSON.stringify(params)); //엑세스 토큰 뽑기
+        ACCESS_TOKEN_GOOGLE = authInfo['access_token']; //엑세스 토큰값만 저장
         fetch("https://www.googleapis.com/oauth2/v3/userinfo",{
             headers:{
                 "Authorization": `Bearer ${ACCESS_TOKEN_GOOGLE}`
@@ -253,12 +420,9 @@ const googleLogin = function(){
         })
         .then((data) => data.json())    //데이터 받아서 json형태로 만들기
         .then((info) => {
-            // console.log(info);
             profile.name = info.name;
             profile.email = info.email;
-            console.log(info.email);    //이메일주소
-            console.log(info.name);     //이름
-            setUserInfo(ACCESS_TOKEN_GOOGLE);
+            setUserInfo(ACCESS_TOKEN_GOOGLE);   //쿠키와 세션에 유저 정보 저장
         })
     }
 }
