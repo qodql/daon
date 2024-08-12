@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     //Intro Grid Image Scroll Event
-    const introGrid = document.querySelectorAll('.intro_grid_wrapper p');
+    const intro_grid = document.querySelectorAll('.intro_grid_wrapper p');
 
-    const gridAnimate = new IntersectionObserver(function(entry){
+    const grid_animate = new IntersectionObserver(function(entry){
         entry.forEach((v,i)=>{
             if(v.isIntersecting){
                 setTimeout(()=>{
@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     });
 
-    introGrid.forEach((v)=>{
-        gridAnimate.observe(v);
+    intro_grid.forEach((v)=>{
+        grid_animate.observe(v);
     })
 
     //Intro Full Background Scroll Event
-    const introFull = document.querySelectorAll('.intro_full_bg');
+    const intro_full = document.querySelectorAll('.intro_full_bg');
 
-    const expandAnimate = new IntersectionObserver(function(entry){
+    const expand_animate = new IntersectionObserver(function(entry){
         entry.forEach((v)=>{
             if(v.isIntersecting){
                 v.target.classList.add('intro_expand');
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
-    introFull.forEach((v)=>{
-        expandAnimate.observe(v);
+    intro_full.forEach((v)=>{
+        expand_animate.observe(v);
     })
 
 })

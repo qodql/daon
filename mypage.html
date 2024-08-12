@@ -84,7 +84,7 @@
                                             <p>이름</p>
                                             <li class="name_box">
                                                 <label for="name"></label>
-                                                <input id="name" type="text">
+                                                <input id="name" type="text" placeholder="이름">
                                             </li>
                                             <li class="checkbox_wrap">
                                                 <input type="checkbox" class="checkbox" id="agree_privacy_marketing" name="chk">
@@ -109,7 +109,7 @@
                                             <p>생년월일</p>
                                             <li class="birth_box">
                                                 <label for="birth"></label>
-                                                <input id="birth" type="text">
+                                                <input id="birth" type="text" placeholder="생년월일">
                                             </li>
                                         </ul>
                                     </li>
@@ -117,7 +117,7 @@
                                         <ul class="coupon_ul">
                                             <p>쿠폰</p>
                                             <li class="coupon_box">
-                                                <input type="button" value="쿠폰확인">
+                                                <input type="button" name="pop_btn" value="쿠폰확인">
                                             </li>
                                         </ul>
                                     </li>
@@ -197,20 +197,20 @@
                                             </td>
                                         </tr>
                                     </table>
-                                    <span>※ 취소 규정이 적용되는 기준일은 ‘입실일’이며, 취소수수료는 쿠폰 및 포인트와 같은 할인 금액을 포함한 ‘최초 예약 금액’을 기준으로 계산됩니다.</span>
+                                    <span class="alert">※ 취소 규정이 적용되는 기준일은 ‘입실일’이며, 취소수수료는 쿠폰 및 포인트와 같은 할인 금액을 포함한 ‘최초 예약 금액’을 기준으로 계산됩니다.</span>
                                 </article>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="coupon_popup_layer">
-                    <div class="coupon_popup">
-                        <div class="coupon_popup_cont">
-                            <button class="coupon_popup_close_btn">
-                            </button>
-                            <div class="coupon_popup_tit">
-                                <h3>쿠폰함</h3>
-                            </div>
+                <div class="popup coupon">
+                    <div class="popup_cont">
+                        <div class="popup_top">
+                            <h3 class="popup_title">쿠폰함</h3>
+                            <button class="popup_close_btn"></button>
+                        </div>
+                        <div class="popup_inner">
+                            <!-- inner 안쪽에 팝업 내용 작업 -->
                             <div class="coupon_popup_cont_inner">
                                 <div class="coupon_popup_cont_inner_coupon coupon_popup_cont_inner_coupon_01">
                                     <div class="coupon_popup_cont_inner_coupon_tit">
@@ -223,7 +223,6 @@
                                             <span class="coupon_popup_cont_inner_coupon_date_icon">D-7</span>
                                             <span>2024. 06. 19까지</span>
                                         </div>
-                    
                                     </div>
                                 </div>
                                 <div class="coupon_popup_cont_inner_coupon coupon_popup_cont_inner_coupon_02">
@@ -237,7 +236,6 @@
                                             <span class="coupon_popup_cont_inner_coupon_date_icon">D-1</span>
                                             <span>2024. 06. 13까지</span>
                                         </div>
-                    
                                     </div>
                                 </div>
                                 <div class="coupon_popup_cont_inner_coupon coupon_popup_cont_inner_coupon_03">
@@ -251,7 +249,6 @@
                                             <span class="coupon_popup_cont_inner_coupon_date_icon">D-5</span>
                                             <span>2024. 06. 13까지</span>
                                         </div>
-                    
                                     </div>
                                 </div>
                                 <div class="coupon_popup_cont_inner_coupon coupon_popup_cont_inner_coupon_04">

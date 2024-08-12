@@ -1,7 +1,6 @@
 @import "./_res";
 
 @include res('pc-s'){
-    //mypage PC-S Responsive start
     .mypage{
         .sub_container{
             .contents{
@@ -21,62 +20,29 @@
                             }
                         }
                         .mypage_reservation{
-                            width: 100%;
                             table.mypage_reservation_list{
-                                width: 100%;
                                 tr{
-                                    width: 100%;
-                                    display: flex;
-                                    padding: 24px 0;
-                                    border-bottom: 2px solid #EFEFEF;
-                                    &:nth-child(4){
-                                        td{color: #AFAFAF;}
-                                    }
-                                    th{font-weight: 700;}
                                     th,td{
                                         font-size: 18px;
-                                        color: #2f2f2f;
-                                        text-align: center;
-                                        &:nth-child(1){width: 25%; padding-right: 10px;}
-                                        &:nth-child(2){width: 15%;}
-                                        &:nth-child(3){width: 10%;}
-                                        &:nth-child(4){width: 25%;}
-                                        &:nth-child(5){width: 25%;}
                                     }
                                 }
                             }
                             .mypage_reservation_cancel{
-                                width: 100%;
                                 h3{
                                     margin: 60px 0 40px;
                                     font-size: 20px;
-                                    font-weight: 700;
                                 }
                                 table{
-                                    width: 100%;
                                     tr{
                                         th{
                                             width: 30%;
-                                            height: 80px;
                                             font-size: 18px;
-                                            border: 1px solid #AFAFAF;
-                                            padding: 20px 20px 20px 60px;
+                                            padding: 20px
                                         }
                                         td{
-                                            border: 1px solid #AFAFAF;
-                                            padding: 20px 20px 20px 60px;
-                                            ul{
-                                                li{font-size: 16px;}
-                                            }
+                                            padding: 20px;
                                         }
                                     }
-                                }
-                                span{
-                                    font-size: 16px;
-                                    color: #AFAFAF;
-                                    font-weight: 300;
-                                    margin: 12px 8px;
-                                    display: block;
                                 }
                             }
                         }
@@ -85,11 +51,9 @@
             }
         }
     }
-    //mypage PC-S Responsive end
 }
 
 @include res('tab'){
-    //mypage Tablet Responsive start
     .mypage{
         .sub_container{
             .contents{
@@ -115,14 +79,13 @@
                                         }
                                         &.phone_ul, &.birth_ul, &.coupon_ul{
                                             height: 56px;
-                                            margin-bottom: 12px;
+                                            margin-bottom: 16px;
                                         } 
                                         p{
                                             width: 140px;
                                             font-size: 18px;
                                         }
                                         li{
-                                            @include inputbox;
                                             width: 360px;
                                             input{
                                                 height: 44px;
@@ -132,21 +95,8 @@
                                 }
                             }
                             .mypage_info_btn{
-                                margin-top: 100px;
-                                button{
-                                    width: 220px;
-                                    height: 40px;
-                                    line-height: 42px;
-                                }
                                 .mypage_info_fix_btn{
-                                    background-color: #357EF1;
-                                    border: none;
                                     margin-right: 8px;
-                                    a{color: #fff; font-size: 18px;}
-                                }
-                                .mypage_info_cancel_btn{
-                                    border: 1px solid #AFAFAF;
-                                    a{color: #2f2f2f; font-size: 18px;}
                                 }
                             }
                             .mypage_info_member_delete{
@@ -154,86 +104,29 @@
                             }
                         }
                         .mypage_reservation{
-                            width: 100%;
                             table.mypage_reservation_list{
-                                width: 100%;
                                 tr{
-                                    width: 100%;
-                                    display: flex;
                                     padding: 16px 0;
-                                    border-bottom: 2px solid #EFEFEF;
-                                    &:nth-child(4){
-                                        td{color: #AFAFAF;}
-                                    }
-                                    th{font-weight: 700;}
                                     th,td{
-                                        font-size: 18px;
-                                        color: #2f2f2f;
                                         text-align: center;
-                                        &:nth-child(1){width: 25%;}
-                                        &:nth-child(2){width: 15%;}
-                                        &:nth-child(3){width: 10%;}
-                                        &:nth-child(4){width: 25%;}
-                                        &:nth-child(5){width: 25%;}
                                     }
                                 }
                             }
                             .mypage_reservation_cancel{
-                                width: 100%;
-                                h3{
-                                    margin: 60px 0 40px;
-                                    font-size: 20px;
-                                }
                                 table{
-                                    width: 100%;
                                     tr{
-                                        th{
-                                            font-size: 16px;
-                                            width: 420px;
-                                            height: 80px;
-                                            font-size: 20px;
-                                            border: 1px solid #AFAFAF;
-                                            padding: 20px 30px 20px 40px;
-                                            text-align: left;
-                                        }
                                         td{
-                                            border: 1px solid #AFAFAF;
                                             padding: 20px 30px 20px 40px;
-                                            ul{
-                                                li{font-size: 16px;}
-                                            }
                                         }
                                     }
-                                }
-                                span{
-                                    font-size: 14px;
-                                    color: #AFAFAF;
-                                    font-weight: 300;
-                                    margin: 8px 4px;
-                                    display: block;
                                 }
                             }
                         }
                     }
                 }
-                .coupon_popup_layer{
-                    width: 100%;
-                    height: 100%;
-                    position: fixed;
-                    z-index: 99;
-                    top: 0;
-                    left: 0;
-                    background-color: rgba(0,0,0,0.6);
-                    display: none;
-                    .coupon_popup{
-                        margin: 70px auto;
-                    }
-                }
             }
         }
     }
-    //mypage Tablet Responsive end
-   
 }
 
 @media screen and (max-width: 1056px){
@@ -260,14 +153,14 @@
                                             height: auto;
                                             .checkbox_wrap{
                                                 padding: 0;
+                                                margin-left: -20px;
                                                 input{
                                                     padding: 0;
                                                 }
                                                 label{
-                                                    width: 280px;
                                                     i{
-                                                        width: 20px;
-                                                        height: 20px;
+                                                        width: 16px;
+                                                        height: 16px;
                                                         border-radius: 4px;
                                                     }
                                                 }
@@ -275,14 +168,11 @@
                                         }
                                         &.phone_ul, &.birth_ul, &.coupon_ul{
                                             height: auto;
-                                            margin-bottom: 12px;
                                         } 
                                         &.coupon_ul{
-                                            p{display: none;}
-                                        }
-                                        p{
-                                            width: 140px;
-                                            font-size: 18px;
+                                            p{
+                                                display: none;
+                                            }
                                         }
                                         li{
                                             @include inputbox;
@@ -294,8 +184,8 @@
                                             &.coupon_box{
                                                 input{
                                                     width: 100px;
-                                                    height: 32px;
-                                                    line-height: 32px;
+                                                    height: 36px;
+                                                    line-height: 36px;
                                                 }
                                             }
                                         }
@@ -306,98 +196,25 @@
                                 margin-top: 100px;
                                 button{
                                     width: 180px;
-                                    height: 36px;
-                                    line-height: 38px;
+                                    height: 40px;
+                                    line-height: 42px;
                                 }
                                 .mypage_info_fix_btn{
-                                    background-color: #357EF1;
-                                    border: none;
-                                    margin-right: 8px;
-                                    a{color: #fff; font-size: 18px;}
+                                    a{
+                                        font-size: 18px;
+                                    }
                                 }
-                                .mypage_info_cancel_btn{
-                                    border: 1px solid #AFAFAF;
-                                    a{color: #2f2f2f; font-size: 18px;}
-                                }
-                            }
-                            .mypage_info_member_delete{
-                                right: 8px;
                             }
                         }
                         .mypage_reservation{
-                            width: 100%;
                             table.mypage_reservation_list{
-                                width: 100%;
                                 tr{
-                                    width: 100%;
-                                    display: flex;
-                                    padding: 16px 0;
-                                    border-bottom: 2px solid #EFEFEF;
-                                    &:nth-child(4){
-                                        td{color: #AFAFAF;}
-                                    }
-                                    th{font-weight: 700;}
                                     th,td{
                                         font-size: 18px;
-                                        color: #2f2f2f;
-                                        text-align: center;
-                                        &:nth-child(1){width: 25%;}
-                                        &:nth-child(2){width: 15%;}
-                                        &:nth-child(3){width: 10%;}
-                                        &:nth-child(4){width: 25%;}
-                                        &:nth-child(5){width: 25%;}
                                     }
-                                }
-                            }
-                            .mypage_reservation_cancel{
-                                width: 100%;
-                                h3{
-                                    margin: 60px 0 40px;
-                                    font-size: 20px;
-                                }
-                                table{
-                                    width: 100%;
-                                    tr{
-                                        th{
-                                            font-size: 16px;
-                                            width: 420px;
-                                            height: 80px;
-                                            font-size: 20px;
-                                            border: 1px solid #AFAFAF;
-                                            padding: 20px 30px 20px 40px;
-                                            text-align: left;
-                                        }
-                                        td{
-                                            border: 1px solid #AFAFAF;
-                                            padding: 20px 30px 20px 40px;
-                                            ul{
-                                                li{font-size: 16px;}
-                                            }
-                                        }
-                                    }
-                                }
-                                span{
-                                    font-size: 14px;
-                                    color: #AFAFAF;
-                                    font-weight: 300;
-                                    margin: 8px 4px;
-                                    display: block;
                                 }
                             }
                         }
-                    }
-                }
-                .coupon_popup_layer{
-                    width: 100%;
-                    height: 100%;
-                    position: fixed;
-                    z-index: 99;
-                    top: 0;
-                    left: 0;
-                    background-color: rgba(0,0,0,0.6);
-                    display: none;
-                    .coupon_popup{
-                        margin: 70px auto;
                     }
                 }
             }
@@ -419,43 +236,19 @@
                                 li{
                                     ul{
                                         margin-bottom: 16px;
-                                        &.email_ul, &.name_ul{
-                                            .checkbox_wrap{
-                                                input{
-                                                }
-                                                label{
-                                                    width: 280px;
-                                                    i{
-                                                        width: 16px;
-                                                        height: 16px;
-                                                        border-radius: 4px;
-                                                    }
-                                                }
-                                            }
-                                        }
                                         &.phone_ul, &.birth_ul, &.coupon_ul{
-                                            height: auto;
                                             margin-bottom: 16px;
                                         } 
-                                        &.coupon_ul{
-                                            p{display: none;}
-                                        }
                                         p{
                                             width: 140px;
                                             font-size: 18px;
                                         }
                                         li{
-                                            @include inputbox;
-                                            max-width: 100%;
-                                            input{
-                                                width: 100%;
-                                                height: auto;
-                                            }
                                             &.coupon_box{
                                                 input{
-                                                    width: 80px;
-                                                    height: 28px;
-                                                    line-height: 27px;
+                                                    width: 88px;
+                                                    height: 32px;
+                                                    line-height: 30px;
                                                     font-size: 14px;
                                                 }
                                             }
@@ -467,18 +260,16 @@
                                 margin-top: 80px;
                                 button{
                                     width: 160px;
-                                    height: 32px;
-                                    line-height: 34px;
                                 }
                                 .mypage_info_fix_btn{
-                                    background-color: #357EF1;
-                                    border: none;
-                                    margin-right: 8px;
-                                    a{color: #fff; font-size: 16px;}
+                                    a{
+                                        font-size: 16px;
+                                    }
                                 }
                                 .mypage_info_cancel_btn{
-                                    border: 1px solid #AFAFAF;
-                                    a{color: #2f2f2f; font-size: 16px;}
+                                    a{
+                                        font-size: 16px;
+                                    }
                                 }
                             }
                             .mypage_info_member_delete{
@@ -492,84 +283,40 @@
                             }
                         }
                         .mypage_reservation{
-                            width: 100%;
                             table.mypage_reservation_list{
-                                width: 100%;
                                 tr{
-                                    width: 100%;
-                                    display: flex;
-                                    padding: 16px 0;
-                                    border-bottom: 2px solid #EFEFEF;
-                                    &:nth-child(4){
-                                        td{color: #AFAFAF;}
-                                    }
-                                    th{font-weight: 700;}
                                     th,td{
                                         font-size: 16px;
-                                        color: #2f2f2f;
-                                        text-align: center;
-                                        &:nth-child(1){width: 25%;}
-                                        &:nth-child(2){width: 15%;}
-                                        &:nth-child(3){width: 10%;}
-                                        &:nth-child(4){width: 25%;}
-                                        &:nth-child(5){width: 25%;}
                                     }
                                 }
                             }
                             .mypage_reservation_cancel{
-                                width: 100%;
                                 h3{
                                     margin: 40px 0 20px;
                                     font-size: 16px;
-                                    font-weight: 700;
                                 }
                                 table{
-                                    width: 100%;
                                     tr{
                                         th{
-                                            width: 30%;
                                             height: 40px;
                                             font-size: 16px;
-                                            border: 1px solid #AFAFAF;
-                                            padding: 20px 40px;
                                         }
                                         td{
-                                            border: 1px solid #AFAFAF;
-                                            padding: 30px 0 30px 80px;
                                             ul{
-                                                li{font-size: 14px;}
+                                                li{
+                                                    font-size: 14px;
+                                                }
                                             }
                                         }
                                     }
-                                }
-                                span{
-                                    font-size: 12px;
-                                    color: #AFAFAF;
-                                    font-weight: 300;
-                                    margin: 8px 4px;
-                                    display: block;
                                 }
                             }
                         }
                     }
                 }
-                .coupon_popup_layer{
-                    width: 100%;
-                    height: 100%;
-                    position: fixed;
-                    z-index: 99;
-                    top: 0;
-                    left: 0;
-                    background-color: rgba(0,0,0,0.6);
-                    display: none;
-                    .coupon_popup{
-                        margin: 70px auto;
-                    }
-                }
             }
         }
     }
-    //mypage Mobile-Large Responsive end
 }
 
 
@@ -585,7 +332,6 @@
                             .mypage_info_input{
                                 li{
                                     ul{
-                                        margin-bottom: 16px;
                                         &.email_ul, &.name_ul{
                                             .checkbox_wrap{
                                                 span{
@@ -593,150 +339,62 @@
                                                 }
                                                 label{
                                                     width: 230px;
-                                                    i{
-                                                        width: 16px;
-                                                        height: 16px;
-                                                        border-radius: 4px;
-                                                    }
                                                 }
                                             }
-                                        }
-                                        &.phone_ul, &.birth_ul, &.coupon_ul{
-                                            height: auto;
-                                            margin-bottom: 16px;
-                                        } 
-                                        &.coupon_ul{
-                                            p{display: none;}
                                         }
                                         p{
-                                            width: 140px;
                                             font-size: 16px;
-                                        }
-                                        li{
-                                            @include inputbox;
-                                            max-width: 100%;
-                                            input{
-                                                width: 100%;
-                                                height: auto;
-                                            }
-                                            &.coupon_box{
-                                                input{
-                                                    width: 80px;
-                                                    height: 28px;
-                                                    line-height: 27px;
-                                                    font-size: 14px;
-                                                }
-                                            }
                                         }
                                     }
                                 }
                             }
                             .mypage_info_btn{
-                                margin-top: 80px;
                                 button{
-                                    width: 100px;
-                                    height: 28px;
-                                    line-height: 28px;
+                                    width: 120px;
+                                    height: 36px;
+                                    line-height: 38px;
                                 }
                                 .mypage_info_fix_btn{
-                                    background-color: #357EF1;
-                                    border: none;
                                     margin-right: 4px;
-                                    a{color: #fff; font-size: 16px;}
-                                }
-                                .mypage_info_cancel_btn{
-                                    border: 1px solid #AFAFAF;
-                                    a{color: #2f2f2f; font-size: 16px;}
-                                }
-                            }
-                            .mypage_info_member_delete{
-                                width: 60px;
-                                right: 4px;
-                                .mypage_info_member_delete_btn{
-                                    a{
-                                        font-size: 12px;
-                                    }
                                 }
                             }
                         }
                         .mypage_reservation{
-                            width: 100%;
                             table.mypage_reservation_list{
-                                width: 100%;
                                 tr{
-                                    width: 100%;
-                                    display: flex;
                                     padding: 12px 0;
-                                    border-bottom: 1px solid #EFEFEF;
-                                    &:nth-child(4){
-                                        td{color: #AFAFAF;}
-                                    }
-                                    th{font-weight: 700;}
                                     th,td{
                                         font-size: 14px;
-                                        color: #2f2f2f;
-                                        text-align: center;
-                                        &:nth-child(1){width: 25%;}
-                                        &:nth-child(2){width: 15%;}
-                                        &:nth-child(3){width: 10%;}
-                                        &:nth-child(4){width: 25%;}
-                                        &:nth-child(5){width: 25%;}
                                     }
                                 }
                             }
                             .mypage_reservation_cancel{
-                                width: 100%;
                                 h3{
                                     margin: 36px 0 16px;
                                     font-size: 14px;
-                                    font-weight: 700;
                                 }
                                 table{
-                                    width: 100%;
                                     tr{
                                         th{
                                             font-size: 14px;
-                                            width: 30%;
-                                            height: 40px;
-                                            border: 1px solid #AFAFAF;
-                                            padding: 12px 16px;
                                         }
                                         td{
-                                            border: 1px solid #AFAFAF;
                                             padding: 12px 16px;
                                             ul{
-                                                li{font-size: 12px;}
+                                                li{
+                                                    font-size: 12px;
+                                                }
                                             }
                                         }
                                     }
                                 }
-                                span{
-                                    font-size: 12px;
-                                    color: #AFAFAF;
-                                    font-weight: 300;
-                                    margin: 4px
-                                }
                             }
                         }
-                    }
-                }
-                .coupon_popup_layer{
-                    width: 100%;
-                    height: 100%;
-                    position: fixed;
-                    z-index: 99;
-                    top: 0;
-                    left: 0;
-                    background-color: rgba(0,0,0,0.6);
-                    display: none;
-                    .coupon_popup{
-                        margin: 70px auto;
                     }
                 }
             }
         }
     }
-    //mypage Mobile-Small Responsive end
 }
 
 

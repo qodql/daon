@@ -1,37 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     //Mypage Tab
-    const mypageTabBtn = document.querySelectorAll('.mypage_tap_wrap .tab li');
-    const mypageTabCont = document.querySelectorAll('.mypage_tap_wrap .tab_cont > div');
+    const mypage_tab_btn = document.querySelectorAll('.mypage_tap_wrap .tab li');
+    const mypage_tab_cont = document.querySelectorAll('.mypage_tap_wrap .tab_cont > div');
 
-    mypageTabBtn.forEach((btn,key)=>{
+    mypage_tab_btn.forEach((btn,key)=>{
         btn.onclick = function(){
-            mypageTabBtn.forEach((v,i)=>{
-                mypageTabBtn[i].classList.remove('on');
-                mypageTabCont[i].classList.remove('on');
+            mypage_tab_btn.forEach((v,i)=>{
+                mypage_tab_btn[i].classList.remove('on');
+                mypage_tab_cont[i].classList.remove('on');
             })
-            mypageTabBtn[key].classList.add('on');
-            mypageTabCont[key].classList.add('on');
+            mypage_tab_btn[key].classList.add('on');
+            mypage_tab_cont[key].classList.add('on');
         }
     })
-
-    //Mypage Popup
-    const mypageCouponPopup = document.querySelector('.coupon_popup_layer');
-    const mypageCouponBtn = document.querySelector('.coupon_box input');
-    const mypageCouponClose = document.querySelector('.coupon_popup_close_btn');
-    
-    let mypageCouponFun = function(){
-        mypageCouponBtn.onclick = function(){
-            mypageCouponPopup.style = "display: block;"
-        }
-        mypageCouponClose.onclick = function(){
-            mypageCouponPopup.style = "display: none;"
-        }
-    }
-    mypageCouponFun();
-
-
-
 
 
 
