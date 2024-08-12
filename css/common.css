@@ -250,11 +250,24 @@ body.prevent_scroll {
 .header .inner .nav_menu li {
   color: #fff;
 }
-.header .inner .nav_menu li:last-child {
+.header .inner .nav_menu li:nth-child(even) {
   margin-left: 24px;
 }
-.header .inner .nav_menu li a {
-  color: inherit;
+.header .inner .nav_menu li.login {
+  display: none;
+}
+.header .inner .nav_menu li:not(.login) {
+  display: block;
+}
+.header .inner .nav_menu li a.mypage_btn {
+  display: flex;
+  align-items: center;
+}
+.header .inner .nav_menu.on li.login {
+  display: block;
+}
+.header .inner .nav_menu.on li:not(.login) {
+  display: none;
 }
 .header.on .nav_bg {
   top: 0;
@@ -1139,6 +1152,13 @@ body.prevent_scroll {
   }
   .fixed_menu ul li.top_btn a span {
     font-size: 12px;
+  }
+  .nav_menu li a.mypage_btn::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../img/icon/icon_mypage.svg") no-repeat center/20px;
   }
 }
 @media (max-width: 767px) {

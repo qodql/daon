@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 v.addEventListener("click", (e)=>{
                     let depthDataNum = e.target.dataset.num;
                     localStorage.depthNum = JSON.parse( depthDataNum );
-                    console.log(localStorage.num);
                 })
             })
 
@@ -111,6 +110,33 @@ document.addEventListener("DOMContentLoaded", () => {
             footer.classList.add("login")
         }
 
+        // 로그인 nav_menu 체인지.
+        const isLogin = sessionStorage.getItem('login')
+        const navMenu = document.querySelector('.nav_menu')
+        const mypageBtn = document.querySelector('.mypage_btn')
+        const cookie = document.cookie.split(';');
+        if (cookie.length > 2) {
+            for(let i=0;i <cookie.length; i++) {
+                const getUserName = cookie[i].split('=')[0]
+                const userName = cookie[i].split('=')[1]
+                if (getUserName.includes('nickname') || getUserName.includes('name')) {
+                    if(isLogin === 'true') {
+                        navMenu.classList.add("on");
+                        mypageBtn.innerText = userName + ' 님';
+                    }
+                }
+            }
+        }
+        const logoutBtn = document.querySelector(".logout_btn");
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", ()=>{
+                navMenu.classList.remove("on")
+                sessionStorage.clear()
+                document.cookie = `access_token=${false}; expires=${null};`
+                window.location.href='./index.html'
+            })
+        }
+
     })
 
     // [↓] popup
@@ -143,14 +169,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const chkAll = document.querySelector(".checkbox_wrap #all_chk")
     const chk = document.querySelectorAll(".checkbox_wrap input[name='chk']")
     const chkBtn = document.querySelector(".checkbox_wrap .toggle_btn")
+    if (chk) {
         chk.forEach((v,i)=>{
-            chkAll.addEventListener("click", ()=>{
-                if (chkAll.checked) {
-                    chk[i].checked = true;
-                } else {
-                    chk[i].checked = false;
-                }
-            })
+            if (chkAll) {
+                chkAll.addEventListener("click", ()=>{
+                    if (chkAll.checked) {
+                        chk[i].checked = true;
+                    } else {
+                        chk[i].checked = false;
+                    }
+                })
+            }
             chk[i].addEventListener("change", ()=>{
                 const chkLength = chk.length;
                 const chkCheckedLength = document.querySelectorAll(".checkbox_wrap input[name='chk']:checked").length
@@ -160,10 +189,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     chkAll.checked = false;
                 }
             })
-            chkBtn.addEventListener("click", ()=>{
-                chkWrap.classList.toggle("fold")
-            })
+            if (chkBtn) {
+                chkBtn.addEventListener("click", ()=>{
+                    chkWrap.classList.toggle("fold")
+                })
+            }
         })
+    }
 
     // [↓] tab
     const tabCont = document.querySelector(".tab_cont")

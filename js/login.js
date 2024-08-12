@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
 let cookie = document.cookie.split(';');    //쿠키에서
 let access_token= cookie.filter((v)=>v.match('access_token')); //엑세스 토큰 추출
 var login = false; //로그인 상태일 때:true , 로그아웃 상태일 때: false
-if(access_token.length && access_token[0].split('=')[1]){ //엑세스 토큰 값있
+
+// if 조건문이 true, false를 boolean이 아닌 문자열로 받기때문에 false가 나와도 true로 간주한다. (false라는 문자가 있으니까 트루.) 그래서 === 'true'를 넣어줘서 문자열 true 일때를 한번 더 넣어주면 정상작동함.
+if(access_token.length && access_token[0].split('=')[1] === 'true'){ //엑세스 토큰 값있
     login = true;
     // location.href="/";
 } else{                         //엑세스 토큰 값없: 로그인 진행

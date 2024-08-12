@@ -285,12 +285,31 @@ body {
       li {
         color: #fff;
 
-        &:last-child {
+        &:nth-child(even) {
           margin-left: 24px;
+        }
+        &.login {
+          display: none;
+        }
+        &:not(.login) {
+          display: block;
         }
 
         a {
-          color: inherit;
+          &.mypage_btn {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+      &.on {
+        li {
+          &.login {
+            display: block;
+          }
+          &:not(.login) {
+            display: none;
+          }
         }
       }
     }
