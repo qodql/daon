@@ -85,42 +85,37 @@ document.addEventListener("DOMContentLoaded", () => {
         return {isValid: isValid, errorMsg: errorMsg};
     }
     //값 일치 확인 함수
-    const isEqual = function(input, target){
+    const isEqual = function(inputValue, targetValue){
+        if(inputValue === targetValue){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //비밀번호확인 일치 검사 함수
+    const pwEqual = ((pwCheck, pw) => {
         let isValid = false;
         let errorMsg = '';
-        if(input === target){
+        if(isEqual(pwCheck, pw)){
             isValid = true;
+            errorMsg = '';
         }else{
-            if(target.length === 6){
-                errorMsg = '인증번호가 일치하지 않습니다.'
-            }else{
-                errorMsg = '비밀번호가 일치하지 않습니다.'
-            }
+            errorMsg = '비밀번호가 일치하지 않습니다.'
         }
         return {isValid: isValid, errorMsg: errorMsg};
-    }
-    // //비밀번호확인 일치 검사 함수
-    // const pwEqual = ((pwCheck, pw) => {
-    //     let isValid = false;
-    //     let errorMsg = '';
-    //     if(isEqual(pwCheck, pw)){
-    //         isValid = true;
-    //     }else{
-    //         errorMsg = '비밀번호가 일치하지 않습니다.'
-    //     }
-    //     return {isValid: isValid, errorMsg: errorMsg};
-    // })
-    // // 인증번호 일치 검사 함수
-    // const verifyNumEqual = ((input, verifyNum) => {
-    //     let isValid = false;
-    //     let errorMsg = '';
-    //     if(isEqual(input, verifyNum)){
-    //         isValid = true;
-    //     }else{
-    //         errorMsg = '인증번호가 일치하지 않습니다.'
-    //     }
-    //     return {isValid: isValid, errorMsg: errorMsg};
-    // })
+    })
+    // 인증번호 일치 검사 함수
+    const verifyNumEqual = ((input, verifyNum) => {
+        let isValid = false;
+        let errorMsg = '';        
+        if(isEqual(parseInt(input), verifyNum)){
+            isValid = true;
+            errorMsg = '';
+        }else{
+            errorMsg = '인증번호가 일치하지 않습니다.'
+        }
+        return {isValid: isValid, errorMsg: errorMsg};
+    })
     //인증번호(6자리)생성 함수
     const verifyNumGenerator = (() => {
         //앞3자리: 100~999사이의 랜덤숫자
@@ -181,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(inputBox.value === ''){   //인풋값이 없으면 에러메시지 없음
             errorMsgs[idx].classList.remove('active');
             errorMsgs[idx].innerText = '';
-            inputBox.classList.remove('active');
+            inputBox.classList.remove('active');    //테두리색 변경
         }else{  //인풋값이 있으면
             if(result.isValid === true){ //유효값이면 에러메시지 없음
                 errorMsgs[idx].classList.remove('active');
@@ -221,124 +216,125 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
         case 'join':
             const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
-            /*방법1----------------------------
-            // emailBox.addEventListener('blur', function(){
-            //     let idx = 0;
-            //     let result = emailChecker(emailBox.value);
-            //     showErrorMsg(result, emailBox, idx);
-            // })
-            // pwBox.addEventListener('blur', function(){
-            //     let idx = 1;
-            //     let result = pwChecker(pwBox.value);
-            //     showErrorMsg(result, pwBox, idx);
-            // })
-            // pwCheckBox.addEventListener('blur', function(){
-            //     let idx = 2;
-            //     let result = isEqual(pwCheckBox.value, pwBox.value);
-            //     showErrorMsg(result, pwCheckBox, idx);
-            // })
-            // nameBox.addEventListener('blur', function(){
-            //     let idx = 3;
-            //     let result = nameChecker(nameBox.value);
-            //     showErrorMsg(result, nameBox, idx);
-            // })
-            // phoneBox.addEventListener('blur', function(){
-            //     let idx = 4;
-            //     let result = phoneChecker(phoneBox.value);
-            //     showErrorMsg(result, phoneBox, idx);
-            //     //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
-            //     if(result.isValid == true){
-            //         verifyBtn.disabled = false;
-            //     }else{
-            //         verifyBtn.disabled = true;
-            //     }
-            // })
-            // verifyBtn.addEventListener('click', function(){
-            //     let idx = 5;
-            //     //인증번호 생성
-            //     let verifyNum = verifyNumGenerator();
-            //     console.log(verifyNum);
-            //     //팝업으로 띄우기
-            //     alert(`인증번호: ${verifyNum}`);
-            //     //인풋박스 활성화 시키기
-            //     verifyBox.removeAttribute('readonly');
-            //     //인증번호 일치하는지 검사
-            //     verifyBox.addEventListener('blur', function(){
-            //         let result = isEqual(verifyBox.value, verifyNum);
-            //         showErrorMsg(result, verifyBox, idx);
-            //         console.log(verifyNum);
-
-            //     })
-            // })
-            */
-            //방법2------------------------------------------ 
-            const boxs = [
-                {
-                    name: emailBox,
-                    func: emailChecker
-                },
-                {
-                    name: pwBox,
-                    func: pwChecker
-                },
-                {
-                    name: pwCheckBox,
-                    func: isEqual
-                },
-                {
-                    name: nameBox,
-                    func: nameChecker
-                },
-                {
-                    name: phoneBox,
-                    func: phoneChecker
-                },
-                {
-                    name: verifyBox,
-                    func: isEqual
-                }
-            ]
-            boxs.forEach((box, idx) => {
-                if(idx === 2){
-                    box.name.addEventListener('blur', function(){
-                        let result = box.func(box.name.value, pwBox.value);
-                        showErrorMsg(result, box.name, idx);
-                    })
-                }else if(idx === 4){
-                    box.name.addEventListener('blur', function(){
-                        let result = box.func(box.name.value);
-                        showErrorMsg(result, box.name, idx);
-                        //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
-                        if(result.isValid === true){
-                            verifyBtn.disabled = false;
-                        }else{
-                            verifyBtn.disabled = true;
-                        }
-                    })
-                }else if(idx === 5){
-                    verifyBtn.addEventListener('click', function(){
-                        //인증번호 생성
-                        let verifyNum = verifyNumGenerator();
-                        //팝업으로 띄우기
-                        alert(`인증번호: ${verifyNum}`);
-                        //인풋박스 활성화 시키기
-                        box.name.removeAttribute('readonly');
-                        //인증번호 일치하는지 검사
-                        box.name.addEventListener('blur', function(){
-                            let result = box.func(box.name.value, verifyNum);
-                            console.log(`입력값: ${box.name.value}`);
-                            console.log(`인증번호: ${verifyNum}`);
-                            showErrorMsg(result, box.name, idx);
-                        })
-                    })    
+            //방법1----------------------------
+            emailBox.addEventListener('blur', function(){
+                let idx = 0;
+                let result = emailChecker(emailBox.value);
+                showErrorMsg(result, emailBox, idx);
+            })
+            pwBox.addEventListener('blur', function(){
+                let idx = 1;
+                let result = pwChecker(pwBox.value);
+                showErrorMsg(result, pwBox, idx);
+            })
+            pwCheckBox.addEventListener('blur', function(){
+                let idx = 2;
+                console.log(pwCheckBox.value, pwBox.value);
+                
+                let result = pwEqual(pwCheckBox.value, pwBox.value);
+                showErrorMsg(result, pwCheckBox, idx);
+            })
+            nameBox.addEventListener('blur', function(){
+                let idx = 3;
+                let result = nameChecker(nameBox.value);
+                showErrorMsg(result, nameBox, idx);
+            })
+            phoneBox.addEventListener('blur', function(){
+                let idx = 4;
+                let result = phoneChecker(phoneBox.value);
+                showErrorMsg(result, phoneBox, idx);
+                //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
+                if(result.isValid == true){
+                    verifyBtn.disabled = false;
                 }else{
-                    box.name.addEventListener('blur', function(){
-                        let result = box.func(box.name.value);
-                        showErrorMsg(result, box.name, idx);
-                    })
+                    verifyBtn.disabled = true;
                 }
             })
+            verifyBtn.addEventListener('click', function(){
+                let idx = 5;
+                //인증번호 생성
+                let verifyNum = verifyNumGenerator();
+                //팝업으로 띄우기
+                alert(`인증번호: ${verifyNum}`);
+                //인풋박스 활성화 시키기
+                verifyBox.removeAttribute('readonly');
+                //인증번호 일치하는지 검사
+                verifyBox.addEventListener('blur', function(){
+                    let result = verifyNumEqual(verifyBox.value, verifyNum);
+                    showErrorMsg(result, verifyBox, idx);
+                    console.log(verifyNum);
+                })
+            })
+            
+            /*//방법2------------------------------------------ 
+            // const boxs = [
+            //     {
+            //         name: emailBox,
+            //         func: emailChecker
+            //     },
+            //     {
+            //         name: pwBox,
+            //         func: pwChecker
+            //     },
+            //     {
+            //         name: pwCheckBox,
+            //         func: isEqual
+            //     },
+            //     {
+            //         name: nameBox,
+            //         func: nameChecker
+            //     },
+            //     {
+            //         name: phoneBox,
+            //         func: phoneChecker
+            //     },
+            //     {
+            //         name: verifyBox,
+            //         func: isEqual
+            //     }
+            // ]
+            // boxs.forEach((box, idx) => {
+            //     if(idx === 2){
+            //         box.name.addEventListener('blur', function(){
+            //             let result = box.func(box.name.value, pwBox.value);
+            //             showErrorMsg(result, box.name, idx);
+            //         })
+            //     }else if(idx === 4){
+            //         box.name.addEventListener('blur', function(){
+            //             let result = box.func(box.name.value);
+            //             showErrorMsg(result, box.name, idx);
+            //             //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
+            //             if(result.isValid === true){
+            //                 verifyBtn.disabled = false;
+            //             }else{
+            //                 verifyBtn.disabled = true;
+            //             }
+            //         })
+            //     }else if(idx === 5){
+            //         verifyBtn.addEventListener('click', function(){
+            //             //인증번호 생성
+            //             let verifyNum = verifyNumGenerator();
+            //             //팝업으로 띄우기
+            //             alert(`인증번호: ${verifyNum}`);
+            //             //인풋박스 활성화 시키기
+            //             box.name.removeAttribute('readonly');
+            //             //인증번호 일치하는지 검사
+            //             box.name.addEventListener('blur', function(){
+            //                 let result = box.func(box.name.value, verifyNum);
+            //                 console.log(`입력값: ${box.name.value}`);
+            //                 console.log(`인증번호: ${verifyNum}`);
+            //                 showErrorMsg(result, box.name, idx);
+            //             })
+            //         })    
+            //     }else{
+            //         box.name.addEventListener('blur', function(){
+            //             let result = box.func(box.name.value);
+            //             showErrorMsg(result, box.name, idx);
+            //         })
+            //     }
+            // })
             //------------------------------------------
+            */
             //Caps Lock 체크 함수
             const capsLockChecker = function(event){
                 if (event.getModifierState("CapsLock")) {
@@ -347,7 +343,36 @@ document.addEventListener("DOMContentLoaded", () => {
                     errorMsgs.innerText = ""
                 }
             }
-            let submitChecker = () => {
+            //팝업 계속진행/중단하기 버튼 함수
+            const popupBtnFunc = function(){
+                const popup = document.querySelector('.popup.join');
+                const progressBtn = document.querySelector('.popup .join_popup_btn_progress');
+                const cancelBtn = document.querySelector('.popup .join_popup_btn_cancel');
+                progressBtn.addEventListener('click', function() {
+                    popup.classList.remove("active");
+                    body.classList.remove("prevent_scroll");
+                });
+                cancelBtn.addEventListener('click', function(){
+                    // popup.classList.remove("active");
+                    // body.classList.remove("prevent_scroll");
+                    history.back();
+                })
+            }
+            popupBtnFunc();
+
+            //엑세스 토큰 생성 함수(30자)
+            const accessTokenGenerator = function(){
+                let length = 30;
+                const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-_-..-_-0123456789abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-_-..-_-abcdefghijklmnopqrstuvwxyz0123456789';
+                let accessToken = '';
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * characters.length);
+                    accessToken += characters[randomIndex];
+                }
+                return accessToken;
+            }
+            //submitBtn 비활/활성화 검사 함수
+            const submitChecker = () => {
                 let submitCondition = form.checkValidity();
                     if(submitCondition === true){
                         submitBtn.disabled = false;
@@ -360,20 +385,17 @@ document.addEventListener("DOMContentLoaded", () => {
             window.addEventListener('keydown', submitChecker)
             window.addEventListener('scroll', submitChecker)
 
-            submitBtn.addEventListener('submit', function(){    //여기 엔터쳐도 다음 페이지 갈 수 있게?
-                let accessToken = 'ASDqwe545asd123454dsfasd1234';
+            submitBtn.addEventListener('click', function(){
+                let accessToken = accessTokenGenerator();
                 setUserInfo(accessToken);
-                // location.href = "http://127.0.0.1:5501/join_complete.html"
             })            
             break;
         case 'join_complete':
             const name = document.querySelector('.greeting .name');
-            let profile = JSON.parse(sessionStorage.profile); 
-            name.innerText = profile.name;
+            let userName = JSON.parse(sessionStorage.profile); 
+            name.innerText = userName.name;
             break;
     }
-    
-    //저장은 가입완료 버튼 누르는 시점에
     
     
 })  //DOMloaded 괄호

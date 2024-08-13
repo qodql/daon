@@ -336,9 +336,7 @@ mo-s:
 .join .join_wrap .join_agree {
   width: 100%;
   padding: 0;
-  margin: 0 auto;
   border: none;
-  border-radius: 0;
 }
 .join .join_wrap .join_agree .agree_checkbox {
   width: 100%;
@@ -354,13 +352,9 @@ mo-s:
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_all {
   width: 100%;
-  padding: 24px;
   margin: 0;
   display: flex;
   justify-content: space-between;
-}
-.join .join_wrap .join_agree .agree_checkbox .agree_all .toggle_btn {
-  top: 24px;
 }
 .join .join_wrap .join_agree .agree_checkbox .agree_list {
   padding: 12px 24px;
