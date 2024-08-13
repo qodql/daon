@@ -164,6 +164,57 @@ mo-s:
   align-items: center;
   margin-bottom: 16px;
 }
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li label {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 16px;
+  top: 28px;
+  transform: translateY(-50%);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
+  width: 100%;
+  padding: 16px 36px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_btn {
+  visibility: hidden;
+  position: absolute;
+  top: 28px;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_reset_btn {
+  width: 16px;
+  height: 16px;
+  right: 8px;
+  background-image: url(../img/icon/icon_x_circle.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn {
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  background-image: url(../img/icon/icon_eye.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_eye_btn.hide {
+  background-image: url(../img/icon/icon_eye_closed.svg);
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_reset_btn,
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.hasValue ~ .input_eye_btn {
+  visibility: visible;
+}
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul .pw_box input {
+  padding: 16px 64px 16px 36px;
+}
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.email_ul .checkbox_wrap, .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul.name_ul .checkbox_wrap {
   width: 330px;
   height: 40px;
@@ -191,57 +242,6 @@ mo-s:
   width: 170px;
   font-size: 20px;
   color: #2f2f2f;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
-  width: 100%;
-  max-width: 480px;
-  position: relative;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 16px;
-  top: 28px;
-  transform: translateY(-50%);
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
-  width: 100%;
-  padding: 16px 36px;
-  border: 1px solid #afafaf;
-  border-radius: 8px;
-  vertical-align: middle;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
-  visibility: hidden;
-  position: absolute;
-  top: 28px;
-  transform: translate(-50%, -50%);
-  background-repeat: no-repeat;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
-  width: 16px;
-  height: 16px;
-  right: 8px;
-  background-image: url(../img/icon/icon_x_circle.svg);
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
-  width: 20px;
-  height: 20px;
-  right: 32px;
-  background-image: url(../img/icon/icon_eye.svg);
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn.hide {
-  background-image: url(../img/icon/icon_eye_closed.svg);
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
-  visibility: visible;
-}
-.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
-  padding: 16px 64px 16px 36px;
 }
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.email_box {
   border-radius: 8px;
@@ -438,57 +438,6 @@ mo-s:
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
     width: 360px;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
-    width: 100%;
-    max-width: 480px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 16px;
-    top: 28px;
-    transform: translateY(-50%);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
-    width: 100%;
-    padding: 16px 36px;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
-    visibility: hidden;
-    position: absolute;
-    top: 28px;
-    transform: translate(-50%, -50%);
-    background-repeat: no-repeat;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    right: 8px;
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn.hide {
-    background-image: url(../img/icon/icon_eye_closed.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
-    visibility: visible;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
-    padding: 16px 64px 16px 36px;
-  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
     height: 44px;
   }
@@ -640,64 +589,6 @@ mo-s:
     width: 140px;
     font-size: 18px;
   }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
-    max-width: 100%;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
-    width: 100%;
-    max-width: 480px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 16px;
-    top: 28px;
-    transform: translateY(-50%);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
-    width: 100%;
-    padding: 16px 36px;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
-    visibility: hidden;
-    position: absolute;
-    top: 28px;
-    transform: translate(-50%, -50%);
-    background-repeat: no-repeat;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    right: 8px;
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn.hide {
-    background-image: url(../img/icon/icon_eye_closed.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
-    visibility: visible;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
-    padding: 16px 64px 16px 36px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
-    width: 100%;
-    height: auto;
-  }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
     width: 88px;
     height: 32px;
@@ -750,73 +641,6 @@ mo-s:
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul p {
     font-size: 16px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li {
-    max-width: 100%;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li {
-    width: 100%;
-    max-width: 480px;
-    position: relative;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li label {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 16px;
-    top: 28px;
-    transform: translateY(-50%);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input {
-    width: 100%;
-    padding: 16px 36px;
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    vertical-align: middle;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
-    visibility: hidden;
-    position: absolute;
-    top: 28px;
-    transform: translate(-50%, -50%);
-    background-repeat: no-repeat;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_reset_btn {
-    width: 16px;
-    height: 16px;
-    right: 8px;
-    background-image: url(../img/icon/icon_x_circle.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    background-image: url(../img/icon/icon_eye.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_eye_btn.hide {
-    background-image: url(../img/icon/icon_eye_closed.svg);
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_reset_btn,
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.hasValue ~ .input_eye_btn {
-    visibility: visible;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .pw_box input {
-    padding: 16px 64px 16px 36px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input {
-    width: 100%;
-    height: auto;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li.coupon_box input {
-    width: 80px;
-    height: 28px;
-    line-height: 27px;
-    font-size: 14px;
-  }
-  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
-    margin-top: 80px;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn button {
     width: 120px;
