@@ -10,25 +10,115 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const page_reverse = data.event_page.reverse();
     if(event){ 
      
-    data_event.forEach((v,i)=>{
-    
-      let end_date = new Date(v.event_lastday)
+      let page = [];
+      for(let i=0; i<page_reverse.length; i+=4){
+        page.push(page_reverse.slice(i, i+4));
+      }
 
-      event_box.innerHTML += `<li data-id="${v.id}"> <a href="${(end_date > now) ? v.event_link:'#'}">  
-                            <div class="img_box">
-                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번"><div class="end_event ${(end_date < now) ? 'active':''}">
-                                  <p class="end_event_text">종료된 이벤트</p>
-                                  </div>
-                            </div>
-                            
-                            <div class="event_text_box">
-                                <p>${v.event_title}</p>
-                                <span>기간 : ${v.event_startday} ~ ${v.event_lastday}
-                                </span>
-                            </div>
-                        </a>
-                    </li>`
-    })
+      let notice_paging = ()=>{
+        const page_list = document.querySelector('.pagination_num');
+      
+        page.forEach((v,i)=>{
+          page_list.innerHTML += `<a href='#'>${i+1}</a>`;
+        })
+      
+        const page_prev_btn = document.querySelector('.pagination .prev');
+        const page_next_btn = document.querySelector('.pagination .next');
+        const page_double_prev_btn = document.querySelector('.pagination .double_prev');
+        const page_double_next_btn = document.querySelector('.pagination .double_next');
+        let page_current = 0;
+ 
+        const page_btn = document.querySelectorAll('.pagination_num a');
+      
+        page_list.firstElementChild.classList.add('on');
+
+        page_btn.forEach((btn, page_num)=>{
+        btn.addEventListener('click',(e)=>{
+          e.preventDefault();
+          page_btn.forEach((v)=>{
+            notice_data(page_num);
+            v.classList.remove('on');
+            page_current = page_num;
+          })
+          btn.classList.add('on');
+        })
+
+        //prev btn
+        page_prev_btn.onclick = function(e){
+          e.preventDefault();
+          if(page_current > 0){
+            page_current--;
+            notice_data(page_current);
+          }
+          page_btn.forEach((v)=>{
+            v.classList.remove('on');
+          })
+          page_btn[page_current].classList.add('on');
+        }
+
+        //next btn
+        page_next_btn.onclick = function(e){
+          e.preventDefault();
+          if(page_current < page.length-1){
+            page_current++;
+            notice_data(page_current);
+          }
+          page_btn.forEach((v)=>{
+            v.classList.remove('on');
+          })
+          page_btn[page_current].classList.add('on');
+        }
+        
+        //double prev btn
+        page_double_prev_btn.onclick = function(e){
+          e.preventDefault();
+          page_current = 0;
+          notice_data(page_current);
+          page_btn.forEach((v)=>{
+            v.classList.remove('on');
+          })
+          page_btn[page_current].classList.add('on');
+        }
+
+        //double next btn
+        page_double_next_btn.onclick = function(e){
+          e.preventDefault();
+          page_current = page.length-1;
+          notice_data(page_current);
+          page_btn.forEach((v)=>{
+            v.classList.remove('on');
+          })
+          page_btn[page_current].classList.add('on');
+        }
+        })
+      }
+
+      let notice_data = (n) =>{
+        event_box.innerHTML = '';
+  
+        page[n].forEach((v,i)=>{
+          let end_date = new Date(v.event_lastday);
+          event_box.innerHTML += `<li data-id="${v.id}"> <a href="${(end_date > now) ? v.event_link:'#'}">  
+                                      <div class="img_box">
+                                          <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번"><div class="end_event ${(end_date < now) ? 'active':''}">
+                                            <p class="end_event_text">종료된 이벤트</p>
+                                            </div>
+                                      </div>
+                                      
+                                      <div class="event_text_box">
+                                          <p>${v.event_title}</p>
+                                          <span>기간 : ${v.event_startday} ~ ${v.event_lastday}
+                                          </span>
+                                      </div>
+                                  </a>
+                              </li>`;
+        })
+      }
+
+      notice_data(0);
+      notice_paging();
+
+
   }
   else {
     // sub5_event_inner.html script
@@ -43,23 +133,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                             </p>
                         </div>`
   }
-  let page = [];
-  for(let i=0; i<page_reverse.length; i+=6){
-    page.push(page_reverse.slice(i, i+6));
-  }
-
-   let notice_paging = ()=>{
-     const page_list = document.querySelector('.pagination_num');
-     
-     page.forEach((v,i)=>{
-       page_list.innerHTML += `<a href='#'>${i+1}</a>`;
-     })
-     
-     const page_btn = document.querySelectorAll('.pagination_num a');
-     
-     page_list.firstElementChild.classList.add('on');
-   }
-   notice_paging();
+  
   })
 
 })
