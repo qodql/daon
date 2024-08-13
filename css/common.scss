@@ -509,7 +509,13 @@ body {
       }
 
       &.weather_btn {
+        img {
+          margin-top: -8px;
+          width: 40px;
+          height: 40px;
+        }
         span {
+          margin-top: -10px;
           font-size: 12px;
         }
       }
