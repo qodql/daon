@@ -29,6 +29,8 @@
 }
 .facilities_common .sub_container .contents .sub3_contents .facilities_img a {
   flex-shrink: 0;
+}
+.facilities_common .sub_container .contents .sub3_contents .facilities_img a .img {
   object-fit: cover;
 }
 .facilities_common .sub_container .contents .sub3_contents .facilities_img a .img:nth-last-of-type(1) {
@@ -119,131 +121,6 @@
 }
 
 @media (max-width: 1499px) {
-  .pool .sub_container .contents .sub3_pool_contents {
-    padding: 20px 0px;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-img {
-    width: 60%;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title {
-    width: 36%;
-  }
-}
-@media (max-width: 1279px) {
-  .pool .sub_container .contents .sub3_pool_contents .pool-img {
-    width: 54%;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title {
-    width: 44%;
-  }
-}
-@media (max-width: 976px) {
-  .pool .sub_container .contents .sub3_pool_contents {
-    flex-direction: column;
-    align-items: center;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-img {
-    width: 100%;
-    height: auto;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-img .img {
-    position: relative;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title {
-    width: 100%;
-    margin-top: 20px;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t {
-    margin: 20px 0px 40px;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(2) {
-    font-size: 32px;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-t p:nth-of-type(3) {
-    font-size: 18px;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s {
-    display: flex;
-    flex-grow: 1;
-    gap: 20px;
-    font-size: 18px;
-  }
-  .pool .sub_container .contents .sub3_pool_contents .pool-title .pool-s .pool-s1 {
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 1499px) {
-  .bbq .sub_container .sub3_bbq_contents {
-    padding: 20px 0px;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-img {
-    width: 60%;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title {
-    width: 38%;
-  }
-}
-@media (max-width: 1279px) {
-  .bbq .sub_container .sub3_bbq_contents .bbq-img {
-    width: 54%;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title {
-    width: 44%;
-  }
-}
-@media (max-width: 1024px) {
-  .bbq .sub_container .sub3_bbq_contents .bbq-img {
-    width: 52%;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title {
-    width: 42%;
-  }
-}
-@media (max-width: 976px) {
-  .bbq .sub_container .sub3_bbq_contents {
-    flex-direction: column;
-    align-items: center;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-img {
-    width: 100%;
-    height: auto;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-img .img {
-    position: relative;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title {
-    width: 100%;
-    margin-top: 20px;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t {
-    margin: 20px 0px 40px;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(2) {
-    font-size: 32px;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-t p:nth-of-type(3) {
-    font-size: 18px;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s {
-    display: flex;
-    flex-grow: 1;
-    gap: 20px;
-    font-size: 18px;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s .pool-s1 {
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 479px) {
-  .bbq .sub_container .sub3_bbq_contents .bbq-img .img {
-    width: 20%;
-    height: 20%;
-  }
-  .bbq .sub_container .sub3_bbq_contents .bbq-title .bbq-s {
-    display: inline;
-  }
-}
-@media (max-width: 1499px) {
   .facilities_common .sub_container .sub3_contents .facilities_img {
     width: 60%;
   }
@@ -299,6 +176,19 @@
     padding: 80px 0 34px;
   }
   .facilities_common .sub_container .contents .sub3_contents .facilities_title .facilities_s .facilities_s1 {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 580px) {
+  .facilities_common .facilities_s {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+    padding: 80px 0 34px;
+  }
+  .facilities_common .facilities_s .facilities_s1 {
     margin-bottom: 20px;
     width: 50%;
   }

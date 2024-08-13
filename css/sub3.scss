@@ -42,10 +42,13 @@
           display: flex;
           overflow: hidden;
           position: relative;
-
+        
           a {
             flex-shrink: 0;
-            object-fit: cover;
+          
+            .img{
+              object-fit: cover;
+            }
             .img:nth-last-of-type(1) {
               position: absolute;
             }
@@ -85,11 +88,13 @@
           font-size: 40px;
           margin: 12px 0px;
           font-weight: 600;
+          
         }
         p:nth-of-type(3) {
           font-size: 20px;
           margin: 24 0px;
           font-weight: 600;
+          
         }
       }
       .facilities_s {

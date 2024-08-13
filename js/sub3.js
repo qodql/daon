@@ -62,6 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const button = document.querySelectorAll(".facilities_bt a");
         button[n].classList.add("active");
 
+
+        let breadcrumb = document.querySelector(".breadcrumb ul");
+        let facilityNames = ["바베큐", "야외 수영장", "옥상 정원"];
+        breadcrumb.innerHTML = `
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./sub3_facilities.html">FACILITIES</a></li>
+          <li><a href="./sub3_facilities.html">${facilityNames[n]}</a></li>
+          `;
+
         var swiper = new Swiper(".slide", {
           slidesPerView: 1,
           spaceBetween: 30,

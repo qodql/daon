@@ -1,242 +1,8 @@
 //=================================pool====================================
 //==================작업자: 허다영=========================================
 
-// pc 1500px
+// // pc 1500px
 @import "_res";
-
-@include res("pc-s") {
-  .pool {
-    .sub_container {
-      .contents {
-        .sub3_pool_contents {
-          padding: 20px 0px;
-          // margin: 64px 0;
-          .pool-img {
-            width: 60%;
-          }
-          .pool-title {
-            width: 36%;
-          }
-        }
-      }
-    }
-  }
-}
-
-// with 1279
-@include res("tab") {
-  .pool {
-    .sub_container {
-      .contents {
-        .sub3_pool_contents {
-          .pool-img {
-            width: 54%;
-          }
-          .pool-title {
-            width: 44%;
-          }
-        }
-      }
-    }
-  }
-}
-
-// with 976px
-@media (max-width: 976px) {
-  .pool {
-    .sub_container {
-      .contents {
-        .sub3_pool_contents {
-          flex-direction: column;
-          align-items: center;
-          .pool-img {
-            width: 100%;
-            height: auto;
-            .img {
-              position: relative;
-            }
-          }
-          .pool-title {
-            width: 100%;
-            margin-top: 20px;
-            .pool-t {
-              margin: 20px 0px 40px;
-              p:nth-of-type(2) {
-                font-size: 32px;
-              }
-              p:nth-of-type(3) {
-                font-size: 18px;
-              }
-            }
-            .pool-s {
-              display: flex;
-              flex-grow: 1;
-              gap: 20px;
-              font-size: 18px;
-
-              .pool-s1 {
-                margin-bottom: 20px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// with 767
-// 767에서 480까지는 위 상황 유지.
-// 다만, 함부로 해당 include를 지우면 안 될것 같아서 일단 해당 서식은 유지하도록 함.
-
-@include res("mo-l") {
-}
-
-// with 480
-
-// @include res("mo-s") {
-//   .bbq {
-//     .sub_container {
-//       .contents {
-//         .sub3_bbq_contents {
-//           padding: 20px 0px;
-//           // margin: 64px 0;
-//           .bbq-img {
-//             width: 60%;
-//           }
-//           .bbq-title {
-//             width: 36%;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-//=================================bbq====================================
-//==================작업자: 허다영=========================================
-
-// pc 1500px
-
-@include res("pc-s") {
-  .bbq {
-    .sub_container {
-      .sub3_bbq_contents {
-        padding: 20px 0px;
-        // margin: 64px 0;
-        .bbq-img {
-          width: 60%;
-        }
-        .bbq-title {
-          width: 38%;
-        }
-      }
-    }
-  }
-}
-
-// with 1279
-@include res("tab") {
-  .bbq {
-    .sub_container {
-      .sub3_bbq_contents {
-        // margin: 64px 0;
-        .bbq-img {
-          width: 54%;
-        }
-        .bbq-title {
-          width: 44%;
-        }
-      }
-    }
-  }
-}
-
-// with 1210px
-@media (max-width: 1024px) {
-  .bbq {
-    .sub_container {
-      .sub3_bbq_contents {
-        // margin: 64px 0;
-        .bbq-img {
-          width: 52%;
-        }
-        .bbq-title {
-          width: 42%;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 976px) {
-  .bbq {
-    .sub_container {
-      .sub3_bbq_contents {
-        flex-direction: column;
-        align-items: center;
-        .bbq-img {
-          width: 100%;
-          height: auto;
-          .img {
-            position: relative;
-          }
-        }
-        .bbq-title {
-          width: 100%;
-          margin-top: 20px;
-          .bbq-t {
-            margin: 20px 0px 40px;
-            p:nth-of-type(2) {
-              font-size: 32px;
-            }
-            p:nth-of-type(3) {
-              font-size: 18px;
-            }
-          }
-          .bbq-s {
-            display: flex;
-            flex-grow: 1;
-            gap: 20px;
-            font-size: 18px;
-            .pool-s1 {
-              margin-bottom: 20px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// with 767
-// 767에서 480까지는 위 상황 유지.
-// 다만, 함부로 해당 include를 지우면 안 될것 같아서 일단 해당 서식은 유지하도록 함.
-
-@include res("mo-l") {
-}
-
-// with 480
-
-@include res("mo-s") {
-  .bbq {
-    .sub_container {
-      .sub3_bbq_contents {
-        .bbq-img {
-          .img {
-            width: 20%;
-            height: 20%;
-          }
-        }
-        .bbq-title {
-          .bbq-s {
-            display: inline;
-          }
-        }
-      }
-    }
-  }
-}
 
 //=================================rooftop====================================
 //==================작업자: 허다영=========================================
@@ -247,8 +13,6 @@
   .facilities_common {
     .sub_container {
       .sub3_contents {
-   
-        // margin: 64px 0;
         .facilities_img {
           width: 60%;
         }
@@ -266,7 +30,6 @@
   .facilities_common {
     .sub_container {
       .sub3_contents {
-       
         // margin: 64px 0;
         .facilities_img {
           width: 54%;
@@ -326,7 +89,7 @@
               padding: 80px 0 34px;
               .facilities_s1 {
                 margin-bottom: 20px;
-                width: 50%;
+                width: 100%;
               }
             }
           }
@@ -343,6 +106,22 @@
 @include res("mo-l") {
 }
 
+@media (max-width: 580px) {
+  .facilities_common {
+    .facilities_s {
+      display: flex;
+      flex-direction: column;
+
+      gap: 20px;
+      font-size: 18px;
+      padding: 80px 0 34px;
+      .facilities_s1 {
+        margin-bottom: 20px;
+        width: 50%;
+      }
+    }
+  }
+}
 // with 480
 
 @include res("mo-s") {
