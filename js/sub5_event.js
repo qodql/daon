@@ -1,15 +1,21 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-  fetch("../data/sub5_event.json")
+  fetch("../data/sub5_community_event.json")
   .then((res)=> {return res.json()})
   .then((data)=> {
     // sub5_event.html script
     const event = document.querySelector(".event")
     const event_box = document.querySelector('.align_box');
     const data_event = data.event_page;
-    if(event){    
-    data_event.forEach((v,i)=>{
-
-      if(i <5){
+    const now = new Date();
+    const year = now.getFullYear();
+    let month =  now.getMonth() + 1;
+    month = month < 10 ? `0${month}` : month;
+    const day = now.getDate();
+    const formattedDate = `${year}.${month}.${day}`
+    if(event){ 
+      data_event.forEach((v,i)=>{
+      console.log(data_event[1].event_startday <= formattedDate);
+      if(data_event[i].event_startday <= formattedDate){
       event_box.innerHTML += `<li> <a href="${v.event_link}">
                             <div class="img_box">
                                 <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번">
@@ -22,11 +28,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         </a>
                     </li>`
                   }
-      else if(i == 5){
+      else if(data_event[1].event_endday > formattedDate){
         event_box.innerHTML += `<li>
                             <a href="#">
                              <div class="img_box">
-                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번">
+                                <img src="/img/img_event_05_2_contents_0${i}.jpg" alt="이벤트 사진 ${v.id}번">
                                 <div class="end_event">
                                     <p class="end_event_text">${v.event_lastday}</p>
                                 </div>
@@ -39,7 +45,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         </a>
                     </li> `
       }
-
     })
   }
   else {
