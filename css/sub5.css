@@ -285,7 +285,7 @@
   border: none;
   cursor: pointer;
 }
-.faq .sub_container .contents .faq_wrap .faq li .question button.active {
+.faq .sub_container .contents .faq_wrap .faq li .question .rotate {
   transform: rotate(180deg);
 }
 .faq .sub_container .contents .faq_wrap .faq li .answer {

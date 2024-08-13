@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
             answer[i].classList.add("active");
           };
         });
+
+        document.querySelectorAll('.question').forEach(button => {
+          button.addEventListener('click', () => {
+              button.querySelector('img').classList.toggle('rotate');
+          });
+      });
       };
 
       tem("all");
