@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let roomNum=1, adultNum=2, childNum=0;
     
         if(step1){
+
             // [↓] step1 객실 수, 성인 수, 어린이 수 증감
             plusBtn.forEach((v,i)=>{
                 plusBtn[i].addEventListener("click", (e) => {
@@ -183,29 +184,32 @@ document.addEventListener("DOMContentLoaded", () => {
             roomBtn.forEach((v,i)=>{
                 v.addEventListener("click", (e)=>{
                     e.target.classList.toggle("selected");
+                    const roomBtnParent = e.target.closest('.room_info');
+                    const roomPrice = roomBtnParent.querySelector('.room_price').textContent;
+                    document.cookie = `roomPrice=${roomPrice}`
                     roomBtnSelected = document.querySelectorAll(".room_select_btn.selected").length;
                     if(roomBtnSelected > roomNum) {
                         e.target.classList.remove("selected");
+                        roomBtnSelected--;
                         alert('선택 가능한 객실 수를 초과하였습니다.');
                     }
                 })
             })
         
-            let profile = [{"adultNum":adultNum},{"roomNum":roomNum},{"childNum":childNum}]
-            profile.forEach((v,i) => {
-                console.log(v);
-                // 240813 lhj 여기서부터 하면 됨
-                // document.cookie = `${v}=${v.value};`;
+            let reservationInfo = [
+                {key: "adultNum", value: adultNum},
+                {key: "roomNum", value: roomNum},
+                {key: "childNum", value: childNum},
+            ];
+            
+            reservationInfo.forEach((v,i) => {
+                document.cookie = `${v.key}=${v.value};`;
             })
             // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
             nextBtn.addEventListener("click", ()=>{
                 if (!roomBtnSelected || roomBtnSelected < roomNum) {
                     alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
                 } else if(roomBtnSelected === roomNum){
-
-                    // document.cookie = `adultNum=${adultNum};`
-                    // document.cookie = `roomNum=${roomNum};`
-                    // document.cookie = `childNum=${childNum};`
                     window.location.href='./sub6_reservation_step2.html'
                 }
             })
@@ -342,7 +346,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else if (getDataName.includes('childNum')) {
                     child_num[0].innerHTML = getData;
                     child_num[1].innerHTML = getData;
-                }0
+                }
+
+                // 가격
+                if (getDataName.includes('roomPrice')) {
+                    primary.innerHTML = (parseInt(getData) * 1000);
+                    sale.innerHTML = (parseInt(getData) * 1000) * 0.8;
+                    mb_sale.innerHTML = (parseInt(getData) * 1000) * 0.8;
+                }
+                
+                // 날짜
+                const start_date = document.getElementById('start_date');
+                const mb_start_date = document.getElementById('mb_start_date');
+                const end_date = document.getElementById('end_date');
+                const mb_end_date = document.getElementById('mb_end_date');
+                let pullDate = (range) => {
+                    if (getDataName.includes(`${range}Date`)){
+                        const date = new Date(getData);
+                        const getYear = date.getFullYear();
+                        const getMonth = String(date.getMonth() + 1).padStart(2, '0');
+                        const getDay = String(date.getDate()).padStart(2, '0');
+
+                        const elements = {
+                            date: document.getElementById(`${range}_date`),
+                            mb_date: document.getElementById(`mb_${range}_date`)
+                        };
+
+                        elements.date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                        elements.mb_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                    }
+                }
+
+                pullDate('start');
+                pullDate('end');
+
+                
             }
         }
     })

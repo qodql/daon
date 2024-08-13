@@ -40,11 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
     picker.getStartpicker().on('change', function() {
         var selectedDate = picker.getStartpicker().getDate();
         day[0].innerHTML = `${getDayOfWeek(selectedDate)}`;
+        document.cookie = `startDate=${selectedDate}`
     });
     
     picker.getEndpicker().on('change', function() {
         var selectedDate = picker.getEndpicker().getDate();
         day[1].innerHTML = `${getDayOfWeek(selectedDate)}`;
+        document.cookie = `endDate=${selectedDate}`
         if(day[1].innerText !== '날짜를 선택해주세요.') { 
             day[1].style.cssText = 'margin-left:0px;'
         } else {
