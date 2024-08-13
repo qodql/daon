@@ -72,9 +72,9 @@ $box-width: 480px;
             border: 1px solid #afafaf;
             border-radius: 8px;
             vertical-align: middle; 
-            // &:focus{
-            //     width: calc(100% - 80px);
-            // }
+            &.active{
+                border-color: #ff0f0f;
+            }
         }
         // 인풋박스 내부 : 우측 [x, 눈] 아이콘
         .input_btn{
