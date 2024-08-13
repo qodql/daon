@@ -542,15 +542,20 @@
   color: inherit;
   font: inherit;
 }
-.step2 .data_list li .data.room_tag_num {
-  max-width: 250px;
+.step2 .data_list li .data.room_tag_num, .step2 .data_list li .data.mb_room_tag_num {
   display: flex;
   gap: 8px;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-.step2 .data_list li .data.room_tag_num > span:not(:nth-of-type(odd)) {
+.step2 .data_list li .data.room_tag_num > span:not(:nth-of-type(odd)), .step2 .data_list li .data.mb_room_tag_num > span:not(:nth-of-type(odd)) {
   margin-left: 20px;
+}
+.step2 .data_list li .data.room_tag_num {
+  max-width: 270px;
+}
+.step2 .data_list li .data.mb_room_tag_num {
+  max-width: 250px;
 }
 .step2 .data_list li:not(:first-of-type) {
   margin-top: 32px;
