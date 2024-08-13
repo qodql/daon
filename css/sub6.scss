@@ -581,7 +581,7 @@
                 font-size: 20px;
                 font-weight: 700;
                 #tag, #mb_tag {
-                    padding: 8px 12px;
+                    padding: 8px 10px;
                     border-radius: 8px;
                     font-size: 12px;
                     font-weight: 700;
@@ -624,7 +624,12 @@
                     max-width: 270px;
                 }
                 &.mb_room_tag_num {
-                    max-width: 250px;
+                    max-width: 260px;
+                    justify-content: flex-end;
+                }
+                #mb_room_num_value {
+                    display: inline-block;
+                    width: 56px;
                 }
             }
             &:not(:first-of-type) {
