@@ -580,12 +580,18 @@
                 #tag {
                     padding: 8px 12px;
                     margin-right: 8px;
-                    background-color: #3226C1;
                     border-radius: 8px;
                     font-size: 12px;
                     font-weight: 700;
+                    background-color: #2f2f2f;
                     color: #fff;
                     vertical-align: middle;
+                    &.love {
+                        background-color: #BE004F;
+                    }
+                    &.only {
+                        background-color: #3226C1;
+                    }
                 }
                 
                 #room_num, span {
@@ -598,7 +604,7 @@
                     color: #afafaf;
                     font-weight: 400;
                     font-size: 16px;
-                    #room_data {
+                    #room_data, #mb_room_data {
                         color: inherit;
                         font: inherit;
                     }

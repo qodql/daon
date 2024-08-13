@@ -514,12 +514,18 @@
 .step2 .data_list li .data #tag {
   padding: 8px 12px;
   margin-right: 8px;
-  background-color: #3226C1;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
+  background-color: #2f2f2f;
   color: #fff;
   vertical-align: middle;
+}
+.step2 .data_list li .data #tag.love {
+  background-color: #BE004F;
+}
+.step2 .data_list li .data #tag.only {
+  background-color: #3226C1;
 }
 .step2 .data_list li .data #room_num, .step2 .data_list li .data span {
   font: inherit;
@@ -532,7 +538,7 @@
   font-weight: 400;
   font-size: 16px;
 }
-.step2 .data_list li .data .room_data #room_data {
+.step2 .data_list li .data .room_data #room_data, .step2 .data_list li .data .room_data #mb_room_data {
   color: inherit;
   font: inherit;
 }

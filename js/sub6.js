@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const plusBtn = document.querySelectorAll(".date_person .btn_wrap .plus")
         const minusBtn = document.querySelectorAll(".date_person .btn_wrap .minus")
         const nextBtn = document.querySelector(".next_btn")
-        let roomNum=1, adultNum=2, childNum=0;
+        const getDefaultStartDate = document.querySelector(".date.in input")
+        const getDefaultEndDate = document.querySelector(".date.out input")
+        let roomNum=1, adultNum=2, childNum=0, defaultStartDate='',defaultEndDate='';
     
         if(step1){
 
@@ -76,6 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                         childInput.value = childNum;
                     }
+
+                    let reservationInfo = [
+                        {key: "adultNum", value: adultNum},
+                        {key: "roomNum", value: roomNum},
+                        {key: "childNum", value: childNum},
+                    ];
+
+                    reservationInfo.forEach((v,i) => {
+                        document.cookie = `${v.key}=${v.value};`;
+                    })
+                    
                 })
             })
             minusBtn.forEach((v,i)=>{
@@ -123,6 +136,16 @@ document.addEventListener("DOMContentLoaded", () => {
                             }
                         }
                     }
+                    
+                    let reservationInfo = [
+                        {key: "adultNum", value: adultNum},
+                        {key: "roomNum", value: roomNum},
+                        {key: "childNum", value: childNum},
+                    ];
+
+                    reservationInfo.forEach((v,i) => {
+                        document.cookie = `${v.key}=${v.value};`;
+                    })
                 })
             })
 
@@ -186,7 +209,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     e.target.classList.toggle("selected");
                     const roomBtnParent = e.target.closest('.room_info');
                     const roomPrice = roomBtnParent.querySelector('.room_price').textContent;
+                    const roomType = roomBtnParent.querySelector('.room_name .tag').className;
                     document.cookie = `roomPrice=${roomPrice}`
+                    document.cookie = `roomType=${roomType}`
                     roomBtnSelected = document.querySelectorAll(".room_select_btn.selected").length;
                     if(roomBtnSelected > roomNum) {
                         e.target.classList.remove("selected");
@@ -195,16 +220,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 })
             })
-        
-            let reservationInfo = [
-                {key: "adultNum", value: adultNum},
-                {key: "roomNum", value: roomNum},
-                {key: "childNum", value: childNum},
-            ];
+
             
-            reservationInfo.forEach((v,i) => {
-                document.cookie = `${v.key}=${v.value};`;
-            })
+            defaultStartDate = getDefaultStartDate.value
+            defaultEndDate = getDefaultEndDate.value
+            
+            document.cookie = `defaultStartDate=${defaultStartDate}`
+            document.cookie = `defaultEndDate=${defaultEndDate}`
+
             // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
             nextBtn.addEventListener("click", ()=>{
                 if (!roomBtnSelected || roomBtnSelected < roomNum) {
@@ -213,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href='./sub6_reservation_step2.html'
                 }
             })
+
         }
     
         // *****************[step2]******************* //
@@ -336,16 +360,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const getData = cookie[i].split('=')[1]
                 // 객실 수
                 if (getDataName.includes('roomNum')) {
-                    room_data[0].innerHTML = getData;
-                    room_data[1].innerHTML = getData;
+                    room_data.innerHTML = getData;
+                    mb_room_data.innerHTML = getData;
                 }
                 // 성인, 어린이 수
                 if (getDataName.includes('adultNum')) {
-                    adult_num[0].innerHTML = getData;
-                    adult_num[1].innerHTML = getData;
+                    adult_num.innerHTML = getData;
+                    mb_adult_num.innerHTML = getData;
                 } else if (getDataName.includes('childNum')) {
-                    child_num[0].innerHTML = getData;
-                    child_num[1].innerHTML = getData;
+                    child_num.innerHTML = getData;
+                    mb_child_num.innerHTML = getData;
                 }
 
                 // 가격
@@ -354,35 +378,63 @@ document.addEventListener("DOMContentLoaded", () => {
                     sale.innerHTML = (parseInt(getData) * 1000) * 0.8;
                     mb_sale.innerHTML = (parseInt(getData) * 1000) * 0.8;
                 }
+
+                // roomType
+                
+                if (getDataName.includes('roomType')) {
+                    if(getData.includes('love')){
+                        tag.classList.add("love")
+                    } else if (getData.includes('only')) {
+                        tag.classList.add("only")
+                    }
+                }
                 
                 // 날짜
                 const start_date = document.getElementById('start_date');
                 const mb_start_date = document.getElementById('mb_start_date');
                 const end_date = document.getElementById('end_date');
                 const mb_end_date = document.getElementById('mb_end_date');
-                let pullDate = (range) => {
-                    if (getDataName.includes(`${range}Date`)){
-                        const date = new Date(getData);
-                        const getYear = date.getFullYear();
-                        const getMonth = String(date.getMonth() + 1).padStart(2, '0');
-                        const getDay = String(date.getDate()).padStart(2, '0');
-
-                        const elements = {
-                            date: document.getElementById(`${range}_date`),
-                            mb_date: document.getElementById(`mb_${range}_date`)
-                        };
-
-                        elements.date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
-                        elements.mb_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                
+                if (getDataName.includes(`endDate`)){
+                    let pullDate = (range) => {
+                        if (getDataName.includes(`${range}Date`)){
+                            const date = new Date(getData);
+                            const getYear = date.getFullYear();
+                            const getMonth = String(date.getMonth() + 1).padStart(2, '0');
+                            const getDay = String(date.getDate()).padStart(2, '0');
+                            
+                            const elements = {
+                                date: document.getElementById(`${range}_date`),
+                                mb_date: document.getElementById(`mb_${range}_date`)
+                            };
+    
+                            elements.date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                            elements.mb_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                        }
                     }
+                    pullDate('start');
+                    pullDate('end');
+                } else if(getDataName.includes(`default`)){
+                    let today = new Date();
+                    let tomorrow = new Date(today);
+                    tomorrow.setDate(today.getDate() + 1);
+                    const getYear = today.getFullYear();
+                    const getMonth = String(today.getMonth() + 1).padStart(2, '0');
+                    const getDay = String(today.getDate()).padStart(2, '0');
+                    const getTmYear = tomorrow.getFullYear();
+                    const getTmMonth = String(tomorrow.getMonth() + 1).padStart(2, '0');
+                    const getTmDay = String(tomorrow.getDate()).padStart(2, '0');
+                    
+                    start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                    mb_start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                    end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
+                    mb_end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
                 }
 
-                pullDate('start');
-                pullDate('end');
-
+                
                 
             }
         }
     })
-
+    
 })
