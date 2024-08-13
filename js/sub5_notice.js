@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       page[n].forEach((v,i)=>{
         notice_table.innerHTML += `<td>${v.board_num}</td>
                                   <td>
-                                    <p>${v.board_title}</p>
+                                    <a href='./sub5_community_notice_inner.html?id=${v.board_num}'>${v.board_title}</a>
                                   </td>
                                   <td>${v.board_date}</td>`;
       })

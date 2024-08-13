@@ -14,15 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const notice_inner_cont = document.querySelector('.notice_inner_2 p');
         const notice_list_btn = document.querySelector('.notice_list a');
 
+        
+
+
 
         let find_data = data.community_notice.filter((item)=>{
-            console.log(item);
             return item.board_num == paramNum.get('id');
         })
 
-        notice_inner_tit.innerText = find_data.board_title;
-        notice_inner_date.innerText = find_data.board_date;
-        notice_inner_cont.innerText = find_data.board_cont;
+        notice_inner_tit.innerText = find_data[0].board_title;
+        notice_inner_date.innerText = find_data[0].board_date;
+        notice_inner_cont.innerText = find_data[0].board_cont;
             
         notice_list_btn.onclick = function(){
             history.back();
