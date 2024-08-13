@@ -4,14 +4,14 @@
       "id": 0,
       "event_title" : "단체 할인 이벤트",
       "event_startday" : "2024.07.01",
-      "event_lastday" : "2024.07.01",
+      "event_lastday" : "2024.12.01",
       "event_link" : "./sub5_community_event_inner.html"
     },
     {
       "id" : 1,
       "event_title" : "포토라인 이벤트",
       "event_startday" : "2024.08.01",
-      "event_lastday" : "2024.12.31",
+      "event_lastday" : "2024.08.02",
       "event_link" : "./sub5_community_event_inner.html"
     },
     {

@@ -325,14 +325,18 @@
   display: block;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 .review .sub_container .contents .images ul li a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.review .sub_container .contents .pagination {
-  margin-top: 120px;
+.review .sub_container .contents .pagination .pagination_num {
+  display: flex;
+}
+.review .sub_container .contents .pagination .pagination_num a {
+  cursor: pointer;
 }
 
 @media (max-width: 1499px) {

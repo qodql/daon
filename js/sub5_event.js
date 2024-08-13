@@ -1,19 +1,26 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-  fetch("../data/sub5_event.json")
+  fetch("../data/sub5_community_event.json")
   .then((res)=> {return res.json()})
   .then((data)=> {
     // sub5_event.html script
     const event = document.querySelector(".event")
     const event_box = document.querySelector('.align_box');
     const data_event = data.event_page;
-    if(event){    
+    const now = new Date();
+    const page_reverse = data.event_page.reverse();
+    if(event){ 
+     
     data_event.forEach((v,i)=>{
+    
+      let end_date = new Date(v.event_lastday)
 
-      if(i <5){
-      event_box.innerHTML += `<li> <a href="${v.event_link}">
+      event_box.innerHTML += `<li data-id="${v.id}"> <a href="${(end_date > now) ? v.event_link:'#'}">  
                             <div class="img_box">
-                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번">
+                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번"><div class="end_event ${(end_date < now) ? 'active':''}">
+                                  <p class="end_event_text">종료된 이벤트</p>
+                                  </div>
                             </div>
+                            
                             <div class="event_text_box">
                                 <p>${v.event_title}</p>
                                 <span>기간 : ${v.event_startday} ~ ${v.event_lastday}
@@ -21,25 +28,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                             </div>
                         </a>
                     </li>`
-                  }
-      else if(i == 5){
-        event_box.innerHTML += `<li>
-                            <a href="#">
-                             <div class="img_box">
-                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번">
-                                <div class="end_event">
-                                    <p class="end_event_text">${v.event_lastday}</p>
-                                </div>
-                            </div>
-                            <div class="event_text_box">
-                                <p>가평 칼봉산 짚라인 할인</p>
-                                <span>기간 : 2024.07.01 ~ 2024.07.30
-                                </span>
-                            </div>
-                        </a>
-                    </li> `
-      }
-
     })
   }
   else {
@@ -55,6 +43,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
                             </p>
                         </div>`
   }
+  let page = [];
+  for(let i=0; i<page_reverse.length; i+=6){
+    page.push(page_reverse.slice(i, i+6));
+  }
+
+   let notice_paging = ()=>{
+     const page_list = document.querySelector('.pagination_num');
+     
+     page.forEach((v,i)=>{
+       page_list.innerHTML += `<a href='#'>${i+1}</a>`;
+     })
+     
+     const page_btn = document.querySelectorAll('.pagination_num a');
+     
+     page_list.firstElementChild.classList.add('on');
+   }
+   notice_paging();
   })
 
 })
