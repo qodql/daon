@@ -18,6 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if(step1){
 
+            // 디폴트 값
+            defaultStartDate = getDefaultStartDate.value
+            defaultEndDate = getDefaultEndDate.value
+            defaultRoom = roomInput.value
+            defaultAdult = adultInput.value
+            defaultChild = childInput.value
+            
+            document.cookie = `defaultStartDate=${defaultStartDate}`
+            document.cookie = `defaultEndDate=${defaultEndDate}`
+            document.cookie = `defaultRoom=${defaultRoom}`
+            document.cookie = `defaultAdult=${defaultAdult}`
+            document.cookie = `defaultChild=${defaultChild}`
+
             // [↓] step1 객실 수, 성인 수, 어린이 수 증감
             plusBtn.forEach((v,i)=>{
                 plusBtn[i].addEventListener("click", (e) => {
@@ -171,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="room_info">
                             <p class="room_name">
                                 <span class="tag ${type}">${type} YOU</span>
-                                ${v.room_num}호
+                                <span class="room_value_num">${v.room_num}호</span>
                                 <span class="room_price">${v.room_price}원</span>
                             </p>
                             <ul>
@@ -203,30 +216,50 @@ document.addEventListener("DOMContentLoaded", () => {
             // [↓] step1 객실 선택
             const roomBtn = document.querySelectorAll(".room_select_btn");
             let roomBtnSelected = '';
-        
-            roomBtn.forEach((v,i)=>{
-                v.addEventListener("click", (e)=>{
+            let selectedRooms = []; // 선택된 방들의 정보를 저장할 배열
+
+            roomBtn.forEach((v, i) => {
+                v.addEventListener("click", (e) => {
                     e.target.classList.toggle("selected");
                     const roomBtnParent = e.target.closest('.room_info');
                     const roomPrice = roomBtnParent.querySelector('.room_price').textContent;
                     const roomType = roomBtnParent.querySelector('.room_name .tag').className;
-                    document.cookie = `roomPrice=${roomPrice}`
-                    document.cookie = `roomType=${roomType}`
+                    const roomValueNum = roomBtnParent.querySelector('.room_name .room_value_num').textContent;
+            
+                    // 방 정보 객체 생성
+                    const roomInfo = {
+                        price: roomPrice,
+                        type: roomType,
+                        valueNum: roomValueNum
+                    };
+            
+                    if (e.target.classList.contains("selected")) {
+                        // 선택되었으면 배열에 추가
+                        selectedRooms.push(roomInfo);
+                    } else {
+                        // 선택 해제되었으면 배열에서 제거
+                        selectedRooms = selectedRooms.filter(room => room.valueNum !== roomValueNum);
+                    }
+            
+                    // 배열을 JSON 문자열로 변환하여 쿠키에 저장
+                    document.cookie = `roomInfo=${JSON.stringify(selectedRooms)}; path=/;`;
+            
                     roomBtnSelected = document.querySelectorAll(".room_select_btn.selected").length;
-                    if(roomBtnSelected > roomNum) {
+                    if (roomBtnSelected > roomNum) {
                         e.target.classList.remove("selected");
                         roomBtnSelected--;
+            
+                        // 선택 취소된 항목을 배열에서 제거
+                        selectedRooms.pop();
+            
+                        // 쿠키 업데이트
+                        document.cookie = `roomInfo=${JSON.stringify(selectedRooms)}; path=/;`;
+            
                         alert('선택 가능한 객실 수를 초과하였습니다.');
                     }
-                })
-            })
+                });
+            });
 
-            
-            defaultStartDate = getDefaultStartDate.value
-            defaultEndDate = getDefaultEndDate.value
-            
-            document.cookie = `defaultStartDate=${defaultStartDate}`
-            document.cookie = `defaultEndDate=${defaultEndDate}`
 
             // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
             nextBtn.addEventListener("click", ()=>{
@@ -358,44 +391,72 @@ document.addEventListener("DOMContentLoaded", () => {
             for(let i=0;i <cookie.length; i++) {
                 const getDataName = cookie[i].split('=')[0]
                 const getData = cookie[i].split('=')[1]
+
                 // 객실 수
                 if (getDataName.includes('roomNum')) {
                     room_data.innerHTML = getData;
                     mb_room_data.innerHTML = getData;
+                } else if(getDataName.includes('defaultRoom')) {
+                    room_data.innerHTML = getData;
+                    mb_room_data.innerHTML = getData;
                 }
+
                 // 성인, 어린이 수
                 if (getDataName.includes('adultNum')) {
                     adult_num.innerHTML = getData;
                     mb_adult_num.innerHTML = getData;
-                } else if (getDataName.includes('childNum')) {
+                } else if (getDataName.includes('defaultAdult')){
+                    adult_num.innerHTML = getData;
+                    mb_adult_num.innerHTML = getData;
+                }
+                
+                if (getDataName.includes('childNum')) {
+                    child_num.innerHTML = getData;
+                    mb_child_num.innerHTML = getData;
+                } else if (getDataName.includes('defaultChild')){
                     child_num.innerHTML = getData;
                     mb_child_num.innerHTML = getData;
                 }
 
-                // 가격
-                if (getDataName.includes('roomPrice')) {
-                    primary.innerHTML = (parseInt(getData) * 1000);
-                    sale.innerHTML = (parseInt(getData) * 1000) * 0.8;
-                    mb_sale.innerHTML = (parseInt(getData) * 1000) * 0.8;
-                }
+                // 가격, 타입, 호수
+                if (getDataName.includes('roomInfo')) {
+                    let roomInfoArray = JSON.parse(getData);
+                    let roomTagNum = document.querySelector(".room_tag_num")
+                    let roomTagNumMb = document.querySelector(".mb_room_tag_num")
+                    if (roomInfoArray.length > 0) {
+                        let totalPrimaryPrice = 0; // 누적할 변수를 선언
 
-                // roomType
-                
-                if (getDataName.includes('roomType')) {
-                    if(getData.includes('love')){
-                        tag.classList.add("love")
-                    } else if (getData.includes('only')) {
-                        tag.classList.add("only")
+                        roomInfoArray.forEach((v, i) => {
+                            let primaryPrice = parseInt(roomInfoArray[i].price) * 1000;
+                            totalPrimaryPrice += primaryPrice;
+
+                            let onlyType = v.type.substring(v.type.lastIndexOf(',') + 5);
+                            roomTagNum.innerHTML += `
+                            <span>
+                                <span id="mb_tag" class="${onlyType}">${onlyType}</span>
+                                <em id="mb_room_num_value">${v.valueNum}</em>
+                            </span>
+                            `
+                            roomTagNumMb.innerHTML += `
+                            <span>
+                                <span id="mb_tag" class="${onlyType}">${onlyType}</span>
+                                <em id="mb_room_num_value">${v.valueNum}</em>
+                            </span>
+                            `
+                        });
+                        primary.innerHTML += totalPrimaryPrice;
+                        sale.innerHTML += totalPrimaryPrice * 0.8;
+                        mb_sale.innerHTML += totalPrimaryPrice * 0.8;
                     }
                 }
-                
+
                 // 날짜
                 const start_date = document.getElementById('start_date');
                 const mb_start_date = document.getElementById('mb_start_date');
                 const end_date = document.getElementById('end_date');
                 const mb_end_date = document.getElementById('mb_end_date');
                 
-                if (getDataName.includes(`endDate`)){
+                if (getDataName.includes(`startDate`) || getDataName.includes(`endDate`)){
                     let pullDate = (range) => {
                         if (getDataName.includes(`${range}Date`)){
                             const date = new Date(getData);
@@ -414,7 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                     pullDate('start');
                     pullDate('end');
-                } else if(getDataName.includes(`default`)){
+                } else if(getDataName.includes(`defaultStartDate`) || getDataName.includes(`defaultEndDate`)){
                     let today = new Date();
                     let tomorrow = new Date(today);
                     tomorrow.setDate(today.getDate() + 1);

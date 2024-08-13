@@ -225,6 +225,9 @@
   border-color: #3226C1;
   color: #3226C1;
 }
+.step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .room_value_num {
+  font: inherit;
+}
 .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_name .room_price {
   margin-left: 4px;
   color: #afafaf;
@@ -511,26 +514,23 @@
   font-size: 20px;
   font-weight: 700;
 }
-.step2 .data_list li .data #tag {
+.step2 .data_list li .data #tag, .step2 .data_list li .data #mb_tag {
   padding: 8px 12px;
-  margin-right: 8px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
   background-color: #2f2f2f;
   color: #fff;
   vertical-align: middle;
+  text-transform: uppercase;
 }
-.step2 .data_list li .data #tag.love {
+.step2 .data_list li .data #tag.love, .step2 .data_list li .data #mb_tag.love {
   background-color: #BE004F;
 }
-.step2 .data_list li .data #tag.only {
+.step2 .data_list li .data #tag.only, .step2 .data_list li .data #mb_tag.only {
   background-color: #3226C1;
 }
-.step2 .data_list li .data #room_num, .step2 .data_list li .data span {
-  font: inherit;
-}
-.step2 .data_list li .data #room_num em, .step2 .data_list li .data span em {
+.step2 .data_list li .data #room_num, .step2 .data_list li .data span, .step2 .data_list li .data em {
   font: inherit;
 }
 .step2 .data_list li .data .room_data {
@@ -541,6 +541,16 @@
 .step2 .data_list li .data .room_data #room_data, .step2 .data_list li .data .room_data #mb_room_data {
   color: inherit;
   font: inherit;
+}
+.step2 .data_list li .data.room_tag_num {
+  max-width: 250px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.step2 .data_list li .data.room_tag_num > span:not(:nth-of-type(odd)) {
+  margin-left: 20px;
 }
 .step2 .data_list li:not(:first-of-type) {
   margin-top: 32px;
@@ -778,7 +788,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 99;
   }
   .step2 .right_mb_menu > div {
     width: 200px;
@@ -837,6 +847,9 @@
     padding: 6px 10px;
     border-radius: 4px;
     font-size: 10px;
+  }
+  .step2 .right_mb_info .data_list li .data .room_tag_num {
+    justify-content: flex-end;
   }
   .step2 .price_wrap {
     display: block;

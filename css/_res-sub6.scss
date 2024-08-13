@@ -183,7 +183,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            z-index: 2;
+            z-index: 99;
             > div {
                 width: 200px;
                 &:first-of-type {
@@ -240,6 +240,9 @@
                             padding: 6px 10px;
                             border-radius: 4px;
                             font-size: 10px;
+                        }
+                        .room_tag_num {
+                            justify-content: flex-end;
                         }
                     }
                 }

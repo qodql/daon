@@ -260,6 +260,9 @@
                                         color: #3226C1;
                                     }
                                 }
+                                .room_value_num {
+                                    font: inherit;
+                                }
                                 .room_price {
                                     margin-left: 4px;
                                     color: #afafaf;
@@ -577,15 +580,15 @@
             .data {
                 font-size: 20px;
                 font-weight: 700;
-                #tag {
+                #tag, #mb_tag {
                     padding: 8px 12px;
-                    margin-right: 8px;
                     border-radius: 8px;
                     font-size: 12px;
                     font-weight: 700;
                     background-color: #2f2f2f;
                     color: #fff;
                     vertical-align: middle;
+                    text-transform: uppercase;
                     &.love {
                         background-color: #BE004F;
                     }
@@ -594,11 +597,8 @@
                     }
                 }
                 
-                #room_num, span {
+                #room_num, span, em {
                     font: inherit;
-                    em {
-                        font: inherit;
-                    }
                 }
                 .room_data {
                     color: #afafaf;
@@ -607,6 +607,18 @@
                     #room_data, #mb_room_data {
                         color: inherit;
                         font: inherit;
+                    }
+                }
+                &.room_tag_num {
+                    max-width: 250px;
+                    display: flex;
+                    gap: 8px;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    & > span {
+                        &:not(:nth-of-type(odd)) {
+                            margin-left: 20px;
+                        }
                     }
                 }
             }
