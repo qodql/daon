@@ -5,7 +5,8 @@
       "review_id" : "@asdlfjqwie",
       "review_text" : "엄청 쾌적해서 놀랬구, 하나하나 디테일이 너무 깔끔하구 이뻤던 곳",
       "review_img" : "./img/img_coumunity_review_01.jpg",
-      "rating" : "1"
+      "rating" : "1",
+      "in" : true
     },
     {
       "id":1,

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((data) => {
       const data_review = data.community_review;
       const page_reverse = data.community_review.reverse();
+      const user_id = document.querySelector('.user_id');
       review_thm = document.querySelector('.images > ul')
       popup_wrap = document.querySelector('.review_wrap');
 
@@ -25,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         v.addEventListener('click', function (){
           let idx = Number(v.dataset.id);
         let d = data_review.find((item)=>item.id==idx)
-          
+        if(data_review.in === true){
+          user_id.classList.add('')
+        }
           popup.classList.add("active");
           body.classList.add("prevent_scroll");
           popup_wrap.innerHTML =`<div>
@@ -40,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <p class="review_desc">
               ${d.review_text}
+              </p>
           </div>`
         })
       })
