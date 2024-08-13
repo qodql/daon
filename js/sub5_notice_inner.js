@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let find_data = data.community_notice.filter((item)=>{
             return item.board_num == param_num.get('id');
-        })
+        })    
 
         let board_currunt = 0;
         board_currunt = find_data[0].board_num;
@@ -27,10 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
         notice_inner_tit.innerText = find_data[0].board_title;
         notice_inner_date.innerText = find_data[0].board_date;
         notice_inner_cont.innerText = find_data[0].board_cont;
+
+        const board_img_ele = document.createElement('img');
+        const notice_inner_img = document.querySelector('.notice_inner_2 article');
+        
+        try{
+            board_img_ele.src = find_data[0].board_imges[0].src;
+            notice_inner_img.appendChild(board_img_ele);
+        }catch{}
         
         if(board_currunt > 1){
-            console.log(board_currunt);
-            notice_inner_prev_btn.innerText = '[이전글]\u00A0' + data.community_notice[board_currunt-2].board_title;
+            notice_inner_prev_btn.innerHTML = `<a href="#">[이전글] ${data.community_notice[board_currunt-2].board_title}</a>`;
             notice_inner_prev_btn.onclick = function(){
                 board_currunt--;
                 location.href = `?id=${board_currunt}`;
@@ -38,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if(board_currunt < data.community_notice.length){
-            notice_inner_next_btn.innerText = '[다음글]\u00A0' + data.community_notice[board_currunt].board_title;
+            notice_inner_next_btn.innerHTML = `<a href="#">[다음글] ${data.community_notice[board_currunt].board_title}</a>`;
             notice_inner_next_btn.onclick = function(){
                 board_currunt++;
                 location.href = `?id=${board_currunt}`;
