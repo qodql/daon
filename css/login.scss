@@ -21,6 +21,12 @@
             text-align: center;
         }
     }
+
+    //기본 파란 버튼
+    .blue_btn{
+        @include btn;
+    }
+
     //로그인 관련 모든 인풋박스들
     .input_box{
         @include inputbox;
@@ -30,10 +36,15 @@
     .name_box{label{background-image: url(../img/icon/icon_person.svg);}}
     .phone_box{label{background-image: url(../img/icon/icon_phone.svg);}}
     .verify_box{label{background-image: url(../img/icon/icon_phone.svg);}}
-    //기본 파란 버튼
-    .blue_btn{
-        @include btn;
-    }
+    //인풋박스 에러메세지
+    .error_msg{
+        display: none;
+        &.active{
+            padding: 4px 20px;
+            display: block;
+            color: #ff0f0f;
+        }
+    } 
 }
 // 로그인
 .login{
@@ -96,7 +107,7 @@
     //회원가입 페이지의 모든 버튼 비활성화
     button:disabled{
         background-color: #afafaf;
-    }      
+    }    
     .join_wrap{
         .join_personal_info{
             @include box_shadow{
@@ -111,20 +122,22 @@
                 }
             }
             .phone_verify{
-                max-width: $box-width;
-                display: flex;
-                justify-content: space-between;
-                gap: 8px;
-                .phone_box{
-                    width: 70%;
-                    .input_reset_btn{
-                        right: 33%;
+                div{
+                    max-width: $box-width;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 8px;
+                    .phone_box{
+                        width: 70%;
+                        .input_reset_btn{
+                            right: 33%;
+                        }
                     }
-                }
-                .verify_btn{
-                    width: 30%;
-                    button{
-                        white-space: nowrap;   //반응형 360px아래 텍스트 두줄 깨짐 방지용
+                    .verify_btn{
+                        width: 30%;
+                        button{
+                            white-space: nowrap;   //반응형 360px아래 텍스트 두줄 깨짐 방지용
+                        }
                     }
                 }
             } 

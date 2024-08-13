@@ -1,199 +1,284 @@
+var profile;
 // [↓] 다온 로그인
 document.addEventListener("DOMContentLoaded", () => { 
-// 로그인+회원가입 공통------------------
-// 이메일 유효성 검사
-const emailChecker = (email) => {
-    //이메일 조건(ex. my_Account-01@naver.com): 
-    // 아이디 부분(my_Account-01): 영문 대소문자, 숫자, ._-%+- 의 특문 입력 가능
-    // @: 필수, @로 구분됨
-    // 도메인 부분(naver): 영문 대소문자, 숫자, .-의 특문 입력 가능
-    // 도메인 끝부분(.com): .필수, 2개 이상의 영문 대소문자 입력 가능
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    let emailErrorMsg = '';
-    let isValid = false;
-    if(!emailRegex.test(email)){
-        emailErrorMsg = '유효하지 않은 이메일 주소입니다.';
-    }else{
-        emailErrorMsg = '올바른 이메일 주소입니다.';
-        isValid = true;
-        return {isValid: isValid, emailErrorMsg: emailErrorMsg};
-    }
-    return {isValid: isValid, emailErrorMsg: emailErrorMsg};
-}
-// 비밀번호 유효성 검사
-const pwChecker = (pw) => { 
-    //조건: 영문/숫자/특문 각각 1개 이상의 조합으로 8~15자
-    const pwRegex = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,15}$/;
-    let pwErrorMsg = '';
-    let isValid = false;
-    //길이 검증
-    if(pw.length < 8){
-        pwErrorMsg = '비밀번호가 너무 짧습니다. 8자 이상 입력해 주세요.'
-    }else if(pw.length > 15){
-        pwErrorMsg = '비밀번호가 너무 깁니다. 15자 이하로 입력해 주세요.'
-    //조건 검증
-    }else if(!pwRegex.test(pw)){
-        pwErrorMsg ='영문, 숫자, 특수문자를 조합하여 입력해 주세요.';
-    }else{
-        pwErrorMsg ='유효한 비밀번호 입니다.';
-        isValid = true;
-        return {isValid: isValid, pwErrorMsg: pwErrorMsg};
-    }
-    return {isValid: isValid, pwErrorMsg: pwErrorMsg};
-}
-//이름 유효성 검사
-const nameChecker = (name) => {
-    //조건 : 한글만 입력 가능, 2~20자, 띄어쓰기 불가능
-    const nameRegex = /^[가-힣\s]+$/;
-    let nameErrorMsg = '';
-    let isValid = false;
-    //길이 검증, 조건 검증
-    if(!nameRegex.test(name)){
-        nameErrorMsg = '이름에는 한글만 입력해 주세요.'
-    }else if(name.length < 2){
-        nameErrorMsg = '이름의 길이는 2자 이상이어야 합니다.';   
-    }else if(name.length > 20){
-        nameErrorMsg = '이름의 길이는 20자 이하여야 합니다.';
-    }else if(/\s/.test(name)){
-        nameErrorMsg = '이름에는 띄어쓰기를 입력할 수 없습니다.';
-    }else{
-        nameErrorMsg = '올바른 이름입니다.';
-        isValid = true;
-        return {isValid: isValid, nameErrorMsg: nameErrorMsg};
-    }
-    return {isValid: isValid, nameErrorMsg: nameErrorMsg};
-}
-//휴대폰 번호 유효성 검사
-const phoneChecker = (phone) => {
-    //조건: 숫자만 입력 가능, (010,011,016,017,018,019)으로 시작, 10자 이상 11자 미만
-    const phoneRegex = /^01[016789]-[0-9]{3,4}-[0-9]{4}$/;
-    const onlyNumRegex = /^\d+$/;
-    let phoneErrorMsg = '';
-    let isValid = false;
-    //숫자 외 입력값 유무 검증
-    if(!onlyNumRegex.test(phone)){
-        phoneErrorMsg = '휴대폰 번호에는 숫자만 입력할 수 있습니다.';
-    //통신사 번호 검증(010,011,016,017,018,019)
-    }else if(!/^01[016789]/.test(phone)){
-        phoneErrorMsg = '유효하지 않은 통신사 번호입니다. 다시 입력해 주세요.';
-    //길이 검증
-    }else if(phone.length < 10){
-        phoneErrorMsg = '휴대폰 번호 길이가 짧습니다.';   
-    }else if(phone.length > 11){
-        phoneErrorMsg = '휴대폰 번호 길이가 깁니다.'; 
-    //조건 검증
-    }else if(phoneRegex){
-        phoneErrorMsg = '올바른 휴대폰 번호입니다.';
-        isValid = true;
-        return {isValid: isValid, phoneErrorMsg: phoneErrorMsg};
-    }
-    return {isValid: isValid, phoneErrorMsg: phoneErrorMsg};
-}
-//인증번호(6자리) 생성함수
-const verifyNumGenerator = () => {
-    //앞3자리: 100~999사이의 랜덤숫자
-    let ranNum = (Math.floor((Math.random()*900)) + 100); //100~999사이의 랜덤숫자
-    //뒤3자리: 밀리초
-    let today = new Date();
-    let milliSec = today.getMilliseconds();
-    let ranNum2 = milliSec.toString().padStart(3, '0');
-    let verifyNum = parseInt(ranNum.toString() + ranNum2.toString());
-    return verifyNum;
-}
-
-//로그인 관련 키보드 입력 들어가는 모든 인풋박스
-const inputBoxs = document.querySelectorAll('.input_box input');
-const emailBox = document.querySelector('.email_box input'),
-      pwBox = document.querySelector('.pw_box input'),
-      pwCheckBox = document.querySelector('.pw_check_box input'),
-      nameBox = document.querySelector('.name_box input'),
-      phoneBox = document.querySelector('.phone_box input'),
-      verifyBox = document.querySelector('.verify_box input');
-const resetBtn = document.querySelectorAll('.input_box .input_reset_btn'),
-      eyeBtn = document.querySelectorAll('.pw_box .input_eye_btn');
-//인풋박스 내부 : 우측 [x, 눈] 아이콘 input시 활성화, blur 시 비활성화
-inputBoxs.forEach((inputbox) => {
-    //focus시
-    inputbox.addEventListener('focus', function(){
-        if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
-            inputbox.classList.remove('hasValue')
-        }else{  //값이 있으면 버튼 보이게
-            inputbox.classList.add('hasValue')  
+    // 로그인+회원가입 공통------------------
+    //로그인 관련 키보드 입력 들어가는 모든 인풋박스
+    const inputBoxAll = document.querySelectorAll('.input_box input');
+    const inputBoxs = document.querySelectorAll('.input_box input:not(#verify)');
+    const emailBox = document.querySelector('.email_box input'),
+          pwBox = document.querySelectorAll('.pw_box input'),
+          nameBox = document.querySelector('.name_box input'),
+          phoneBox = document.querySelector('.phone_box input'),
+          verifyBox = document.querySelector('.verify_box input');
+    const resetBtn = document.querySelectorAll('.input_box .input_reset_btn'),
+          eyeBtn = document.querySelectorAll('.pw_box .input_eye_btn'),
+          errorMsgs = document.querySelectorAll('.input_box .error_msg');
+    const form = document.querySelector('form');
+          
+    // 이메일 유효성 검사
+    const emailChecker = (email) => {
+        //이메일 조건(ex. my_Account-01@naver.com): 
+        // 아이디 부분(my_Account-01): 영문 대소문자, 숫자, ._-%+- 의 특문 입력 가능
+        // @: 필수, @로 구분됨
+        // 도메인 부분(naver): 영문 대소문자, 숫자, .-의 특문 입력 가능
+        // 도메인 끝부분(.com): .필수, 2개 이상의 영문 대소문자 입력 가능
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        let errorMsg = '';
+        let isValid = false;
+        if(!emailRegex.test(email)){
+            errorMsg = '유효하지 않은 이메일 주소입니다.';
+        }else{
+            isValid = true;
+            profile.email = email;
+            return {isValid: isValid, errorMsg: errorMsg};
         }
-    })
-    // input시
-    inputbox.addEventListener('input', function(){
-        if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
-            inputbox.classList.remove('hasValue')
-        }else{  //값이 있으면 버튼 보이게
-            inputbox.classList.add('hasValue')
+        return {isValid: isValid, errorMsg: errorMsg};
+    }
+    // 비밀번호 유효성 검사
+    const pwChecker = (pw) => { 
+        //조건: 영문/숫자/특문 각각 1개 이상의 조합으로 8~15자
+        const pwRegex = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,15}$/;
+        let errorMsg = '';
+        let isValid = false;
+        //길이 검증
+        if(pw.length < 8){
+            errorMsg = '비밀번호가 너무 짧습니다. 8자 이상 입력해 주세요.'
+        }else if(pw.length > 15){
+            errorMsg = '비밀번호가 너무 깁니다. 15자 이하로 입력해 주세요.'
+        //조건 검증
+        }else if(!pwRegex.test(pw)){
+            errorMsg ='영문, 숫자, 특수문자를 조합하여 입력해 주세요.';
+        }else{
+            isValid = true;
+            return {isValid: isValid, errorMsg: errorMsg};
         }
+        return {isValid: isValid, errorMsg: errorMsg};
+    }
+    //이름 유효성 검사
+    const nameChecker = (name) => {
+        //조건 : 한글만 입력 가능, 2~20자, 띄어쓰기 불가능
+        const nameRegex = /^[가-힣\s]+$/;
+        let errorMsg = '';
+        let isValid = false;
+        //길이 검증, 조건 검증
+        if(!nameRegex.test(name)){
+            errorMsg = '이름에는 한글만 입력해 주세요.'
+        }else if(name.length < 2){
+            errorMsg = '이름의 길이는 2자 이상이어야 합니다.';   
+        }else if(name.length > 20){
+            errorMsg = '이름의 길이는 20자 이하여야 합니다.';
+        }else if(/\s/.test(name)){
+            errorMsg = '이름에는 띄어쓰기를 입력할 수 없습니다.';
+        }else{
+            isValid = true;
+            profile.name = name;
+            return {isValid: isValid, errorMsg: errorMsg};
+        }
+        return {isValid: isValid, errorMsg: errorMsg};
+    }
+    //휴대폰 번호 유효성 검사
+    const phoneChecker = (phone) => {
+        //조건: 숫자만 입력 가능, (010,011,016,017,018,019)으로 시작, 10자 이상 11자 미만
+        const phoneRegex = /^01[016789]-[0-9]{3,4}-[0-9]{4}$/;
+        const onlyNumRegex = /^\d+$/;
+        let errorMsg = '';
+        let isValid = false;
+        //숫자 외 입력값 유무 검증
+        if(!onlyNumRegex.test(phone)){
+            errorMsg = '휴대폰 번호에는 숫자만 입력할 수 있습니다.';
+        //통신사 번호 검증(010,011,016,017,018,019)
+        }else if(!/^01[016789]/.test(phone)){
+            errorMsg = '유효하지 않은 통신사 번호입니다. 다시 입력해 주세요.';
+        //길이 검증
+        }else if(phone.length < 10){
+            errorMsg = '휴대폰 번호 길이가 짧습니다.';   
+        }else if(phone.length > 11){
+            errorMsg = '휴대폰 번호 길이가 깁니다.'; 
+        //조건 검증
+        }else if(phoneRegex){
+            isValid = true;
+            profile.mobile = phone;
+            return {isValid: isValid, errorMsg: errorMsg};
+        }
+        return {isValid: isValid, errorMsg: errorMsg};
+    }
+    //값 일치 확인 함수
+    const isEqual = function(a,b){
+        if(a == b){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //비밀번호확인 일치 검사
+    const pwEqual = ((input, pw) => {
+        let isValid = false;
+        let errorMsg;
+        if(isEqual(input, pw)){   //두 값이 일치하면
+            isValid = true;
+        }else{
+            errorMsg = '비밀번호가 일치하지 않습니다. 다시 입력해 주세요.'
+        }
+        return {isValid: isValid, errorMsg: errorMsg};
     })
-    //blur시
-    inputbox.addEventListener('blur', function(){
-        inputbox.classList.remove('hasValue')   //버튼 안보이게
+    //인증번호(6자리) 생성함수
+    const verifyNumGenerator = (() => {
+        //앞3자리: 100~999사이의 랜덤숫자
+        let ranNum = (Math.floor((Math.random()*900)) + 100); //100~999사이의 랜덤숫자
+        //뒤3자리: 밀리초
+        let today = new Date();
+        let milliSec = today.getMilliseconds();
+        let ranNum2 = milliSec.toString().padStart(3, '0');
+        //합치기
+        let verifyNum = parseInt(ranNum.toString() + ranNum2.toString());
+        return verifyNum;
     })
-})
-
-resetBtn.forEach((reset => {
-    reset.addEventListener('click', function(){
-        inputBoxs.forEach((inputbox) => {
-            inputbox.value = '';
+    //인증번호 일치 검사
+    // const verifyNumEqual = ((input, verifyNum) => {
+    //     let isValid = false;
+    //     let errorMsg;
+    //     if(isEqual(input, verifyNum)){
+    //         isValid = true;
+    //     }else{
+    //         errorMsg = '인증번호가 일치하지 않습니다. 다시 입력해 주세요.'
+    //     }
+    //     return {isValid: isValid, errorMsg: errorMsg};
+    // })
+    
+    
+    //인풋박스 내부 : 우측 [x, 눈] 버튼 input시 활성화, blur 시 비활성화
+    inputBoxs.forEach((inputbox) => {
+        //focus시
+        inputbox.addEventListener('focus', function(){
+            if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
+                inputbox.classList.remove('hasValue')
+            }else{  //값이 있으면 버튼 보이게
+                inputbox.classList.add('hasValue')  
+            }
+        })
+        // input시
+        inputbox.addEventListener('input', function(){
+            if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
+                inputbox.classList.remove('hasValue')
+            }else{  //값이 있으면 버튼 보이게
+                inputbox.classList.add('hasValue')
+            }
+        })
+        //blur시
+        inputbox.addEventListener('blur', function(){
+            // inputbox.classList.remove('hasValue')   //버튼 안보이게
         })
     })
-}))
-
-eyeBtn.addEventListener('click', function(){
-    pwBox.type = 'text';
-})
-
-
-// 로그인-----------------------------------
-
-// 회원가입---------------------------------
-
-const verifyBtn = document.querySelector('.verify_btn button');
-
-
-emailBox.addEventListener('blur', function(){
-    profile.email = emailBox.value;
-    let result = emailChecker(profile.email);
-    console.log(profile.email);
-    if(result.isValid){}
-})
-
-
-
-
-
-//휴대폰번호 유효하면 버튼 disabled 제거 
-phoneBox.onblur = function(){
-    profile.phone = phoneBox.value;
-    if(phoneChecker(profile.phone)){
-        verifyBtn.removeAttribute('disabled');
+    //인풋박스 내부: x버튼 기능
+    resetBtn.forEach((reset, idx) => {
+        reset.addEventListener('click', function(){
+            inputBoxs[idx].value = '';
+        })
+    })
+    //인풋박스 내부: 비밀번호 eye버튼 기능
+    eyeBtn.forEach((eye, idx) => {
+        eye.addEventListener('click', function(){
+            if(pwBox[idx].type == 'password'){
+                pwBox[idx].type = 'text';
+                eyeBtn[idx].classList.add('hide');
+            }else{
+                pwBox[idx].type = 'password';
+                eyeBtn[idx].classList.remove('hide');
+            }
+        })
+    })
+    //에러메시지 온오프 함수
+    const showErrorMsg = function(result, idx){
+        for(let i=0; i<inputBoxs.length; i++){
+            if(inputBoxs[idx].value == ''){   //인풋값이 없으면 에러메시지 없음
+                errorMsgs[idx].classList.remove('active');
+                errorMsgs[idx].innerText = '';
+            }else{  //인풋값이 있으면
+                if(result.isValid == true){ //유효값일 때 에러메시지 없음
+                    errorMsgs[idx].classList.remove('active');
+                    errorMsgs[idx].innerText = '';
+                }else{  //유효값 아닐 시 에러메시지 출력
+                    errorMsgs[idx].innerText = result.errorMsg;
+                    errorMsgs[idx].classList.add('active');
+                }
+            }
+        }
     }
-}
-
-verifyBtn.addEventListener('click', function(){
-    verifyNum = verifyNumGenerator();
-    alert(`인증번호: ${verifyNum}`);
-
-    //버튼 클릭 시 readonly 제거
-    verifyBox.removeAttribute('readonly');
-    verifyBox.value = verifyNum;
-})
-
-
-
-
-
-
-
-// 회원가입 완료: ${name} 저장해서 가져오기-----------------
-
     
-
-})
+    //페이지 이름(login, join, join_complete)가져오기
+    const url = location.pathname;
+    let pageName = url.substring(url.lastIndexOf('/')+1,url.lastIndexOf('.'));
+    
+    switch(pageName){
+        case 'login':
+            // 유효성 검사: 로그인페이지와 회원가입 페이지 분리
+            inputBoxs.forEach((box, idx) => {   
+                const checker = [emailChecker, pwChecker];
+                let func = checker[idx];
+                box.addEventListener('blur', function(){
+                    // 유효성 검사
+                    let result = (func(box.value));
+                    // 유효값: 저장
+                    if(result.isValid){
+                        errorMsgs[idx].classList.remove('active');
+                        errorMsgs[idx].innerText = '';
+                    }else{  //유효값 아닐 시 에러메세지 출력
+                        errorMsgs[idx].innerText = result.errorMsg;
+                        errorMsgs[idx].classList.add('active');
+                    }
+                })
+            })
+            break;
+        case 'join':
+            const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
+            // 유효성 검사, 값 저장
+            inputBoxs.forEach((box, idx) => {
+                const checker = [emailChecker, pwChecker, pwEqual, nameChecker, phoneChecker];//유효성검사 함수 목록
+                let func = checker[idx];
+                box.addEventListener('blur', function(){
+                    let result;
+                    if(func.name == 'pwEqual'){ //비밀번호 확인
+                        result = func(inputBoxs[idx].value, inputBoxs[idx-1].value);
+                    }else if(func.name == 'phoneChecker'){  //휴대폰 번호
+                        result = func(box.value);
+                        //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
+                        if(result.isValid == true){
+                            verifyBtn.disabled = false;
+                        }else{
+                            verifyBtn.disabled = true;
+                        }
+                    }else{  //나머지 함수들
+                        result = func(box.value);
+                    }
+                    //유효성 검사 후 에러메시지 띄우기
+                    showErrorMsg(result, idx);
+                })
+            })
+    
+            verifyBtn.addEventListener('click', function(){
+                //인증번호 생성
+                let verifyNum = verifyNumGenerator();
+                //팝업으로 띄우기
+                alert(`인증번호: ${verifyNum}`);
+                //인풋박스 활성화 시키기
+                // verifyBox.removeAttribute('readonly');
+                //인풋박스에 값 넣기
+                verifyBox.value = verifyNum;
+            })
+            window.addEventListener('click', function(){
+                console.log(10);
+            })
+            console.log(form.checkValidity())
+    
+            break;
+        case 'join_complete':
+            break;
+    }
+    
+    //저장은 가입완료 버튼 누르는 시점에
+    
+    
+    })  //dom괄호
 
 // [↓] sns 로그인(dom제어 필요없는 부분이라 밖으로 뺐습니다.)
 
@@ -220,7 +305,7 @@ const REDIRECT_URI = "http://127.0.0.1:5501/login.html";
 //(3) 콜백 후 이동할 주소(메인)
 const AFTER_REDIRECT_URI = "http://127.0.0.1:5501/";
 //(4) 유저 정보 구조
-var profile =  {
+profile =  {
     email: '',
     name:'',
     age: '',
@@ -228,6 +313,7 @@ var profile =  {
     gender: '',
     mobile: ''
 };
+
 //(5) 쿠키와 세션에 유저 정보를 저장하는 함수
 const setUserInfo = function(accessToken) {
     //1. 유효기간 설정

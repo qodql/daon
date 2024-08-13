@@ -58,12 +58,12 @@ $box-width: 480px;
             width: 20px;
             height: 20px;
             margin-right: 8px;
-            display: inline-block;
+            // display: inline-block;
             background-repeat: no-repeat;
-            vertical-align: middle;
+            // vertical-align: middle;
             position: absolute;
-            left: 20px;
-            top: 50%;
+            left: 16px;
+            top: 28px;
             transform: translateY(-50%);
         }
         input{
@@ -78,9 +78,9 @@ $box-width: 480px;
         }
         // 인풋박스 내부 : 우측 [x, 눈] 아이콘
         .input_btn{
-            // visibility: hidden;
+            visibility: hidden;
             position: absolute;
-            top: 50%;
+            top: 28px;
             transform: translate(-50%, -50%);
             background-repeat: no-repeat;
         }
@@ -95,6 +95,9 @@ $box-width: 480px;
             height: 20px;
             right: 32px;
             background-image: url(../img/icon/icon_eye.svg);
+            &.hide{
+                background-image: url(../img/icon/icon_eye_closed.svg);
+            }
         }
         input.hasValue ~ .input_reset_btn,
         input.hasValue ~ .input_eye_btn{
@@ -104,7 +107,7 @@ $box-width: 480px;
     }
     .pw_box{    //눈 버튼 때문에 비밀번호만 우측 패딩값 추가
         input{
-            padding: 16px 64px 16px 48px;
+            padding: 16px 64px 16px 36px;
         }
     }
     @content

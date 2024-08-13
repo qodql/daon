@@ -153,6 +153,16 @@ mo-s:
   font-weight: 700;
   text-align: center;
 }
+.login_common .blue_btn {
+  width: 100%;
+  max-width: 480px;
+  padding: 16px 16px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #357EF1;
+  border-radius: 8px;
+  color: #ffffff;
+}
 .login_common .input_box li {
   width: 100%;
   max-width: 480px;
@@ -162,12 +172,10 @@ mo-s:
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  display: inline-block;
   background-repeat: no-repeat;
-  vertical-align: middle;
   position: absolute;
-  left: 20px;
-  top: 50%;
+  left: 16px;
+  top: 28px;
   transform: translateY(-50%);
 }
 .login_common .input_box li input {
@@ -178,8 +186,9 @@ mo-s:
   vertical-align: middle;
 }
 .login_common .input_box li .input_btn {
+  visibility: hidden;
   position: absolute;
-  top: 50%;
+  top: 28px;
   transform: translate(-50%, -50%);
   background-repeat: no-repeat;
 }
@@ -195,12 +204,15 @@ mo-s:
   right: 32px;
   background-image: url(../img/icon/icon_eye.svg);
 }
+.login_common .input_box li .input_eye_btn.hide {
+  background-image: url(../img/icon/icon_eye_closed.svg);
+}
 .login_common .input_box li input.hasValue ~ .input_reset_btn,
 .login_common .input_box li input.hasValue ~ .input_eye_btn {
   visibility: visible;
 }
 .login_common .input_box .pw_box input {
-  padding: 16px 64px 16px 48px;
+  padding: 16px 64px 16px 36px;
 }
 .login_common .email_box label {
   background-image: url(../img/icon/icon_mail_grey.svg);
@@ -217,15 +229,13 @@ mo-s:
 .login_common .verify_box label {
   background-image: url(../img/icon/icon_phone.svg);
 }
-.login_common .blue_btn {
-  width: 100%;
-  max-width: 480px;
-  padding: 16px 16px;
-  text-align: center;
-  font-weight: 700;
-  background-color: #357EF1;
-  border-radius: 8px;
-  color: #ffffff;
+.login_common .error_msg {
+  display: none;
+}
+.login_common .error_msg.active {
+  padding: 4px 20px;
+  display: block;
+  color: #ff0f0f;
 }
 
 .login .login_wrap {
@@ -302,22 +312,22 @@ mo-s:
 .join .join_wrap .join_personal_info .input_box li:not(:last-of-type) {
   margin-bottom: 12px;
 }
-.join .join_wrap .join_personal_info .phone_verify {
+.join .join_wrap .join_personal_info .phone_verify div {
   max-width: 480px;
   display: flex;
   justify-content: space-between;
   gap: 8px;
 }
-.join .join_wrap .join_personal_info .phone_verify .phone_box {
+.join .join_wrap .join_personal_info .phone_verify div .phone_box {
   width: 70%;
 }
-.join .join_wrap .join_personal_info .phone_verify .phone_box .input_reset_btn {
+.join .join_wrap .join_personal_info .phone_verify div .phone_box .input_reset_btn {
   right: 33%;
 }
-.join .join_wrap .join_personal_info .phone_verify .verify_btn {
+.join .join_wrap .join_personal_info .phone_verify div .verify_btn {
   width: 30%;
 }
-.join .join_wrap .join_personal_info .phone_verify .verify_btn button {
+.join .join_wrap .join_personal_info .phone_verify div .verify_btn button {
   white-space: nowrap;
 }
 .join .join_wrap .join_agree {
