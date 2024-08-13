@@ -191,6 +191,7 @@
 .faq .sub_container .contents .sub5_community_faq ul li a {
   font-size: 28px;
   font-weight: 700;
+  white-space: nowrap;
 }
 .faq .sub_container .contents .sub5_community_faq ul li:nth-of-type(1) {
   background-color: black;
@@ -218,7 +219,7 @@
   align-items: center;
   text-align: center;
   font-size: 24px;
-  padding-bottom: 65px;
+  padding-bottom: 40px;
 }
 .faq .sub_container .contents .sub5_community_faq .abc span {
   font-weight: bold;
@@ -258,7 +259,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: solid 1px #afafaf;
   border-bottom: solid 1px #afafaf;
   padding: 10px;
   cursor: pointer;
@@ -284,6 +284,9 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+.faq .sub_container .contents .faq_wrap .faq li .question button.active {
+  transform: rotate(180deg);
 }
 .faq .sub_container .contents .faq_wrap .faq li .answer {
   padding: 26px;
@@ -565,6 +568,9 @@
   .faq .sub_container .desc {
     font-size: 20px;
   }
+  .faq .sub_container .contents .sub5_community_faq ul li {
+    width: 200px;
+  }
   .faq .sub_container .contents .sub5_community_faq ul li a {
     font-size: 16px;
   }
@@ -612,6 +618,40 @@
   .faq .sub_container .contents .faq_wrap .faq li .answer {
     padding: 26px;
     background-color: #f1f1f1;
+  }
+}
+@media (max-width: 699px) {
+  .faq .sub_container .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .faq .sub_container .title .icon {
+    position: relative;
+  }
+  .faq .sub_container .title .icon .img1 {
+    padding: 10px;
+  }
+  .faq .sub_container .title:hover span {
+    display: block !important;
+  }
+  .faq .sub_container .desc {
+    font-size: 20px;
+  }
+  .faq .sub_container .contents .sub5_community_faq ul {
+    flex-direction: column;
+    padding-bottom: 0px;
+  }
+  .faq .sub_container .contents .sub5_community_faq ul li {
+    width: 200px;
+  }
+  .faq .sub_container .contents .sub5_community_faq .abc {
+    margin: 0px auto;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }
 @media (max-width: 479px) {
@@ -677,7 +717,6 @@
     align-items: center;
     text-align: center;
     font-size: 18px;
-    padding-bottom: 32px;
   }
   .faq .sub_container .contents .sub5_community_faq .abc span {
     font-weight: bold;

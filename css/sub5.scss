@@ -246,6 +246,7 @@
             a {
               font-size: 28px;
               font-weight: 700;
+              white-space: nowrap;
             }
           }
           
@@ -276,7 +277,7 @@
           align-items: center;
           text-align: center;
           font-size: 24px;
-          padding-bottom: 65px;
+          padding-bottom: 40px;
           span {
             font-weight: bold;
             font-size: 24px;
@@ -319,7 +320,6 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
-              border-top: solid 1px #afafaf;
               border-bottom: solid 1px #afafaf;
               padding: 10px;
               cursor: pointer;
@@ -346,6 +346,9 @@
                 background-color: transparent;
                 border: none;
                 cursor: pointer;
+                &.active{
+                  transform: rotate(180deg);
+                }
               }
             }
 

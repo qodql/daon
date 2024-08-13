@@ -6,9 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const a = document.querySelector(".faq_wrap ul");
       const col = ["blue", "green", "purple", "yell"];
       const cate = document.querySelectorAll(".categories ul li a");
+      const abc = document.querySelector(".abc");
+
+      console.log(abc);
 
       let tem = function (type) {
-        a.innerHTML='';
+        a.innerHTML = "";
+
         data.forEach((item) => {
           let t;
 
@@ -25,9 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
             case "기타":
               t = col[3];
               break;
+            
           }
           if (item.t == type || type == "all") {
             a.innerHTML += `
+      
+            <div class="faq_wrap">
+            <ul class="faq">
               <li>
               <div class="question reservation">
               <span class="${t}">${item.t}</span>
@@ -39,13 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
                   </div>
                   </li>`;
           }
-
-          console.log(item);
         });
 
         const b = a.querySelectorAll(".question");
         const answer = document.querySelectorAll(".answer");
-  
+
         b.forEach((v, i) => {
           v.onclick = function () {
             answer.forEach((b, q) => {
@@ -54,22 +60,33 @@ document.addEventListener("DOMContentLoaded", () => {
             answer[i].classList.add("active");
           };
         });
-
       };
 
       tem("all");
+
+
 
       cate.forEach((v, i) => {
         cate[i].onclick = function (e) {
           e.preventDefault();
           let categories = this.getAttribute("href");
-          tem(categories);
+
+          if (categories === "전체") {
+            abc.innerHTML = `
+              <p class="abc">
+              ${categories}을(를) 선택하셨네요! 모든 관련 리스트를 보여드릴게요!
+              </p>`;
+            tem("all");
+          } else {
+            abc.innerHTML = `
+              <p class="abc">
+                ${categories}을(를) 선택하셨네요! 관련 리스트를 보여드릴게요!
+              </p>`;
+            tem(categories);
+          }
         };
       });
 
       
-
-
-
     });
 });
