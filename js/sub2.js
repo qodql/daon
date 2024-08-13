@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // database
-  fetch("../data/sub2.json")
+  fetch("./data/sub2.json")
   .then((res)=> {return res.json()})
   .then((data)=>{
       const room_content = document.querySelector('.room_content');
