@@ -59,11 +59,23 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <p>${value.room_caution}</p>
                                 </li>
                                 <li>
-                                    <button onclick="location.href='./sub6_reservation_step1.html'" class="main_btn";>예약하기</button>
+                                    <button 
+                                    data-type = '${type}'
+                                    data-num = '${value.room_num}'
+                                     class="main_btn";>예약하기</button>
                                 </li>
                             </ul>
                         </li>`
   })
+  let btn = document.querySelectorAll('.main_btn');
+
+   btn.forEach((v)=>{
+    v.onclick = function(){
+      let {type,num} = this.dataset;
+      localStorage.room = JSON.stringify({type,num})
+      location.href='./sub6_reservation_step1.html'
+    }
+   })
     var swiper = new Swiper(".room_list", {
         slidesPerView: 1,
         spaceBetween: 20,

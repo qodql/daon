@@ -20,10 +20,6 @@
     .img_box {width: 100%;
       height: 100%;
       position: relative;
-      img {
-        width: 100%;
-        height: 100%;
-      }
       .end_event {
         width: 100%;
         height: 100%;
@@ -37,11 +33,16 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        
+        display: none;
+
+        &.active{
+          display: flex;
+        }
       }}
 
 
     .end_event_text {
+
       font-size: 40px;
       z-index: 2;
       color: white;
