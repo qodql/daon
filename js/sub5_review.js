@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  fetch("../data/sub5_community_review.json")
+  fetch("./data/sub5_community_review.json")
     .then((res) => { return res.json() })
     .then((data) => {
       const data_review = data.community_review;
