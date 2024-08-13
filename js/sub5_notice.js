@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
    //notice page
    const page_reverse = data.community_notice.reverse();
    let page = [];
-   for(let i=0; i<page_reverse.length; i+=5){
-     page.push(page_reverse.slice(i, i+5));
+   for(let i=0; i<page_reverse.length; i+=10){
+     page.push(page_reverse.slice(i, i+10));
    }
 
     let notice_paging = ()=>{

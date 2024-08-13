@@ -69,11 +69,6 @@
                                                 padding: 0 40px;
                                                 label{
                                                     width: 280px;
-                                                    i{
-                                                        width: 20px;
-                                                        height: 20px;
-                                                        border-radius: 4px;
-                                                    }
                                                 }
                                             }
                                         }
@@ -153,16 +148,9 @@
                                             height: auto;
                                             .checkbox_wrap{
                                                 padding: 0;
-                                                margin-left: -20px;
+                                                margin-left: -18px;
                                                 input{
                                                     padding: 0;
-                                                }
-                                                label{
-                                                    i{
-                                                        width: 16px;
-                                                        height: 16px;
-                                                        border-radius: 4px;
-                                                    }
                                                 }
                                             }
                                         }
@@ -175,7 +163,7 @@
                                             }
                                         }
                                         li{
-                                            @include inputbox;
+                                            width: 100%;
                                             max-width: 100%;
                                             input{
                                                 width: 100%;
@@ -184,8 +172,6 @@
                                             &.coupon_box{
                                                 input{
                                                     width: 100px;
-                                                    height: 36px;
-                                                    line-height: 36px;
                                                 }
                                             }
                                         }
@@ -196,8 +182,8 @@
                                 margin-top: 100px;
                                 button{
                                     width: 180px;
-                                    height: 40px;
-                                    line-height: 42px;
+                                    height: 44px;
+                                    line-height: 46px;
                                 }
                                 .mypage_info_fix_btn{
                                     a{
@@ -247,8 +233,6 @@
                                             &.coupon_box{
                                                 input{
                                                     width: 88px;
-                                                    height: 32px;
-                                                    line-height: 30px;
                                                     font-size: 14px;
                                                 }
                                             }
