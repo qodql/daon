@@ -6,67 +6,29 @@
 
 //max 1279
 @include res('tab'){
-.sub{
-      .align-box{
-        li{width: 45%;
-          & a{
-            .img_box{
-              .end_event_text{
-                font-size: 32px;
-              }
-            }
-          }
+  .align_box{
+    & li{
+      width: calc(50% - 10px);
         }
-      }
       }
     }
 
-    @media (max-width : 839px) {
-      .sub{
-        ul{
-          li{
-            a{
-              .img_box{
-                .end_event_text{
-                  font-size: 20px;
-                }
-              }
-            }
-          }
-        }    
-      }
-    }
 //max 767
 @include res('mo-l'){
-  .sub{
-    ul{
-      li{
+
+    .align_box{
+      & li{width: 100%;
         a{
           .img_box{
             .end_event_text{
-              font-size: 20px;
+              font-size: 60px;
             }
           }
         }
       }
     }
-  }
 }
-@media (max-width : 567px){
-  .sub{
-    ul{
-      li{
-        a{
-          .img_box{
-            .end_event_text{
-              font-size: 20px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+
 //max 480
 @include res('mo-s'){
   .sub{
@@ -75,7 +37,7 @@
         a{
           .img_box{
             .end_event_text{
-              font-size: 20px;
+              font-size: 40px;
             }
           }
         }

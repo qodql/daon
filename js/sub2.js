@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let room_img = "";
       const loveYou = document.querySelector(".sub.love_you")
       const onlyYou = document.querySelector(".sub.only_you")
-      //   const currentUrl = window.location.href;
       // love_you_html 페이지 스크립트 실행
       let page, type ;
       if (loveYou) {

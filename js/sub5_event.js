@@ -7,18 +7,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const event_box = document.querySelector('.align_box');
     const data_event = data.event_page;
     const now = new Date();
-
-
+    const page_reverse = data.event_page.reverse();
     if(event){ 
      
     data_event.forEach((v,i)=>{
     
       let end_date = new Date(v.event_lastday)
 
-      event_box.innerHTML += `<li data-id="${i+1}"> <a href="${(end_date > now) ? v.event_link:'#'}">  
+      event_box.innerHTML += `<li data-id="${v.id}"> <a href="${(end_date > now) ? v.event_link:'#'}">  
                             <div class="img_box">
-                                <img src="/img/img_event_05_2_contents_0${i}.jpg" alt="이벤트 사진 ${i+1}번">
-                                                                                                                    <div class="end_event ${(end_date < now) ? 'active':''}">
+                                <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번"><div class="end_event ${(end_date < now) ? 'active':''}">
                                   <p class="end_event_text">종료된 이벤트</p>
                                   </div>
                             </div>
@@ -45,6 +43,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
                             </p>
                         </div>`
   }
+  let page = [];
+  for(let i=0; i<page_reverse.length; i+=6){
+    page.push(page_reverse.slice(i, i+6));
+  }
+
+   let notice_paging = ()=>{
+     const page_list = document.querySelector('.pagination_num');
+     
+     page.forEach((v,i)=>{
+       page_list.innerHTML += `<a href='#'>${i+1}</a>`;
+     })
+     
+     const page_btn = document.querySelectorAll('.pagination_num a');
+     
+     page_list.firstElementChild.classList.add('on');
+   }
+   notice_paging();
   })
 
 })
