@@ -4,8 +4,8 @@
 // 로그인+회원가입 공통
 .login_common{
     width: 100%;
-    height: 100vh;
-    padding-top: 160px;
+    min-height: 100vh;
+    padding: 160px 0;
     .logo_wrap{
         margin-bottom: 56px;
         .logo{
@@ -21,17 +21,30 @@
             text-align: center;
         }
     }
+
+    //기본 파란 버튼
+    .blue_btn{
+        @include btn;
+    }
+
     //로그인 관련 모든 인풋박스들
-    .input_box li {@include inputbox;}
+    .input_box{
+        @include inputbox;
+    }
     .email_box{label{background-image: url(../img/icon/icon_mail_grey.svg);}}
     .pw_box{label{background-image: url(../img/icon/icon_lock.svg);}}
     .name_box{label{background-image: url(../img/icon/icon_person.svg);}}
     .phone_box{label{background-image: url(../img/icon/icon_phone.svg);}}
     .verify_box{label{background-image: url(../img/icon/icon_phone.svg);}}
-    //기본 파란 버튼
-    .blue_btn{
-        @include btn;
-    }
+    //인풋박스 에러메세지
+    .error_msg{
+        display: none;
+        &.active{
+            padding: 4px 20px;
+            display: block;
+            color: #ff0f0f;
+        }
+    } 
 }
 // 로그인
 .login{
@@ -91,7 +104,10 @@
 }
 // 회원가입
 .join{
-    margin-bottom: 480px;
+    //회원가입 페이지의 모든 버튼 비활성화
+    button:disabled{
+        background-color: #afafaf;
+    }    
     .join_wrap{
         .join_personal_info{
             @include box_shadow{
@@ -106,20 +122,22 @@
                 }
             }
             .phone_verify{
-                max-width: $box-width;
-                display: flex;
-                justify-content: space-between;
-                gap: 8px;
-                .phone_box{
-                    width: 70%;
-                    .input_reset_btn{
-                        right: 33%;
+                div{
+                    max-width: $box-width;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 8px;
+                    .phone_box{
+                        width: 70%;
+                        .input_reset_btn{
+                            right: 33%;
+                        }
                     }
-                }
-                .verify_btn{
-                    width: 30%;
-                    button{
-                        white-space: nowrap;   //반응형 360px아래 깨짐 방지용
+                    .verify_btn{
+                        width: 30%;
+                        button{
+                            white-space: nowrap;   //반응형 360px아래 텍스트 두줄 깨짐 방지용
+                        }
                     }
                 }
             } 
@@ -140,11 +158,10 @@
                     width: 100%;
                     padding: 24px;
                     margin: 0;
-                    background-color: #efefef;
                     display: flex;
                     justify-content: space-between;
                     .toggle_btn{
-                       top: 24px;  
+                        top: 24px;  
                     }
                 }
                 .agree_list{
@@ -159,18 +176,26 @@
                         }
                         display: flex;
                         justify-content: space-between;
-                        .view_all{color: #afafaf;}
-                    }
-                    .agree_essential{
-                        label{
-                            span{
-                                span{color: #ff0f0f;}
-                            }
+                        .view_all{
+                            color: #afafaf;
+                            white-space: nowrap;
                         }
                     }
-                    .agree_optional{
+                    // .agree_essential{    
+                    //     label{
+                    //         span{        //(필수) 빨간색
+                    //               color: #ff0f0f;
+                    //         }
+                    //     }
+                    // }
+                    .agree_optional{    
                         label{
-                            span{color: #afafaf;}
+                            p{      //선택항목 연한 회색
+                                color: #afafaf;
+                            }
+                            span{   //(선택) 연한 회색
+                                color: #afafaf;
+                            }
                         }
                     }   
                 }
@@ -187,9 +212,6 @@
             text-align: center;
             a{
                 text-align: center;
-                button{
-                    @include btn;       
-                }
             }
         }
     }
