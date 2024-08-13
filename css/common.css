@@ -927,42 +927,6 @@ body.prevent_scroll {
   background-color: #AFAFAF;
 }
 
-.popup.review .popup_cont {
-  max-width: 1000px;
-}
-.popup.review .popup_cont .popup_inner {
-  padding: 0;
-}
-.popup.review .popup_cont .popup_inner .review_wrap {
-  display: flex;
-}
-.popup.review .popup_cont .popup_inner .review_wrap div {
-  width: 50%;
-}
-.popup.review .popup_cont .popup_inner .review_wrap .review_cont {
-  display: block;
-  padding: 40px;
-  background-color: white;
-}
-.popup.review .popup_cont .popup_inner .review_wrap .review_cont .user_id {
-  width: 148px;
-  background-color: rgba(154, 190, 248, 0.22);
-  font-size: 24px;
-  border-radius: 8px;
-  padding: 4px 8px;
-  white-space: nowrap;
-}
-.popup.review .popup_cont .popup_inner .review_wrap .review_cont .rating_img {
-  width: 96px;
-  margin-top: 40px;
-}
-.popup.review .popup_cont .popup_inner .review_wrap .review_cont .rating_img img {
-  width: 100%;
-}
-.popup.review .popup_cont .popup_inner .review_wrap .review_cont .review_desc {
-  margin-top: 12px;
-}
-
 .pc_only {
   display: block;
 }

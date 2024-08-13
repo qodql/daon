@@ -425,7 +425,49 @@
     }
   }
 }
-
+// 이용후기 팝업
+.popup {
+  &.review {
+    .popup_cont {
+      max-width: 1000px;
+      .popup_inner {
+        padding: 0;
+        .review_wrap {
+          display: flex;
+          div{ 
+            width: 50%;
+          }
+          .review_cont{
+            display: block;
+            padding: 40px;
+            background-color: white;
+            .user_id{
+              width: fit-content;
+              background-color: rgb(154,190,248,0.22);
+              font-size: 24px;
+              border-radius: 8px;
+              padding: 4px 8px;
+              white-space: nowrap;
+            }
+            .rating_img{
+              width: 100px;
+              margin-top: 40px;
+              overflow: hidden;
+              /* 스크립트로 이미지의 트랜스폼 트랜스레이트x를 음수로  20% 불가능하면 20px로 움직이게 하기 */
+              img{
+                width: 100%;
+              }
+            }
+            .review_desc{
+              margin-top: 12px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 
 

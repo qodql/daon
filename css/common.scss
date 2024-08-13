@@ -1094,46 +1094,7 @@ body {
     }
   }
 }
-// 이용후기 팝업
-.popup {
-  &.review {
-    .popup_cont {
-      max-width: 1000px;
-      .popup_inner {
-        padding: 0;
-        .review_wrap {
-          display: flex;
-          div{ 
-            width: 50%;
-          }
-          .review_cont{
-            display: block;
-            padding: 40px;
-            background-color: white;
-            .user_id{
-              width: 148px;
-              background-color: rgb(154,190,248,0.22);
-              font-size: 24px;
-              border-radius: 8px;
-              padding: 4px 8px;
-              white-space: nowrap;
-            }
-            .rating_img{
-              width: 96px;
-              margin-top: 40px;
-              img{
-                width: 100%;
-              }
-            }
-            .review_desc{
-              margin-top: 12px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+
 
 // responsive
 .pc_only {
