@@ -428,7 +428,13 @@ body.prevent_scroll {
 .fixed_menu ul li a span {
   font-weight: 700;
 }
+.fixed_menu ul li.weather_btn img {
+  margin-top: -8px;
+  width: 40px;
+  height: 40px;
+}
 .fixed_menu ul li.weather_btn span {
+  margin-top: -10px;
   font-size: 12px;
 }
 .fixed_menu ul li.chat_btn {

@@ -27,6 +27,9 @@
                                     top: 32px;
                                     z-index: 1;
                                 }
+                                & + p {
+                                    white-space: nowrap;
+                                }
                             }
                         }
                         &.active {
@@ -37,6 +40,7 @@
                                 .circle {
                                     & + p {
                                         color: #efefef;
+                                        white-space: nowrap;
                                     }
                                 }
                             }
@@ -241,12 +245,13 @@
                                 font-weight: 700;
                                 margin-bottom: 20px;
                                 .tag {
-                                    padding: 12px 24px;
+                                    padding: 8px 16px;
                                     display: inline-block;
-                                    margin-right: 20px;
+                                    margin-right: 8px;
                                     font-weight: 700;
                                     border: 2px solid #BE004F;
                                     border-radius: 8px;
+                                    text-transform: uppercase;
                                     &.love {
                                         color: #BE004F;
                                     }
@@ -254,6 +259,14 @@
                                         border-color: #3226C1;
                                         color: #3226C1;
                                     }
+                                }
+                                .room_value_num {
+                                    font: inherit;
+                                }
+                                .room_price {
+                                    margin-left: 4px;
+                                    color: #afafaf;
+                                    font-weight: 600;
                                 }
                             }
                             ul {
@@ -470,6 +483,7 @@
                                                 color: #fff;
                                                 letter-spacing: 0;
                                                 &.num {
+                                                    height: 30px;
                                                     margin-top: 84px;
                                                     font-size: 20px;
                                                     font-weight: 700;
@@ -566,15 +580,56 @@
             .data {
                 font-size: 20px;
                 font-weight: 700;
-                .tag {
-                    padding: 8px 12px;
-                    margin-right: 8px;
-                    background-color: #3226C1;
+                #tag, #mb_tag {
+                    padding: 8px 10px;
                     border-radius: 8px;
                     font-size: 12px;
                     font-weight: 700;
+                    background-color: #2f2f2f;
                     color: #fff;
                     vertical-align: middle;
+                    text-transform: uppercase;
+                    &.love {
+                        background-color: #BE004F;
+                    }
+                    &.only {
+                        background-color: #3226C1;
+                    }
+                }
+                
+                #room_num, span, em {
+                    font: inherit;
+                }
+                .room_data {
+                    color: #afafaf;
+                    font-weight: 400;
+                    font-size: 16px;
+                    #room_data, #mb_room_data {
+                        color: inherit;
+                        font: inherit;
+                    }
+                }
+                &.room_tag_num, &.mb_room_tag_num {
+                    display: flex;
+                    gap: 8px;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    & > span {
+                        &:not(:nth-of-type(odd)) {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+                &.room_tag_num {
+                    max-width: 270px;
+                }
+                &.mb_room_tag_num {
+                    max-width: 260px;
+                    justify-content: flex-end;
+                }
+                #mb_room_num_value {
+                    display: inline-block;
+                    width: 56px;
                 }
             }
             &:not(:first-of-type) {
@@ -593,7 +648,7 @@
         }
         .price {
             text-align: right;
-            .sale {
+            #primary {
                 font-size: 20px;
                 color: #afafaf;
                 text-decoration: line-through;

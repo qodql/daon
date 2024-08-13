@@ -5,45 +5,45 @@
       "room_num" : "101",
       "room_sqft" : 16,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 126000      
+      "room_price" : "126,000"      
     },
     {
       "id":1,
       "room_num" : "102",
-      "room_sqft" : 16,
-      "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_sqft" : 18,
+      "room_composition" : "침대룸B(더블2 + 소파베드), 주방, 화장실2",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 136000
+      "room_price" : "136,000"
     },
     {
       "id":2,
       "room_num" : "201",
-      "room_sqft" : 16,
-      "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_sqft" : 12,
+      "room_composition" : "침대룸C(싱글1 + 싱글1), 주방, 화장실",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 150000
+      "room_price" : "150,000"
     },
     {
       "id":3,
       "room_num" : "202",
-      "room_sqft" : 16,
+      "room_sqft" : 14,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 140000
+      "room_price" : "140,000"
     },
     {
       "id":4,
       "room_num" : "203",
-      "room_sqft" : 16,
+      "room_sqft" : 10,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 100000
+      "room_price" : "100,000"
     }
   ],
 
@@ -51,47 +51,47 @@
     {
       "id":0,
       "room_num" : "101",
-      "room_sqft" : 16,
+      "room_sqft" : 20,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 197000
+      "room_price" : "197,000"
     },
     {
       "id":1,
       "room_num" : "102",
       "room_sqft" : 16,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 132000
+      "room_price" : "132,000"
     },
     {
       "id":2,
       "room_num" : "201",
-      "room_sqft" : 16,
+      "room_sqft" : 14,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 145000
+      "room_price" : "145,000"
     },
     {
       "id":3,
       "room_num" : "202",
-      "room_sqft" : 16,
+      "room_sqft" : 18,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 162000
+      "room_price" : "162,000"
     },
     {
       "id":4,
       "room_num" : "203",
-      "room_sqft" : 16,
+      "room_sqft" : 19,
       "room_composition" : "침대룸A(더블1), 주방, 화장실",
-      "room_personnel" : "기본2인/최대6인",
+      "room_personnel" : "기본2인 / 최대6인",
       "room_caution" : "2인 초과 및 침구 추가 시 인당 1만원",
-      "room_price" : 165000
+      "room_price" : "165,000"
     }
   ]
 
