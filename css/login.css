@@ -185,6 +185,9 @@ mo-s:
   border-radius: 8px;
   vertical-align: middle;
 }
+.login_common .input_box li input.active {
+  border-color: #ff0f0f;
+}
 .login_common .input_box li .input_btn {
   visibility: hidden;
   position: absolute;
@@ -417,6 +420,9 @@ mo-s:
 .join_complete .join_complete_wrap .greeting p {
   font-size: 24px;
   text-align: center;
+}
+.join_complete .join_complete_wrap .greeting p span {
+  font-size: inherit;
 }
 .join_complete .join_complete_wrap .join_complete_btn {
   text-align: center;

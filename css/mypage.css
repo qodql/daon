@@ -186,6 +186,9 @@ mo-s:
   border-radius: 8px;
   vertical-align: middle;
 }
+.mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li input.active {
+  border-color: #ff0f0f;
+}
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li .input_btn {
   visibility: hidden;
   position: absolute;
@@ -521,6 +524,9 @@ mo-s:
     border: 1px solid #afafaf;
     border-radius: 8px;
     vertical-align: middle;
+  }
+  .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li input.active {
+    border-color: #ff0f0f;
   }
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_input li ul li li .input_btn {
     visibility: hidden;

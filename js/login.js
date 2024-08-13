@@ -85,24 +85,42 @@ document.addEventListener("DOMContentLoaded", () => {
         return {isValid: isValid, errorMsg: errorMsg};
     }
     //값 일치 확인 함수
-    const isEqual = function(a, b){
-        if(a === b){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    //비밀번호확인 일치 검사
-    const pwEqual = ((pwCheck, pw) => {
+    const isEqual = function(input, target){
         let isValid = false;
         let errorMsg = '';
-        if(isEqual(pwCheck, pw)){
+        if(input === target){
             isValid = true;
         }else{
-            errorMsg = '비밀번호가 일치하지 않습니다.'
+            if(target.length === 6){
+                errorMsg = '인증번호가 일치하지 않습니다.'
+            }else{
+                errorMsg = '비밀번호가 일치하지 않습니다.'
+            }
         }
         return {isValid: isValid, errorMsg: errorMsg};
-    })
+    }
+    // //비밀번호확인 일치 검사 함수
+    // const pwEqual = ((pwCheck, pw) => {
+    //     let isValid = false;
+    //     let errorMsg = '';
+    //     if(isEqual(pwCheck, pw)){
+    //         isValid = true;
+    //     }else{
+    //         errorMsg = '비밀번호가 일치하지 않습니다.'
+    //     }
+    //     return {isValid: isValid, errorMsg: errorMsg};
+    // })
+    // // 인증번호 일치 검사 함수
+    // const verifyNumEqual = ((input, verifyNum) => {
+    //     let isValid = false;
+    //     let errorMsg = '';
+    //     if(isEqual(input, verifyNum)){
+    //         isValid = true;
+    //     }else{
+    //         errorMsg = '인증번호가 일치하지 않습니다.'
+    //     }
+    //     return {isValid: isValid, errorMsg: errorMsg};
+    // })
     //인증번호(6자리)생성 함수
     const verifyNumGenerator = (() => {
         //앞3자리: 100~999사이의 랜덤숫자
@@ -114,17 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
         //합치기
         let verifyNum = parseInt(ranNum.toString() + ranNum2.toString());
         return verifyNum;
-    })
-    // 인증번호 일치 검사 함수
-    const verifyNumEqual = ((input, verifyNum) => {
-        let isValid = false;
-        let errorMsg = '';
-        if(isEqual(input, verifyNum) === true){
-            isValid = true;
-        }else{
-            errorMsg = '인증번호가 일치하지 않습니다.'
-        }
-        return {isValid: isValid, errorMsg: errorMsg};
     })
     
     //인풋박스 내부 : 우측 [x, 눈] 버튼 input시 활성화, blur 시 비활성화
@@ -214,30 +221,30 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
         case 'join':
             const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
-            //방법1----------------------------
+            /*방법1----------------------------
             // emailBox.addEventListener('blur', function(){
             //     let idx = 0;
-            //     result = emailChecker(emailBox.value);
+            //     let result = emailChecker(emailBox.value);
             //     showErrorMsg(result, emailBox, idx);
             // })
             // pwBox.addEventListener('blur', function(){
             //     let idx = 1;
-            //     result = pwChecker(pwBox.value);
+            //     let result = pwChecker(pwBox.value);
             //     showErrorMsg(result, pwBox, idx);
             // })
             // pwCheckBox.addEventListener('blur', function(){
             //     let idx = 2;
-            //     result = pwEqual(pwCheckBox.value, pwBox.value);
+            //     let result = isEqual(pwCheckBox.value, pwBox.value);
             //     showErrorMsg(result, pwCheckBox, idx);
             // })
             // nameBox.addEventListener('blur', function(){
             //     let idx = 3;
-            //     result = nameChecker(nameBox.value);
+            //     let result = nameChecker(nameBox.value);
             //     showErrorMsg(result, nameBox, idx);
             // })
             // phoneBox.addEventListener('blur', function(){
             //     let idx = 4;
-            //     result = phoneChecker(phoneBox.value);
+            //     let result = phoneChecker(phoneBox.value);
             //     showErrorMsg(result, phoneBox, idx);
             //     //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
             //     if(result.isValid == true){
@@ -257,51 +264,52 @@ document.addEventListener("DOMContentLoaded", () => {
             //     verifyBox.removeAttribute('readonly');
             //     //인증번호 일치하는지 검사
             //     verifyBox.addEventListener('blur', function(){
-            //         result = verifyNumEqual(verifyBox.value, verifyNum);
+            //         let result = isEqual(verifyBox.value, verifyNum);
             //         showErrorMsg(result, verifyBox, idx);
             //         console.log(verifyNum);
 
             //     })
-            // })   
+            // })
+            */
             //방법2------------------------------------------ 
             const boxs = [
                 {
                     name: emailBox,
-                    func: emailChecker,
+                    func: emailChecker
                 },
                 {
                     name: pwBox,
-                    func: pwChecker,
+                    func: pwChecker
                 },
                 {
                     name: pwCheckBox,
-                    func: pwEqual,
+                    func: isEqual
                 },
                 {
                     name: nameBox,
-                    func: nameChecker,
+                    func: nameChecker
                 },
                 {
                     name: phoneBox,
-                    func: phoneChecker,
+                    func: phoneChecker
                 },
                 {
                     name: verifyBox,
-                    func: verifyNumEqual,
-                },
+                    func: isEqual
+                }
             ]
             boxs.forEach((box, idx) => {
                 if(idx === 2){
                     box.name.addEventListener('blur', function(){
-                        result = box.func(box.name.value, pwBox.value);
+                        let result = box.func(box.name.value, pwBox.value);
                         showErrorMsg(result, box.name, idx);
                     })
                 }else if(idx === 4){
                     box.name.addEventListener('blur', function(){
-                        result = box.func(box.name.value);
+                        let result = box.func(box.name.value);
                         showErrorMsg(result, box.name, idx);
                         //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
-                        if(result.isValid == true){
+                        if(result.isValid === true){
                             verifyBtn.disabled = false;
                         }else{
                             verifyBtn.disabled = true;
@@ -317,13 +325,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         box.name.removeAttribute('readonly');
                         //인증번호 일치하는지 검사
                         box.name.addEventListener('blur', function(){
-                            result = verifyNumEqual(box.name.value, verifyNum);
+                            let result = box.func(box.name.value, verifyNum);
+                            console.log(`입력값: ${box.name.value}`);
+                            console.log(`인증번호: ${verifyNum}`);
                             showErrorMsg(result, box.name, idx);
                         })
                     })    
                 }else{
                     box.name.addEventListener('blur', function(){
-                        result = box.func(box.name.value);
+                        let result = box.func(box.name.value);
                         showErrorMsg(result, box.name, idx);
                     })
                 }
@@ -337,49 +347,29 @@ document.addEventListener("DOMContentLoaded", () => {
                     errorMsgs.innerText = ""
                 }
             }
-
-            window.addEventListener('click', function(){
-                console.log('클릭 이벤트 발생');
-                //submit 체크 함수
-                const submitChecker = () => {
-                    let submitCondition1 = false;
-                    form.checkValidity();
-                    let noError = 0;
-                    errorMsgs.forEach((msg) => {
-                        if(msg.innerText !== ''){
-                            noError = 0;
-                        }else{
-                            noError = 1;
-                        }
-                    })
-                    if(form.checkValidity() && noError){
-                        submitCondition1 = true;
-                    }else{
-                        submitCondition1 = false;
-                    }
-
-                    let submitCondition2 = (essentialCheck[0].checked === true && essentialCheck[1].checked === true && essentialCheck[2].checked === true);
-                    console.log(submitCondition1);
-                    console.log(submitCondition2);
-                    console.log(submitCondition1 && submitCondition2);
-
-                    if(submitCondition1 && submitCondition2){
-                        submitBtn.disabled = true;
-                    }else{
+            let submitChecker = () => {
+                let submitCondition = form.checkValidity();
+                    if(submitCondition === true){
                         submitBtn.disabled = false;
+                    }else{
+                        submitBtn.disabled = true;
                     }
+            }
 
-                }
-                submitChecker();
-                console.log(profile.email);
-                // console.log(profile.name);
-                // console.log(profile.mobile);
-                // console.log(submitCondition1);
-                // console.log(submitCondition2);
-                // console.log(errorMsgs[0].innerText);
-            })
+            window.addEventListener('click', submitChecker)
+            window.addEventListener('keydown', submitChecker)
+            window.addEventListener('scroll', submitChecker)
+
+            submitBtn.addEventListener('submit', function(){    //여기 엔터쳐도 다음 페이지 갈 수 있게?
+                let accessToken = 'ASDqwe545asd123454dsfasd1234';
+                setUserInfo(accessToken);
+                // location.href = "http://127.0.0.1:5501/join_complete.html"
+            })            
             break;
         case 'join_complete':
+            const name = document.querySelector('.greeting .name');
+            let profile = JSON.parse(sessionStorage.profile); 
+            name.innerText = profile.name;
             break;
     }
     
@@ -423,7 +413,7 @@ profile =  {
 };
 
 //(5) 쿠키와 세션에 유저 정보를 저장하는 함수
-const setUserInfo = function(accessToken) {
+var setUserInfo = function(accessToken) {
     //1. 유효기간 설정
     let endDate = new Date();
     endDate.setSeconds(endDate.getSeconds() + 86400);   //24시간 (단위:초)
