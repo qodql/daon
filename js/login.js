@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         //x버튼 클릭 시 유효성검사
 
-        //blur시: blur적용하면 x, eye버튼 클릭 시점에 blur적용해서 버튼이 사라지고 기능을 못합니다..******************
+        //blur시: blur적용하면 x, eye버튼 클릭 시점에 blur적용해서 버튼이 사라지고 기능을 못합니다..****************
         // inputbox.addEventListener('blur', function(){
         //     inputbox.classList.remove('hasValue')   //버튼 안보이게
         // })
@@ -315,7 +315,7 @@ var login = false; //로그인상태:true / 로그아웃상태: false
 // if 조건문이 true, false를 boolean이 아닌 문자열로 받기때문에 false가 나와도 true로 간주한다. (false라는 문자가 있으니까 트루.) 그래서 === 'true'를 넣어줘서 문자열 true 일때를 한번 더 넣어주면 정상작동함.
 if(accessToken.length && accessToken[0].split('=')[1] === 'true'){ // 엑세스 토큰 값이 있으면 메인으로 이동
     login = true;
-    // location.href="/";
+    location.href="/";
 } else{                         //엑세스 토큰 값이 없으면 로그인 진행
 
 /* sns 로그인 공통 변수, 함수 ---------------------------------*/
