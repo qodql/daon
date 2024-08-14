@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const room = localStorage.getItem('defaultQuickRoom');
         const adult = localStorage.getItem('defaultQuickAdult');
         const child = localStorage.getItem('defaultQuickChild');
-        let roomNum=1, adultNum=2, childNum=0, defaultStartDate='',defaultEndDate='',defaultRoom='',defaultAdult='',defaultChild='';
-    
-        if(step1){
+        let roomNum='', adultNum='', childNum='', defaultStartDate='',defaultEndDate='',defaultRoom='',defaultAdult='',defaultChild='';
+        let setStartDate='', setEndDate='';
 
+        if(step1){
 
             if (quick) {
                 getDefaultStartDate.value = startDate
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 defaultRoom = room
                 defaultAdult = adult
                 defaultChild = child
-                console.log('quick', startDate, endDate, room, adult, child);
             } else {
                 // 디폴트 값
                 defaultStartDate = getDefaultStartDate.value
@@ -47,7 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 defaultRoom = roomInput.value
                 defaultAdult = adultInput.value
                 defaultChild = childInput.value
-                console.log('not quick', getDefaultStartDate.value, getDefaultEndDate.value, roomInput.value, adultInput.value, childInput.value);
+                roomNum=roomInput.value;
+                childNum=childInput.value;
+                adultNum=adultInput.value;
             }
 
             document.cookie = `defaultStartDate=${defaultStartDate}`
@@ -338,6 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardYear = document.querySelector(".card_data .date.year")
         const cardMonth = document.querySelector(".card_data .date.month")
         const cardCvc = document.querySelector(".card_back .cvc_num")
+        const paymentBtn = document.querySelector(".payment_btn.member")
             
         if (step2) {
             cardAllInput.forEach((v,i)=>{
@@ -437,6 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             
             const cookie = document.cookie.split(';');
+            let onlyType='', valueNum='';
             for(let i=0;i <cookie.length; i++) {
                 const getDataName = cookie[i].split('=')[0]
                 const getData = cookie[i].split('=')[1]
@@ -445,26 +448,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (getDataName.includes('roomNum')) {
                     room_data.innerHTML = getData;
                     mb_room_data.innerHTML = getData;
+                    roomNum = getData;
                 } else if(getDataName.includes('defaultRoom')) {
                     room_data.innerHTML = getData;
                     mb_room_data.innerHTML = getData;
+                    roomNum = getData;
                 }
 
                 // 성인, 어린이 수
                 if (getDataName.includes('adultNum')) {
                     adult_num.innerHTML = getData;
                     mb_adult_num.innerHTML = getData;
+                    adultNum = getData;
                 } else if (getDataName.includes('defaultAdult')){
                     adult_num.innerHTML = getData;
                     mb_adult_num.innerHTML = getData;
+                    adultNum = getData;
                 }
                 
                 if (getDataName.includes('childNum')) {
                     child_num.innerHTML = getData;
                     mb_child_num.innerHTML = getData;
+                    childNum = getData;
                 } else if (getDataName.includes('defaultChild')){
                     child_num.innerHTML = getData;
                     mb_child_num.innerHTML = getData;
+                    childNum = getData;
                 }
 
                 // 가격, 타입, 호수
@@ -479,17 +488,18 @@ document.addEventListener("DOMContentLoaded", () => {
                             let primaryPrice = parseInt(roomInfoArray[i].price) * 1000;
                             totalPrimaryPrice += primaryPrice;
 
-                            let onlyType = v.type.substring(v.type.lastIndexOf(',') + 5);
+                            onlyType = v.type.substring(v.type.lastIndexOf(',') + 5);
+                            valueNum = v.valueNum;
                             roomTagNum.innerHTML += `
                             <span>
                                 <span id="mb_tag" class="${onlyType}">${onlyType}</span>
-                                <em id="mb_room_num_value">${v.valueNum}</em>
+                                <em id="mb_room_num_value">${valueNum}</em>
                             </span>
                             `
                             roomTagNumMb.innerHTML += `
                             <span>
                                 <span id="mb_tag" class="${onlyType}">${onlyType}</span>
-                                <em id="mb_room_num_value">${v.valueNum}</em>
+                                <em id="mb_room_num_value">${valueNum}</em>
                             </span>
                             `
                         });
@@ -509,6 +519,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     mb_start_date.innerHTML = startDate;
                     end_date.innerHTML = endDate;
                     mb_end_date.innerHTML = endDate;
+
+                    setStartDate = startDate;
+                    setEndDate = endDate;
                 } else {
                     if (getDataName.includes(`startDate`) || getDataName.includes(`endDate`)){
                         let pullDate = (range) => {
@@ -523,8 +536,15 @@ document.addEventListener("DOMContentLoaded", () => {
                                     mb_date: document.getElementById(`mb_${range}_date`)
                                 };
         
-                                elements.date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
-                                elements.mb_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                                const formattedDate = `${getYear}. ${getMonth}. ${getDay}`;
+                                elements.date.innerHTML = formattedDate;
+                                elements.mb_date.innerHTML = formattedDate;
+
+                                if (range === 'start') {
+                                    setStartDate = formattedDate;
+                                } else if (range === 'end') {
+                                    setEndDate = formattedDate;
+                                }
                             }
                         }
                         pullDate('start');
@@ -539,22 +559,78 @@ document.addEventListener("DOMContentLoaded", () => {
                         const getTmYear = tomorrow.getFullYear();
                         const getTmMonth = String(tomorrow.getMonth() + 1).padStart(2, '0');
                         const getTmDay = String(tomorrow.getDate()).padStart(2, '0');
-                        
-                        start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
-                        mb_start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
-                        end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
-                        mb_end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
+
+                        setStartDate = `${getYear}. ${getMonth}. ${getDay}`;
+                        setEndDate = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
+
+                        start_date.innerHTML = setStartDate;
+                        mb_start_date.innerHTML = setStartDate;
+                        end_date.innerHTML = setStartDate;
+                        mb_end_date.innerHTML = setStartDate;
                     }
                 }
-    
-
-                
-                
             }
+
+            let setRoom = {
+                ea: (room_data.textContent),
+                adult: adult_num.textContent,
+                child: child_num.textContent,
+                roomInfo:[
+                    {type:onlyType, roomNumber:valueNum},
+                ],
+                setStartDate: setStartDate, // 할당된 값을 setRoom 객체에 포함
+                setEndDate: setEndDate // 할당된 값을 setRoom 객체에 포함
+            }
+
+            localStorage.setRoom = JSON.stringify( setRoom )
+    
+            paymentBtn.addEventListener("click", (e)=>{
+                e.preventDefault();
+                let insertInfo = JSON.parse( localStorage.set );
+                let saveInfo = JSON.parse( localStorage.res );
+
+                localStorage.res = JSON.stringify( [...b,a] )
+                console.log(insertInfo);
+                console.log(saveInfo);
+            })
         }
+        
+
+        
+
+
     })
     
 })
+
+/*
+//디폴트값 
+let set = {
+    id:'',
+    adult:'',
+    child:'',
+    room:2,
+    startDate:'',
+    endDate:'',
+    roomInfo:[
+        {type:'love', roomNum: '101'},
+        {type:'only', roomNum: '102'},
+    ]
+}
+
+//데이터 갱신
+set.startDate = '';
+set.adult = 2;
+localStorage.set = JSON.Stringify( set );
+
+//예약하기버튼
+let a = JSON.parse( localStorage.set );
+let b = JSON.parse( localStorage.res );
+
+localStorage.res = JSON.Stringify( [...b,a] );
+
+*/
+
 
 // step1 -> step2 넘어갈때도 초기화되는 이슈.
 // window.addEventListener("beforeunload", function() {
