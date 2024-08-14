@@ -147,7 +147,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 inputbox.classList.add('hasValue')
             }
         })
-        //blur시
+        //x버튼 클릭 시 유효성검사
+        //blur시******************
         inputbox.addEventListener('blur', function(){
             // inputbox.classList.remove('hasValue')   //버튼 안보이게
         })
@@ -216,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
         case 'join':
             const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
-            //방법1----------------------------
+            //유효성검사, 에러메시지: 방법1----------------------------
             emailBox.addEventListener('blur', function(){
                 let idx = 0;
                 let result = emailChecker(emailBox.value);
@@ -265,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log(verifyNum);
                 })
             })
-            
             /*//방법2------------------------------------------ 
             // const boxs = [
             //     {
@@ -353,9 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     body.classList.remove("prevent_scroll");
                 });
                 cancelBtn.addEventListener('click', function(){
-                    // popup.classList.remove("active");
-                    // body.classList.remove("prevent_scroll");
-                    history.back();
+                    history.back(); //뒤로가기:#때문에 ***********
                 })
             }
             popupBtnFunc();
