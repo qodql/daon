@@ -102,6 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         datacontents(pageType);
       }
-
+    
     });
 });

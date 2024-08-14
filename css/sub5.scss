@@ -65,7 +65,6 @@
             overflow: hidden;
             text-overflow: ellipsis;
             text-align: left;
-
           }
           &:nth-of-type(1) {
             text-align: center;
@@ -79,10 +78,10 @@
           }
         }
       }
-      .pagination{
-        .pagination_num{
+      .pagination {
+        .pagination_num {
           display: flex;
-          a{
+          a {
             cursor: pointer;
           }
         }
@@ -111,7 +110,6 @@
     p {
       font-size: 24px;
       font-weight: bold;
-      
     }
   }
 
@@ -249,7 +247,7 @@
               white-space: nowrap;
             }
           }
-          
+
           li:nth-of-type(1) {
             background-color: black;
             border: solid 2px black;
@@ -315,7 +313,6 @@
               color: #ffb140;
             }
 
-           
             .question {
               display: flex;
               justify-content: space-between;
@@ -331,7 +328,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 text-align: left;
-                flex: 1; 
+                flex: 1;
               }
               span {
                 margin-right: 10px;
@@ -346,9 +343,10 @@
                 background-color: transparent;
                 border: none;
                 cursor: pointer;
-                &.active{
-                  transform: rotate(180deg);
-                }
+              }
+              .rotate {
+                transform: rotate(180deg);
+            
               }
             }
 
@@ -414,10 +412,10 @@
           }
         }
       }
-      .pagination{
-        .pagination_num{
+      .pagination {
+        .pagination_num {
           display: flex;
-          a{
+          a {
             cursor: pointer;
           }
         }
@@ -425,11 +423,6 @@
     }
   }
 }
-
-
-
-
-
 
 // 상세 공통
 .inner_common {
