@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return {isValid: isValid, errorMsg: errorMsg};
     }
-    //값 일치 확인 함수
+    //값 일치 확인 함수(비밀번호확인, 인증번호 일치 함수에 사용)
     const isEqual = function(inputValue, targetValue){
         if(inputValue === targetValue){
             return true;
@@ -119,13 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //인증번호(6자리)생성 함수
     const verifyNumGenerator = (() => {
         //앞3자리: 100~999사이의 랜덤숫자
-        let ranNum = (Math.floor((Math.random()*900)) + 100); //100~999사이의 랜덤숫자
+        let ranNum1 = (Math.floor((Math.random()*900)) + 100);
         //뒤3자리: 밀리초
         let today = new Date();
         let milliSec = today.getMilliseconds();
         let ranNum2 = milliSec.toString().padStart(3, '0');
         //합치기
-        let verifyNum = parseInt(ranNum.toString() + ranNum2.toString());
+        let verifyNum = parseInt(ranNum1.toString() + ranNum2.toString());
         return verifyNum;
     })
     
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inputBoxs.forEach((inputbox) => {
         //focus시
         inputbox.addEventListener('focus', function(){
-            if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
+            if(inputbox.value === ''){   //값이 없으면 버튼 안보이게
                 inputbox.classList.remove('hasValue')
             }else{  //값이 있으면 버튼 보이게
                 inputbox.classList.add('hasValue')  
@@ -141,17 +141,18 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         // input시
         inputbox.addEventListener('input', function(){
-            if(inputbox.value == ''){   //값이 없으면 버튼 안보이게
+            if(inputbox.value === ''){   //값이 없으면 버튼 안보이게
                 inputbox.classList.remove('hasValue')
             }else{  //값이 있으면 버튼 보이게
                 inputbox.classList.add('hasValue')
             }
         })
         //x버튼 클릭 시 유효성검사
-        //blur시******************
-        inputbox.addEventListener('blur', function(){
-            // inputbox.classList.remove('hasValue')   //버튼 안보이게
-        })
+
+        //blur시: blur적용하면 x, eye버튼 클릭 시점에 blur적용해서 버튼이 사라지고 기능을 못합니다..******************
+        // inputbox.addEventListener('blur', function(){
+        //     inputbox.classList.remove('hasValue')   //버튼 안보이게
+        // })
     })
     //인풋박스 내부: x버튼 기능
     resetBtn.forEach((reset, idx) => {
@@ -190,7 +191,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
-    
+    //Caps Lock 체크 함수
+    const capsLockChecker = function(event){
+        if (event.getModifierState("CapsLock")) {
+            errorMsgs.innerText = "Caps Lock이 켜져 있습니다."
+        }else {
+            errorMsgs.innerText = ""
+        }
+    }
+
     //페이지 이름(login, join, join_complete)가져오기
     const url = location.pathname;
     let pageName = url.substring(url.lastIndexOf('/')+1,url.lastIndexOf('.'));
@@ -217,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
         case 'join':
             const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
-            //유효성검사, 에러메시지: 방법1----------------------------
+            //유효성검사, 에러메시지
             emailBox.addEventListener('blur', function(){
                 let idx = 0;
                 let result = emailChecker(emailBox.value);
@@ -242,10 +251,13 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             phoneBox.addEventListener('blur', function(){
                 let idx = 4;
+                let hasValue = phoneBox.value;
                 let result = phoneChecker(phoneBox.value);
                 showErrorMsg(result, phoneBox, idx);
+                
+                console.log(`값유무: ${hasValue !== ''}, 유효: ${result.isValid}`);
                 //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
-                if(result.isValid == true){
+                if((phoneBox.value !== '') && (result.isValid === true)){
                     verifyBtn.disabled = false;
                 }else{
                     verifyBtn.disabled = true;
@@ -266,84 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log(verifyNum);
                 })
             })
-            /*//방법2------------------------------------------ 
-            // const boxs = [
-            //     {
-            //         name: emailBox,
-            //         func: emailChecker
-            //     },
-            //     {
-            //         name: pwBox,
-            //         func: pwChecker
-            //     },
-            //     {
-            //         name: pwCheckBox,
-            //         func: isEqual
-            //     },
-            //     {
-            //         name: nameBox,
-            //         func: nameChecker
-            //     },
-            //     {
-            //         name: phoneBox,
-            //         func: phoneChecker
-            //     },
-            //     {
-            //         name: verifyBox,
-            //         func: isEqual
-            //     }
-            // ]
-            // boxs.forEach((box, idx) => {
-            //     if(idx === 2){
-            //         box.name.addEventListener('blur', function(){
-            //             let result = box.func(box.name.value, pwBox.value);
-            //             showErrorMsg(result, box.name, idx);
-            //         })
-            //     }else if(idx === 4){
-            //         box.name.addEventListener('blur', function(){
-            //             let result = box.func(box.name.value);
-            //             showErrorMsg(result, box.name, idx);
-            //             //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
-            //             if(result.isValid === true){
-            //                 verifyBtn.disabled = false;
-            //             }else{
-            //                 verifyBtn.disabled = true;
-            //             }
-            //         })
-            //     }else if(idx === 5){
-            //         verifyBtn.addEventListener('click', function(){
-            //             //인증번호 생성
-            //             let verifyNum = verifyNumGenerator();
-            //             //팝업으로 띄우기
-            //             alert(`인증번호: ${verifyNum}`);
-            //             //인풋박스 활성화 시키기
-            //             box.name.removeAttribute('readonly');
-            //             //인증번호 일치하는지 검사
-            //             box.name.addEventListener('blur', function(){
-            //                 let result = box.func(box.name.value, verifyNum);
-            //                 console.log(`입력값: ${box.name.value}`);
-            //                 console.log(`인증번호: ${verifyNum}`);
-            //                 showErrorMsg(result, box.name, idx);
-            //             })
-            //         })    
-            //     }else{
-            //         box.name.addEventListener('blur', function(){
-            //             let result = box.func(box.name.value);
-            //             showErrorMsg(result, box.name, idx);
-            //         })
-            //     }
-            // })
-            //------------------------------------------
-            */
-            //Caps Lock 체크 함수
-            const capsLockChecker = function(event){
-                if (event.getModifierState("CapsLock")) {
-                    errorMsgs.innerText = "Caps Lock이 켜져 있습니다."
-                }else {
-                    errorMsgs.innerText = ""
-                }
-            }
-            //팝업 계속진행/중단하기 버튼 함수
+            //팝업 계속진행/중단하기버튼 함수
             const popupBtnFunc = function(){
                 const popup = document.querySelector('.popup.join');
                 const progressBtn = document.querySelector('.popup .join_popup_btn_progress');
@@ -357,7 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
             popupBtnFunc();
-
             //엑세스 토큰 생성 함수(30자)
             const accessTokenGenerator = function(){
                 let length = 30;
@@ -379,6 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
             }
 
+            //가입 조건 활성화 체크
             window.addEventListener('click', submitChecker)
             window.addEventListener('keydown', submitChecker)
             window.addEventListener('scroll', submitChecker)
@@ -399,21 +334,21 @@ document.addEventListener("DOMContentLoaded", () => {
 })  //DOMloaded 괄호
 
 // [↓] sns 로그인(dom제어 필요없는 부분이라 밖으로 뺐습니다.)
-
-//로그인 여부 판별: 쿠키에 access_token값 있는지?
-// let cookie = document.cookie.split(';');    //쿠키에서
-// let access_token = cookie.filter((v)=>v.match('access_token')); //엑세스 토큰 추출
+// 로그인 여부 판별: 쿠키에 access_token값 있는지? (-> 세션의 login: true)
 // 엑세스 토큰이 있으면 로그인 페이지 진입불가, 메인으로 이동
+
+// 소셜 로그인 중 네이버가 가장 많은 유저 정보를 가져올 수 있습니다.
+// 네이버, 구글 로그인은 테스트 아이디 등록이 필요합니다. 필요하시면 말씀해 주세요.
 
 let cookie = document.cookie.split(';');    //쿠키에서
 let access_token= cookie.filter((v)=>v.match('access_token')); //엑세스 토큰 추출
 var login = false; //로그인 상태일 때:true , 로그아웃 상태일 때: false
 
 // if 조건문이 true, false를 boolean이 아닌 문자열로 받기때문에 false가 나와도 true로 간주한다. (false라는 문자가 있으니까 트루.) 그래서 === 'true'를 넣어줘서 문자열 true 일때를 한번 더 넣어주면 정상작동함.
-if(access_token.length && access_token[0].split('=')[1] === 'true'){ //엑세스 토큰 값있
+if(access_token.length && access_token[0].split('=')[1] === 'true'){ // 엑세스 토큰 값이 있으면 => 세션 login: true
     login = true;
     // location.href="/";
-} else{                         //엑세스 토큰 값없: 로그인 진행
+} else{                         //엑세스 토큰 값이 없으면: 로그인 진행
 
 /* sns 로그인 공통 변수, 함수 ---------------------------------*/
 //(1) 서비스 주소(로그인 버튼 있는 페이지)
@@ -421,7 +356,7 @@ const SERVICE_URI = "http://127.0.0.1:5501/login.html";
 //(2) 콜백할 주소(리디렉트)
 const REDIRECT_URI = "http://127.0.0.1:5501/login.html";
 //(3) 콜백 후 이동할 주소(메인)
-const AFTER_REDIRECT_URI = "http://127.0.0.1:5501/";
+const AFTER_REDIRECT_URI = "http://127.0.0.1:5501/";    //로그인 성공 후 메인페이지 이동
 //(4) 유저 정보 구조
 profile =  {
     email: '',
@@ -471,15 +406,13 @@ const kakaoLogin = function(){
         Kakao.Auth.authorize({
             redirectUri: REDIRECT_URI
         });
-        // console.log(AUTHORIZE_CODE_KAKAO);   //인가 코드 확인하기
     }
     kakao.addEventListener('click',loginWithKakao);
 
 
-    // 2. 액세스 토큰 발급(인가코드 있어야 발급 가능)   //common.js(로그인 성공 후 메인으로 이동, 다른 페이지에서 로그인 정보 계속 사용)
+    // 2. 액세스 토큰 발급(인가코드 있어야 발급 가능), 주소창의 ?code= 부분
     function displayToken() {
-        //액세스 토큰(ACCESS_TOKEN_KAKAO = 주소창의?code=)가져오기
-        if(AUTHORIZE_CODE_KAKAO.get('code')){ //인가 코드가 있을 때 실행
+        if(AUTHORIZE_CODE_KAKAO.get('code')){
             fetch("https://kauth.kakao.com/oauth/token", {
                 method: "POST",
                 headers: {
@@ -497,7 +430,7 @@ const kakaoLogin = function(){
     }
     displayToken();
 
-    //3. 사용자 정보 받기   //common.js(다른 페이지에서 로그인 정보 계속 사용)
+    //3. 사용자 정보 받기
     function userInfoFunc(){
         fetch("https://kapi.kakao.com/v2/user/me", {
             headers: {
@@ -507,14 +440,14 @@ const kakaoLogin = function(){
         .then(res => res.json())
         .then(res => {
             //유저 정보 저장
-            profile.name = res.properties.nickname; //원래는 닉네임값인데 name에 넣음
+            profile.name = res.properties.nickname; //원래는 닉네임(nickname)인데 name에 넣음
             //쿠키에 저장
             setUserInfo(ACCESS_TOKEN_KAKAO);
         })
     }
     
 
-    //4. 로그아웃   //common.js(다른 페이지에서 로그인 정보 계속 사용)
+    //4. 로그아웃
     function kakaoLogout() {
         Kakao.Auth.logout() //카카오 로그아웃 함수 호출
         .then(function() {
@@ -527,18 +460,15 @@ const kakaoLogin = function(){
             alert('로그인하지 않았습니다.');
         });
     }
-    //로그아웃 버튼 클릭 시 4번 호출
-    // const elLogoutBtn = document.querySelector('.?');
-    // elLogoutBtn.addEventListener('click', kakaoLogout);
 }
 kakaoLogin()
 
 /* 네이버 : 네이버는 함수안에 넣으면 스코프 이슈 발생, 못넣음 ---------------------------------*/
+// 네이버는 콜백주소 url에 엑세스 토큰값을 보내기 때문에, 로그인 성공 시 바로 메인페이지로 이동하지 않습니다.
+// 일단 다시 로그인 페이지로 다시 돌아온 후 받아온 토큰값과 회원정보를 저장하고, 이후에 메인으로 이동합니다.
 const NAVER_CLIENT_ID = "cEjPiQLxtraGtftdtKot",
     //   CLIENT_SECRET = "sXx4SV6rmO",
       CALLBACK_URI = SERVICE_URI;
-        // 네이버가 콜백주소 url에 엑세스 토큰값을 보내기 때문에, 로그인 성공 시 바로 메인페이지로 이동하지 않습니다.
-        // 일단 다시 로그인 페이지로 다시 돌아온 후 받아온 토큰값과 회원정보를 저장하고, 이후에 메인으로 이동합니다.
 var naver_id_login = new naver_id_login(NAVER_CLIENT_ID, CALLBACK_URI);
 var state = naver_id_login.getUniqState();
 let ACCESS_TOKEN_NAVER = naver_id_login.getAccessToken();
