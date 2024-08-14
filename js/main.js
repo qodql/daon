@@ -121,12 +121,33 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data)=> {return data.json()})
     .then((data)=>{
         const reviewList = document.querySelector('.review_list')
-        data.community_review.forEach((v,i)=>{
-            
+        const reviewListClone = document.querySelector('.review_list.clone')
+        const maxReviews = data.community_review.slice(0, 5);
+        let influencer;
+        maxReviews.forEach((v,i)=>{
+            if(v.influencer === true) {
+                influencer = true
+            } else {
+                influencer = false
+            }
             reviewList.innerHTML += `
                 <li>
                     <a href="./sub5_community_review.html">
-                        <img src="${v.review_img}" alt="수영하고있는 남자">
+                        <img src="./img/img_review_0${v.id + 1}.jpg" alt="">
+                        <div class="name_box">
+                            <p class="name ${influencer && true ? 'influencer' : ''}">@${v.review_id}</p>
+                            <div class="rating">
+                                <img src="./img/icon/icon_star.svg" alt="">
+                            </div>
+                        </div>
+                        <p class="review_desc">${v.review_text}</p>
+                    </a>
+                </li>
+            `
+            reviewListClone.innerHTML += `
+                <li>
+                    <a href="./sub5_community_review.html">
+                        <img src="./img/img_review_0${v.id + 1}.jpg" alt="">
                         <div class="name_box">
                             <p class="name">@${v.review_id}</p>
                             <div class="rating">
@@ -138,7 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </li>
             `
         })
-
     })
 
 })
