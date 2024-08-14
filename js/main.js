@@ -82,4 +82,19 @@ document.addEventListener("DOMContentLoaded", () => {
             timer = setInterval(rolling, 5000);
         })
     })
+
+    const quickSearchBtn = document.querySelector(".quick_menu .search_btn");
+    const quickStartDate = document.querySelector(".quick_menu .date.in input");
+    const quickEndDate = document.querySelector(".quick_menu .date.out input");
+
+    quickSearchBtn.addEventListener("click", ()=>{
+        // 로드 됐을때 말고, 값 설정 하고나서 페이지 넘어갈 때 set.
+        localStorage.setItem('defaultQuickStartDate', quickStartDate.value);
+        localStorage.setItem('defaultQuickendDate', quickEndDate.value);
+        localStorage.setItem('defaultQuickRoom', room.value);
+        localStorage.setItem('defaultQuickAdult', adult.value);
+        localStorage.setItem('defaultQuickChild', child.value);
+        localStorage.setItem('mainQuickMove', true);
+    })
+
 })

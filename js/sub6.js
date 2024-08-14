@@ -14,17 +14,42 @@ document.addEventListener("DOMContentLoaded", () => {
         const nextBtn = document.querySelector(".next_btn")
         const getDefaultStartDate = document.querySelector(".date.in input")
         const getDefaultEndDate = document.querySelector(".date.out input")
-        let roomNum=1, adultNum=2, childNum=0, defaultStartDate='',defaultEndDate='';
+        const quick = localStorage.getItem('mainQuickMove');
+        const startDate = localStorage.getItem('defaultQuickStartDate');
+        const endDate = localStorage.getItem('defaultQuickendDate');
+        const room = localStorage.getItem('defaultQuickRoom');
+        const adult = localStorage.getItem('defaultQuickAdult');
+        const child = localStorage.getItem('defaultQuickChild');
+        let roomNum=1, adultNum=2, childNum=0, defaultStartDate='',defaultEndDate='',defaultRoom='',defaultAdult='',defaultChild='';
     
         if(step1){
 
-            // 디폴트 값
-            defaultStartDate = getDefaultStartDate.value
-            defaultEndDate = getDefaultEndDate.value
-            defaultRoom = roomInput.value
-            defaultAdult = adultInput.value
-            defaultChild = childInput.value
-            
+
+            if (quick) {
+                getDefaultStartDate.value = startDate
+                getDefaultEndDate.value = endDate
+                roomInput.value = room
+                adultInput.value = adult
+                childInput.value = child
+                roomNum = room;
+                childNum = child;
+                adultNum = adult;
+                defaultStartDate = startDate
+                defaultEndDate = endDate
+                defaultRoom = room
+                defaultAdult = adult
+                defaultChild = child
+                console.log('quick', startDate, endDate, room, adult, child);
+            } else {
+                // 디폴트 값
+                defaultStartDate = getDefaultStartDate.value
+                defaultEndDate = getDefaultEndDate.value
+                defaultRoom = roomInput.value
+                defaultAdult = adultInput.value
+                defaultChild = childInput.value
+                console.log('not quick', getDefaultStartDate.value, getDefaultEndDate.value, roomInput.value, adultInput.value, childInput.value);
+            }
+
             document.cookie = `defaultStartDate=${defaultStartDate}`
             document.cookie = `defaultEndDate=${defaultEndDate}`
             document.cookie = `defaultRoom=${defaultRoom}`
@@ -161,7 +186,31 @@ document.addEventListener("DOMContentLoaded", () => {
                     })
                 })
             })
-
+            if (roomInput.value == 4) {
+                minusBtn[0].style.cssText = 'opacity:1;'
+                plusBtn[0].style.cssText = 'opacity:0.3;'
+            } else if (roomInput.value > 1) {
+                minusBtn[0].style.cssText = 'opacity:1;'
+            } else if (roomInput == 1) {
+                minusBtn[0].style.cssText = 'opacity:0.3;'
+            }
+            if (adultInput.value == 12) {
+                minusBtn[1].style.cssText = 'opacity:1;'
+                plusBtn[1].style.cssText = 'opacity:0.3;'
+            } else if (adultInput.value > 2) {
+                minusBtn[1].style.cssText = 'opacity:1;'
+            } else if (adultInput == 2) {
+                minusBtn[1].style.cssText = 'opacity:0.3;'
+            }
+            if (childInput.value == 12) {
+                minusBtn[2].style.cssText = 'opacity:1;'
+                plusBtn[2].style.cssText = 'opacity:0.3;'
+            } else if (childInput.value > 0) {
+                minusBtn[2].style.cssText = 'opacity:1;'
+            } else if (childInput == 0) {
+                minusBtn[2].style.cssText = 'opacity:0.3;'
+            }
+ 
             // [↓] step1 room list 뿌리기
             const loveRoomList = document.querySelector(".room_list_wrap.love")
             const onlyRoomList = document.querySelector(".room_list_wrap.only")
@@ -262,10 +311,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
-            nextBtn.addEventListener("click", ()=>{
+            nextBtn.addEventListener("click", (e)=>{
                 if (!roomBtnSelected || roomBtnSelected < roomNum) {
                     alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
-                } else if(roomBtnSelected === roomNum){
+                } else if(roomBtnSelected == roomNum){
                     window.location.href='./sub6_reservation_step2.html'
                 }
             })
@@ -455,42 +504,49 @@ document.addEventListener("DOMContentLoaded", () => {
                 const mb_start_date = document.getElementById('mb_start_date');
                 const end_date = document.getElementById('end_date');
                 const mb_end_date = document.getElementById('mb_end_date');
-                
-                if (getDataName.includes(`startDate`) || getDataName.includes(`endDate`)){
-                    let pullDate = (range) => {
-                        if (getDataName.includes(`${range}Date`)){
-                            const date = new Date(getData);
-                            const getYear = date.getFullYear();
-                            const getMonth = String(date.getMonth() + 1).padStart(2, '0');
-                            const getDay = String(date.getDate()).padStart(2, '0');
-                            
-                            const elements = {
-                                date: document.getElementById(`${range}_date`),
-                                mb_date: document.getElementById(`mb_${range}_date`)
-                            };
-    
-                            elements.date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
-                            elements.mb_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                if (quick) {
+                    start_date.innerHTML = startDate;
+                    mb_start_date.innerHTML = startDate;
+                    end_date.innerHTML = endDate;
+                    mb_end_date.innerHTML = endDate;
+                } else {
+                    if (getDataName.includes(`startDate`) || getDataName.includes(`endDate`)){
+                        let pullDate = (range) => {
+                            if (getDataName.includes(`${range}Date`)){
+                                const date = new Date(getData);
+                                const getYear = date.getFullYear();
+                                const getMonth = String(date.getMonth() + 1).padStart(2, '0');
+                                const getDay = String(date.getDate()).padStart(2, '0');
+                                
+                                const elements = {
+                                    date: document.getElementById(`${range}_date`),
+                                    mb_date: document.getElementById(`mb_${range}_date`)
+                                };
+        
+                                elements.date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                                elements.mb_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                            }
                         }
+                        pullDate('start');
+                        pullDate('end');
+                    } else if(getDataName.includes(`defaultStartDate`) || getDataName.includes(`defaultEndDate`)){
+                        let today = new Date();
+                        let tomorrow = new Date(today);
+                        tomorrow.setDate(today.getDate() + 1);
+                        const getYear = today.getFullYear();
+                        const getMonth = String(today.getMonth() + 1).padStart(2, '0');
+                        const getDay = String(today.getDate()).padStart(2, '0');
+                        const getTmYear = tomorrow.getFullYear();
+                        const getTmMonth = String(tomorrow.getMonth() + 1).padStart(2, '0');
+                        const getTmDay = String(tomorrow.getDate()).padStart(2, '0');
+                        
+                        start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                        mb_start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
+                        end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
+                        mb_end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
                     }
-                    pullDate('start');
-                    pullDate('end');
-                } else if(getDataName.includes(`defaultStartDate`) || getDataName.includes(`defaultEndDate`)){
-                    let today = new Date();
-                    let tomorrow = new Date(today);
-                    tomorrow.setDate(today.getDate() + 1);
-                    const getYear = today.getFullYear();
-                    const getMonth = String(today.getMonth() + 1).padStart(2, '0');
-                    const getDay = String(today.getDate()).padStart(2, '0');
-                    const getTmYear = tomorrow.getFullYear();
-                    const getTmMonth = String(tomorrow.getMonth() + 1).padStart(2, '0');
-                    const getTmDay = String(tomorrow.getDate()).padStart(2, '0');
-                    
-                    start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
-                    mb_start_date.innerHTML = `${getYear}. ${getMonth}. ${getDay}`;
-                    end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
-                    mb_end_date.innerHTML = `${getTmYear}. ${getTmMonth}. ${getTmDay}`;
                 }
+    
 
                 
                 
@@ -499,3 +555,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     
 })
+
+// step1 -> step2 넘어갈때도 초기화되는 이슈.
+// window.addEventListener("beforeunload", function() {
+//     // 페이지를 떠날 때 localStorage 값 초기화
+//     localStorage.removeItem('defaultQuickStartDate');
+//     localStorage.removeItem('defaultQuickendDate');
+//     localStorage.removeItem('defaultQuickRoom');
+//     localStorage.removeItem('defaultQuickAdult');
+//     localStorage.removeItem('defaultQuickChild');
+
+//     document.cookie = `defaultStartDate=""`
+//     document.cookie = `defaultEndDate=""`
+//     document.cookie = `defaultRoom=""`
+//     document.cookie = `defaultAdult=""`
+//     document.cookie = `defaultChild=""`
+// });
