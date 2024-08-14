@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     notice_data(0);
     notice_paging();
+
   })
 
 

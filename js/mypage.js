@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     try{
         const session_profile = JSON.parse(sessionStorage.profile);
-        mypage_email.placeholder = session_profile.email;
-        mypage_name.placeholder = session_profile.name;
+        mypage_email.value = session_profile.email;
+        mypage_name.value = session_profile.name;
     }
     catch{
         mypage_email.placeholder = "이메일";
