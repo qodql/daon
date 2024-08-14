@@ -114,18 +114,18 @@
   }
 }
 
+//event_inner
 .sub5_button {
   width: 100%;
   height: 83.5px;
-  border-top: 2px solid #afafaf;
-  border-bottom: 2px solid #efefef;
+  border: 2px solid #afafaf;
+  border-bottom: none;
   margin-top: 80px;
 
   &:nth-of-type(3) {
-    height: 55.5px;
+    height: 83.5px;
     border-bottom: 2px solid #afafaf;
     margin: 0;
-    border-top: none;
     
   }
 
@@ -170,10 +170,6 @@
       width: 28px;
       height: 25px;
 
-      img { 
-        width: 100%;
-        height: 100%;
-      }
     }
   }
 }
