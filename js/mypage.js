@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    //mypage session confirm
+    //mypage info session
     const mypage_email = document.querySelector('.mypage_info_input .email_ul .email_box input');
     const mypage_name = document.querySelector('.mypage_info_input .name_ul .name_box input');
     
@@ -28,7 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
         mypage_email.placeholder = "이메일";
         mypage_name.placeholder = "이름";
     }
-    
-    
 
+     //mypage reservation session
+     const mypage_date = document.querySelector('.mypage_reservation_date');
+     const mypage_room = document.querySelector('.mypage_reservation_room');
+     const mypage_person = document.querySelector('.mypage_reservation_person');
+
+    try{
+        const local_room = JSON.parse(localStorage.setRoom);
+        let adult_person = parseInt(local_room.adult, 10);
+        let child_person = parseInt(local_room.child, 10);
+
+        mypage_date.innerText = `${local_room.setStartDate} ~ ${local_room.setEndDate}`;
+        mypage_room.innerText = `${local_room.roomInfo[0].type} ${local_room.roomInfo[0].roomNumber}`;
+        mypage_person.innerText = adult_person + child_person;
+    }
+    catch{
+        mypage_date.innerText = "2024. 08. 17 ~ 2024. 08. 18";
+        mypage_room.innerText = "love 102호";
+        mypage_person.innerText = "4";
+    }
 })
