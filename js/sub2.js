@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // database
   fetch("./data/sub2.json")
   .then((res)=> {return res.json()})
   .then((data)=>{
@@ -24,10 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         page.forEach((value)=>{
             room_img = '';
             for(let i = 0; i < 4 ; i++){
-                room_img += `<div class="swiper-slide"><img src="../img/img_sub2_room_${type + value.room_num+"_0"}${i+1}.jpg" alt="${type} ${value.room_sqft}"></div>`;
+                room_img += `<div class="swiper-slide"><img src="./img/img_sub2_room_${type + value.room_num+"_0"}${i+1}.jpg" alt="${type} ${value.room_sqft}"></div>`;
             }
             let math_ceil = Math.ceil(value.room_sqft*3.3) 
-            console.log(math_ceil)
             
             room_content.innerHTML += `<li class="main_box2">
             <div class="swiper room_list">
