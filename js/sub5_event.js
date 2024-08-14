@@ -129,7 +129,7 @@ else {
   const event_innerbox = document.querySelector('.sub5_event_inner_content');
   const event_innerdata = data.event_inner;
   event_innerbox.innerHTML = `<div class="sub5_img_box">
-                          <img src="./img/img_sub5_2_event_inner_0${v.id}.jpg" alt="">
+                          <img src="./img/img_sub5_2_event_inner_0${event_innerdata.id + 1}.jpg" alt="">
                       </div>
                       <div class="sub5_text_box">
                           <p>

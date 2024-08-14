@@ -95,10 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // 데이터 추가
     let event_data = (n) =>{
       review_thm.innerHTML = '';
-      console.log(page)
       page[n].forEach((v, i) => {
-        review_thm.innerHTML += `
-            <li><a name="pop_btn" data-id = ${v.id}><img src="${v.review_img}"> </a></li>`
+    let imgNum = "0".repeat(1) + (v.id+1) 
+     if(v.id>=10){
+      review_thm.innerHTML += `<li><a name="pop_btn" data-id = ${v.id}><img src="./img/img_coumunity_review_${v.id}.jpg"> </a></li>`
+    }
+    else if (v.id < 10){
+      review_thm.innerHTML += `<li><a name="pop_btn" data-id = ${v.id}><img src="./img/img_coumunity_review_${imgNum}.jpg"> </a></li>`
+    }
+          
+  
       })
       repeatPopup();
     }
@@ -116,15 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
         v.addEventListener('click', function (){
           let idx = Number(v.dataset.id);
         let data_find = data_review.find((item)=>item.id==idx)
-
           popup.classList.add("active");
           body.classList.add("prevent_scroll");
-          popup_wrap.innerHTML =`<div>
-          <img src="${data_find.review_img}" alt="pension_review">
+        function popup_addhtml(n){ popup_wrap.innerHTML =`<div>
+          <img src="./img/img_coumunity_review_${n}.jpg" alt="pension_review">
           </div>
           <div class="review_cont">
             <p class="user_id" data-influencer = ${data_find.influencer}>
-            ${data_find.review_id}
+            @${data_find.review_id}
             </p>
             <div class="rating_img" data-rating = ${data_find.rating}>
                 <img src="./img/icon/icon_sub5_review_5star.svg" alt="">
@@ -133,6 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
               ${data_find.review_text}
               </p>
           </div>`
+        }
+        let popup_img = "0".repeat(1) + (data_find.id+1);
+        console.log(popup_img)
+          if(data_find.id >= 10){
+           popup_addhtml(data_find.id);
+          }
+          else if(data_find.id<9){
+            popup_addhtml(popup_img)
+          }
+        
           const user_id = document.querySelector('.user_id');
                   
           if(user_id.dataset.influencer === "true"){
@@ -140,22 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           const data_rating = document.querySelector(".rating_img"),
                 data_rating_img = document.querySelector(".rating_img > img");
-          let rating_num = Number(data_rating.dataset.rating);     
-          if(rating_num === 1){
-            data_rating_img.style.transform = 'translateX(-80%)'
-          }
-          else if(rating_num === 2){
-            data_rating_img.style.transform = 'translateX(-60%)'
-          }
-          else if(rating_num === 3){
-            data_rating_img.style.transform = 'translateX(-40%)'
-          }
-          else if(rating_num === 4){
-            data_rating_img.style.transform = 'translateX(-20%)'
+          let rating_num = data_rating.dataset.rating;     
+          for (let i = 1; i < 6; i++) {
+           let calcNum =  (100% - (rating_num * 20))
+           
+            data_rating_img.style.transform = `translateX(-${calcNum}%)`
           }
         })
       })
-
 
       popupClose.onclick = function () {
         popup.classList.remove("active");
