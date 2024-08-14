@@ -96,11 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let event_data = (n) =>{
       review_thm.innerHTML = '';
       page[n].forEach((v, i) => {
-    let imgNum = "0".repeat(1) + (v.id+1) 
+    let imgNum = "0".repeat(1) + (v.id + 1) 
+    console.log(imgNum)
      if(v.id>=10){
       review_thm.innerHTML += `<li><a name="pop_btn" data-id = ${v.id}><img src="./img/img_coumunity_review_${v.id}.jpg"> </a></li>`
     }
-    else if (v.id < 10){
+    else if (v.id < 9){
       review_thm.innerHTML += `<li><a name="pop_btn" data-id = ${v.id}><img src="./img/img_coumunity_review_${imgNum}.jpg"> </a></li>`
     }
           
