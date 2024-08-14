@@ -241,8 +241,8 @@
   background: url("../img/icon/icon_check.svg") no-repeat center;
 }
 .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit {
-  padding-left: 8px;
   margin-top: 40px;
+  padding-left: 8px;
   position: relative;
 }
 .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit::before {
@@ -403,6 +403,9 @@
   .contact .sub_container .contents .contact_infomation {
     margin: 0 auto;
   }
+  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
+    width: 34px;
+  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
     font-size: 14px;
     padding-right: 2px;
@@ -413,13 +416,6 @@
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
     margin: 3px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li i {
-    width: 34px;
-    line-height: 0;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li {
-    width: 200%;
   }
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit {
     margin-top: 24px;
@@ -501,10 +497,6 @@
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
     font-size: 12px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
-    width: 14px;
-    height: 14px;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li div span {
     width: 3px;
     height: 3px;
@@ -523,11 +515,6 @@
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::before {
     width: 26px;
     height: 26px;
-    margin-right: 4px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::after {
-    width: 195%;
-    left: 5px;
   }
 }
 @media screen and (max-width: 870px) {
@@ -679,10 +666,6 @@
     width: 24px;
     height: 24px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li::after {
-    width: 195%;
-    left: 5px;
-  }
 }
 @media screen and (max-width: 610px) {
   .intro .sub_container.sub_container_full .title {
@@ -787,18 +770,11 @@
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p {
     font-size: 12px;
   }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li p::after {
-    width: 12px;
-    height: 12px;
-  }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(3)::before {
     background-size: 16px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 {
     margin-top: -52px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li {
-    width: 100%;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(3)::before {
     background-size: 16px;
@@ -808,13 +784,6 @@
   }
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit h3 {
     font-size: 20px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit::before {
-    height: 16px;
-    top: 6px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt {
-    margin-top: 16px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li {
     height: 56px;

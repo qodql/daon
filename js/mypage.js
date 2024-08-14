@@ -24,6 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
     mypage_name.placeholder = session_profile.name;
     
 
-
-    
 })

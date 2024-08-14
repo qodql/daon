@@ -53,7 +53,6 @@
     //intro PC-S end
 }
 
-
 @media screen and (max-width: 1400px){
     .intro{
         .sub_container{
@@ -65,7 +64,6 @@
         }
     }
 }
-
 
 @include res('tab'){
     //intro TAB start
@@ -136,7 +134,9 @@
                             i{
                                 top: 6px;
                                 left: 9px;
-                                img{width: 15px;}
+                                img{
+                                    width: 15px;
+                                }
                             }
                             a{
                                 font-size: 14px;
@@ -157,6 +157,9 @@
                         &.contact_info2{
                             .contact_info_txt{
                                 li{
+                                    i{
+                                        width: 34px;
+                                    }
                                     p{
                                         font-size: 14px;
                                         padding-right: 2px;
@@ -165,23 +168,20 @@
                                             height: 14px;
                                         }
                                     }
-                                    div{span{margin: 3px;}}
-                                    i{
-                                        width: 34px;
-                                        line-height: 0;
+                                    div{
+                                        span{
+                                            margin: 3px;
+                                        }
                                     }
                                 }
-                            }
-                        }
-                        &.contact_info3{
-                            .contact_info_txt{
-                                li{width: 200%;}
                             }
                         }
                         .contact_info_tit{
                             margin-top: 24px;
                             padding-left: 6px;
-                            h3{font-size: 20px;}
+                            h3{
+                                font-size: 20px;
+                            }
                             &::before{
                                 height: 16px;
                                 top: 6px;
@@ -275,7 +275,9 @@
                             .contact_info_txt{
                                 li{
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 24px;}
+                                        &::before{
+                                            background-size: 24px;
+                                        }
                                     }
                                 }
                             }
@@ -285,10 +287,6 @@
                                 li{
                                     p{
                                         font-size: 12px;
-                                        &::after{
-                                            width: 14px;
-                                            height: 14px;
-                                        }
                                     }
                                     div{
                                         span{
@@ -298,7 +296,9 @@
                                         }
                                     }
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 22px;}
+                                        &::before{
+                                            background-size: 22px;
+                                        }
                                     }
                                 }
                             }
@@ -307,7 +307,9 @@
                             .contact_info_txt{
                                 li{
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 24px;}
+                                        &::before{
+                                            background-size: 24px;
+                                        }
                                     }
                                 }
                             }
@@ -319,11 +321,6 @@
                                 &::before{
                                     width: 26px;
                                     height: 26px;
-                                    margin-right: 4px;
-                                }
-                                &::after{
-                                    width: 195%;
-                                    left: 5px;
                                 }
                             }
                         }
@@ -442,7 +439,9 @@
                             i{
                                 top: 2px;
                                 left: 4px;
-                                img{width: 13px;}
+                                img{
+                                    width: 13px;
+                                }
                             }
                             a{
                                 font-size: 12px;
@@ -466,7 +465,9 @@
                             .contact_info_txt{
                                 li{
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 20px;}
+                                        &::before{
+                                            background-size: 20px;
+                                        }
                                     }    
                                 }
                             }
@@ -482,9 +483,13 @@
                                         }
                                     }
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 20px;}
+                                        &::before{
+                                            background-size: 20px;
+                                        }
                                     }
-                                    &:nth-child(3){width: 0;}
+                                    &:nth-child(3){
+                                        width: 0;
+                                    }
                                 }
                             }
                         }
@@ -494,13 +499,17 @@
                                 li{
                                     width: 100%;
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 20px;}
+                                        &::before{
+                                            background-size: 20px;
+                                        }
                                     }
                                 }
                             }
                         }
                         .contact_info_tit{
-                            h3{font-size: 24px;}
+                            h3{
+                                font-size: 24px;
+                            }
                             &::before{
                                 height: 16px;
                                 top: 9px;
@@ -513,14 +522,12 @@
                                 gap: 4px;
                                 padding-left: 8px;
                                 border-bottom: 1px solid #efefef;
-                                b{font-size: 14px;}
+                                b{
+                                    font-size: 14px;
+                                }
                                 &::before{
                                     width: 24px;
                                     height: 24px;
-                                }
-                                &::after{
-                                    width: 195%;
-                                    left: 5px;
                                 }
                             }
                         }
@@ -646,7 +653,9 @@
                             i{
                                 top: 1px;
                                 left: 8px;
-                                img{width: 12px;}
+                                img{
+                                    width: 12px;
+                                }
                             }
                             a{
                                 font-size: 10px;
@@ -654,7 +663,9 @@
                                 margin-left: 13px;
                             }
                         }
-                        .contact_map_naver_btn{width: 100px;}
+                        .contact_map_naver_btn{
+                            width: 100px;
+                        }
                     }
                 }
                 .contact_infomation{
@@ -663,7 +674,9 @@
                             .contact_info_txt{
                                 li{
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 16px;}
+                                        &::before{
+                                            background-size: 16px;
+                                        }
                                     }
                                 }
                             }
@@ -674,13 +687,11 @@
                                 li{
                                     p{
                                         font-size: 12px;
-                                        &::after{
-                                            width: 12px;
-                                            height: 12px;
-                                        }
                                     }
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 16px;}
+                                        &::before{
+                                            background-size: 16px;
+                                        }
                                     }
                                 }
                             }
@@ -689,23 +700,21 @@
                             margin-top: -52px;
                             .contact_info_txt{
                                 li{
-                                    width: 100%;
                                     &:nth-child(1), &:nth-child(2), &:nth-child(3){
-                                        &::before{background-size: 16px;}
+                                        &::before{
+                                            background-size: 16px;
+                                        }
                                     }
                                 }
                             }
                         }
                         .contact_info_tit{
                             margin-top: 20px;
-                            h3{font-size: 20px;}
-                            &::before{
-                                height: 16px;
-                                top: 6px;
+                            h3{
+                                font-size: 20px;
                             }
                         }
                         .contact_info_txt{
-                            margin-top: 16px;
                             li{
                                 height: 56px;
                                 font-size: 12px;
