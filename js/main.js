@@ -82,4 +82,83 @@ document.addEventListener("DOMContentLoaded", () => {
             timer = setInterval(rolling, 5000);
         })
     })
+
+    const quickSearchBtn = document.querySelector(".quick_menu .search_btn");
+    const quickStartDate = document.querySelector(".quick_menu .date.in input");
+    const quickEndDate = document.querySelector(".quick_menu .date.out input");
+
+    quickSearchBtn.addEventListener("click", ()=>{
+        // 로드 됐을때 말고, 값 설정 하고나서 페이지 넘어갈 때 set.
+        localStorage.setItem('defaultQuickStartDate', quickStartDate.value);
+        localStorage.setItem('defaultQuickendDate', quickEndDate.value);
+        localStorage.setItem('defaultQuickRoom', room.value);
+        localStorage.setItem('defaultQuickAdult', adult.value);
+        localStorage.setItem('defaultQuickChild', child.value);
+        localStorage.setItem('mainQuickMove', true);
+    })
+
+    fetch('./data/sub5_community_event.json')
+    .then((data)=> {return data.json()})
+    .then((data)=>{
+        const eventList = document.querySelector('.event_list .swiper-wrapper')
+        data.event_page.forEach((v,i)=>{
+            eventList.innerHTML += `
+            <div class="swiper-slide">
+                <a href="./sub5_community_event.html">
+                    <img src="./img/img_event_05_2_contents_0${v.id}.jpg" alt="${v.event_title}">
+                    <div class="txt_box">
+                        <p class="event_title">${v.event_title}</p>
+                        <span class="date">${v.event_startday} ~ ${v.event_lastday}</span>
+                    </div>
+                </a>
+            </div>
+            `
+        })
+
+    })
+    
+    fetch('./data/sub5_community_review.json')
+    .then((data)=> {return data.json()})
+    .then((data)=>{
+        const reviewList = document.querySelector('.review_list')
+        const reviewListClone = document.querySelector('.review_list.clone')
+        const maxReviews = data.community_review.slice(0, 5);
+        let influencer;
+        maxReviews.forEach((v,i)=>{
+            if(v.influencer === true) {
+                influencer = true
+            } else {
+                influencer = false
+            }
+            reviewList.innerHTML += `
+                <li>
+                    <a href="./sub5_community_review.html">
+                        <img src="./img/img_coumunity_review_0${v.id + 1}.jpg" alt="">
+                        <div class="name_box">
+                            <p class="name ${influencer && true ? 'influencer' : ''}">@${v.review_id}</p>
+                            <div class="rating">
+                                <img src="./img/icon/icon_star.svg" alt="">
+                            </div>
+                        </div>
+                        <p class="review_desc">${v.review_text}</p>
+                    </a>
+                </li>
+            `
+            reviewListClone.innerHTML += `
+                <li>
+                    <a href="./sub5_community_review.html">
+                        <img src="./img/img_review_0${v.id + 1}.jpg" alt="">
+                        <div class="name_box">
+                            <p class="name">@${v.review_id}</p>
+                            <div class="rating">
+                                <img src="./img/icon/icon_star.svg" alt="">
+                            </div>
+                        </div>
+                        <p class="review_desc">${v.review_text}</p>
+                    </a>
+                </li>
+            `
+        })
+    })
+
 })

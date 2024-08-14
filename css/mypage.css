@@ -387,6 +387,83 @@ mo-s:
   font-size: 16px;
 }
 
+.popup.coupon .popup_cont {
+  max-width: 514px;
+  padding-bottom: 40px;
+}
+.popup.coupon .popup_cont .popup_title {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.popup.coupon .popup_cont .popup_inner {
+  width: 434px;
+  height: 544px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner {
+  width: 100%;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner > div {
+  width: 394px;
+  height: 117px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner > div:not(:last-of-type) {
+  margin-bottom: 12px;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon_02 .coupon_popup_cont_inner_coupon_txt .coupon_popup_cont_inner_coupon_date .coupon_popup_cont_inner_coupon_date_icon {
+  background-color: #FF0F0F;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon_tit h2 {
+  color: #357EF1;
+  font-size: 40px;
+  font-weight: 700;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon_tit h3 {
+  color: #2f2f2f;
+  font-size: 16px;
+  font-weight: 600;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon_txt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon_txt span {
+  font-size: 14px;
+  color: #AFAFAF;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon_txt .coupon_popup_cont_inner_coupon_date {
+  display: flex;
+}
+.popup.coupon .popup_cont .popup_inner .coupon_popup_cont_inner .coupon_popup_cont_inner_coupon_txt .coupon_popup_cont_inner_coupon_date .coupon_popup_cont_inner_coupon_date_icon {
+  width: 31px;
+  height: 18px;
+  border-radius: 4px;
+  background: #357EF1;
+  color: #fff;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 3px 8px;
+  margin-right: 8px;
+}
+
 @media (max-width: 1499px) {
   .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_info .mypage_info_btn {
     margin-top: 100px;

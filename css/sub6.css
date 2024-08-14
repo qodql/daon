@@ -692,6 +692,29 @@
   color: #fff;
 }
 
+.popup.non_member .label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.popup.non_member input {
+  width: calc(100% - 88px);
+  padding: 16px 20px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+}
+.popup.non_member button {
+  width: 76px;
+  padding: 16px 20px;
+  margin-left: 8px;
+  background-color: #afafaf;
+  border-radius: 8px;
+  color: #fff;
+  transition: all 0.3s;
+}
+.popup.non_member button:hover {
+  background-color: #357EF1;
+}
+
 @media (max-width: 1279px) {
   .reservation_common .sub_container .contents .step_wrap .step li:not(:last-of-type) {
     margin-right: 100px;

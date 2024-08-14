@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
 
                 Object.entries(profile).forEach(([key, value]) => {
-                    document.cookie = `${key}=undefined;`;
+                    document.cookie = `access_token=""; ${key}=undefined;`;
                 })
                 window.location.href='./index.html'
             })
@@ -175,7 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (popup) {
         popupBtn.forEach((v)=>{  
-            v.addEventListener('click', function(){
+            v.addEventListener('click', function(e){
+                e.preventDefault();
                 popup.classList.add("active");
                 body.classList.add("prevent_scroll");
             })
