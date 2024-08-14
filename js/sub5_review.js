@@ -98,10 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
       page[n].forEach((v, i) => {
     let imgNum = "0".repeat(1) + (v.id + 1) 
     console.log(imgNum)
-     if(v.id>=10){
-      review_thm.innerHTML += `<li><a name="pop_btn" data-id = ${v.id}><img src="./img/img_coumunity_review_${v.id}.jpg"> </a></li>`
+     if(imgNum>9){
+      review_thm.innerHTML += `<li><a name="pop_btn" data-id = ${v.id}><img src="./img/img_coumunity_review_${v.id + 1}.jpg"> </a></li>`
     }
-    else if (v.id < 9){
+    else if (v.id <= 9){
       review_thm.innerHTML += `<li><a name="pop_btn" data-id = ${v.id}><img src="./img/img_coumunity_review_${imgNum}.jpg"> </a></li>`
     }
           
@@ -133,17 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
             @${data_find.review_id}
             </p>
             <div class="rating_img" data-rating = ${data_find.rating}>
-                <img src="./img/icon/icon_sub5_review_5star.svg" alt="">
+                <img src="./img/icon/icon_sub5_review_5star.svg" >
             </div>
             <p class="review_desc">
               ${data_find.review_text}
               </p>
           </div>`
         }
-        let popup_img = "0".repeat(1) + (data_find.id+1);
-        console.log(popup_img)
-          if(data_find.id >= 10){
-           popup_addhtml(data_find.id);
+        let popup_img = "0".repeat(1) + (data_find.id + 1);
+        console.log(data_find.id)
+          if(data_find.id >= 9){
+           popup_addhtml(data_find.id + 1);
           }
           else if(data_find.id<9){
             popup_addhtml(popup_img)
@@ -159,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
           let rating_num = data_rating.dataset.rating;     
           for (let i = 1; i < 6; i++) {
            let calcNum =  (100% - (rating_num * 20))
-           
             data_rating_img.style.transform = `translateX(-${calcNum}%)`
           }
         })

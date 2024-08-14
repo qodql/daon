@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         let date_compare = end_date > now;
           event_box.innerHTML += `<li data-id="${v.id}"> <a href="${(date_compare) ? v.event_link:'#'}">  
                                     <div class="img_box">
-                                        <img src="/img/img_event_05_2_contents_0${v.id}.jpg" alt="이벤트 사진 ${v.id}번"><div class="end_event ${(end_date < now) ? 'active':''}">
+                                        <img src="./img/img_event_05_2_contents_0${v.id}.jpg" alt="${v.event_title} 썸네일"><div class="end_event ${(end_date < now) ? 'active':''}">
                                           <p class="end_event_text">종료된 이벤트</p>
                                           </div>
                                     </div>
