@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             reviewList.innerHTML += `
                 <li>
                     <a href="./sub5_community_review.html">
-                        <img src="./img/img_review_0${v.id + 1}.jpg" alt="">
+                        <img src="./img/img_coumunity_review_0${v.id + 1}.jpg" alt="">
                         <div class="name_box">
                             <p class="name ${influencer && true ? 'influencer' : ''}">@${v.review_id}</p>
                             <div class="rating">
