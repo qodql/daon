@@ -97,4 +97,48 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('mainQuickMove', true);
     })
 
+    fetch('./data/sub5_community_event.json')
+    .then((data)=> {return data.json()})
+    .then((data)=>{
+        const eventList = document.querySelector('.event_list .swiper-wrapper')
+        data.event_page.forEach((v,i)=>{
+            eventList.innerHTML += `
+            <div class="swiper-slide">
+                <a href="./sub5_community_event.html">
+                    <img src="./img/img_event_05_2_contents_0${v.id}.jpg" alt="${v.event_title}">
+                    <div class="txt_box">
+                        <p class="event_title">${v.event_title}</p>
+                        <span class="date">${v.event_startday} ~ ${v.event_lastday}</span>
+                    </div>
+                </a>
+            </div>
+            `
+        })
+
+    })
+    
+    fetch('./data/sub5_community_review.json')
+    .then((data)=> {return data.json()})
+    .then((data)=>{
+        const reviewList = document.querySelector('.review_list')
+        data.community_review.forEach((v,i)=>{
+            
+            reviewList.innerHTML += `
+                <li>
+                    <a href="./sub5_community_review.html">
+                        <img src="${v.review_img}" alt="수영하고있는 남자">
+                        <div class="name_box">
+                            <p class="name">@${v.review_id}</p>
+                            <div class="rating">
+                                <img src="./img/icon/icon_star.svg" alt="">
+                            </div>
+                        </div>
+                        <p class="review_desc">${v.review_text}</p>
+                    </a>
+                </li>
+            `
+        })
+
+    })
+
 })
