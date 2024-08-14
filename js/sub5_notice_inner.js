@@ -13,9 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const notice_inner_date = document.querySelector('.notice_inner_1 p');
         const notice_inner_cont = document.querySelector('.notice_inner_2 p');
         
-        const notice_inner_prev_btn = document.querySelector('.notice_inner_4 .prev_post');
-        const notice_inner_next_btn = document.querySelector('.notice_inner_4 .next_post');
+        const notice_inner_prev_btn = document.querySelectorAll('.notice_inner_4 .prev_post td');
+        const notice_inner_next_btn = document.querySelectorAll('.notice_inner_4 .next_post td');
 
+        const notice_inner_prev_post = document.querySelector('.notice_inner_4 .prev_post_tit');
+        const notice_inner_next_post = document.querySelector('.notice_inner_4 .next_post_tit');
 
         let find_data = data.community_notice.filter((item)=>{
             return item.board_num == param_num.get('id');
@@ -37,21 +39,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }catch{}
         
         if(board_currunt > 1){
-            notice_inner_prev_btn.innerHTML = `<a href="#">[이전글] ${data.community_notice[board_currunt-2].board_title}</a>`;
-            notice_inner_prev_btn.onclick = function(){
-                board_currunt--;
-                location.href = `?id=${board_currunt}`;
-            }
+            notice_inner_prev_post.innerHTML = `<a href="#">[이전글] ${data.community_notice[board_currunt-2].board_title}</a>`;
+            notice_inner_prev_btn.forEach((v)=>{
+                v.onclick = function(){
+                    board_currunt--;
+                    location.href = `?id=${board_currunt}`;
+                }
+            })
         }
 
         if(board_currunt < data.community_notice.length){
-            notice_inner_next_btn.innerHTML = `<a href="#">[다음글] ${data.community_notice[board_currunt].board_title}</a>`;
-            notice_inner_next_btn.onclick = function(){
-                board_currunt++;
-                location.href = `?id=${board_currunt}`;
-            }
+            notice_inner_next_post.innerHTML = `<a href="#">[다음글] ${data.community_notice[board_currunt].board_title}</a>`;
+            notice_inner_next_btn.forEach((v)=>{
+                v.onclick = function(){
+                    board_currunt++;
+                    location.href = `?id=${board_currunt}`;
+                }
+            })
         }
 
     })
-
-});
+})
