@@ -19,8 +19,8 @@
     <!-- 컨텐츠 -->
     <div class="login_common join">
         <div class="logo_wrap">
-            <h1 class="logo">
-                <a href="./index.html"></a>
+            <h1 class="logo" name="pop_btn">
+                <a href="#"></a>
             </h1>
             <h2 class="txt">
                 회원가입
@@ -38,21 +38,21 @@
                         </li>
                         <li class="pw_box">
                             <label for="password"></label>
-                            <input id="password" type="password" autocomplete="new-password" placeholder="비밀번호(영문/숫자/특문 조합 8~15자)" required>
+                            <input id="password" type="password" autocomplete="new-password" placeholder="비밀번호(영문/숫자/특문 조합 8~15자)" minlength="8" maxlength="15" required>
                             <button type="button" class="input_eye_btn input_btn"></button>
                             <button type="button" class="input_reset_btn input_btn"></button>
                             <p class="error_msg"></p>
                         </li>
                         <li class="pw_check_box pw_box">
                             <label for="pw_check"></label>
-                            <input id="pw_check" type="password" autocomplete="new-password" placeholder="비밀번호 확인" required>
+                            <input id="pw_check" type="password" autocomplete="new-password" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
                             <button type="button" class="input_eye_btn input_btn"></button>
                             <button type="button" class="input_reset_btn input_btn"></button>
                             <p class="error_msg"></p>
                         </li>
                         <li class="name_box">
                             <label for="name"></label>
-                            <input id="name" type="text" autocomplete="name" placeholder="이름" required>
+                            <input id="name" type="text" autocomplete="name" placeholder="이름" minlength="2" maxlength="20" required>
                             <button type="button" class="input_reset_btn input_btn"></button>
                             <p class="error_msg"></p>
                         </li>
@@ -60,7 +60,7 @@
                             <div>
                                 <div class="phone_box"> 
                                     <label for="phone"></label>
-                                    <input id="phone" type="tel" autocomplete="tel" placeholder="휴대폰 번호(-없이 입력)" required>
+                                    <input id="phone" type="tel" autocomplete="tel" placeholder="휴대폰 번호(-없이 입력)" minlength="10" maxlength="11"required>
                                     <button type="button" class="input_reset_btn input_btn"></button>
                                     
                                 </div>
@@ -72,8 +72,8 @@
                         </li>
                         <li class="verify_box">
                             <label for="verify"></label>
-                            <input id="verify" type="number" placeholder="인증번호" readonly required>
-                            <!-- <button type="button" class="input_reset_btn input_btn"></button> -->
+                            <input id="verify" type="text" placeholder="인증번호" minlength="6" maxlength="6" readonly required>
+                            <button type="button" class="input_reset_btn input_btn"></button>
                             <p class="error_msg"></p>
                         </li>
                     </ul>
@@ -118,6 +118,28 @@
                     </a>
                 </div>
             </form>
+        </div>
+    </div>
+    <!-- 회원가입 팝업 -->
+    <div class="popup join">
+        <div class="popup_cont">
+            <div class="popup_top">
+                <button class="popup_close_btn"></button>
+            </div>
+            <div class="popup_inner">
+                <div class="join_popup_tit">
+                    <h3 class="join_popup_title">잠시만요!</h3>
+                    <h5 class="join_popup_sub_title">아직 회원가입이 끝나지 않았어요.</h5>
+                </div>
+                <div class="join_popup_txt">
+                    <p>회원가입을 완료하고<br>
+                        다온의 특별한 혜택을 만나보세요.</p>
+                </div>
+            </div>
+            <div class="popup_bottom_btn">
+                <button class="join_popup_btn_progress"><a href="#">계속 진행</a></button>
+                <button class="join_popup_btn_cancel"><a href="#">중단하기</a></button>
+            </div>
         </div>
     </div>
     <!-- 푸터 -->

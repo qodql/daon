@@ -9,7 +9,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  object-fit: fill;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .quick_menu {
@@ -22,7 +23,8 @@
   left: 50%;
   bottom: 20%;
   transform: translateX(-50%);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   z-index: 11;
@@ -104,6 +106,7 @@
   position: relative;
 }
 .main .container .section .inner .title {
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 64px;
   font-weight: 700;
@@ -676,6 +679,7 @@
     right: 17.5%;
   }
   .main .container .section.around_spot .inner {
+    height: -moz-fit-content;
     height: fit-content;
     padding-bottom: 32%;
   }
@@ -964,8 +968,10 @@
     margin-top: 0;
   }
   .main .container .section.around_spot .inner .contents .spot_list li a img {
-    object-position: center;
-    object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .main .container .section.event .inner {
     margin-top: 0;
