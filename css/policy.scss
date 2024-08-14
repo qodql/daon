@@ -40,7 +40,9 @@
 .policy_privacy {
     .sub_top{
         background: url("../img/img_sub_policy.jpg") no-repeat center / cover;
-        .dim{background-color: rgba(0,0,0,0.4);}
+        .dim{
+            background-color: rgba(0,0,0,0.4);
+        }
     }
     .sub_container {
         .contents{
