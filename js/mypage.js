@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    //mypage data insert
+    const session_profile = JSON.parse(sessionStorage.profile);
+    const mypage_email = document.querySelector('.mypage_info_input .email_ul .email_box input');
+    const mypage_name = document.querySelector('.mypage_info_input .name_ul .name_box input');
+
+    mypage_email.placeholder = session_profile.email;
+    mypage_name.placeholder = session_profile.name;
+    
 
 
     

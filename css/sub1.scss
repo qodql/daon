@@ -36,7 +36,9 @@
                     &:nth-child(2){
                         height: 250px;
                         grid-area: b;
-                        img{object-position: 0px -360px;}
+                        img{
+                            object-position: 0px -360px;
+                        }
                     }
                     &:nth-child(3){
                         height: 250px;
@@ -45,7 +47,9 @@
                     &:nth-child(4){
                         height: 370px;
                         grid-area: d;
-                        img{object-position: 0px -190px;}
+                        img{
+                            object-position: 0px -190px;
+                        }
                     }
                     position: relative;
                     img{
@@ -100,7 +104,9 @@
                     left: 50%;
                     text-align: center;
                     transform:translate(-50%,-50%);
-                    .logo{margin: 0 auto;}
+                    .logo{
+                        margin: 0 auto;
+                    }
                     .intro_full_bg_inner_txt{
                         margin: 40px auto;
                         h5{

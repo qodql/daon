@@ -317,9 +317,6 @@
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
     width: 660px;
   }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo {
-    margin: 0 auto;
-  }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
     margin: 32px auto;
   }
@@ -473,7 +470,7 @@
     height: 310px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px 0px;
+    object-position: 0;
   }
   .intro .sub_container .contents .intro_txt {
     width: 630px;
@@ -596,9 +593,6 @@
   .intro .sub_container .contents .intro_full_bg {
     margin-top: 60px;
   }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
-    width: 469px;
-  }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
     width: 80%;
   }
@@ -712,9 +706,6 @@
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) {
     height: 200px;
   }
-  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px -44px;
-  }
   .intro .sub_container .contents .intro_txt {
     width: 393px;
     margin: 36px auto;
@@ -725,10 +716,6 @@
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner {
     width: 345px;
-  }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
-    font-size: 16px;
-    line-height: 36px;
   }
 }
 @media (max-width: 479px) {
@@ -753,9 +740,6 @@
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) {
     height: 150px;
   }
-  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    object-position: 0px -44px;
-  }
   .intro .sub_container .contents .intro_txt {
     width: 319px;
     margin: 24px auto;
@@ -765,9 +749,6 @@
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .logo img {
     width: 70%;
-  }
-  .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt {
-    margin: 24px auto;
   }
   .intro .sub_container .contents .intro_full_bg .intro_full_bg_inner .intro_full_bg_inner_txt h5 {
     font-size: 14px;
@@ -848,23 +829,8 @@
   }
 }
 @media screen and (max-width: 405px) {
-  .intro .sub_container .contents .intro_grid_wrapper p {
-    height: 150px;
-  }
-  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(1) {
-    height: 150px;
-  }
-  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) {
-    height: 150px;
-  }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
     object-position: 0px -230px;
-  }
-  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
-    height: 150px;
-  }
-  .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) {
-    height: 150px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
     object-position: 0px -5px;

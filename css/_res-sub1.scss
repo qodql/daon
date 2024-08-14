@@ -1,21 +1,30 @@
 @import "./_res";
 
 @include res('pc-s'){
+    //intro PC-S start
     .intro{
         .sub_container{
             .contents{
                 .intro_grid_wrapper{
                 grid-gap: 15px;
                     p{
-                        &:nth-child(1){height: 580px;}
+                        &:nth-child(1){
+                            height: 580px;
+                        }
                         &:nth-child(2){
                             height: 220px;
-                            img{object-position: 0px -294px;}
+                            img{
+                                object-position: 0px -294px;
+                            }
                         }
-                        &:nth-child(3){height: 220px;}
+                        &:nth-child(3){
+                            height: 220px;
+                        }
                         &:nth-child(4){
                             height: 345px;
-                            img{object-position: 0px -150px;}
+                            img{
+                                object-position: 0px -150px;
+                            }
                         }
                     }
                 }
@@ -29,7 +38,6 @@
                 .intro_full_bg{
                     .intro_full_bg_inner{
                         width: 660px;
-                        .logo{margin: 0 auto;}
                         .intro_full_bg_inner_txt{
                             margin: 32px auto;
                             h5{
@@ -42,7 +50,9 @@
             }
         }
     }
+    //intro PC-S end
 }
+
 
 @media screen and (max-width: 1400px){
     .intro{
@@ -58,7 +68,7 @@
 
 
 @include res('tab'){
-    //intro 반응형 시작
+    //intro TAB start
     .intro{
         .sub_container{
             .contents{
@@ -69,21 +79,27 @@
                         }
                         &:nth-child(2){
                             height: 200px;
-                            img{object-position: 0px -200px;}
+                            img{
+                                object-position: 0px -200px;
+                            }
                         }
                         &:nth-child(3){
                             height: 200px;
                         }
                         &:nth-child(4){
                             height: 325px;
-                            img{object-position: 0px -26px;}
+                            img{
+                                object-position: 0px -26px;
+                            }
                         }
                     }
                 }
                 .intro_txt{
                     width: 717px;
                     margin: 60px auto;
-                    h5{font-size: 20px;}   
+                    h5{
+                        font-size: 20px;
+                    }   
                 }
                 .intro_full_bg{
                     margin-top: 100px;
@@ -101,8 +117,8 @@
             }
         }
     }
-    //intro 반응형 끝
-    //contact 반응형 시작
+    //intro TAB end
+    //contact TAB start
     .contact{
         .sub_container{
             .contents{
@@ -193,11 +209,10 @@
             }
         }
    }
-   //contact 반응형 끝
+   //contact TAB end
 }
 
 @media screen and (max-width: 1060px){
-    //intro 반응형 시작
     .intro{
         .sub_container{
             .contents {
@@ -209,14 +224,18 @@
                         }
                         &:nth-child(2){
                             height: 180px;
-                            img{object-position: 0px -125px;}
+                            img{
+                                object-position: 0px -125px;
+                            }
                         }
                         &:nth-child(3){
                             height: 180px;
                         }
                         &:nth-child(4){
                             height: 310px;
-                            img{object-position: 0px 0px;}
+                            img{
+                                object-position: 0;
+                            }
                         }
                     }
                 }
@@ -244,7 +263,6 @@
             }
         }
     }
-    //intro 반응형 끝
 }
 
 @media screen and (max-width: 975px){
@@ -317,7 +335,6 @@
 }
 
 @media screen and (max-width: 870px){
-    //intro 반응형 시작
     .intro{
         .sub_container{
             .contents {
@@ -328,7 +345,9 @@
                         }
                         &:nth-child(2){
                             height: 170px;
-                            img{object-position: 0px -90px;}
+                            img{
+                                object-position: 0px -90px;
+                            }
                         }
                         &:nth-child(3){
                             height: 170px;
@@ -340,24 +359,27 @@
                 }
                 .intro_txt{
                     width: 566px;
-                    h5{font-size: 16px;}   
+                    h5{
+                        font-size: 16px;
+                    }   
                 }
                 .intro_full_bg{
                     .intro_full_bg_inner{
                         width: 469px;
                         .intro_full_bg_inner_txt{
-                            h5{font-size: 16px;}
+                            h5{
+                                font-size: 16px;
+                            }
                         }
                     }
                 }
             }
         }
     }
-    //intro 반응형 끝
 }
 
 @include res('mo-l'){
-    //intro 반응형 시작
+    //intro Mobile-Large start
     .intro{
         .sub_container{
             .contents{
@@ -373,33 +395,39 @@
                         }
                         &:nth-child(2){
                             height: 300px;
-                            img{object-position: 0px -497px;}
+                            img{
+                                object-position: 0px -497px;
+                            }
                         }
                         &:nth-child(3){
                             height: 300px;
                         }
                         &:nth-child(4){
                             height: 300px;
-                            img{object-position: 0px -44px;}
+                            img{
+                                object-position: 0px -44px;
+                            }
                         }
-                        img{border-radius: 8px;}
+                        img{
+                            border-radius: 8px;
+                        }
                     }
                 }
                 .intro_full_bg{
                     margin-top: 60px;
                     .intro_full_bg_inner{
-                        width: 469px;
                         .logo{
-                            img{width: 80%;}
+                            img{
+                                width: 80%;
+                            }
                         }
                     }
                 }
             }
         }
     }
-    //intro 반응형 끝
-    
-    //contact 반응형 시작
+    //intro Mobile-Large end
+    //contact Mobile-Large start
     .contact{
         .sub_container{
             .contents{
@@ -501,15 +529,16 @@
             }
         }
    } 
-   //contact 반응형 끝
+   //contact Mobile-Large end
 }
 
 @media screen and (max-width: 610px){
-    //intro 반응형 시작
     .intro{
         .sub_container{
             &.sub_container_full{
-                .title{padding: 0 16px;}
+                .title{
+                    padding: 0 16px;
+                }
             }
             .contents {
                 .intro_grid_wrapper{
@@ -520,14 +549,15 @@
                         }
                         &:nth-child(2){
                             height: 200px;
-                            img{object-position: 0px -416px;}
+                            img{
+                                object-position: 0px -416px;
+                            }
                         }
                         &:nth-child(3){
                             height: 200px;
                         }
                         &:nth-child(4){
                             height: 200px;
-                            img{object-position: 0px -44px;}
                         }
                     }
                 }
@@ -542,12 +572,6 @@
                 .intro_full_bg{
                     .intro_full_bg_inner{
                         width: 345px;
-                        .intro_full_bg_inner_txt{
-                            h5{
-                                font-size: 16px;
-                                line-height: 36px;
-                            }
-                        }
                     }
                 }
             }
@@ -556,7 +580,7 @@
 }
 
 @include res('mo-s'){
-    //intro 반응형 시작
+    //intro Mobiel-Small start
     .intro{
         .sub_container{
             .contents {
@@ -569,29 +593,33 @@
                         }
                         &:nth-child(2){
                             height: 150px;
-                            img{object-position: 0px -359px;}
+                            img{
+                                object-position: 0px -359px;
+                            }
                         }
                         &:nth-child(3){
                             height: 150px;
                         }
                         &:nth-child(4){
                             height: 150px;
-                            img{object-position: 0px -44px;}
                         }
                     }
                 }
                 .intro_txt{
                     width: 319px;
                     margin: 24px auto;
-                    h5{line-height: 30px;}   
+                    h5{
+                        line-height: 30px;
+                    }   
                 }
                 .intro_full_bg{
                     .intro_full_bg_inner{
                         .logo{
-                            img{width: 70%;}
+                            img{
+                                width: 70%;
+                            }
                         }
                         .intro_full_bg_inner_txt{
-                            margin: 24px auto;
                             h5{
                                 font-size: 14px;
                                 line-height: 32px;
@@ -602,8 +630,8 @@
             }
         }
     }
-    //intro 반응형 끝
-    //contact 반응형 시작
+    ////intro Mobiel-Small end
+    //contact Mobiel-Small start
     .contact{
         .sub_container{
             .contents{
@@ -695,38 +723,36 @@
             }
         }
    }
+   //contact Mobiel-Small end
 }
 
 @media screen and (max-width: 405px){
-    //intro 반응형 시작
     .intro{
         .sub_container{
             .contents {
                 .intro_grid_wrapper{
                     p{
-                        height: 150px;
-                        &:nth-child(1){
-                            height: 150px;
-                        }
                         &:nth-child(2){
-                            height: 150px;
-                            img{object-position: 0px -230px;}
-                        }
-                        &:nth-child(3){
-                            height: 150px;
+                            img{
+                                object-position: 0px -230px;
+                            }
                         }
                         &:nth-child(4){
-                            height: 150px;
-                            img{object-position: 0px -5px;}
+                            img{
+                                object-position: 0px -5px;
+                            }
                         }
                     }
                 }
-                .intro_txt{width: 260px;}
+                .intro_txt{
+                    width: 260px;
+                }
                 .intro_full_bg{
-                    .intro_full_bg_inner{width: 283px;}
+                    .intro_full_bg_inner{
+                        width: 283px;
+                    }
                 }
             }
         }
     }
-    //intro 반응형 끝
 }
