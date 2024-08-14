@@ -424,3 +424,58 @@ mo-s:
 .join_complete .join_complete_wrap .join_complete_btn a button {
   max-width: 240px;
 }
+
+.popup.join .popup_cont {
+  width: 460px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
+.popup.join .popup_cont .popup_inner {
+  width: 100%;
+  padding-top: 0;
+}
+.popup.join .popup_cont .popup_inner .join_popup_tit {
+  text-align: center;
+}
+.popup.join .popup_cont .popup_inner .join_popup_tit .join_popup_title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #357EF1;
+  margin-bottom: 12px;
+}
+.popup.join .popup_cont .popup_inner .join_popup_tit .join_popup_sub_title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2f2f2f;
+}
+.popup.join .popup_cont .popup_inner .join_popup_txt {
+  text-align: center;
+  margin-top: 32px;
+}
+.popup.join .popup_cont .popup_inner .join_popup_txt p {
+  font-size: 16px;
+  color: #2f2f2f;
+}
+.popup.join .popup_cont .popup_bottom_btn {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+.popup.join .popup_cont .popup_bottom_btn button {
+  width: 184px;
+  padding: 8px 32px;
+  border-radius: 8px;
+  text-align: center;
+}
+.popup.join .popup_cont .popup_bottom_btn button a {
+  color: #fff;
+}
+.popup.join .popup_cont .popup_bottom_btn .join_popup_btn_progress {
+  background-color: #357EF1;
+  margin-right: 12px;
+}
+.popup.join .popup_cont .popup_bottom_btn .join_popup_btn_cancel {
+  background-color: #AFAFAF;
+}

@@ -38,9 +38,26 @@
             <div class="contents">
                 <div class="btn_wrap">
                     <!-- 팝업에 예약코드 조회 후 맞다면 마이페이지 > 예약내역 -->
-                    <button type="button" class="member not">비회원 조회</button>
+                    <button type="button" class="member not" name="pop_btn">비회원 조회</button>
                     <!-- 비로그인:로그인 페이지 / 로그인: 마이페이지 > 예약내역 -->
                     <button type="button" class="member" onclick="window.location.href='./mypage.html'">회원 조회</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 비회원 조회 팝업 -->
+    <div class="popup non_member">
+        <div class="popup_cont">
+            <div class="popup_top">
+                <h3 class="popup_title">비회원 조회</h3>
+                <button class="popup_close_btn"></button>
+            </div>
+            <div class="popup_inner">
+                <!-- inner 안쪽에 팝업 내용 작업 -->
+                <div class="insert_non_mem_num">
+                    <p class="label">비회원 번호</p>
+                    <input type="text" placeholder="비회원 번호를 입력해주세요.">
+                    <button type="button" class="non_member_btn">조회</button>
                 </div>
             </div>
         </div>
