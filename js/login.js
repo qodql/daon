@@ -1,9 +1,7 @@
 var profile;
 // [↓] 다온 로그인
 document.addEventListener("DOMContentLoaded", () => { 
-    // 로그인+회원가입 공통------------------
-    //로그인 관련 키보드 입력 들어가는 모든 인풋박스
-    // const inputBoxs = document.querySelectorAll('.input_box input:not(#verify)');
+// 로그인+회원가입 공통------------------
     const inputBoxs = document.querySelectorAll('.input_box input');
     const emailBox = document.querySelector('.email_box input');
     const pwBoxs = document.querySelectorAll('.pw_box input'),
@@ -15,11 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const resetBtn = document.querySelectorAll('.input_box .input_reset_btn'),
           eyeBtn = document.querySelectorAll('.pw_box .input_eye_btn'),
           errorMsgs = document.querySelectorAll('.input_box .error_msg');
-    const essentialCheck = document.querySelectorAll('.agree_list .agree_essential .checkbox');
     const submitBtn = document.querySelector('.join_join_btn button');
     const form = document.querySelector('form');
-        
-    // 이메일 유효성 검사(값이 유효하면 profile에 저장까지)
+/*[↓] 공통 함수, 공통 기능 ------------------------------------------------------------------------------------- */        
+    // 이메일 유효성 검사 함수(값이 유효하면 profile에 저장까지)
     const emailChecker = (email) => {
         //이메일 조건(ex. my_Account-01@naver.com): 
         // 아이디 부분(my_Account-01): 영문 대소문자, 숫자, ._-%+- 의 특문 입력 가능
@@ -38,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return {isValid: isValid, errorMsg: errorMsg};
     }
-    // 비밀번호 유효성 검사
+    // 비밀번호 유효성 검사 함수
     const pwChecker = (pw) => { 
         //조건: 영문/숫자/특문 각각 1개 이상의 조합으로 8~15자
         const pwRegex = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,15}$/;
@@ -53,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return {isValid: isValid, errorMsg: errorMsg};
     }
-    //이름 유효성 검사
+    //이름 유효성 검사 함수
     const nameChecker = (name) => {
         //조건 : 한글만 입력 가능, 2~20자, 띄어쓰기 불가능
         const nameRegex = /^[가-힣]{2,20}$/;
@@ -70,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return {isValid: isValid, errorMsg: errorMsg};
     }
-    //휴대폰 번호 유효성 검사
+    //휴대폰 번호 유효성 검사 함수
     const phoneChecker = (phone) => {
         //조건: 숫자만 입력 가능, (010,011,016,017,018,019)으로 시작, 10자 이상 11자 미만
         const phoneRegex = /^01[016789][0-9]{3,4}[0-9]{4}$/;
@@ -128,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let verifyNum = parseInt(ranNum1.toString() + ranNum2.toString());
         return verifyNum;
     })
-    
     //인풋박스 내부 : 우측 [x, 눈] 버튼 input시 활성화, blur 시 비활성화
     inputBoxs.forEach((inputbox) => {
         //focus시
@@ -172,10 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     })
-
     //에러메시지 온오프 함수
     const showErrorMsg = function(result, inputBox, idx){
-        if(inputBox.value === ''){   //인풋값이 없으면 에러메시지 없음
+        if(inputBox.value == ''){   //인풋값이 없으면 에러메시지 없음
             errorMsgs[idx].classList.remove('active');
             errorMsgs[idx].innerText = '';
             inputBox.classList.remove('active');    //테두리색 변경
@@ -191,94 +186,68 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
-    //Caps Lock 체크 함수
-    const capsLockChecker = function(event){
-        if (event.getModifierState("CapsLock")) {
-            errorMsgs.innerText = "Caps Lock이 켜져 있습니다."
-        }else {
-            errorMsgs.innerText = ""
+/*[↓] 공통 유효성검사, 에러메시지 ------------------------------------------------------------------------------------- */
+    const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
+    emailBox.addEventListener('blur', function(){
+        let idx = 0;
+        let result = emailChecker(emailBox.value);
+        showErrorMsg(result, emailBox, idx);
+    })
+    pwBox.addEventListener('blur', function(){
+        let idx = 1;
+        let result = pwChecker(pwBox.value);
+        showErrorMsg(result, pwBox, idx);
+    })
+    pwCheckBox.addEventListener('blur', function(){
+        let idx = 2;
+        console.log(pwCheckBox.value, pwBox.value);
+        
+        let result = pwEqual(pwCheckBox.value, pwBox.value);
+        showErrorMsg(result, pwCheckBox, idx);
+    })
+    nameBox.addEventListener('blur', function(){
+        let idx = 3;
+        let result = nameChecker(nameBox.value);
+        showErrorMsg(result, nameBox, idx);
+    })
+    phoneBox.addEventListener('blur', function(){
+        let idx = 4;
+        let hasValue = phoneBox.value;
+        let result = phoneChecker(phoneBox.value);
+        showErrorMsg(result, phoneBox, idx);
+        
+        console.log(`값유무: ${hasValue !== ''}, 유효: ${result.isValid}`);
+        //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
+        if((phoneBox.value !== '') && (result.isValid === true)){
+            verifyBtn.disabled = false;
+        }else{
+            verifyBtn.disabled = true;
         }
-    }
-
-    //페이지 이름(login, join, join_complete)가져오기
+    })
+    verifyBtn.addEventListener('click', function(){
+        let idx = 5;
+        //인증번호 생성
+        let verifyNum = verifyNumGenerator();
+        //팝업으로 띄우기
+        alert(`인증번호: ${verifyNum}`);
+        //인풋박스 활성화 시키기
+        verifyBox.removeAttribute('readonly');
+        //인증번호 일치하는지 검사
+        verifyBox.addEventListener('blur', function(){
+            let result = verifyNumEqual(verifyBox.value, verifyNum);
+            showErrorMsg(result, verifyBox, idx);
+            console.log(verifyNum);
+        })
+    })
+/*[↓] 페이지 별 개별 코드------------------------------------------------------------------------------------- */
+    //페이지 이름(login, join, join_complete)가져오기 (페이지마다 실행하는 코드가 다르게)
     const url = location.pathname;
     let pageName = url.substring(url.lastIndexOf('/')+1,url.lastIndexOf('.'));
-    
     switch(pageName){
         case 'login':
-            // 유효성 검사: 로그인페이지와 회원가입 페이지 분리
-            inputBoxs.forEach((box, idx) => {   
-                const checker = [emailChecker, pwChecker];
-                let func = checker[idx];
-                box.addEventListener('blur', function(){
-                    // 유효성 검사
-                    let result = (func(box.value));
-                    // 유효값: 저장
-                    if(result.isValid){
-                        errorMsgs[idx].classList.remove('active');
-                        errorMsgs[idx].innerText = '';
-                    }else{  //유효값 아닐 시 에러메세지 출력
-                        errorMsgs[idx].innerText = result.errorMsg;
-                        errorMsgs[idx].classList.add('active');
-                    }
-                })
-            })
             break;
         case 'join':
-            const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
-            //유효성검사, 에러메시지
-            emailBox.addEventListener('blur', function(){
-                let idx = 0;
-                let result = emailChecker(emailBox.value);
-                showErrorMsg(result, emailBox, idx);
-            })
-            pwBox.addEventListener('blur', function(){
-                let idx = 1;
-                let result = pwChecker(pwBox.value);
-                showErrorMsg(result, pwBox, idx);
-            })
-            pwCheckBox.addEventListener('blur', function(){
-                let idx = 2;
-                console.log(pwCheckBox.value, pwBox.value);
-                
-                let result = pwEqual(pwCheckBox.value, pwBox.value);
-                showErrorMsg(result, pwCheckBox, idx);
-            })
-            nameBox.addEventListener('blur', function(){
-                let idx = 3;
-                let result = nameChecker(nameBox.value);
-                showErrorMsg(result, nameBox, idx);
-            })
-            phoneBox.addEventListener('blur', function(){
-                let idx = 4;
-                let hasValue = phoneBox.value;
-                let result = phoneChecker(phoneBox.value);
-                showErrorMsg(result, phoneBox, idx);
-                
-                console.log(`값유무: ${hasValue !== ''}, 유효: ${result.isValid}`);
-                //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
-                if((phoneBox.value !== '') && (result.isValid === true)){
-                    verifyBtn.disabled = false;
-                }else{
-                    verifyBtn.disabled = true;
-                }
-            })
-            verifyBtn.addEventListener('click', function(){
-                let idx = 5;
-                //인증번호 생성
-                let verifyNum = verifyNumGenerator();
-                //팝업으로 띄우기
-                alert(`인증번호: ${verifyNum}`);
-                //인풋박스 활성화 시키기
-                verifyBox.removeAttribute('readonly');
-                //인증번호 일치하는지 검사
-                verifyBox.addEventListener('blur', function(){
-                    let result = verifyNumEqual(verifyBox.value, verifyNum);
-                    showErrorMsg(result, verifyBox, idx);
-                    console.log(verifyNum);
-                })
-            })
-            //팝업 계속진행/중단하기버튼 함수
+            //팝업의 계속진행/중단하기 버튼 함수
             const popupBtnFunc = function(){
                 const popup = document.querySelector('.popup.join');
                 const progressBtn = document.querySelector('.popup .join_popup_btn_progress');
@@ -288,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     body.classList.remove("prevent_scroll");
                 });
                 cancelBtn.addEventListener('click', function(){
-                    history.back(); //뒤로가기:#때문에 ***********
+                    history.back();
                 })
             }
             popupBtnFunc();
@@ -303,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 return accessToken;
             }
-            //submitBtn 비활/활성화 검사 함수
+            //submitBtn 비활성화/활성화 검사 함수
             const submitChecker = () => {
                 let submitCondition = form.checkValidity();
                     if(submitCondition === true){
@@ -312,18 +281,17 @@ document.addEventListener("DOMContentLoaded", () => {
                         submitBtn.disabled = true;
                     }
             }
-
             //가입 조건 활성화 체크
             window.addEventListener('click', submitChecker)
             window.addEventListener('keydown', submitChecker)
             window.addEventListener('scroll', submitChecker)
-
+            //submitBtn 클릭 시 엑세스 토큰 발급, 유저정보 로컬에 저장
             submitBtn.addEventListener('click', function(){
                 let accessToken = accessTokenGenerator();
                 setUserInfo(accessToken);
             })            
             break;
-        case 'join_complete':
+        case 'join_complete':   //이름 뿌리기
             const name = document.querySelector('.greeting .name');
             let userName = JSON.parse(sessionStorage.profile); 
             name.innerText = userName.name;
@@ -341,14 +309,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // 네이버, 구글 로그인은 테스트 아이디 등록이 필요합니다. 필요하시면 말씀해 주세요.
 
 let cookie = document.cookie.split(';');    //쿠키에서
-let access_token= cookie.filter((v)=>v.match('access_token')); //엑세스 토큰 추출
-var login = false; //로그인 상태일 때:true , 로그아웃 상태일 때: false
+let accessToken= cookie.filter((v)=>v.match('access_token')); //엑세스 토큰 추출
+var login = false; //로그인상태:true / 로그아웃상태: false
 
 // if 조건문이 true, false를 boolean이 아닌 문자열로 받기때문에 false가 나와도 true로 간주한다. (false라는 문자가 있으니까 트루.) 그래서 === 'true'를 넣어줘서 문자열 true 일때를 한번 더 넣어주면 정상작동함.
-if(access_token.length && access_token[0].split('=')[1] === 'true'){ // 엑세스 토큰 값이 있으면 => 세션 login: true
+if(accessToken.length && accessToken[0].split('=')[1] === 'true'){ // 엑세스 토큰 값이 있으면 메인으로 이동
     login = true;
     // location.href="/";
-} else{                         //엑세스 토큰 값이 없으면: 로그인 진행
+} else{                         //엑세스 토큰 값이 없으면 로그인 진행
 
 /* sns 로그인 공통 변수, 함수 ---------------------------------*/
 //(1) 서비스 주소(로그인 버튼 있는 페이지)
@@ -387,9 +355,8 @@ var setUserInfo = function(accessToken) {
         /* <참고> 세션에 저장한 정보 꺼내쓸 때 : 
             let checkLogin = JSON.parse(sessionStorage.login); 
             console.log(checkLogin);  //true면 로그인, false면 로그아웃 상태
-            이런 방법으로 사용  
+            이런 방법으로 사용하시면 됩니다.
         */
-        /* 로그아웃 시 sessionStorage.clear() 반드시 해주기!!! */
     //4. 메인 페이지로 이동
     location.href = AFTER_REDIRECT_URI;
 }
