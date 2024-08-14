@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    //Mypage Tab
+    //mypage tab
     const mypage_tab_btn = document.querySelectorAll('.mypage_tap_wrap .tab li');
     const mypage_tab_cont = document.querySelectorAll('.mypage_tap_wrap .tab_cont > div');
 
@@ -15,13 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    //mypage data insert
-    const session_profile = JSON.parse(sessionStorage.profile);
+    //mypage session confirm
     const mypage_email = document.querySelector('.mypage_info_input .email_ul .email_box input');
     const mypage_name = document.querySelector('.mypage_info_input .name_ul .name_box input');
-
-    mypage_email.placeholder = session_profile.email;
-    mypage_name.placeholder = session_profile.name;
+    
+    try{
+        const session_profile = JSON.parse(sessionStorage.profile);
+        mypage_email.placeholder = session_profile.email;
+        mypage_name.placeholder = session_profile.name;
+    }
+    catch{
+        mypage_email.placeholder = "이메일";
+        mypage_name.placeholder = "이름";
+    }
+    
     
 
 })
