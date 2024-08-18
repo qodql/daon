@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 /*[↓] 공통 함수, 공통 기능 ------------------------------------------------------------------------------------- */        
     // 이메일 유효성 검사 함수(값이 유효하면 profile에 저장까지)
     const emailChecker = (email) => {
-        //이메일 조건(ex. my_Account-01@naver.com): 
+        //이메일 조건 (ex. my_Account-01@naver.com): 
         // 아이디 부분(my_Account-01): 영문 대소문자, 숫자, ._-%+- 의 특문 입력 가능
         // @: 필수, @로 구분됨
-        // 도메인 부분(naver): 영문 대소문자, 숫자, .-의 특문 입력 가능
-        // 도메인 끝부분(.com): .필수, 2개 이상의 영문 대소문자 입력 가능
+        // 도메인 앞(naver): 영문 대소문자, 숫자, .-의 특문 입력 가능
+        // 도메인 뒤(.com): 2~6자, 영문 대소문자 입력 가능
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         let errorMsg = '';
         let isValid = false;
@@ -143,8 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 inputbox.classList.add('hasValue')
             }
         })
-        //x버튼 클릭 시 유효성검사
-
         //blur시: blur적용하면 x, eye버튼 클릭 시점에 blur적용해서 버튼이 사라지고 기능을 못합니다..****************
         // inputbox.addEventListener('blur', function(){
         //     inputbox.classList.remove('hasValue')   //버튼 안보이게
@@ -168,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     })
+    
     //에러메시지 온오프 함수
     const showErrorMsg = function(result, inputBox, idx){
         if(inputBox.value == ''){   //인풋값이 없으면 에러메시지 없음
@@ -188,57 +187,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 /*[↓] 공통 유효성검사, 에러메시지 ------------------------------------------------------------------------------------- */
     const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
-    emailBox.addEventListener('blur', function(){
-        let idx = 0;
-        let result = emailChecker(emailBox.value);
-        showErrorMsg(result, emailBox, idx);
-    })
-    pwBox.addEventListener('blur', function(){
-        let idx = 1;
-        let result = pwChecker(pwBox.value);
-        showErrorMsg(result, pwBox, idx);
-    })
-    pwCheckBox.addEventListener('blur', function(){
-        let idx = 2;
-        console.log(pwCheckBox.value, pwBox.value);
-        
-        let result = pwEqual(pwCheckBox.value, pwBox.value);
-        showErrorMsg(result, pwCheckBox, idx);
-    })
-    nameBox.addEventListener('blur', function(){
-        let idx = 3;
-        let result = nameChecker(nameBox.value);
-        showErrorMsg(result, nameBox, idx);
-    })
-    phoneBox.addEventListener('blur', function(){
-        let idx = 4;
-        let hasValue = phoneBox.value;
-        let result = phoneChecker(phoneBox.value);
-        showErrorMsg(result, phoneBox, idx);
-        
-        console.log(`값유무: ${hasValue !== ''}, 유효: ${result.isValid}`);
-        //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
-        if((phoneBox.value !== '') && (result.isValid === true)){
-            verifyBtn.disabled = false;
-        }else{
-            verifyBtn.disabled = true;
-        }
-    })
-    verifyBtn.addEventListener('click', function(){
-        let idx = 5;
-        //인증번호 생성
-        let verifyNum = verifyNumGenerator();
-        //팝업으로 띄우기
-        alert(`인증번호: ${verifyNum}`);
-        //인풋박스 활성화 시키기
-        verifyBox.removeAttribute('readonly');
-        //인증번호 일치하는지 검사
-        verifyBox.addEventListener('blur', function(){
-            let result = verifyNumEqual(verifyBox.value, verifyNum);
-            showErrorMsg(result, verifyBox, idx);
-            console.log(verifyNum);
+    let inputsChecking = () => {
+        emailBox.addEventListener('blur', function(){
+            let idx = 0;
+            let result = emailChecker(emailBox.value);
+            showErrorMsg(result, emailBox, idx);
         })
-    })
+        pwBox.addEventListener('blur', function(){
+            let idx = 1;
+            let result = pwChecker(pwBox.value);
+            showErrorMsg(result, pwBox, idx);
+        })
+        pwCheckBox.addEventListener('blur', function(){
+            let idx = 2;
+            console.log(pwCheckBox.value, pwBox.value);
+            
+            let result = pwEqual(pwCheckBox.value, pwBox.value);
+            showErrorMsg(result, pwCheckBox, idx);
+        })
+        nameBox.addEventListener('blur', function(){
+            let idx = 3;
+            let result = nameChecker(nameBox.value);
+            showErrorMsg(result, nameBox, idx);
+        })
+        phoneBox.addEventListener('blur', function(){
+            let idx = 4;
+            let hasValue = phoneBox.value;
+            let result = phoneChecker(phoneBox.value);
+            showErrorMsg(result, phoneBox, idx);
+            
+            console.log(`값유무: ${hasValue !== ''}, 유효: ${result.isValid}`);
+            //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
+            if(result.isValid === true){
+                verifyBtn.disabled = false;
+            }else{
+                verifyBtn.disabled = true;
+            }
+        })
+        verifyBtn.addEventListener('click', function(){
+            let idx = 5;
+            //인증번호 생성
+            let verifyNum = verifyNumGenerator();
+            //팝업으로 띄우기
+            alert(`인증번호: ${verifyNum}`);
+            //인풋박스 활성화 시키기
+            verifyBox.removeAttribute('readonly');
+            //인증번호 일치하는지 검사
+            verifyBox.addEventListener('blur', function(){
+                let result = verifyNumEqual(verifyBox.value, verifyNum);
+                showErrorMsg(result, verifyBox, idx);
+                console.log(verifyNum);
+            })
+        })
+    }
+    inputsChecking();
 /*[↓] 페이지 별 개별 코드------------------------------------------------------------------------------------- */
     //페이지 이름(login, join, join_complete)가져오기 (페이지마다 실행하는 코드가 다르게)
     const url = location.pathname;
@@ -261,6 +263,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
             popupBtnFunc();
+            //휴대폰 번호 인풋박스 내부의 x버튼 클릭 시 인증번호 버튼 비활성화
+            resetBtn[4].addEventListener('click', function(){
+                resetBtn[4].value = '';
+                verifyBtn.disabled = true;
+            });
             //엑세스 토큰 생성 함수(30자)
             const accessTokenGenerator = function(){
                 let length = 30;
@@ -297,8 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
             name.innerText = userName.name;
             break;
     }
-    
-    
 })  //DOMloaded 괄호
 
 // [↓] sns 로그인(dom제어 필요없는 부분이라 밖으로 뺐습니다.)
