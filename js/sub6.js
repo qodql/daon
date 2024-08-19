@@ -565,8 +565,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         start_date.innerHTML = setStartDate;
                         mb_start_date.innerHTML = setStartDate;
-                        end_date.innerHTML = setStartDate;
-                        mb_end_date.innerHTML = setStartDate;
+                        end_date.innerHTML = setEndDate;
+                        mb_end_date.innerHTML = setEndDate;
                     }
                 }
             }
