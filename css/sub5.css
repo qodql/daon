@@ -358,6 +358,7 @@
   background-color: white;
 }
 .popup.review .popup_cont .popup_inner .review_wrap .review_cont .user_id {
+  width: -moz-fit-content;
   width: fit-content;
   background-color: rgba(154, 190, 248, 0.22);
   font-size: 24px;
