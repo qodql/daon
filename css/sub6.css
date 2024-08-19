@@ -440,6 +440,7 @@
   margin-left: 4px;
 }
 .step2 .sub_container .contents .info_wrap .left .card_wrap .card_box .card > div.card_front .card_data p.date {
+  width: -moz-fit-content;
   width: fit-content;
   left: auto;
   right: 40px;
@@ -605,7 +606,7 @@
   overflow: hidden;
 }
 .step2 .payment_btn_wrap .payment_btn {
-  width: 50%;
+  width: 100%;
   padding: 20px 0;
   font-size: 20px;
   font-weight: 700;
@@ -615,38 +616,38 @@
   color: #fff;
 }
 
-.step3 .sub_container .contents .complete {
+.step3 .sub_container .contents .complete_wrap {
   text-align: center;
 }
-.step3 .sub_container .contents .complete .img_wrap {
+.step3 .sub_container .contents .complete_wrap .img_wrap {
   width: 80px;
   height: 80px;
   margin: 82px auto 64px;
 }
-.step3 .sub_container .contents .complete .txt_wrap {
+.step3 .sub_container .contents .complete_wrap .txt_wrap {
   margin-bottom: 80px;
 }
-.step3 .sub_container .contents .complete .txt_wrap p strong {
+.step3 .sub_container .contents .complete_wrap .txt_wrap p strong {
   display: block;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 32px;
 }
-.step3 .sub_container .contents .complete .txt_wrap p strong span {
+.step3 .sub_container .contents .complete_wrap .txt_wrap p strong span {
   display: block;
   font-size: 24px;
   font-weight: 700;
   margin-top: 24px;
   margin-bottom: 56px;
 }
-.step3 .sub_container .contents .complete .txt_wrap p span {
+.step3 .sub_container .contents .complete_wrap .txt_wrap p span {
   font-size: 24px;
   line-height: 36px;
 }
-.step3 .sub_container .contents .complete .btn_wrap {
+.step3 .sub_container .contents .complete_wrap .btn_wrap {
   font-size: 0;
 }
-.step3 .sub_container .contents .complete .btn_wrap button {
+.step3 .sub_container .contents .complete_wrap .btn_wrap button {
   width: 240px;
   padding: 16px 0;
   text-align: center;
@@ -654,13 +655,13 @@
   border-radius: 8px;
   font-weight: 700;
 }
-.step3 .sub_container .contents .complete .btn_wrap button:not(:first-of-type) {
+.step3 .sub_container .contents .complete_wrap .btn_wrap button:not(:first-of-type) {
   margin-left: 12px;
 }
-.step3 .sub_container .contents .complete .btn_wrap button.main {
+.step3 .sub_container .contents .complete_wrap .btn_wrap button.main {
   color: #afafaf;
 }
-.step3 .sub_container .contents .complete .btn_wrap button.reservation {
+.step3 .sub_container .contents .complete_wrap .btn_wrap button.reservation {
   border-color: #357EF1;
   background-color: #357EF1;
   color: #fff;
