@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("./data/sub2.json")
     .then((data)=> {return data.json()})
     .then((data)=>{
+        const isLogin = sessionStorage.getItem('login')
 
         // *****************[step1]******************* //
         const step1 = document.querySelector(".step1")
@@ -589,6 +590,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 localStorage.res = JSON.stringify( [...b,a] )           
             })
+            if(isLogin === 'true') {
+                payment_btn.innerText = '회원 예약';
+                mb_payment_btn.innerText = '회원 예약';
+            } else {
+                payment_btn.innerText = '비회원 예약';
+                mb_payment_btn.innerText = '비회원 예약';
+            }
         }
         
 
@@ -596,7 +604,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // *****************[step3]******************* //
         const step3 = document.querySelector(".step3")
         const txtWrap = document.querySelector(".complete_wrap .txt_wrap")
-        const isLogin = sessionStorage.getItem('login')
         let nonMemNum = '';
         if (step3) {
 
