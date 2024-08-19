@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     eyeBtn.forEach((eye, idx) => {
         eye.addEventListener('click', function(){
             if(pwBoxs[idx].type === 'password'){
-                pwBoxs[idx].type = 'text';
+                pwBoxs[idx].type = 'text';  //타입을 password -> text로
                 eye.classList.add('hide');
             }else{
                 pwBoxs[idx].type = 'password';
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
-/*[↓] 공통 유효성검사, 에러메시지 ------------------------------------------------------------------------------------- */
+/*[↓] 공통 유효성검사, 에러메시지 blur이벤트------------------------------------------------------------------------------------- */
     const verifyBtn = document.querySelector('.verify_btn button'); //인증번호 버튼
     let inputsChecking = () => {
         emailBox.addEventListener('blur', function(){
@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 return accessToken;
             }
-            //submitBtn 비활성화/활성화 검사 함수
+            //가입완료 버튼 비활성화/활성화 검사 함수
             const submitChecker = () => {
                 let submitCondition = form.checkValidity();
                     if(submitCondition === true){
@@ -292,13 +292,13 @@ document.addEventListener("DOMContentLoaded", () => {
             window.addEventListener('click', submitChecker)
             window.addEventListener('keydown', submitChecker)
             window.addEventListener('scroll', submitChecker)
-            //submitBtn 클릭 시 엑세스 토큰 발급, 유저정보 로컬에 저장
+            //가입완료 버튼 클릭 시 엑세스 토큰 발급, 유저정보 로컬에 저장
             submitBtn.addEventListener('click', function(){
                 let accessToken = accessTokenGenerator();
                 setUserInfo(accessToken);
             })            
             break;
-        case 'join_complete':   //이름 뿌리기
+        case 'join_complete':   //이름 표시
             const name = document.querySelector('.greeting .name');
             let userName = JSON.parse(sessionStorage.profile); 
             name.innerText = userName.name;
@@ -307,8 +307,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })  //DOMloaded 괄호
 
 // [↓] sns 로그인(dom제어 필요없는 부분이라 밖으로 뺐습니다.)
-// 로그인 여부 판별: 쿠키에 access_token값 있는지? (-> 세션의 login: true)
-// 엑세스 토큰이 있으면 로그인 페이지 진입불가, 메인으로 이동
+// 로그인 여부 판별: 쿠키에 access_token값 있는지? (값이 있으면-> 세션의 login: true)
+// 쿠키에 엑세스 토큰값이 있으면 로그인 페이지 진입불가, 메인으로 이동
 
 // 소셜 로그인 중 네이버가 가장 많은 유저 정보를 가져올 수 있습니다.
 // 네이버, 구글 로그인은 테스트 아이디 등록이 필요합니다. 필요하시면 말씀해 주세요.
@@ -352,9 +352,9 @@ var setUserInfo = function(accessToken) {
     //2-2. 엑세스 토큰을 쿠키에 저장
     document.cookie = `access_token=${accessToken}; expires=${endDate.toGMTString()};`
     //3. 정보를 세션에 저장(로그인 페이지 외 다른 페이지에서도 사용할 수 있게)
-        //1) 프로필 정보
+        //1) 프로필 정보 세션에 저장
     sessionStorage.profile = JSON.stringify(profile);
-        //2) 로그인 여부
+        //2) 로그인 여부 세션에 저장
     login = true;
     sessionStorage.login = JSON.stringify(login);
         /* <참고> 세션에 저장한 정보 꺼내쓸 때 : 
@@ -396,7 +396,7 @@ const kakaoLogin = function(){
             .then(res => {
                 ACCESS_TOKEN_KAKAO = res.access_token;  //엑세스 토큰값 저장
                 Kakao.Auth.setAccessToken(ACCESS_TOKEN_KAKAO);
-                userInfoFunc(); //3. 사용자 정보 받기 실행
+                userInfoFunc(); //3. 사용자 정보 받기 함수 실행
             })
         }
     }
@@ -413,7 +413,7 @@ const kakaoLogin = function(){
         .then(res => {
             //유저 정보 저장
             profile.name = res.properties.nickname; //원래는 닉네임(nickname)인데 name에 넣음
-            //쿠키에 저장
+            //쿠키, 세션에 저장
             setUserInfo(ACCESS_TOKEN_KAKAO);
         })
     }
@@ -439,7 +439,6 @@ kakaoLogin()
 // 네이버는 콜백주소 url에 엑세스 토큰값을 보내기 때문에, 로그인 성공 시 바로 메인페이지로 이동하지 않습니다.
 // 일단 다시 로그인 페이지로 다시 돌아온 후 받아온 토큰값과 회원정보를 저장하고, 이후에 메인으로 이동합니다.
 const NAVER_CLIENT_ID = "cEjPiQLxtraGtftdtKot",
-    //   CLIENT_SECRET = "sXx4SV6rmO",
       CALLBACK_URI = SERVICE_URI;
 var naver_id_login = new naver_id_login(NAVER_CLIENT_ID, CALLBACK_URI);
 var state = naver_id_login.getUniqState();
@@ -461,7 +460,7 @@ function naverSignInCallback() {
     Object.keys(profile).forEach(key => {
         profile[key] = naver_id_login.getProfileData(key);
     })
-    //쿠키에 저장
+    //쿠키,세션에 저장
     setUserInfo(ACCESS_TOKEN_NAVER);
 }
 
@@ -514,7 +513,7 @@ const googleLogin = function(){
         params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
     }
     if (Object.keys(params).length > 0 && params['state']) {
-        var authInfo = JSON.parse(JSON.stringify(params)); //엑세스 토큰 뽑기
+        var authInfo = JSON.parse(JSON.stringify(params)); //주소창에서 엑세스 토큰 뽑기
         ACCESS_TOKEN_GOOGLE = authInfo['access_token']; //엑세스 토큰값만 저장
         fetch("https://www.googleapis.com/oauth2/v3/userinfo",{
             headers:{
