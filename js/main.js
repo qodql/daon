@@ -123,19 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const reviewList = document.querySelector('.review_list')
         const reviewListClone = document.querySelector('.review_list.clone')
         const maxReviews = data.community_review.slice(0, 5);
-        let influencer;
         maxReviews.forEach((v,i)=>{
-            if(v.influencer === true) {
-                influencer = true
-            } else {
-                influencer = false
-            }
             reviewList.innerHTML += `
                 <li>
                     <a href="./sub5_community_review.html">
                         <img src="./img/img_coumunity_review_0${v.id + 1}.jpg" alt="">
                         <div class="name_box">
-                            <p class="name ${influencer && true ? 'influencer' : ''}">@${v.review_id}</p>
+                            <p class="name ${v.influencer && true ? 'influencer' : ''}">@${v.review_id}</p>
                             <div class="rating">
                                 <img src="./img/icon/icon_star.svg" alt="">
                             </div>
@@ -149,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="./sub5_community_review.html">
                         <img src="./img/img_coumunity_review_0${v.id + 1}.jpg" alt="">
                         <div class="name_box">
-                            <p class="name">@${v.review_id}</p>
+                            <p class="name ${v.influencer && true ? 'influencer' : ''}">@${v.review_id}</p>
                             <div class="rating">
                                 <img src="./img/icon/icon_star.svg" alt="">
                             </div>
