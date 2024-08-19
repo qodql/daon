@@ -330,6 +330,7 @@ mo-s:
 .mypage .sub_container .contents .mypage_wrap .tab_cont .mypage_reservation table.mypage_reservation_list tr {
   width: 100%;
   display: flex;
+  align-items: center;
   padding: 24px 0;
   border-bottom: 2px solid #EFEFEF;
 }

@@ -510,7 +510,6 @@
                                 font-size: 24px;
                             }
                             &::before{
-                                height: 16px;
                                 top: 9px;
                             }
                         }
@@ -709,6 +708,9 @@
                             margin-top: 20px;
                             h3{
                                 font-size: 20px;
+                            }
+                            &::before{
+                                top: 6px;
                             }
                         }
                         .contact_info_txt{
