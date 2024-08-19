@@ -119,10 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 const weather_btn = document.querySelector('.weather_btn a');
                 const weather_icon = data.weather[0].icon;
                 const weather_temp = data.main.temp.toFixed(1);
-            
+                weather_btn.addEventListener("click", (e)=>{
+                    e.preventDefault();
+                })
                 weather_btn.innerHTML = `<img src='http://openweathermap.org/img/wn/${weather_icon}@2x.png'; alt='weather'>
                                          <span>${weather_temp}°</sapn>`
             })
+
+            // [↓] top_btn
+            const topBtn = document.querySelector(".top_btn a");
+            topBtn.addEventListener("click", (e)=>{
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            })
+    
 
             
         } else if (login) {
@@ -264,8 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
     })
-
-    
 
     const resize = () => {
         var minWidth = 480;

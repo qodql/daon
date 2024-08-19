@@ -265,6 +265,9 @@
 .step1 .sub_container .contents .data_area .room_list_wrap li .room_info .room_btn_wrap .room_select_btn.selected {
   background-color: #2f2f2f;
 }
+.step1 .sub_container .contents .data_area .room_list_wrap + .room_list_wrap {
+  margin-top: 64px;
+}
 
 .step2 .sub_container .contents .info_wrap {
   display: flex;
