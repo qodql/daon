@@ -331,8 +331,7 @@
 .review .sub_container .contents .images ul li a img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .review .sub_container .contents .pagination .pagination_num {
   display: flex;
@@ -808,8 +807,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -848,8 +846,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -887,8 +884,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 1499px) {
@@ -919,8 +915,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -959,8 +954,7 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (max-width: 479px) {
@@ -998,7 +992,6 @@
   .review .sub_container .contents .images ul li a img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }

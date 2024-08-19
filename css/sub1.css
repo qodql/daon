@@ -40,8 +40,7 @@
   grid-area: b;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-  -o-object-position: 0px -360px;
-     object-position: 0px -360px;
+  object-position: 0px -360px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
   height: 250px;
@@ -52,13 +51,11 @@
   grid-area: d;
 }
 .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-  -o-object-position: 0px -190px;
-     object-position: 0px -190px;
+  object-position: 0px -190px;
 }
 .intro .sub_container .contents .intro_grid_wrapper p img {
   position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
 }
 .intro .sub_container .contents .intro_txt {
@@ -299,8 +296,7 @@
     height: 220px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -294px;
-       object-position: 0px -294px;
+    object-position: 0px -294px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 220px;
@@ -309,8 +305,7 @@
     height: 345px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px -150px;
-       object-position: 0px -150px;
+    object-position: 0px -150px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 795px;
@@ -343,8 +338,7 @@
     height: 200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -200px;
-       object-position: 0px -200px;
+    object-position: 0px -200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 200px;
@@ -353,8 +347,7 @@
     height: 325px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px -26px;
-       object-position: 0px -26px;
+    object-position: 0px -26px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 717px;
@@ -464,8 +457,7 @@
     height: 180px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -125px;
-       object-position: 0px -125px;
+    object-position: 0px -125px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 180px;
@@ -533,8 +525,7 @@
     height: 170px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -90px;
-       object-position: 0px -90px;
+    object-position: 0px -90px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 170px;
@@ -572,8 +563,7 @@
     height: 300px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -497px;
-       object-position: 0px -497px;
+    object-position: 0px -497px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 300px;
@@ -582,8 +572,7 @@
     height: 300px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px -44px;
-       object-position: 0px -44px;
+    object-position: 0px -44px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p img {
     border-radius: 8px;
@@ -643,10 +632,7 @@
     background-size: 20px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(3) {
-    width: 0;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 {
-    margin-top: -80px;
+    display: none;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li {
     width: 100%;
@@ -660,9 +646,6 @@
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_tit::before {
     height: 16px;
     top: 9px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt {
-    margin-top: 16px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info .contact_info_txt li {
     height: 80px;
@@ -692,8 +675,7 @@
     height: 200px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -416px;
-       object-position: 0px -416px;
+    object-position: 0px -416px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 200px;
@@ -727,8 +709,7 @@
     height: 150px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -359px;
-       object-position: 0px -359px;
+    object-position: 0px -359px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(3) {
     height: 150px;
@@ -768,7 +749,7 @@
   }
   .contact .sub_container .contents .contact_map .contact_map_btn button a {
     font-size: 10px;
-    padding: 7px 4px;
+    padding: 0;
     margin-left: 13px;
   }
   .contact .sub_container .contents .contact_map .contact_map_btn .contact_map_naver_btn {
@@ -785,9 +766,6 @@
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info2 .contact_info_txt li:nth-child(3)::before {
     background-size: 16px;
-  }
-  .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 {
-    margin-top: -52px;
   }
   .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(1)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(2)::before, .contact .sub_container .contents .contact_infomation .contact_info.contact_info3 .contact_info_txt li:nth-child(3)::before {
     background-size: 16px;
@@ -812,12 +790,10 @@
 }
 @media screen and (max-width: 405px) {
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(2) img {
-    -o-object-position: 0px -230px;
-       object-position: 0px -230px;
+    object-position: 0px -230px;
   }
   .intro .sub_container .contents .intro_grid_wrapper p:nth-child(4) img {
-    -o-object-position: 0px -5px;
-       object-position: 0px -5px;
+    object-position: 0px -5px;
   }
   .intro .sub_container .contents .intro_txt {
     width: 260px;
