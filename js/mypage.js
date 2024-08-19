@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+    const isLogin = sessionStorage.getItem('login')
+
     //mypage tab
     const mypage_tab_btn = document.querySelectorAll('.mypage_tap_wrap .tab li');
     const mypage_tab_cont = document.querySelectorAll('.mypage_tap_wrap .tab_cont > div');
@@ -48,4 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
         mypage_room.innerText = "love 102호";
         mypage_person.innerText = "4";
     }
+
+    if(isLogin !== 'true') {
+        const firstTab = document.querySelector(".mypage_tap_wrap > .tab > li:first-child")
+        const secTab = document.querySelector(".mypage_tap_wrap > .tab > li:last-child")
+        const firstCont = document.querySelector(".mypage_tap_wrap > .tab_cont > div:first-child")
+        const secCont = document.querySelector(".mypage_tap_wrap > .tab_cont > div:last-child")
+        firstTab.style.cssText = 'display:none;'
+        firstCont.style.cssText = 'display:none;'
+        secTab.style.cssText = 'display:block; margin-left:0;'
+        secTab.classList.add("on")
+        secCont.classList.add("on")
+    }   
+
 })

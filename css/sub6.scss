@@ -677,7 +677,7 @@
         border-radius: 8px;
         overflow: hidden;
         .payment_btn {
-            width: 50%;
+            width: 100%;
             padding: 20px 0;
             font-size: 20px;
             font-weight: 700;
@@ -692,7 +692,7 @@
 .step3 {
     .sub_container {
         .contents {
-            .complete {
+            .complete_wrap {
                 text-align: center;
                 .img_wrap {
                     width: 80px;

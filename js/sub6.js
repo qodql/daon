@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("./data/sub2.json")
     .then((data)=> {return data.json()})
     .then((data)=>{
+        const isLogin = sessionStorage.getItem('login')
 
         // *****************[step1]******************* //
         const step1 = document.querySelector(".step1")
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const adult = localStorage.getItem('defaultQuickAdult');
         const child = localStorage.getItem('defaultQuickChild');
         let roomNum='', adultNum='', childNum='', defaultStartDate='',defaultEndDate='',defaultRoom='',defaultAdult='',defaultChild='';
-        let setStartDate='', setEndDate='';
+        let setStartDate='', setEndDate='', onlyType='', valueNum='';
 
         if(step1){
 
@@ -439,7 +440,6 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             
             const cookie = document.cookie.split(';');
-            let onlyType='', valueNum='';
             for(let i=0;i <cookie.length; i++) {
                 const getDataName = cookie[i].split('=')[0]
                 const getData = cookie[i].split('=')[1]
@@ -565,8 +565,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         start_date.innerHTML = setStartDate;
                         mb_start_date.innerHTML = setStartDate;
-                        end_date.innerHTML = setStartDate;
-                        mb_end_date.innerHTML = setStartDate;
+                        end_date.innerHTML = setEndDate;
+                        mb_end_date.innerHTML = setEndDate;
                     }
                 }
             }
@@ -584,66 +584,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
             localStorage.setRoom = JSON.stringify( setRoom )
     
-            paymentBtn.addEventListener("click", (e)=>{
-                e.preventDefault();
+            paymentBtn.addEventListener("click", ()=>{
                 let insertInfo = JSON.parse( localStorage.set );
                 let saveInfo = JSON.parse( localStorage.res );
 
-                localStorage.res = JSON.stringify( [...b,a] )
-                console.log(insertInfo);
-                console.log(saveInfo);
+                localStorage.res = JSON.stringify( [...b,a] )           
             })
+            if(isLogin === 'true') {
+                payment_btn.innerText = '회원 예약';
+                mb_payment_btn.innerText = '회원 예약';
+            } else {
+                payment_btn.innerText = '비회원 예약';
+                mb_payment_btn.innerText = '비회원 예약';
+            }
         }
         
 
-        
 
+        // *****************[step3]******************* //
+        const step3 = document.querySelector(".step3")
+        const txtWrap = document.querySelector(".complete_wrap .txt_wrap")
+        let nonMemNum = '';
+        if (step3) {
 
+            nonMemNum = new Date() * (1);
+            if(isLogin === 'true') {
+                txtWrap.innerHTML = `
+                <p>
+                    <span>다온펜션의 다양한 혜택과 서비스를 경험해보세요.<br/>언제든 온라인으로 예약을 확인, 변경 또는 취소하실 수 있습니다.</span>
+                </p>
+                `
+            } else {
+                localStorage.setItem("nonMemNum", nonMemNum)
+                txtWrap.innerHTML = `
+                <p>
+                    <strong>
+                        비회원 예약이 완료되었습니다.
+                        <span>예약코드 : {AA${nonMemNum}}</span>
+                    </strong>
+                    <span>다온펜션의 다양한 혜택과 서비스를 경험해보세요.<br/>언제든 온라인으로 예약을 확인, 변경 또는 취소하실 수 있습니다.</span>
+                </p>
+                `
+            }
+        }
+
+        // *****************[look]******************* //
+        const look = document.querySelector(".look")
+        const chkInput = document.querySelector(".non_mem_num_chk")
+        if(look) {
+            if(isLogin === 'true') {
+                isMem.addEventListener("click",()=>{
+                    window.location.href="./mypage.html"
+                })
+            } else {
+                isMem.addEventListener("click",()=>{
+                    window.location.href="./login.html"
+                })
+            }
+            non_member_btn.addEventListener("click", (e)=>{
+                let getNonMemNum = localStorage.getItem("nonMemNum")
+                if(chkInput.value === 'AA'+getNonMemNum) {
+                    window.location.href='./mypage.html'
+                } else {
+                    alert('번호를 다시 확인해주세요.')
+                }
+            })
+        }
     })
     
 })
-
-/*
-//디폴트값 
-let set = {
-    id:'',
-    adult:'',
-    child:'',
-    room:2,
-    startDate:'',
-    endDate:'',
-    roomInfo:[
-        {type:'love', roomNum: '101'},
-        {type:'only', roomNum: '102'},
-    ]
-}
-
-//데이터 갱신
-set.startDate = '';
-set.adult = 2;
-localStorage.set = JSON.Stringify( set );
-
-//예약하기버튼
-let a = JSON.parse( localStorage.set );
-let b = JSON.parse( localStorage.res );
-
-localStorage.res = JSON.Stringify( [...b,a] );
-
-*/
-
-
-// step1 -> step2 넘어갈때도 초기화되는 이슈.
-// window.addEventListener("beforeunload", function() {
-//     // 페이지를 떠날 때 localStorage 값 초기화
-//     localStorage.removeItem('defaultQuickStartDate');
-//     localStorage.removeItem('defaultQuickendDate');
-//     localStorage.removeItem('defaultQuickRoom');
-//     localStorage.removeItem('defaultQuickAdult');
-//     localStorage.removeItem('defaultQuickChild');
-
-//     document.cookie = `defaultStartDate=""`
-//     document.cookie = `defaultEndDate=""`
-//     document.cookie = `defaultRoom=""`
-//     document.cookie = `defaultAdult=""`
-//     document.cookie = `defaultChild=""`
-// });
