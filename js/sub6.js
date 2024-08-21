@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const room = localStorage.getItem('defaultQuickRoom');
         const adult = localStorage.getItem('defaultQuickAdult');
         const child = localStorage.getItem('defaultQuickChild');
-        let roomNum='', adultNum='', childNum='', defaultStartDate='',defaultEndDate='',defaultRoom='',defaultAdult='',defaultChild='';
+        const step2RoomInfo = localStorage.getItem('room');
+        let roomNum='', adultNum='', childNum='', defaultStartDate='',defaultEndDate='',defaultRoom='',defaultAdult='',defaultChild='',defaultPrice='';
         let setStartDate='', setEndDate='', onlyType='', valueNum='';
+        let objStep2RoomInfo = JSON.parse(step2RoomInfo) 
 
         if(step1){
 
@@ -47,9 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 defaultRoom = roomInput.value
                 defaultAdult = adultInput.value
                 defaultChild = childInput.value
+                defaultType = objStep2RoomInfo.type
+                defaultNum = objStep2RoomInfo.num
                 roomNum=roomInput.value;
                 childNum=childInput.value;
                 adultNum=adultInput.value;
+                onlyType=objStep2RoomInfo.type;
+                valueNum=objStep2RoomInfo.num;
             }
 
             document.cookie = `defaultStartDate=${defaultStartDate}`
@@ -57,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.cookie = `defaultRoom=${defaultRoom}`
             document.cookie = `defaultAdult=${defaultAdult}`
             document.cookie = `defaultChild=${defaultChild}`
+            document.cookie = `defaultType=${defaultType}`
+            document.cookie = `defaultNum=${defaultNum}`
 
             // [↓] step1 객실 수, 성인 수, 어린이 수 증감
             plusBtn.forEach((v,i)=>{
@@ -259,6 +267,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     </li>
                     `
                 })
+                const getDefaultPrice = document.querySelector(".room_price").textContent;
+                defaultPrice = parseInt(getDefaultPrice) * 1000;
+                document.cookie = `defaultPrice=${defaultPrice}`
             }
             
             listWrite(data.love)
@@ -266,60 +277,195 @@ document.addEventListener("DOMContentLoaded", () => {
         
             // [↓] step1 객실 선택
             const roomBtn = document.querySelectorAll(".room_select_btn");
-            let roomBtnSelected = '';
+            let roomBtnSelected = 0; // 선택된 방의 수를 저장하는 변수
             let selectedRooms = []; // 선택된 방들의 정보를 저장할 배열
 
-            roomBtn.forEach((v, i) => {
+            roomBtn.forEach((v) => {
                 v.addEventListener("click", (e) => {
                     e.target.classList.toggle("selected");
+
                     const roomBtnParent = e.target.closest('.room_info');
                     const roomPrice = roomBtnParent.querySelector('.room_price').textContent;
                     const roomType = roomBtnParent.querySelector('.room_name .tag').className;
                     const roomValueNum = roomBtnParent.querySelector('.room_name .room_value_num').textContent;
-            
+
                     // 방 정보 객체 생성
                     const roomInfo = {
                         price: roomPrice,
                         type: roomType,
                         valueNum: roomValueNum
                     };
-            
-                    if (e.target.classList.contains("selected")) {
-                        // 선택되었으면 배열에 추가
-                        selectedRooms.push(roomInfo);
-                    } else {
-                        // 선택 해제되었으면 배열에서 제거
+
+                    if (roomBtnElement.classList.contains("selected")) {
+                        // 이미 선택된 경우 선택 해제 및 배열에서 제거
+                        roomBtnElement.classList.remove("selected");
                         selectedRooms = selectedRooms.filter(room => room.valueNum !== roomValueNum);
+                    } else {
+                        // 선택되지 않은 경우 선택 추가 및 배열에 추가
+                        roomBtnElement.classList.add("selected");
+                        selectedRooms.push(roomInfo);
                     }
-            
+
+                    // 선택된 버튼의 수를 계산
+                    roomBtnSelected = selectedRooms.length;
+
                     // 배열을 JSON 문자열로 변환하여 쿠키에 저장
                     document.cookie = `roomInfo=${JSON.stringify(selectedRooms)}; path=/;`;
-            
-                    roomBtnSelected = document.querySelectorAll(".room_select_btn.selected").length;
+
+                    // 선택 가능한 객실 수를 초과한 경우 처리
                     if (roomBtnSelected > roomNum) {
                         e.target.classList.remove("selected");
-                        roomBtnSelected--;
-            
-                        // 선택 취소된 항목을 배열에서 제거
-                        selectedRooms.pop();
-            
+                        selectedRooms.pop(); // 마지막으로 추가된 방 정보를 배열에서 제거
+                        roomBtnSelected--; // 선택된 버튼의 수 감소
+
                         // 쿠키 업데이트
                         document.cookie = `roomInfo=${JSON.stringify(selectedRooms)}; path=/;`;
-            
                         alert('선택 가능한 객실 수를 초과하였습니다.');
+                    }
+                    
+                });
+
+                // localStorage에서 'room' 데이터 가져오기
+                const step2RoomData = JSON.parse(localStorage.getItem('room'));
+
+                // 해당 roomType과 roomNum을 추출
+                const step2RoomType = step2RoomData.type;
+                const step2RoomNum = step2RoomData.num;
+
+                // 모든 li 요소를 순회하면서 조건에 맞는 요소를 찾음
+                document.querySelectorAll('li').forEach(li => {
+                    const roomValueNumElement = li.querySelector('.room_value_num');
+                    const tagTypeElement = li.querySelector('.tag');
+
+                    // roomValueNumElement와 tagTypeElement가 존재하는지 확인
+                    if (roomValueNumElement && tagTypeElement) {
+                        const roomValueNum = roomValueNumElement.textContent.replace('호', '');
+                        const tagType = tagTypeElement.classList.contains(step2RoomType);
+
+                        // roomNum과 roomType이 일치하는지 확인
+                        if (roomValueNum === step2RoomNum && tagType) {
+                            // 일치하는 요소의 room_select_btn에 selected 클래스 추가
+                            const roomSelectBtn = li.querySelector('.room_select_btn');
+                            if (roomSelectBtn) {
+                                roomSelectBtn.classList.add('selected');
+                                
+                                // 이미 selected 상태일 경우 배열에 추가
+                                const roomPrice = li.querySelector('.room_price').textContent;
+                                const roomInfo = {
+                                    price: roomPrice,
+                                    type: tagTypeElement.className,
+                                    valueNum: roomValueNum
+                                };
+                                selectedRooms.push(roomInfo);
+                                roomBtnSelected = selectedRooms.length; // 선택된 방의 수 업데이트
+                            }
+                        }
                     }
                 });
             });
+            
+            // 페이지 로드 시 이미 선택된 방을 초기화
+            // window.addEventListener('DOMContentLoaded', () => {
+            //     const step2RoomData = JSON.parse(localStorage.getItem('room'));
+            //     if (step2RoomData) {
+            //         const step2RoomType = step2RoomData.type;
+            //         const step2RoomNum = step2RoomData.num;
+
+            //         document.querySelectorAll('li').forEach(li => {
+            //             const roomValueNumElement = li.querySelector('.room_value_num');
+            //             const tagTypeElement = li.querySelector('.tag');
+
+            //             if (roomValueNumElement && tagTypeElement) {
+            //                 const roomValueNum = roomValueNumElement.textContent.replace('호', '');
+            //                 const tagType = tagTypeElement.classList.contains(step2RoomType);
+
+            //                 if (roomValueNum === step2RoomNum && tagType) {
+            //                     const roomSelectBtn = li.querySelector('.room_select_btn');
+            //                     if (roomSelectBtn) {
+            //                         roomSelectBtn.classList.add('selected');
+
+            //                         const roomPrice = li.querySelector('.room_price').textContent;
+            //                         const roomInfo = {
+            //                             price: roomPrice,
+            //                             type: tagTypeElement.className,
+            //                             valueNum: roomValueNum
+            //                         };
+            //                         selectedRooms.push(roomInfo);
+            //                         roomBtnSelected = selectedRooms.length;
+            //                     }
+            //                 }
+            //             }
+            //         });
+            //     }
+            // });
+
+            // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
+            nextBtn.addEventListener("click", (e) => {
+                if (roomBtnSelected < roomNum) {
+                    alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
+                } else {
+                    window.location.href = './sub6_reservation_step2.html';
+                }
+            });
+
+            // const roomBtn = document.querySelectorAll(".room_select_btn");
+            // let roomBtnSelected = '';
+            // let selectedRooms = []; // 선택된 방들의 정보를 저장할 배열
+
+            // roomBtn.forEach((v, i) => {
+            //     v.addEventListener("click", (e) => {
+            //         e.target.classList.toggle("selected");
+            //         const roomBtnParent = e.target.closest('.room_info');
+            //         const roomPrice = roomBtnParent.querySelector('.room_price').textContent;
+            //         const roomType = roomBtnParent.querySelector('.room_name .tag').className;
+            //         const roomValueNum = roomBtnParent.querySelector('.room_name .room_value_num').textContent;
+            
+            //         // 방 정보 객체 생성
+            //         const roomInfo = {
+            //             price: roomPrice,
+            //             type: roomType,
+            //             valueNum: roomValueNum
+            //         };
+            
+            //         if (e.target.classList.contains("selected")) {
+            //             // 선택되었으면 배열에 추가
+            //             selectedRooms.push(roomInfo);
+            //         } else {
+            //             // 선택 해제되었으면 배열에서 제거
+            //             selectedRooms = selectedRooms.filter(room => room.valueNum !== roomValueNum);
+            //         }
+            
+            //         // 배열을 JSON 문자열로 변환하여 쿠키에 저장
+            //         document.cookie = `roomInfo=${JSON.stringify(selectedRooms)}; path=/;`;
+            
+            //         roomBtnSelected = document.querySelectorAll(".room_select_btn.selected").length;
+            //         if (roomBtnSelected > roomNum) {
+            //             e.target.classList.remove("selected");
+            //             roomBtnSelected--;
+            
+            //             // 선택 취소된 항목을 배열에서 제거
+            //             selectedRooms.pop();
+            
+            //             // 쿠키 업데이트
+            //             document.cookie = `roomInfo=${JSON.stringify(selectedRooms)}; path=/;`;
+            
+            //             alert('선택 가능한 객실 수를 초과하였습니다.');
+            //         }
+            //     });
+            // });
+            
 
 
             // [↓] step1 정보 입력 버튼 (다음페이지로 넘어가는 버튼)
-            nextBtn.addEventListener("click", (e)=>{
-                if (!roomBtnSelected || roomBtnSelected < roomNum) {
-                    alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
-                } else if(roomBtnSelected == roomNum){
-                    window.location.href='./sub6_reservation_step2.html'
-                }
-            })
+            // nextBtn.addEventListener("click", (e)=>{
+            //     if (!roomBtnSelected || roomBtnSelected < roomNum) {
+            //         alert(`최소 ${roomNum}개의 객실을 선택해주세요.`);
+            //     } else if(roomBtnSelected == roomNum){
+            //         window.location.href='./sub6_reservation_step2.html'
+            //     }
+            // })
+
+
 
         }
     
@@ -343,6 +489,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const paymentBtn = document.querySelector(".payment_btn.member")
             
         if (step2) {
+            onlyType=objStep2RoomInfo.type;
+            valueNum=objStep2RoomInfo.num;
             cardAllInput.forEach((v,i)=>{
                 if(v.classList.contains("card_cvc")){
                     cardCvcInput.addEventListener("focus", ()=>{
@@ -506,6 +654,28 @@ document.addEventListener("DOMContentLoaded", () => {
                         primary.innerHTML += totalPrimaryPrice;
                         sale.innerHTML += totalPrimaryPrice * 0.8;
                         mb_sale.innerHTML += totalPrimaryPrice * 0.8;
+                    }else {
+                        if (getDataName.includes('defaultPrice')) {
+                            primary.innerHTML = getData;
+                            sale.innerHTML = getData * 0.8;
+                            mb_sale.innerHTML = getData * 0.8;
+                        }
+                        if (getDataName.includes('defaultType')) {
+                            let roomTagNum = document.querySelector(".room_tag_num")
+                            let roomTagNumMb = document.querySelector(".mb_room_tag_num")
+                            roomTagNum.innerHTML += `
+                            <span>
+                                <span id="mb_tag" class="${onlyType}">${onlyType}</span>
+                                <em id="mb_room_num_value">${valueNum}</em>
+                            </span>
+                            `
+                            roomTagNumMb.innerHTML += `
+                            <span>
+                                <span id="mb_tag" class="${onlyType}">${onlyType}</span>
+                                <em id="mb_room_num_value">${valueNum}</em>
+                            </span>
+                            `
+                        }
                     }
                 }
 
@@ -571,6 +741,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
+
+
             let setRoom = {
                 ea: (room_data.textContent),
                 adult: adult_num.textContent,
@@ -581,7 +753,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 setStartDate: setStartDate, // 할당된 값을 setRoom 객체에 포함
                 setEndDate: setEndDate // 할당된 값을 setRoom 객체에 포함
             }
-
             localStorage.setRoom = JSON.stringify( setRoom )
     
             paymentBtn.addEventListener("click", ()=>{
