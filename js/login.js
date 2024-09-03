@@ -325,11 +325,11 @@ if(accessToken.length && accessToken[0].split('=')[1] === 'true'){ // 엑세스 
 
 /* sns 로그인 공통 변수, 함수 ---------------------------------*/
 //(1) 서비스 주소(로그인 버튼 있는 페이지)
-const SERVICE_URI = "http://127.0.0.1:5501/login.html";
+const SERVICE_URI = "https://qodql.github.io/daon/login.html";
 //(2) 콜백할 주소(리디렉트)
-const REDIRECT_URI = "http://127.0.0.1:5501/login.html";
+const REDIRECT_URI = "https://qodql.github.io/daon/login.html";
 //(3) 콜백 후 이동할 주소(메인)
-const AFTER_REDIRECT_URI = "http://127.0.0.1:5501/";    //로그인 성공 후 메인페이지 이동
+const AFTER_REDIRECT_URI = "https://qodql.github.io/daon/index.html";    //로그인 성공 후 메인페이지 이동
 //(4) 유저 정보 구조
 profile =  {
     email: '',
