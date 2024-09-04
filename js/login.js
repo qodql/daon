@@ -117,12 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const verifyNumGenerator = (() => {
         //앞3자리: 100~999사이의 랜덤숫자
         let ranNum1 = (Math.floor((Math.random()*900)) + 100);
-        //뒤3자리: 밀리초
+        //뒤3자리: 생성 시점의 밀리초
         let today = new Date();
         let milliSec = today.getMilliseconds();
         let ranNum2 = milliSec.toString().padStart(3, '0');
         //합치기
         let verifyNum = parseInt(ranNum1.toString() + ranNum2.toString());
+        console.log(`인증번호: ${verifyNum}`);
         return verifyNum;
     })
     //인풋박스 내부 : 우측 [x, 눈] 버튼 input시 활성화, blur 시 비활성화
@@ -200,8 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         pwCheckBox.addEventListener('blur', function(){
             let idx = 2;
-            console.log(pwCheckBox.value, pwBox.value);
-            
             let result = pwEqual(pwCheckBox.value, pwBox.value);
             showErrorMsg(result, pwCheckBox, idx);
         })
@@ -212,11 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         phoneBox.addEventListener('blur', function(){
             let idx = 4;
-            let hasValue = phoneBox.value;
             let result = phoneChecker(phoneBox.value);
             showErrorMsg(result, phoneBox, idx);
-            
-            console.log(`값유무: ${hasValue !== ''}, 유효: ${result.isValid}`);
             //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
             if(result.isValid === true){
                 verifyBtn.disabled = false;
@@ -236,7 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
             verifyBox.addEventListener('blur', function(){
                 let result = verifyNumEqual(verifyBox.value, verifyNum);
                 showErrorMsg(result, verifyBox, idx);
-                console.log(verifyNum);
             })
         })
     }
@@ -259,7 +254,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     body.classList.remove("prevent_scroll");
                 });
                 cancelBtn.addEventListener('click', function(){
-                    history.back();
+                    // history.back();
+                    location.href = './index.html';
                 })
             }
             popupBtnFunc();
