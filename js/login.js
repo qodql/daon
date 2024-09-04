@@ -297,9 +297,13 @@ document.addEventListener("DOMContentLoaded", () => {
             })            
             break;
         case 'join_complete':   //이름 표시
+            console.log('실행');
             const name = document.querySelector('.greeting .name');
-            let userName = JSON.parse(sessionStorage.profile); 
-            name.innerText = userName.name;
+            console.log(name);
+            let userInfo = JSON.parse(sessionStorage.profile);
+            console.log(userInfo);
+            console.log(userInfo.name);
+            name.innerText = userInfo.name;
             break;
     }
 })  //DOMloaded 괄호
