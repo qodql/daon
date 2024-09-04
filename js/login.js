@@ -235,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         })
     }
-    // inputsChecking();
 /*[↓] 페이지 별 개별 코드------------------------------------------------------------------------------------- */
     //페이지 이름(login, join, join_complete)가져오기 (페이지마다 실행하는 코드가 다르게)
     const url = location.pathname;
@@ -299,12 +298,8 @@ document.addEventListener("DOMContentLoaded", () => {
             })            
             break;
         case 'join_complete':   //이름 표시
-            console.log('실행');
             const name = document.querySelector('.greeting .name');
-            console.log(name);
             let userInfo = JSON.parse(sessionStorage.profile);
-            console.log(userInfo);
-            console.log(userInfo.name);
             name.innerText = userInfo.name;
             break;
     }
