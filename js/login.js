@@ -235,15 +235,17 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         })
     }
-    inputsChecking();
+    // inputsChecking();
 /*[↓] 페이지 별 개별 코드------------------------------------------------------------------------------------- */
     //페이지 이름(login, join, join_complete)가져오기 (페이지마다 실행하는 코드가 다르게)
     const url = location.pathname;
     let pageName = url.substring(url.lastIndexOf('/')+1,url.lastIndexOf('.'));
     switch(pageName){
         case 'login':
+            inputsChecking();
             break;
         case 'join':
+            inputsChecking();
             //팝업의 계속진행/중단하기 버튼 함수
             const popupBtnFunc = function(){
                 const popup = document.querySelector('.popup.join');
