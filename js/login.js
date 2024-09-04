@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
           eyeBtn = document.querySelectorAll('.pw_box .input_eye_btn'),
           errorMsgs = document.querySelectorAll('.input_box .error_msg');
     const submitBtn = document.querySelector('.join_join_btn button');
-    const form = document.querySelector('form');
+    const joinForm = document.querySelector('#join_form');
 /*[↓] 공통 함수, 공통 기능 ------------------------------------------------------------------------------------- */        
     // 이메일 유효성 검사 함수(값이 유효하면 profile에 저장까지)
     const emailChecker = (email) => {
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             //가입완료 버튼 비활성화/활성화 검사 함수
             const submitChecker = () => {
-                let submitCondition = form.checkValidity();
+                let submitCondition = joinForm.checkValidity();
                     if(submitCondition === true){
                         submitBtn.disabled = false;
                     }else{
@@ -292,6 +292,8 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.addEventListener('click', function(){
                 let accessToken = accessTokenGenerator();
                 setUserInfo(accessToken);
+                joinForm.action="./join_complete.html";
+                joinForm.submit();
             })            
             break;
         case 'join_complete':   //이름 표시
