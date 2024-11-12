@@ -324,11 +324,11 @@ if(accessToken.length && accessToken[0].split('=')[1] === 'true'){ // 엑세스 
 
 /* sns 로그인 공통 변수, 함수 ---------------------------------*/
 //(1) 서비스 주소(로그인 버튼 있는 페이지)
-const SERVICE_URI = "https://qodql.github.io/daon/login.html";
+const SERVICE_URI = "https://lee-hanjoo.github.io/GreenDaon/login.html";
 //(2) 콜백할 주소(리디렉트)
-const REDIRECT_URI = "https://qodql.github.io/daon/login.html";
+const REDIRECT_URI = "https://lee-hanjoo.github.io/GreenDaon/login.html";
 //(3) 콜백 후 이동할 주소(메인)
-const AFTER_REDIRECT_URI = "https://qodql.github.io/daon/index.html";    //로그인 성공 후 메인페이지 이동
+const AFTER_REDIRECT_URI = "https://lee-hanjoo.github.io/GreenDaon/index.html";    //로그인 성공 후 메인페이지 이동
 //(4) 유저 정보 구조
 profile =  {
     email: '',
@@ -367,7 +367,7 @@ var setUserInfo = function(accessToken) {
 
 /* 카카오 ---------------------------------*/
 const kakaoLogin = function(){
-    const REST_API_KEY = "b87b0bf5c70402fe02aec9e63d71cf0a";
+    const REST_API_KEY = "15da07f822138b93809f0cb5576987f6";
     let AUTHORIZE_CODE_KAKAO = new URLSearchParams(location.search),  //인가코드는 매번 랜덤하게 바뀜
         ACCESS_TOKEN_KAKAO = "";
     const kakao = document.querySelector('.kakao'); //로그인 버튼
@@ -437,7 +437,7 @@ kakaoLogin()
 /* 네이버 : 네이버는 함수안에 넣으면 스코프 이슈 발생, 못넣음 ---------------------------------*/
 // 네이버는 콜백주소 url에 엑세스 토큰값을 보내기 때문에, 로그인 성공 시 바로 메인페이지로 이동하지 않습니다.
 // 일단 다시 로그인 페이지로 다시 돌아온 후 받아온 토큰값과 회원정보를 저장하고, 이후에 메인으로 이동합니다.
-const NAVER_CLIENT_ID = "cEjPiQLxtraGtftdtKot",
+const NAVER_CLIENT_ID = "6gOTaHzRnCOg15_AIgvi",
       CALLBACK_URI = SERVICE_URI;
 var naver_id_login = new naver_id_login(NAVER_CLIENT_ID, CALLBACK_URI);
 var state = naver_id_login.getUniqState();
@@ -469,7 +469,7 @@ naver.addEventListener('click', function(){
 
 /* 구글 ---------------------------------*/
 const googleLogin = function(){
-    const GOOGLE_CLIENT_ID = '507623855565-u1kp5fvsfg2e263jpq2vmtage1rmmkcf.apps.googleusercontent.com';
+    const GOOGLE_CLIENT_ID = '838974498419-aoj2vfs5ro97eq2b36lj54fg5j6d8mdg.apps.googleusercontent.com';
     const google = document.querySelector('.google');
     
     function signInGoogle(){
