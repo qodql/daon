@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
           eyeBtn = document.querySelectorAll('.pw_box .input_eye_btn'),
           errorMsgs = document.querySelectorAll('.input_box .error_msg');
     const submitBtn = document.querySelector('.join_join_btn button');
-    const joinForm = document.querySelector('#join_form');
+    const form = document.querySelector('form');
 /*[↓] 공통 함수, 공통 기능 ------------------------------------------------------------------------------------- */        
     // 이메일 유효성 검사 함수(값이 유효하면 profile에 저장까지)
     const emailChecker = (email) => {
@@ -117,13 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const verifyNumGenerator = (() => {
         //앞3자리: 100~999사이의 랜덤숫자
         let ranNum1 = (Math.floor((Math.random()*900)) + 100);
-        //뒤3자리: 생성 시점의 밀리초
+        //뒤3자리: 밀리초
         let today = new Date();
         let milliSec = today.getMilliseconds();
         let ranNum2 = milliSec.toString().padStart(3, '0');
         //합치기
         let verifyNum = parseInt(ranNum1.toString() + ranNum2.toString());
-        console.log(`인증번호: ${verifyNum}`);
         return verifyNum;
     })
     //인풋박스 내부 : 우측 [x, 눈] 버튼 input시 활성화, blur 시 비활성화
@@ -201,6 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         pwCheckBox.addEventListener('blur', function(){
             let idx = 2;
+            console.log(pwCheckBox.value, pwBox.value);
+            
             let result = pwEqual(pwCheckBox.value, pwBox.value);
             showErrorMsg(result, pwCheckBox, idx);
         })
@@ -211,8 +212,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         phoneBox.addEventListener('blur', function(){
             let idx = 4;
+            let hasValue = phoneBox.value;
             let result = phoneChecker(phoneBox.value);
             showErrorMsg(result, phoneBox, idx);
+            
+            console.log(`값유무: ${hasValue !== ''}, 유효: ${result.isValid}`);
             //휴대폰 번호 유효성 검사 통과 시 인증번호 버튼 활성화
             if(result.isValid === true){
                 verifyBtn.disabled = false;
@@ -232,19 +236,19 @@ document.addEventListener("DOMContentLoaded", () => {
             verifyBox.addEventListener('blur', function(){
                 let result = verifyNumEqual(verifyBox.value, verifyNum);
                 showErrorMsg(result, verifyBox, idx);
+                console.log(verifyNum);
             })
         })
     }
+    inputsChecking();
 /*[↓] 페이지 별 개별 코드------------------------------------------------------------------------------------- */
     //페이지 이름(login, join, join_complete)가져오기 (페이지마다 실행하는 코드가 다르게)
     const url = location.pathname;
     let pageName = url.substring(url.lastIndexOf('/')+1,url.lastIndexOf('.'));
     switch(pageName){
         case 'login':
-            inputsChecking();
             break;
         case 'join':
-            inputsChecking();
             //팝업의 계속진행/중단하기 버튼 함수
             const popupBtnFunc = function(){
                 const popup = document.querySelector('.popup.join');
@@ -255,8 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     body.classList.remove("prevent_scroll");
                 });
                 cancelBtn.addEventListener('click', function(){
-                    // history.back();
-                    location.href = './index.html';
+                    history.back();
                 })
             }
             popupBtnFunc();
@@ -278,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             //가입완료 버튼 비활성화/활성화 검사 함수
             const submitChecker = () => {
-                let submitCondition = joinForm.checkValidity();
+                let submitCondition = form.checkValidity();
                     if(submitCondition === true){
                         submitBtn.disabled = false;
                     }else{
@@ -293,14 +296,12 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.addEventListener('click', function(){
                 let accessToken = accessTokenGenerator();
                 setUserInfo(accessToken);
-                joinForm.action="./join_complete.html";
-                joinForm.submit();
             })            
             break;
         case 'join_complete':   //이름 표시
             const name = document.querySelector('.greeting .name');
-            let userInfo = JSON.parse(sessionStorage.profile);
-            name.innerText = userInfo.name;
+            let userName = JSON.parse(sessionStorage.profile); 
+            name.innerText = userName.name;
             break;
     }
 })  //DOMloaded 괄호
@@ -324,11 +325,11 @@ if(accessToken.length && accessToken[0].split('=')[1] === 'true'){ // 엑세스 
 
 /* sns 로그인 공통 변수, 함수 ---------------------------------*/
 //(1) 서비스 주소(로그인 버튼 있는 페이지)
-const SERVICE_URI = "https://lee-hanjoo.github.io/GreenDaon/login.html";
+const SERVICE_URI = "https://qodql.github.io/daon/login.html";
 //(2) 콜백할 주소(리디렉트)
-const REDIRECT_URI = "https://lee-hanjoo.github.io/GreenDaon/login.html";
+const REDIRECT_URI = "https://qodql.github.io/daon/login.html";
 //(3) 콜백 후 이동할 주소(메인)
-const AFTER_REDIRECT_URI = "https://lee-hanjoo.github.io/GreenDaon/index.html";    //로그인 성공 후 메인페이지 이동
+const AFTER_REDIRECT_URI = "https://qodql.github.io/daon/index.html";    //로그인 성공 후 메인페이지 이동
 //(4) 유저 정보 구조
 profile =  {
     email: '',
@@ -367,7 +368,7 @@ var setUserInfo = function(accessToken) {
 
 /* 카카오 ---------------------------------*/
 const kakaoLogin = function(){
-    const REST_API_KEY = "15da07f822138b93809f0cb5576987f6";
+    const REST_API_KEY = "b87b0bf5c70402fe02aec9e63d71cf0a";
     let AUTHORIZE_CODE_KAKAO = new URLSearchParams(location.search),  //인가코드는 매번 랜덤하게 바뀜
         ACCESS_TOKEN_KAKAO = "";
     const kakao = document.querySelector('.kakao'); //로그인 버튼
@@ -437,7 +438,7 @@ kakaoLogin()
 /* 네이버 : 네이버는 함수안에 넣으면 스코프 이슈 발생, 못넣음 ---------------------------------*/
 // 네이버는 콜백주소 url에 엑세스 토큰값을 보내기 때문에, 로그인 성공 시 바로 메인페이지로 이동하지 않습니다.
 // 일단 다시 로그인 페이지로 다시 돌아온 후 받아온 토큰값과 회원정보를 저장하고, 이후에 메인으로 이동합니다.
-const NAVER_CLIENT_ID = "6gOTaHzRnCOg15_AIgvi",
+const NAVER_CLIENT_ID = "cEjPiQLxtraGtftdtKot",
       CALLBACK_URI = SERVICE_URI;
 var naver_id_login = new naver_id_login(NAVER_CLIENT_ID, CALLBACK_URI);
 var state = naver_id_login.getUniqState();
@@ -469,7 +470,7 @@ naver.addEventListener('click', function(){
 
 /* 구글 ---------------------------------*/
 const googleLogin = function(){
-    const GOOGLE_CLIENT_ID = '838974498419-aoj2vfs5ro97eq2b36lj54fg5j6d8mdg.apps.googleusercontent.com';
+    const GOOGLE_CLIENT_ID = '507623855565-u1kp5fvsfg2e263jpq2vmtage1rmmkcf.apps.googleusercontent.com';
     const google = document.querySelector('.google');
     
     function signInGoogle(){
