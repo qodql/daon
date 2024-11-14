@@ -87,12 +87,12 @@
 
 
 
-## 🖱️ 유즈 케이스
+## 👥 유즈 케이스
 ![usecase](https://github.com/user-attachments/assets/c4e9be7d-df79-444f-95d7-e4a9fb6c9a0d)
 
 
 
-## 🔄 플로우 차트
+## 🔀 플로우 차트
 ![flow](https://github.com/user-attachments/assets/d5f47241-1e84-4a8e-a98d-fb4bc218f2ae)
 
 
