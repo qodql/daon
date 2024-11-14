@@ -87,7 +87,7 @@
 
 
 
-## 👥 유즈 케이스
+## 👥 유스 케이스
 ![usecase](https://github.com/user-attachments/assets/c4e9be7d-df79-444f-95d7-e4a9fb6c9a0d)
 
 
