@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // 비밀번호 유효성 검사 함수
     const pwChecker = (pw) => { 
-        //조건: 영문/숫자/특문 각각 1개 이상의 조합으로 8~15자
+        //조건: 영문/숫자/특문 각각 1개 이상의 조합으로 8~15자, 특문은 키보드로 입력가능한 모든 특문을 포함함.
         const pwRegex = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,15}$/;
         let errorMsg = '';
         let isValid = false;
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //휴대폰 번호 유효성 검사 함수
     const phoneChecker = (phone) => {
-        //조건: 숫자만 입력 가능, (010,011,016,017,018,019)으로 시작, 10자 이상 11자 미만
+        //조건: 숫자만 입력 가능, (010,011,016,017,018,019)으로 시작, 10~11자
         const phoneRegex = /^01[016789][0-9]{3,4}[0-9]{4}$/;
         let errorMsg = '';
         let isValid = false;
