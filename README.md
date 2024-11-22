@@ -34,7 +34,7 @@
 | 이름   | GitHub                               | 직무           |
 |:------:|:-----------------------------------:|:--------------:|
 | 이한주 | [Lee-Hanjoo](https://github.com/Lee-Hanjoo) | 팀장, 디자인   |
-| 성주영 | [0011git](https://github.com/0011git) | 리소스 수집 |
+| 성주영 | [0011git](https://github.com/0011git/daon-sjy#%EB%8B%B4%EB%8B%B9-%EA%B0%9C%EB%B0%9C-%EC%83%81%EC%84%B8--%EC%84%B1%EC%A3%BC%EC%98%81) | 리소스 수집 |
 | 윤경빈 | [qodql](https://github.com/qodql)   | 배포           |
 | 이홍영 | [Infouse](https://github.com/Infouse) | 개발           |
 | 허다영 | [Pon119](https://github.com/Pon119) | 기획           |
