@@ -31,8 +31,7 @@
   flex-shrink: 0;
 }
 .facilities_common .sub_container .contents .sub3_contents .facilities_img a img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .facilities_common .sub_container .contents .sub3_contents .facilities_img a img .img:nth-last-of-type(1) {
   position: absolute;
