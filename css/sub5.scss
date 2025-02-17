@@ -44,7 +44,7 @@
         }
 
         th {
-          background-color: rgba(154, 190, 248, 0.22);
+          background-color: #efefef;
           font-size: 22px;
           font-weight: 700;
           padding: 16px;
@@ -124,7 +124,6 @@
 
   .notice_inner_3 {
     border: solid 1px #afafaf;
-
     table {
       width: 100%;
 
@@ -138,7 +137,6 @@
 
       td {
         padding: 15px 15px 15px 40px;
-
         &:nth-of-type(1) {
           width: 80px;
         }
@@ -149,7 +147,6 @@
   .notice_list {
     margin: 80px auto;
     text-align: center;
-
     a {
       padding: 16px 40px;
       border: #357ef1;

@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 .notice .sub_container .contents table th {
-  background-color: rgba(154, 190, 248, 0.22);
+  background-color: #efefef;
   font-size: 22px;
   font-weight: 700;
   padding: 16px;
