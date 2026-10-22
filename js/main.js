@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // [↓] swiper
-    var swiper = new Swiper(".room_list", {
+    // loop + centeredSlides에 슬라이드가 부족해서 4개 → 8개로 복제
+    const ROOM_COUNT = 4; // 실제 객실 슬라이드 개수
+    const roomWrapper = document.querySelector(".room_list .swiper-wrapper");
+    roomWrapper.innerHTML += roomWrapper.innerHTML;
+
+    var roomSwiper = new Swiper(".room_list", {
         slidesPerView: 1.04,
         spaceBetween: 40,
         centeredSlides: true,
@@ -11,33 +16,50 @@ document.addEventListener("DOMContentLoaded", () => {
             disableOnInteraction: false,
         },
         pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
+            el: ".room_list .swiper-pagination",
+            type: "custom",
+            // 복제된 슬라이드도 0~3번으로 계산해서 점 4개만 그림
+            renderCustom: (swiper) => {
+                const active = swiper.realIndex % ROOM_COUNT;
+                let html = "";
+                for (let i = 0; i < ROOM_COUNT; i++) {
+                    html += `<span class="swiper-pagination-bullet ${i === active ? "swiper-pagination-bullet-active" : ""}" data-i="${i}"></span>`;
+                }
+                return html;
+            },
         },
         navigation: {
             nextEl: ".swiper-button-next.room_next",
             prevEl: ".swiper-button-prev.room_prev",
         },
         breakpoints: {
-        
-          1401: {
-            slidesPerView: 1.36,  //브라우저가 1401보다 클 때
-            spaceBetween: 40,
-          },
-          1279: {
-            slidesPerView: 1.16,  //브라우저가 1279 클 때
-            spaceBetween: 40,
-          },
-          768: {
-            slidesPerView: 1.16,  //브라우저가 767보다 클 때
-            spaceBetween: 16,
-          },
-          480: {
-            slidesPerView: 1.04,  //브라우저가 480보다 클 때
-            spaceBetween: 16,
-          },
+            1401: {
+                slidesPerView: 1.36,  //브라우저가 1401보다 클 때
+                spaceBetween: 40,
+            },
+            1279: {
+                slidesPerView: 1.16,  //브라우저가 1279보다 클 때
+                spaceBetween: 40,
+            },
+            768: {
+                slidesPerView: 1.16,  //브라우저가 767보다 클 때
+                spaceBetween: 16,
+            },
+            480: {
+                slidesPerView: 1.04,  //브라우저가 480보다 클 때
+                spaceBetween: 16,
+            },
         },
     });
+
+    // 점 클릭 시 해당 객실로 이동 + 기존 bullet 스타일이 적용되도록 클래스 추가
+    const roomPagination = document.querySelector(".room_list .swiper-pagination");
+    roomPagination.classList.add("swiper-pagination-bullets", "swiper-pagination-horizontal");
+    roomPagination.addEventListener("click", (e) => {
+        const bullet = e.target.closest("[data-i]");
+        if (bullet) roomSwiper.slideToLoop(Number(bullet.dataset.i));
+    });
+
     var swiper = new Swiper(".event_list", {
         slidesPerView: "auto",
         spaceBetween: 20,
