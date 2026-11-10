@@ -15,19 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             delay: 5000,
             disableOnInteraction: false,
         },
-        pagination: {
-            el: ".room_list .swiper-pagination",
-            type: "custom",
-            // 복제된 슬라이드도 0~3번으로 계산해서 점 4개만 그림
-            renderCustom: (swiper) => {
-                const active = swiper.realIndex % ROOM_COUNT;
-                let html = "";
-                for (let i = 0; i < ROOM_COUNT; i++) {
-                    html += `<span class="swiper-pagination-bullet ${i === active ? "swiper-pagination-bullet-active" : ""}" data-i="${i}"></span>`;
-                }
-                return html;
-            },
-        },
+        // pagination은 아래에서 직접 만듦 (점 4개 유지 + transition 살리기)
         navigation: {
             nextEl: ".swiper-button-next.room_next",
             prevEl: ".swiper-button-prev.room_prev",
@@ -52,9 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
-    // 점 클릭 시 해당 객실로 이동 + 기존 bullet 스타일이 적용되도록 클래스 추가
+    // [↓] room 페이지네이션 직접 생성
+    // 점은 처음에 한 번만 만들고, 슬라이드가 바뀔 때 active 클래스만 바꿔서 transition이 동작하게 함
     const roomPagination = document.querySelector(".room_list .swiper-pagination");
-    roomPagination.classList.add("swiper-pagination-bullets", "swiper-pagination-horizontal");
+    roomPagination.classList.add("swiper-pagination-bullets", "swiper-pagination-horizontal", "swiper-pagination-clickable");
+
+    let bulletsHtml = "";
+    for (let i = 0; i < ROOM_COUNT; i++) {
+        bulletsHtml += `<span class="swiper-pagination-bullet" data-i="${i}"></span>`;
+    }
+    roomPagination.innerHTML = bulletsHtml;
+
+    const roomBullets = roomPagination.querySelectorAll(".swiper-pagination-bullet");
+    const updateRoomBullets = () => {
+        // 복제된 슬라이드도 0~3번으로 계산
+        const active = roomSwiper.realIndex % ROOM_COUNT;
+        roomBullets.forEach((bullet, i) => {
+            bullet.classList.toggle("swiper-pagination-bullet-active", i === active);
+        });
+    };
+    updateRoomBullets();
+    roomSwiper.on("realIndexChange", updateRoomBullets);
+
+    // 점 클릭 시 해당 객실로 이동
     roomPagination.addEventListener("click", (e) => {
         const bullet = e.target.closest("[data-i]");
         if (bullet) roomSwiper.slideToLoop(Number(bullet.dataset.i));
